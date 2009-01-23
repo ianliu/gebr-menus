@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n9">
+  <filename>df.mnu</filename>
+  <title>Disk Space Usage</title>
+  <description>Report file system disk space usage</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Disk Usage</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Disk Usage</span>
+
+          <div class="description">
+            Report file system disk space usage
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Shell tools
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Feb 08, 2008: created by Ricardo Biloti &lt;biloti@gmail·com&gt;</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.1) | Feb 08, 2008</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <date>
+    <created/>
+    <modified/>
+    <lastrun/>
+  </date>
+  <category>Shell tools</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">df.mnu</menu>
+    <title>Disk Space Usage</title>
+    <binary>df</binary>
+    <description>Report file system disk space usage</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Disk Usage</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Disk Usage</span>
+
+          <div class="description">
+            Report file system disk space usage
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Shell tools
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This manual page documents the GNU version of df ported
+          to G&ecirc;BR.  df displays the amount of disk space
+          available on the file system containing each file name
+          argument.  If no file name is given, the space available on
+          all currently mounted file systems is shown.  Disk space is
+          shown in 1K blocks by default, unless the environment
+          variable POSIXLY_CORRECT is set, in which case 512-byte
+          blocks are used.</p>
+
+          <p>If an argument is the absolute file name of a disk device
+          node containing a mounted file system, df shows the space
+          available on that file system rather than on the file system
+          containing the device node (which is always the root file
+          system).  This version of df cannot show the space available
+          on unmounted file systems, because on most kinds of systems
+          doing so requires very nonportable intimate knowledge of
+          file system structures.</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+            <p>The G&ecirc;BR port of df implements the subset of
+            parameters supported by df described below.</p>
+
+	    <!-- List of optional parameters -->
+            <ul>
+		<li><span class="label">[Include dummy file
+		systems]</span> like proc, sysfsm udev, etc (rarely
+		useful).</li>
+
+		<li><span class="label">[Block size (in bytes)]</span> is
+                used to change the 1K default block size.</li>
+
+		<li><span class="label">[Print sizes in human readable
+		format]</span> (e.g., 1K 234M 2G).</li> 
+
+		<li><span class="label">[Print sizes in human readable
+		format (powers of 1000 instead of 1024)]</span>.</li>
+
+                <li><span class="label">[List inode information
+                instead of block usage]</span>.</li>
+
+                <li><span class="label">[Limit listing to local file
+                systems]</span>, ignoring NFS mounted file systems,
+                for example.</li>
+
+	        <li><span class="label">[Invoke sync before getting
+	        usage info]</span>.</li>
+
+		<li><span class="label">[Print file system type]</span>.</li>
+
+		<li><span class="label">[Specific partition]</span>.</li>
+
+             </ul>
+          </div>
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>df is part of the GNU core utils, and was written by 
+             Torbjorn Granlund, David MacKenzie and Paul Eggert.</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.1) | df 5.97</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.gnu.org/software/coreutils/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Include dummy file systems</label><flag><property required="no"><keyword>-a</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n1"><label>Block size (in bytes)</label><int><property required="no"><keyword>--block-size=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n2"><label>Print sizes in human readable format</label><flag><property required="no"><keyword>-h</keyword><value></value><default>on</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n3"><label>Print sizes in human readable format (power of 1000 instead of 1024)</label><flag><property required="no"><keyword>-H</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      
+    <parameter id="n4"><label>List inode information instead of block usage</label><flag><property required="no"><keyword>-i</keyword><value></value><default>off</default></property></flag></parameter><parameter id="n5"><label>Limit listing to local file systems</label><flag><property required="no"><keyword>--local</keyword><value></value><default>off</default></property></flag></parameter><parameter id="n6"><label>Invoke sync before getting usage info</label><flag><property required="no"><keyword>--sync</keyword><value></value><default>off</default></property></flag></parameter><parameter id="n7"><label>Print file system type</label><flag><property required="no"><keyword>-T</keyword><value></value><default>off</default></property></flag></parameter><parameter id="n8"><label>Specific partition</label><file directory="yes"><property required="no"><keyword/><value></value><default></default></property>
+        
+        
+        
+      </file></parameter></parameters>
+  </program>
+</flow>

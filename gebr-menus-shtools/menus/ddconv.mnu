@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n1">
+  <filename>ddconv.mnu</filename>
+  <title>Case converter</title>
+  <description>Convert file's content to upper or lower case</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Case converter</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Case converter</span>
+
+          <div class="description">
+            Convert file's content to upper or lower case
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        File tools | Shell tools
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This simple menu converts text either to lower case or to upper case.</p>
+
+	    
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Mar 21, 2008: created by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
+             Jan 23, 2009: revised by Ricardo Biloti &lt;biloti@gmail·com&gt;</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.7 (0.3.0) | Jan 23, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <date>
+    <created/>
+    <modified/>
+    <lastrun/>
+  </date>
+  
+  <category>File tools</category><category>Shell tools</category><io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="no" status="unconfigured">
+    <menu index="0">ddconv.mnu</menu>
+    <title>Case converter</title>
+    <binary>dd status=noxfer 2&gt;/dev/null</binary>
+    <description>Convert file's content to upper or lower case</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Case converter</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Case converter</span>
+
+          <div class="description">
+            Convert file's content to upper or lower case
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Shell tools
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This simple menu converts text either to lower case or to upper case.</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+            <ul>
+              <li><span class="label">[Conversion type]</span> specifies in which direction
+              the conversion takes place.</li>
+            </ul>
+          </div>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>This program employs the dd utility, written by Paul Rubin, David MacKenzie, and Stuart Kemp, as
+          part of the GNU core utils.</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.7 (0.3.0) | dd 5.97</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.gnu.org/software/coreutils/</url>
+    <parameters exclusive="0">
+      <parameter id="n0"><label>Conversion type</label><enum><property required="yes"><keyword>conv=</keyword><value/><default>lcase</default></property>
+        
+        
+        
+        <option>
+          <label>to lower case</label>
+          <value>lcase</value>
+        </option>
+        <option>
+          <label>to upper case</label>
+          <value>ucase</value>
+        </option>
+      </enum></parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n15">
+  <filename>du.mnu</filename>
+  <title>File Space Usage</title>
+  <description>Estimate file space usage</description>
+  <help/>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <date>
+    <created/>
+    <modified/>
+    <lastrun/>
+  </date>
+  <category>Shell tools</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">du.mnu</menu>
+    <title>File Space Usage</title>
+    <binary>du</binary>
+    <description>Estimate file space usage</description>
+    <help/>
+    <url>http://www.gnu.org/software/coreutils/</url>
+    <parameters exclusive="0">
+      <parameter id="n0"><label>Write counts for all files, not just directories</label><flag><property required="no"><keyword>--all</keyword><value></value><default>on</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n1"><label>Print apparent size instead of disk usage</label><flag><property required="no"><keyword>--apparent-size</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n2"><label>Print total usage</label><flag><property required="no"><keyword>--total</keyword><value></value><default>on</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n3"><label>Print sizes in human readable format</label><flag><property required="no"><keyword>-h</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n4"><label>Print sizes in human readable format (as powers of 10)</label><flag><property required="no"><keyword>--si</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n5"><label>Count sizes many times if hard linked</label><flag><property required="no"><keyword>-l</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n6"><label>Dereference</label><enum><property required="yes"><keyword/><value></value><default>-P</default></property>
+        
+        
+        
+        <option>
+          <label>files that are symbolic links</label>
+          <value>-D</value>
+        </option>
+        <option>
+          <label>all symbolic links</label>
+          <value>-L</value>
+        </option>
+        <option>
+          <label>do not follow symbolic links</label>
+          <value>-P</value>
+        </option>
+      </enum></parameter>
+      <parameter id="n7"><label>Do not include size of subdirectories</label><flag><property required="no"><keyword>-S</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n8"><label>Display only a total for each argument</label><flag><property required="no"><keyword>--summarize</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n9"><label>Skip directories on different file systems</label><flag><property required="no"><keyword>-x</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n10"><label>Exclude files that match any pattern specified in file</label><file directory="no"><property required="no"><keyword>--exclude-from=</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n11"><label>Exclude files that match pattern</label><string><property required="no"><keyword>--exclude=</keyword><value></value><default></default></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n12"><label>Show time os last modification</label><flag><property required="no"><keyword>--time</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n13"><label>Directories to scan</label><file directory="yes"><property required="no" separator="&quot; &quot;"><keyword/><value/><default/></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n14"><label>Files to scan</label><file directory="no"><property required="no" separator="&quot; &quot;"><keyword/><value/><default/></property>
+        
+        
+        
+      </file></parameter>
+    </parameters>
+  </program>
+</flow>

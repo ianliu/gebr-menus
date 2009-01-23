@@ -1,0 +1,48 @@
+%define name @PACKAGE@
+%define version @VERSION@
+%define release opensuse
+%define _topdir %(echo $PWD)/rpm
+
+Name: %{name}
+Version: %{version}
+Release: %{release}
+License: GPL
+Group: Application/Misc
+URL: http://groups.google.com/group/gebr
+Packager: Ricardo Biloti <biloti@gmail.com>
+Source: %{name}-%{version}.tar.gz
+BuildRoot: /tmp/%{name}-%{version}
+Summary: Extra menus for GêBR concerning several shell tools
+%description
+GÃªBR is an environment for seismic processing based on open-source
+technologies, but extensible and applicable to several different areas.
+
+This package provides many shell tools for general purpose.
+
+File conversion functionality from HTML, MS WORD (DOC), MS EXCEL
+(XLS), and OpenDocument (ODT) to Plain text and HTML.
+
+Calendar, disk usage, system information.
+
+%prep
+%setup -q
+
+%configure
+
+%build
+make
+
+%install
+rm -rf %{buildroot}
+mkdir -p %{buildroot}
+
+%makeinstall
+
+%clean
+rm -rf %{buildroot}
+
+%files
+%defattr(-,root,root)
+%{_datadir}/gebr/menus/*
+
+%changelog

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n13">
+  <filename>gnutar.mnu</filename>
+  <title>TAR</title>
+  <description>GNU archiving utility</description>
+  <help/>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <date>
+    <created/>
+    <modified/>
+    <lastrun/>
+  </date>
+  <category>Shell tools</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">gnutar.mnu</menu>
+    <title>TAR</title>
+    <binary>tar</binary>
+    <description>GNU archiving utility</description>
+    <help/>
+    <url>http://www.gnu.org/software/tar/</url>
+    <parameters exclusive="0">
+      <parameter id="n0"><label>Behaviour</label><enum><property required="yes"><keyword/><value></value><default>-t</default></property>
+        
+        
+        
+        <option>
+          <label>create a new archive</label>
+          <value>-c</value>
+        </option>
+        <option>
+          <label>extract files from an archive</label>
+          <value>-x</value>
+        </option>
+        <option>
+          <label>append tar files to an archive</label>
+          <value>-A</value>
+        </option>
+        <option>
+          <label>delete from the archive</label>
+          <value>--delete</value>
+        </option>
+        <option>
+          <label>append files to the end of an archive</label>
+          <value>-r</value>
+        </option>
+        <option>
+          <label>list the contents of an archive</label>
+          <value>-t</value>
+        </option>
+        <option>
+          <label>only append files that are newer than copy in archive</label>
+          <value>-u</value>
+        </option>
+      <option><label>compare archive and file system</label><value>--compare</value></option></enum></parameter>
+      <parameter id="n1"><label>Compression type</label><enum><property required="no"><keyword/><value></value><default>-z</default></property>
+        
+        
+        
+        <option>
+          <label>bzip2</label>
+          <value>--bzip2</value>
+        </option>
+        <option>
+          <label>gzip</label>
+          <value>-z</value>
+        </option>
+        <option>
+          <label>compress</label>
+          <value>-Z</value>
+        </option>
+      </enum></parameter>
+      <parameter id="n2"><label>Change to directory</label><file directory="yes"><property required="no"><keyword>-C</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n3"><label>Don’t dump symlinks, but dump the files they point to</label><flag><property required="no"><keyword>--deference</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n4"><label>Print periodic checkpoints</label><flag><property required="no"><keyword>--checkpoint</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n5"><label>Exclude files matching PATTERN</label><string><property required="no"><keyword>--exclude=</keyword><value></value><default></default></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n6"><label>Ignore case when excluding files</label><flag><property required="no"><keyword>--ignore-case</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n7"><label>Keep existing files when extracting</label><flag><property required="no"><keyword>--keep-old-files</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n8"><label>Extract files to standard output instead of to disk</label><flag><property required="no"><keyword>--to-stdout</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n9"><label>File with a list of files to extract or archive</label><file directory="no"><property required="no"><keyword>-T </keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+    <parameter id="n10"><label>Don't strip leading '/' from file names (absolute path)</label><flag><property required="no"><keyword>--absolute-name</keyword><value></value><default>off</default></property></flag></parameter><parameter id="n11"><label>Append specified suffix to make backup files</label><string><property required="no"><keyword>--suffix </keyword><value></value><default></default></property></string></parameter><parameter id="n12"><label>Remove files after adding them to the archive</label><flag><property required="no"><keyword>--remove-files</keyword><value></value><default>off</default></property></flag></parameter></parameters>
+  </program>
+</flow>
