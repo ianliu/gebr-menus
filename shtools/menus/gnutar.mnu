@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.0" nextid="n13">
+<flow version="0.3.0" nextid="n35">
   <filename>gnutar.mnu</filename>
   <title>TAR</title>
   <description>GNU archiving utility</description>
-  <help/>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - TAR</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">TAR</span>
+
+          <div class="description">
+            GNU archiving utility
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        File tools | Shell tools
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This menu provides access to GNU tar utility, an archiving
+             program designed to store and extract files from an archive
+             file known as tarfile.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Jan 27, 2009: created by Ricardo Biloti &lt;biloti@gmail&middot;br&gt;</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.7 (0.3.0) | Jan 27, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
   <date>
@@ -11,8 +77,7 @@
     <modified/>
     <lastrun/>
   </date>
-  <category>Shell tools</category>
-  <io>
+  <category>File tools</category><category>Shell tools</category><io>
     <input/>
     <output/>
     <error/>
@@ -22,13 +87,141 @@
     <title>TAR</title>
     <binary>tar</binary>
     <description>GNU archiving utility</description>
-    <help/>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - TAR</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">TAR</span>
+
+          <div class="description">
+            GNU archiving utility
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        File tools | Shell tools
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This implements some functionalities of GNU version of tar, an
+             archiving program designed to store and extract files from an
+             archive file known as a tarfile. A tarfile may be made on a tape drive,
+             however, it is also common to write a tarfile to a normal fie.</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+	    <!-- List of required parameters -->
+            <ul>
+              <li><span class="label">[Behaviour]</span> select one of the
+              following tar functionalities: create an archive, extract from
+              an archive, append to an archive, list an archive's content,
+              delete file from an archive or compare an archive and the
+              file system.</li>
+            </ul>
+
+            <h2>Optional parameters</h2>
+
+            <p>Only some of many control parameters of GNU tar ar implemented. Those are:</p>
+	
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Compression type]</span> gzip (default), bzip2, compress or none
+              (when nothing is selected).</li>
+
+              <li><span class="label">[Stay in local file system when creating an archive]</span></li>
+
+              <li><span class="label">[Do not recurse into subdirectories]</span></li>
+
+              <li><span class="label">[Change directory]</span> allows to select the directory where
+              tar starts. Despite optional, this parameter should be set, once is not necessarily known
+              which is the base directory from which tar will be run by G&ecirc;BR daemon.</li>
+
+              <li><span class="label">[File with a list of file to extract or archive]</span> allows to provide a
+              text file with a list of files, one per line, to extract from an archive or to add to an archive.</li>
+
+              <li><span class="label">[Exclude files matching PATTERN]</span></li>
+
+              <li><span class="label">[Don’t dump symlinks, but dump the files they point to]</span></li>
+
+              <li><span class="label">[Print periodic checkpoints]</span></li>
+              <li><span class="label">[Ignore case when excluding files]</span></li>
+              <li><span class="label">[Keep existing file when extracting]</span></li>
+              <li><span class="label">[Extract files to standard output instead of to disk]</span></li>
+              <li><span class="label">[Don't strip leading '/' from filenames (absolute path)]</span></li>
+              <li><span class="label">[Append specified suffix to make backup files]</span></li>
+              <li><span class="label">[Remove files after adding them to the archive]</span></li>
+              <li><span class="label">[Tape length (multiples of 1024 bytes)]</span></li>
+              <li><span class="label">[While adding files, set owner to]</span></li>
+              <li><span class="label">[While adding files, set group to]</span></li>
+              <li><span class="label">[Directory]</span> specifies the directorys to archive (can be specified as many times as needed)</li>
+              <li><span class="label">[Files]</span> specifies files to archive (can be specified as many times as needed)</li>
+          </ul>
+          </div>
+
+	  <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+          <p>To complete information about GNU tar, please refer to
+          <a href="http://www.gnu.org/software/tar/manual/index.html">its
+          official manual</a>.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>GNU tar was written by John Gilmore and Jay Fenlason,
+             Free Software Foundation Inc, and is release under 
+             GNU GPL version 3 or later.</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#par">Parameters</a></li>
+            <li><a href="#ref">References</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.7 (0.3.0) | GNU tar 1.20</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
     <url>http://www.gnu.org/software/tar/</url>
     <parameters exclusive="0">
-      <parameter id="n0"><label>Behaviour</label><enum><property required="yes"><keyword/><value></value><default>-t</default></property>
-        
-        
-        
+      <parameter id="n0"><label>Behaviour</label><enum><property required="yes"><keyword></keyword><value/><default></default></property>
         <option>
           <label>create a new archive</label>
           <value>-c</value>
@@ -58,10 +251,8 @@
           <value>-u</value>
         </option>
       <option><label>compare archive and file system</label><value>--compare</value></option></enum></parameter>
-      <parameter id="n1"><label>Compression type</label><enum><property required="no"><keyword/><value></value><default>-z</default></property>
-        
-        
-        
+      <parameter id="n2"><label>Change to directory</label><file directory="yes"><property required="no"><keyword>-C </keyword><value/><default/></property>
+      </file></parameter><parameter id="n1"><label>Compression type</label><enum><property required="no"><keyword/><value/><default>-z</default></property>
         <option>
           <label>bzip2</label>
           <value>--bzip2</value>
@@ -75,46 +266,31 @@
           <value>-Z</value>
         </option>
       </enum></parameter>
-      <parameter id="n2"><label>Change to directory</label><file directory="yes"><property required="no"><keyword>-C</keyword><value></value><default></default></property>
-        
-        
-        
+<parameter id="n20"><label>File selection options</label><group instanciable="no" expand="no">
+<parameters exclusive="0">
+<parameter id="n16"><label>Stay in local file system when creating an archive</label><flag><property required="no"><keyword>--one-file-system</keyword><value/><default/></property></flag></parameter>
+<parameter id="n15"><label>Do not recurse into subdirectories</label><flag><property required="no"><keyword>--no-recursion</keyword><value/><default/></property></flag></parameter>
+
+<parameter id="n9"><label>File with a list of files to extract or archive</label><file directory="no"><property required="no"><keyword>-T </keyword><value/><default/></property>
       </file></parameter>
-      <parameter id="n3"><label>Don’t dump symlinks, but dump the files they point to</label><flag><property required="no"><keyword>--deference</keyword><value></value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter id="n4"><label>Print periodic checkpoints</label><flag><property required="no"><keyword>--checkpoint</keyword><value></value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter id="n5"><label>Exclude files matching PATTERN</label><string><property required="no"><keyword>--exclude=</keyword><value></value><default></default></property>
-        
-        
-        
+<parameter id="n5"><label>Exclude files matching PATTERN</label><string><property required="no"><keyword>--exclude=</keyword><value/><default/></property>
       </string></parameter>
-      <parameter id="n6"><label>Ignore case when excluding files</label><flag><property required="no"><keyword>--ignore-case</keyword><value></value><default>off</default></property>
-        
-        
-        
+</parameters></group></parameter>
+<parameter id="n23"><label>Setup options</label><group instanciable="no" expand="no">
+<parameters exclusive="0">
+<parameter id="n34"><label>Be verbose</label><flag><property required="no"><keyword>-v</keyword><value/><default>on</default></property></flag></parameter><parameter id="n3"><label>Don’t dump symlinks, but dump the files they point to</label><flag><property required="no"><keyword>--deference</keyword><value/><default>off</default></property>
       </flag></parameter>
-      <parameter id="n7"><label>Keep existing files when extracting</label><flag><property required="no"><keyword>--keep-old-files</keyword><value></value><default>off</default></property>
-        
-        
-        
+      <parameter id="n4"><label>Print periodic checkpoints</label><flag><property required="no"><keyword>--checkpoint</keyword><value/><default>off</default></property>
+      </flag></parameter>      
+      <parameter id="n6"><label>Ignore case when excluding files</label><flag><property required="no"><keyword>--ignore-case</keyword><value/><default>off</default></property>
       </flag></parameter>
-      <parameter id="n8"><label>Extract files to standard output instead of to disk</label><flag><property required="no"><keyword>--to-stdout</keyword><value></value><default>off</default></property>
-        
-        
-        
+      <parameter id="n7"><label>Keep existing files when extracting</label><flag><property required="no"><keyword>--keep-old-files</keyword><value/><default>off</default></property>
       </flag></parameter>
-      <parameter id="n9"><label>File with a list of files to extract or archive</label><file directory="no"><property required="no"><keyword>-T </keyword><value></value><default></default></property>
-        
-        
-        
-      </file></parameter>
-    <parameter id="n10"><label>Don't strip leading '/' from file names (absolute path)</label><flag><property required="no"><keyword>--absolute-name</keyword><value></value><default>off</default></property></flag></parameter><parameter id="n11"><label>Append specified suffix to make backup files</label><string><property required="no"><keyword>--suffix </keyword><value></value><default></default></property></string></parameter><parameter id="n12"><label>Remove files after adding them to the archive</label><flag><property required="no"><keyword>--remove-files</keyword><value></value><default>off</default></property></flag></parameter></parameters>
+      <parameter id="n8"><label>Extract files to standard output instead of to disk</label><flag><property required="no"><keyword>--to-stdout</keyword><value/><default>off</default></property>
+      </flag></parameter>
+<parameter id="n10"><label>Don't strip leading '/' from file names (absolute path)</label><flag><property required="no"><keyword>--absolute-name</keyword><value/><default>off</default></property></flag></parameter>
+    <parameter id="n11"><label>Append specified suffix to make backup files</label><string><property required="no"><keyword>--suffix </keyword><value/><default/></property></string></parameter>
+<parameter id="n12"><label>Remove files after adding them to the archive</label><flag><property required="no"><keyword>--remove-files</keyword><value/><default>off</default></property></flag></parameter><parameter id="n14"><label>Tape length (multiples of 1024 bytes)</label><int><property required="no"><keyword>--tape-length </keyword><value/><default/></property></int></parameter><parameter id="n17"><label>While adding files, set owner to</label><string><property required="no"><keyword>--owner </keyword><value/><default/></property></string></parameter><parameter id="n13"><label>While adding files, set group to</label><string><property required="no"><keyword>--group </keyword><value/><default/></property></string></parameter></parameters></group></parameter>
+<parameter id="n24"><label>Directories to archive</label><group instanciable="yes" expand="yes"><parameters exclusive="0"><parameter id="n26"><label>Directory</label><file directory="yes"><property required="no"><keyword/><value/><default/></property></file></parameter></parameters></group></parameter><parameter id="n27"><label>Files to archive</label><group instanciable="yes" expand="yes"><parameters exclusive="0"><parameter id="n29"><label>File</label><file directory="no"><property required="no"><keyword/><value/><default/></property></file></parameter></parameters></group></parameter></parameters>
   </program>
 </flow>

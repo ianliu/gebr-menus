@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.1.0">
+  <filename>unif2.mnu</filename>
+  <title>Unif2</title>
+  <description>Generate a 2-D uniformly sampled velocity profile from a layered model</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Unif2</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Unif2</span>
+
+          <div class="description">
+            Generate a 2-D uniformly sampled velocity profile from a layered model
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Seismic Unix | Simulation and Model Building
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Generate a 2-D UNIFormly sampled velocity profile from a layered
+         model. In each layer, velocity is a linear function of position.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc; core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  
+  <category>Simulation and Model Building</category>
+  <category>Seismic Unix</category><io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">unif2.mnu</menu>
+    <title>Unif2</title>
+    <binary>unif2</binary>
+    <description>Generate a 2-D uniformly sampled velocity profile from a layered model.</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Unif2</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Unif2</span>
+
+          <div class="description">
+            Generate a 2-D uniformly sampled velocity profile from a layered model
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Seismic Unix | Simulation and Model Building
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Generate a 2-D UNIFormly sampled velocity profile from a layered
+         model. In each layer, velocity is a linear function of position.</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[number of interfaces]</span></li>
+              <li><span class="label">[number of x samples (2nd dimension)]</span></li>
+              <li><span class="label">[number of z samples (1st dimension)]</span></li>
+              <li><span class="label">[x sampling interval]</span></li>
+              <li><span class="label">[z sampling interval]</span></li>
+              <li><span class="label">[maximum number of points on interfaces]</span></li>
+              <li><span class="label">[first x sample]</span></li>
+              <li><span class="label">[first z sample]</span></li>
+              <li><span class="label">[distance x at which v00 is specified]</span></li>
+              <li><span class="label">[depth z at which v00 is specified]</span></li>
+              <li><span class="label">[velocity at each x0,z0 (m/sec)]</span></li>
+              <li><span class="label">[derivative of velocity with distance x (dv/dx)]</span></li>
+              <li><span class="label">[derivative of velocity with depth z (dv/dz)]</span></li>
+              <li><span class="label">[method]</span><br/>
+		linear: for linear interpolation of interface<br />
+                mono: for monotonic cubic interpolation of interface<br />
+                akima: for Akima's cubic interpolation of interface<br />
+                spline: for cubic spline interpolation of interface</li>
+              <li><span class="label">[test filename]</span>if set, a sample input dataset is output to this file.</li>
+            </ul>
+          </div>
+	    
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The input file is an ASCII file containing x z values representing a
+ piecewise continuous velocity model with a flat surface on top. The surface
+ and each successive boundary between media are represented by a list of
+ selected x z pairs written column form. The first and last x values must
+ be the same for all boundaries. Use the entry   1.0  -99999  to separate
+ entries for successive boundaries. No boundary may cross another. Note
+ that the choice of the method of interpolation may cause boundaries
+ to cross that do not appear to cross in the input data file.
+ The number of interfaces is specified by the parameter "ninf". This
+ number does not include the top surface of the model. The input data
+ format is the same as a CSHOT model file with all comments removed.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Zhenyue Liu, 1994<br />
+      CWP: John Stockwell, 1994, added demonstration model stuff.</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#par">Parameters</a></li>
+            <li><a href="#notes">Notes</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <parameters>
+      <int required="no">
+        <keyword>ninf=</keyword>
+        <label>number of interfaces</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>nx=</keyword>
+        <label>number of x samples</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>nz=</keyword>
+        <label>number of z samples</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>dx=</keyword>
+        <label>x sampling interval</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dz=</keyword>
+        <label>z sampling interval</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>npmax=</keyword>
+        <label>maximum number of points on interfaces</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>fx=</keyword>
+        <label>first x sample</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>fz=</keyword>
+        <label>first z sample</label>
+        <value/>
+      </float>
+      <string required="no">
+        <keyword>x0=</keyword>
+        <label>distance x at which velocity is specified</label>
+        <value/>
+      </string>
+      <string required="no">
+        <keyword>z0=</keyword>
+        <label>depth z at which velocity is specified</label>
+        <value/>
+      </string>
+      <string required="no">
+        <keyword>v00=</keyword>
+        <label>velocity (m/sec)</label>
+        <value/>
+      </string>
+      <float required="no">
+        <keyword>dvdx=</keyword>
+        <label>derivative of velocity with distance x (dv/dx)</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dvdz=</keyword>
+        <label>derivative of velocity with depth z (dv/dz)</label>
+        <value/>
+      </float>
+      <string required="no"><keyword>method=</keyword><label>method</label><value/></string>
+      <file required="no" directory="no">
+        <keyword>tfile=</keyword>
+        <label>testfilename</label>
+        <value/>
+      </file>
+    </parameters>
+  </program>
+</flow>

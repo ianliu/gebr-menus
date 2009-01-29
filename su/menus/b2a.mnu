@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.3.0" nextid="n2">
+  <filename>b2a.mnu</filename>
+  <title>BIN to ASCII</title>
+  <description>Convert binary floats to ASCII</description>
+  <help>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;  &lt;meta http-equiv="content-type" content=  "text/html; charset=utf-8" /&gt;  &lt;link rel="stylesheet" type="text/css" href="gebr.css" /&gt;  &lt;title&gt;G&amp;ecirc;BR - BIN to ASCII&lt;/title&gt;&lt;/head&gt;&lt;body&gt;  &lt;div class="outer-container"&gt;    &lt;div class="inner-container"&gt;      &lt;div class="header"&gt;        &lt;div class="title"&gt;          &lt;span class="flowtitle"&gt;BIN to ASCII&lt;/span&gt;          &lt;div class="description"&gt;            Convert binary floats to ASCII          &lt;/div&gt;        &lt;/div&gt;      &lt;/div&gt;      &lt;div class="category"&gt;        Import/Export | Seismic Unix      &lt;/div&gt;      &lt;div class="main"&gt;        &lt;div class="content"&gt;	  &lt;a name="credits" id="credits"&gt;&lt;/a&gt;          &lt;h2&gt;Credits&lt;/h2&gt;          &lt;p&gt;Agu 26, 2007: written by Braulio Barros de Oliveira, UNICAMP - brauliobo@gmail.com&lt;/p&gt;          &lt;p&gt;Mar 17, 2008: revised by Daniela Rego Amazonas, UFPA - daniela.amazonas@gmail.com&lt;/p&gt;        &lt;/div&gt;        &lt;div class="navigation"&gt;          &lt;h2&gt;Index&lt;/h2&gt;          &lt;ul&gt;              &lt;li&gt;&lt;a href="#credits"&gt;Credits&lt;/a&gt;&lt;/li&gt;          &lt;/ul&gt;        &lt;/div&gt;        &lt;div class="clearer"&gt;&lt;/div&gt;      &lt;/div&gt;      &lt;div class="footer"&gt;        &lt;span class="left"&gt;G&amp;ecirc;BR 0.9.4pre20080312 (0.2.2) |Mar 17, 2008&lt;/span&gt;        &lt;div class="clearer"&gt;&lt;/div&gt;      &lt;/div&gt;    &lt;/div&gt;  &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;<![CDATA[
+    <html>
+    <header>
+       <title>BIN to ASCII</title>
+    </header>
+    <body>
+    <h1>BIN to ASCII</h1>
+    <p>Convert binary floats to ascii</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>Braulio Barros de Oliveira</author>
+  <email>brauliobo@gmail.com</email>
+  <date><created/><modified/><lastrun/></date><category>Import/Export</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">b2a.mnu</menu>
+    <title>BIN to ASCII</title>
+    <binary>b2a</binary>
+    <description>Convert binary floats to ASCII</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - BIN to ASCII</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">BIN to ASCII</span>
+
+          <div class="description">
+            Convert binary floats to ASCII
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+       Import/Export | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+            <p>None</p>
+
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Floats per line in output file ]</span> </li>
+              <li><span class="label">[Output parameter file ]</span> contains the
+                        number of lines. Other choices for output parameter file are: /dev/tty, 
+                       /dev/stderr, or a name of a disk file</li>
+            </ul>
+          </div>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Jack K. Cohen</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4pre20080312 (0.2.2) |
+        SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Floats per line in input file</label><int><property required="no"><keyword>n1=</keyword><value></value><default></default></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n1"><label>Output parameter file</label><file directory="no"><property required="no"><keyword>outpar=</keyword><value></value><default></default></property>
+	
+	
+	
+      </file></parameter>
+    </parameters>
+  </program>
+</flow>

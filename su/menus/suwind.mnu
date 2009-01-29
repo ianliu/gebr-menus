@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.2.2">
+  <filename>suwind.mnu</filename>
+  <title>SU Window</title>
+  <description>window traces by key word</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Window</title>
+    </header>
+    <body>
+    <h1>SU Window</h1>
+    <p>Window traces by key word.</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suwind.mnu</menu>
+    <title>SU Window</title>
+    <binary>suwind</binary>
+    <description>window traces by key word</description>
+    <help><![CDATA[<pre>
+ SUWIND - window traces by key word
+
+  suwind &lt;stdin &gt;stdout [options]
+
+ Required Parameters:
+  none
+
+ Optional Parameters:
+ verbose=0		=1 for verbose
+ key=tracl		Key header word to window on (see segy.h)
+ min=LONG_MIN		min value of key header word to pass
+ max=LONG_MAX		max value of key header word to pass
+
+ abs=0			=1 to take absolute value of key header word
+ j=1			Pass every j-th trace ...
+ s=0			... based at s  (if ((key - s)%j) == 0)
+ skip=0		skip the initial N traces
+ count=ULONG_MAX	... up to count traces
+ reject=none		Skip traces with specified key values
+ accept=none		Pass traces with specified key values(see notes)
+			processing, but do no window the data
+ ordered=0		=1 if traces sorted in increasing keyword value
+			=-1  if traces are sorted in a decreasing order
+
+ Options for vertical windowing (time gating):
+ dt=tr.dt (from header) time sampling interval (sec)	(seismic data)
+ 			 =tr.d1  (nonseismic)
+ f1=tr.delrt (from header) first sample		(seismic data)
+ 			 =tr.f1  (nonseismic)
+
+ tmin=0.0		min time to pass
+ tmax=(from header)	max time to pass
+ itmin=0		min time sample to pass
+ itmax=(from header)   max time sample to pass
+ nt=itmax-itmin+1	number of time samples to pass
+
+ Notes:
+ On large data sets, the count parameter should be set if
+ possible.  Otherwise, every trace in the data set will be
+ examined.  However, the count parameter overrides the accept
+ parameter, so you can't specify count if you want true
+ unconditional acceptance.
+
+ The skip= option allows the user to skip over traces, which helps
+ for selecting traces far from the beginning of the dataset.
+ Caveat: skip only works with disk input.
+
+ The ordered= option will speed up the process if the data are
+ sorted in according to the key.
+
+ The accept option is a bit strange--it does NOT mean accept ONLY
+ the traces on the accept list!  It means accept these traces,
+ even if they would otherwise be rejected (except as noted in the
+ previous paragraph).  To implement accept-only, you can use the
+ max=0 option (rejecting everything).  For example, to accept
+ only the tracl values 4, 5 and 6:
+	... | suwind max=0 accept=4,5,6 | ...
+
+ Another example is the case of suppressing nonseismic traces in
+ a seismic data set. By the SEGY standard header field trace id,
+ trid=1 designates traces as being seismic traces. Other traces,
+ such as calibration traces may be designated by another value.
+
+ Example:  trid=1 seismic and trid=0 is nonseismic. To reject
+       nonseismic traces
+       ... | suwind key=trid reject=0 | ...
+
+ On most 32 bit machines, LONG_MIN, LONG_MAX and ULONG_MAX are
+ about -2E9,+2E9 and 4E9, they are defined in limits.h.
+
+ Selecting times beyond the maximum in the data induces
+ zero padding (up to SU_NFLTS).
+
+ The time gating here is to the nearest neighboring sample or
+ time value. Gating to the exact temporal value requires
+ resampling if the selected times fall between samples on the
+ trace. Use suresamp to perform the time gating in this case.
+
+ It doesn't really make sense to specify both itmin and tmin,
+ but specifying itmin takes precedence over specifying tmin.
+ Similarly, itmax takes precedence over tmax and tmax over nt.
+ If dt in header is not set, then dt is mandatory
+      </pre>]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <string required="no">
+	<keyword>key=</keyword>
+	<label>Key header word to window on</label>
+	<value default="offset"/>
+      </string>
+      <int required="no">
+	<keyword>min=</keyword>
+	<label>minimun value of key header word to pass</label>
+	<value default=""/>
+      </int>
+      <int required="no">
+	<keyword>max=</keyword>
+	<label>maximun value of key header word to pass</label>
+	<value default=""/>
+      </int>
+      <flag>
+	<keyword>abs=1</keyword>
+	<label>Take absolute value of the key header word</label>
+	<state default="off"/>
+      </flag>
+      <int required="no">
+	<keyword>j=</keyword>
+	<label>Pass every j-th trace based at s (if ((key - s)%j) == 0)  (j value)</label>
+	<value default=""/>
+      </int>
+      <int required="no">
+	<keyword>s=</keyword>
+	<label>Pass every j-th trace based at s (if ((key - s)%j) == 0)  (s value)</label>
+	<value default=""/>
+      </int>
+      <int required="no">
+	<keyword>skip=</keyword>
+	<label>number of initial traces to skip</label>
+	<value default=""/>
+      </int>
+      <int required="no">
+	<keyword>count=</keyword>
+	<label>maximun number of skipped traces</label>
+	<value default=""/>
+      </int>
+      <int required="no">
+	<keyword>reject=</keyword>
+	<label>Skip traces with specified key values</label>
+	<value default=""/>
+      </int>
+      <int required="no">
+	<keyword>accept=</keyword>
+	<label>Pass traces with specified key values (see help)</label>
+	<value default=""/>
+      </int>
+      <range min="-1" max="1" inc="1" required="no" digits="">
+	<keyword>ordered=</keyword>
+	<label>1 for sort traces increasing and -1 for decresing keyword value</label>
+	<value default="0"/>
+      </range>
+      <float required="no">
+	<keyword>dt=</keyword>
+	<label>time sampling interval (sec)</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>f1=</keyword>
+	<label>first sample</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>tmin=</keyword>
+	<label>minimun time to pass</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>tmax=</keyword>
+	<label>maximun time to pass</label>
+	<value/>
+      </float>
+      <int required="no">
+	<keyword>itmin=</keyword>
+	<label>minimun time sample to pass</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>itmax=</keyword>
+	<label>maximun time sample to pass</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>nt=</keyword>
+	<label>number of time samples to pass</label>
+	<value/>
+      </int>
+      <flag>
+	<keyword>verbose=1</keyword>
+	<label>Verbose</label>
+	<state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

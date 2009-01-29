@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>surelan.mnu</filename>
+  <title>SU Relan</title>
+  <description>Compute residual-moveout semblance for cdp gathers</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Relan</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Relan</span>
+
+          <div class="description">
+            Compute residual-moveout semblance for cdp gathers
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Compute residual-moveout semblance for cdp gathers based
+	      on z(h)*z(h) = z(0)*z(0) + r*h*h where z depth and h
+	      offset.</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">surelan.mnu</menu>
+    <title>SU Relan</title>
+    <binary>surelan</binary>
+    <description>compute residual-moveout semblance for cdp gathers</description>
+    <help/>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <int required="no">
+        <keyword>nr=</keyword>
+        <label>number of r-parameter samples</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>dr=</keyword>
+        <label>r-parameter sampling interval</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>fr=</keyword>
+        <label>first value of b-parameter</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>smute=</keyword>
+        <label>samples with RMO stretch exceeding smute are zeroed</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>dzratio=</keyword>
+        <label>ratio of output to input depth sampling intervals</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>nsmooth=</keyword>
+        <label>length of semblance num and den smoothing window</label>
+        <value/>
+      </int>
+      <flag>
+        <keyword>verbose=1</keyword>
+        <label>diagnostic print on stderr</label>
+        <state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n14">
+  <filename>sumigpreffd.mnu</filename>
+  <title>SU FFD pre-stack migration</title>
+  <description>The 2-D prestack Fourier finite-difference depth migration</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU FFD pre-stack migration</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU FFD pre-stack migration</span>
+
+          <div class="description">
+             The 2-D prestack Fourier finite-difference depth migration.
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p></p>
+
+	    
+	  <a name="details" id="details"></a>
+          <h2>Description</h2>
+
+          <p>The 2-D prestack common-shot Fourier finite-difference depth migration.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Jan 14, 2009: written by Daniela R&ecircgo Amazonas, UFPA</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.6-pre20081203 (0.3.0) |Jan 14, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>Daniela Amazonas</author>
+  <email>daniela.amazonas@gmail.com</email>
+  <date>
+    <created/>
+    <modified/>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="no" status="unconfigured">
+    <menu index="0">sumigpreffd.mnu</menu>
+    <title>SU FFD pre-stack migration</title>
+    <binary>sumigpreffd</binary>
+    <description>The 2-D prestack Fourier finite-difference depth migration</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU FFD pre-stack migration</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU FFD pre-stack migration</span>
+
+          <div class="description">
+            The 2-D prestack Fourier finite-difference depth migration.
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+	    <!-- List of required parameters -->
+            <ul>
+              <li><span class="label">[Number of total horizontal output samples]</span> </li>
+
+              <li><span class="label">[Number of shot gathers to be migrated]</span> </li>
+
+              <li><span class="label">[Number of depth samples]</span> </li>
+
+              <li><span class="label">[Horizontal sampling interval]</span> </li>
+
+              <li><span class="label">[Depth sampling interval]</span> </li>
+
+              <li><span class="label">[Velocity profile]</span> Must be binary format</li>
+            </ul>
+
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+
+              <li><span class="label">[Peak frequency]</span> The peak frequency of Ricker wavelet used as source wavelet</li>
+
+              <li><span class="label">[Frequency 1, frequency 2, frequency 3, frequency 4]</span> Frequencies to build a Hamming window</li>
+
+              <li><span class="label">[Number of zero traces padded on left]</span> Determine the migration aperature, the default values are using 
+                                       the full aperature</li>
+
+              <li><span class="label">[Number of zero traces padded on right]</span> Determine the migration aperature, the default values are using 
+                                       the full aperature</li>
+
+              <li><span class="label">[Print some useful information]</span> </li>
+
+            <ul>
+          </ul>
+          </div>
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The input velocity file consists of C-style binary floats.		
+ The structure of this file is [iz][ix]. Note that this means that
+ the x-direction is the fastest direction instead of z-direction! Such a
+ structure is more convenient for the downward continuation type	
+ migration algorithm than using z as fastest dimension as in other SU  
+ programs.</p>								
+									
+ <p>Because most of the tools in the SU package produce output with the structure [ix][iz], you will
+ need to transpose the velocity files created by these programs. You may
+ use the SU program 'Transpose' in SU to transpose such files into the  
+ required [iz][ix] structure.					
+ (In C  v[iz][ix] denotes a v(x,z) array, whereas v[ix][iz]  		
+ denotes a v(z,x) array, the opposite of what Matlab and Fortran	
+ programmers may expect.)</p>						
+									
+<p> Also, source position on x-axis must be monotonically increasing throughout the dataset, and 
+ and geophone position on x-axis must be monotonically increasing within a shot. You may resort 
+ your data with 'SU Sort', accordingly.</p>				
+									
+ <p>The scalco header field is honored so this field must be set correctly.
+ See selfdocs of 'SU Sort', 'SU Chw'.</p>
+
+
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP, Baoniu Han, bhan@dix.mines.edu, April 19th, 1998</p>
+
+	  <p>Modified: Chris Stolk, 11 Dec 2005, - changed data input
+             to remove erroneous time delay.</p>
+	  <p>Modified: CWP, John Stockwell 26 Sept 2006 - replaced Han's
+	  "goto-loop" with  "do { }while loops".
+	  Fixed it so that sx, gx, and scalco are honored. </p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.6-pre20081203 (0.3.0) |Jan 14, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters exclusive="0">
+      <parameter id="n0">
+        <label>Number of total horizontal output samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nxo=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter id="n1">
+        <label>Number of shot gathers to be migrated</label>
+        <int>
+          <property required="yes">
+            <keyword>nxshot=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter id="n2">
+        <label>Number of depth samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter id="n3">
+        <label>Horizontal sampling interval</label>
+        <float>
+          <property required="yes">
+            <keyword>dx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter id="n4">
+        <label>Depth sampling interval</label>
+        <float>
+          <property required="yes">
+            <keyword>dz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter id="n5">
+        <label>Velocity profile</label>
+        <file directory="no">
+          <property required="yes">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter id="n6">
+        <label>Peak frequency</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value/>
+            <default>25</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter id="n7">
+        <label>Frequency 1</label>
+        <float>
+          <property required="no">
+            <keyword>f1=</keyword>
+            <value/>
+            <default>5</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter id="n8">
+        <label>Frequency 2</label>
+        <float>
+          <property required="no">
+            <keyword>f2=</keyword>
+            <value/>
+            <default>10</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter id="n9">
+        <label>Frequency 3</label>
+        <float>
+          <property required="no">
+            <keyword>f3=</keyword>
+            <value/>
+            <default>40</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter id="n10">
+        <label>Frequency 4</label>
+        <float>
+          <property required="no">
+            <keyword>f4=</keyword>
+            <value/>
+            <default>50</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter id="n11">
+        <label>Number of zero traces padded on left</label>
+        <int>
+          <property required="no">
+            <keyword>lpad=</keyword>
+            <value/>
+            <default>9999</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter id="n12">
+        <label>Number of zero traces padded on right</label>
+        <int>
+          <property required="no">
+            <keyword>rpad=</keyword>
+            <value/>
+            <default>9999</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter id="n13">
+        <label>Print some useful information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value/>
+            <default/>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.2.2">
+  <filename>surange.mnu</filename>
+  <title>SU Range</title>
+  <description>get max and min values for non-zero header entries</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Range</title>
+    </header>
+    <body>
+    <h1>SU Range</h1>
+    <p>Get max and min values for non-zero header entries.</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured">
+    <menu index="0">surange.mnu</menu>
+    <title>SU Range</title>
+    <binary>surange</binary>
+    <description>get max and min values for non-zero header entries</description>
+    <help><![CDATA[<pre>
+ SURANGE - get max and min values for non-zero header entries
+
+ surange &lt;stdin
+
+ Optional parameters:
+        key=            Header key(s) to range (default=all)
+
+ Note: Gives partial results if interrupted
+      </pre>]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <string required="no">
+	<keyword>key=</keyword>
+	<label>Header key(s) to range (leave empty for all)</label>
+	<value default=""/>
+      </string>
+    </parameters>
+  </program>
+</flow>

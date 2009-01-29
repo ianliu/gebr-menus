@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.0" nextid="n4">
+<flow version="0.3.0" nextid="n10">
   <filename>xlhtml.mnu</filename>
   <title>FC XLS to HTML</title>
   <description>A converter from Microsoft Excel file to HTML</description>
@@ -40,12 +40,11 @@
 
           <p>A converter from Microsoft Excel file to HTML.</p>
 
-	    
-
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>Mar 04, 2008: created by Ricardo Biloti, &lt;biloti@gmail·com&gt;</p>
+          <p>Mar 04, 2008: created by Ricardo Biloti, &lt;biloti@gmail·com&gt;
+             Jan 24, 2009: revised by Ricardo Biloti, &lt;biloti@gmail·com&gt;</p>
         </div>
 
         <div class="navigation">
@@ -61,7 +60,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | Mar 04, 2008</span>
+        <span class="left">G&ecirc;BR 0.9.7 (0.3.0) | Jan 24, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -136,11 +135,12 @@
 
             <h2>Optional parameters</h2>
             <ul>
-              <li><span class="label">[Centers table horizontally]</span></li>
-
-              <li><span class="label">[Black and white]</span> instead of HTML with colors.</li>
-              <li><span class="label">[Suppress HTML headers]</span></li>             
-
+              <li><span class="label">[Centers tables horizontally]</span></li>
+              <li><span class="label">[Ignore colors in output]</span></li>
+              <li><span class="label">[Suppress header and body tags in HTML]</span></li>             
+              <li><span class="label">[Trims empty rows and columns at the edges of a worksheet]</span> instead of HTML.</li>
+              <li><span class="label">[Suppress formula warnings about accuracy]</span> instead of HTML.</li>
+              <li><span class="label">[XML output]</span> instead of HTML.</li>
           </ul>
           </div>
 	    
@@ -170,7 +170,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | xlhtml 0.5.1</span>
+        <span class="left">G&ecirc;BR 0.9.7 (0.3.0) | xlhtml 0.5.1</span>
 
         <div class="clearer"></div>
       </div>
@@ -181,26 +181,6 @@
 ]]></help>
     <url>http://chicago.sourceforge.net/xlhtml/</url>
     <parameters exclusive="0">
-      <parameter id="n0"><label>Centers table horizontally</label><flag><property required="no"><keyword>-c</keyword><value></value><default>on</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter id="n1"><label>Black and white</label><flag><property required="no"><keyword>-nc</keyword><value></value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter id="n2"><label>Suppress HTML headers</label><flag><property required="no"><keyword>-nh</keyword><value></value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter id="n3"><label>MS Excel file</label><file directory="no"><property required="yes"><keyword/><value></value><default></default></property>
-        
-        
-        
-      </file></parameter>
-    </parameters>
+    <parameter id="n8"><label>Centers tables horizontally</label><flag><property required="no"><keyword>-c</keyword><value/><default>on</default></property></flag></parameter><parameter id="n9"><label>Ignore colors in output</label><flag><property required="no"><keyword>-nc</keyword><value/><default/></property></flag></parameter><parameter id="n5"><label>Suppress header and body tags in HTML</label><flag><property required="no"><keyword>-nh</keyword><value/><default/></property></flag></parameter><parameter id="n6"><label>Trims empty rows and columns at the edges of a worksheet</label><flag><property required="no"><keyword>-te</keyword><value/><default>on</default></property></flag></parameter><parameter id="n7"><label>Suppress formula warnings about accuracy</label><flag><property required="no"><keyword>-fw</keyword><value/><default>on</default></property></flag></parameter><parameter id="n4"><label>XML output</label><flag><property required="no"><keyword>-xml</keyword><value/><default>off</default></property></flag></parameter><parameter id="n3"><label>MS Excel file</label><file directory="no"><property required="yes"><keyword/><value/><default/></property></file></parameter></parameters>
   </program>
 </flow>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.3.0" nextid="n22">
+  <filename>sufdmod2.mnu</filename>
+  <title>SU FD Mod2</title>
+  <description>Finite-Difference Modeling (2nd order) for acoustic wave equation</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU FD Mod2</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU FD Mod2</span>
+
+          <div class="description">
+            Finite-Difference Modeling (2nd order) for acoustic wave equation
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Simulation and Model Building | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Ago 26, 2007: written by Braulio Barros de Oliveira, UNICAMP - brauliobo@gmail.com</p>
+          <p>Jun 10, 2008: revised by Daniela Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+ 
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.3) | Jun 10, 2008</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Simulation and Model Building</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sufdmod2.mnu</menu>
+    <title>SU FD Mod2</title>
+    <binary>sufdmod2</binary>
+    <description>Finite-Difference Modeling (2nd order) for acoustic wave equation</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU FD Mod2</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU FD Mod2</span>
+
+          <div class="description">
+            Finite-Difference Modeling (2nd order) for acoustic wave equation
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Simulation and Model Building | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+	    <!-- List of required parameters -->
+            <ul>
+              <li><span class="label">[Number of x samples]</span> 2nd dimension</li>
+              <li><span class="label">[Number of z samples]</span> 1st dimension </li>
+              <li><span class="label">[x coordinates of source]</span></li>
+              <li><span class="label">[z coordinates of source]</span></li>
+              <li><span class="label">[Strenght of source]</span></li>
+              <li><span class="label">[Maximum time]</span></li>
+
+            </ul>
+
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Number of time samples]</span> =1+(maximum time)/(time sampling interval)</li>
+              <li><span class="label">[Number of time steps per output time step]</span></li>
+              <li><span class="label">[x sampling interval]</span></li>
+              <li><span class="label">[First x sample]</span></li>
+              <li><span class="label">[z sampling interval]</span></li>
+              <li><span class="label">[First z sample]</span></li>
+              <li><span class="label">[Maximum frequency in source wavelet]</span></li>
+              <li><span class="label">[Peak frequency in Ricker wavelet]</span></li>
+              <li><span class="label">[Input file containing density]</span></li>
+              <li><span class="label">[x coordinate of vertical line of seismograms]</span></li>
+              <li><span class="label">[z coordinate of horizontal line of seismograms]</span></li>
+              <li><span class="label">[Output file for vertical line of seismograms]</span></li>
+              <li><span class="label">[Output file for horizontal line of seismograms]</span></li>
+              <li><span class="label">[Output file for source point seismograms]</span></li>
+              <li><span class="label">[Absorbing boundary conditions]</span> On top,left,bottom,right sides of the model</li>
+              <li><span class="label">[Print some useful information]</span></li>
+
+
+          </ul>
+          </div>
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>In this verson is not avaiable the option to input a name of file that contains sources coordinates.</p>
+          <p>This program uses the traditional explicit second order differencing method.</p>
+          <p>The input velocity and density files contain C-style binary floating numbers with the z-direction being the 
+             fast dimension in the file. Here v[ix][iz] means that this is a v(z,x) velocity function.
+
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p> Authors:  CWP:Dave Hale <br>
+                        CWP:modified for SU by John Stockwell, 1993.</p>
+          <p> Modifications: Tony Kocurko (TK:) <br>
+                             Memorial University in Newfoundland and Labrador <br>
+                             - Allow user to supply the name of a file containing
+                               shot point locations, rather than supplying them
+                               as values to the  x and z coordinates of source command line arguments. <br>
+                             - Correct the calculation of izs[is].</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Number of x samples</label><int><property required="yes"><keyword>nx=</keyword><value></value><default></default></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n1"><label>Number of z samples</label><int><property required="yes"><keyword>nz=</keyword><value></value><default></default></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n2"><label>x coordinates of source</label><float><property required="yes" separator=","><keyword>xs=</keyword><value/><default/></property></float></parameter>
+      <parameter id="n3"><label>z coordinates of source</label><float><property required="yes" separator=","><keyword>zs=</keyword><value/><default/></property></float></parameter>
+      <parameter id="n4"><label>Strength of source</label><float><property required="yes"><keyword>sstrength=</keyword><value></value><default></default></property></float></parameter>
+      <parameter id="n5"><label>Maximum time</label><float><property required="yes"><keyword>tmax=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n6"><label>Number of time samples</label><int><property required="no"><keyword>nt=</keyword><value></value><default></default></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n7"><label>Number of time steps per output time step</label><int><property required="no"><keyword>mt=</keyword><value></value><default></default></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n8"><label>x sampling interval</label><float><property required="no"><keyword>dx=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n9"><label>First x sample</label><float><property required="no"><keyword>fx=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n10"><label>z sampling interval</label><float><property required="no"><keyword>dz=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n11"><label>First z sample</label><float><property required="no"><keyword>fz=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n12"><label>Maximum frequency in source wavelet</label><float><property required="no"><keyword>fmax=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n13"><label>Peak frequency in ricker wavelet</label><float><property required="no"><keyword>fpeak=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n14"><label>Input file containing density</label><file directory="no"><property required="no"><keyword>dfile=</keyword><value></value><default></default></property>
+	
+	
+	
+      </file></parameter>
+      <parameter id="n15"><label>x coordinate of vertical line of seismograms</label><float><property required="no"><keyword>vsx=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n16"><label>z coordinate of horizontal line of seismograms</label><float><property required="no"><keyword>hsz=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n17"><label>Output file for vertical line of seismograms</label><file directory="no"><property required="no"><keyword>vsfile=</keyword><value></value><default></default></property>
+	
+	
+	
+      </file></parameter>
+      <parameter id="n18"><label>Output file for horizontal line of seismograms</label><file directory="no"><property required="no"><keyword>hsfile=</keyword><value></value><default></default></property>
+	
+	
+	
+      </file></parameter>
+      <parameter id="n19"><label>Output file for source point seismograms</label><file directory="no"><property required="no"><keyword>ssfile=</keyword><value></value><default></default></property>
+	
+	
+	
+      </file></parameter>
+      <parameter id="n20"><label>Absorbing boundary conditions</label><float><property required="no" separator=","><keyword>abs=</keyword><value/><default/></property></float></parameter>
+      <parameter id="n21"><label>Print some useful information</label><flag><property required="no"><keyword>verbose=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+    </parameters>
+  </program>
+</flow>

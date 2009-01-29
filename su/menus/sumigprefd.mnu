@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>sumigprefd.mnu</filename>
+  <title>SU Migration Pre FD</title>
+  <description>Prestack common-shot finite-difference migration</description>
+  <help><![CDATA[
+   <html>
+    <header>
+       <title>SU Migration Pre FD</title>
+    </header>
+    <body>
+    <h1>SU Migration Pre FD</h1>
+    <p>The 2-D prestack common-shot 45-90 degree   
+                     finite-difference migration.</p>
+    </body>
+    </html>]]>
+</help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sumigprefd.mnu</menu>
+    <title>SU Mig Pre FD</title>
+    <binary>sumigprefd</binary>
+    <description>Prestack common-shot finite-difference migration</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Mig Pre FD</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Mig Pre FD</span>
+          <div class="description">The 2-D prestack common-shot 45-90 degree   
+                     finite-difference migration.</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+        <div class="parameters">
+
+          <a name="par"></a>
+          <h2>Required parameters</h2>
+
+          <ul>
+
+          <li><span class="label">[number of total horizontal output samples]</span>
+          </li>
+
+          <li><span class="label">[number of shot gathers to be migrated]</span>
+          </li>
+
+          <li><span class="label">[number of depth samples]</span>
+          </li>
+          <li><span class="label">[horizontal sampling interval]</span>
+          </li>
+          <li><span class="label">[depth sampling interval]</span>
+          </li>
+
+          <li><span class="label">[velocity profile]</span> it must be binary format
+          </li>
+
+          </ul>
+
+          <h2>Optional parameters</h2>
+          
+          <ul>
+          
+          <li><span class="label">[the maximum dip to migrate]</span> it can be 45,65,79,80,87,89,90", 
+              The computation cost is 45=65=79<80<87<89&lt;90
+          </li>
+
+          <li><span class="label">[the peak frequency]</span> Ricker wavelet used as source wavelet
+          </li>
+
+          <li><span class="label">[first frequencie to build a Hamming window]</span>
+          </li>
+
+          <li><span class="label">[second frequencie to build a Hamming window]</span>
+          </li>
+          
+          <li><span class="label">[third frequencie to build a Hamming window]</span>
+          </li>
+          <li><span class="label">[fourth frequencie to build a Hamming window]</span>
+          </li>
+          <li><span class="label">[number of zero traces padded on left side]</span> determine the
+                                migration aperature, the default values 
+                                are using the full aperature.  
+          </li>
+          <li><span class="label">[number of zero traces padded on rigth side]</span> determine the
+                                migration aperature, the default values 
+                                are using the full aperature.</li>
+
+          </ul>
+
+        </div>
+        
+          <a name="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The input velocity file consists of C-style binary floats.  ",  
+             The structure of this file is [iz][ix]. Note that this means that
+             the x-direction is the fastest direction instead of z-direction! Such a
+             structure is more convenient for the downward continuation type
+             migration algorithm than using z as fastest dimension as in other SU  ", 
+             programs.</p>
+
+          <p> Because most of the tools in the SU package (such as  unif2, unisam2, ", 
+              and makevel) produce output with the structure [ix][iz], you will
+              need to transpose the velocity files created by these programs. You may
+              use the SU program 'Transpose' in SU to transpose such files into the  
+              required [iz][ix] structure.</p>
+          
+          <p> Trace header fields accessed: number of depth samples, time sampling interval, 
+              delay recording time, midpoint sampling interval.</p>
+          <p> Trace header fields modified: number of depth samples, time sampling interval, 
+              delay recording time.</p>
+
+
+          <a name="credits"></a>
+          <h2>Credits</h2>
+          <p>CWP Baoniu Han, bhan@dix.mines.edu, April 19th, 1998</p>
+
+           
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <int required="yes">
+        <keyword>nxo=</keyword>
+        <label>number of total horizontal output samples</label>
+        <value/>
+      </int>
+      <int required="yes">
+        <keyword>nxshot=</keyword>
+        <label>number of shot gathers to be migrated</label>
+        <value/>
+      </int>
+      <int required="yes">
+        <keyword>nz=</keyword>
+        <label>number of depth samples</label>
+        <value/>
+      </int>
+      <float required="yes">
+        <keyword>dx=</keyword>
+        <label>horizontal sampling interval</label>
+        <value/>
+      </float>
+      <float required="yes">
+        <keyword>dz=</keyword>
+        <label>depth sampling interval</label>
+        <value/>
+      </float>
+      <file required="yes" directory="no">
+        <keyword>vfile=</keyword>
+        <label>name of file containing velocities</label>
+        <value/>
+      </file>
+      <int required="no">
+        <keyword>dip=</keyword>
+        <label>the maximum dip to migrate</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>fmax=</keyword>
+        <label>peak frequency</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>f1=</keyword>
+        <label>first frequency to build a Hamming window</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>f2=</keyword>
+        <label>second frequency to build a Hamming window</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>f3=</keyword>
+        <label>third frequency to build a Hamming window</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>f4=</keyword>
+        <label>fourth frequency to build a Hamming window</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>lpad=</keyword>
+        <label>number of zero traces padded on left side</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>rpad=</keyword>
+        <label>number of zero traces padded on rigth side</label>
+        <value/>
+      </int>
+      <flag>
+        <keyword>verbose=1</keyword>
+        <label>show additional runtime information</label>
+        <state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

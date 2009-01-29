@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.2.2">
+  <filename>sutab.mnu</filename>
+  <title>SU Tab</title>
+  <description>print non zero header values and data for non-graphic terminals</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Tab</title>
+    </header>
+    <body>
+  <h1>SUTAB</h1>
+
+  <h2>print non zero header values and data for non-graphic
+  terminals</h2>
+  <pre>
+sutab &lt;stdin itmin=0 itmax=last_sample count=all
+</pre>
+
+  <h3>Required parameters:</h3>
+
+  <p>none</p>
+
+  <h3>Optional parameters:</h3>
+
+  <ul>
+    <li>itmin=0 first time sample (zero-based) to plot</li>
+
+    <li>itmax= (last sample) last time sample (zero-based) to plot</li>
+
+    <li>count= (all traces) number of traces to plot</li>
+  </ul>
+
+  <h3>Example:</h3>
+  <pre>
+        sutab &lt;DATA itmin=32 itmax=63 count=10
+</pre>
+
+  <p><br>
+  <br></p>
+
+  <p>Requests tab plot of samples 32 to 63 on the first 10 traces
+  of DATA.</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="no" status="unconfigured">
+    <menu index="0">sutab.mnu</menu>
+    <title>SU Tab</title>
+    <binary>sutab</binary>
+    <description>print non zero header values and data for non-graphic terminals</description>
+    <help><![CDATA[<pre>
+    SUTAB - print non zero header values and data for non-graphic terminals
+
+    sutab &lt;stdin itmin=0 itmax=last_sample count=all
+
+    Required parameters:
+        none
+
+    Optional parameters:
+        itmin=0                 first time sample (zero-based) to plot
+        itmax= (last sample)    last time sample (zero-based) to plot
+        count= (all traces)     number of traces to plot
+
+    Example:
+        sutab &lt;DATA itmin=32 itmax=63 count=10
+    Requests tab plot of samples 32 to 63 on the first 10 traces of DATA.
+    </pre>]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <int required="yes">
+	<keyword>itmin=</keyword>
+	<label>first time sample (zero-based) to plot</label>
+	<value default="0"/>
+      </int>
+      <int required="no">
+	<keyword>itmax=</keyword>
+	<label>last time sample (zero-based) to plot</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>count=</keyword>
+	<label>number of traces to plot</label>
+	<value/>
+      </int>
+    </parameters>
+  </program>
+</flow>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.0" nextid="n6">
-  <filename>cat.mnu</filename>
-  <title>Concatenate</title>
-  <description>Concatenate files</description>
+<flow version="0.3.0" nextid="n1">
+  <filename>suabshw.mnu</filename>
+  <title>SU ABS HW</title>
+  <description>Replace header key word by its absolute value</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -12,7 +12,7 @@
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
-  <title>G&ecirc;BR - Concatenate</title>
+  <title>G&ecirc;BR - SU ABS HW</title>
 </head>
 
 <body>
@@ -20,16 +20,16 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <span class="flowtitle">Concatenate</span>
+          <span class="flowtitle">SU ABS HW</span>
 
           <div class="description">
-            Concatenate files
+            Replace header key word by its absolute value
           </div>
         </div>
       </div>
 
       <div class="category">
-        File tools | Shell tools
+        Editing, Sorting and Manipulation | Seismic Unix
       </div>
 
       <div class="main">
@@ -38,14 +38,14 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Concatenate files sequentialy.</p>
+          <p>This simple flow replaces values of a selected keyword by their absolute values.</p>
 
-	    
+
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>Feb 19, 2008: created by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
-             Jan 23, 2009: revised by Ricardo Biloti &lt;biloti@gmail·com&gt;</p>
+          <p>Oct 08, 2007: written by Ricardo Biloti, UNICAMP, biloti@gmail.com </p>
+          <p>Mar 17, 2008: revised by Daniela Amazonas, UFPA, daniela.amazonas@gmail.com</p>
         </div>
 
         <div class="navigation">
@@ -53,6 +53,7 @@
 
           <ul>
             <li><a href="#intro">Introduction</a></li>
+
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -61,7 +62,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.7 (0.3.0) | Jan 23, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | Mar 17, 2008</span>
 
         <div class="clearer"></div>
       </div>
@@ -70,24 +71,20 @@
 </body>
 </html>
 ]]></help>
-  <author>Ricardo Biloti</author>
-  <email>biloti@gmail.com</email>
-  <date>
-    <created/>
-    <modified/>
-    <lastrun/>
-  </date>
-  
-  <category>File tools</category><category>Shell tools</category><io>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io>
     <input/>
     <output/>
     <error/>
   </io>
-  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured">
-    <menu index="0">cat.mnu</menu>
-    <title>Concatenate</title>
-    <binary>cat</binary>
-    <description>Concatenate files</description>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suabshw.mnu</menu>
+    <title>SU ABS HW</title>
+    <binary>suabshw</binary>
+    <description>Replace header key word by its absolute value</description>
     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -97,7 +94,7 @@
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
-  <title>G&ecirc;BR - Concatenate</title>
+  <title>G&ecirc;BR - SU ABS HW</title>
 </head>
 
 <body>
@@ -105,16 +102,16 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <span class="flowtitle">Concatenate</span>
+          <span class="flowtitle">SU ABS HW</span>
 
           <div class="description">
-            Concatenate files
+            Replace header key word by its absolute value
           </div>
         </div>
       </div>
 
       <div class="category">
-        File tools | Shell tools
+        Editing, Sorting and Manipulation | Seismic Unix
       </div>
 
       <div class="main">
@@ -123,23 +120,26 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Concatenate file sequentialy.</p>
+          <p>This program replaces values of a keyword header by their absolute
+	     values.</p>
 
           <div class="parameters">
 
             <a name="par" id="par"></a>
-            <h2>Required parameters</h2>
 
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
             <ul>
-              <li><span class="label">[Files to concatenate]</span> specifies as many files as you want concatenate.</li>
-
-          </ul>
+              <li><span class="label">[Header keyword]</span> Enter one of
+	      the header keyword (offset, cdp, sx, sy, gx, gy,...)</li>
+            </ul>
           </div>
-	    
+
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>This program employs the cat shell command, written by Torbjorn Granlund and Richard M. Stallman as part of GNU core utils.</p>
+          <p>CWP: Jack K. Cohen</p>
         </div>
 
         <div class="navigation">
@@ -147,7 +147,9 @@
 
           <ul>
             <li><a href="#intro">Introduction</a></li>
+
             <li><a href="#par">Parameters</a></li>
+
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -156,7 +158,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.7 (0.3.0) | cat 5.97</span>
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | SU 40</span>
 
         <div class="clearer"></div>
       </div>
@@ -165,9 +167,12 @@
 </body>
 </html>
 ]]></help>
-    <url>http://www.gnu.org/software/coreutils/</url>
-    <parameters exclusive="0">
-      
-    <parameter id="n1"><label>Files to concatenate</label><group instanciable="yes" expand="yes"><parameters exclusive="0"><parameter id="n2"><label>File</label><file directory="no"><property required="no"><keyword/><value/><default/></property></file></parameter></parameters><parameters exclusive="0"><parameter id="n5"><label>File</label><reference idref="n2"><property required="no"><keyword/><value></value><default></default></property></reference></parameter></parameters></group></parameter></parameters>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Header key word</label><string><property required="no"><keyword>key=</keyword><value></value><default>offset</default></property>
+        
+        
+        
+      </string></parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>suvelan_uccs.mnu</filename>
+  <title>SU Velan Uccs</title>
+  <description>Compute stacking velocity panel for cdp gathers</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Velan Uccs</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Velan Uccs</span>
+
+          <div class="description">
+            Compute stacking velocity panel for cdp gathers
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Compute stacking velocity panel for cdp gathers using UnNormalized CrossCorrelation Sum.</p>
+	    
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  
+  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category><io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suvelan_uccs.mnu</menu>
+    <title>SU Velan Uccs</title>
+    <binary>suvelan_uccs</binary>
+    <description>Compute stacking velocity panel for cdp gathers</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Velan Uccs</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Velan Uccs</span>
+	  <div class="description">Compute stacking Velocity panel for cdp gathers</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[Number of traces in cdp]</span></li>
+	  
+	  <li><span class="label">[Number of velocities]</span></li>
+
+	  <li><span class="label">[Velocity sampling interval]</span></li>
+	  
+	  <li><span class="label">[First velocity]</span></li>
+	  
+	  <li><span class="label">[Samples with NMO stretch exceeding smute are zeroed]</span></li>
+	  
+	  <li><span class="label">[Ratio of output to input time sampling intervals]</span></li>
+	  
+	  <li><span class="label">[Length of smoothing window]</span></li>
+
+	  <li><span class="label">[Echoing information]</span></li>
+	  
+	  <li><span class="label">[Semblance value to the power]</span></li>
+
+	  </ul>
+	
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	 <p>Unnormalized crosscorrelation sum: sum all possible crosscorrelation trace pairs in a CMP gather for each trial velocity and zero-offset two-way travel time inside a time window. This unnormalized coherency measure produces large spectral amplitudes for strong reflections and small spectral amplitudes for weaker ones. If M is the number of traces in the CMP gather M(M-1)/2 is the total number of crosscorrelations for each trial velocity and zero-offset two-way traveltime.</p>
+
+	  <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+	  <!-- List of references -->
+          <ul>
+            <li>Neidell, N.S., and Taner, M.T., 1971, Semblance and other coherency measures for multichannel data: Geophysics, 36, 498&ndash;509.</li>
+          </ul>
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>CWP:  Valmore Celis, Sept 2002</p>
+
+          <p>Based on the original code: suvelan.c <br />
+             Colorado School of Mines: Dave Hale c. 1989.</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <int required="no">
+        <keyword>nx=</keyword>
+        <label>number of traces in cdp </label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>nv=</keyword>
+        <label>number of velocities</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dv=</keyword>
+        <label>velocity sampling interval</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>fv=</keyword>
+        <label>first velocity</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>smute=</keyword>
+        <label>samples with NMO stretch exceeding smute are zeroed</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dtratio=</keyword>
+        <label>ratio of output to input time sampling intervals</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>nsmooth=</keyword>
+        <label>length of smoothing window</label>
+        <value/>
+      </float>
+      <flag>
+        <keyword>verbose=1</keyword>
+        <label>echoing information</label>
+        <state default="off"/>
+      </flag>
+      <float required="no">
+        <keyword>pwr=</keyword>
+        <label>semblance value to the power </label>
+        <value/>
+      </float>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>sukdmig2d.mnu</filename>
+  <title>SU Kirchhoff mig 2D</title>
+  <description>Kirchhoff Depth Migration of 2D poststack or prestack data</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Kirchhoff mig 2D</title>
+    </header>
+    <body>
+    <h1>SU Kirchhoff mig 2D</h1>
+    <p>Kirchhoff Depth Migration of 2D poststack or prestack data</p>
+    </body>
+    </html>
+    ]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured">
+    <menu index="0">sukdmig2d.mnu</menu>
+    <title>SU KDMIG 2D</title>
+    <binary>sukdmig2d</binary>
+    <description>Kirchhoff Depth Migration of 2D poststack or prestack data</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU KDMIG 2D</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU KDMIG 2D</span>
+          <div class="description">Kirchhoff Depth Migration of 2D poststack or prestack data</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+        <div class="parameters">
+
+          <a name="par"></a>
+          <h2>Required parameters</h2>
+          <ul>
+          
+          <li><span class="label">[file for input seismic traces]</span></li>
+
+          <li><span class="label">[file for common offset migration output]</span></li>
+
+          <li><span class="label">[file for input traveltime tables]</span></li>
+
+          <li><span class="label">[first depth sample in traveltime table]</span></li>
+
+          <li><span class="label">[number of depth samples in traveltime table]</span></li>
+
+          <li><span class="label">[depth interval in traveltime table]</span></li>
+
+          <li><span class="label">[first lateral sample in traveltime table]</span></li>
+
+          <li><span class="label">[number of lateral samples in traveltime table]</span></li>
+
+          <li><span class="label">[lateral interval in traveltime table]</span></li>
+
+          <li><span class="label">[x-coordinate of first source]</span></li>
+
+          <li><span class="label">[number of sources]</span></li>
+
+          <li><span class="label">[x-coordinate increment of sources]</span></li>
+
+          </ul>
+
+          <h2>Optional parameters</h2>
+          
+          <ul>
+          
+          <li><span class="label">[time sampling interval of input data]</span></li>
+          
+          <li><span class="label">[first time sample of input data]</span></li>
+          
+          <li><span class="label">[sampling interval of midpoints]</span></li>
+          
+          <li><span class="label">[z-coordinate of first point in output trace]</span></li>
+          
+          <li><span class="label">[vertical spacing of output trace]</span></li>
+
+          <li><span class="label">[number of points in output trace]</span></li>
+
+          <li><span class="label">[x-coordinate of first output trace]</span></li>
+          
+          <li><span class="label">[horizontal spacing of output trace]</span></li>
+          
+          <li><span class="label">[number of output traces]</span></li>
+          
+          <li><span class="label">[first offest in output]</span></li>
+          
+          <li><span class="label">[offset increment in output]</span></li>
+
+          <li><span class="label">[number of offsets in output]</span></li>
+
+          <li><span class="label">[flag for using absolute offsets of input traces]</span></li>
+
+          <li><span class="label">[flag for only using input traces that fall within the range
+                                   of defined output offset bins]</span></li>
+          
+          <li><span class="label">[frequency-highcut for input traces]</span></li>
+          
+          <li><span class="label">[maximum absolute offset allowed in migration]</span></li>
+          
+          <li><span class="label">[migration lateral aperature]</span></li>
+          
+          <li><span class="label">[migration angle aperature from vertical]</span></li>
+
+          <li><span class="label">[reference velocity value at surface]</span></li>
+
+          <li><span class="label">[reference velocity vertical gradient]</span></li>
+
+          <li><span class="label">[flag for line source]</span></li>
+          
+          <li><span class="label">[job print file name]</span></li>
+          
+          <li><span class="label">[print verbal information at every traces]</span></li>
+          
+          <li><span class="label">[maximum number of input traces to be migrated]</span></li>
+          
+          <li><span class="label">[flag of computing quantities for velocity analysis]</span></li>
+
+          <li><span class="label">[for roundoff error suppression]</span></li>
+
+          <li><span class="label">[input file of traveltime variation tables]</span></li>
+
+          <li><span class="label">[input file of cosine tables]</span></li>
+
+          <li><span class="label">[file containning additional migration output with extra amplitude]</span></li>
+
+          </ul>
+        
+        </div>
+        
+          <a name="notes"></a>
+          <h2>Notes</h2>
+
+          <p>Traveltime tables were generated by flow SU Ray tracing 2D (or other ones)
+          on relatively coarse grids. In the migration process, traveltimes are interpolated into shot/gephone 
+          positions and output grids.</p>
+
+          <p>Input seismic traces must be SU format and can be any type of 
+          gathers (common shot, common offset, common CDP, and so on).</p>
+
+          <p>Migrated traces are output in CDP gathers if velocity analysis
+          is required.</p>
+
+          <p>If the offset value of an input trace is not in the offset array 
+          of output, the nearest one in the array is chosen.</p>
+
+          <p>Amplitudes are computed using the reference velocity profile.</p>
+
+          <p>Input traces must specify source and receiver positions via the header
+          fields. Offset is computed automatically.</p>
+
+          <a name="credits"></a>
+          <h2>Credits</h2>
+          <p>CWP: Zhenyue Liu<br />
+             Talisman Energy: Gary Billings</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <file required="yes" directory="no">
+        <keyword>infile=</keyword>
+        <label>file for input seismic traces</label>
+        <value/>
+      </file>
+      <file required="yes" directory="no">
+        <keyword>outfile=</keyword>
+        <label>file for common offset migration output</label>
+        <value/>
+      </file>
+      <file required="yes" directory="no">
+        <keyword>ttfile=</keyword>
+        <label>file for input traveltime tables</label>
+        <value/>
+      </file>
+      <int required="yes">
+        <keyword>fzt=</keyword>
+        <label>first depth sample in traveltime table</label>
+        <value/>
+      </int>
+      <int required="yes">
+        <keyword>nzt=</keyword>
+        <label>number of depth samples in traveltime table</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>dzt=</keyword>
+        <label>depth interval in traveltime table</label>
+        <value/>
+      </float>
+      <int required="yes">
+        <keyword>fxt=</keyword>
+        <label>first lateral sample in traveltime table</label>
+        <value/>
+      </int>
+      <int required="yes">
+        <keyword>nxt=</keyword>
+        <label>number of lateral samples in traveltime
+        table</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>dxt=</keyword>
+        <label>lateral interval in traveltime table</label>
+        <value/>
+      </float>
+      <float required="yes">
+        <keyword>fs=</keyword>
+        <label>x-coordinate of first source</label>
+        <value/>
+      </float>
+      <int required="yes">
+        <keyword>ns=</keyword>
+        <label>number of sources</label>
+        <value/>
+      </int>
+      <float required="yes">
+        <keyword>ds=</keyword>
+        <label>x-coordinate increment of sources</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dt=</keyword>
+        <label>time sampling interval of input data</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>ft=</keyword>
+        <label>first time sample of input data</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dxm=</keyword>
+        <label>sampling interval of midpoints</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>fzo=</keyword>
+        <label>z-coordinate of first point in output trace</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dzo=</keyword>
+        <label>vertical spacing of output trace</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>nzo=</keyword>
+        <label>number of points in output trace</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>fxo=</keyword>
+        <label>x-coordinate of first output trace</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dxo=</keyword>
+        <label>horizontal spacing of output trace</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>nxo=</keyword>
+        <label>number of output traces</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>off0=</keyword>
+        <label>first offest in output</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>doff=</keyword>
+        <label>offset increment in output</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>noff=</keyword>
+        <label>number of offsets in output</label>
+        <value/>
+      </int>
+      <flag>
+        <keyword>absoff=1</keyword>
+        <label>flag for using absolute offsets of input
+        traces</label>
+        <state default="off"/>
+      </flag>
+      <flag>
+        <keyword>limoff=1</keyword>
+        <label>flag for only using input traces that fall within
+        the range</label>
+        <state default="off"/>
+      </flag>
+      <float required="no">
+        <keyword>fmax=</keyword>
+        <label>frequency-highcut for input traces</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>offmax=</keyword>
+        <label>maximum absolute offset allowed in migration</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>aperx=</keyword>
+        <label>migration lateral aperature</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>angmax=</keyword>
+        <label>migration angle aperature from vertical</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>v0=</keyword>
+        <label>reference velocity value at surface</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dvz=</keyword>
+        <label>reference velocity vertical gradient</label>
+        <value/>
+      </float>
+      <flag>
+        <keyword>ls=1</keyword>
+        <label>flag for line source</label>
+        <state default="off"/>
+      </flag>
+      <string required="no">
+        <keyword>jpfile=</keyword>
+        <label>job print file name</label>
+        <value/>
+      </string>
+      <int required="no">
+        <keyword>mtr=</keyword>
+        <label>print verbal information at every traces</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>ntr=</keyword>
+        <label>maximum number of input traces to be
+        migrated</label>
+        <value/>
+      </int>
+      <flag>
+        <keyword>npv=1</keyword>
+        <label>flag of computing quantities for velocity
+        analysis</label>
+        <state default="off"/>
+      </flag>
+      <float required="no">
+        <keyword>rscale=</keyword>
+        <label>scaling for roundoff error suppression</label>
+        <value/>
+      </float>
+      <file required="no" directory="no">
+        <keyword>tvfile=</keyword>
+        <label>input file of traveltime variation tables</label>
+        <value/>
+      </file>
+      <file required="no" directory="no">
+        <keyword>csfile=</keyword>
+        <label>input file of cosine tables</label>
+        <value/>
+      </file>
+      <file required="no" directory="no">
+        <keyword>outfile1=</keyword>
+        <label>file containning additional migration output with
+        extra amplitude</label>
+        <value/>
+      </file>
+    </parameters>
+  </program>
+</flow>

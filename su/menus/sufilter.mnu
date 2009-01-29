@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n4">
+  <filename>sufilter.mnu</filename>
+  <title>SU Filter</title>
+  <description>Applies a zero-phase, sine-squared tapered filter</description>
+  <help><![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share/gebrme/gebr.css" media=
+  "screen" />
+  <title>GeBR - SU Filter</title>
+</head>
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Filter</span>
+	  <div class="description">Applies a zero-phase, sine-squared tapered filter</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Filtering, Transforms and Attributes | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+           <p>Set 15, 2007: written by UFPA - G&ecirc;BR Core Team</p>
+           <p>Oct 05, 2007: modified by Ricardo Biloti, UNICAMP - biloti@gmail.com</p>
+           <p>Jun 11, 2008: revised by Daniela Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sufilter.mnu</menu>
+    <title>SU Filter</title>
+    <binary>sufilter</binary>
+    <description>Applies a zero-phase, sine-squared tapered filter</description>
+    <help><![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share/gebrme/gebr.css" media=
+  "screen" />
+  <title>GeBR - SU Filter</title>
+</head>
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Filter</span>
+	  <div class="description">Applies a zero-phase, sine-squared tapered filter</div>
+        </div>
+      </div><!-- header -->
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+	  <p>The time sampling rate (in seconds) is mandatory. 
+             Nevertheles, it can be acquired from data header.
+             Otherwise, it should be provided by the user.</p>
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[Array of filter frequencies]</span>
+	  A list of frequencies to filter, separated by commas.
+	  For example: 10,20,50,65</li>
+	  
+	  <li><span class="label">[Array of filter amplitudes]</span>A 
+	  list of corresponding filter amplitudes.</li>
+	  
+	  <li><span class="label">[Echoing useful information]</span>
+	  A flag to send to error log some information.
+	  </li>
+	  
+	  </ul>
+	
+	</div>
+	
+          <div class="example">
+	  <a name="example"></a>
+	  <h2>Examples</h2>
+
+	  <ul>
+	     <li>Band pass: Define the array of frequencies as
+	         10,20,40,50</li>
+
+	     <li>Band reject: Define the array of frequencies as
+	         10,20,30,40; and define the array of amplitudes as
+                 1.0,0.0,0.0,1.0.</li>
+	
+	     <li>Lowpass: Define the array of frequencies as
+	         10,20,40,50; and define the array of amplitudes as
+                 1.0,1.0,0.0,0.0.</li>
+
+             <li>Highpass: Define the array of frequencies as
+	         10,20,40,50; and define the array of amplitudes as
+                 0.0,0.0,1.0,1.0.</li>
+
+             <li>Notch: Define the array of frequencies as
+	         10,12.5,35,50,60; and define the array of amplitudes as
+                 1.0,0.5,0.0,0.5,1.0.</li>
+          </ul>
+
+	  </div>
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+           <p>CWP: John Stockwell, Jack Cohen<br />
+              CENPET: Werner M. Heigl - added well log support</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#example">Examples</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n1"><label>Array of filter frequencies</label><float><property required="no" separator=","><keyword>f=</keyword><value/><default/></property></float></parameter>
+      <parameter id="n2"><label>Array of filter amplitudes</label><float><property required="no" separator=","><keyword>amps=</keyword><value/><default/></property></float></parameter>
+      <parameter id="n3"><label>Echoing useful information</label><flag><property required="no"><keyword>verbose=1</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+    </parameters>
+  </program>
+</flow>

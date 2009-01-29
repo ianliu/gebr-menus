@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>sutivel.mnu</filename>
+  <title>SU TI vel</title>
+  <description>SU Transversely Isotropic velocity table builder</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU TI vel</title>
+    </header>
+    <body>
+    <h1>SU TI vel</h1>
+    <p>SU Transversely Isotropic velocity table builder. Computes vnmo
+    or vphase as a function of Thomsen's parameters and theta and
+    optionally interpolate to constant increments in slowness</p>
+    </body>
+    </html>
+    ]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sutivel.mnu</menu>
+    <title>SU TI vel</title>
+    <binary>sutivel</binary>
+    <description>SU Transversely Isotropic velocity table builder</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU TI vel</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU TI vel</span>
+	  <div class="description">SU Transversely Isotropic velocity table builder</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Simulation and Model Building | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+	  <p>none</p>
+          
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  <li><span class="label">[Alpha (vertical p velocity)]</span></li>
+
+	  <li><span class="label">[Beta (vertical sv velocity]</span></li>
+
+          <li><span class="label">[Epsilon (horiz p-wave anisotropy)]</span></li>
+
+          <li><span class="label">[Delta (strange parameter)]</span></li>
+
+	  <li><span class="label">[Number of angles to compute]</span></li>
+
+          <li><span class="label">[Max angle in degrees]</span></li>
+
+          <li><span class="label">[Echoing  information]</span>Set to 1 to see full listing</li>
+
+	  <li><span class="label">[Number of slowness]</span>Number of slowness values to output</li>
+
+          <li><span class="label">[Velocity option]</span>The options are<br>
+               1-output vnmo(p) (result used for TI DMO)</br>
+               2-output vnmo(theta) in degrees</br>
+               3-output vnmo(theta) in radians</br>
+               4-output vphase(p)</br>
+               5-output vphase(theta) in degrees</br>
+               6-output vphase(theta) in radians</br>
+               7-output first derivative vphase(p)</br>
+               8-output first derivative vphase(theta) in degrees</br>
+               9-output first derivative vphase(theta) in radians</br>
+               10-output second derivative vphase(p)</br>
+               11-output second derivative vphase(theta) in degrees</br>
+               12-output second derivative vphase(theta) in radians</br>
+               13-( 1/vnmo(0)^2 -1/vnmo(theta)^2 )/p^2 test vs theta (result should be zero for all theta for d=e)</br>
+               14-return vnmo(p) for weak anisotropy</li>
+          
+          <li><span class="label">[Normalize]</span>Normalize=1 means scale vnmo by cosine and scale vphase by 1/sqrt(1+2*e*sin(theta)*sin(theta) (only useful for vphase when delta=epsilon for constant result).<br>
+                                                    Normalize=0 means output vnmo or vphase unnormalized.</li>
+
+          </ul>
+	  	
+	</div>
+	
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>(Visitor to CSM from Mobil) John E. Anderson Spring 1994</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    ]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <float required="no">
+        <keyword>a=</keyword>
+        <label>alpha (vertical p velocity)</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>b=</keyword>
+        <label>beta (vertical sv velocity)</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>e=</keyword>
+        <label>epsilon (horiz p-wave anisotropy)</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>d=</keyword>
+        <label>delta (strange parameter)</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>nangle=</keyword>
+        <label>number of angles to compute</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>maxangle=</keyword>
+        <label>max angle in degrees</label>
+        <value/>
+      </float>
+      <flag>
+        <keyword>verbose=1</keyword>
+        <label>echoing information</label>
+        <state default="off"/>
+      </flag>
+      <int required="no">
+        <keyword>np=</keyword>
+        <label>number of slowness</label>
+        <value/>
+      </int>
+      <range min="1" max="14" inc="1" required="no" digits="">
+        <keyword>option=</keyword>
+        <label>velocity option</label>
+        <value default="1"/>
+      </range>
+      <flag>
+        <keyword>normalize=1</keyword>
+        <label>normalize</label>
+        <state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>sutaup.mnu</filename>
+  <title>SU Taup</title>
+  <description>Forwared and inverse T-X and F-K global slant stacks</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Taup</title>
+    </header>
+    <body>
+    <h1>SU Taup</h1>
+    <p>forwared and inverse T-X and F-K global slant stacks.</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Seismic Unix</category>
+  <category>Filtering, Transforms and Attributes</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sutaup.mnu</menu>
+    <title>SU Taup</title>
+    <binary>sutaup</binary>
+    <description>Forwared and inverse T-X and F-K global slant stacks</description>
+     <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" media=
+  "screen" />
+
+  <title>G&ecirc;BR - SU Taup</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Taup</span>
+	  <div class="description">Forwared and inverse T-X and F-K global slant stacks</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+         Filtering, Transforms and Attributes | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+	  <p>None</p>
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[Option]</span><ul><li>1 - forward F-K domain computation</li>
+                                                     <li>2 - forward T-X domain computation</li>
+                                                     <li>3 - inverse F-K domain computation</li>
+                                                     <li>4 - inverse T-X domain computation</li></ul></li>
+
+          <li><span class="label">[Time sampling interval]</span>time sampling interval (secs)</li>
+
+          <li><span class="label">[Number of horizontal samples]</span>number of horizontal samples (traces)</li>
+
+          <li><span class="label">[Horizontal sampling interval]</span>horizontal sampling interval (m)</li>
+
+          <li><span class="label">[Number of points for rho filter]</span></li>
+
+          <li><span class="label">[Minimum slope for Tau-P transform]</span>minimum slope for Tau-P transform (s/m)</li>
+
+          <li><span class="label">[Maximum slope for Tau-P transform]</span>maximum slope for Tau-P transform (s/m)</li>
+
+          <li><span class="label">[Number of slopes for Tau-P transform]</span></li>
+
+          <li><span class="label">[Number of time samples in Tau-P domain]</span></li>
+
+          <li><span class="label">[minimum frequency of interest]</span></li>
+          
+          <li><span class="label">[echoes information]</span></li>
+
+          <li><span class="label">[temporary file]</span>use the value as a directory path prefix for storing temporary files;</li>
+          </ul>
+	  	
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	  <p>The cascade of a forward and inverse  tau-p transform preserves the
+             relative amplitudes in a data panel, but not the absolute amplitudes/>
+             meaning that a scale factor must be applied to data output by such a/>
+             a cascade before the output may be compared to the original data./>
+             This is a characteristic of the algorithm employed in this program.</p>
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>CWP: Gabriel Alvarez, 1995.</p>
+
+	  <a name="ref"></a>
+	  <h2>References</h2>
+	  <p> Levin, F., editor, 1991, Slant-Stack Processing, Geophysics Reprint
+	  Series #14, SEG Press, Tulsa.</p>
+
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    ]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <range min="1" max="4" inc="1" required="no" digits="">
+        <keyword>option=</keyword>
+        <label>option</label>
+        <value default="1"/>
+      </range>
+      <float required="no">
+        <keyword>dt=</keyword>
+        <label>time sampling interval</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>nx=</keyword>
+        <label>number of horizontal samples</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>dx=</keyword>
+        <label>horizontal sampling interval</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>npoints=</keyword>
+        <label>number of points for rho filter</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>pmin=</keyword>
+        <label>minimum slope for Tau-P transform</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>pmax=</keyword>
+        <label>maximum slope for Tau-P transform</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>np=</keyword>
+        <label>number of slopes for Tau-P transform</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>ntau=</keyword>
+        <label>number of time samples in Tau-P domain</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>fmin=</keyword>
+        <label>minimum frequency of interest</label>
+        <value/>
+      </float>
+      <flag>
+        <keyword>verbose=1</keyword>
+        <label>echoes information</label>
+        <state default="off"/>
+      </flag>
+      <file required="no" directory="yes">
+        <keyword>tempdir=</keyword>
+        <label>directory to store temporary file</label>
+        <value/>
+      </file>
+    </parameters>
+  </program>
+</flow>

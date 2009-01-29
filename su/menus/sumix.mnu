@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.2.2">
+  <filename>sumix.mnu</filename>
+  <title>SU Mix</title>
+  <description>compute weighted moving average (trace MIX) on a panel of seismic data</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Mix</title>
+    </header>
+    <body>
+    <h1>SU Mix</h1>
+    <p>Compute weighted moving average (trace MIX) on a panel of seismic data</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sumix.mnu</menu>
+    <title>SU Mix</title>
+    <binary>sumix</binary>
+    <description>compute weighted moving average (trace MIX) on a panel of seismic data</description>
+    <help><![CDATA[<pre>
+ SUMIX - compute weighted moving average (trace MIX) on a panel
+	  of seismic data
+
+ sumix &lt;stdin &gt;sdout
+ mix=.6,1,1,1,.6	array of weights for weighted average
+
+
+ Note:
+ The number of values defined by mix=val1,val2,... determines the number
+ of traces to be averaged, the values determine the weights.
+
+ Examples:
+ sumix &lt;stdin mix=.6,1,1,1,.6 &gt;sdout 	(default) mix over 5 traces weights
+ sumix &lt;stdin mix=1,1,1 &gt;sdout 	simple 3 trace moving average
+      </pre>]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <string required="no">
+	<keyword>mix=</keyword>
+	<label>array of weights for weighted average</label>
+	<value default=""/>
+      </string>
+    </parameters>
+  </program>
+</flow>

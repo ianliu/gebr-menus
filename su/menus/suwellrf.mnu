@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>suwellrf.mnu</filename>
+  <title>SU Wellrf</title>
+  <description>Convert well log depth, velocity, density data</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Wellrf</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Wellrf</span>
+
+          <div class="description">
+            Convert well log depth, velocity, density data
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Seismic Unix | Simulation and Model Building
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Convert WELL log depth, velocity, density data into a
+             uniformly sampled normal incidence Reflectivity Function of time.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suwellrf.mnu</menu>
+    <title>SU Wellrf</title>
+    <binary>suwellrf</binary>
+    <description>Convert well log depth, velocity, density data</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Wellrf</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Wellrf</span>
+	  <div class="description">Convert WELL log depth, velocity, density data</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Simulation and Model Building | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+	  <ul>
+
+          <li><span class="label">[File containing depth, velocity, and density values]</span></li>
+
+          <li><span class="label">[File containing depth and velocity values]</span></li>
+
+          <li><span class="label">[File containing depth and density values]</span></li>
+
+          <li><span class="label">[File containing depth values]</span></li>
+
+          <li><span class="label">[File containing velocity log values]</span></li>
+
+          <li><span class="label">[File containing density log values]</span></li>
+
+	  <li><span class="label">[Number of traces to output]</span>number of triplets of d,v,r values if dvrfile is set, number of pairs of d,v and d,r values dvfile and drfile are set, or number of values if dfile, vfile, and rhofile are set</li>
+
+          </ul>
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[Number of triplets of d,v,r values]</span></li>
+	
+	  <li><span class="label">[Desired time sampling interval (sec)i n output]</span></li>
+
+        </ul>
+
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+          
+           <p>The format of the input file(s) is C-style binary float. These files may be constructed from ascii file via:<br>
+                                a2b n1=3 < dvrfile.ascii > dvrfile.bin<br>
+                                                  ...or...<br>
+                                a2b n1=2 < dvfile.ascii > dvfile.bin<br>
+                                a2b n1=2 < drfile.ascii > drfile.bin<br>
+                                                   ..or...<br>
+                                a2b n1=1 < dfile.ascii > dfile.bin<br>
+                                a2b n1=1 < vfile.ascii > dfile.bin<br>
+                                a2b n1=1 < rhofile.ascii > rhofile.bin</p>
+
+           <p>A raw normal-incidence impedence reflectivity as a function of time is generated using the smallest two-way traveltime implied by the input velocities as the time sampling interval. This raw reflectivity trace is then resampled to the desired output time sampling interval via 8 point sinc interpolation. If the number of samples on the output exceeds SU_NFLTS the output trace will be truncated to that value.</p>
+	
+           <p>This program is really only a first rough attempt at creating a well log utility. User input and modifications are welcome.</p>
+
+           <p>See also:  suresamp</p>
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+          
+          <p>Author: CWP: John Stockwell, Summer 2001, updated Summer 2002.<br>
+             Inspired by a project by GP grad student Leo BrownCWP: John Stockwell February 1999</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <file required="yes" directory="no">
+        <keyword>dvrfile=</keyword>
+        <label>file containing depth, velocity, and density values</label>
+        <value/>
+      </file>
+      <file required="yes" directory="no">
+        <keyword>dvfile=</keyword>
+        <label>file containing depth and velocity values</label>
+        <value/>
+      </file>
+      <file required="no" directory="no">
+        <keyword>drfile=</keyword>
+        <label>file containing depth and density values</label>
+        <value/>
+      </file>
+      <file required="yes" directory="no">
+        <keyword>dfile=</keyword>
+        <label>file containing depth values</label>
+        <value/>
+      </file>
+      <file required="yes" directory="no">
+        <keyword>vfile=</keyword>
+        <label>file containing velocity log values</label>
+        <value/>
+      </file>
+      <file required="yes" directory="no">
+        <keyword>rhofile=</keyword>
+        <label>file containing density log values</label>
+        <value/>
+      </file>
+      <file required="yes" directory="no">
+        <keyword>nval=</keyword>
+        <label>number of triplets of d,v,r values</label>
+        <value/>
+      </file>
+      <float required="no">
+        <keyword>dtout=</keyword>
+        <label>desired time sampling interval (sec)i n output</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>ntr=</keyword>
+        <label>number of traces to output</label>
+        <value/>
+      </float>
+    </parameters>
+  </program>
+</flow>

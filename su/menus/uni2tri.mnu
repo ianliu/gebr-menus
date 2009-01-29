@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.1.0">
+  <filename>uni2tri.mnu</filename>
+  <title>Uni2tri</title>
+  <description>Convert uniformly sampled model to a triangulated model</description>
+   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Uni2tri</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Uni2tri</span>
+
+          <div class="description">
+            Convert uniformly sampled model to a triangulated model
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Seismic Unix | Simulation and Model Building
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Convert uniformly sampled model to a triangulated model.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category><io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">uni2tri.mnu</menu>
+    <title>Uni2tri</title>
+    <binary>uni2tri</binary>
+    <description>Convert uniformly sampled model to a triangulated model</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Uni2tri</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Uni2tri</span>
+	  <div class="description">Convert uniformly sampled model to a triangulated model</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Seismic Unix | Simulation and Model Building
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+	  
+          <ul>
+
+          <li><span class="label">[Number of samples in first (fast) dimension]</span></li>
+
+          <li><span class="label">[Number of samples in second dimension]</span></li>
+
+          </ul>
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+          <li><span class="label">[Sampling interval in dimension 1]</span></li>
+
+          <li><span class="label">[Sampling interval in dimension 2]</span></li>
+
+          <li><span class="label">[First value in dimension 1]</span></li>
+
+          <li><span class="label">[First value in dimesion 2]</span></li>
+
+          <li><span class="label">[Triangulated model file used as initial model]</span></li>
+
+          <li><span class="label">[Maximum sloth error]</span></li>
+	  
+          <li><span class="label">[Echoing information]</span>Choose the option:<br />
+                         0 - for silence<br />
+                         1 - to report maximum error at each stage to stderr<br />
+                         2 - to also write the normalized error to efile</li>
+
+          <li><span class="label">[Filename for error file]</span>filename for error file (for echoing information option 2)</li>
+
+          <li><span class="label">[Output every mm-th intermediate model (0 for none)]</span></li>
+
+          <li><span class="label">[Intermediate models written to intmodel%d]</span></li>
+
+          <li><span class="label">[Method]</span>Choose the method:<br />
+                        1 - add 1 vertex at maximum error<br />
+                        2 - add vertex to every triangle that exceeds errmax<br />
+                        3 - method 2, but avoid closely spaced vertices	</li>
+
+          <li><span class="label">[closeness criterion for (in samples)]</span></li>
+
+          <li><span class="label">[sfill]</span>x, z, x0, z0, s00, dsdx, dsdz to fill a region.</li>
+
+          </ul>
+	  	
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	  <p>Triangles are constructed until the maximum error is not greater than the user-specified errmax. The default  maximum sloth error is 1% of the maximum value in the sampled input file.</p>
+
+          <p>After the uniform values have been triangulated, the optional sfill parameters are used to fill closed regions bounded by fixed edges. Let (x,z) denote any point inside a closed region. Values inside this region is determined by s(x,z) = s00+(x-x0)*dsdx+(z-z0)*dsdz. The (x,z) component of the sfill parameter is used to identify a closed region.</p>
+	
+          <p>The uniformly sampled quantity is assumed to be sloth=1/v^2</p>
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>AUTHOR:  Craig Artley, Colorado School of Mines, 03/31/94<br>
+             NOTE:  After a program outlined by Dave Hale, 12/27/90.</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <parameters>
+      <int required="yes">
+        <keyword>n1=</keyword>
+        <label>number of samples in first (fast) dimension</label>
+        <value/>
+      </int>
+      <int required="yes">
+        <keyword>n2=</keyword>
+        <label>number of samples in second dimension</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>d1=</keyword>
+        <label>sampling interval in dimension 1</label>
+        <value/>
+      </float>
+      <flag>
+        <keyword>d2=</keyword>
+        <label>sampling interval in dimension 2</label>
+        <state default="off"/>
+      </flag>
+      <float required="no">
+        <keyword>f1=</keyword>
+        <label>first value in dimension 1</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>f2=</keyword>
+        <label>first value in dimesion 2</label>
+        <value/>
+      </float>
+      <file required="no" directory="no">
+        <keyword>ifile=</keyword>
+        <label>triangulated model file used as initial model</label>
+        <value/>
+      </file>
+      <float required="no">
+        <keyword>errmax=</keyword>
+        <label>maximum sloth error</label>
+        <value/>
+      </float>
+      <range required="no" min="0" max="2" inc="1">
+        <keyword>verbose=</keyword>
+        <label>echoing information</label>
+        <value default="1.000000"/>
+      </range>
+      <file required="no" directory="no">
+        <keyword>efile=</keyword>
+        <label>filename for error file</label>
+        <value/>
+      </file>
+      <float required="no">
+        <keyword>mm=</keyword>
+        <label>output every mm-th intermediate model (0 for none)</label>
+        <value/>
+      </float>
+      <file required="no" directory="no">
+        <keyword> mfile=</keyword>
+        <label>intermediate models written to intmodel%d</label>
+        <value/>
+      </file>
+      <range required="no" min="1" max="3" inc="1">
+        <keyword>method=</keyword>
+        <label>method</label>
+        <value default="1.000000"/>
+      </range>
+      <float required="no">
+        <keyword>tol=</keyword>
+        <label>closeness criterion for (in samples)</label>
+        <value/>
+      </float>
+      <string required="no">
+        <keyword>sfill=</keyword>
+        <label>sfill</label>
+        <value/>
+      </string>
+    </parameters>
+  </program>
+</flow>

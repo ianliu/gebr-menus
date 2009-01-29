@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>suop2.mnu</filename>
+  <title>SU Binary arithmetic operations</title>
+  <description>Do a binary operation on two data sets</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Binary arithmetic operation</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Binary arithmetic operation</span>
+
+          <div class="description">
+            Do a binary operation on two data sets
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Do a binary operation on two data sets, such diff, sum,
+          prod, etc.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suop2.mnu</menu>
+    <title>SU Op 2</title>
+    <binary>suop2</binary>
+    <description>do a binary operation on two data sets</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Op 2</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Op 2</span>
+
+          <div class="description">
+            Do a binary operation on two data sets
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <div class="parameters">
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+	    <!-- List of required parameters -->
+            <ul>
+              <li><span class="label">[First data set]</span></li>
+              <li><span class="label">[Second data set]</span></li>
+            </ul>
+
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Operation]</span> defines the
+              binary operation to be applied. The allowed operations
+              are:</li>
+            </ul>
+	    <table>
+	    <tr><td>diff</td><td>difference of two panels of seismic data</td></tr>
+            <tr><td>sum</td><td> sum of two panels of seismic data</td></tr>
+            <tr><td>prod</td><td>product of two panels of seismic data</td></tr>
+            <tr><td>quo</td><td>quotient of two panels of seismic data</td></tr>
+            <tr><td>ptdiff</td><td>differences of a panel and single trace</td></tr>
+            <tr><td>ptsum</td><td>sum of a panel and single trace</td></tr>
+            <tr><td>ptprod&nbsp;&nbsp;</td><td>product of a panel and single trace</td></tr>
+            <tr><td>ptquo</td><td>quotient of a panel and single trace</td></tr>
+            <tr><td>zipper</td><td>do "zipper" merge of two panels</td></tr>
+	    </table>
+          </div>
+	    
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+	    <p>Output = data1 "op" data2 with the header of data1</p>
+
+	    <p>With op=quo and op=ptquo, divide by 0 is trapped and 0
+	    is returned.</p>
+	    
+	    <p>With op=zipper, it is possible to set the output trace
+	    id code (See: sukeyword trid) This option processes the
+	    traces from two files interleaving its samples.  Both
+	    files must have the same trace length and must not longer
+	    than SU_NFLTS/2 (as in SU 39 SU_NFLTS=32768).</p>
+
+	    <p>Being "tr1" a trace of data1 and "tr2" the corresponding trace of
+	    data2, The merged trace will be:<br />
+	    <br />
+	    tr[2*i]= tr1[i]<br />
+	    tr[2*i+1] = tr2[i]</p>
+	    
+	    <p>The default value of output tr.trid is that used by sufft and suifft,
+	    which is the trace id reserved for the complex traces obtained through
+	    the application of sufft.</p>
+	    
+	    <p>For operations on non-SU binary files use: farith.</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <file required="yes" directory="no">
+        <keyword/>
+        <label>First data set</label>
+        <value/>
+      </file>
+      <file required="yes" directory="no">
+        <keyword/>
+        <label>Second data set</label>
+        <value/>
+      </file>
+      <string required="no">
+        <keyword>op=</keyword>
+        <label>Operation</label>
+        <value default="diff"/>
+      </string>
+      <float required="no">
+        <keyword>w1=</keyword>
+        <label>Weigth for first data set</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>w2=</keyword>
+        <label>Weight for second data set</label>
+        <value/>
+      </float>
+    </parameters>
+  </program>
+</flow>

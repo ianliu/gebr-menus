@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n3">
+  <filename>sudivcor.mnu</filename>
+  <title>SU Divcor</title>
+  <description>Divergence correction</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Divcor</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Divcor</span>
+
+          <div class="description">
+            Divergence correction
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Divergence (spreading) correction.</p>
+
+ 	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Oct 10, 2007: written by Ricardo Biloti, UNICAMP - biloti@gmail.com</p>
+          <p>Jun 10, 2008: revised by Daniela Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | Jun 10, 2008</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sudivcor.mnu</menu>
+    <title>SU Divcor</title>
+    <binary>sudivcor</binary>
+    <description>Divergence correction</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Divcor</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Divcor</span>
+
+          <div class="description">
+            Divergence correction
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Times corresponding to rms velocities]</span> Comma-separated list of times</li>
+
+              <li><span class="label">[Interval velocities corresponding to times above]</span> Comma-separeted list of rms velocities</li>
+
+              <li><span class="label">[File containing velocities vrms]</span> Binary</li>
+
+            </ul>
+          </div>
+	    
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The trms and vrms arrays specify an rms velocity function of time.
+ 	  Linear interpolation and constant extrapolation is used to determine
+	  interval velocities at times not specified.  Values specified in trms
+	  must increase monotonically.</p>
+
+	  <p>Alternatively, rms velocities may be stored in a binary file
+ 	  containing one velocity for every time sample. If this file is specified,
+	  then the time and velocity arrays are ignored.</p>
+
+	  <p>The time of the first sample is assumed to be constant, and is taken
+          as the value of the first trace header field delrt.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Jack K. Cohen, Francesca Fazarri</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+           <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Times corresponding to rms velocities below</label><string><property required="no"><keyword>trms=</keyword><value></value><default>0.0</default></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n1"><label>Interval velocities corresponding to times above</label><string><property required="no"><keyword>vrms=</keyword><value></value><default>1500.00</default></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n2"><label>File containing velocities vrms</label><file directory="no"><property required="no"><keyword>vfile=</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+    </parameters>
+  </program>
+</flow>

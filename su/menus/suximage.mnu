@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.2.2">
+  <filename>suximage.mnu</filename>
+  <title>SU ximage</title>
+  <description>X-windows IMAGE plot</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Ximage</title>
+    </header>
+    <body>
+    <h1>SU Ximage</h1>
+    <p>X-windows IMAGE plot of a segy data set</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@sourceforge.net</email>
+  <date><created/><modified/><lastrun/></date><category>Graphics</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured">
+    <menu index="0">suximage.mnu</menu>
+    <title>SU ximage</title>
+    <binary>suximage</binary>
+    <description>X-windows IMAGE plot</description>
+    <help><![CDATA[<pre>
+ SUXIMAGE - X-windows IMAGE plot of a segy data set
+
+ suximage infile= [optional parameters] | ...  (direct I/O)
+  or
+ suximage &lt;stdin [optional parameters] | ...	(sequential I/O)
+
+ Optional parameters:
+
+ infile=NULL SU data to be ploted, default stdin with sequential access
+             if 'infile' provided, su data read by (fast) direct access
+
+	      with ftr,dtr and n2 suximage will pass a subset of data
+	      to the plotting program-ximage:
+ ftr=1       First trace to be plotted
+ dtr=1       Trace increment to be plotted
+ n2=tr.ntr   (Max) number of traces to be plotted (ntr is an alias for n2)
+	      Priority: first try to read from parameter line;
+		        if not provided, check trace header tr.ntr;
+		        if still not provided, figure it out using ftello
+
+ d1=tr.d1 or tr.dt/10^6	sampling interval in the fast dimension
+   =.004 for seismic 		(if not set)
+   =1.0 for nonseismic		(if not set)
+
+ d2=tr.d2		sampling interval in the slow dimension
+   =1.0 		(if not set or was set to 0)
+
+ key=			key for annotating d2 (slow dimension)
+ 			If annotation is not at proper increment, try
+ 			setting d2; only first trace's key value is read
+
+ f1=tr.f1 or tr.delrt/10^3 or 0.0  first sample in the fast dimension
+
+ f2=tr.f2 or tr.tracr or tr.tracl  first sample in the slow dimension
+   =1.0 for seismic		    (if not set)
+   =d2 for nonseismic		    (if not set)
+
+ verbose=0             =1 to print some useful information
+
+ tmpdir=	 	if non-empty, use the value as a directory path
+		 	prefix for storing temporary files; else if the
+	         	the CWP_TMPDIR environment variable is set use
+	         	its value for the path; else use tmpfile()
+
+ Note that for seismic time domain data, the "fast dimension" is
+ time and the "slow dimension" is usually trace number or range.
+ Also note that "foreign" data tapes may have something unexpected
+ in the d2,f2 fields, use segyclean to clear these if you can afford
+ the processing time or use d2= f2= to override the header values if
+ not.
+
+ See the ximage selfdoc for the remaining parameters.
+    </pre>]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <file directory="no" required="no">
+	<keyword>infile=</keyword>
+	<label>Input file</label>
+	<value/>
+      </file>
+      <int required="no">
+	<keyword>ftr=</keyword>
+	<label>First trace to be plotted</label>
+	<value default="1"/>
+      </int>
+      <int required="no">
+	<keyword>dtr=</keyword>
+	<label>Trace increment to be plotted</label>
+	<value default="1"/>
+      </int>
+      <int required="no">
+	<keyword>n2=</keyword>
+	<label>(Max) number of traces to be plotted</label>
+	<value/>
+      </int>
+      <float required="no">
+	<keyword>d1=</keyword>
+	<label>sampling interval in the fast dimension</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>d2=</keyword>
+	<label>sampling interval in the slow dimension</label>
+	<value/>
+      </float>
+      <string required="no">
+	<keyword>key=</keyword>
+	<label>key for annotating d2 (slow dimension)</label>
+	<value/>
+      </string>
+      <float required="no">
+	<keyword>f1=</keyword>
+	<label>first sample in the fast dimension</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>f2=</keyword>
+	<label>first sample in the slow dimension</label>
+	<value/>
+      </float>
+      <flag>
+	<keyword>verbose=1</keyword>
+	<label>print some useful information</label>
+	<state default="off"/>
+      </flag>
+      <file directory="yes" required="no">
+	<keyword>tmpdir=</keyword>
+	<label>directory path to temporary files</label>
+	<value/>
+      </file>
+      <file directory="no" required="no">
+	<keyword>mpicks=</keyword>
+	<label>file to save mouse picks in</label>
+	<value default="/dev/null"/>
+      </file>
+      <range min="0" max="100" inc="1" required="no" digits="">
+	<keyword>perc=</keyword>
+	<label>percentile used to determine clip</label>
+	<value default="100"/>
+      </range>
+      <int required="no">
+	<keyword>clip=</keyword>
+	<label>clip used to determine bclip and wclip</label>
+	<value/>
+      </int>
+      <float required="no">
+	<keyword>bperc=</keyword>
+	<label>percentile for determining black clip value</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>wperc=</keyword>
+	<label>percentile for determining white clip value</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>bclip=</keyword>
+	<label>data values outside of [bclip,wclip] are clipped</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>wclip=</keyword>
+	<label>data values outside of [bclip,wclip] are clipped</label>
+	<value/>
+      </float>
+      <flag>
+	<keyword>balance=1</keyword>
+	<label>bclip &amp; wclip individually (set them to the same abs value)</label>
+	<state default="off"/>
+      </flag>
+      <string required="no">
+	<keyword>cmap=</keyword>
+	<label>Colormap (hsv'n' or rgb'n', with n=0,1,...,13)</label>
+	<value/>
+      </string>
+      <flag>
+	<keyword>legend=1</keyword>
+	<label>display the color scale</label>
+	<state default="off"/>
+      </flag>
+      <string required="no">
+	<keyword>units=</keyword>
+	<label>unit label for legend</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>legendfont=</keyword>
+	<label>font name for title</label>
+	<value/>
+      </string>
+      <int required="no">
+	<keyword>xbox=</keyword>
+	<label>x in pixels of upper left corner of window</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>ybox=</keyword>
+	<label>y in pixels of upper left corner of window</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>wbox=</keyword>
+	<label>width in pixels of window</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>hbox=</keyword>
+	<label>height in pixels of window</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>lwidth=</keyword>
+	<label>colorscale (legend) width in pixels</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>lheight=</keyword>
+	<label>colorscale (legend) height in pixels</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>lx=</keyword>
+	<label>colorscale (legend) x-position in pixels</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>ly=</keyword>
+	<label>colorscale (legend) y-position in pixels</label>
+	<value/>
+      </int>
+      <float required="no">
+	<keyword>x1beg=</keyword>
+	<label>value at which axis 1 begins</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>x1end=</keyword>
+	<label>value at which axis 1 ends</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>d1num=</keyword>
+	<label>numbered tic interval on axis 1</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>f1num=</keyword>
+	<label>first numbered tic on axis 1</label>
+	<value/>
+      </float>
+      <int required="no">
+	<keyword>n1tic=</keyword>
+	<label>number of tics per numbered tic on axis 1</label>
+	<value/>
+      </int>
+      <string required="no">
+	<keyword>grid1=</keyword>
+	<label>grid lines on axis 1 - none, dot, dash, or solid</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>label1=</keyword>
+	<label>label on axis 1</label>
+	<value/>
+      </string>
+      <float required="no">
+	<keyword>x2beg=</keyword>
+	<label>value at which axis 2 begins</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>x2end=</keyword>
+	<label>value at which axis 2 ends</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>d2num=</keyword>
+	<label>numbered tic interval on axis 2</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>f2num=</keyword>
+	<label>first numbered tic on axis 2</label>
+	<value/>
+      </float>
+      <int required="no">
+	<keyword>n2tic=</keyword>
+	<label>number of tics per numbered tic on axis 2</label>
+	<value/>
+      </int>
+      <string required="no">
+	<keyword>grid2=</keyword>
+	<label>grid lines on axis 2 - none, dot, dash, or solid</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>label2=</keyword>
+	<label>label on axis 2</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>labelfont=</keyword>
+	<label>font name for axes labels</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>title=</keyword>
+	<label>title of plot</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>titlefont=</keyword>
+	<label>font name for title</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>windowtitle=</keyword>
+	<label>title on window</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>labelcolor=</keyword>
+	<label>color for axes labels</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>titlecolor=</keyword>
+	<label>color for title</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>gridcolor=</keyword>
+	<label>color for grid lines</label>
+	<value/>
+      </string>
+      <flag>
+	<keyword>style=normal</keyword>
+	<label>Swap axes</label>
+	<state default="off"/>
+      </flag>
+      <range min="0" max="1" inc="0.1" required="no" digits="">
+	<keyword>blank=</keyword>
+	<label>Portion of the lower range to blank out (make the background color).</label>
+	<value default="0"/>
+      </range>
+      <file directory="no" required="no">
+	<keyword>plotfile=</keyword>
+	<label>filename for interactive ploting</label>
+	<value/>
+      </file>
+      <string required="no">
+	<keyword>curve=</keyword>
+	<label>file(s) containing points to draw curve(s)</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>npair=</keyword>
+	<label>number(s) of pairs in each file</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>curvecolor=</keyword>
+	<label>color(s) for curve(s)</label>
+	<value/>
+      </string>
+      <flag>
+	<keyword>blockinterp=1</keyword>
+	<label>block interpolation</label>
+	<state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

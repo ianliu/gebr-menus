@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.3.0" nextid="n8">
+  <filename>suaddnoise.mnu</filename>
+  <title>SU Add Noise</title>
+  <description>Add noise to traces</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Add Noise</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Add Noise</span>
+
+          <div class="description">
+            Add noise to traces
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Aug 26, 2007: written by Braulio Barros de Oliveira, UNICAMP - brauliobo@gmail.com</p>
+          <p>Jun 09, 2008: revised by Daniela Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | Jun 09, 2008</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suaddnoise.mnu</menu>
+    <title>SU Add Noise</title>
+    <binary>suaddnoise</binary>
+    <description>Add noise to traces</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Add Noise</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Add Noise</span>
+
+          <div class="description">
+            Add noise to traces
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+	    <!-- List of required parameters -->
+            <ul>
+              <li><span class="label">[Time sampling interval]</span> Required if filter frequencies and filter amplitudes are  specified by the user and if time sampling interval not set in trace header</li>
+            </ul>
+
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Signal to noise ratio]</span> </li>
+              <li><span class="label">[Flat noise probability distribution]</span> Default is Gaussian</li>
+              <li><span class="label">[Random number seed]</span> </li>
+              <li><span class="label">[Filter frequencies]</span> </li>
+              <li><span class="label">[Filter amplitudes]</span> </li>
+              <li><span class="label">[Time sampling interval]</span> </li>
+              <li><span class="label">[Useful information]</span> </li>
+              <li><span class="label">[Directory path to temporary files]</span> </li>
+          </ul>
+          </div>
+	    
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p> Output = Signal +  scale * Noise</p>
+
+          <p> scale = (1/(Signal to noise ratio)) * (absmax_signal/sqrt(2))/sqrt(energy_per_sample)</p>
+
+          <p>If the signal is already band-limited, filter frequencies and filter amplitudes
+             can be used, as in SU Filter, to bandlimit the noise traces to match
+             the signal band prior to computing the scale defined above.</p>
+          <p>At S/N = 2, the strongest reflector is well delineated, so to
+             see something 1/nth as strong as this dominant reflector
+             requires S/N = 2*n.</p>
+          <p>Trace header field accessed: Number of sample</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Jack Cohen, Brian Sumner, Ken Larner,
+                  John Stockwell (fixed filtered noise option)</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Signal to noise ratio</label><float><property required="no"><keyword>sn=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n1"><label>Flat noise probability distribution</label><flag><property required="no"><keyword>noise=flat</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n2"><label>Random number seed</label><int><property required="no"><keyword>seed=</keyword><value></value><default></default></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n3"><label>Filter frequencies</label><float><property required="no" separator=","><keyword>f=</keyword><value/><default/></property></float></parameter>
+      <parameter id="n4"><label>Filter amplitudes</label><float><property required="no" separator=","><keyword>amps=</keyword><value/><default/></property></float></parameter>
+      <parameter id="n5"><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n6"><label>Useful information</label><flag><property required="no"><keyword>verbose=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n7"><label>Directory path to temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value></value><default></default></property>
+	
+	
+	
+      </file></parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>sumute.mnu</filename>
+  <title>Su Mute</title>
+  <description>Mute above (or below) a user-defined polygonal curve</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Mute</title>
+    </header>
+    <body>
+    <h1>SU Mute</h1>
+    <p>mute a user-defined polygonal curve.</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sumute.mnu</menu>
+    <title>SU Mute</title>
+    <binary>sumute</binary>
+    <description>Mute above (or below) a user-defined polygonal curve with the distance along the curve specified by key header word. 	</description>
+        <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" media=
+  "screen" />
+
+  <title>G&ecirc;BR - SU Stack</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Mute</span>
+	  <div class="description">Mute a user-defined polygonal curve with the distance along the curve specified by key   header word</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+          <ul>
+	  <li><spanclass="label">[Array of position values as specified by the parameter]</span>
+	  </li></ul>
+
+          <li><span class="label">[Array of corresponding time values (sec).]</span>In case of air wave muting, correspond  to air blast duration.</li>
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  	 
+	  <li><span class="label">[Key header word specifying trace offset]</span></li>
+	  
+	  <li><span class="label">[number of points to taper before hard mute (sine squared taper)]</span>.</li>
+	  
+          <li><span class="label">[mute the straight line]</span>use mute=1 to zero BELOW the polygonal curve mute=2 to mute below AND above a straight line in that case xmute,tmute describes the total time length of the muted zone	</li>
+
+          <li><span class="label">[Linear velocity.]</span></li>
+
+          <li><span class="label">[time shift of linear mute]</span></li>
+	  </ul>
+	
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	  <p>The tmute interpolant is extrapolated to the left by the smallest time
+           sample on the trace and to the right by the last value given in the tmute array.</p>
+
+	  <p>The files tfile and xfile are files of binary (C-style) floats.</p>
+
+	  <p>In the context of this program "above" means earlier time and	
+          "below" means later time (above and below as seen on a seismic section.</p>
+          
+          <p>The below=2 option is intended for removing air waves. The mute is	
+          is over a narrow window above and below the polygonal line specified	
+          by the values in tmute, xmute or tfile and xfile.</p>
+
+          <p>If data are spatial, such as the (z-x) output of a migration, then    
+          depth values are used in place of times in tmute and tfile. The value 
+          of the depth sampling interval is given by the d1 header field.</p>
+
+          <p>Caveat: if data are seismic time sections, then tr.dt must be set. If 
+          data are seismic depth sections, then tr.trid must be set to 30, and  
+          tr.d1 header field must be set.</p>
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>SEP: Shuki Ronen<br />
+             CWP: Jack K. Cohen, Dave Hale, Jhon Stckwell<br />
+             DELPHI: Alexander Koek</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    ]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <float required="yes">
+        <keyword>xmute=</keyword>
+        <label>Array of position values as specified by key the parameter</label>
+        <value/>
+      </float>
+      <float required="yes">
+        <keyword>tmute=</keyword>
+        <label>Array of corresponding time values (sec)</label>
+        <value/>
+      </float>
+      <string required="no">
+        <keyword>key=</keyword>
+        <label>Key header word specifying trace offset</label>
+        <value/>
+      </string>
+      <int required="no">
+        <keyword>ntaper=</keyword>
+        <label>number of points to taper before hard mute (sine squared taper)</label>
+        <value/>
+      </int>
+      <range required="no" min="0" max="2" inc="1" digits="">
+        <keyword>mode=</keyword>
+        <label>mute the straight line</label>
+        <value default="0"/>
+      </range>
+      <float required="no">
+        <keyword>linvel=</keyword>
+        <label>linear velocity</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>tm0=</keyword>
+        <label>time shift of linear mute</label>
+        <value/>
+      </int>
+    </parameters>
+  </program>
+</flow>

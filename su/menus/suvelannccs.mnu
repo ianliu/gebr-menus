@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>suvelannccs.mnu</filename>
+  <title>SU Velan NCCS</title>
+  <description>Compute stacking velocity panel for cdp gathers using Normalized CrossCorrelation Sum</description>
+  <help/>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suvelannccs.mnu</menu>
+    <title>SU Velan NCCS</title>
+    <binary>suvelan_nccs</binary>
+    <description>Compute stacking velocity panel for cdp gathers using Normalized CrossCorrelation Sum</description>
+    <help/>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <int required="no">
+        <keyword>nx=</keyword>
+        <label>Number of traces in cdp</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>nv=</keyword>
+        <label>Number of velocities</label>
+        <value/>
+      </int>
+      <float required="no">
+        <keyword>dv=</keyword>
+        <label>Velocity sampling interval</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>fv=</keyword>
+        <label>First velocity</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>smute=</keyword>
+        <label>Samples with NMO stretch exceeding smute are zeroed</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>dtratio=</keyword>
+        <label>Ratio of output to input time sampling intervals </label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>nsmooth=</keyword>
+        <label>Length of smoothing window </label>
+        <value/>
+      </int>
+      <flag>
+        <keyword>verbose=1</keyword>
+        <label>For diagnostic print on screen</label>
+        <state default="off"/>
+      </flag>
+      <float required="no">
+        <keyword>pwr=</keyword>
+        <label>Semblance value to the power</label>
+        <value/>
+      </float>
+    </parameters>
+  </program>
+</flow>

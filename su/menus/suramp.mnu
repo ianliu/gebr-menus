@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>suramp.mnu</filename>
+  <title>SU Ramp</title>
+  <description>Linearly taper the start and/or end of traces to zero</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Ramp</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Ramp</span>
+
+          <div class="description">
+            Linearly taper the start and/or end of traces to zero
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>The taper is a linear ramp from 0 to tmin and/or tmax to the
+          end of the trace.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+
+	    <li><a href="#intro">Introduction</a></li>
+            
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suramp.mnu</menu>
+    <title>SU Ramp</title>
+    <binary>suramp</binary>
+    <description>Linearly taper the start and/or end of traces to zero</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Ramp</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Ramp</span>
+
+          <div class="description">
+            Linearly taper the start and/or end of traces to zero
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[sampling interval]</span> in seconds. This
+              parameters is optional if defined in the header. Otherwise,
+              it is required.</li>
+              <li><span class="label">[end of starting ramp]</span> in seconds.
+              By default it is set to tr.delrt/1000.</li>
+              <li><span class="label">[beginning of ending ramp]</span> in seconds.
+              By default it is set to (nt-1)*dt.</li>
+            </ul>
+          </div>
+	    
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The taper is a linear ramp from 0 to tmin and/or tmax to the
+          end of the trace.  Default is a no-op!</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Jack K. Cohen, Ken Larner</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <float required="no">
+        <keyword>dt=</keyword>
+        <label>sampling interval (sec)</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>tmin=</keyword>
+        <label>end of starting ramp (sec)</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>tmax=</keyword>
+        <label>beginning of ending ramp (sec)</label>
+        <value/>
+      </float>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>supef.mnu</filename>
+  <title>SU PEF</title>
+  <description>Wiener predictive error filtering</description>
+     <help><![CDATA[
+    <html>
+    <header>
+       <title>SU PEF</title>
+    </header>
+    <body>
+    <h1>SU Shape</h1>
+    <p>Wiener prediction error filtering</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Filtering, Transforms and Attributes</category>
+  <category>Multiple Supression</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">supef.mnu</menu>
+    <title>SU PEF</title>
+    <binary>supef</binary>
+    <description/>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" media=
+  "screen" />
+
+  <title>G&ecirc;BR - SU PEF</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU PEF</span>
+	  <div class="description">Wiener prediction error filtering</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Filtering, Transforms and Attributes | Multiple Supression | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+          <ul>
+
+          <li><span class="label">[Time sampling interval]</span>
+            if not set in trace header, specifications of its value in seconds is mandatory.
+          </li>
+         
+          </ul>
+
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[List of CDPs for which optional parameters are set]</span>
+	  </li>
+
+	  <li><span class="label">[First lag of prediction filter]</span>
+          List of first lag of prediction filter to be applied to the selected CDPs.
+	  </li>
+
+	  <li><span class="label">[Maximum lag of prediction filter]</span>
+          List of maximum lag of prediction filter to be applied to the selected CDPs.
+	  </li>
+	  
+	  <li><span class="label">[Relative additive noise level]</span>
+          If not specified, the default value is 0.001.
+          </li>
+
+	  <li><span class="label">[Start of autocorrelation window]</span>
+          List of first lag of prediction filter to be applied to the selected CDPs.
+	  </li>
+
+	  <li><span class="label">[End of autocorrelation window]</span>
+          List of maximum lag of prediction filter to be applied on the selected CDPs.
+	  </li>
+	  
+	  <li><span class="label">[Show Wiener filter applied to selected CDPs]</span> </li>
+
+	  <li><span class="label">[Array of weights for moving average of autocorrelation]</span>
+          List of floating point values.
+	  </li>
+
+	  <li><span class="label">[Filename to write wiener filter]</span>
+          Output parameter file, contains the Wiener filter if showwiener=1 is set.
+	  </li>
+
+	  <li><span class="label">[CDP interpolation method]</span>
+          linear for linear interpolation (default) <br \>
+          mono   for monotonic cubic interpolation of cdps <br \>
+          akima  for Akima's cubic interpolation of cdps <br \>
+          spline for cubic spline interpolation of cdps.
+	  </li>	  
+	
+	  </ul>
+	
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+   
+<p>
+ 1) To apply spiking decon (Wiener filtering with no gap): <br \>
+<br />
+ Run the following command <br \>
+<br />
+    suacor < data.su | suximage perc=95 
+<br />
+ You will see horizontal strip running across the center of your plot. <br />
+ This is the autocorrelation wavelet for each trace. The idea of spiking <br />
+ decon is to apply a Wiener filter with no gap to the data to collapse <br />
+ the waveform into a spike. The idea is to pick the width of the <br />
+ autocorrelation waveform _from beginning to end_ (not trough to trough) <br />
+ and use this time for MAXLAG_SPIKING: <br />
+<br />
+  supef < data.su maxlag=MAXLAG_SPIKING  > dataspiked.su  <br />
+<br />
+ 2) Prediction Error Filter (i.e. gapped Wiener filtering) <br />
+ The purpose of gapped decon is to suppress repetitions in the data <br />
+ such as those caused by water bottom multiples. <br />
+<br />
+ To look for the period of the repetitions <br />
+<br />
+    suacor ntout=1000 < dataspiked.su | suximage perc=95 <br />
+<br />
+ The value of ntout must be larger than the default 100. The idea is <br />
+ to look for repetitions in the autocorrelation. These repetitions will <br />
+ appear as a family of parallel stripes above and below the main <br />
+ autocorrelation waveform. Set MAXLAG_PEF to the period of the repetitions <br />
+ Set MINLAG_PEF to be slightly larger than the value of MAXLAG_SPIKING <br />
+ that you used to spike the data. <br />
+<br />
+  supef < dataspiked.su minlag=MINLAG_PEF maxlag=MAXLAG_PEF > datapef.su <br />
+<br />
+ Some experimentation may be required to get a satisfactory result. <br />
+<br />
+ 3) It may be effective to sort your data into cdp gathers with susort, <br />
+ and perform sunmo correction to the water speed with sunmo, prior to  <br />
+ attempts to suppress water bottom multiples. After applying supef, the <br />
+ user should apply inverse nmo to undo the nmo to water speed prior to <br />
+ further processing. <br />
+<br />
+ For a filter expressed as a function of cdp, specify the array <br />
+     cdp=cdp1,cdp2,... <br />
+ and for each cdp specified, specify the minlag and maxlag arrays as <br />
+      minlag=min1,min2,...     maxlag=max1,max2,...    <br />
+
+ It is required that the number of minlag and maxlag values be equal to <br />
+ the number of cdp's specified.  If the number of <br />
+ values in these arrays does not equal the number of cdp's, only the first <br />
+ value will be used. <br />
+<br />
+ Caveat: <br />
+ The showweiner=1 option writes out the wiener filter to outpar, and  <br /> 
+ the prediction error filter to stdout, which is                        ", <br />
+     1,0,0,...,-wiener[0],...,-wiener[imaxlag-1] <br />
+ where the sample value of -wiener[0], is  iminlag in the pe-filter. <br />
+ The pe-filter is output as a SU format datafile, one pe-filter for each <br />
+ trace input. <br />
+<br />
+       The prediction error filter is 1,0,0...,0,-wiener[0], ..., <br />
+        so no point in explicitly forming it. <br />
+<br />
+        If imaxlag < 2*iminlag - 1, then we don't need to compute the <br />
+        autocorrelation for lags: <br />
+                imaxlag-iminlag+1, ..., iminlag-1 <br />
+        It doesn't seem worth the duplicated code to implement this. <br />
+
+</p>
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p> CWP: Shuki Ronen, Jack K. Cohen, Ken Larner <br />
+              CWP: John Stockwell, added mixing feature (April 1998) <br />
+              CSM: Tanya Slota (September 2005) added cdp feature 
+         </p>
+
+         <p>
+             Technical Reference: <br />
+        A. Ziolkowski, "Deconvolution", for value of maxlag default: <br />
+                page 91: imaxlag < nt/10.  I took nt/20.
+         </p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    ]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <float required="no">
+        <keyword>dt=</keyword>
+        <label>Time sampling interval</label>
+        <value/>
+      </float>
+      <string required="no">
+        <keyword>cdp=</keyword>
+        <label>CDPs for which optional parameters are set</label>
+        <value/>
+      </string>
+      <float required="no">
+        <keyword>minlag=</keyword>
+        <label>First lag of prediction filter</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>maxlag=</keyword>
+        <label>Maximum lag of prediction filter</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>pnoise=</keyword>
+        <label>Relative additive noise level</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>mincorr=</keyword>
+        <label>Start of autocorrelation window</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>maxcorr=</keyword>
+        <label>End of autocorrelation window</label>
+        <value/>
+      </float>
+      <flag>
+        <keyword>showwiener=1</keyword>
+        <label>Show Wiener filter on each trace</label>
+        <state default="off"/>
+      </flag>
+      <string required="no">
+        <keyword>mix=</keyword>
+        <label>Array of weights for moving average of autocorrelation</label>
+        <value/>
+      </string>
+      <file required="no" directory="no">
+        <keyword>outpar=</keyword>
+        <label>Filename to write wiener filter</label>
+        <value/>
+      </file>
+      <string required="no">
+        <keyword>method=</keyword>
+        <label>CDP interpolation method</label>
+        <value default=""/>
+      </string>
+    </parameters>
+  </program>
+</flow>

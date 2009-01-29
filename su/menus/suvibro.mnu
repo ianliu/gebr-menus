@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>suvibro.mnu</filename>
+  <title>SU Vibro</title>
+  <description>Generates a Vibroseis sweep</description>
+<help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Vibro</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Vibro</span>
+
+          <div class="description">
+            Generates a Vibroseis sweep
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Generates a Vibroseis sweep.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  
+  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category><io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suvibro.mnu</menu>
+    <title>SU Vibro</title>
+    <binary>suvibro</binary>
+    <description>Generates a Vibroseis sweep</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Velan_Nsel</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Vibro</span>
+	  <div class="description">Generates a Vibroseis sweep</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[Time sampling interval]</span></li>
+	  
+	  <li><span class="label">[Sweep]</span> options are:<br />
+                        1 - linear sweep<br />
+ 		  	2 - linear-segment<br />	
+ 		  	3 - decibel per octave<br />
+ 		  	4 - decibel per hertz<br />
+ 		  	5 - t-power</li>
+	  
+	  <li><span class="label">[Sweep constant]</span></li>
+
+	  <li><span class="label">[Sweep frequency at start]</span></li>
+	  
+	  <li><span class="label">[Sweep frequency at end]</span></li>
+	  
+	  <li><span class="label">[Sweep length]</span></li>
+
+	  <li><span class="label">[Initial phase]</span></li>
+	  
+	  <li><span class="label">[Frequency segments]</span></li>
+	  
+	  <li><span class="label">[Time segments]</span></li>
+
+	  <li><span class="label">[Length of taper at start]</span></li>
+	  
+	  <li><span class="label">[Length of taper at end]</span></li>
+
+	  <li><span class="label">[Type of taper]</span>type of taper are:<br />
+                         1 - linear<br />
+		  	 2 - sine<br />	
+			 3 - cosine<br />
+			 4 - gaussian (+/-3.8)<br />
+			 5 - gaussian (+/-2.0)</li>
+
+	  </ul>
+
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	 <p>The default tapers are linear envelopes. To eliminate the taper, choose t1=t2=0.0.</p>
+
+         <p>"sweep constant" is active only with nonlinear sweeps, i.e. whem sweep=3,4,5<br> 
+            "Time segments" and "Frequency segments" arrays are used when only sweep=2</p>
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>CWP: Michel Dietrich<br>
+              Rewrite: Tagir Galikeev, CWP,  7 October 1994</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <float required="no">
+        <keyword>dt=</keyword>
+        <label>time sampling interval</label>
+        <value/>
+      </float>
+      <range required="no" min="1" max="5" inc="1" digits="">
+        <keyword>sweep=</keyword>
+        <label>sweep</label>
+        <value default="1.000000"/>
+      </range>
+      <float required="no">
+        <keyword>swconst=</keyword>
+        <label>sweep constant</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>f1=</keyword>
+        <label>sweep frequency at start</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>f2=</keyword>
+        <label>sweep frequency at end</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>tv=</keyword>
+        <label>sweep length</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>phz=</keyword>
+        <label>initial phase</label>
+        <value/>
+      </float>
+      <string required="no">
+        <keyword>fseg=</keyword>
+        <label>frequency segments</label>
+        <value/>
+      </string>
+      <string required="no">
+        <keyword>tseg=</keyword>
+        <label>time segments </label>
+        <value/>
+      </string>
+      <float required="no">
+        <keyword>t1=</keyword>
+        <label>length of taper at start</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>t2=</keyword>
+        <label>length of taper at end</label>
+        <value/>
+      </float>
+      <range required="no" min="1" max="5" inc="1" digits="">
+        <keyword>taper=</keyword>
+        <label>type of taper</label>
+        <value default="1.000000"/>
+      </range>
+    </parameters>
+  </program>
+</flow>

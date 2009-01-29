@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.1.0">
+  <filename>triseis.mnu</filename>
+  <title>TRISEIS</title>
+  <description>Gaussian beam synthetic seismograms for a sloth model</description>
+  <help><![CDATA[
+      <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <meta name="generator" content=
+        "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+        <meta http-equiv="content-type" content=
+        "text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="gebr.css" media=
+        "screen" />
+
+        <title>G&ecirc;BR - SU Stack</title>
+      </head>
+
+      <body>
+        <div class="outer-container">
+          <div class="inner-container">
+            <div class="header">
+              <div class="title">
+                <span class="flowtitle">TRISEIS</span>
+                <div class="description">Gaussian beam synthetic seismograms for a sloth model</div>
+              </div>
+
+              <div class="navigation">
+                <h2>Index</h2>
+
+                <ul>
+                  <li><a href="#par">Description</a></li>
+
+                </ul>
+              </div>
+
+              <div class="clearer"></div>
+            </div>
+
+            <div class="footer">
+              <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+              <div class="clearer"></div>
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>]]>
+</help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <category>Simulation and Model Building</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input />
+    <output />
+    <error />
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes"
+  status="unconfigured">
+    <menu index="0">triseis.mnu</menu>
+    <title>TRISEIS</title>
+    <binary>triseis</binary>
+    <description>Gaussian beam synthetic seismograms for a sloth model</description>
+    <help><![CDATA[
+      <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <meta name="generator" content=
+        "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+        <meta http-equiv="content-type" content=
+        "text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="gebr.css" media=
+        "screen" />
+
+        <title>G&ecirc;BR - SU Stack</title>
+      </head>
+
+      <body>
+        <div class="outer-container">
+          <div class="inner-container">
+            <div class="header">
+              <div class="title">
+                <span class="flowtitle">TRISEIS</span>
+                <div class="description">Gaussian beam synthetic seismograms for a sloth model</div>
+              </div>
+            </div><!-- header -->
+
+            <div class="category">
+              Simulation and Model Building | Seismic Unix
+            </div>
+
+            <div class="main">
+              <div class="content">
+
+              <div class="parameters">
+
+                <a name="par"></a>
+                <h2>Required parameters</h2>
+
+                <ul>
+
+                <li><span class="label">[modelfile]</span>
+                it contains file of the model synthetic or analytical.</li>
+
+                <li><span class="label">[seisfile]</span>
+                it contains file of the results.</li>
+
+                <li><span class="label">[x coordinates of source]</span>
+                x coordinates of source surface.</li>
+
+                <li><span class="label">[z coordinates of source]</span>
+                z coordinates of source surface.</li>
+
+                <li><span class="label">[x coordinates of receiver]</span>
+                x coordinates of source surface.</li>
+
+                <li><span class="label">[z coordinates of receiver]</span>
+                z coordinates of source surface.</li>
+
+                </ul>
+
+                <h2>Optional parameters</h2>
+          
+                <ul>
+          
+                <li><span class="label">[number of sources]</span>
+                number of sources uniformly distributed along of the source surface.</li>
+          
+                <li><span class="label">[increment source locations]</span>
+                increment between source locations.</li>
+          
+                <li><span class="label">[first source location]</span>
+                first source location (relative to start of of the surface).</li>
+          
+                <li><span class="label">[number of receivers]</span>
+                number of receivers uniformly distributed along of the receiver surface.</li>
+          
+                <li><span class="label">[increment receiver locations]</span>
+                increment between receiver locations.</li>
+
+                <li><span class="label">[first receiver location]</span>
+                first receiver location (relative to start of g surface).</li>
+
+                <li><span class="label">[change receiver to source]</span>
+                change in receiver location with respect to source location.</li>
+
+                <li><span class="label">[index of receiver]</span>
+                integer index of receiver surface.</li>
+
+                <li><span class="label">[index of reflecting]</span>
+                integer index of reflecting surface.</li>
+
+                <li><span class="label">[direct hits/single-reflected rays]</span>
+                only direct hits or single-reflected rays are considered.</li>
+
+                <li><span class="label">[peak frequency]</span>
+                beamwidth at peak frequency.</li>
+
+                <li><span class="label">[number of time samples]</span>
+                number of time samples.</li>
+
+                <li><span class="label">[time sampling interval]</span>
+                time sampling interval.</li>
+
+                <li><span class="label">[first time sample]</span>
+                first time sample.</li>
+
+                <li><span class="label">[number of ray takeoff angles]</span>
+                number of ray takeoff angles.</li>
+
+                <li><span class="label">[first ray takeoff angle]</span>
+                first ray takeoff angle.</li>
+
+                <li><span class="label">[last ray takeoff angle]</span>
+                last ray takeoff angle.</li>
+
+                <li><span class="label">[complex reflec./transm. coef.]</span>
+                complex reflection-transmition coefficients considered.</li>
+
+                <li><span class="label">[noncausal/causal attenuation]</span>
+                add noncausal or causal attenuation.</li>
+
+                <li><span class="label">[restricts range]</span>
+                if defined restricts range of extrapolation.</li>
+
+                <li><span class="label">[peak frequency]</span>
+                peak frequency of ricker wavelet.</li>
+
+                <li><span class="label">[maximum angle receiver]</span>
+                maximum angle of receiver aperture.</li>
+                </ul>
+        
+              </div>
+        
+                <a name="notes"></a>
+                <h2>Notes</h2>
+
+                <p>Only rays that terminate with index "integer index of receiver
+                surface" will contribute to the synthetic seismograms at the
+                receiver (x coordinates of receiver surface,z coordinates of
+                receiver surface) locations. The source and receiver locations
+                are determined by cubic spline interpolation of the specified
+                (x coordinates of source surface,z coordinates of source surface)
+                and (x coordinates of receiver surface,z coordinates of receiver
+                surface) coordinates. The default source location increment (ds)
+                is determined to span the source surface defined by (x coordinates
+                of receiver surface,z coordinates of receiver surface).  Likewise
+                for "increment between receiver locations".</p>
+
+                <a name="credits"></a>
+                <h2>Credits</h2>
+                <p>AUTHOR:  Dave Hale, Colorado School of Mines, 02/09/91<br />
+                   MODIFIED:  Andreas Rueger, Colorado School of Mines, 08/18/93<br />
+                          Modifications include: 2.5-D amplitudes, correction for ref/transm,
+                                          timewindow, lscale, aperture, beam width, etc.</p>
+
+              </div>
+              <div class="navigation">
+                <h2>Index</h2>
+
+                <ul>
+                  <li><a href="#par">Parameters</a></li>
+
+                  <li><a href="#notes">Notes</a></li>
+
+                  <li><a href="#credits">Credits</a></li>
+
+                </ul>
+              </div>
+
+              <div class="clearer"></div>
+            </div>
+
+            <div class="footer">
+              <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+              <div class="clearer"></div>
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>]]>
+</help>
+    <parameters>
+      <file required="yes" directory="no">
+        <keyword>modelfile=</keyword>
+        <label>file of the model content</label>
+        <value />
+      </file>
+      <file required="yes" directory="no">
+        <keyword>seisfile=</keyword>
+        <label>file of the result content</label>
+        <value />
+      </file>
+      <string required="yes">
+        <keyword>xs=</keyword>
+        <label>x coordinates of source surface</label>
+        <value />
+      </string>
+      <string required="yes">
+        <keyword>zs=</keyword>
+        <label>z coordinates of source surface</label>
+        <value default="" />
+      </string>
+      <string required="yes">
+        <keyword>xg=</keyword>
+        <label>x coordinates of receiver surface</label>
+        <value />
+      </string>
+      <string required="yes">
+        <keyword>zg=</keyword>
+        <label>z coordinates of receiver surface</label>
+        <value />
+      </string>
+      <string required="no">
+        <keyword>ns=</keyword>
+        <label>number of sources uniformly distributed along of the
+        source surface</label>
+        <value default="" />
+      </string>
+      <int required="no">
+        <keyword>ds=</keyword>
+        <label>increment between source locations</label>
+        <value default="" />
+      </int>
+      <float required="no">
+        <keyword>fs=</keyword>
+        <label>first source location of the surface</label>
+        <value default="" />
+      </float>
+      <int required="no">
+        <keyword>ng=</keyword>
+        <label>number of receivers uniformly distributed along of
+        the receiver surface</label>
+        <value default="" />
+      </int>
+      <int required="no">
+        <keyword>dg=</keyword>
+        <label>increment between receiver locations</label>
+        <value />
+      </int>
+      <string required="no">
+        <keyword>fg=</keyword>
+        <label>first receiver location of the surface.</label>
+        <value default="" />
+      </string>
+      <float required="no">
+        <keyword>dgds=</keyword>
+        <label>change in receiver location with respect to source
+        location</label>
+        <value default="" />
+      </float>
+      <int required="no">
+        <keyword>krecord=</keyword>
+        <label>integer index of receiver surface</label>
+        <value default="" />
+      </int>
+      <int required="no">
+        <keyword>kreflect=</keyword>
+        <label>integer index of reflecting surface</label>
+        <value default="" />
+      </int>
+      <range required="no" min="0" max="1" inc="1">
+        <keyword>prim=</keyword>
+        <label>only direct hits or single-reflected rays are
+        considered</label>
+        <value default="0.000000" />
+      </range>
+      <int required="no">
+        <keyword>bw=</keyword>
+        <label>beamwidth at peak frequency</label>
+        <value default="" />
+      </int>
+      <int required="no">
+        <keyword>nt=</keyword>
+        <label>number of time samples</label>
+        <value default="" />
+      </int>
+      <float required="no">
+        <keyword>dt=</keyword>
+        <label>time sampling interval</label>
+        <value default="" />
+      </float>
+      <float required="no">
+        <keyword>ft=</keyword>
+        <label>first time sample</label>
+        <value default="" />
+      </float>
+      <int required="no">
+        <keyword>nangle=</keyword>
+        <label>number of ray takeoff angles</label>
+        <value default="" />
+      </int>
+      <int required="no">
+        <keyword>fangle=</keyword>
+        <label>first ray takeoff angle</label>
+        <value default="" />
+      </int>
+      <int required="no">
+        <keyword>langle=</keyword>
+        <label>last ray takeoff angle</label>
+        <value default="" />
+      </int>
+      <flag>
+        <keyword>reftrans=1</keyword>
+        <label>complex reflection-transmition coefficients
+        considered</label>
+        <state default="off" />
+      </flag>
+      <range required="no" min="0" max="2" inc="1">
+        <keyword>atten=</keyword>
+        <label>add noncausal or causal attenuation</label>
+        <value default="0.000000" />
+      </range>
+      <int required="no">
+        <keyword>lscale=</keyword>
+        <label>if defined restricts range of extrapolation</label>
+        <value />
+      </int>
+      <string required="no">
+        <keyword>fpeak=</keyword>
+        <label>peak frequency of ricker wavelet</label>
+        <value />
+      </string>
+      <int required="no">
+        <keyword>aperture=</keyword>
+        <label>maximum angle of receiver aperture</label>
+        <value />
+      </int>
+    </parameters>
+  </program>
+</flow>

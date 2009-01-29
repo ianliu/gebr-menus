@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>sumigprepspi.mnu</filename>
+  <title>SU Migration Pre PSPI</title>
+  <description>The 2-D Prestack Phase-Shift-Plus interpolation depth Migration</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Mig Pre PSPI</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Mig Pre PSPI</span>
+
+          <div class="description">
+            The 2-D PREstack Phase-Shift-Plus 
+            interpolation depth MIGration.
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>The 2-D PREstack commom-shot Phase-Shift-Plus 
+                  interpolation depth MIGration.</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+            <p></p>
+
+	    <!-- List of required parameters -->
+            <ul>
+              <li><span class="label">[number of total horizontal output samples]</span> 
+              </li>
+
+              <li><span class="label">[number of shot gathers to be migrated]</span> 
+              </li>
+
+              <li><span class="label">[number of depth sapmles]</span> 
+              </li>
+
+              <li><span class="label">[horizontal sampling interval]</span> 
+              </li>
+
+              <li><span class="label">[depth sampling interval]</span> 
+              </li>
+
+              <li><span class="label">[velocity profile]</span> it must be binary format
+              </li>
+            </ul>
+
+            <h2>Optional parameters</h2>
+
+            <p></p>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[peak frequency]</span> the peak frequency of Ricker wavelet used as source wavelet
+              </li>
+
+              <li><span class="label">[frist frequency to build a Hamming window]</span> 
+              </li>
+
+              <li><span class="label">[second frequency to build a Hamming window]</span> 
+              </li>
+
+              <li><span class="label">[third frequency to build a Hamming window]</span> 
+              </li>
+
+              <li><span class="label">[fourth frequency to build a Hamming window]</span> 
+              </li>
+
+              <li><span class="label">[number of zero traces padded on left side]</span> 
+              </li>
+
+              <li><span class="label">[number of zero traces padded on rigth side]</span> 
+              </li>
+
+              <li><span class="label">[print some useful information]</span> 
+              </li>
+            </ul>
+          </div>
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p> The input velocity file consists of C-style binary floats.
+              The structure of this file is [iz][ix]. Note that this means that
+              the x-direction is the fastest direction instead of z-direction! Such a
+              structure is more convenient for the downward continuation type
+              migration algorithm than using z as fastest dimension as in other SU
+              programs. </p>
+          
+          <p>Because most of the tools in the SU package (such as  unif2, unisam2,
+             and makevel) produce output with the structure [ix][iz], you will
+             need to transpose the velocity files created by these programs. You may
+             use the SU program Transpose in SU to transpose such files into the  
+             required [iz][ix] structure. </p>
+
+          <p> (In C  v[iz][ix] denotes a v(x,z) array, whereas v[ix][iz]  
+              denotes a v(z,x) array, the opposite of what Matlab and Fortran
+              programmers may expect.) </p>
+
+          <p> Also, sx must be monotonically increasing throughout the dataset, and 
+              and gx must be monotonically increasing within a shot. You may resort 
+              your data with SU Sort, accordingly.</p>
+
+          <p>The scalco header field is honored so this field must be set correctly.
+             See selfdocs of SU Sort, Suchw. Also: sukeyword scalco</p>
+
+          <p> Trace header fields accessed: number of depth samples, time sampling interval, 
+              delay recording time, midpoint sampling interval</p>
+          <p> Trace header fields modified: number of depth samples, time sampling interval, 
+              delay recording time </p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP, Baoniu Han, bhan@dix.mines.edu, April 19th, 1998</p>
+
+          <p>Modified: Chris Stolk, 11 Dec 2005, - changed data input
+             to remove erroneous time delay.<p>
+
+          <p> Modified: CWP, John Stockwell 26 Sept 2006 - replaced Han's
+          "goto-loop" in two places with "do { }while loops".
+          Fixed it so that shot point, receiver point, and scalco are honored.<p>
+
+ 
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sumigprepspi.mnu</menu>
+    <title>SU Mig Pre PSPI</title>
+    <binary>sumigprepspi</binary>
+    <description>The 2-D Prestack commom-shot Phase-Shift-Plus interpolation depth Migration.</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Migration Pre PSPI</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Migration Pre PSPI</span>
+
+          <div class="description">
+            The 2-D PREstack Phase-Shift-Plus 
+            interpolation depth MIGration.
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>The 2-D PREstack commom-shot Phase-Shift-Plus 
+                  interpolation depth MIGration.</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+            <p></p>
+
+	    <!-- List of required parameters -->
+            <ul>
+              <li><span class="label">[number of total horizontal output samples]</span> 
+              </li>
+
+              <li><span class="label">[number of shot gathers to be migrated]</span> 
+              </li>
+
+              <li><span class="label">[number of depth sapmles]</span> 
+              </li>
+
+              <li><span class="label">[horizontal sampling interval]</span> 
+              </li>
+
+              <li><span class="label">[depth sampling interval]</span> 
+              </li>
+
+              <li><span class="label">[velocity profile]</span> it must be binary format
+              </li>
+            </ul>
+
+            <h2>Optional parameters</h2>
+
+            <p></p>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[peak frequency]</span> the peak frequency of Ricker wavelet used as source wavelet
+              </li>
+
+              <li><span class="label">[frist frequency to build a Hamming window]</span> 
+              </li>
+
+              <li><span class="label">[second frequency to build a Hamming window]</span> 
+              </li>
+
+              <li><span class="label">[third frequency to build a Hamming window]</span> 
+              </li>
+
+              <li><span class="label">[fourth frequency to build a Hamming window]</span> 
+              </li>
+
+              <li><span class="label">[number of zero traces padded on left side]</span> 
+              </li>
+
+              <li><span class="label">[number of zero traces padded on rigth side]</span> 
+              </li>
+
+              <li><span class="label">[print some useful information]</span> 
+              </li>
+            </ul>
+          </div>
+	    
+	  <a name="details" id="details"></a>
+          <h2>Description</h2>
+
+          <p></p>
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p> The input velocity file consists of C-style binary floats.
+              The structure of this file is [iz][ix]. Note that this means that
+              the x-direction is the fastest direction instead of z-direction! Such a
+              structure is more convenient for the downward continuation type
+              migration algorithm than using z as fastest dimension as in other SU
+              programs. </p>
+          
+          <p>Because most of the tools in the SU package (such as  unif2, unisam2,
+             and makevel) produce output with the structure [ix][iz], you will
+             need to transpose the velocity files created by these programs. You may
+             use the SU program Transpose in SU to transpose such files into the  
+             required [iz][ix] structure. <p>
+
+          <p> (In C  v[iz][ix] denotes a v(x,z) array, whereas v[ix][iz]  
+              denotes a v(z,x) array, the opposite of what Matlab and Fortran
+              programmers may expect.) <p>
+
+          <p> Also, sx must be monotonically increasing throughout the dataset, and 
+              and gx must be monotonically increasing within a shot. You may resort 
+              your data with SU Sort, accordingly. <p>
+
+          <p>The scalco header field is honored so this field must be set correctly.
+             See selfdocs of SU Sort, Suchw. Also:   sukeyword scalco <p>
+
+          <p> Trace header fields accessed: number of depth samples, time sampling interval, 
+              delay recording time, midpoint sampling interval <p>
+          <p> Trace header fields modified: number of depth samples, time sampling interval, 
+              delay recording time <p>
+
+	  <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+          <p></p>
+
+	  <!-- List of references -->
+          <ul>
+            <li></li>
+
+            <li></li>
+          </ul>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP, Baoniu Han, bhan@dix.mines.edu, April 19th, 1998</p>
+
+          <p>Modified: Chris Stolk, 11 Dec 2005, - changed data input
+             to remove erroneous time delay.<p>
+
+          <p> Modified: CWP, John Stockwell 26 Sept 2006 - replaced Han's
+          "goto-loop" in two places with "do { }while loops".
+          Fixed it so that shot point, receiver point, and scalco are honored.<p>
+
+	  
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) |
+        SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <int required="yes">
+        <keyword>nxo=</keyword>
+        <label>number of total horizontal output samples</label>
+        <value/>
+      </int>
+      <int required="yes">
+        <keyword>nxshot=</keyword>
+        <label>number of shot gathers to be migrated</label>
+        <value/>
+      </int>
+      <int required="yes">
+        <keyword>nz=</keyword>
+        <label>number of depth samples</label>
+        <value/>
+      </int>
+      <float required="yes">
+        <keyword>dx=</keyword>
+        <label>horizontal sampling interval</label>
+        <value/>
+      </float>
+      <float required="yes">
+        <keyword>dz=</keyword>
+        <label>depth sampling interval</label>
+        <value/>
+      </float>
+      <file required="yes" directory="no">
+        <keyword>vfile=</keyword>
+        <label>velocity profile</label>
+        <value/>
+      </file>
+      <float required="no">
+        <keyword>fmax=</keyword>
+        <label>peak frequency</label>
+        <value/>
+      </float>
+      <int required="no">
+        <keyword>f1=</keyword>
+        <label>frist frequency to build a Hamming window</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>f2=</keyword>
+        <label>second frequency to build a Hamming window</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>f3=</keyword>
+        <label>third frequency to build a Hamming window</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>f4=</keyword>
+        <label>fourth frequency to build a Hamming window</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>lpad=</keyword>
+        <label>number of zero traces padded on left side</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>rpad=</keyword>
+        <label>number of zero traces padded on right side</label>
+        <value/>
+      </int>
+      <flag>
+        <keyword>verbose=1</keyword>
+        <label>print some useful information</label>
+        <state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

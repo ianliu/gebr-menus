@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.3.0" nextid="n4">
+  <filename>suaddhead.mnu</filename>
+  <title>SU Add Header</title>
+  <description>Put headers on bare traces</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Add Head</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Add Head</span>
+
+          <div class="description">
+            Put headers on bare traces
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Import/Export | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Put headers on bare traces and set the number of traces and number of samples fields</p>
+
+	    
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Aug 26, 2007: written by Braulio Barros de Oliveira, UNICAMP - brauliobo@gmail.com</p>
+          <p>Jun 2, 2008: revised by Daniela Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | Jun 2, 2008</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Import/Export</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suaddhead.mnu</menu>
+    <title>SU Add Header</title>
+    <binary>suaddhead</binary>
+    <description>Put headers on bare traces</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Add head</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Add head</span>
+
+          <div class="description">
+            Put headers on bare traces
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Import/Export | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Put headers on bare traces and set the number of traces and number of samples fields</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Required parameters</h2>
+
+	    <!-- List of required parameters -->
+            <ul>
+              <li><span class="label">[Number of samples per trace]</span></li>
+            </ul>
+
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Data written unformatted from Fortran]</span><p>0 = data written unformatted from C </p>
+                                                                                    <p>1 = data written unformatted from Fortran</p></li>
+              <li><span class="label">[Trace sorting code]</span><p>1 = as recorded (no sorting)</p>
+                                <p>2 = CDP ensemble</p>
+                                <p>3 = single fold continuous profile</p>
+                                <p>4 = horizontally stacked</p></li>
+              <li><span class="label">[Number of data traces per record]</span> If you choice CDP ensemble, this is the number of traces per cdp</li>
+            </ul>
+          </div>
+	    
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>    
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Number of samples per trace</label><int><property required="yes"><keyword>ns=</keyword><value></value><default></default></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n1"><label>Data written unformatted from Fortran</label><flag><property required="no"><keyword>ftn=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n2"><label>Trace sorting code</label><range min="1" max="4" inc="1" digits=""><property required="no"><keyword>tsort=</keyword><value></value><default>3</default></property></range></parameter>
+      <parameter id="n3"><label>Number of data traces per record</label><int><property required="no"><keyword>ntrpr=</keyword><value></value><default></default></property>
+	
+	
+	
+      </int></parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>susort.mnu</filename>
+  <title>SU Sort</title>
+  <description>Sort on any segy header keywords</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Sort</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Sort</span>
+
+          <div class="description">
+            Sort on any segy header keywords
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This simple flow sorts the input data, guided by specifyed keyword of the data header.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GÃªBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+<program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">susort.mnu</menu>
+    <title>SU Sort</title>
+    <binary>susort</binary>
+    <description>sort on any segy header keywords</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Sort</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Sort</span>
+
+          <div class="description">
+            Sort on any segy header keywords
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+	  <p>Susort supports five keys with either ascending or descending
+	     directions for each. The default sort key is cdp.</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[First ascending keyword]</span> is used as
+              primary key to sort data ascendingly.</li>
+
+              <li><span class="label">[First descending keyword]</span> is used as
+              primary key to sort data descendingly.</li>
+
+              <li><span class="label">[Second ascending keyword]</span> is used as
+              secondary key to sort data ascendingly.</li>
+
+              <li><span class="label">[Second descending keyword]</span> is used as
+              secondary key to sort data descendingly.</li>
+
+              <li><span class="label">[Third ascending keyword]</span> is used as
+              further key to sort data ascendingly.</li>
+
+              <li><span class="label">[Third descending keyword]</span> is used as
+              further key to sort data descendingly.</li>
+
+              <li><span class="label">[Fourth ascending keyword]</span> is used as
+              further key to sort data ascendingly.</li>
+
+              <li><span class="label">[Fourth descending keyword]</span> is used as
+              further key to sort data descendingly.</li>
+
+              <li><span class="label">[Fifth ascending keyword]</span> is used as
+              last key to sort data ascendingly.</li>
+
+              <li><span class="label">[Fifth descending keyword]</span> is used as
+              last key to sort data descendingly.</li>
+              
+            </ul>
+          </div>
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>Only the following types of input/output are supported<br />
+        	Disk input &ndash;&gt; any output<br />
+        	Pipe input &ndash;&gt; Disk output</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>SEP: Einar, Stew<br />
+             CWP: Shuki, Jack</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <string required="no">
+        <keyword>+</keyword>
+        <label>First ascending keyword</label>
+        <value default="cdp"/>
+      </string>
+      <string required="no">
+        <keyword>-</keyword>
+        <label>First descending keyword</label>
+        <value/>
+      </string>
+      <string required="no">
+        <keyword>+</keyword>
+        <label>Second ascending keyword</label>
+        <value/>
+      </string>
+      <string required="no">
+        <keyword>-</keyword>
+        <label>Second descending keyword</label>
+        <value>offset</value>
+      </string>
+      <string required="no"><keyword>+</keyword><label>Third ascending keyword</label><value/></string>
+      <string required="no">
+        <keyword>-</keyword>
+        <label>Third descending keyword</label>
+        <value/>
+      </string>
+      <string required="no">
+        <keyword>+</keyword>
+        <label>Fourth ascending keyword</label>
+        <value/>
+      </string>
+      <string required="no">
+        <keyword>-</keyword>
+        <label>Fourth descending keyword</label>
+        <value/>
+      </string>
+      <string required="no">
+        <keyword>+</keyword>
+        <label>Fifth ascending keyword</label>
+        <value/>
+      </string>
+      <string required="no"><keyword>-</keyword><label>Fifth descending keyword</label><value/></string>
+    </parameters>
+  </program></flow>

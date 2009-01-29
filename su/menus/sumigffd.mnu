@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>sumigffd.mnu</filename>
+  <title>SU Migration FFD</title>
+  <description>Fourier finite difference migration for zero-offset data</description>
+    <help><![CDATA[
+   <html>
+    <header>
+       <title>SU Migration FFD</title>
+    </header>
+    <body>
+    <h1>SU Migration FFD</h1>
+    <p> Fourier finite difference migration for                 
+        zero-offset data. This method is a hybrid migration which 
+        combines the advantages of phase shift and finite difference", 
+        migrations.</p>
+    </body>
+    </html>
+    ]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sumigffd.mnu</menu>
+    <title>SUMIGFFD</title>
+    <binary>sumigff</binary>
+    <description>Fourier finite difference migration for zero-offset data</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" media=
+  "screen" />
+
+  <title>G&ecirc;BR - SU Migration FFD</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Migration FFD</span>
+	  <div class="description">Fourier finite difference migration for                 
+            zero-offset data. This method is a hybrid migration which 
+            combines the advantages of phase shift and finite difference", 
+            migrations</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+
+	  <ul>
+
+	  <li><span class="label">[number of depth samples]</span>
+	  </li>
+
+	  <li><span class="label">[depth sampling interval]</span>
+	  </li>
+
+	  <li><span class="label">[name of file containing velocities]</span>
+	  </li>
+
+          <ul>
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[time sampling interval]</span>
+	  </li>
+
+          <li><span class="label">[midpoint sampling interval]</span>
+	  </li>
+
+	  <li><span class="label">[first time sample]</span>
+	  </li>
+
+	  <li><span class="label">[first depth sample]</span>
+	  </li>
+
+	  <li><span class="label">[directory path prefix for storing temporary files]</span>
+          if non-empty, use the value as a directory path
+          prefix for storing temporary files; else if the
+          the CWP_TMPDIR environment variable is set use   
+          its value for the path; else use tmpfile() 
+	  </li>
+          
+          <ul>
+
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	  <p>The input velocity file \'vfile\' consists of C-style binary floats.  ",  
+             The structure of this file is vfile[iz][ix]. Note that this means that
+             the x-direction is the fastest direction instead of z-direction! Such a
+             structure is more convenient for the downward continuation type
+             migration algorithm than using z as fastest dimension as in other SU  ", 
+             programs.</p>
+
+	  <p> Because most of the tools in the SU package (such as  unif2, unisam2, ", 
+              and makevel) produce output with the structure vfile[ix][iz], you will
+              need to transpose the velocity files created by these programs. You may
+              use the SU program \'transp\' in SU to transpose such files into the  
+              required vfile[iz][ix] structure. </p>
+          
+          <p> Trace header fields accessed: number of depth samples, time sampling interval, 
+              delay recording time, midpoint sampling interval <p>
+          <p> Trace header fields modified: number of depth samples, time sampling interval, 
+              delay recording time <p>
+
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>CWP Baoniu Han, July 21th, 1997</p>
+
+           
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    ]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <int required="yes">
+        <keyword>ns=</keyword>
+        <label>number of depth samples </label>
+        <value/>
+      </int>
+      <float required="yes">
+        <keyword>dz=</keyword>
+        <label>depth sampling interval</label>
+        <value/>
+      </float>
+      <file required="yes" directory="no">
+        <keyword>vfile=</keyword>
+        <label>name of file containing velocities</label>
+        <value/>
+      </file>
+      <float required="no">
+        <keyword>dt=</keyword>
+        <label>time sampling interval</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>dx=</keyword>
+        <label>midpoint sampling interval</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>ft=</keyword>
+        <label>first time sample</label>
+        <value/>
+      </float>
+      <float required="no">
+        <keyword>fz=</keyword>
+        <label>first depth sample</label>
+        <value/>
+      </float>
+      <file required="no" directory="yes">
+        <keyword>tmpdir=</keyword>
+        <label>directory path prefix for storing temporary files</label>
+        <value/>
+      </file>
+    </parameters>
+  </program>
+</flow>

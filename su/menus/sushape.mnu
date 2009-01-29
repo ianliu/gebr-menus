@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>sushape.mnu</filename>
+  <title>SU shape</title>
+  <description>Wiener shaping filter</description>
+    <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Shape</title>
+    </header>
+    <body>
+    <h1>SU Shape</h1>
+    <p>Computes the Wiener shaping filter</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sushape.mnu</menu>
+    <title>SU shape</title>
+    <binary>sushape</binary>
+    <description>Wiener shaping filter</description>
+        <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" media=
+  "screen" />
+
+  <title>G&ecirc;BR - SU Shape</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Shape</span>
+	  <div class="description">Computes Wiener shaping filter</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Filtering, Transforms and Attributes | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+          <ul>
+
+          <li><span class="label">[Vector of input wavelet]</span>
+            Array with input wavelet.
+          </li>
+          <p> ...............or................</p>
+          <li><span class="label">[File containing input wavelet in SU format]</span>
+            Filename containing the input wavelet in SU format.
+          </li>
+          <li><span class="label">[Vector of desired output wavelet]</span>
+            Array with desired output wavelet.
+          </li>
+          <p> ...............or................</p>
+          <li><span class="label">[File containing desired output wavelet in SU format]</span>
+            Filename containing the desired output wavelet in SU format.
+          </li>
+          <li><span class="label">[Time sampling interval]</span>
+            if not set in trace header, specifications of its value in seconds is mandatory.
+          </li>
+         
+          </ul>
+
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[Length of shaping filter]</span>
+	  Take the number of samples from trace header, must be specified otherwise.</li>
+	  
+	  <li><span class="label">[Relative additive noise level]</span>
+          If not specified, the default value is 0.001.
+          </li>
+	  
+	  <li><span class="label">[Show shaping filter]</span> </li>
+	  
+	
+	  </ul>
+	
+	</div>
+	
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p> CWP: Jack K. Cohen, Dave Hale<br />
+              CWP: John Stockwell, added wfile and dfile  options </p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    ]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <string required="no">
+        <keyword>w=</keyword>
+        <label>Vector of input wavelet</label>
+        <value/>
+      </string>
+      <file required="no" directory="no">
+        <keyword>wfile=</keyword>
+        <label>File containing input wavelet in SU format</label>
+        <value/>
+      </file>
+      <string required="no">
+        <keyword>d=</keyword>
+        <label>Vector of desired output wavelet</label>
+        <value/>
+      </string>
+      <file required="no" directory="no">
+        <keyword>dfile=</keyword>
+        <label>File containing desired output wavelet in SU format</label>
+        <value/>
+      </file>
+      <int required="no">
+        <keyword>dt=</keyword>
+        <label>Time sampling interval</label>
+        <value/>
+      </int>
+      <int required="no">
+        <keyword>nshape=</keyword>
+        <label>Length of shaping filter</label>
+        <value/>
+      </int>
+      <string required="no">
+        <keyword>pnoise=</keyword>
+        <label>Relative additive noise level</label>
+        <value/>
+      </string>
+      <flag>
+        <keyword>showshaper=1</keyword>
+        <label>Show shaping filter</label>
+        <state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

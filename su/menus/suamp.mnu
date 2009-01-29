@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n1">
+  <filename>suamp.mnu</filename>
+  <title>SU Amp</title>
+  <description>Output attributes of trace from data</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Amp</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Amp</span>
+
+          <div class="description">
+            Output attributes of trace from data
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Filtering, Transforms and Attributes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Output amplitude traces, phase traces, real parts or imaginary parts of trace from data in (frequency, x) domain</p>
+
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Sep 16, 2007: written by UFPA-G&ecirc;BR Core Team</p>
+          <p>Oct 05, 2007: modified by Ricardo Biloti, UNICAMP - biloti@gmail.com</p>
+          <p>Jun 09, 2008: revised by Daniela Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | Jun 09, 2008</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suamp.mnu</menu>
+    <title>SU Amp</title>
+    <binary>suamp</binary>
+    <description>Output attributes of trace from data</description>
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share/gebrme/gebr.css" media=
+  "screen" />
+
+  <title>G&ecirc;BR - SU Amp</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Amp</span>
+	  <div class="description">Output attributes of trace from data</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Filtering, Transforms and Attributes | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Output amplitude traces, phase traces, real parts or imaginary parts of trace from data in (frequency, x) domain</p>
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+	  <p>None</p>
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[Mode]</span><p>amp = output amplitude traces</p> <p>phase = output phase traces</p> <p>real = output real parts</p> <p>imag = output imag parts</p></li>
+          </ul>
+	  	
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	  <p>The trace returned is half length from 0 to Nyquist.</p>
+
+	  <p>If efficiency becomes important consider inverting main loop
+          and repeating extraction code within the branches of the switch.</p>
+
+          <p>Trace header fields accessed: number of samples, trid
+          Trace header fields modified: number of samples, trid</p>
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>CWP: Shuki, Jack</p>
+          <p>CENPET: Werner M. Heigl - added repeat trace functionality</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Mode</label><string><property required="no"><keyword>mode=</keyword><value></value><default></default></property>
+        
+        
+        
+      </string></parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.2.2">
+  <filename>sumigfd.mnu</filename>
+  <title>SU Migration FD</title>
+  <description>45-90 degree Finite difference depth migration for zero-offset data</description>
+  <help><![CDATA[
+    <html>
+    <header>
+       <title>SU Migration FD</title>
+    </header>
+    <body>
+    <h1>SU Migration FD</h1>
+    <p>45-90 degree Finite difference depth migration for zero-offset data</p>
+    </body>
+    </html>
+    ]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sumigfd.mnu</menu>
+    <title>SU Migration FD</title>
+    <binary>sumigfd</binary>
+    <description>45-90 degree Finite difference depth migration for zero-offset data</description>
+    <help><![CDATA[<pre>
+ SUMIGFD - 45-90 degree Finite difference depth migration for
+           zero-offset data.
+
+   sumigfd &lt;infile &gt;outfile vfile= [optional parameters]
+
+ Required Parameters:
+ nz=		number of depth sapmles
+ dz=		depth sampling interval
+ vfile=	name of file containing velocities
+ 		(see Notes below concerning format of this file)
+
+ Optional Parameters:
+ dt=from header(dt) or .004    time sampling interval
+ dx=from header(d2) or 1.0	midpoint sampling interval
+ dip=45,65,79,80,87,89,90  	Maximum angle of dip reflector
+
+ tmpdir=	if non-empty, use the value as a directory path
+		prefix for storing temporary files; else if the
+		the CWP_TMPDIR environment variable is set use
+		its value for the path; else use tmpfile()
+
+ Notes:
+ The computation cost by dip angle is 45=65=79&lt;80&lt;87&lt;89&lt;90
+
+ The input velocity file 'vfile' consists of C-style binary floats.
+ The structure of this file is vfile[iz][ix]. Note that this means that
+ the x-direction is the fastest direction instead of z-direction! Such a
+ structure is more convenient for the downward continuation type
+ migration algorithm than using z as fastest dimension as in other SU
+ programs. (In C  v[iz][ix] denotes a v(x,z) array, whereas v[ix][iz]
+ denotes a v(z,x) array, the opposite of what Matlab and Fortran
+ programmers may expect.)
+
+ Because most of the tools in the SU package (such as  unif2, unisam2,
+ and makevel) produce output with the structure vfile[ix][iz], you will
+ need to transpose the velocity files created by these programs. You may
+ use the SU program 'transp' in SU to transpose such files into the
+ required vfile[iz][ix] structure.
+      </pre>]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <int required="yes">
+	<keyword>nz=</keyword>
+	<label>number of depth samples</label>
+	<value/>
+      </int>
+      <float required="yes">
+	<keyword>dz=</keyword>
+	<label>depth sampling interval</label>
+	<value/>
+      </float>
+      <file directory="no" required="yes">
+	<keyword>vfile=</keyword>
+	<label>file containing velocities</label>
+	<value default=""/>
+      </file>
+      <float required="no">
+	<keyword>dt=</keyword>
+	<label>time sampling interval</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>dx=</keyword>
+	<label>midpoint sampling interval</label>
+	<value/>
+      </float>
+      <int required="no">
+	<keyword>dip=</keyword>
+	<label>Maximum angle of dip reflector</label>
+	<value/>
+      </int>
+      <file directory="yes" required="no">
+	<keyword>tmpdir=</keyword>
+	<label>directory path to temporary files</label>
+	<value/>
+      </file>
+    </parameters>
+  </program>
+</flow>

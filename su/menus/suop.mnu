@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.2.2">
+  <filename>suop.mnu</filename>
+  <title>SU Unary arithmetic operations</title>
+  <description>Do unary arithmetic operation on segys</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Unary arithmetic operations</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Unary arithmetic operations</span>
+
+          <div class="description">
+            Do unary arithmetic operation on segys
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[operation]</span> defines the operation to be applied to each sample of the data. Allowed operations are:</li>
+	      <ul>
+	      </ul>
+            </ul>
+          </div>
+	    
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>GêBR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">suop.mnu</menu>
+    <title>SU Op</title>
+    <binary>suop</binary>
+    <description>do unary arithmetic operation on segys</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Op</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Op</span>
+          <div class="description">
+            Do unary arithmetic operation on segys
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Performs unary arithmetic operations to each trace of the data.</p>
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[operation]</span> defines the
+              operation to be applied to trace sample of the
+              data. Allowed operations are:</li>
+            </ul>
+	      <table>
+		<tr><td>abs</td><td>absolute value</td></tr>
+                <tr><td>avg</td><td>remove average value</td></tr>
+                <tr><td>ssqrt</td><td>signed square root</td></tr>
+                <tr><td>sqr</td><td>square</td></tr>
+                <tr><td>ssqr</td><td>signed square</td></tr>
+                <tr><td>sgn</td><td>signum function</td></tr>
+                <tr><td>exp</td><td>exponentiate</td></tr>
+                <tr><td>slog</td><td>signed natural log</td></tr>
+                <tr><td>slog10</td><td>signed common log</td></tr>
+                <tr><td>cos</td><td>cosine</td></tr>
+                <tr><td>sin</td><td>sine</td></tr>
+                <tr><td>tan</td><td>tangent</td></tr>
+                <tr><td>cosh</td><td>hyperbolic cosine</td></tr>
+                <tr><td>sinh</td><td>hyperbolic sine</td></tr>
+                <tr><td>tanh</td><td>hyperbolic tangent</td></tr>
+                <tr><td>norm</td><td>divide trace by Max. Value</td></tr>
+                <tr><td>db</td><td>20 * slog10 (data)</td></tr>
+                <tr><td>neg</td><td>negate value</td></tr>
+                <tr><td>posonly</td><td>pass only positive values</td></tr>
+                <tr><td>negonly&nbsp;&nbsp;</td><td>pass only negative values</td></tr>
+                <tr><td>sum</td><td>running sum trace integration</td></tr>
+                <tr><td>diff</td><td>running diff trace differentiation</td></tr>
+                <tr><td>refl</td><td>(v[i+1] - v[i])/(v[i+1] + v[i])</td></tr>
+                <tr><td>mod2pi</td><td>modulo 2 &pi;</td></tr>
+                <tr><td>inv</td><td>inverse</td></tr>
+                <tr><td>rmsamp</td><td>rms amplitude</td></tr>
+                <tr><td>nop</td><td>no operation</td></tr>
+	      </table>
+          </div> 
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>Binary ops are provided by suop2. Operations inv, slog and slog10 are
+	     "punctuated", meaning that if, the input contains 0 values, 0 values
+	     are returned.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Shuki, Jack<br />
+             Toralf Foerster: norm and db operations, 10/95.</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <string required="no">
+        <keyword>op=</keyword>
+        <label>operation</label>
+        <value default="abs"/>
+      </string>
+    </parameters>
+  </program>
+</flow>

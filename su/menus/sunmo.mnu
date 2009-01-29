@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.2.2">
+  <filename>sunmo.mnu</filename>
+  <title>SU NMO</title>
+  <description>NMO for an arbitrary velocity function of time and CDP</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU NMO</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU NMO</span>
+
+          <div class="description">
+            NMO for an arbitrary velocity function of time and CDP
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+	  <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+          <p>A list of references where the algorithm or strategy
+          is published and/or described.</p>
+
+	  <!-- List of references -->
+          <ul>
+            <li>William A. Schneider, <i>The Common Depth Point Stack</i>,
+            Proc. IEEE, v. 72, n. 10, p. 1238-1254, 1984.</li>
+          </ul>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Aug 26, 2007: created by Ricardo Biloti, G&ecirc;BR Core Team<br />
+	     Nov 14, 2007: improved by Daniela Amazonas, SU Port Team<br />
+ 	     Feb 15, 2008: improved by Ricardo Biloti, G&ecirc;BR Core Team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.1) | SU40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sunmo.mnu</menu>
+    <title>SU NMO</title>
+    <binary>sunmo</binary>
+    <description>NMO for an arbitrary velocity function of time and CDP</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU NMO</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU NMO</span>
+
+          <div class="description">
+            NMO for an arbitrary velocity function of time and CDP
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[file with input parameters]</span></li>
+
+              <li><span class="label">[NMO times corresponding to velocities in vnmo]</span></li>
+
+              <li><span class="label">[NMO velocities corresponding to times in tnmo]</span></li>
+
+              <li><span class="label">[first anisotropy coefficient making up quartic term in traveltime curve, corresponding to times in tnmo]</span></li>
+
+              <li><span class="label">[second anisotropy coefficient making up quartic term in traveltime curve, corresponding to times in tnmo]</span></li>
+
+              <li><span class="label">[CDPs for which vnmo and tnmo are specified]</span></li>
+
+              <li><span class="label">[samples with NMO stretch exceeding smute are zeroed]</span></li>
+
+              <li><span class="label">[length (in samples) of linear ramp for stretch mute]</span></li>
+
+              <li><span class="label">[do not divide output samples by NMO stretch factor]</span></li>
+
+              <li><span class="label">[perform (approximate) inverse NMO]</span></li>
+
+              <li><span class="label">[read cross-line offset from trace header]</span></li>
+
+              <li><span class="label">[scan upward to find first sample to kill]</span></li>
+
+          </ul>
+          </div>
+	    
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p> For constant-velocity NMO, specify only one NMO velocity and omit NMO time.</p>
+
+          <p>The anisotropy coefficients anis1, anis2 permit non-hyperbolicity due
+             to layering, mode conversion, or anisotropy. Default is isotropic NMO.</p>
+
+          <p>For NMO with a velocity function of time only, specify a list of velocities and
+             corresponding times. The times specified must be monotonically increasing.
+             Linear interpolation and constant extrapolation of the specified velocities
+             is used to compute the velocities at times not specified.
+             The same holds for the anisotropy coefficients as a function of time only.</p>
+
+          <p><b>Not yet supported (waiting for group parameter):</b><br />For NMO with a velocity function of time and CDP, specify the array
+           cdp=cdp1,cdp2,...
+           and, for each CDP specified, specify the vnmo and tnmo arrays as described
+           above. The first (vnmo,tnmo) pair corresponds to the first cdp, and so on.
+           Linear interpolation and constant extrapolation of 1/velocity^2 is used
+           to compute velocities at CDPs not specified.
+           The same holds for the anisotropy coefficients as a function of time and
+           CDP.</p>
+
+	  <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+          <ul>
+           <li>William A. Schneider, <i>The Common Depth Point Stack</i>,
+            Proc. IEEE, v. 72, n. 10, p. 1238-1254, 1984.</li>
+          </ul>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>SEP: Shuki, Chuck Sword<br />
+             CWP: Shuki, Jack, Dave Hale, Bjoern Rommel<br />
+             Modified: 08/08/98 - Carlos E. Theodoro - option for lateral offset</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.4 (0.2.1) | SU40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <file directory="no" required="no">
+	<keyword>par=</keyword>
+	<label>file with input parameters</label>
+	<value/>
+      </file>
+      <float required="no" separator=","><keyword>tnmo=</keyword><label>NMO times corresponding to velocities in vnmo</label><value/></float>
+      <float required="no" separator=","><keyword>vnmo=</keyword><label>NMO velocities corresponding to times in tnmo</label><value/></float>
+      <float required="no">
+	<keyword>anis1=</keyword>
+	<label>first anisotropy coefficient making up quartic term in traveltime curve, corresponding to times in tnmo</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>anis2=</keyword>
+	<label>second anisotropy coefficient making up quartic term in traveltime curve, corresponding to times in tnmo</label>
+	<value/>
+      </float>
+      <int required="no"><keyword>cdp=</keyword><label>CDPs for which vnmo and tnmo are specified</label><value/></int>
+      <float required="no">
+	<keyword>smute=</keyword>
+	<label>samples with NMO stretch exceeding smute are zeroed</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>lmute=</keyword>
+	<label>length (in samples) of linear ramp for stretch mute</label>
+	<value/>
+      </float>
+      <flag>
+	<keyword>sscale=0</keyword>
+	<label>do not divide output samples by NMO stretch factor</label>
+	<state default="off"/>
+      </flag>
+      <flag>
+	<keyword>invert=1</keyword>
+	<label>perform (approximate) inverse NMO</label>
+	<state default="off"/>
+      </flag>
+      <flag>
+	<keyword>ixoffset=1</keyword>
+	<label>read cross-line offset from trace header</label>
+	<state default="off"/>
+      </flag>
+      <flag>
+	<keyword>upward=1</keyword>
+	<label>scan upward to find first sample to kill</label>
+	<state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

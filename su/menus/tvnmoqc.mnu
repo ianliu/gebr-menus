@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.1.0">
+  <filename>tvnmoqc.mnu</filename>
+  <title>SU Tvnmoqc</title>
+  <description>Check tnmo-vnmo pairs; create t-v column files</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Tvnmoqc</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Tvnmoqc</span>
+
+          <div class="description">
+            Check tnmo-vnmo pairs; create t-v column files
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.2pre20071105 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@users.sf.net</email>
+  
+  <category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category><io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured">
+    <menu index="0">tvnmoqc.mnu</menu>
+    <title>SU Tvnmoqc</title>
+    <binary>tvnmoqc</binary>
+    <description>Check tnmo-vnmo pairs; create t-v column files</description>
+     <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" media=
+  "screen" />
+
+  <title>G&ecirc;BR - SU Tvmnoqc</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Tvnmoqc</span>
+	  <div class="description">Check tnmo-vnmo pairs; create t-v column files</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+	<div class="content">
+
+	<div class="parameters">
+
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
+	  
+          <ul>
+	  
+	  <li><span class="label">[Prefix of output t-v file(s)]</span></li>
+	  
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  <li><span class="label">[output t-v files]</span></li>
+	  </ul>
+	
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	  <p> Example: <br/>                                                
+ 			tvnmoqc mode=1 \          <br/>                                         
+ 			cdp=15,35 \           <br/>                                             
+ 			tnmo=0.0091,0.2501,0.5001,0.7501,0.9941 \ <br/>                         
+ 			vnmo=1497.0,2000.0,2500.0,3000.0,3500.0 \  <br/>                        
+ 			tnmo=0.0082,0.2402,0.4902,0.7402,0.9842 \  <br/>                        
+ 			vnmo=1495.0,1900.0,2400.0,2900.0,3400.0  .</p>
+
+	  <p>  mode=1       <br/>                                                       
+   		TVNMOQC checks that there is a tnmo and vnmo series for each CDP 
+     		and it checks that each tnmo series increases in time. .</p>
+
+          <p>  mode=2 <br/> 
+		TVNMOQC does mode=1 checking, plus ...  .</p>
+	
+	   <p>  TVNMOQC converts par (MKPARFILE) values written as:    <br/>           
+                                                                    
+          cdp=15,35,...,95 \   <br/>                                     
+          tnmo=t151,t152,...,t15n \  <br/>                               
+          vnmo=v151,v152,...,v15n \ <br/>                                
+          tnmo=t351,t352,...,t35n \ <br/>                                
+          vnmo=v351,v352,...,v35n \  <br/>                               
+          tnmo=... \                 <br/>                               
+          vnmo=... \                                               
+          tnmo=t951,t952,...,t95n \  <br/>                               
+          vnmo=v951,v952,...,v95n \  <br/>                               
+                                               <br/>                      
+   to column format. The format of each output file is:     <br/>         
+                     <br/>                                                
+          t1 v1     <br/>                                                 
+          t2 v2    <br/>                                                  
+           ...     <br/>                                                  
+          tn vn    <br/>                                                  
+                                <br/>                                     
+   One file is output for each input pair of tnmo-vnmo series.  <br/>     
+                                                          <br/>             
+   A CDP VALUE MUST BE SUPPLIED FOR EACH TNMO-VNMO ROW PAIR.  <br/>       
+                                                            <br/>           
+   Prefix of each output file is the user-supplied value of parameter PREFIX.  <br/>  
+                            
+   Suffix of each output file is the cdp value.  <br/>   
+                  
+   For the example above, output files names are: <br/>                     
+     PREFIX.15  PREFIX.35  ...  PREFIX.95  .<p>
+	  
+
+	<!--  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>SEP: Einar Kjartansson<br />
+             CWP: Jack K. Cohen, Dave Hale<br />
+             CENPET: Werner M. Heigl - added repeat trace functionality</p>
+	-->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    ]]></help>
+    <parameters>
+      <string required="yes">
+        <keyword>prefix=</keyword>
+        <label>Prefix of output t-v file(s)</label>
+        <value/>
+      </string>
+      <flag>
+        <keyword>mode=2</keyword>
+        <label>output t-v files</label>
+        <state default="off"/>
+      </flag>
+    </parameters>
+  </program>
+</flow>

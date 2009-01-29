@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flow version="0.2.2">
+  <filename>suxwigb.mnu</filename>
+  <title>SU X Wiggle Bitmap</title>
+  <description>SU X Wiggle-trace plot of f(x1,x2) via Bitmap</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU X Wiggle Bitmap</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU X Wiggle Bitmap</span>
+
+          <div class="description">
+            X-windows Bit-mapped Wiggle plot of a segy data set
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Graphics | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>X-windows Bit-mapped Wiggle plot of a segy data set.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>G&ecirc;BR core team</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+  </help>
+  <author>GêBR core team</author>
+  <email>gebr@sourceforge.net</email>
+  <date><created/><modified/><lastrun/></date><category>Graphics</category>
+  <category>Seismic Unix</category>
+  <io><input/><output/><error/></io>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured">
+    <menu index="0">suxwigb.mnu</menu>
+    <title>SU X Wiggle Bitmap</title>
+    <binary>suxwigb</binary>
+    <description>X-windows Bit-mapped Wiggle plot of a segy data set</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU X Wiggle Bitmap</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU X Wiggle Bitmap</span>
+          <div class="description">
+	     X-windows Bit-mapped Wiggle plot of a segy data set            
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Graphics | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[values of x2 are set from header field specified by keyword]</span>.</li>
+              <li><span class="label">[first sample in 1st dimension]</span>.</li>
+              <li><span class="label">[number of samples in 2nd (slow) dimension]</span> all if not specified.</li>
+              <li><span class="label">[sampling interval in 2nd dimension]</span>.</li>
+              <li><span class="label">[first sample in 2nd dimension]</span>.</li>
+              <li><span class="label">[array of sampled values in 2nd dimension]</span>.</li>
+              <li><span class="label">[file to save mouse picks in]</span>.</li>
+              <li><span class="label">[data value corresponding to location along axis 2]</span>.</li>
+              <li><span class="label">[percentile for determining clip]</span>.</li>
+              <li><span class="label">[data values < bias+clip and > bias-clip are clipped]</span>.</li>
+              <li><span class="label">[wiggle excursion in traces corresponding to clip]</span>.</li>
+              <li><span class="label">[no wiggle-trace]</span>.</li>
+              <li><span class="label">[0 for no variable-area; =1 for variable-area fill
+                        =2 for variable area, solid/grey fill]</span> SHADING: 2&le;va&le;5  va=2 light grey, va=5 black.</li>
+              <li><span class="label">[print some useful information]</span>.</li>
+              <li><span class="label">[x in pixels of upper left corner of window]</span>.</li>
+              <li><span class="label">[y in pixels of upper left corner of window]</span>.</li>
+              <li><span class="label">[width in pixels of window]</span>.</li>
+              <li><span class="label">[height in pixels of window]</span>.</li>
+              <li><span class="label">[value at which axis 1 begins]</span>.</li>
+              <li><span class="label">[value at which axis 1 ends]</span>.</li>
+              <li><span class="label">[numbered tic interval on axis 1 (0.0 for automatic)]</span>.</li>
+              <li><span class="label">[first numbered tic on axis 1]</span>.</li>
+              <li><span class="label">[number of tics per numbered tic on axis 1]</span>.</li>
+              <li><span class="label">[grid lines on axis 1 - none, dot, dash, or solid]</span>.</li>
+              <li><span class="label">[label on axis 1]</span>.</li>
+              <li><span class="label">[value at which axis 2 begins]</span>.</li>
+              <li><span class="label">[value at which axis 2 ends]</span>.</li>
+              <li><span class="label">[numbered tic interval on axis 2 (0.0 for automatic)]</span>.</li>
+              <li><span class="label">[number of tics per numbered tic on axis 2]</span>.</li>
+              <li><span class="label">[grid lines on axis 2 - none, dot, dash, or solid]</span>.</li>
+              <li><span class="label">[label on axis 2]</span>.</li>
+              <li><span class="label">[font name for axes labels]</span>.</li>
+              <li><span class="label">[title of plot]</span>.</li>
+              <li><span class="label">[font name for title]</span>.</li>
+              <li><span class="label">[title on window]</span>.</li>
+              <li><span class="label">[color for axes labels]</span>.</li>
+              <li><span class="label">[color for title]</span>.</li>
+              <li><span class="label">[color for grid lines]</span>.</li>
+              <li><span class="label">[Swap axes]</span>.</li>
+              <li><span class="label">[0 (little endian), 1 (big endian)]</span>.</li>
+              <li><span class="label">[use 8 point sinc interpolation]</span>.</li>
+              <li><span class="label">[extra-large wiggles are
+                         are clipped at the boundary of the plot box]</span>.</li>
+              <li><span class="label">[filename for interactive ploting]</span>.</li>
+              <li><span class="label">[file(s) containing points to draw curve(s)]</span>.</li>
+              <li><span class="label">[number(s) of pairs in each file]</span>.</li>
+              <li><span class="label">[color(s) for curve(s)]</span>.</li>
+              <li><span class="label">[path to store temporary files]</span>.</li>
+
+            </ul>
+          </div>
+	    
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>Note that for seismic time domain data, the "fast dimension" is
+	 time and the "slow dimension" is usually trace number or range.
+	 Also note that "foreign" data tapes may have something unexpected
+	 in the d2,f2 fields, use segyclean to clear these if you can afford
+	 the processing time or use d2= f2= to override the header values if
+	 not.</p>
+
+	<p>If key=keyword is set, then the values of x2 are taken from the header
+	 field represented by the keyword (for example key=offset, will show
+	 traces in true offset). This permit unequally spaced traces to be plotted.</p>
+
+	<p>When the number of traces isn't known, we need to count
+        the traces for xwigb. You can make this value "known"
+        either by getparring n2 or by having the ntr field set
+        in the trace header.  A getparred value takes precedence
+        over the value in the trace header.</p>
+
+        <p>When we must compute ntr, we don't allocate a 2-d array,
+        but just content ourselves with copying trace by trace from
+        the data "file" to the pipe into the plotting program.
+        Although we could use tr.data, we allocate a trace buffer
+        for code clarity.</p>
+
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Dave Hale and Zhiming Li (xwigb, etc.)<br />
+           Jack Cohen and John Stockwell (suxwigb, etc.)<br />
+        Delphi: Alexander Koek, added support for irregularly spaced traces</p>
+
+        <p>Modified by Brian Zook, Southwest Research Institute, to honor
+         scale factors, added vsp style</p>
+
+	</div>
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+]]>
+    </help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
+      <string required="no">
+	<keyword>key=</keyword>
+	<label>if set, the values of x2 are set from header field specified by keyword</label>
+	<value/>
+      </string>      
+      <int required="no">
+	<keyword>n2=</keyword>
+	<label>number of traces to be plotted in 2nd (slow) dimension</label>
+	<value/>
+      </int>
+      <float required="no">
+	<keyword>d1=</keyword>
+	<label>sampling interval in the fast dimension</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>d2=</keyword>
+	<label>sampling interval in 2nd dimension</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>f1=</keyword>
+	<label>first sample in the fast dimension</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>f2=</keyword>
+	<label>first sample in 2nd dimension</label>
+	<value/>
+      </float>
+      <string required="no">
+        <keyword>x2=</keyword>
+	<label>array of sampled values in 2nd dimension</label>
+	<value/>
+      </string>
+      <file directory="no" required="no">
+	<keyword>mpicks=</keyword>
+	<label>file to save mouse picks in</label>
+	<value default="/dev/null"/>
+      </file>
+      <float required="no">
+        <keyword>bias=</keyword>
+	<label>data value corresponding to location along axis 2</label>
+        <value/>
+      </float>
+      <range min="0" max="100" inc="0.1" required="no" digits="">
+	<keyword>perc=</keyword>
+	<label>percentile used to determine clip</label>
+	<value default="100"/>
+      </range>
+      <int required="no">
+	<keyword>clip=</keyword>
+	<label>clip used to determine bclip and wclip</label>
+	<value default=""/>
+      </int>
+      <float required="no">
+	<keyword>xcur=</keyword>
+	<label>wiggle excursion in traces corresponding to clip</label>
+	<value/>
+      </float>
+      <flag>
+	<keyword>wt=0</keyword>
+        <label>no wiggle-trace</label>
+        <state default="off"/>
+      </flag>
+      <range min="0" max="5" inc="1" required="no" digits="">
+	<keyword>va=0</keyword>
+	<label>0 (no variable-area), 1 (variable-area), 2 (variable-area, solid grey fill)</label>
+	<value default="1"/>
+      </range>
+      <flag>
+	<keyword>verbose=1</keyword>
+	<label>print some useful information</label>
+	<state default="off"/>
+      </flag>
+      <int required="no">
+	<keyword>xbox=</keyword>
+	<label>x in pixels of upper left corner of window</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>ybox=</keyword>
+	<label>y in pixels of upper left corner of window</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>wbox=</keyword>
+	<label>width in pixels of window</label>
+	<value/>
+      </int>
+      <int required="no">
+	<keyword>hbox=</keyword>
+	<label>height in pixels of window</label>
+	<value/>
+      </int>
+      <float required="no">
+	<keyword>x1beg=</keyword>
+	<label>value at which axis 1 begins</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>x1end=</keyword>
+	<label>value at which axis 1 ends</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>d1num=</keyword>
+	<label>numbered tic interval on axis 1</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>f1num=</keyword>
+	<label>first numbered tic on axis 1</label>
+	<value/>
+      </float>
+      <int required="no">
+	<keyword>n1tic=</keyword>
+	<label>number of tics per numbered tic on axis 1</label>
+	<value/>
+      </int>
+      <string required="no">
+	<keyword>grid1=</keyword>
+	<label>grid lines on axis 1 - none, dot, dash, or solid</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>label1=</keyword>
+	<label>label on axis 1</label>
+	<value/>
+      </string>
+      <float required="no">
+	<keyword>x2beg=</keyword>
+	<label>value at which axis 2 begins</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>x2end=</keyword>
+	<label>value at which axis 2 ends</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>d2num=</keyword>
+	<label>numbered tic interval on axis 2</label>
+	<value/>
+      </float>
+      <float required="no">
+	<keyword>f2num=</keyword>
+	<label>first numbered tic on axis 2</label>
+	<value/>
+      </float>
+      <int required="no">
+	<keyword>n2tic=</keyword>
+	<label>number of tics per numbered tic on axis 2</label>
+	<value/>
+      </int>
+      <string required="no">
+	<keyword>grid2=</keyword>
+	<label>grid lines on axis 2 - none, dot, dash, or solid</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>label2=</keyword>
+	<label>label on axis 2</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>labelfont=</keyword>
+	<label>font name for axes labels</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>title=</keyword>
+	<label>title of plot</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>titlefont=</keyword>
+	<label>font name for title</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>windowtitle=</keyword>
+	<label>title on window</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>labelcolor=</keyword>
+	<label>color for axes labels</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>titlecolor=</keyword>
+	<label>color for title</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>gridcolor=</keyword>
+	<label>color for grid lines</label>
+	<value/>
+      </string>
+      <flag>
+	<keyword>style=vsp</keyword>
+	<label>VSP layout</label>
+	<state default="off"/>
+      </flag>
+      <file directory="no" required="no">
+	<keyword>plotfile=</keyword>
+	<label>filename for interactive ploting</label>
+	<value/>
+      </file>
+      <string required="no">
+	<keyword>curve=</keyword>
+	<label>file(s) containing points to draw curve(s)</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>npair=</keyword>
+	<label>number(s) of pairs in each file</label>
+	<value/>
+      </string>
+      <string required="no">
+	<keyword>curvecolor=</keyword>
+	<label>color(s) for curve(s)</label>
+	<value/>
+      </string>
+      <range required="no" min="0" max="1" inc="1" digits="">
+	<keyword>endian=</keyword>
+	<label>little (0) / big (1) endian</label>
+        <value default="0"/>
+      </range>
+      <flag>
+	<keyword>interp=1</keyword>
+	<label>use 8 point sinc interpolation</label>
+        <state default="off"/>
+      </flag>
+      <flag>
+        <keyword>wigclip=1</keyword>
+        <label>extra-large wiggles are are clipped at the boundary of the plot box</label>
+        <state default="off"/>
+     </flag>
+     <file required="no" directory="yes"><keyword>tmpdir=</keyword><label>directory path prefix for storing temporary files</label><value/></file></parameters>
+  </program>
+</flow>
