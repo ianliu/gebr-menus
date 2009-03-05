@@ -29,6 +29,7 @@ AC_PROG_INSTALL
 AC_PROG_CC
 
 AC_OUTPUT([
+Makefile
 menus/Makefile
 packages/Makefile
 packages/rpm/gebr-menus-shtools.fedora.spec

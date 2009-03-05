@@ -1,5 +1,5 @@
-# GÍBR Menus ShTools - Several shell tools for GÍBR
-# Copyright (C) 2008 Ricardo Biloti <biloti@gmail.com>
+# GeBR Menus SU - Seismic Unix menus for GeBR
+# Copyright (C) 2008-2009 GeBR Core Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
