@@ -1,5 +1,5 @@
-# GÍBR Menus Shell Tools - Several shell tools for GÍBR
-# Copyright (C) 2008 Ricardo Biloti <biloti@gmail.com>
+# GeBR Menus Shell Tools - Several shell tools for GeBR
+# Copyright (C) 2008-2009 Ricardo Biloti <biloti@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,28 +14,4 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-SUBDIRS=menus
-
-EXTRA_DIST=
-	rpm/gebr.fedora.spec \
-	rpm/gebr.opensuse.spec \
-	rpm/gebr.mandriva.spec
-
-packages: deb-package fedora-package mandriva-package opensuse-package
-
-deb-package:
-	dpkg-buildpackage -kA594D681 -tc -rfakeroot
-
-rpm-structure: dist
-	mkdir -p rpm/BUILD rpm/RPMS rpm/SRPMS rpm/SOURCES && cp @PACKAGE@-@VERSION@.tar.gz rpm/SOURCES
-
-fedora-package: rpm-structure
-	rpmbuild -ba rpm/gebr-menus-shtools.fedora.spec
-
-opensuse-package: rpm-structure
-	rpmbuild -ba rpm/gebr-menus-shtools.opensuse.spec
-
-mandriva-package: rpm-structure
-	rpmbuild -ba rpm/gebr-menus-shtools.mandriva.spec
-
-PHONY: doc deb-package rpm-structure fedora-package opensuse-package mandriva-package
+SUBDIRS=menus packages

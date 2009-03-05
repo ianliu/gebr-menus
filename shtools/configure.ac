@@ -1,5 +1,5 @@
-# GÍBR Menus FileConv - Several shell tools for GÍBR
-# Copyright (C) 2008 Ricardo Biloti <biloti@gmail.com>
+# GeBR Menus Shell Tools - Several shell tools for GeBR
+# Copyright (C) 2008-2009 Ricardo Biloti <biloti@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,9 +29,9 @@ AC_PROG_INSTALL
 AC_PROG_CC
 
 AC_OUTPUT([
-Makefile
 menus/Makefile
-rpm/gebr-menus-shtools.fedora.spec
-rpm/gebr-menus-shtools.opensuse.spec
-rpm/gebr-menus-shtools.mandriva.spec
+packages/Makefile
+packages/rpm/gebr-menus-shtools.fedora.spec
+packages/rpm/gebr-menus-shtools.opensuse.spec
+packages/rpm/gebr-menus-shtools.mandriva.spec
 ])
