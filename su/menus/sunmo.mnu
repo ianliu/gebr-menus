@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n13">
   <filename>sunmo.mnu</filename>
   <title>SU NMO</title>
   <description>NMO for an arbitrary velocity function of time and CDP</description>
@@ -52,7 +52,8 @@
 
           <p>Aug 26, 2007: created by Ricardo Biloti, G&ecirc;BR Core Team<br />
 	     Nov 14, 2007: improved by Daniela Amazonas, SU Port Team<br />
- 	     Feb 15, 2008: improved by Ricardo Biloti, G&ecirc;BR Core Team</p>
+ 	     Feb 15, 2008: improved by Ricardo Biloti, G&ecirc;BR Core Team<br />
+             Mar 05, 2009: improved by Ricardo Biloti, G&ecirc;BR Core Team</p>
         </div>
 
         <div class="navigation">
@@ -69,7 +70,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.1) | SU40</span>
+        <span class="left">G&ecirc;BR 0.9.9 (0.3.0) | SU41</span>
 
         <div class="clearer"></div>
       </div>
@@ -77,8 +78,7 @@
   </div>
 </body>
 </html>
-]]>
-  </help>
+]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
   <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
@@ -170,7 +170,7 @@
              is used to compute the velocities at times not specified.
              The same holds for the anisotropy coefficients as a function of time only.</p>
 
-          <p><b>Not yet supported (waiting for group parameter):</b><br />For NMO with a velocity function of time and CDP, specify the array
+          <p>For NMO with a velocity function of time and CDP, specify the array
            cdp=cdp1,cdp2,...
            and, for each CDP specified, specify the vnmo and tnmo arrays as described
            above. The first (vnmo,tnmo) pair corresponds to the first cdp, and so on.
@@ -212,7 +212,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.1) | SU40</span>
+        <span class="left">G&ecirc;BR 0.9.9 (0.3.0) | SU41</span>
 
         <div class="clearer"></div>
       </div>
@@ -220,57 +220,56 @@
   </div>
 </body>
 </html>
-]]>
-    </help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <file directory="no" required="no">
-	<keyword>par=</keyword>
-	<label>file with input parameters</label>
-	<value/>
-      </file>
-      <float required="no" separator=","><keyword>tnmo=</keyword><label>NMO times corresponding to velocities in vnmo</label><value/></float>
-      <float required="no" separator=","><keyword>vnmo=</keyword><label>NMO velocities corresponding to times in tnmo</label><value/></float>
-      <float required="no">
-	<keyword>anis1=</keyword>
-	<label>first anisotropy coefficient making up quartic term in traveltime curve, corresponding to times in tnmo</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>anis2=</keyword>
-	<label>second anisotropy coefficient making up quartic term in traveltime curve, corresponding to times in tnmo</label>
-	<value/>
-      </float>
-      <int required="no"><keyword>cdp=</keyword><label>CDPs for which vnmo and tnmo are specified</label><value/></int>
-      <float required="no">
-	<keyword>smute=</keyword>
-	<label>samples with NMO stretch exceeding smute are zeroed</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>lmute=</keyword>
-	<label>length (in samples) of linear ramp for stretch mute</label>
-	<value/>
-      </float>
-      <flag>
-	<keyword>sscale=0</keyword>
-	<label>do not divide output samples by NMO stretch factor</label>
-	<state default="off"/>
-      </flag>
-      <flag>
-	<keyword>invert=1</keyword>
-	<label>perform (approximate) inverse NMO</label>
-	<state default="off"/>
-      </flag>
-      <flag>
-	<keyword>ixoffset=1</keyword>
-	<label>read cross-line offset from trace header</label>
-	<state default="off"/>
-      </flag>
-      <flag>
-	<keyword>upward=1</keyword>
-	<label>scan upward to find first sample to kill</label>
-	<state default="off"/>
-      </flag>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters exclusive="0">
+      <parameter id="n0"><label>file with input parameters</label><file directory="no"><property required="no"><keyword>par=</keyword><value></value><default></default></property>
+	
+	
+	
+      </file></parameter>
+      
+      
+      <parameter id="n3"><label>first anisotropy coefficient making up quartic term in traveltime curve, corresponding to times in tnmo</label><float><property required="no"><keyword>anis1=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n4"><label>second anisotropy coefficient making up quartic term in traveltime curve, corresponding to times in tnmo</label><float><property required="no"><keyword>anis2=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n5"><label>CDPs for which vnmo and tnmo are specified</label><int><property required="no" separator=","><keyword>cdp=</keyword><value></value><default></default></property></int></parameter>
+      <parameter id="n12"><label>Times and velocities</label><group instanciable="yes" expand="no"><parameters exclusive="0"><parameter id="n1"><label>NMO times corresponding to velocities in vnmo</label><float><property required="no" separator=","><keyword>tnmo=</keyword><value/><default/></property></float></parameter><parameter id="n2"><label>NMO velocities corresponding to times in tnmo</label><float><property required="no" separator=","><keyword>vnmo=</keyword><value/><default/></property></float></parameter></parameters></group></parameter><parameter id="n6"><label>samples with NMO stretch exceeding smute are zeroed</label><float><property required="no"><keyword>smute=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n7"><label>length (in samples) of linear ramp for stretch mute</label><float><property required="no"><keyword>lmute=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n8"><label>do not divide output samples by NMO stretch factor</label><flag><property required="no"><keyword>sscale=0</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n9"><label>perform (approximate) inverse NMO</label><flag><property required="no"><keyword>invert=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n10"><label>read cross-line offset from trace header</label><flag><property required="no"><keyword>ixoffset=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n11"><label>scan upward to find first sample to kill</label><flag><property required="no"><keyword>upward=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
     </parameters>
   </program>
 </flow>
