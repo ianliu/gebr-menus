@@ -32,10 +32,10 @@ rpm-structure:
 	mkdir -p rpm/BUILD rpm/RPMS rpm/SRPMS rpm/SOURCES && cp ../@PACKAGE@-@VERSION@.tar.gz rpm/SOURCES
 
 fedora-package: rpm-structure
-	rpmbuild -ba rpm/gebr-menus-su.fedora.spec
+	rpmbuild -ba rpm/gebr-menus-shtools.fedora.spec
 
 opensuse-package: rpm-structure
-	rpmbuild -ba rpm/gebr-menus-su.opensuse.spec
+	rpmbuild -ba rpm/gebr-menus-shtools.opensuse.spec
 
 mandriva-package: rpm-structure
-	rpmbuild -ba rpm/gebr-menus-su.mandriva.spec
+	rpmbuild -ba rpm/gebr-menus-shtools.mandriva.spec
