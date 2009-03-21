@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n18">
   <filename>sugain.mnu</filename>
   <title>SU Gain</title>
-  <description>apply various types of gain to display traces</description>
+  <description>Apply various types of gain to display traces</description>
   <help><![CDATA[
     <html>
     <header>
@@ -15,16 +15,16 @@
     </html>
     </pre>]]>
   </help>
-  <author>GêBR core team</author>
-  <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmai.com</email>
+  <date><created/><modified>2009-03-20T23:59:38.485167Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
     <menu index="0">sugain.mnu</menu>
     <title>SU Gain</title>
     <binary>sugain</binary>
-    <description>apply various types of gain to display traces</description>
+    <description>Apply various types of gain to display traces</description>
     <help><![CDATA[<pre>
  SUGAIN - apply various types of gain to display traces
 
@@ -77,97 +77,97 @@
 	for more information about the mark header field.
     </pre>]]>
     </help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <flag>
-	<keyword>panel=1</keyword>
-	<label>gain whole data set (vs. trace by trace)</label>
-	<state default="off"/>
-      </flag>
-      <float required="no">
-	<keyword>tpow=</keyword>
-	<label>multiply data by t^tpow</label>
-	<value default="0.0"/>
-      </float>
-      <float required="no">
-	<keyword>epow=</keyword>
-	<label>multiply data by exp(epow*t)</label>
-	<value/>
-      </float>
-      <flag>
-	<keyword>agc=1</keyword>
-	<label>do automatic gain control</label>
-	<state default="on"/>
-      </flag>
-      <flag>
-	<keyword>gagc=1</keyword>
-	<label>with gaussian taper</label>
-	<state default="on"/>
-      </flag>
-      <float required="no">
-	<keyword>wagc=</keyword>
-	<label>agc window in seconds (use if agc or gagc is checked)</label>
-	<value default="0.5"/>
-      </float>
-      <float required="no">
-	<keyword>trap=</keyword>
-	<label>zero any value whose magnitude exceeds trapval</label>
-	<value default=""/>
-      </float>
-      <float required="no">
-	<keyword>clip=</keyword>
-	<label>zero any value whose magnitude exceeds clipval</label>
-	<value default=""/>
-      </float>
-      <float required="no">
-	<keyword>qclip=</keyword>
-	<label>clip by quantile on absolute values on trace</label>
-	<value/>
-      </float>
-      <flag>
-	<keyword>qbal=1</keyword>
-	<label>balance traces by qclip and scale</label>
-	<state default="off"/>
-      </flag>
-      <flag>
-	<keyword>pbal=1</keyword>
-	<label>bal traces by dividing by rms value</label>
-	<state default="off"/>
-      </flag>
-      <flag>
-	<keyword>mbal=1</keyword>
-	<label>bal traces by subtracting the mean</label>
-	<state default="off"/>
-      </flag>
-      <float required="no">
-	<keyword>scale=</keyword>
-	<label>multiply data by overall scale factor</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>norm=</keyword>
-	<label>divide data by overall scale factor</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>bias=</keyword>
-	<label>bias data by adding an overall bias value</label>
-	<value/>
-      </float>
-      <flag>
-	<keyword>jon=1</keyword>
-	<label>tpow=2, gpow=.5, qclip=.95</label>
-	<state default="off"/>
-      </flag>
-      <flag>
-	<keyword>verbose=1</keyword>
-	<label>echoes info</label>
-	<state default="off"/>
-      </flag>
-      <file directory="yes" required="no">
-	<keyword>tmpdir=</keyword>
-	<label>directory path prefix for storing temporary files</label>
-	<value default=""/>
-      </file>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Gain whole data set (vs. trace by trace)</label><flag><property required="no"><keyword>panel=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n1"><label>Multiply data by t^tpow</label><float><property required="no"><keyword>tpow=</keyword><value></value><default>0.0</default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n2"><label>Multiply data by exp(epow*t)</label><float><property required="no"><keyword>epow=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n3"><label>Do automatic gain control</label><flag><property required="no"><keyword>agc=1</keyword><value></value><default>on</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n4"><label>With gaussian taper</label><flag><property required="no"><keyword>gagc=1</keyword><value></value><default>on</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n5"><label>AGC window in seconds (use if agc or gagc is checked)</label><float><property required="no"><keyword>wagc=</keyword><value></value><default>0.5</default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n6"><label>Zero any value whose magnitude exceeds trapval</label><float><property required="no"><keyword>trap=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n7"><label>Zero any value whose magnitude exceeds clipval</label><float><property required="no"><keyword>clip=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n8"><label>Clip by quantile on absolute values on trace</label><float><property required="no"><keyword>qclip=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n9"><label>Balance traces by qclip and scale</label><flag><property required="no"><keyword>qbal=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n10"><label>Bal traces by dividing by rms value</label><flag><property required="no"><keyword>pbal=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n11"><label>Bal traces by subtracting the mean</label><flag><property required="no"><keyword>mbal=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n12"><label>Multiply data by overall scale factor</label><float><property required="no"><keyword>scale=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n13"><label>Divide data by overall scale factor</label><float><property required="no"><keyword>norm=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n14"><label>Bias data by adding an overall bias value</label><float><property required="no"><keyword>bias=</keyword><value></value><default></default></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n15"><label>tpow=2, gpow=.5, qclip=.95</label><flag><property required="no"><keyword>jon=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n16"><label>Echoes info</label><flag><property required="no"><keyword>verbose=1</keyword><value></value><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n17"><label>Directory path prefix for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value></value><default></default></property>
+	
+	
+	
+      </file></parameter>
     </parameters>
   </program>
 </flow>

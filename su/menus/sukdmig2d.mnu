@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n41">
   <filename>sukdmig2d.mnu</filename>
   <title>SU Kirchhoff mig 2D</title>
   <description>Kirchhoff Depth Migration of 2D poststack or prestack data</description>
@@ -16,7 +16,7 @@
     ]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Migration and Dip Moveout</category>
+  <date><created/><modified>2009-03-21T00:00:31.646829Z</modified><lastrun/></date><category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
   <io>
     <input/>
@@ -209,218 +209,212 @@
   </div>
 </body>
 </html>]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <file required="yes" directory="no">
-        <keyword>infile=</keyword>
-        <label>file for input seismic traces</label>
-        <value/>
-      </file>
-      <file required="yes" directory="no">
-        <keyword>outfile=</keyword>
-        <label>file for common offset migration output</label>
-        <value/>
-      </file>
-      <file required="yes" directory="no">
-        <keyword>ttfile=</keyword>
-        <label>file for input traveltime tables</label>
-        <value/>
-      </file>
-      <int required="yes">
-        <keyword>fzt=</keyword>
-        <label>first depth sample in traveltime table</label>
-        <value/>
-      </int>
-      <int required="yes">
-        <keyword>nzt=</keyword>
-        <label>number of depth samples in traveltime table</label>
-        <value/>
-      </int>
-      <float required="no">
-        <keyword>dzt=</keyword>
-        <label>depth interval in traveltime table</label>
-        <value/>
-      </float>
-      <int required="yes">
-        <keyword>fxt=</keyword>
-        <label>first lateral sample in traveltime table</label>
-        <value/>
-      </int>
-      <int required="yes">
-        <keyword>nxt=</keyword>
-        <label>number of lateral samples in traveltime
-        table</label>
-        <value/>
-      </int>
-      <float required="no">
-        <keyword>dxt=</keyword>
-        <label>lateral interval in traveltime table</label>
-        <value/>
-      </float>
-      <float required="yes">
-        <keyword>fs=</keyword>
-        <label>x-coordinate of first source</label>
-        <value/>
-      </float>
-      <int required="yes">
-        <keyword>ns=</keyword>
-        <label>number of sources</label>
-        <value/>
-      </int>
-      <float required="yes">
-        <keyword>ds=</keyword>
-        <label>x-coordinate increment of sources</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>dt=</keyword>
-        <label>time sampling interval of input data</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>ft=</keyword>
-        <label>first time sample of input data</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>dxm=</keyword>
-        <label>sampling interval of midpoints</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>fzo=</keyword>
-        <label>z-coordinate of first point in output trace</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>dzo=</keyword>
-        <label>vertical spacing of output trace</label>
-        <value/>
-      </float>
-      <int required="no">
-        <keyword>nzo=</keyword>
-        <label>number of points in output trace</label>
-        <value/>
-      </int>
-      <float required="no">
-        <keyword>fxo=</keyword>
-        <label>x-coordinate of first output trace</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>dxo=</keyword>
-        <label>horizontal spacing of output trace</label>
-        <value/>
-      </float>
-      <int required="no">
-        <keyword>nxo=</keyword>
-        <label>number of output traces</label>
-        <value/>
-      </int>
-      <float required="no">
-        <keyword>off0=</keyword>
-        <label>first offest in output</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>doff=</keyword>
-        <label>offset increment in output</label>
-        <value/>
-      </float>
-      <int required="no">
-        <keyword>noff=</keyword>
-        <label>number of offsets in output</label>
-        <value/>
-      </int>
-      <flag>
-        <keyword>absoff=1</keyword>
-        <label>flag for using absolute offsets of input
-        traces</label>
-        <state default="off"/>
-      </flag>
-      <flag>
-        <keyword>limoff=1</keyword>
-        <label>flag for only using input traces that fall within
-        the range</label>
-        <state default="off"/>
-      </flag>
-      <float required="no">
-        <keyword>fmax=</keyword>
-        <label>frequency-highcut for input traces</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>offmax=</keyword>
-        <label>maximum absolute offset allowed in migration</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>aperx=</keyword>
-        <label>migration lateral aperature</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>angmax=</keyword>
-        <label>migration angle aperature from vertical</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>v0=</keyword>
-        <label>reference velocity value at surface</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>dvz=</keyword>
-        <label>reference velocity vertical gradient</label>
-        <value/>
-      </float>
-      <flag>
-        <keyword>ls=1</keyword>
-        <label>flag for line source</label>
-        <state default="off"/>
-      </flag>
-      <string required="no">
-        <keyword>jpfile=</keyword>
-        <label>job print file name</label>
-        <value/>
-      </string>
-      <int required="no">
-        <keyword>mtr=</keyword>
-        <label>print verbal information at every traces</label>
-        <value/>
-      </int>
-      <int required="no">
-        <keyword>ntr=</keyword>
-        <label>maximum number of input traces to be
-        migrated</label>
-        <value/>
-      </int>
-      <flag>
-        <keyword>npv=1</keyword>
-        <label>flag of computing quantities for velocity
-        analysis</label>
-        <state default="off"/>
-      </flag>
-      <float required="no">
-        <keyword>rscale=</keyword>
-        <label>scaling for roundoff error suppression</label>
-        <value/>
-      </float>
-      <file required="no" directory="no">
-        <keyword>tvfile=</keyword>
-        <label>input file of traveltime variation tables</label>
-        <value/>
-      </file>
-      <file required="no" directory="no">
-        <keyword>csfile=</keyword>
-        <label>input file of cosine tables</label>
-        <value/>
-      </file>
-      <file required="no" directory="no">
-        <keyword>outfile1=</keyword>
-        <label>file containning additional migration output with
-        extra amplitude</label>
-        <value/>
-      </file>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>file for input seismic traces</label><file directory="no"><property required="yes"><keyword>infile=</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n1"><label>file for common offset migration output</label><file directory="no"><property required="yes"><keyword>outfile=</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n2"><label>file for input traveltime tables</label><file directory="no"><property required="yes"><keyword>ttfile=</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n3"><label>first depth sample in traveltime table</label><int><property required="yes"><keyword>fzt=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n4"><label>number of depth samples in traveltime table</label><int><property required="yes"><keyword>nzt=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n5"><label>depth interval in traveltime table</label><float><property required="no"><keyword>dzt=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n6"><label>first lateral sample in traveltime table</label><int><property required="yes"><keyword>fxt=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n7"><label>Number of lateral samples in traveltime table</label><int><property required="yes"><keyword>nxt=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n8"><label>lateral interval in traveltime table</label><float><property required="no"><keyword>dxt=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n9"><label>x-coordinate of first source</label><float><property required="yes"><keyword>fs=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n10"><label>number of sources</label><int><property required="yes"><keyword>ns=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n11"><label>x-coordinate increment of sources</label><float><property required="yes"><keyword>ds=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n12"><label>time sampling interval of input data</label><float><property required="no"><keyword>dt=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n13"><label>first time sample of input data</label><float><property required="no"><keyword>ft=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n14"><label>sampling interval of midpoints</label><float><property required="no"><keyword>dxm=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n15"><label>z-coordinate of first point in output trace</label><float><property required="no"><keyword>fzo=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n16"><label>vertical spacing of output trace</label><float><property required="no"><keyword>dzo=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n17"><label>number of points in output trace</label><int><property required="no"><keyword>nzo=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n18"><label>x-coordinate of first output trace</label><float><property required="no"><keyword>fxo=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n19"><label>horizontal spacing of output trace</label><float><property required="no"><keyword>dxo=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n20"><label>number of output traces</label><int><property required="no"><keyword>nxo=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n21"><label>first offest in output</label><float><property required="no"><keyword>off0=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n22"><label>offset increment in output</label><float><property required="no"><keyword>doff=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n23"><label>number of offsets in output</label><int><property required="no"><keyword>noff=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n24"><label>flag for using absolute offsets of input        traces</label><flag><property required="no"><keyword>absoff=1</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n25"><label>flag for only using input traces that fall within        the range</label><flag><property required="no"><keyword>limoff=1</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n26"><label>frequency-highcut for input traces</label><float><property required="no"><keyword>fmax=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n27"><label>maximum absolute offset allowed in migration</label><float><property required="no"><keyword>offmax=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n28"><label>migration lateral aperature</label><float><property required="no"><keyword>aperx=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n29"><label>migration angle aperature from vertical</label><float><property required="no"><keyword>angmax=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n30"><label>reference velocity value at surface</label><float><property required="no"><keyword>v0=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n31"><label>reference velocity vertical gradient</label><float><property required="no"><keyword>dvz=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n32"><label>flag for line source</label><flag><property required="no"><keyword>ls=1</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n33"><label>job print file name</label><string><property required="no"><keyword>jpfile=</keyword><value></value><default></default></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n34"><label>print verbal information at every traces</label><int><property required="no"><keyword>mtr=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n35"><label>maximum number of input traces to be        migrated</label><int><property required="no"><keyword>ntr=</keyword><value></value><default></default></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n36"><label>flag of computing quantities for velocity        analysis</label><flag><property required="no"><keyword>npv=1</keyword><value></value><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n37"><label>scaling for roundoff error suppression</label><float><property required="no"><keyword>rscale=</keyword><value></value><default></default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n38"><label>input file of traveltime variation tables</label><file directory="no"><property required="no"><keyword>tvfile=</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n39"><label>input file of cosine tables</label><file directory="no"><property required="no"><keyword>csfile=</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n40"><label>file containning additional migration output with        extra amplitude</label><file directory="no"><property required="no"><keyword>outfile1=</keyword><value></value><default></default></property>
+        
+        
+        
+      </file></parameter>
     </parameters>
   </program>
 </flow>

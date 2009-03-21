@@ -33,6 +33,7 @@ gebrmenu_DATA = \
 		sufilter.mnu        \
 		sugain.mnu          \
 		sukdmig2d.mnu       \
+	        sukeycount.mnu      \
 		sukill.mnu          \
 		sumigfd.mnu         \
 		sumigffd.mnu        \
