@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.3.0" nextid="n52">
+<flow version="0.3.0" nextid="n66">
   <filename>suxwigb.mnu</filename>
   <title>SU X Wiggle Bitmap</title>
-  <description>SU X Wiggle-trace plot of f(x1,x2) via Bitmap</description>
+  <description>SU X Wiggle plot</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -71,14 +71,14 @@
 ]]></help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
-  <date><created/><modified>2009-03-18T13:05:39.114358Z</modified><lastrun/></date><category>Graphics</category>
+  <date><created/><modified>2009-03-21T17:01:36.176756Z</modified><lastrun/></date><category>Graphics</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured">
     <menu index="0">suxwigb.mnu</menu>
     <title>SU X Wiggle Bitmap</title>
     <binary>suxwigb</binary>
-    <description>X-windows Bit-mapped Wiggle plot of a segy data set</description>
+    <description>SU X Wiggle plot</description>
     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -315,217 +315,217 @@
       <option><label>Y group coordinate</label><value>gy</value></option>
       <option><label>Y source coordinate</label><value>sy</value></option>
       <option><label>Year data recorded</label><value>year</value></option>
-      </enum></parameter><parameter id="n1"><label>number of traces to be plotted in 2nd (slow) dimension</label><int><property required="no"><keyword>n2=</keyword><value></value><default></default></property>
+      </enum></parameter><parameter id="n1"><label>Number of traces to be plotted</label><int><property required="no"><keyword>n2=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n2"><label>sampling interval in the fast dimension</label><float><property required="no"><keyword>d1=</keyword><value></value><default></default></property>
+      <parameter id="n2"><label>sampling interval in the fast dimension</label><float><property required="no"><keyword>d1=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n3"><label>sampling interval in 2nd dimension</label><float><property required="no"><keyword>d2=</keyword><value></value><default></default></property>
+      <parameter id="n3"><label>sampling interval in 2nd dimension</label><float><property required="no"><keyword>d2=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n4"><label>first sample in the fast dimension</label><float><property required="no"><keyword>f1=</keyword><value></value><default></default></property>
+      <parameter id="n4"><label>first sample in the fast dimension</label><float><property required="no"><keyword>f1=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n5"><label>first sample in 2nd dimension</label><float><property required="no"><keyword>f2=</keyword><value></value><default></default></property>
+      <parameter id="n5"><label>first sample in 2nd dimension</label><float><property required="no"><keyword>f2=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n6"><label>array of sampled values in 2nd dimension</label><string><property required="no"><keyword>x2=</keyword><value></value><default></default></property>
+      <parameter id="n6"><label>array of sampled values in 2nd dimension</label><string><property required="no"><keyword>x2=</keyword><value/><default/></property>
         
 	
 	
       </string></parameter>
-      <parameter id="n7"><label>file to save mouse picks in</label><file directory="no"><property required="no"><keyword>mpicks=</keyword><value></value><default>/dev/null</default></property>
+      <parameter id="n7"><label>file to save mouse picks in</label><file directory="no"><property required="no"><keyword>mpicks=</keyword><value/><default>/dev/null</default></property>
 	
 	
 	
       </file></parameter>
-      <parameter id="n8"><label>data value corresponding to location along axis 2</label><float><property required="no"><keyword>bias=</keyword><value></value><default></default></property>
+      <parameter id="n8"><label>data value corresponding to location along axis 2</label><float><property required="no"><keyword>bias=</keyword><value/><default/></property>
         
 	
         
       </float></parameter>
-      <parameter id="n9"><label>percentile used to determine clip</label><range min="0" max="100" inc="0.1" digits=""><property required="no"><keyword>perc=</keyword><value></value><default>100</default></property>
+      <parameter id="n9"><label>percentile used to determine clip</label><range min="0" max="100" inc="0.1" digits=""><property required="no"><keyword>perc=</keyword><value/><default>100</default></property>
 	
 	
 	
       </range></parameter>
-      <parameter id="n10"><label>clip used to determine bclip and wclip</label><int><property required="no"><keyword>clip=</keyword><value></value><default></default></property>
+      <parameter id="n10"><label>clip used to determine bclip and wclip</label><int><property required="no"><keyword>clip=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n11"><label>wiggle excursion in traces corresponding to clip</label><float><property required="no"><keyword>xcur=</keyword><value></value><default></default></property>
+      <parameter id="n11"><label>wiggle excursion in traces corresponding to clip</label><float><property required="no"><keyword>xcur=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n12"><label>no wiggle-trace</label><flag><property required="no"><keyword>wt=0</keyword><value></value><default>off</default></property>
+      <parameter id="n12"><label>no wiggle-trace</label><flag><property required="no"><keyword>wt=0</keyword><value/><default>off</default></property>
 	
         
         
       </flag></parameter>
       <parameter id="n13"><label>Wiggle style</label><enum><property required="no"><keyword>va=</keyword><value/><default>1</default></property><option><label>no wiggle-trace</label><value>0</value></option><option><label>wiggle-trace</label><value>1</value></option><option><label>variable area (light grey)</label><value>2</value></option><option><label>variable area (grey)</label><value>3</value></option><option><label>variable area (dark grey)</label><value>4</value></option><option><label>variable area (black)</label><value>5</value></option></enum></parameter>
-      <parameter id="n14"><label>print some useful information</label><flag><property required="no"><keyword>verbose=1</keyword><value></value><default>off</default></property>
+      <parameter id="n14"><label>print some useful information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
 	
 	
 	
       </flag></parameter>
-      <parameter id="n15"><label>x in pixels of upper left corner of window</label><int><property required="no"><keyword>xbox=</keyword><value></value><default></default></property>
+      <parameter id="n15"><label>x in pixels of upper left corner of window</label><int><property required="no"><keyword>xbox=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n16"><label>y in pixels of upper left corner of window</label><int><property required="no"><keyword>ybox=</keyword><value></value><default></default></property>
+      <parameter id="n16"><label>y in pixels of upper left corner of window</label><int><property required="no"><keyword>ybox=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n17"><label>width in pixels of window</label><int><property required="no"><keyword>wbox=</keyword><value></value><default></default></property>
+      <parameter id="n17"><label>width in pixels of window</label><int><property required="no"><keyword>wbox=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n18"><label>height in pixels of window</label><int><property required="no"><keyword>hbox=</keyword><value></value><default></default></property>
+      <parameter id="n18"><label>height in pixels of window</label><int><property required="no"><keyword>hbox=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n19"><label>value at which axis 1 begins</label><float><property required="no"><keyword>x1beg=</keyword><value></value><default></default></property>
+      <parameter id="n19"><label>value at which axis 1 begins</label><float><property required="no"><keyword>x1beg=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n20"><label>value at which axis 1 ends</label><float><property required="no"><keyword>x1end=</keyword><value></value><default></default></property>
+      <parameter id="n20"><label>value at which axis 1 ends</label><float><property required="no"><keyword>x1end=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n21"><label>numbered tic interval on axis 1</label><float><property required="no"><keyword>d1num=</keyword><value></value><default></default></property>
+      <parameter id="n21"><label>numbered tic interval on axis 1</label><float><property required="no"><keyword>d1num=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n22"><label>first numbered tic on axis 1</label><float><property required="no"><keyword>f1num=</keyword><value></value><default></default></property>
+      <parameter id="n22"><label>first numbered tic on axis 1</label><float><property required="no"><keyword>f1num=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n23"><label>number of tics per numbered tic on axis 1</label><int><property required="no"><keyword>n1tic=</keyword><value></value><default></default></property>
+      <parameter id="n23"><label>number of tics per numbered tic on axis 1</label><int><property required="no"><keyword>n1tic=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
       
-      <parameter id="n50"><label>Grid line style on axis 1</label><enum><property required="no"><keyword>grid1=</keyword><value/><default></default></property><option><label>none</label><value>none</value></option><option><label>dot</label><value>dot</value></option><option><label>dash</label><value>dash</value></option><option><label>solid</label><value>solid</value></option></enum></parameter><parameter id="n25"><label>label on axis 1</label><string><property required="no"><keyword>label1=</keyword><value></value><default></default></property>
+      <parameter id="n50"><label>Grid line style on axis 1</label><enum><property required="no"><keyword>grid1=</keyword><value/><default/></property><option><label>none</label><value>none</value></option><option><label>dot</label><value>dot</value></option><option><label>dash</label><value>dash</value></option><option><label>solid</label><value>solid</value></option></enum></parameter><parameter id="n25"><label>label on axis 1</label><string><property required="no"><keyword>label1=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n26"><label>value at which axis 2 begins</label><float><property required="no"><keyword>x2beg=</keyword><value></value><default></default></property>
+      <parameter id="n26"><label>value at which axis 2 begins</label><float><property required="no"><keyword>x2beg=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n27"><label>value at which axis 2 ends</label><float><property required="no"><keyword>x2end=</keyword><value></value><default></default></property>
+      <parameter id="n27"><label>value at which axis 2 ends</label><float><property required="no"><keyword>x2end=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n28"><label>numbered tic interval on axis 2</label><float><property required="no"><keyword>d2num=</keyword><value></value><default></default></property>
+      <parameter id="n28"><label>numbered tic interval on axis 2</label><float><property required="no"><keyword>d2num=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n29"><label>first numbered tic on axis 2</label><float><property required="no"><keyword>f2num=</keyword><value></value><default></default></property>
+      <parameter id="n29"><label>first numbered tic on axis 2</label><float><property required="no"><keyword>f2num=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n30"><label>number of tics per numbered tic on axis 2</label><int><property required="no"><keyword>n2tic=</keyword><value></value><default></default></property>
+      <parameter id="n30"><label>number of tics per numbered tic on axis 2</label><int><property required="no"><keyword>n2tic=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n51"><label>Grid line style on axis 2</label><enum><property required="no"><keyword>grid2=</keyword><value/><default></default></property><option><label>none</label><value>none</value></option><option><label>dot</label><value>dot</value></option><option><label>dash</label><value>dash</value></option><option><label>solid</label><value>solid</value></option></enum></parameter>
-      <parameter id="n32"><label>label on axis 2</label><string><property required="no"><keyword>label2=</keyword><value></value><default></default></property>
+      <parameter id="n51"><label>Grid line style on axis 2</label><enum><property required="no"><keyword>grid2=</keyword><value/><default/></property><option><label>none</label><value>none</value></option><option><label>dot</label><value>dot</value></option><option><label>dash</label><value>dash</value></option><option><label>solid</label><value>solid</value></option></enum></parameter>
+      <parameter id="n32"><label>label on axis 2</label><string><property required="no"><keyword>label2=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n33"><label>font name for axes labels</label><string><property required="no"><keyword>labelfont=</keyword><value></value><default></default></property>
+      <parameter id="n33"><label>font name for axes labels</label><string><property required="no"><keyword>labelfont=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n34"><label>title of plot</label><string><property required="no"><keyword>title=</keyword><value></value><default></default></property>
+      <parameter id="n34"><label>title of plot</label><string><property required="no"><keyword>title=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n35"><label>font name for title</label><string><property required="no"><keyword>titlefont=</keyword><value></value><default></default></property>
+      <parameter id="n35"><label>font name for title</label><string><property required="no"><keyword>titlefont=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n36"><label>title on window</label><string><property required="no"><keyword>windowtitle=</keyword><value></value><default></default></property>
+      <parameter id="n36"><label>title on window</label><string><property required="no"><keyword>windowtitle=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n37"><label>color for axes labels</label><string><property required="no"><keyword>labelcolor=</keyword><value></value><default></default></property>
+      <parameter id="n37"><label>color for axes labels</label><string><property required="no"><keyword>labelcolor=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n38"><label>color for title</label><string><property required="no"><keyword>titlecolor=</keyword><value></value><default></default></property>
+      <parameter id="n38"><label>color for title</label><string><property required="no"><keyword>titlecolor=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n39"><label>color for grid lines</label><string><property required="no"><keyword>gridcolor=</keyword><value></value><default></default></property>
+      <parameter id="n39"><label>color for grid lines</label><string><property required="no"><keyword>gridcolor=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n40"><label>VSP layout</label><flag><property required="no"><keyword>style=vsp</keyword><value></value><default>off</default></property>
+      <parameter id="n40"><label>VSP layout</label><flag><property required="no"><keyword>style=vsp</keyword><value/><default>off</default></property>
 	
 	
 	
       </flag></parameter>
-      <parameter id="n41"><label>filename for interactive ploting</label><file directory="no"><property required="no"><keyword>plotfile=</keyword><value></value><default></default></property>
+      <parameter id="n41"><label>filename for interactive ploting</label><file directory="no"><property required="no"><keyword>plotfile=</keyword><value/><default/></property>
 	
 	
 	
       </file></parameter>
       <parameter id="n42"><label>file(s) containing points to draw curve(s)</label><file directory="no"><property required="no" separator=","><keyword>curve=</keyword><value/><default/></property></file></parameter>
       <parameter id="n43"><label>number(s) of pairs in each file</label><int><property required="no" separator=","><keyword>npair=</keyword><value/><default/></property></int></parameter>
-      <parameter id="n44"><label>color(s) for curve(s)</label><string><property required="no" separator=","><keyword>curvecolor=</keyword><value></value><default></default></property>
+      <parameter id="n44"><label>color(s) for curve(s)</label><string><property required="no" separator=","><keyword>curvecolor=</keyword><value/><default/></property>
 	
 	
 	
       </string></parameter>
-      <parameter id="n45"><label>Endian</label><enum><property required="no"><keyword>endian=</keyword><value/><default></default></property><option><label>little endian</label><value>0</value></option><option><label>big endian</label><value>1</value></option></enum></parameter>
-      <parameter id="n46"><label>use 8 point sinc interpolation</label><flag><property required="no"><keyword>interp=1</keyword><value></value><default>off</default></property>
+      <parameter id="n45"><label>Endian</label><enum><property required="no"><keyword>endian=</keyword><value/><default/></property><option><label>little endian</label><value>0</value></option><option><label>big endian</label><value>1</value></option></enum></parameter>
+      <parameter id="n46"><label>use 8 point sinc interpolation</label><flag><property required="no"><keyword>interp=1</keyword><value/><default>off</default></property>
 	
 	
         
       </flag></parameter>
-      <parameter id="n47"><label>extra-large wiggles are are clipped at the boundary of the plot box</label><flag><property required="no"><keyword>wigclip=1</keyword><value></value><default>off</default></property>
+      <parameter id="n47"><label>extra-large wiggles are are clipped at the boundary of the plot box</label><flag><property required="no"><keyword>wigclip=1</keyword><value/><default>off</default></property>
         
         
         
      </flag></parameter>
-     <parameter id="n48"><label>directory path prefix for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value></value><default></default></property></file></parameter></parameters>
+     <parameter id="n48"><label>directory path prefix for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property></file></parameter></parameters>
   </program>
 </flow>

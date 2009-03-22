@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n6">
   <filename>supws.mnu</filename>
   <title>SU Phase-(weighted) stack</title>
   <description>Phase-weighted stack (PWS) of adjacent traces having the same key header word</description>
@@ -208,37 +208,37 @@
 </body>
 </html>
 ]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <string required="no">
-        <keyword>key=</keyword>
-        <label>key header word to stack on</label>
-        <value default="cdp"/>
-      </string>
-      <float required="no">
-        <keyword>pwr=</keyword>
-        <label>raise phase stack to power</label>
-        <value default="1.0"/>
-      </float>
-      <float required="no">
-        <keyword>dt=</keyword>
-        <label>time sampling intervall in seconds</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>sl=</keyword>
-        <label>window length in seconds used for smoothing of the phase stack (weights)</label>
-        <value/>
-      </float>
-      <flag>
-        <keyword>ps=1</keyword>
-        <label>output is phase stack (no-weighting)</label>
-        <state default="off"/>
-      </flag>
-      <flag>
-        <keyword>verbose=1</keyword>
-        <label>echo additional information</label>
-        <state default="off"/>
-      </flag>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>key header word to stack on</label><string><property required="no"><keyword>key=</keyword><value/><default>cdp</default></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n1"><label>raise phase stack to power</label><float><property required="no"><keyword>pwr=</keyword><value/><default>1.0</default></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n2"><label>time sampling intervall in seconds</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n3"><label>window length in seconds used for smoothing of the phase stack (weights)</label><float><property required="no"><keyword>sl=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n4"><label>output is phase stack (no-weighting)</label><flag><property required="no"><keyword>ps=1</keyword><value/><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n5"><label>echo additional information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
     </parameters>
   </program>
 </flow>

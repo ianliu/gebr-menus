@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n8">
   <filename>sumigsplit.mnu</filename>
   <title>SU Migration Split-Step</title>
   <description>Split-step depth migration for zero-offset data</description>
@@ -165,47 +165,47 @@
 </html>
     
 ]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <int required="yes">
-        <keyword>nz=</keyword>
-        <label>number of depth samples</label>
-        <value/>
-      </int>
-      <float required="yes">
-        <keyword>dz=</keyword>
-        <label>depth sampling interval</label>
-        <value/>
-      </float>
-      <file required="yes" directory="no">
-        <keyword>vfile=</keyword>
-        <label>name of file containing velocities</label>
-        <value/>
-      </file>
-      <float required="no">
-        <keyword>dt=</keyword>
-        <label>time sampling interval</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>dx=</keyword>
-        <label>midpoint sampling interval</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>ft=</keyword>
-        <label>first time sample</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>fz=</keyword>
-        <label>first depth sample</label>
-        <value/>
-      </float>
-      <file required="no" directory="yes">
-        <keyword>tmpdir=</keyword>
-        <label>directory path prefix for storing temporary files</label>
-        <value/>
-      </file>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>number of depth samples</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n1"><label>depth sampling interval</label><float><property required="yes"><keyword>dz=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n2"><label>name of file containing velocities</label><file directory="no"><property required="yes"><keyword>vfile=</keyword><value/><default/></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n3"><label>time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n4"><label>midpoint sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n5"><label>first time sample</label><float><property required="no"><keyword>ft=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n6"><label>first depth sample</label><float><property required="no"><keyword>fz=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n7"><label>directory path prefix for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
+        
+        
+        
+      </file></parameter>
     </parameters>
   </program>
 </flow>

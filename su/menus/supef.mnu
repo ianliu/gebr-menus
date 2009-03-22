@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n11">
   <filename>supef.mnu</filename>
   <title>SU PEF</title>
   <description>Wiener predictive error filtering</description>
@@ -233,62 +233,62 @@
 </body>
 </html>
     ]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <float required="no">
-        <keyword>dt=</keyword>
-        <label>Time sampling interval</label>
-        <value/>
-      </float>
-      <string required="no">
-        <keyword>cdp=</keyword>
-        <label>CDPs for which optional parameters are set</label>
-        <value/>
-      </string>
-      <float required="no">
-        <keyword>minlag=</keyword>
-        <label>First lag of prediction filter</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>maxlag=</keyword>
-        <label>Maximum lag of prediction filter</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>pnoise=</keyword>
-        <label>Relative additive noise level</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>mincorr=</keyword>
-        <label>Start of autocorrelation window</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>maxcorr=</keyword>
-        <label>End of autocorrelation window</label>
-        <value/>
-      </float>
-      <flag>
-        <keyword>showwiener=1</keyword>
-        <label>Show Wiener filter on each trace</label>
-        <state default="off"/>
-      </flag>
-      <string required="no">
-        <keyword>mix=</keyword>
-        <label>Array of weights for moving average of autocorrelation</label>
-        <value/>
-      </string>
-      <file required="no" directory="no">
-        <keyword>outpar=</keyword>
-        <label>Filename to write wiener filter</label>
-        <value/>
-      </file>
-      <string required="no">
-        <keyword>method=</keyword>
-        <label>CDP interpolation method</label>
-        <value default=""/>
-      </string>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n1"><label>CDPs for which optional parameters are set</label><string><property required="no"><keyword>cdp=</keyword><value/><default/></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n2"><label>First lag of prediction filter</label><float><property required="no"><keyword>minlag=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n3"><label>Maximum lag of prediction filter</label><float><property required="no"><keyword>maxlag=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n4"><label>Relative additive noise level</label><float><property required="no"><keyword>pnoise=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n5"><label>Start of autocorrelation window</label><float><property required="no"><keyword>mincorr=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n6"><label>End of autocorrelation window</label><float><property required="no"><keyword>maxcorr=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n7"><label>Show Wiener filter on each trace</label><flag><property required="no"><keyword>showwiener=1</keyword><value/><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
+      <parameter id="n8"><label>Array of weights for moving average of autocorrelation</label><string><property required="no"><keyword>mix=</keyword><value/><default/></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n9"><label>Filename to write wiener filter</label><file directory="no"><property required="no"><keyword>outpar=</keyword><value/><default/></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n10"><label>CDP interpolation method</label><string><property required="no"><keyword>method=</keyword><value/><default/></property>
+        
+        
+        
+      </string></parameter>
     </parameters>
   </program>
 </flow>

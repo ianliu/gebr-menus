@@ -38,8 +38,9 @@
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>Aug 26, 2007: written by Braulio Barros de Oliveira, UNICAMP - brauliobo@gmail.com</p>
-          <p>Jun 09, 2008: revised by Daniela Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+          <p>Aug 26, 2007: written by Ricardo Biloti &lt;biloti@gmail.com&gt;<br/>
+             Jun 09, 2008: revised by Daniela Amazonas, &lt;daniela.amazonas@gmail.com&gt;<br/>
+             Mar 22, 2009: revised by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
         </div>
 
         <div class="navigation">
@@ -53,7 +54,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | Jun 09, 2008</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Mar 22, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -62,9 +63,9 @@
 </body>
 </html>
 ]]></help>
-  <author>GêBR core team</author>
-  <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <date><created/><modified>2009-03-22T13:03:28.698680Z</modified><lastrun/></date><category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
@@ -111,7 +112,8 @@
 
 	    <!-- List of required parameters -->
             <ul>
-              <li><span class="label">[Time sampling interval]</span> Required if filter frequencies and filter amplitudes are  specified by the user and if time sampling interval not set in trace header</li>
+              <li><span class="label">[Time sampling interval]</span> Required if filter frequencies and filter
+                  amplitudes are specified by the user and if time sampling interval not set in trace header.</li>
             </ul>
 
             <h2>Optional parameters</h2>
@@ -119,13 +121,13 @@
 	    <!-- List of optional parameters -->
             <ul>
               <li><span class="label">[Signal to noise ratio]</span> </li>
-              <li><span class="label">[Flat noise probability distribution]</span> Default is Gaussian</li>
+              <li><span class="label">[Flat noise probability distribution]</span> instead of Gaussian distribution.</li>
               <li><span class="label">[Random number seed]</span> </li>
-              <li><span class="label">[Filter frequencies]</span> </li>
-              <li><span class="label">[Filter amplitudes]</span> </li>
-              <li><span class="label">[Time sampling interval]</span> </li>
-              <li><span class="label">[Useful information]</span> </li>
-              <li><span class="label">[Directory path to temporary files]</span> </li>
+              <li><span class="label">[Filter frequencies]</span> specify a list of frequencies in the same way SU Filter does.</li>
+              <li><span class="label">[Filter amplitudes]</span> specify a list of corresponding amplitudes in the same way SU Filter does.</li>
+              <li><span class="label">[Time sampling interval]</span></li>
+              <li><span class="label">[Useful information]</span></li>
+              <li><span class="label">[Directory path to temporary files]</span></li>
           </ul>
           </div>
 	    
@@ -133,9 +135,9 @@
 	  <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p> Output = Signal +  scale * Noise</p>
+          <p> Output = Signal +  scale * Noise.</p>
 
-          <p> scale = (1/(Signal to noise ratio)) * (absmax_signal/sqrt(2))/sqrt(energy_per_sample)</p>
+          <p> scale = (1/(Signal to noise ratio)) * (absmax_signal/sqrt(2))/sqrt(energy_per_sample).</p>
 
           <p>If the signal is already band-limited, filter frequencies and filter amplitudes
              can be used, as in SU Filter, to bandlimit the noise traces to match
@@ -143,13 +145,13 @@
           <p>At S/N = 2, the strongest reflector is well delineated, so to
              see something 1/nth as strong as this dominant reflector
              requires S/N = 2*n.</p>
-          <p>Trace header field accessed: Number of sample</p>
+          <p>Trace header field accessed: Number of sample.</p>
 
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Jack Cohen, Brian Sumner, Ken Larner,
-                  John Stockwell (fixed filtered noise option)</p>
+                  John Stockwell (fixed filtered noise option).</p>
         </div>
 
         <div class="navigation">
@@ -169,7 +171,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>

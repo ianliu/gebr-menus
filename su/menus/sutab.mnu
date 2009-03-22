@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n3">
   <filename>sutab.mnu</filename>
   <title>SU Tab</title>
   <description>print non zero header values and data for non-graphic terminals</description>
@@ -73,22 +73,22 @@ sutab &lt;stdin itmin=0 itmax=last_sample count=all
     Requests tab plot of samples 32 to 63 on the first 10 traces of DATA.
     </pre>]]>
     </help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <int required="yes">
-	<keyword>itmin=</keyword>
-	<label>first time sample (zero-based) to plot</label>
-	<value default="0"/>
-      </int>
-      <int required="no">
-	<keyword>itmax=</keyword>
-	<label>last time sample (zero-based) to plot</label>
-	<value/>
-      </int>
-      <int required="no">
-	<keyword>count=</keyword>
-	<label>number of traces to plot</label>
-	<value/>
-      </int>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>first time sample (zero-based) to plot</label><int><property required="yes"><keyword>itmin=</keyword><value/><default>0</default></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n1"><label>last time sample (zero-based) to plot</label><int><property required="no"><keyword>itmax=</keyword><value/><default/></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n2"><label>number of traces to plot</label><int><property required="no"><keyword>count=</keyword><value/><default/></property>
+	
+	
+	
+      </int></parameter>
     </parameters>
   </program>
 </flow>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n7">
   <filename>sushw.mnu</filename>
   <title>SU Set Header</title>
   <description>Set one or more header words</description>
@@ -191,12 +191,12 @@
 </body>
 </html>
 ]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url>
-    <parameters>
-      <enum required="no" separator=",">
-        <keyword>key=</keyword>
-        <label>list of header fields</label>
-        <value/>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters exclusive="0">
+      <parameter id="n0"><label>list of header fields</label><enum><property required="no" separator=","><keyword>key=</keyword><value/><default/></property>
+        
+        
+        
           <option><label>CDP ensemble number</label><value>cdp</value></option>
           <option><label>Sample interval (in micro-seconds)</label><value>dt</value></option>
           <option><label>Receiver x coordinate</label><value>gx</value></option>
@@ -277,7 +277,7 @@
           <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
           <option><label>Weathering velocity</label><value>wevel</value></option>
           <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
-    <file required="no" directory="no"><keyword>infile=</keyword><label>binary file of values for field specified above</label><value/></file><float required="no" separator=","><keyword>a=</keyword><label>value(s) on first trace</label><value/></float><float required="no" separator=","><keyword>b=</keyword><label>increment(s) within group</label><value/></float><float required="no" separator=","><keyword>c=</keyword><label>group increment(s)</label><value/></float><float required="no" separator=","><keyword>d=</keyword><label>trace number shift(s)</label><value/></float><int required="no" separator=","><keyword>j=</keyword><label>number of elements in group</label><value/></int></parameters>
+      </enum></parameter>
+    <parameter id="n1"><label>binary file of values for field specified above</label><file directory="no"><property required="no"><keyword>infile=</keyword><value/><default/></property></file></parameter><parameter id="n2"><label>value(s) on first trace</label><float><property required="no" separator=","><keyword>a=</keyword><value/><default/></property></float></parameter><parameter id="n3"><label>increment(s) within group</label><float><property required="no" separator=","><keyword>b=</keyword><value/><default/></property></float></parameter><parameter id="n4"><label>group increment(s)</label><float><property required="no" separator=","><keyword>c=</keyword><value/><default/></property></float></parameter><parameter id="n5"><label>trace number shift(s)</label><float><property required="no" separator=","><keyword>d=</keyword><value/><default/></property></float></parameter><parameter id="n6"><label>number of elements in group</label><int><property required="no" separator=","><keyword>j=</keyword><value/><default/></property></int></parameter></parameters>
   </program>
 </flow>

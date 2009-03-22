@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n14">
   <filename>sumigpresp.mnu</filename>
   <title>SU Migration Pre Split-Step</title>
   <description>The 2-D prestack common-shot split-step Fourier migration</description>
@@ -389,77 +389,77 @@
 </body>
 </html>]]>
 </help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <int required="yes">
-        <keyword>nxo=</keyword>
-        <label>number of total horizontal output samples</label>
-        <value/>
-      </int>
-      <int required="yes">
-        <keyword>nxshot=</keyword>
-        <label>number of shot gathers to be migrated</label>
-        <value/>
-      </int>
-      <int required="yes">
-        <keyword>nz=</keyword>
-        <label>number of depth sapmles</label>
-        <value/>
-      </int>
-      <float required="yes">
-        <keyword>dx=</keyword>
-        <label>horizontal sampling interval</label>
-        <value/>
-      </float>
-      <float required="yes">
-        <keyword>dz=</keyword>
-        <label>depth sampling interval</label>
-        <value/>
-      </float>
-      <file required="yes" directory="no">
-        <keyword>vfile=</keyword>
-        <label>velocity profile</label>
-        <value/>
-      </file>
-      <float required="no">
-        <keyword>fmax=</keyword>
-        <label>peak frequency</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>f1=</keyword>
-        <label>frist frequency to build a Hamming window</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>f2=</keyword>
-        <label>second frequency to build a Hamming window</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>f3=</keyword>
-        <label>third frequency to build a Hamming window</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>f4=</keyword>
-        <label>fourth frequency to build a Hamming window</label>
-        <value/>
-      </float>
-      <int required="no">
-        <keyword>lpad=</keyword>
-        <label>number of zero traces padded on left side</label>
-        <value/>
-      </int>
-      <int required="no">
-        <keyword>rpad=</keyword>
-        <label>number of zero traces padded on right side</label>
-        <value/>
-      </int>
-      <flag>
-        <keyword>verbose=1</keyword>
-        <label>print some useful information</label>
-        <state default="off"/>
-      </flag>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>number of total horizontal output samples</label><int><property required="yes"><keyword>nxo=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n1"><label>number of shot gathers to be migrated</label><int><property required="yes"><keyword>nxshot=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n2"><label>number of depth sapmles</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n3"><label>horizontal sampling interval</label><float><property required="yes"><keyword>dx=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n4"><label>depth sampling interval</label><float><property required="yes"><keyword>dz=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n5"><label>velocity profile</label><file directory="no"><property required="yes"><keyword>vfile=</keyword><value/><default/></property>
+        
+        
+        
+      </file></parameter>
+      <parameter id="n6"><label>peak frequency</label><float><property required="no"><keyword>fmax=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n7"><label>frist frequency to build a Hamming window</label><float><property required="no"><keyword>f1=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n8"><label>second frequency to build a Hamming window</label><float><property required="no"><keyword>f2=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n9"><label>third frequency to build a Hamming window</label><float><property required="no"><keyword>f3=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n10"><label>fourth frequency to build a Hamming window</label><float><property required="no"><keyword>f4=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n11"><label>number of zero traces padded on left side</label><int><property required="no"><keyword>lpad=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n12"><label>number of zero traces padded on right side</label><int><property required="no"><keyword>rpad=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n13"><label>print some useful information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
+        
+        
+        
+      </flag></parameter>
     </parameters>
   </program>
 </flow>

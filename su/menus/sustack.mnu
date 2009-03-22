@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.2.2">
+<flow version="0.3.0" nextid="n5">
   <filename>sustack.mnu</filename>
   <title>SU Stack</title>
-  <description>stack adjacent traces having the same key header word</description>
+  <description>Stack adjacent traces having the same key header word</description>
   <help><![CDATA[
-    <html>
-    <header>
-       <title>SU Stack</title>
-    </header>
-    <body>
-    <h1>SU Stack</h1>
-    <p>Stack adjacent traces having the same key header word</p>
-    </body>
-    </html>
-    ]]>
-  </help>
-  <author>GêBR core team</author>
-  <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+]]></help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <date><created/><modified>2009-03-21T15:07:03.393496Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
     <menu index="0">sustack.mnu</menu>
     <title>SU Stack</title>
     <binary>sustack</binary>
-    <description>stack adjacent traces having the same key header word</description>
+    <description>Stack adjacent traces having the same key header word</description>
     <help><![CDATA[
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -132,32 +122,32 @@
 </body>
 </html>
     ]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <string required="no">
-	<keyword>key=</keyword>
-	<label>header key word to stack on</label>
-	<value/>
-      </string>
-      <float required="no">
-	<keyword>normpow=</keyword>
-	<label>each sample is divided by the normpow'th number of non-zero values stacked signal to noise ratio</label>
-	<value/>
-      </float>
-      <flag>
-	<keyword>repeat=1</keyword>
-	<label>repeats the stack trace nrepeat times</label>
-	<state default="off"/>
-      </flag>
-      <int required="no">
-	<keyword>nrepeat=</keyword>
-	<label>repeats stack trace nrepeat times in output file</label>
-	<value/>
-      </int>
-      <flag>
-	<keyword>verbose=1</keyword>
-	<label>echoing useful information</label>
-	<state default="off"/>
-      </flag>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>header key word to stack on</label><string><property required="no"><keyword>key=</keyword><value/><default/></property>
+	
+	
+	
+      </string></parameter>
+      <parameter id="n1"><label>Each sample is divided by the normpow'th number of non-zero values stacked signal to noise ratio</label><float><property required="no"><keyword>normpow=</keyword><value/><default/></property>
+	
+	
+	
+      </float></parameter>
+      <parameter id="n2"><label>Repeats the stack trace nrepeat times</label><flag><property required="no"><keyword>repeat=1</keyword><value/><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
+      <parameter id="n3"><label>Repeats stack trace nrepeat times in output file</label><int><property required="no"><keyword>nrepeat=</keyword><value/><default/></property>
+	
+	
+	
+      </int></parameter>
+      <parameter id="n4"><label>Echoes information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
+	
+	
+	
+      </flag></parameter>
     </parameters>
   </program>
 </flow>
