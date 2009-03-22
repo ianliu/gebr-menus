@@ -2,7 +2,7 @@
 <flow version="0.3.0" nextid="n1">
   <filename>sumix.mnu</filename>
   <title>SU Mix</title>
-  <description>compute weighted moving average (trace MIX) on a panel of seismic data</description>
+  <description>Compute weighted moving average (trace MIX) on a panel of seismic data</description>
   <help><![CDATA[
     <html>
     <header>
@@ -17,14 +17,14 @@
   </help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <date><created/><modified>2009-03-22T20:51:20.795331Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
     <menu index="0">sumix.mnu</menu>
     <title>SU Mix</title>
     <binary>sumix</binary>
-    <description>compute weighted moving average (trace MIX) on a panel of seismic data</description>
+    <description>Compute weighted moving average (trace MIX) on a panel of seismic data</description>
     <help><![CDATA[<pre>
  SUMIX - compute weighted moving average (trace MIX) on a panel
 	  of seismic data
@@ -43,11 +43,7 @@
       </pre>]]>
     </help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
-      <parameter id="n0"><label>array of weights for weighted average</label><string><property required="no"><keyword>mix=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter>
+      <parameter id="n0"><label>Array of weights for weighted average</label><float><property required="no" separator=","><keyword>mix=</keyword><value/><default/></property></float></parameter>
     </parameters>
   </program>
 </flow>

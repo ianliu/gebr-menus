@@ -2,7 +2,7 @@
 <flow version="0.3.0" nextid="n10">
   <filename>suvelan.mnu</filename>
   <title>SU Velan</title>
-  <description>compute stacking velocity semblance for cdp gathers</description>
+  <description>Compute stacking velocity semblance for cdp gathers</description>
   <help><![CDATA[
     <html>
     <header>
@@ -17,7 +17,7 @@
   </help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <date><created/><modified>2009-03-22T20:55:59.307069Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="no" status="unconfigured">
@@ -98,52 +98,52 @@ SUVELAN - compute stacking velocity semblance for cdp gathers
     </pre>]]>
     </help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
-      <parameter id="n0"><label>number of velocities</label><range min="1" max="10000" inc="1" digits=""><property required="yes"><keyword>nv=</keyword><value/><default>50</default></property>
+      <parameter id="n0"><label>Number of velocities</label><range min="1" max="10000" inc="1" digits=""><property required="yes"><keyword>nv=</keyword><value/><default>50</default></property>
 	
 	
 	
       </range></parameter>
-      <parameter id="n1"><label>velocity sampling interval</label><float><property required="no"><keyword>dv=</keyword><value/><default>50</default></property>
+      <parameter id="n1"><label>Velocity sampling interval</label><float><property required="no"><keyword>dv=</keyword><value/><default>50</default></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n2"><label>first velocity</label><float><property required="no"><keyword>fv=</keyword><value/><default>1500</default></property>
+      <parameter id="n2"><label>First velocity</label><float><property required="no"><keyword>fv=</keyword><value/><default>1500</default></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n3"><label>numerator of quadratic term</label><float><property required="no"><keyword>ansi1=</keyword><value/><default/></property>
+      <parameter id="n3"><label>Numerator of quadratic term</label><float><property required="no"><keyword>ansi1=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n4"><label>part of denominator of quadratic term</label><float><property required="no"><keyword>ansi2=</keyword><value/><default/></property>
+      <parameter id="n4"><label>Part of denominator of quadratic term</label><float><property required="no"><keyword>ansi2=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n5"><label>samples with NMO stretch exceeding smute are zeroed</label><float><property required="no"><keyword>smute=</keyword><value/><default/></property>
+      <parameter id="n5"><label>Samples with NMO stretch exceeding smute are zeroed</label><float><property required="no"><keyword>smute=</keyword><value/><default/></property>
 	
 	
 	
       </float></parameter>
-      <parameter id="n6"><label>ratio of output to input time sampling intervals</label><int><property required="no"><keyword>dtratio=</keyword><value/><default>5</default></property>
+      <parameter id="n6"><label>Ratio of output to input time sampling intervals</label><int><property required="no"><keyword>dtratio=</keyword><value/><default>5</default></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n7"><label>length of semblance num and den smoothing window</label><int><property required="no"><keyword>nsmooth=</keyword><value/><default/></property>
+      <parameter id="n7"><label>Length of semblance num and den smoothing window</label><int><property required="no"><keyword>nsmooth=</keyword><value/><default/></property>
 	
 	
 	
       </int></parameter>
-      <parameter id="n8"><label>send diagnostic messages to error log</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
+      <parameter id="n8"><label>Send diagnostic messages to error log</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
 	
 	
 	
       </flag></parameter>
-      <parameter id="n9"><label>semblance value to the power</label><float><property required="no"><keyword>pwr=</keyword><value/><default>1.0</default></property>
+      <parameter id="n9"><label>Semblance value to the power</label><float><property required="no"><keyword>pwr=</keyword><value/><default>1.0</default></property>
 	
 	
 	

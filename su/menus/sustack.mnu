@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.3.0" nextid="n5">
+<flow version="0.3.0" nextid="n6">
   <filename>sustack.mnu</filename>
   <title>SU Stack</title>
   <description>Stack adjacent traces having the same key header word</description>
@@ -7,7 +7,7 @@
 ]]></help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
-  <date><created/><modified>2009-03-21T15:07:03.393496Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <date><created/><modified>2009-03-22T20:53:59.090352Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
@@ -123,12 +123,88 @@
 </html>
     ]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
-      <parameter id="n0"><label>header key word to stack on</label><string><property required="no"><keyword>key=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter>
-      <parameter id="n1"><label>Each sample is divided by the normpow'th number of non-zero values stacked signal to noise ratio</label><float><property required="no"><keyword>normpow=</keyword><value/><default/></property>
+      
+      <parameter id="n5"><label>Header word to stack on</label><enum><property required="no"><keyword>key=</keyword><value/><default>cdp</default></property>
+      
+      
+      
+      <option><label>CDP ensemble number</label><value>cdp</value></option>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
+      
+      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
+      
+      
+      
+      
+      
+      
+      
+      
+      <option><label>Source elevation from sea level</label><value>selev</value></option>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
+      <option><label>Trace number sequence within line</label><value>tracl</value></option>
+      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
+      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
+      
+      
+      
+      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
+      <option><label>Water depth at source</label><value>swdep</value></option>
+      
+      <option><label>X group coordinate</label><value>gx</value></option>
+      <option><label>X source coordinate</label><value>sx</value></option>
+      <option><label>Y group coordinate</label><value>gy</value></option>
+      <option><label>Y source coordinate</label><value>sy</value></option>
+      
+      </enum></parameter><parameter id="n1"><label>Each sample is divided by the normpow'th number of non-zero values stacked signal to noise ratio</label><float><property required="no"><keyword>normpow=</keyword><value/><default/></property>
 	
 	
 	
