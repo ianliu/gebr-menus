@@ -74,6 +74,7 @@ gebrmenu_DATA = \
 		suvelannccs.mnu     \
 		suvibro.mnu	    \
 		suvlength.mnu       \
+		suwaveform.mnu      \
 		suweight.mnu        \
 		suwellrf.mnu        \
 		suwind.mnu          \

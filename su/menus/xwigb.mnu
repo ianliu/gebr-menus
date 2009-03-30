@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.2.2">
-  <filename>xwigb.mnu</filename>
-  <title>X Wiggle Bitmap</title>
-  <description>X Wiggle-trace plot of f(x1,x2) via Bitmap</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<flow version="0.3.0" nextid="n48">
+<filename>xwigb.mnu</filename>
+<title>X Wiggle Bitmap</title>
+<description>X Wiggle-trace plot of f(x1,x2) viaBitmap</description>
+<help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,7 +40,7 @@
 
           <p>X Wiggle-trace plot of f(x1,x2) via Bitmap.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>G&ecirc;BR core team</p>
@@ -69,18 +69,27 @@
 </body>
 </html>
 ]]>
-  </help>
-  <author>GêBR core team</author>
-  <email>gebr@sourceforge.net</email>
-  <date><created/><modified/><lastrun/></date><category>Graphics</category>
-  <category>Seismic Unix</category>
-  <io><input/><output/><error/></io>
-  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured">
-    <menu index="0">xwigb.mnu</menu>
-    <title>X Wiggle Bitmap</title>
-    <binary>xwigb</binary>
-    <description>X Wiggle-trace plot of f(x1,x2) via Bitmap</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+</help>
+<author>GêBR core team</author>
+<email>gebr@sourceforge.net</email>
+<date>
+<created/>
+<modified>2009-03-30T14:45:58.686467Z</modified>
+<lastrun/>
+</date>
+<category>Graphics</category>
+<category>Seismic Unix</category>
+<io>
+<input/>
+<output/>
+<error/>
+</io>
+<program stdin="yes" stdout="no" stderr="yes" status="unconfigured">
+<menu index="0">xwigb.mnu</menu>
+<title>X Wiggle Bitmap</title>
+<binary>xwigb</binary>
+<description>X Wiggle-trace plot of f(x1,x2) viaBitmap</description>
+<help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -117,14 +126,14 @@
             <a name="par" id="par"></a>
             <h2>Required parameters</h2>
 
-	    <!-- List of required parameters -->
+            <!-- List of required parameters -->
             <ul>
               <li><span class="label">[number of samples in 1st (fast) dimensio]</span>.</li>
             </ul>
 
             <h2>Optional parameters</h2>
 
-	    <!-- List of optional parameters -->
+            <!-- List of optional parameters -->
             <ul>
               <li><span class="label">[sampling interval in 1st dimension]</span>.</li>
               <li><span class="label">[first sample in 1st dimension]</span>.</li>
@@ -176,8 +185,8 @@
               <li><span class="label">[color(s) for curve(s)]</span>.</li>
             </ul>
           </div>
-	    
-	  <a name="notes" id="notes"></a>
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>Xwigb will try to detect the endian value of the
@@ -187,26 +196,26 @@
           time as the value of CWPENDIAN defined in cwp.h and set via
           the compile time flag ENDIANFLAG in Makefile.config.</p>
 
-	  <p>The only time that you might want to change the value of
-	  the endian variable is if you are viewing traces on a
-	  machine with a different byte order than the machine you are
-	  creating the traces on AND if for some reason the automaic
-	  detection of the display byte order fails.  Set endian to
-	  that of the machine you are viewing the traces on.</p>
+          <p>The only time that you might want to change the value of
+          the endian variable is if you are viewing traces on a
+          machine with a different byte order than the machine you are
+          creating the traces on AND if for some reason the automaic
+          detection of the display byte order fails.  Set endian to
+          that of the machine you are viewing the traces on.</p>
 
-	  <p>The interp flag is useful for making better quality
-	  wiggle trace for making plots from screen dumps. However,
-	  this flag assumes that the data are purely oscillatory. This
-	  option may not be appropriate for all data sets.</p>
+          <p>The interp flag is useful for making better quality
+          wiggle trace for making plots from screen dumps. However,
+          this flag assumes that the data are purely oscillatory. This
+          option may not be appropriate for all data sets.</p>
 
-	  <p>The curve file is an ascii file with the points specified
-	  as x1 x2 pairs, separated by a space, one pair to a line.  A
-	  "vector" of curve files and curve colors may be specified as
-	  curvefile=file1,file2,etc.  and
-	  curvecolor=color1,color2,etc, and the number of pairs of
-	  values in each file as npair=npair1,npair2,... .</p>
+          <p>The curve file is an ascii file with the points specified
+          as x1 x2 pairs, separated by a space, one pair to a line.  A
+          "vector" of curve files and curve colors may be specified as
+          curvefile=file1,file2,etc.  and
+          curvecolor=color1,color2,etc, and the number of pairs of
+          values in each file as npair=npair1,npair2,... .</p>
 
-	</div>
+        </div>
         <div class="navigation">
           <h2>Index</h2>
 
@@ -231,248 +240,489 @@
 </body>
 </html>
 ]]>
-    </help>
-    <url>http://www.cwp.mines.edu/cwpcodes/index.html</url><parameters>
-      <int required="yes">
-	<keyword>n1=</keyword>
-	<label>Number of samples in 1st (fast) dimension</label>
-	<value/>
-      </int>
-      <float required="no">
-	<keyword>d1=</keyword>
-	<label>sampling interval in the fast dimension</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>f1=</keyword>
-	<label>first sample in the fast dimension</label>
-	<value/>
-      </float>
-      <int required="no">
-	<keyword>n2=</keyword>
-	<label>number of traces to be plotted in 2nd (slow) dimension</label>
-	<value/>
-      </int>
-      <float required="no">
-	<keyword>d2=</keyword>
-	<label>sampling interval in 2nd dimension</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>f2=</keyword>
-	<label>first sample in 2nd dimension</label>
-	<value/>
-      </float>
-      <string required="no">
-        <keyword>x2=</keyword>
-	<label>array of sampled values in 2nd dimension</label>
-	<value/>
-      </string>
-      <file directory="no" required="no">
-	<keyword>mpicks=</keyword>
-	<label>file to save mouse picks in</label>
-	<value default="/dev/null"/>
-      </file>
-      <float required="no">
-        <keyword>bias=</keyword>
-	<label>data value corresponding to location along axis 2</label>
-        <value/>
-      </float>
-      <range min="0" max="100" inc="0.1" required="no" digits="">
-	<keyword>perc=</keyword>
-	<label>percentile used to determine clip</label>
-	<value default="100"/>
-      </range>
-      <int required="no">
-	<keyword>clip=</keyword>
-	<label>clip used to determine bclip and wclip</label>
-	<value default=""/>
-      </int>
-      <float required="no">
-	<keyword>xcur=</keyword>
-	<label>wiggle excursion in traces corresponding to clip</label>
-	<value/>
-      </float>
-      <flag>
-	<keyword>wt=0</keyword>
-        <label>no wiggle-trace</label>
-        <state default="off"/>
-      </flag>
-      <range min="0" max="5" inc="1" required="no" digits="">
-	<keyword>va=0</keyword>
-	<label>0 (no variable-area), 1 (variable-area), 2 (variable-area, solid grey fill)</label>
-	<value default="1"/>
-      </range>
-      <flag>
-	<keyword>verbose=1</keyword>
-	<label>print some useful information</label>
-	<state default="off"/>
-      </flag>
-      <int required="no">
-	<keyword>xbox=</keyword>
-	<label>x in pixels of upper left corner of window</label>
-	<value/>
-      </int>
-      <int required="no">
-	<keyword>ybox=</keyword>
-	<label>y in pixels of upper left corner of window</label>
-	<value/>
-      </int>
-      <int required="no">
-	<keyword>wbox=</keyword>
-	<label>width in pixels of window</label>
-	<value/>
-      </int>
-      <int required="no">
-	<keyword>hbox=</keyword>
-	<label>height in pixels of window</label>
-	<value/>
-      </int>
-      <float required="no">
-	<keyword>x1beg=</keyword>
-	<label>value at which axis 1 begins</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>x1end=</keyword>
-	<label>value at which axis 1 ends</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>d1num=</keyword>
-	<label>numbered tic interval on axis 1</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>f1num=</keyword>
-	<label>first numbered tic on axis 1</label>
-	<value/>
-      </float>
-      <int required="no">
-	<keyword>n1tic=</keyword>
-	<label>number of tics per numbered tic on axis 1</label>
-	<value/>
-      </int>
-      <string required="no">
-	<keyword>grid1=</keyword>
-	<label>grid lines on axis 1 - none, dot, dash, or solid</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>label1=</keyword>
-	<label>label on axis 1</label>
-	<value/>
-      </string>
-      <float required="no">
-	<keyword>x2beg=</keyword>
-	<label>value at which axis 2 begins</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>x2end=</keyword>
-	<label>value at which axis 2 ends</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>d2num=</keyword>
-	<label>numbered tic interval on axis 2</label>
-	<value/>
-      </float>
-      <float required="no">
-	<keyword>f2num=</keyword>
-	<label>first numbered tic on axis 2</label>
-	<value/>
-      </float>
-      <int required="no">
-	<keyword>n2tic=</keyword>
-	<label>number of tics per numbered tic on axis 2</label>
-	<value/>
-      </int>
-      <string required="no">
-	<keyword>grid2=</keyword>
-	<label>grid lines on axis 2 - none, dot, dash, or solid</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>label2=</keyword>
-	<label>label on axis 2</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>labelfont=</keyword>
-	<label>font name for axes labels</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>title=</keyword>
-	<label>title of plot</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>titlefont=</keyword>
-	<label>font name for title</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>windowtitle=</keyword>
-	<label>title on window</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>labelcolor=</keyword>
-	<label>color for axes labels</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>titlecolor=</keyword>
-	<label>color for title</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>gridcolor=</keyword>
-	<label>color for grid lines</label>
-	<value/>
-      </string>
-      <flag>
-	<keyword>style=normal</keyword>
-	<label>Swap axes</label>
-	<state default="off"/>
-      </flag>
-      <file directory="no" required="no">
-	<keyword>plotfile=</keyword>
-	<label>filename for interactive ploting</label>
-	<value/>
-      </file>
-      <string required="no">
-	<keyword>curve=</keyword>
-	<label>file(s) containing points to draw curve(s)</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>npair=</keyword>
-	<label>number(s) of pairs in each file</label>
-	<value/>
-      </string>
-      <string required="no">
-	<keyword>curvecolor=</keyword>
-	<label>color(s) for curve(s)</label>
-	<value/>
-      </string>
-      <range required="no" min="0" max="1" inc="1" digits="">
-	<keyword>endian=</keyword>
-	<label>little (0) / big (1) endian</label>
-        <value default="0"/>
-      </range>
-      <flag>
-	<keyword>interp=1</keyword>
-	<label>use 8 point sinc interpolation</label>
-        <state default="off"/>
-      </flag>
-      <flag>
-        <keyword>wigclip=1</keyword>
-        <label>extra-large wiggles are are clipped at the boundary of the plot box</label>
-        <state default="off"/>
-     </flag>
-  </parameters>
-  </program>
+</help>
+<url>http://www.cwp.mines.edu/cwpcodes/</url>
+<parameters exclusive="0">
+<parameter id="n0">
+<label>Number of samples in 1st (fast) dimension</label>
+<int>
+<property required="yes">
+<keyword>n1=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n1">
+<label>sampling interval in the fast dimension</label>
+<float>
+<property required="no">
+<keyword>d1=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n2">
+<label>first sample in the fast dimension</label>
+<float>
+<property required="no">
+<keyword>f1=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n3">
+<label>number of traces to be plotted in 2nd (slow)dimension</label>
+<int>
+<property required="no">
+<keyword>n2=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n4">
+<label>sampling interval in 2nd dimension</label>
+<float>
+<property required="no">
+<keyword>d2=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n5">
+<label>first sample in 2nd dimension</label>
+<float>
+<property required="no">
+<keyword>f2=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n6">
+<label>array of sampled values in 2nd dimension</label>
+<string>
+<property required="no">
+<keyword>x2=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n7">
+<label>file to save mouse picks in</label>
+<file directory="no">
+<property required="no">
+<keyword>mpicks=</keyword>
+<value/>
+<default>/dev/null</default>
+</property>
+</file>
+</parameter>
+<parameter id="n8">
+<label>data value corresponding to location along axis 2</label>
+<float>
+<property required="no">
+<keyword>bias=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n9">
+<label>percentile used to determine clip</label>
+<range min="0" max="100" inc="0.1" digits="">
+<property required="no">
+<keyword>perc=</keyword>
+<value/>
+<default>100</default>
+</property>
+</range>
+</parameter>
+<parameter id="n10">
+<label>clip used to determine bclip and wclip</label>
+<int>
+<property required="no">
+<keyword>clip=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n11">
+<label>wiggle excursion in traces corresponding to clip</label>
+<float>
+<property required="no">
+<keyword>xcur=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n12">
+<label>no wiggle-trace</label>
+<flag>
+<property required="no">
+<keyword>wt=0</keyword>
+<value/>
+<default>off</default>
+</property>
+</flag>
+</parameter>
+<parameter id="n13">
+<label>0 (no variable-area), 1 (variable-area), 2 (variable-area,solid grey fill)</label>
+<range min="0" max="5" inc="1" digits="">
+<property required="no">
+<keyword>va=</keyword>
+<value/>
+<default>1</default>
+</property>
+</range>
+</parameter>
+<parameter id="n14">
+<label>print some useful information</label>
+<flag>
+<property required="no">
+<keyword>verbose=1</keyword>
+<value/>
+<default>off</default>
+</property>
+</flag>
+</parameter>
+<parameter id="n15">
+<label>x in pixels of upper left corner of window</label>
+<int>
+<property required="no">
+<keyword>xbox=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n16">
+<label>y in pixels of upper left corner of window</label>
+<int>
+<property required="no">
+<keyword>ybox=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n17">
+<label>width in pixels of window</label>
+<int>
+<property required="no">
+<keyword>wbox=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n18">
+<label>height in pixels of window</label>
+<int>
+<property required="no">
+<keyword>hbox=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n19">
+<label>value at which axis 1 begins</label>
+<float>
+<property required="no">
+<keyword>x1beg=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n20">
+<label>value at which axis 1 ends</label>
+<float>
+<property required="no">
+<keyword>x1end=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n21">
+<label>numbered tic interval on axis 1</label>
+<float>
+<property required="no">
+<keyword>d1num=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n22">
+<label>first numbered tic on axis 1</label>
+<float>
+<property required="no">
+<keyword>f1num=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n23">
+<label>number of tics per numbered tic on axis 1</label>
+<int>
+<property required="no">
+<keyword>n1tic=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n24">
+<label>grid lines on axis 1 - none, dot, dash, or solid</label>
+<string>
+<property required="no">
+<keyword>grid1=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n25">
+<label>label on axis 1</label>
+<string>
+<property required="no">
+<keyword>label1=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n26">
+<label>value at which axis 2 begins</label>
+<float>
+<property required="no">
+<keyword>x2beg=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n27">
+<label>value at which axis 2 ends</label>
+<float>
+<property required="no">
+<keyword>x2end=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n28">
+<label>numbered tic interval on axis 2</label>
+<float>
+<property required="no">
+<keyword>d2num=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n29">
+<label>first numbered tic on axis 2</label>
+<float>
+<property required="no">
+<keyword>f2num=</keyword>
+<value/>
+<default/>
+</property>
+</float>
+</parameter>
+<parameter id="n30">
+<label>number of tics per numbered tic on axis 2</label>
+<int>
+<property required="no">
+<keyword>n2tic=</keyword>
+<value/>
+<default/>
+</property>
+</int>
+</parameter>
+<parameter id="n31">
+<label>grid lines on axis 2 - none, dot, dash, or solid</label>
+<string>
+<property required="no">
+<keyword>grid2=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n32">
+<label>label on axis 2</label>
+<string>
+<property required="no">
+<keyword>label2=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n33">
+<label>font name for axes labels</label>
+<string>
+<property required="no">
+<keyword>labelfont=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n34">
+<label>title of plot</label>
+<string>
+<property required="no">
+<keyword>title=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n35">
+<label>font name for title</label>
+<string>
+<property required="no">
+<keyword>titlefont=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n36">
+<label>title on window</label>
+<string>
+<property required="no">
+<keyword>windowtitle=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n37">
+<label>color for axes labels</label>
+<string>
+<property required="no">
+<keyword>labelcolor=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n38">
+<label>color for title</label>
+<string>
+<property required="no">
+<keyword>titlecolor=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n39">
+<label>color for grid lines</label>
+<string>
+<property required="no">
+<keyword>gridcolor=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n40">
+<label>Swap axes</label>
+<flag>
+<property required="no">
+<keyword>style=normal</keyword>
+<value/>
+<default>off</default>
+</property>
+</flag>
+</parameter>
+<parameter id="n41">
+<label>filename for interactive ploting</label>
+<file directory="no">
+<property required="no">
+<keyword>plotfile=</keyword>
+<value/>
+<default/>
+</property>
+</file>
+</parameter>
+<parameter id="n42">
+<label>file(s) containing points to draw curve(s)</label>
+<string>
+<property required="no">
+<keyword>curve=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n43">
+<label>number(s) of pairs in each file</label>
+<string>
+<property required="no">
+<keyword>npair=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n44">
+<label>color(s) for curve(s)</label>
+<string>
+<property required="no">
+<keyword>curvecolor=</keyword>
+<value/>
+<default/>
+</property>
+</string>
+</parameter>
+<parameter id="n45">
+<label>little (0) / big (1) endian</label>
+<range min="0" max="1" inc="1" digits="">
+<property required="no">
+<keyword>endian=</keyword>
+<value/>
+<default>0</default>
+</property>
+</range>
+</parameter>
+<parameter id="n46">
+<label>use 8 point sinc interpolation</label>
+<flag>
+<property required="no">
+<keyword>interp=1</keyword>
+<value/>
+<default>off</default>
+</property>
+</flag>
+</parameter>
+<parameter id="n47">
+<label>extra-large wiggles are are clipped at the boundary of theplot box</label>
+<flag>
+<property required="no">
+<keyword>wigclip=1</keyword>
+<value/>
+<default>off</default>
+</property>
+</flag>
+</parameter>
+</parameters>
+</program>
 </flow>
