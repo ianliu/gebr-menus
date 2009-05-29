@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.0" nextid="n2">
+  <filename>sustrip.mnu</filename>
+  <title>SU Strip</title>
+  <description>Remove the SEGY headers from the traces</description>
+  <help/>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <date>
+    <created>2009-05-29T14:38:09.078724Z</created>
+    <modified>2009-05-29T15:08:38.999349Z</modified>
+    <lastrun/>
+  </date>
+  <category>Import/Export</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
+    <menu index="0">sustrip.mnu</menu>
+    <title>SU Strip</title>
+    <binary>sustrip outpar=/dev/null</binary>
+    <description>Remove the SEGY headers from the traces</description>
+    <help/>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters exclusive="0">
+      <parameter id="n0">
+        <label>File to save stripped headers</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>head=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter id="n1">
+        <label>Switch write format from C to Fortran</label>
+        <flag>
+          <property required="no">
+            <keyword>ftn=1</keyword>
+            <value/>
+            <default/>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

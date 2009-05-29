@@ -61,6 +61,7 @@ gebrmenu_DATA = \
 		suspike.mnu	    \
 		sustack.mnu         \
 		sustolt.mnu         \
+		sustrip.mnu	    \
 		sutab.mnu           \
 		sutaper.mnu         \
 		sutaup.mnu          \
