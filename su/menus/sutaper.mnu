@@ -2,24 +2,79 @@
 <flow version="0.3.0" nextid="n7">
   <filename>sutaper.mnu</filename>
   <title>SU Taper</title>
-  <description>taper the edge traces of a data panel to zero</description>
-  <help><![CDATA[
-    <html>
-    <header>
-       <title>SU Taper</title>
-    </header>
-    <body>
-    <h1>SU Taper</h1>
-    <p>Taper the edge traces of a data panel to zero.</p>
-    </body>
-    </html>
-    ]]>
-  </help>
+  <description>Taper the edge traces of a data panel to zero</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Su Taper</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Su Taper</span>
+
+          <div class="description">
+            Taper the edge traces of a data panel to zero
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Editing, Sorting and Manipulation | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Taper the edge traces of a data panel to zero.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>GêBR core team</p>
+	  <p>Jun 17, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 17, 2009 </span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Seismic Unix</category>
-  <category>Editing, Sorting and Manipulation</category>
-  <io>
+  <date><created/><modified>2009-06-17T19:14:28.875667Z</modified><lastrun/></date><category>Seismic Unix</category>
+  
+  <category>Editing, Sorting and Manipulation</category><io>
     <input/>
     <output/>
     <error/>
@@ -29,15 +84,14 @@
     <title>SU Taper</title>
     <binary>sutaper</binary>
     <description>Taper the edge traces of a data panel to zero</description>
-     <help><![CDATA[
+     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="gebr.css" media=
-  "screen" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <title>G&ecirc;BR - SU Taper</title>
 </head>
@@ -62,31 +116,33 @@
 	<div class="parameters">
 
 	  <a name="par"></a>
-	  <h2>Required parameters</h2>
-	  <p>None</p>
-
 	  <h2>Optional parameters</h2>
 	  
 	  <ul>
 	  
-	  <li><span class="label">[Number of traces]</span>If the number of traces is not set, then this parameter is mandatory</li>
+	  <li><span class="label">[Number of traces]</span> If the number of traces is not set, then this parameter is mandatory</li>
 
-          <li><span class="label">[Number of traces on the begining]</span>number of traces to be tapered at beginning</li>
+          <li><span class="label">[Number of traces to be tapered at begining]</span></li>
 
-          <li><span class="label">[Number of to be tapered at the end]</span>number of traces to be tapered at end</li>
+          <li><span class="label">[Number of to be tapered at end]</span></li>
 
-          <li><span class="label">[Minimum amplitude factor]</span>minimum amplitude factor of taper</li>
+          <li><span class="label">[Minimum amplitude factor]</span></li>
 
-          <li><span class="label">[Length of taper at trace start]</span>length of taper (ms) at trace start</li>
+          <li><span class="label">[Length of taper at trace start]</span> Taper (ms)</li>
 
-          <li><span class="label">[Length of taper at trace end]</span>length of taper (ms) at trace end</li>
+          <li><span class="label">[Length of taper at trace end]</span> Taper (ms)</li>
 
-          <li><span class="label">[type of taper]</span>type of taper=1 linear (default)
-                                                        type of taper=2 sine
-                                                        type of taper=3 cosine
-                                                        type of taper=4 gaussian (+/-3.8) </li>
-          </ul>
-	  	
+          <li><span class="label">[Type of taper]</span>
+
+		<table>
+		<tr><td>1</td><td>&nbsp;&nbsp;Linear (Default)</td></tr>
+		<tr><td>2</td><td>&nbsp;&nbsp;Sine</td></tr>
+		<tr><td>3</td><td>&nbsp;&nbsp;Cosine</td></tr>
+		<tr><td>4</td><td>&nbsp;&nbsp;Gaussian (+/- 3.8)</td></tr>
+		<tr><td>5</td><td>&nbsp;&nbsp;Gaussian (+/- 2.0)</td></tr>
+		</table></li>
+     
+	     </ul>	
 	</div>
 	
 	  <a name="notes"></a>
@@ -118,7 +174,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -126,43 +182,40 @@
   </div>
 </body>
 </html>
-    ]]></help>
+    
+]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
-      <parameter id="n0"><label>number of traces</label><int><property required="no"><keyword>ntr=</keyword><value/><default/></property>
+      <parameter id="n0"><label>Number of traces</label><int><property required="no"><keyword>ntr=</keyword><value/><default/></property>
         
         
         
       </int></parameter>
-      <parameter id="n1"><label>number of traces on the begining</label><int><property required="no"><keyword>tr1=</keyword><value/><default/></property>
+      <parameter id="n1"><label>Number of traces to be tapered at begining</label><int><property required="no"><keyword>tr1=</keyword><value/><default/></property>
         
         
         
       </int></parameter>
-      <parameter id="n2"><label>number of to be tapered at the end</label><int><property required="no"><keyword>tr2=</keyword><value/><default/></property>
+      <parameter id="n2"><label>Number of traces to be tapered at end</label><int><property required="no"><keyword>tr2=</keyword><value/><default/></property>
         
         
         
       </int></parameter>
-      <parameter id="n3"><label>minimum amplitude factor</label><float><property required="no"><keyword>min=</keyword><value/><default/></property>
+      <parameter id="n3"><label>Minimum amplitude factor</label><float><property required="no"><keyword>min=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
-      <parameter id="n4"><label>length of taper at trace start</label><float><property required="no"><keyword>tbeg=</keyword><value/><default/></property>
+      <parameter id="n4"><label>Length of taper at trace start</label><float><property required="no"><keyword>tbeg=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
-      <parameter id="n5"><label>length of taper at trace end</label><float><property required="no"><keyword>tend=</keyword><value/><default/></property>
+      <parameter id="n5"><label>Length of taper at trace end</label><float><property required="no"><keyword>tend=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
-      <parameter id="n6"><label>type of taper</label><range min="1" max="4" inc="1" digits=""><property required="no"><keyword>taper=</keyword><value/><default>1</default></property>
-        
-        
-        
-      </range></parameter>
+      <parameter id="n6"><label>Type of taper</label><enum><property required="no"><keyword>taper=</keyword><value/><default>1</default></property><option><label>Linear</label><value>1</value></option><option><label>Sine</label><value>2</value></option><option><label>Cosine</label><value>3</value></option><option><label>Gaussian (+/- 3.8)</label><value>4</value></option><option><label>Gaussian (+/- 2.0)</label><value>5</value></option></enum></parameter>
     </parameters>
   </program>
 </flow>

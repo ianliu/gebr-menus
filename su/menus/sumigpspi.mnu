@@ -3,22 +3,79 @@
   <filename>sumigpspi.mnu</filename>
   <title>SU Migration PSPI</title>
   <description>Gazdag's phase-shift plus interpolation depth migration for zero-offset data</description>
-  <help><![CDATA[
-   <html>
-    <header>
-       <title>SU Migration PSPI</title>
-    </header>
-    <body>
-    <h1>SU Migration PSPI</h1>
-    <p>Gazdag's phase-shift plus interpolation migration         
-            for zero-offset data, which can handle the lateral         
-            velocity variation.</p>
-    </body>
-    </html>]]>
-</help>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Migration PSPI</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Migration PSPI</span>
+
+          <div class="description">
+             Gazdag's phase-shift plus interpolation migration for zero-offset data
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+	    
+	  <a name="details" id="details"></a>
+          <h2>Introduction</h2>
+
+          <p>Gazdag's phase-shift plus interpolation migration for zero-offset data, which can handle the lateral velocity variation.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>GêBR core team</p>
+	  <p>May 28, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com<p/>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+
+            <li><a href="#details">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | May 28, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Migration and Dip Moveout</category>
+  <date><created/><modified>2009-05-28T18:43:15.745606Z</modified><lastrun/></date><category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
   <io>
     <input/>
@@ -68,11 +125,11 @@
 
           <ul>
 
-          <li><span class="label">[number of depth samples]</span></li>
+          <li><span class="label">[Number of depth samples]</span></li>
 
-          <li><span class="label">[depth sampling interval]</span></li>
+          <li><span class="label">[Depth sampling interval]</span></li>
 
-          <li><span class="label">[name of file containing velocities]</span>
+          <li><span class="label">[Name of file containing velocities]</span>
               (Please see Notes below concerning the format of vfile)</li>
 
           </ul>
@@ -81,13 +138,13 @@
           
           <ul>
           
-          <li><span class="label">[time sampling interval]</span></li>
+          <li><span class="label">[Time sampling interval]</span></li>
 
-          <li><span class="label">[midpoint sampling interval]</span></li>
+          <li><span class="label">[Midpoint sampling interval]</span></li>
 
-          <li><span class="label">[first time sample]</span></li>
+          <li><span class="label">[First time sample]</span></li>
 
-          <li><span class="label">[directory path prefix for storing temporary files]</span>
+          <li><span class="label">[Directory path prefix for storing temporary files]</span>
           if non-empty, use the value as a directory path
           prefix for storing temporary files; else if the
           the CWP_TMPDIR environment variable is set use   
@@ -144,42 +201,42 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
 </body>
-</html>]]>
-</help>
+</html>
+]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
-      <parameter id="n0"><label>number of depth samples</label><int><property required="yes"><keyword>ns=</keyword><value/><default/></property>
+      <parameter id="n0"><label>Number of depth samples</label><int><property required="yes"><keyword>ns=</keyword><value/><default/></property>
         
         
         
       </int></parameter>
-      <parameter id="n1"><label>depth sampling interval</label><float><property required="yes"><keyword>dz=</keyword><value/><default/></property>
+      <parameter id="n1"><label>Depth sampling interval</label><float><property required="yes"><keyword>dz=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
-      <parameter id="n2"><label>name of file containing velocities</label><file directory="no"><property required="yes"><keyword>vfile=</keyword><value/><default/></property>
+      <parameter id="n2"><label>Name of file containing velocities</label><file directory="no"><property required="yes"><keyword>vfile=</keyword><value/><default/></property>
         
         
         
       </file></parameter>
-      <parameter id="n3"><label>time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
+      <parameter id="n3"><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
-      <parameter id="n4"><label>midpoint sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property>
+      <parameter id="n4"><label>Midpoint sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
-      <parameter id="n5"><label>directory path for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
+      <parameter id="n5"><label>Directory path for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
         
         
         

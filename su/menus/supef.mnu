@@ -3,21 +3,78 @@
   <filename>supef.mnu</filename>
   <title>SU PEF</title>
   <description>Wiener predictive error filtering</description>
-     <help><![CDATA[
-    <html>
-    <header>
-       <title>SU PEF</title>
-    </header>
-    <body>
-    <h1>SU Shape</h1>
-    <p>Wiener prediction error filtering</p>
-    </body>
-    </html>
-    ]]>
-  </help>
+     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU PEF</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU PEF</span>
+
+          <div class="description">
+            Wiener prediction error filtering
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Filtering, Transforms and Attributes | Multiple Supression | Seismic Unix 
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Wiener prediction error filtering.</p>
+
+          
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>GêBR core team</p>
+          <p>May 29, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | May 29, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Filtering, Transforms and Attributes</category>
+  <date><created/><modified>2009-05-29T18:29:39.032121Z</modified><lastrun/></date><category>Filtering, Transforms and Attributes</category>
   <category>Multiple Supression</category>
   <category>Seismic Unix</category>
   <io>
@@ -29,15 +86,16 @@
     <menu index="0">supef.mnu</menu>
     <title>SU PEF</title>
     <binary>supef</binary>
-    <description/>
+    <description>Wiener prediction error filtering</description>
     <help><![CDATA[
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
   <meta name="generator" content=
   "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="gebr.css" media=
+  <link rel="stylesheet" type="text/css" href="file:///usr/share/debr/gebr.css" media=
   "screen" />
 
   <title>G&ecirc;BR - SU PEF</title>
@@ -110,15 +168,13 @@
           Output parameter file, contains the Wiener filter if showwiener=1 is set.
 	  </li>
 
-	  <li><span class="label">[CDP interpolation method]</span>
-          linear for linear interpolation (default) <br \>
-          mono   for monotonic cubic interpolation of cdps <br \>
-          akima  for Akima's cubic interpolation of cdps <br \>
-          spline for cubic spline interpolation of cdps.
-	  </li>	  
-	
-	  </ul>
-	
+	  <li><span class="label">[CDP interpolation method]</span><br>
+		linear for Linear Interpolation  of CDP values<br />
+		mono for Monotonic cubic interpolation of CDPs<br />
+		akima for Akima's cubic interpolation of CDPs<br />
+		spline for Cubic spline interpolation of CDPs</li>
+	 
+	 </ul>
 	</div>
 	
 	  <a name="notes"></a>
@@ -129,48 +185,48 @@
 <br />
  Run the following command <br \>
 <br />
-    suacor < data.su | suximage perc=95 
+    suacor < data.su | suximage perc=95 >
 <br />
  You will see horizontal strip running across the center of your plot. <br />
  This is the autocorrelation wavelet for each trace. The idea of spiking <br />
  decon is to apply a Wiener filter with no gap to the data to collapse <br />
  the waveform into a spike. The idea is to pick the width of the <br />
- autocorrelation waveform _from beginning to end_ (not trough to trough) <br />
- and use this time for MAXLAG_SPIKING: <br />
+ autocorrelation waveform _from beginning to end_ (not trough to trough)<br />
+ and use this time for MAXLAG_SPIKING:<br />
 <br />
   supef < data.su maxlag=MAXLAG_SPIKING  > dataspiked.su  <br />
 <br />
- 2) Prediction Error Filter (i.e. gapped Wiener filtering) <br />
- The purpose of gapped decon is to suppress repetitions in the data <br />
- such as those caused by water bottom multiples. <br />
+ 2) Prediction Error Filter (i.e. gapped Wiener filtering).<br /> 
+ The purpose of gapped decon is to suppress repetitions in the data<br />
+ such as those caused by water bottom multiples.<br />
 <br />
  To look for the period of the repetitions <br />
 <br />
-    suacor ntout=1000 < dataspiked.su | suximage perc=95 <br />
-<br />
+    suacor ntout=1000 < dataspiked.su | suximage perc=95 ><br />
+
  The value of ntout must be larger than the default 100. The idea is <br />
- to look for repetitions in the autocorrelation. These repetitions will <br />
+ to look for repetitions in the autocorrelation. These repetitions will<br />
  appear as a family of parallel stripes above and below the main <br />
- autocorrelation waveform. Set MAXLAG_PEF to the period of the repetitions <br />
+ autocorrelation waveform. Set MAXLAG_PEF to the period of the repetitions<br />
  Set MINLAG_PEF to be slightly larger than the value of MAXLAG_SPIKING <br />
  that you used to spike the data. <br />
 <br />
   supef < dataspiked.su minlag=MINLAG_PEF maxlag=MAXLAG_PEF > datapef.su <br />
 <br />
  Some experimentation may be required to get a satisfactory result. <br />
-<br />
- 3) It may be effective to sort your data into cdp gathers with susort, <br />
- and perform sunmo correction to the water speed with sunmo, prior to  <br />
- attempts to suppress water bottom multiples. After applying supef, the <br />
- user should apply inverse nmo to undo the nmo to water speed prior to <br />
- further processing. <br />
+<br /><p>
+ 3) It may be effective to sort your data into cdp gathers with susort
+ and perform sunmo correction to the water speed with sunmo, prior to 
+ attempts to suppress water bottom multiples. After applying supef, the
+ user should apply inverse nmo to undo the nmo to water speed prior to 
+ further processing. </p>
 <br />
  For a filter expressed as a function of cdp, specify the array <br />
      cdp=cdp1,cdp2,... <br />
  and for each cdp specified, specify the minlag and maxlag arrays as <br />
       minlag=min1,min2,...     maxlag=max1,max2,...    <br />
-
- It is required that the number of minlag and maxlag values be equal to <br />
+<br />
+ It is required that the number of minlag and maxlag values be equal to<br />
  the number of cdp's specified.  If the number of <br />
  values in these arrays does not equal the number of cdp's, only the first <br />
  value will be used. <br />
@@ -224,7 +280,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -232,18 +288,15 @@
   </div>
 </body>
 </html>
-    ]]></help>
+    
+]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
       <parameter id="n0"><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
-      <parameter id="n1"><label>CDPs for which optional parameters are set</label><string><property required="no"><keyword>cdp=</keyword><value/><default/></property>
-        
-        
-        
-      </string></parameter>
+      <parameter id="n1"><label>CDPs for which optional parameters are set</label><int><property required="no" separator=","><keyword>cdp=</keyword><value/><default/></property></int></parameter>
       <parameter id="n2"><label>First lag of prediction filter</label><float><property required="no"><keyword>minlag=</keyword><value/><default/></property>
         
         
@@ -284,11 +337,7 @@
         
         
       </file></parameter>
-      <parameter id="n10"><label>CDP interpolation method</label><string><property required="no"><keyword>method=</keyword><value/><default/></property>
-        
-        
-        
-      </string></parameter>
+      <parameter id="n10"><label>CDP interpolation method</label><enum><property required="no"><keyword>method=</keyword><value/><default>linear</default></property><option><label>Linear interpolation of cdp values</label><value>linear</value></option><option><label>Monotonic cubic interpolation of cdps </label><value>mono</value></option><option><label>Akima's cubic interpolation of cdps </label><value>akima</value></option><option><label>Cubic spline interpolation of cdps</label><value>spline</value></option></enum></parameter>
     </parameters>
   </program>
 </flow>

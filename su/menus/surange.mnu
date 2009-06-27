@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.3.0" nextid="n1">
+<flow version="0.3.0" nextid="n2">
   <filename>surange.mnu</filename>
   <title>SU Range</title>
   <description>Get max and min values for non-zero header entries</description>
@@ -36,18 +36,24 @@
       <div class="main">
         <div class="content">
 
+	  <a name="intro" id="intro"></a>
+	  <h2>Introduction</h2>
+
+	  <p>Display minimum and maximum values for all or selected non-zero header entries.</p>
 
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>Aug 01, 2007: created by Ricardo Biloti &lt;biloti@gmail.com&gt;<br />
-	     Mar 13, 2009: updated by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
+          <p>Aug 01, 2007: created by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
+	  <p>Mar 13, 2009: updated by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
+	  <p>Jun 19, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
           <h2>Index</h2>
 
           <ul>
+	    <li><a href="#intro">Introduction</a></li>
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -56,7 +62,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.9 (0.3.0) | Mar 13, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 19, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -67,7 +73,7 @@
 ]]></help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
-  <date><created>2007-08-01T19:00:10.000000Z</created><modified>2009-05-08T13:37:53.368500Z</modified><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <date><created>2007-08-01T19:00:10.000000Z</created><modified>2009-06-19T19:40:52.421909Z</modified><lastrun/></date><category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured">
@@ -145,7 +151,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.9 (0.3.0) | SU 41</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -155,7 +161,10 @@
 </html>
 ]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
-      <parameter id="n0"><label>Header key(s) to range (leave empty for all)</label><enum><property required="no" separator=","><keyword>key=</keyword><value/><default/></property>
+      
+    <parameter id="n1">
+        <label>Header key(s) to range (leave empty for all)</label>
+        <enum><property required="no" separator=","><keyword>key=</keyword><value>cdp</value><default></default></property>
       <option><label>Alias filter frequency if used</label><value>afilf</value></option>
       <option><label>Alias filter slope</label><value>afils</value></option>
       <option><label>Alignment padding</label><value>shortpad</value></option>
@@ -235,7 +244,7 @@
       <option><label>Y group coordinate</label><value>gy</value></option>
       <option><label>Y source coordinate</label><value>sy</value></option>
       <option><label>Year data recorded</label><value>year</value></option>
-      </enum></parameter>
-    </parameters>
+      </enum>
+      </parameter></parameters>
   </program>
 </flow>

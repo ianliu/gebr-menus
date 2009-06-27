@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.0" nextid="n12">
+<flow version="0.3.0" nextid="n17">
   <filename>segywrite.mnu</filename>
   <title>SU SEG-Y write</title>
   <description>Write a SEG-Y tape</description>
@@ -46,7 +46,8 @@
           <h2>Credits</h2>
 
           <p>Oct 17, 2007: written by Ricardo Biloti, UNICAMP - biloti@gmail.com</p>
-          <p>Mar 17, 2008: revised by Daniela Rego Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+          <p>Mar 17, 2008: revised by Daniela Rego Amazonas, UFPA - daniela.amazonas@gmail.com</p>	
+	  <p>May 26, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | Mar 17, 2008</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | May 26, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -71,11 +72,10 @@
   </div>
 </body>
 </html>
-]]>
-  </help>
+]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Import/Export</category>
+  <date><created/><modified>2009-05-26T22:03:23.576814Z</modified><lastrun/></date><category>Import/Export</category>
   <category>Seismic Unix</category>
   <io>
     <input/>
@@ -143,7 +143,7 @@
               <li><span class="label">[Allowable number of consecutive tape IO errors]</span></li>
               <li><span class="label">[Override value of format in binary header file]</span></li>
               <li><span class="label">[Echoing at each amount of trace]</span></li>
-              <li><span class="label">[Print some useful information]</span></li>
+              <li><span class="label">[Echos information]</span></li>
            </ul>
           </div>
 	    
@@ -197,7 +197,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -209,16 +209,16 @@
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
       <parameter id="n0"><label>Tape device to use or filename</label><file directory="no"><property required="yes"><keyword>tape=</keyword><value/><default/></property></file></parameter>
       <parameter id="n1"><label>For 8mm EXABYTE drives</label><flag><property required="no"><keyword>buff=0</keyword><value/><default>off</default></property></flag></parameter>
-      <parameter id="n2"><label>Don't convert to IBM format</label><flag><property required="no"><keyword>conv=0</keyword><value/><default>off</default></property></flag></parameter>
+      
       <parameter id="n3"><label>EBCDIC card image header file</label><file directory="no"><property required="no"><keyword>hfile=</keyword><value/><default/></property></file></parameter>
-      <parameter id="n4"><label>Binary header file</label><file directory="no"><property required="no"><keyword>bfile=</keyword><value/><default/></property></file></parameter>
+      <parameter id="n12"><label>Numeric Format</label><group instanciable="no" expand="no"><parameters exclusive="0"><parameter id="n14"><label>Override value of format in binary header file</label><string><property required="no"><keyword>format=</keyword><value/><default/></property></string></parameter><parameter id="n15"><label>Don't convert to IBM format</label><flag><property required="no"><keyword>conv=0</keyword><value/><default>off</default></property></flag></parameter><parameter id="n16"><label>Little-endian machines</label><flag><property required="no"><keyword>endian=0</keyword><value/><default>off</default></property></flag></parameter></parameters></group></parameter><parameter id="n4"><label>Binary header file</label><file directory="no"><property required="no"><keyword>bfile=</keyword><value/><default/></property></file></parameter>
       <parameter id="n5"><label>First trace to write</label><int><property required="no"><keyword>trmin=</keyword><value/><default/></property></int></parameter>
       <parameter id="n6"><label>Last trace to write</label><int><property required="no"><keyword>trmax=</keyword><value/><default/></property></int></parameter>
-      <parameter id="n7"><label>Little-endian machines</label><flag><property required="no"><keyword>endian=0</keyword><value/><default>off</default></property></flag></parameter>
+      
       <parameter id="n8"><label>Allowable number of consecutive tape IO errors</label><int><property required="no"><keyword>errmax=</keyword><value/><default>0</default></property></int></parameter>
-      <parameter id="n9"><label>Override value of format in binary header file</label><string><property required="no"><keyword>format=</keyword><value/><default/></property></string></parameter>
-      <parameter id="n10"><label>Echoing at each amount of trace</label><int><property required="no"><keyword>vblock=</keyword><value/><default>50</default></property></int></parameter>
-      <parameter id="n11"><label>Print some useful information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property></flag></parameter>
-    </parameters>
+      
+      
+      
+    <parameter id="n10"><label>Echoing at each amount of trace</label><int><property required="no"><keyword>vblock=</keyword><value/><default>50</default></property></int></parameter><parameter id="n11"><label>Echos information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property></flag></parameter></parameters>
   </program>
 </flow>

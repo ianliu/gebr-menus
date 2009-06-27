@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.0" nextid="n14">
+<flow version="0.3.0" nextid="n21">
   <filename>sumigpreffd.mnu</filename>
   <title>SU FFD pre-stack migration</title>
   <description>The 2-D prestack Fourier finite-difference depth migration</description>
@@ -35,14 +35,9 @@
       <div class="main">
         <div class="content">
 
-          <a name="intro" id="intro"></a>
-          <h2>Introduction</h2>
-
-          <p></p>
-
 	    
 	  <a name="details" id="details"></a>
-          <h2>Description</h2>
+          <h2>Introduction</h2>
 
           <p>The 2-D prestack common-shot Fourier finite-difference depth migration.</p>
 
@@ -50,15 +45,15 @@
           <h2>Credits</h2>
 
           <p>Jan 14, 2009: written by Daniela R&ecircgo Amazonas, UFPA</p>
+	  <p>May 28, 2009: Modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
           <h2>Index</h2>
 
           <ul>
-            <li><a href="#intro">Introduction</a></li>
 
-            <li><a href="#details">Description</a></li>
+            <li><a href="#details">Introduction</a></li>
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -68,7 +63,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.6-pre20081203 (0.3.0) |Jan 14, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | May 28, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -81,7 +76,7 @@
   <email>daniela.amazonas@gmail.com</email>
   <date>
     <created/>
-    <modified/>
+    <modified>2009-05-28T18:33:29.065435Z</modified>
     <lastrun/>
   </date>
   <category>Migration and Dip Moveout</category>
@@ -133,6 +128,8 @@
             <a name="par" id="par"></a>
             <h2>Required parameters</h2>
 
+		<p></p>		
+
 	    <!-- List of required parameters -->
             <ul>
               <li><span class="label">[Number of total horizontal output samples]</span> </li>
@@ -149,12 +146,14 @@
             </ul>
 
             <h2>Optional parameters</h2>
-
+		
+		<p></p>
+	
 	    <!-- List of optional parameters -->
 
               <li><span class="label">[Peak frequency]</span> The peak frequency of Ricker wavelet used as source wavelet</li>
 
-              <li><span class="label">[Frequency 1, frequency 2, frequency 3, frequency 4]</span> Frequencies to build a Hamming window</li>
+              <li><span class="label">[Frequency 1, Frequency 2, Frequency 3, Frequency 4]</span> Frequencies to build a Hamming window</li>
 
               <li><span class="label">[Number of zero traces padded on left]</span> Determine the migration aperature, the default values are using 
                                        the full aperature</li>
@@ -162,7 +161,7 @@
               <li><span class="label">[Number of zero traces padded on right]</span> Determine the migration aperature, the default values are using 
                                        the full aperature</li>
 
-              <li><span class="label">[Print some useful information]</span> </li>
+              <li><span class="label">[Echos information]</span> </li>
 
             <ul>
           </ul>
@@ -225,7 +224,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.6-pre20081203 (0.3.0) |Jan 14, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -306,7 +305,7 @@
           </property>
         </float>
       </parameter>
-      <parameter id="n7">
+      <parameter id="n14"><label>Frequencies to build a Hamming window</label><group instanciable="no" expand="no"><parameters exclusive="0"><parameter id="n16">
         <label>Frequency 1</label>
         <float>
           <property required="no">
@@ -315,8 +314,7 @@
             <default>5</default>
           </property>
         </float>
-      </parameter>
-      <parameter id="n8">
+      </parameter><parameter id="n17">
         <label>Frequency 2</label>
         <float>
           <property required="no">
@@ -325,8 +323,7 @@
             <default>10</default>
           </property>
         </float>
-      </parameter>
-      <parameter id="n9">
+      </parameter><parameter id="n18">
         <label>Frequency 3</label>
         <float>
           <property required="no">
@@ -335,8 +332,7 @@
             <default>40</default>
           </property>
         </float>
-      </parameter>
-      <parameter id="n10">
+      </parameter><parameter id="n20">
         <label>Frequency 4</label>
         <float>
           <property required="no">
@@ -345,7 +341,10 @@
             <default>50</default>
           </property>
         </float>
-      </parameter>
+      </parameter></parameters></group></parameter>
+      
+      
+      
       <parameter id="n11">
         <label>Number of zero traces padded on left</label>
         <int>
@@ -367,7 +366,7 @@
         </int>
       </parameter>
       <parameter id="n13">
-        <label>Print some useful information</label>
+        <label>Echos information</label>
         <flag>
           <property required="no">
             <keyword>verbose=1</keyword>

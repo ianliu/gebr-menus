@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.0" nextid="n2">
+<flow version="0.3.0" nextid="n3">
   <filename>suabshw.mnu</filename>
-  <title>SU ABS HW</title>
+  <title>SU ABS Header</title>
   <description>Replace header key word by its absolute value</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -12,7 +12,7 @@
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
-  <title>G&ecirc;BR - SU ABS HW</title>
+  <title>G&ecirc;BR - SU ABS Header</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <span class="flowtitle">SU ABS HW</span>
+          <span class="flowtitle">SU ABS Header</span>
 
           <div class="description">
             Replace header key word by its absolute value
@@ -46,6 +46,7 @@
 
           <p>Oct 08, 2007: written by Ricardo Biloti, UNICAMP, biloti@gmail.com </p>
           <p>Mar 17, 2008: revised by Daniela Amazonas, UFPA, daniela.amazonas@gmail.com</p>
+	  <p>Jun 01, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
@@ -62,7 +63,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | Mar 17, 2008</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 01, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -73,7 +74,7 @@
 ]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified>2009-03-20T23:54:51.613459Z</modified><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <date><created/><modified>2009-06-01T15:26:38.867745Z</modified><lastrun/></date><category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
   <io>
     <input/>
@@ -82,7 +83,7 @@
   </io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
     <menu index="0">suabshw.mnu</menu>
-    <title>SU ABS HW</title>
+    <title>SU ABS Header</title>
     <binary>suabshw</binary>
     <description>Replace header key word by its absolute value</description>
     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -94,7 +95,7 @@
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
-  <title>G&ecirc;BR - SU ABS HW</title>
+  <title>G&ecirc;BR - SU ABS Header</title>
 </head>
 
 <body>
@@ -102,7 +103,7 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <span class="flowtitle">SU ABS HW</span>
+          <span class="flowtitle">SU ABS Header</span>
 
           <div class="description">
             Replace header key word by its absolute value
@@ -132,7 +133,7 @@
 	    <!-- List of optional parameters -->
             <ul>
               <li><span class="label">[Header keyword]</span> Enter one of
-	      the header keyword (offset, cdp, sx, sy, gx, gy,...)</li>
+	      the header keyword</li>
             </ul>
           </div>
 
@@ -158,7 +159,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -169,7 +170,9 @@
 ]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
       
-    <parameter id="n1"><label>Header key word</label><enum><property required="no"><keyword>key=</keyword><value/><default/></property>
+    <parameter id="n2">
+        <label>Header key word</label>
+        <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default></default></property>
       <option><label>Alias filter frequency if used</label><value>afilf</value></option>
       <option><label>Alias filter slope</label><value>afils</value></option>
       <option><label>Alignment padding</label><value>shortpad</value></option>
@@ -249,6 +252,7 @@
       <option><label>Y group coordinate</label><value>gy</value></option>
       <option><label>Y source coordinate</label><value>sy</value></option>
       <option><label>Year data recorded</label><value>year</value></option>
-      </enum></parameter></parameters>
+      </enum>
+      </parameter></parameters>
   </program>
 </flow>

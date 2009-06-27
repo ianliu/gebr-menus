@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.3.0" nextid="n22">
+<flow version="0.3.0" nextid="n47">
   <filename>sufdmod2.mnu</filename>
   <title>SU FD Mod2</title>
   <description>Finite-Difference Modeling (2nd order) for acoustic wave equation</description>
@@ -35,18 +35,24 @@
       <div class="main">
         <div class="content">
 
+	  <a name="intro" id="intro"></a>
+	  <h2>Introduction</h2>
+
+	<p>Finite-Difference Modeling (2nd order) for acoustic wave equation.</p>	
+
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Ago 26, 2007: written by Braulio Barros de Oliveira, UNICAMP - brauliobo@gmail.com</p>
           <p>Jun 10, 2008: revised by Daniela Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+	  <p>Jun 01, 2009: modified by Jorge Pizzolatto Fulho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
           <h2>Index</h2>
 
           <ul>
- 
+	    <li><a href="#intro">Introduction</a></li>
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -55,7 +61,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.3) | Jun 10, 2008</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 01, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -66,7 +72,7 @@
 ]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified>2009-03-20T23:56:59.488893Z</modified><lastrun/></date><category>Simulation and Model Building</category>
+  <date><created/><modified>2009-06-01T15:12:12.797256Z</modified><lastrun/></date><category>Simulation and Model Building</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
@@ -141,7 +147,7 @@
               <li><span class="label">[Output file for horizontal line of seismograms]</span></li>
               <li><span class="label">[Output file for source point seismograms]</span></li>
               <li><span class="label">[Absorbing boundary conditions]</span> On top,left,bottom,right sides of the model</li>
-              <li><span class="label">[Print some useful information]</span></li>
+              <li><span class="label">[Echos information]</span></li>
 
 
           </ul>
@@ -186,7 +192,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (0.2.2) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -206,44 +212,44 @@
 	
 	
       </int></parameter>
-      <parameter id="n2"><label>X coordinates of source</label><float><property required="yes" separator=","><keyword>xs=</keyword><value/><default/></property></float></parameter>
-      <parameter id="n3"><label>Z coordinates of source</label><float><property required="yes" separator=","><keyword>zs=</keyword><value/><default/></property></float></parameter>
-      <parameter id="n4"><label>Strength of source</label><float><property required="yes"><keyword>sstrength=</keyword><value/><default/></property></float></parameter>
-      <parameter id="n5"><label>Maximum time</label><float><property required="yes"><keyword>tmax=</keyword><value/><default/></property>
+      <parameter id="n29"><label>Source</label><group instanciable="no" expand="no"><parameters exclusive="0"><parameter id="n31"><label>X coordinates of source</label><float><property required="yes" separator=","><keyword>xs=</keyword><value/><default/></property></float></parameter><parameter id="n32"><label>Z coordinates of source</label><float><property required="yes" separator=","><keyword>zs=</keyword><value/><default/></property></float></parameter><parameter id="n33"><label>Strength of source</label><float><property required="yes"><keyword>sstrength=</keyword><value/><default/></property></float></parameter></parameters></group></parameter>
+      
+      
+      
+      <parameter id="n34"><label>Time discretization</label><group instanciable="no" expand="no"><parameters exclusive="0"><parameter id="n36"><label>Maximum time</label><float><property required="yes"><keyword>tmax=</keyword><value/><default/></property>
 	
 	
 	
-      </float></parameter>
-      <parameter id="n6"><label>Number of time samples</label><int><property required="no"><keyword>nt=</keyword><value/><default/></property>
+      </float></parameter><parameter id="n38"><label>Number of time samples</label><int><property required="no"><keyword>nt=</keyword><value/><default/></property>
 	
 	
 	
-      </int></parameter>
-      <parameter id="n7"><label>Number of time steps per output time step</label><int><property required="no"><keyword>mt=</keyword><value/><default/></property>
+      </int></parameter><parameter id="n39"><label>Number of time steps per output time step</label><int><property required="no"><keyword>mt=</keyword><value/><default/></property>
 	
 	
 	
-      </int></parameter>
-      <parameter id="n8"><label>X sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property>
+      </int></parameter></parameters></group></parameter>
+      
+      <parameter id="n37"><label>Spacial grid</label><group instanciable="no" expand="no"><parameters exclusive="0"><parameter id="n43"><label>X sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property>
 	
 	
 	
-      </float></parameter>
-      <parameter id="n9"><label>First x sample</label><float><property required="no"><keyword>fx=</keyword><value/><default/></property>
+      </float></parameter><parameter id="n44"><label>First x sample</label><float><property required="no"><keyword>fx=</keyword><value/><default/></property>
 	
 	
 	
-      </float></parameter>
-      <parameter id="n10"><label>Z sampling interval</label><float><property required="no"><keyword>dz=</keyword><value/><default/></property>
+      </float></parameter><parameter id="n45"><label>Z sampling interval</label><float><property required="no"><keyword>dz=</keyword><value/><default/></property>
 	
 	
 	
-      </float></parameter>
-      <parameter id="n11"><label>First z sample</label><float><property required="no"><keyword>fz=</keyword><value/><default/></property>
+      </float></parameter><parameter id="n46"><label>First z sample</label><float><property required="no"><keyword>fz=</keyword><value/><default/></property>
 	
 	
 	
-      </float></parameter>
+      </float></parameter></parameters></group></parameter>
+      
+      
+      
       <parameter id="n12"><label>Maximum frequency in source wavelet</label><float><property required="no"><keyword>fmax=</keyword><value/><default/></property>
 	
 	
@@ -259,33 +265,33 @@
 	
 	
       </file></parameter>
-      <parameter id="n15"><label>X coordinate of vertical line of seismograms</label><float><property required="no"><keyword>vsx=</keyword><value/><default/></property>
+      <parameter id="n22"><label>Seismograms</label><group instanciable="no" expand="no"><parameters exclusive="0"><parameter id="n24"><label>X coordinate of vertical line of seismograms</label><float><property required="no"><keyword>vsx=</keyword><value/><default/></property>
 	
 	
 	
-      </float></parameter>
-      <parameter id="n16"><label>Z coordinate of horizontal line of seismograms</label><float><property required="no"><keyword>hsz=</keyword><value/><default/></property>
+      </float></parameter><parameter id="n25"><label>Z coordinate of horizontal line of seismograms</label><float><property required="no"><keyword>hsz=</keyword><value/><default/></property>
 	
 	
 	
-      </float></parameter>
-      <parameter id="n17"><label>Output file for vertical line of seismograms</label><file directory="no"><property required="no"><keyword>vsfile=</keyword><value/><default/></property>
+      </float></parameter><parameter id="n26"><label>Output file for vertical line of seismograms</label><file directory="no"><property required="no"><keyword>vsfile=</keyword><value/><default/></property>
 	
 	
 	
-      </file></parameter>
-      <parameter id="n18"><label>Output file for horizontal line of seismograms</label><file directory="no"><property required="no"><keyword>hsfile=</keyword><value/><default/></property>
+      </file></parameter><parameter id="n27"><label>Output file for horizontal line of seismograms</label><file directory="no"><property required="no"><keyword>hsfile=</keyword><value/><default/></property>
 	
 	
 	
-      </file></parameter>
-      <parameter id="n19"><label>Output file for source point seismograms</label><file directory="no"><property required="no"><keyword>ssfile=</keyword><value/><default/></property>
+      </file></parameter><parameter id="n28"><label>Output file for source point seismograms</label><file directory="no"><property required="no"><keyword>ssfile=</keyword><value/><default/></property>
 	
 	
 	
-      </file></parameter>
-      <parameter id="n20"><label>Absorbing boundary conditions</label><float><property required="no" separator=","><keyword>abs=</keyword><value/><default/></property></float></parameter>
-      <parameter id="n21"><label>Print some useful information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
+      </file></parameter></parameters></group></parameter>
+      
+      
+      
+      
+      
+      <parameter id="n20"><label>Absorbing boundary conditions</label><float><property required="no" separator=","><keyword>abs=</keyword><value/><default/></property></float></parameter><parameter id="n21"><label>Echos information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
 	
 	
 	

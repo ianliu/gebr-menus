@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.0" nextid="n7">
+<flow version="0.3.0" nextid="n9">
   <filename>suweight.mnu</filename>
   <title>SU Weight</title>
   <description>Weight traces by header parameter, such as offset</description>
@@ -44,6 +44,7 @@
           <h2>Credits</h2>
 
           <p>G&ecirc;BR core team</p>
+	  <p>Jun 19, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
@@ -59,7 +60,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 19, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -70,7 +71,7 @@
 ]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified>2009-03-21T01:26:17.697901Z</modified><lastrun/></date><category>Seismic Unix</category>
+  <date><created/><modified>2009-06-19T19:48:01.229378Z</modified><lastrun/></date><category>Seismic Unix</category>
   <category>Utilities</category>
   <io>
     <input/>
@@ -169,7 +170,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -180,7 +181,9 @@
 ]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
       
-      <parameter id="n5"><label>Header word to weight traces by</label><enum><property required="no"><keyword>key=</keyword><value/><default></default></property>
+      <parameter id="n7">
+        <label>Header word to weight traces by</label>
+        <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default></default></property>
       <option><label>Alias filter frequency if used</label><value>afilf</value></option>
       <option><label>Alias filter slope</label><value>afils</value></option>
       <option><label>Alignment padding</label><value>shortpad</value></option>
@@ -260,7 +263,8 @@
       <option><label>Y group coordinate</label><value>gy</value></option>
       <option><label>Y source coordinate</label><value>sy</value></option>
       <option><label>Year data recorded</label><value>year</value></option>
-      </enum></parameter><parameter id="n1"><label>Constant weighting parameter</label><float><property required="no"><keyword>a=</keyword><value/><default/></property>
+      </enum>
+      </parameter><parameter id="n1"><label>Constant weighting parameter</label><float><property required="no"><keyword>a=</keyword><value/><default/></property>
         
         
         
@@ -271,7 +275,9 @@
         
       </float></parameter>
       
-      <parameter id="n6"><label>Header word to draw weight from</label><enum><property required="no"><keyword>key2=</keyword><value/><default></default></property>
+      <parameter id="n8">
+        <label>Header word to draw weight from</label>
+        <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default></default></property>
       <option><label>Alias filter frequency if used</label><value>afilf</value></option>
       <option><label>Alias filter slope</label><value>afils</value></option>
       <option><label>Alignment padding</label><value>shortpad</value></option>
@@ -351,7 +357,8 @@
       <option><label>Y group coordinate</label><value>gy</value></option>
       <option><label>Y source coordinate</label><value>sy</value></option>
       <option><label>Year data recorded</label><value>year</value></option>
-      </enum></parameter><parameter id="n4"><label>Scale factor to apply to header field values</label><float><property required="no"><keyword>scale=</keyword><value/><default/></property>
+      </enum>
+      </parameter><parameter id="n4"><label>Scale factor to apply to header field values</label><float><property required="no"><keyword>scale=</keyword><value/><default/></property>
         
         
         

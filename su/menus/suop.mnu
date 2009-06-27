@@ -23,34 +23,30 @@
           <span class="flowtitle">SU Unary arithmetic operations</span>
 
           <div class="description">
-            Do unary arithmetic operation on segys
+            Do unary arithmetic operation on segys 
           </div>
         </div>
       </div>
 
       <div class="category">
-        Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix 
       </div>
 
       <div class="main">
         <div class="content">
-          <div class="parameters">
 
-            <a name="par" id="par"></a>
-            <h2>Optional parameters</h2>
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
 
-	    <!-- List of optional parameters -->
-            <ul>
-              <li><span class="label">[operation]</span> defines the operation to be applied to each sample of the data. Allowed operations are:</li>
-	      <ul>
-	      </ul>
-            </ul>
-          </div>
-	    
+          <p>Do unary arithmetic operation on segys.</p>
+
+          
+
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>GêBR core team</p>
+          <p>May 29, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
@@ -58,6 +54,7 @@
 
           <ul>
             <li><a href="#intro">Introduction</a></li>
+
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -66,7 +63,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | May 29, 2008</span>
 
         <div class="clearer"></div>
       </div>
@@ -77,7 +74,7 @@
 ]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified/><lastrun/></date><category>Editing, Sorting and Manipulation</category>
+  <date><created/><modified>2009-05-29T18:10:24.982948Z</modified><lastrun/></date><category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
   <io>
     <input/>
@@ -88,7 +85,7 @@
     <menu index="0">suop.mnu</menu>
     <title>SU Op</title>
     <binary>suop</binary>
-    <description>do unary arithmetic operation on segys</description>
+    <description>Do unary arithmetic operation on segys</description>
     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -98,7 +95,7 @@
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
-  <title>G&ecirc;BR - SU Op</title>
+  <title>G&ecirc;BR - SU Unary arithmetic operation</title>
 </head>
 
 <body>
@@ -106,7 +103,7 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <span class="flowtitle">SU Op</span>
+          <span class="flowtitle">SU Unary arithmetic operation</span>
           <div class="description">
             Do unary arithmetic operation on segys
           </div>
@@ -132,10 +129,9 @@
 
 	    <!-- List of optional parameters -->
             <ul>
-              <li><span class="label">[operation]</span> defines the
-              operation to be applied to trace sample of the
-              data. Allowed operations are:</li>
-            </ul>
+              <li><span class="label">[Operation]</span> Defines the
+              operation to be applied to trace sample of the data.The allowed operations are:</li>
+		</ul>
 	      <table>
 		<tr><td>abs</td><td>absolute value</td></tr>
                 <tr><td>avg</td><td>remove average value</td></tr>
@@ -165,7 +161,7 @@
                 <tr><td>rmsamp</td><td>rms amplitude</td></tr>
                 <tr><td>nop</td><td>no operation</td></tr>
 	      </table>
-          </div> 
+          </div><br> 
 
 	  <a name="notes" id="notes"></a>
           <h2>Notes</h2>
@@ -199,7 +195,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -209,11 +205,7 @@
 </html>
 ]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
-      <parameter id="n0"><label>operation</label><string><property required="no"><keyword>op=</keyword><value/><default>abs</default></property>
-        
-        
-        
-      </string></parameter>
+      <parameter id="n0"><label>Operation</label><enum><property required="no"><keyword>op=</keyword><value/><default>abs</default></property><option><label>Absolute value</label><value>abs</value></option><option><label>Remove average value</label><value>avg</value></option><option><label>Signed square root</label><value>ssqrt</value></option><option><label>Square</label><value>sqr</value></option><option><label>Signed square</label><value>ssqr</value></option><option><label>Signum function</label><value>sgn</value></option><option><label>Exponentiate</label><value>exp</value></option><option><label>Signed natural log</label><value>slog</value></option><option><label>Signed common log</label><value>slog10</value></option><option><label>Cosine</label><value>cos</value></option><option><label>Sine</label><value>sin</value></option><option><label>Tangent</label><value>tan</value></option><option><label>Hyperbolic cosine</label><value>cosh</value></option><option><label>Hyperbolic sine</label><value>sinh</value></option><option><label>Hyperbolic tangent</label><value>tanh</value></option><option><label>Divide trace by Max. Value</label><value>norm</value></option><option><label>20 * slog10 (data)</label><value>db</value></option><option><label>Negate value</label><value>neg</value></option><option><label>Pass only positive values</label><value>posonly</value></option><option><label>Pass only negative values</label><value>negonly</value></option><option><label>Running sum trace integration</label><value>sum</value></option><option><label>Running diff trace differentiation</label><value>diff</value></option><option><label>(v[i+1] - v[i])/(v[i+1] + v[i])</label><value>refl</value></option><option><label>Modulo 2 π</label><value>mod2pi</value></option><option><label>Inverse</label><value>inv</value></option><option><label>Rms amplitude</label><value>rmsamp</value></option><option><label>No operation</label><value>nop</value></option></enum></parameter>
     </parameters>
   </program>
 </flow>

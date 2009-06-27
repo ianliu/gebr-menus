@@ -3,21 +3,77 @@
   <filename>sumigfd.mnu</filename>
   <title>SU Migration FD</title>
   <description>45-90 degree Finite difference depth migration for zero-offset data</description>
-  <help><![CDATA[
-    <html>
-    <header>
-       <title>SU Migration FD</title>
-    </header>
-    <body>
-    <h1>SU Migration FD</h1>
-    <p>45-90 degree Finite difference depth migration for zero-offset data</p>
-    </body>
-    </html>
-    ]]>
-  </help>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - Su Migration FD</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">Su Migration FD</span>
+
+          <div class="description">
+            45-90 degree Finite difference depth migration for zero-offset data
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>45-90 degree Finite difference depth migration for zero-offset data</p>
+
+	    
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>GêBR core team</p>
+	  <p>Jun 19, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 19, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified>2009-03-21T00:04:14.620848Z</modified><lastrun/></date><category>Migration and Dip Moveout</category>
+  <date><created/><modified>2009-06-19T20:18:23.907329Z</modified><lastrun/></date><category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
@@ -25,47 +81,137 @@
     <title>SU Migration FD</title>
     <binary>sumigfd</binary>
     <description>45-90 degree Finite difference depth migration for zero-offset data</description>
-    <help><![CDATA[<pre>
- SUMIGFD - 45-90 degree Finite difference depth migration for
-           zero-offset data.
+    <help><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share/debr/gebr.css" media=
+  "screen" />
 
-   sumigfd &lt;infile &gt;outfile vfile= [optional parameters]
+  <title>G&ecirc;BR - SU Migration FD</title>
+</head>
 
- Required Parameters:
- nz=		number of depth sapmles
- dz=		depth sampling interval
- vfile=	name of file containing velocities
- 		(see Notes below concerning format of this file)
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Migration FD</span>
+	  <div class="description">
+		 45-90 degree Finite difference depth migration for zero-offset data</div>
+        </div>
+      </div><!-- header -->
 
- Optional Parameters:
- dt=from header(dt) or .004    time sampling interval
- dx=from header(d2) or 1.0	midpoint sampling interval
- dip=45,65,79,80,87,89,90  	Maximum angle of dip reflector
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
 
- tmpdir=	if non-empty, use the value as a directory path
-		prefix for storing temporary files; else if the
-		the CWP_TMPDIR environment variable is set use
-		its value for the path; else use tmpfile()
+      <div class="main">
+	<div class="content">
 
- Notes:
- The computation cost by dip angle is 45=65=79&lt;80&lt;87&lt;89&lt;90
+	<div class="parameters">
 
- The input velocity file 'vfile' consists of C-style binary floats.
- The structure of this file is vfile[iz][ix]. Note that this means that
- the x-direction is the fastest direction instead of z-direction! Such a
- structure is more convenient for the downward continuation type
- migration algorithm than using z as fastest dimension as in other SU
- programs. (In C  v[iz][ix] denotes a v(x,z) array, whereas v[ix][iz]
- denotes a v(z,x) array, the opposite of what Matlab and Fortran
- programmers may expect.)
+	  <a name="par"></a>
+	  <h2>Required parameters</h2>
 
- Because most of the tools in the SU package (such as  unif2, unisam2,
- and makevel) produce output with the structure vfile[ix][iz], you will
- need to transpose the velocity files created by these programs. You may
- use the SU program 'transp' in SU to transpose such files into the
- required vfile[iz][ix] structure.
-      </pre>]]>
-    </help>
+	  <ul>
+
+	  <li><span class="label">[Number of depth samples]</span>
+	  </li>
+
+	  <li><span class="label">[Depth sampling interval]</span>
+	  </li>
+
+	  <li><span class="label">[Name of file containing velocities]</span>
+	  </li>
+
+          </ul>
+
+	  <h2>Optional parameters</h2>
+	  
+	  <ul>
+	  
+	  <li><span class="label">[Time sampling interval]</span>
+	  </li>
+
+          <li><span class="label">[Midpoint sampling interval]</span>
+	  </li>
+
+	  <li><span class="label">[Maximum angle of dip reflector]</span>
+	  </li>
+
+	  <li><span class="label">[Directory path prefix for storing temporary files]</span><br />
+          if non-empty, use the value as a directory path
+          prefix for storing temporary files; else if the
+          the CWP_TMPDIR environment variable is set use   
+          its value for the path; else use tmpfile() 
+	  </li>
+          
+          </ul>
+
+	</div>
+	
+	  <a name="notes"></a>
+          <h2>Notes</h2>
+
+	  <p>The computation cost by dip angle is 45 = 65 = 79 < 80 < 87 < 89 < 90 </p>
+
+	  <p>The input velocity file 'vfile' consists of C-style binary floats.
+	 The structure of this file is vfile[iz][ix]. Note that this means that
+ 	the x-direction is the fastest direction instead of z-direction! Such a
+ 	structure is more convenient for the downward continuation type
+ 	migration algorithm than using z as fastest dimension as in other SU
+ 	programs. (In C  v[iz][ix] denotes a v(x,z) array, whereas v[ix][iz]
+ 	denotes a v(z,x) array, the opposite of what Matlab and Fortran
+ 	programmers may expect.)
+ 	</p>
+          
+          <p> Because most of the tools in the SU package (such as  unif2, unisam2,
+ 	and makevel) produce output with the structure vfile[ix][iz], you will
+ 	need to transpose the velocity files created by these programs. You may
+ 	use the SU program 'transp' in SU to transpose such files into the
+ 	required vfile[iz][ix] structure.
+ 	</p>
+
+
+	  <a name="credits"></a>
+	  <h2>Credits</h2>
+	  <p>CWP Baoniu Han, July 21th, 1997</p>
+
+           
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    
+]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
       <parameter id="n0"><label>Number of depth samples</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
 	

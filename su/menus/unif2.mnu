@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.1.0">
+<flow version="0.3.0" nextid="n15">
   <filename>unif2.mnu</filename>
   <title>Unif2</title>
   <description>Generate a 2-D uniformly sampled velocity profile from a layered model</description>
@@ -44,7 +44,8 @@
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>G&ecirc; core team</p>
+          <p>GêBR core team</p>
+	  <p>Jun 01, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
@@ -60,7 +61,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 01, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -72,7 +73,7 @@
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
   
-  <category>Simulation and Model Building</category>
+  <date><created/><modified>2009-06-01T14:30:21.730524Z</modified><lastrun/></date><category>Simulation and Model Building</category>
   <category>Seismic Unix</category><io>
     <input/>
     <output/>
@@ -82,7 +83,7 @@
     <menu index="0">unif2.mnu</menu>
     <title>Unif2</title>
     <binary>unif2</binary>
-    <description>Generate a 2-D uniformly sampled velocity profile from a layered model.</description>
+    <description>Generate a 2-D uniformly sampled velocity profile from a layered model</description>
     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -128,25 +129,25 @@
 
 	    <!-- List of optional parameters -->
             <ul>
-              <li><span class="label">[number of interfaces]</span></li>
-              <li><span class="label">[number of x samples (2nd dimension)]</span></li>
-              <li><span class="label">[number of z samples (1st dimension)]</span></li>
-              <li><span class="label">[x sampling interval]</span></li>
-              <li><span class="label">[z sampling interval]</span></li>
-              <li><span class="label">[maximum number of points on interfaces]</span></li>
-              <li><span class="label">[first x sample]</span></li>
-              <li><span class="label">[first z sample]</span></li>
-              <li><span class="label">[distance x at which v00 is specified]</span></li>
-              <li><span class="label">[depth z at which v00 is specified]</span></li>
-              <li><span class="label">[velocity at each x0,z0 (m/sec)]</span></li>
-              <li><span class="label">[derivative of velocity with distance x (dv/dx)]</span></li>
-              <li><span class="label">[derivative of velocity with depth z (dv/dz)]</span></li>
-              <li><span class="label">[method]</span><br/>
+              <li><span class="label">[Number of interfaces]</span></li>
+              <li><span class="label">[Number of x samples (2nd dimension)]</span></li>
+              <li><span class="label">[Number of z samples (1st dimension)]</span></li>
+              <li><span class="label">[X sampling interval]</span></li>
+              <li><span class="label">[Z sampling interval]</span></li>
+              <li><span class="label">[Maximum number of points on interfaces]</span></li>
+              <li><span class="label">[First x sample]</span></li>
+              <li><span class="label">[First z sample]</span></li>
+              <li><span class="label">[Distance x at which v00 is specified]</span></li>
+              <li><span class="label">[Depth z at which v00 is specified]</span></li>
+              <li><span class="label">[Velocity at each x0,z0 (m/sec)]</span></li>
+              <li><span class="label">[Derivative of velocity with distance x (dv/dx)]</span></li>
+              <li><span class="label">[Derivative of velocity with depth z (dv/dz)]</span></li>
+              <li><span class="label">[Method]</span><br/>
 		linear: for linear interpolation of interface<br />
                 mono: for monotonic cubic interpolation of interface<br />
                 akima: for Akima's cubic interpolation of interface<br />
                 spline: for cubic spline interpolation of interface</li>
-              <li><span class="label">[test filename]</span>if set, a sample input dataset is output to this file.</li>
+              <li><span class="label">[Test filename]</span>if set, a sample input dataset is output to this file.</li>
             </ul>
           </div>
 	    
@@ -187,7 +188,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.1 (0.1.0) | SU 40</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -196,78 +197,78 @@
 </body>
 </html>
 ]]></help>
-    <parameters>
-      <int required="no">
-        <keyword>ninf=</keyword>
-        <label>number of interfaces</label>
-        <value/>
-      </int>
-      <int required="no">
-        <keyword>nx=</keyword>
-        <label>number of x samples</label>
-        <value/>
-      </int>
-      <int required="no">
-        <keyword>nz=</keyword>
-        <label>number of z samples</label>
-        <value/>
-      </int>
-      <float required="no">
-        <keyword>dx=</keyword>
-        <label>x sampling interval</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>dz=</keyword>
-        <label>z sampling interval</label>
-        <value/>
-      </float>
-      <int required="no">
-        <keyword>npmax=</keyword>
-        <label>maximum number of points on interfaces</label>
-        <value/>
-      </int>
-      <float required="no">
-        <keyword>fx=</keyword>
-        <label>first x sample</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>fz=</keyword>
-        <label>first z sample</label>
-        <value/>
-      </float>
-      <string required="no">
-        <keyword>x0=</keyword>
-        <label>distance x at which velocity is specified</label>
-        <value/>
-      </string>
-      <string required="no">
-        <keyword>z0=</keyword>
-        <label>depth z at which velocity is specified</label>
-        <value/>
-      </string>
-      <string required="no">
-        <keyword>v00=</keyword>
-        <label>velocity (m/sec)</label>
-        <value/>
-      </string>
-      <float required="no">
-        <keyword>dvdx=</keyword>
-        <label>derivative of velocity with distance x (dv/dx)</label>
-        <value/>
-      </float>
-      <float required="no">
-        <keyword>dvdz=</keyword>
-        <label>derivative of velocity with depth z (dv/dz)</label>
-        <value/>
-      </float>
-      <string required="no"><keyword>method=</keyword><label>method</label><value/></string>
-      <file required="no" directory="no">
-        <keyword>tfile=</keyword>
-        <label>testfilename</label>
-        <value/>
-      </file>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
+      <parameter id="n0"><label>Number of interfaces</label><int><property required="no"><keyword>ninf=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n1"><label>Number of x samples</label><int><property required="no"><keyword>nx=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n2"><label>Number of z samples</label><int><property required="no"><keyword>nz=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n3"><label>X sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n4"><label>Z sampling interval</label><float><property required="no"><keyword>dz=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n5"><label>Maximum number of points on interfaces</label><int><property required="no"><keyword>npmax=</keyword><value/><default/></property>
+        
+        
+        
+      </int></parameter>
+      <parameter id="n6"><label>First x sample</label><float><property required="no"><keyword>fx=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n7"><label>First z sample</label><float><property required="no"><keyword>fz=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n8"><label>Distance x at which velocity is specified</label><string><property required="no"><keyword>x0=</keyword><value/><default/></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n9"><label>Depth z at which velocity is specified</label><string><property required="no"><keyword>z0=</keyword><value/><default/></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n10"><label>Velocity (m/sec)</label><string><property required="no"><keyword>v00=</keyword><value/><default/></property>
+        
+        
+        
+      </string></parameter>
+      <parameter id="n11"><label>Derivative of velocity with distance x (dv/dx)</label><float><property required="no"><keyword>dvdx=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n12"><label>Derivative of velocity with depth z (dv/dz)</label><float><property required="no"><keyword>dvdz=</keyword><value/><default/></property>
+        
+        
+        
+      </float></parameter>
+      <parameter id="n13"><label>Method</label><enum><property required="no"><keyword>method=</keyword><value/><default></default></property><option><label>Linear interpolation of interface</label><value>linear</value></option><option><label>Monotonic cubic interpolation of interface</label><value>mono</value></option><option><label>Akima's cubic interpolation of interface</label><value>akima</value></option><option><label>Cubic spline interpolation of interface</label><value>spline</value></option></enum></parameter>
+      <parameter id="n14"><label>Testfilename</label><file directory="no"><property required="no"><keyword>tfile=</keyword><value/><default/></property>
+        
+        
+        
+      </file></parameter>
     </parameters>
   </program>
 </flow>
