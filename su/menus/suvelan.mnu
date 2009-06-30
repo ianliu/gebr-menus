@@ -3,21 +3,76 @@
   <filename>suvelan.mnu</filename>
   <title>SU Velan</title>
   <description>Compute stacking velocity semblance for cdp gathers</description>
-  <help><![CDATA[
-    <html>
-    <header>
-       <title>SU Velan</title>
-    </header>
-    <body>
-  <h1>SUVELAN</h1>
-  <p>Compute stacking velocity semblance for cdp gathers</p>
-    </body>
-    </html>
-    ]]>
-  </help>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Velan</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Velan</span>
+
+          <div class="description">
+            Compute stacking velocity semblance for cdp gathers
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix 
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+	  <a name="intro" id="intro"></a>
+	  <h2>Introduction</h2>
+
+	  <p>Compute stacking velocity semblance for cdp gathers.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>GêBR core team</p>
+	  <p>Jun 08, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 08, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
   <author>GêBR core team</author>
   <email>gebr@users.sf.net</email>
-  <date><created/><modified>2009-03-22T20:55:59.307069Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  <date><created/><modified>2009-06-08T19:25:41.544240Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="no" status="unconfigured">
@@ -25,78 +80,144 @@
     <title>SU Velan</title>
     <binary>suvelan</binary>
     <description>Compute stacking velocity semblance for cdp gather</description>
-    <help><![CDATA[<pre>
-SUVELAN - compute stacking velocity semblance for cdp gathers		     
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
- suvelan &lt;stdin &gt;stdout [optional parameters]				     
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
 
- Optional Parameters:							     
- nv=50                   number of velocities				     
- dv=50.0                 velocity sampling interval			     
- fv=1500.0               first velocity				     
- anis1=0.0               quartic term, numerator of an extended quartic term
- anis2=0.0               in denominator of an extended quartic term         
- smute=1.5               samples with NMO stretch exceeding smute are zeroed
- dtratio=5               ratio of output to input time sampling intervals   
- nsmooth=dtratio*2+1     length of semblance num and den smoothing window   
- verbose=0               =1 for diagnostic print on stderr		     
- pwr=1.0                 semblance value to the power      		     
+  <title>G&ecirc;BR - SU Velan</title>
+</head>
 
- Notes:								     
- Velocity analysis is usually a two-dimensional screen for optimal values of
- the vertical two-way traveltime and stacking velocity. But if the travel-  
- time curve is no longer close to a hyperbola, the quartic term of the      
- traveltime series should be considered. In its easiest form (with anis2=0) 
- the optimizion of all parameters requires a three-dimensional screen. This 
- is done by a repetition of the conventional two-dimensional screen with a  
- variation of the quartic term. The extended quartic term is more accurate, 
- though the function is no more a polynomial. When screening for optimal    
- values the theoretical dependencies between these paramters can be taken   
- into account. The traveltime function is defined by                        
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Velan</span>
+          <div class="description">
+	     Compute stacking velocity semblance for cdp gathers            
+          </div>
+        </div>
+      </div>
 
-                1            anis1                                          
- t^2 = t_0^2 + --- x^2 + ------------- x^4                                  
-               v^2       1 + anis2 x^2                                      
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
 
- The coefficients anis1, anis2 are assumed to be small, that means the non- 
- hyperbolicity is assumed to be small. Triplications cannot be handled.     
+      <div class="main">
+        <div class="content">
 
- Semblance is defined by the following quotient:			     
+          <div class="parameters">
 
-                 n-1                 					     
-               [ sum q(t,j) ]^2      					     
-                 j=0                 					     
-       s(t) = ------------------     					     
-                 n-1                 					     
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Number of velocities]</span></li>
+              <li><span class="label">[Velocity sampling interval]</span></li>
+              <li><span class="label">[First velocity]</span></li>
+              <li><span class="label">[Numerator of quadratic term]</span></li>
+              <li><span class="label">[Part of denominator of quadratic term]</span></li>
+              <li><span class="label">[Samples with NMO stretch exceeding smute are zeroed]</span></li>
+              <li><span class="label">[Ratio of output to input time sampling intervals]</span></li>
+              <li><span class="label">[Length of semblance num and den smoothing window]</span></li>
+              <li><span class="label">[Echos information]</span></li>
+              <li><span class="label">[Semblance value to the power]</span></li>
+            </ul>
+          </div>
+	    
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+	 <p>Velocity analysis is usually a two-dimensional screen for optimal values of
+ 	the vertical two-way traveltime and stacking velocity. But if the travel-  
+ 	time curve is no longer close to a hyperbola, the quartic term of the      
+ 	traveltime series should be considered. In its easiest form (with anis2=0) 
+ 	the optimizion of all parameters requires a three-dimensional screen. This 
+ 	is done by a repetition of the conventional two-dimensional screen with a  
+ 	variation of the quartic term. The extended quartic term is more accurate, 
+ 	though the function is no more a polynomial. When screening for optimal    
+ 	values the theoretical dependencies between these paramters can be taken   
+ 	into account. The traveltime function is defined by</p>                        
+
+<pre>                1            anis1                                          
+ t^2 = t_0^2 + --- x^2 + ------------- x^4                                 
+               v^2       1 + anis2 x^2</pre>
+
+	<p></p>                                     
+	
+ 	<p>The coefficients anis1, anis2 are assumed to be small, that means the non- 
+ 	hyperbolicity is assumed to be small. Triplications cannot be handled.</p>     
+
+	 <p>Semblance is defined by the following quotient:</p>			     
+
+<pre>                  n-1              					     
+               [ sum q(t,j) ]^2     					     
+                  j=0              					     
+       s(t) = ------------------   					     
+                  n-1                 					     
                n sum [q(t,j)]^2      					     
-                 j=0                 					     
+                   j=0</pre>               					     
 
- where n is the number of non-zero samples after muting.		     
- Smoothing (nsmooth) is applied separately to the numerator and denominator 
- before computing this semblance quotient.				     
+	<p></p>
 
- Then, the semblance is set to the power of the parameter pwr. With pwr > 1 
- the difference between semblance values is stretched in the upper half of  
- the range of semblance values [0,1], but compressed in the lower half of   
- it; thus, the few large semblance values are enhanced. With pwr < 1 the    
- many small values are enhanced, thus more discernible against background   
- noise. Of course, always at the expanse of the respective other feature.   
+	<p> where n is the number of non-zero samples after muting.		     
+ 	Smoothing (nsmooth) is applied separately to the numerator and denominator 
+ 	before computing this semblance quotient.</p>				     
 
- Input traces should be sorted by cdp - suvelan outputs a group of	     
- semblance traces every time cdp changes.  Therefore, the output will	     
- be useful only if cdp gathers are input.				     
+	<p>Then, the semblance is set to the power of the parameter pwr. With pwr > 1 
+ 	the difference between semblance values is stretched in the upper half of  
+ 	the range of semblance values [0,1], but compressed in the lower half of   
+ 	it; thus, the few large semblance values are enhanced. With pwr '<' 1 the    
+ 	many small values are enhanced, thus more discernible against background   
+ 	noise. Of course, always at the expanse of the respective other feature.</p>   
 
- Credits:
-	CWP, Colorado School of Mines:
-           Dave Hale (everything except ...)
-           Bjoern Rommel (... the quartic term)
-      SINTEF, IKU Petroleumsforskning
-           Bjoern Rommel (... the power-of-semblance function)
+ 	<p>Input traces should be sorted by cdp - suvelan outputs a group of	     
+ 	semblance traces every time cdp changes.  Therefore, the output will	     
+ 	be useful only if cdp gathers are input.</p>		
 
- Trace header fields accessed:  ns, dt, delrt, offset, cdp
- Trace header fields modified:  ns, dt, offset, cdp
-    </pre>]]>
-    </help>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP, Colorado School of Mines:<br />
+           Dave Hale (everything except ...)<br />
+           Bjoern Rommel (... the quartic term)<br />
+      	   SINTEF, IKU Petroleumsforskning<br />
+           Bjoern Rommel (... the power-of-semblance function)</p>
+
+	</div>
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
       <parameter id="n0"><label>Number of velocities</label><range min="1" max="10000" inc="1" digits=""><property required="yes"><keyword>nv=</keyword><value/><default>50</default></property>
 	
@@ -138,7 +259,7 @@ SUVELAN - compute stacking velocity semblance for cdp gathers
 	
 	
       </int></parameter>
-      <parameter id="n8"><label>Send diagnostic messages to error log</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
+      <parameter id="n8"><label>Echos information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
 	
 	
 	

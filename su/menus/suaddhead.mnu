@@ -44,9 +44,10 @@
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>Aug 26, 2007: written by Ricardo Biloti, &lt;biloti@gmail.com&gt;<br/>
-             Jun 2, 2008: revised by Daniela Amazonas, UFPA &lt;daniela.amazonas@gmail.com&gt;<br/>
-             Mar 22, 2009: revised by Ricardo Biloti, &lt;biloti@gmail.com&gt;</p>
+          <p>Aug 26, 2007: written by Ricardo Biloti, &lt;biloti@gmail.com&gt;</p>
+          <p>Jun 2, 2008: revised by Daniela Amazonas, UFPA &lt;daniela.amazonas@gmail.com&gt;</p>
+          <p>Mar 22, 2009: revised by Ricardo Biloti, &lt;biloti@gmail.com&gt;</p>
+	  <p>Jun 08, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Mar 22, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 08, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -74,7 +75,7 @@
 ]]></help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
-  <date><created/><modified>2009-03-22T12:52:07.042861Z</modified><lastrun/></date><category>Import/Export</category>
+  <date><created/><modified>2009-06-08T19:54:45.989077Z</modified><lastrun/></date><category>Import/Export</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
@@ -134,8 +135,14 @@
 	    <!-- List of optional parameters -->
             <ul>
               <li><span class="label">[Data written unformatted from Fortran (instead of from C)]</span></li>
-              <li><span class="label">[Trace sorting code]</span> informs how traces are organized: as recorded (no sorting at all),
-                                as CDP ensemble, as single fold continuous profile, or as horizontally stacked.</li>
+              <li><span class="label">[Trace sorting code]</span></li> 
+		<table>
+		<tr><td>1</td><td>&nbsp;&nbsp;As recorded (no sorting at all)</td></tr>
+		<tr><td>2</td><td>&nbsp;&nbsp;CDP ensemble</td></tr>
+		<tr><td>3</td><td>&nbsp;&nbsp;Single fold continuous profile</td></tr>
+		<tr><td>4</td><td>&nbsp;&nbsp;Horizontally stacked</td></tr>
+		</table>
+		<br />
               <li><span class="label">[Number of data traces per record]</span> is used to specify how many traces are in each cdp (if your choice for trace sorting order is CDP ensemble).</li>
             </ul>
           </div>
@@ -143,12 +150,14 @@
           <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>This program is part of the Seismic Unix processing package.</p>
+	  <p>SEP: Einar Kjartansson<br />
+	     CWP: Jack K. Cohen</p>
+
         </div>
 
         <div class="navigation">
           <h2>Index</h2>
-
+ 
           <ul>
             <li><a href="#intro">Introduction</a></li>
             <li><a href="#par">Parameters</a></li>

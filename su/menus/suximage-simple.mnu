@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<flow version="0.3.0" nextid="n32">
+<flow version="0.3.0" nextid="n34">
   <filename>suximage-simple.mnu</filename>
   <title>SU simple ximage</title>
   <description>Image plot for SU data files (with just most common options)</description>
@@ -38,15 +38,16 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Simpler version of SU X image, with just most useful
-          parameters.</p>
+          <p>Simpler version of SU X image, with just most useful parameters.</p>
 
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-          <p>Aug 26, 2007: created by Ricardo Biloti &lt;biloti@gmail.com&gt;<br/>
-	     Feb 25, 2007: modified by Ricardo Biloti &lt;biloti@gmail.com&gt;<br/>
-             Mar 18, 2009: partially revisied by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
+          <p>Aug 26, 2007: created by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
+	  <p>Feb 25, 2007: modified by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
+          <p>Mar 18, 2009: partially revisied by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
+	  <p>Jun 08, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>   
+
         </div>
 
         <div class="navigation">
@@ -62,7 +63,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.9 (0.3.0) | Mar 18, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 08, 2009</span>
 
         <div class="clearer"></div>
       </div>
@@ -73,7 +74,7 @@
 ]]></help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
-  <date><created/><modified>2009-03-21T14:58:18.851630Z</modified><lastrun/></date><category>Graphics</category>
+  <date><created/><modified>2009-06-08T19:21:59.840590Z</modified><lastrun/></date><category>Graphics</category>
   <category>Seismic Unix</category>
   <io><input/><output/><error/></io>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured">
@@ -125,79 +126,57 @@
 
 	    <!-- List of optional parameters -->
             <ul>
-              <li><span class="label">[(Max) number of traces to be
-              plotted]</span> (leave in blank to plot all traces)</li>
+              <li><span class="label">[(Max) number of traces to be plotted]</span> (leave in blank to plot all traces)</li>
 
-              <li><span class="label">[sampling interval in the fast
-              dimension]</span> (time axis for seismic data).</li>
+              <li><span class="label">[Sampling interval in the fast dimension]</span> (time axis for seismic data).</li>
 
-              <li><span class="label">[sampling interval in the slow
-              dimension]</span> (trace axis for seismic data).</li>
+              <li><span class="label">[Sampling interval in the slow dimension]</span> (trace axis for seismic data).</li>
 
-              <li><span class="label">[key for annotating d2 (slow
-              dimension)]</span></li>
+              <li><span class="label">[Key for annotating d2 (slow dimension)]</span></li>
 
-              <li><span class="label">[first sample in the fast
-              dimension]</span> (time axis for seismic data).</li>
+              <li><span class="label">[First sample in the fast dimension]</span> (time axis for seismic data).</li>
 
-              <li><span class="label">[first sample in the slow
-              dimension]</span> (trace axis for seismic data).</li>
+              <li><span class="label">[First sample in the slow dimension]</span> (trace axis for seismic data).</li>
 
-              <li><span class="label">[directory path to temporary
-              files]</span></li>
+              <li><span class="label">[Directory path to temporary files]</span></li>
 
-              <li><span class="label">[file to save mouse picks
-              in]</span> leaving as /dev/stdout, picks will be
-              displayed instead of saved.</li>
+              <li><span class="label">[File to save mouse picks in]</span> leaving as /dev/stdout, picks will be displayed instead of saved.</li>
 
-              <li><span class="label">[percentile used to determine
-              clip]</span></li>
+              <li><span class="label">[Percentile used to determine clip]</span></li>
 
-              <li><span class="label">[clip used to determine bclip
-              and wclip]</span></li>
+              <li><span class="label">[Clip used to determine bclip and wclip]</span></li>
 
-              <li><span class="label">[percentile for determining
-              black clip value]</span></li>
+              <li><span class="label">[Percentile for determining black clip value]</span></li>
 
-              <li><span class="label">[percentile for determining
-              white clip value]</span></li>
+              <li><span class="label">[Percentile for determining white clip value]</span></li>
 
-              <li><span class="label">[data values outside of
-              [bclip,wclip] are clipped]</span></li>
+              <li><span class="label">[Data values outside of [bclip,wclip] are clipped]</span></li>
 
-              <li><span class="label">[data values outside of
-              [bclip,wclip] are clipped]</span></li>
+              <li><span class="label">[Data values outside of [bclip,wclip] are clipped]</span></li>
 
               <li><span class="label">[Colormap]</span></li>
 
-              <li><span class="label">[display the color
-              scale]</span></li>
+              <li><span class="label">[Display the color scale]</span></li>
 
-              <li><span class="label">[unit label for
-              legend]</span></li>
+              <li><span class="label">[Unit label for legend]</span></li>
 
-              <li><span class="label">[label on axis 1]</span></li>
+              <li><span class="label">[Label on axis 1]</span></li>
 
-              <li><span class="label">[label on axis 2]</span></li>
+              <li><span class="label">[Label on axis 2]</span></li>
 
-              <li><span class="label">[title of plot]</span></li>
+              <li><span class="label">[Title of plot]</span></li>
 
               <li><span class="label">[Swap axes]</span></li>
 
-              <li><span class="label">[Portion of the lower range to
-              blank out (make the background color).]</span></li>
+              <li><span class="label">[Portion of the lower range to blank out (make the background color).]</span></li>
 
-              <li><span class="label">[file(s) containing points to
-              draw curve(s)]</span></li>
+              <li><span class="label">[File(s) containing points to draw curve(s)]</span></li>
 
-              <li><span class="label">[number(s) of pairs in each
-              file]</span></li>
+              <li><span class="label">[Number(s) of pairs in each file]</span></li>
 
-              <li><span class="label">[color(s) for
-              curve(s)]</span></li>
+              <li><span class="label">[Color(s) for curve(s)]</span></li>
 
-              <li><span class="label">[block
-              interpolation]</span></li>
+              <li><span class="label">[Block interpolation]</span></li>
 
           </ul>
           </div>
@@ -227,7 +206,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.9 (0.3.0) | SU 41</span>
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
 
         <div class="clearer"></div>
       </div>
@@ -243,87 +222,90 @@
       
       
       
-      <parameter id="n31"><label>Header word for annotating slow dimension</label><enum><property required="no"><keyword>key=</keyword><value/><default></default></property>
-      
-      
-      
+      <parameter id="n33">
+        <label>Header word for annotating slow dimension</label>
+        <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default></default></property>
+      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
+      <option><label>Alias filter slope</label><value>afils</value></option>
+      <option><label>Alignment padding</label><value>shortpad</value></option>
       <option><label>CDP ensemble number</label><value>cdp</value></option>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      <option><label>Coordinate units code</label><value>counit</value></option>
+      <option><label>Correlated flag</label><value>corr</value></option>
+      <option><label>Data use</label><value>duse</value></option>
+      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
+      <option><label>Datum elevation at source</label><value>sdel</value></option>
+      <option><label>Day of year</label><value>day</value></option>
+      <option><label>Delay recording time in ms</label><value>delrt</value></option>
+      <option><label>Energy source point number</label><value>ep</value></option>
+      <option><label>Field record number</label><value>fldr</value></option>
+      <option><label>Final mute time</label><value>mute</value></option>
+      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
+      <option><label>First trace location</label><value>f2</value></option>
+      <option><label>Gain type of field instruments code</label><value>gain</value></option>
+      <option><label>Gap size</label><value>gaps</value></option>
+      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
+      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
+      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
+      <option><label>Group static correction</label><value>gstat</value></option>
+      <option><label>High cut frequncy if used</label><value>hcf</value></option>
+      <option><label>High cut slope</label><value>hcs</value></option>
+      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
+      <option><label>Initial mute time</label><value>muts</value></option>
+      <option><label>Instrument early or initial gain</label><value>igi</value></option>
+      <option><label>Instrument gain constant</label><value>igc</value></option>
+      <option><label>Lag time A</label><value>laga</value></option>
+      <option><label>Lag time B</label><value>lagb</value></option>
+      <option><label>Low cut frequency if used</label><value>lcf</value></option>
+      <option><label>Low cut slope</label><value>lcs</value></option>
+      <option><label>Mark selected traces</label><value>mark</value></option>
+      <option><label>Minute of hour</label><value>minute</value></option>
+      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
+      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
+      <option><label>Notch filter slope</label><value>nofils</value></option>
+      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
+      <option><label>Number of samples</label><value>ns</value></option>
+      <option><label>Number of vertically summed traces</label><value>nvs</value></option>
       <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      
+      <option><label>Overtravel taper code</label><value>otrav</value></option>
       <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      
-      
-      
-      
-      
-      
-      
-      
+      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
+      <option><label>Sample interval in ms</label><value>dt</value></option>
+      <option><label>Sample spacing between traces</label><value>d2</value></option>
+      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
+      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
+      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
+      <option><label>Second of minute</label><value>sec</value></option>
+      <option><label>Source depth (positive)</label><value>sdepth</value></option>
       <option><label>Source elevation from sea level</label><value>selev</value></option>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      <option><label>Source static correction</label><value>sstat</value></option>
+      <option><label>Subweathering velocity</label><value>swevel</value></option>
+      <option><label>Sweep frequency at end</label><value>sfe</value></option>
+      <option><label>Sweep frequency at start</label><value>sfs</value></option>
+      <option><label>Sweep length in ms</label><value>slen</value></option>
+      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
+      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
+      <option><label>Sweep type code</label><value>styp</value></option>
+      <option><label>Taper type</label><value>tatyp</value></option>
+      <option><label>Time basis code</label><value>timbas</value></option>
+      <option><label>Total static applied</label><value>tstat</value></option>
+      <option><label>Trace identification code</label><value>trid</value></option>
       <option><label>Trace number sequence within field record</label><value>tracf</value></option>
       <option><label>Trace number sequence within line</label><value>tracl</value></option>
       <option><label>Trace number sequence within reel</label><value>tracr</value></option>
       <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      
-      
-      
+      <option><label>Trace weighting factor</label><value>trwf</value></option>
+      <option><label>Uphole time at receiver group</label><value>gut</value></option>
+      <option><label>Uphole time at source</label><value>sut</value></option>
       <option><label>Water depth at receiver group</label><value>gwdep</value></option>
       <option><label>Water depth at source</label><value>swdep</value></option>
-      
+      <option><label>Weathering velocity</label><value>wevel</value></option>
       <option><label>X group coordinate</label><value>gx</value></option>
       <option><label>X source coordinate</label><value>sx</value></option>
       <option><label>Y group coordinate</label><value>gy</value></option>
       <option><label>Y source coordinate</label><value>sy</value></option>
-      
-      </enum></parameter><parameter id="n14"><label>Colormap</label><enum><property required="no"><keyword>cmap=</keyword><value/><default>rgb0</default></property><option><label>White - Black</label><value>rgb0</value></option><option><label>Blue - white - red</label><value>rgb1</value></option><option><label>Green - white - red</label><value>rgb2</value></option><option><label>Blue - white - gray</label><value>rgb3</value></option><option><label>Green - white - gray</label><value>rgb4</value></option><option><label>Blue - white - maroon</label><value>rgb5</value></option><option><label>Green - white - maroon</label><value>rgb6</value></option><option><label>Blue - white - orange</label><value>rgb7</value></option><option><label>Green - white - orange</label><value>rgb8</value></option><option><label>Green - gray</label><value>rgb9</value></option><option><label>Blue - gray</label><value>rgb10</value></option><option><label>Blue - yellow - gray</label><value>rgb11</value></option><option><label>Black - white</label><value>hsv0</value></option><option><label>Red - yellow - green -blue</label><value>hsv1</value></option><option><label>Blue - green - yellow - red</label><value>hsv2</value></option><option><label>Light blue - green - maroon</label><value>hsv3</value></option><option><label>Light blue - white - red</label><value>hsv4</value></option><option><label>Red - white - light blue</label><value>hsv5</value></option><option><label>Light blue - green - yellow - red - white</label><value>hsv6</value></option><option><label>Light blue - green - white</label><value>hsv7</value></option><option><label>White - red - yellow - green - light blue</label><value>hsv8</value></option><option><label>White - green - light blue</label><value>hsv9</value></option><option><label>Green - white - light blue</label><value>hsv10</value></option><option><label>Marron - red - yellow (Fire)</label><value>hsv11</value></option><option><label>Yellow - red - marron (Fire)</label><value>hsv12</value></option><option><label>Marron - yellow - red</label><value>hsv13</value></option></enum></parameter><parameter id="n15"><label>Display the color scale</label><flag><property required="no"><keyword>legend=1</keyword><value/><default>off</default></property>
+      <option><label>Year data recorded</label><value>year</value></option>
+      </enum>
+      </parameter><parameter id="n14"><label>Colormap</label><enum><property required="no"><keyword>cmap=</keyword><value/><default>rgb0</default></property><option><label>White - Black</label><value>rgb0</value></option><option><label>Blue - white - red</label><value>rgb1</value></option><option><label>Green - white - red</label><value>rgb2</value></option><option><label>Blue - white - gray</label><value>rgb3</value></option><option><label>Green - white - gray</label><value>rgb4</value></option><option><label>Blue - white - maroon</label><value>rgb5</value></option><option><label>Green - white - maroon</label><value>rgb6</value></option><option><label>Blue - white - orange</label><value>rgb7</value></option><option><label>Green - white - orange</label><value>rgb8</value></option><option><label>Green - gray</label><value>rgb9</value></option><option><label>Blue - gray</label><value>rgb10</value></option><option><label>Blue - yellow - gray</label><value>rgb11</value></option><option><label>Black - white</label><value>hsv0</value></option><option><label>Red - yellow - green -blue</label><value>hsv1</value></option><option><label>Blue - green - yellow - red</label><value>hsv2</value></option><option><label>Light blue - green - maroon</label><value>hsv3</value></option><option><label>Light blue - white - red</label><value>hsv4</value></option><option><label>Red - white - light blue</label><value>hsv5</value></option><option><label>Light blue - green - yellow - red - white</label><value>hsv6</value></option><option><label>Light blue - green - white</label><value>hsv7</value></option><option><label>White - red - yellow - green - light blue</label><value>hsv8</value></option><option><label>White - green - light blue</label><value>hsv9</value></option><option><label>Green - white - light blue</label><value>hsv10</value></option><option><label>Marron - red - yellow (Fire)</label><value>hsv11</value></option><option><label>Yellow - red - marron (Fire)</label><value>hsv12</value></option><option><label>Marron - yellow - red</label><value>hsv13</value></option></enum></parameter><parameter id="n15"><label>Display the color scale</label><flag><property required="no"><keyword>legend=1</keyword><value/><default>off</default></property>
 	
 	
 	

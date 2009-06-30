@@ -3,80 +3,193 @@
   <filename>sugain.mnu</filename>
   <title>SU Gain</title>
   <description>Apply various types of gain to display traces</description>
-  <help><![CDATA[
-    <html>
-    <header>
-       <title>SU Gain</title>
-    </header>
-    <body>
-    <h1>SU Gain</h1>
-    <p>Apply various types of gain to display traces</p>
-    </body>
-    </html>
-    </pre>]]>
-  </help>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>G&ecirc;BR - SU Gain</title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Gain</span>
+
+          <div class="description">
+            Apply various types of gain to display traces
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+	  <a name="intro" id="intro"></a>
+	  <h2>Introduction</h2>
+
+	  <p>Apply various types of gain to display traces.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Created by Ricardo Biloti - biloti@gmail.com</p>
+	  <p>Jun 01, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | Jun 01, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
   <author>Ricardo Biloti</author>
-  <email>biloti@gmai.com</email>
-  <date><created/><modified>2009-03-20T23:59:38.485167Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
-  <category>Seismic Unix</category>
-  <io><input/><output/><error/></io>
+  <email>biloti@gmail.com</email>
+  <date><created/><modified>2009-06-01T14:56:50.150375Z</modified><lastrun/></date><category>Gain, NMO, Stack and Standard Processes</category>
+  
+  <category>Seismic Unix</category><io><input/><output/><error/></io>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured">
     <menu index="0">sugain.mnu</menu>
     <title>SU Gain</title>
     <binary>sugain</binary>
     <description>Apply various types of gain to display traces</description>
-    <help><![CDATA[<pre>
- SUGAIN - apply various types of gain to display traces
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
- sugain &lt;stdin &gt;stdout [optional parameters]
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
 
- Required parameters:
-       none (no-op)
+  <title>G&ecirc;BR - SU Gain</title>
+</head>
 
- Optional parameters:
-       panel=0         =1 gain whole data set (vs. trace by trace)
-       tpow=0.0        multiply data by t^tpow
-       epow=0.0        multiply data by exp(epow*t)
-       gpow=1.0        take signed gpowth power of scaled data
-       agc=0           flag; 1 = do automatic gain control
-       gagc=0          flag; 1 = ... with gaussian taper
-       wagc=0.5        agc window in seconds (use if agc=1 or gagc=1)
-       trap=none       zero any value whose magnitude exceeds trapval
-       clip=none       clip any value whose magnitude exceeds clipval
-       qclip=1.0       clip by quantile on absolute values on trace
-       qbal=0          flag; 1 = balance traces by qclip and scale
-       pbal=0          flag; 1 = bal traces by dividing by rms value
-       mbal=0          flag; 1 = bal traces by subtracting the mean
-       scale=1.0       multiply data by overall scale factor
-       norm=1.0        divide data by overall scale factor
-       bias=0.0        bias data by adding an overall bias value
-       jon=0           flag; 1 means tpow=2, gpow=.5, qclip=.95
- 	verbose=0	verbose = 1 echoes info
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Gain</span>
 
- 	tmpdir=	 if non-empty, use the value as a directory path
-		 prefix for storing temporary files; else if the
-	         the CWP_TMPDIR environment variable is set use
-	         its value for the path; else use tmpfile()
+          <div class="description">
+            Apply various types of gain to display traces
+          </div>
+        </div>
+      </div>
 
- Operation order:
+      <div class="category">
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+      </div>
 
- out(t) = scale * BAL{CLIP[AGC{[t^tpow * exp(epow * t) * ( in(t)-bias )]^gpow}]}
+      <div class="main">
+        <div class="content">
 
- Notes:
-	The jon flag selects the parameter choices discussed in
-	Claerbout's Imaging the Earth, pp 233-236.
+          <div class="parameters">
 
-	Extremely large/small values may be lost during agc. Windowing
+            <a name="par" id="par"></a>
+            <h2>Optional parameters</h2>
+
+	    <!-- List of optional parameters -->
+            <ul>
+              <li><span class="label">[Gain whole data set (vs. trace by trace)]</span></li>
+              <li><span class="label">[Multiply data by t^tpow]</span></li>
+              <li><span class="label">[Multiply data by exp(epow*t)]</span></li>
+              <li><span class="label">[Do automatic gain control]</span></li>
+              <li><span class="label">[With gaussian taper]</span></li>
+              <li><span class="label">[AGC window in seconds (use if agc or gagc is checked)]</span></li>
+              <li><span class="label">[Zero any value whose magnitude exceeds trapval]</span></li>
+              <li><span class="label">[Zero any value whose magnitude exceeds clipval]</span></li>
+              <li><span class="label">[Clip by quantile on absolute values on trace]</span></li>
+              <li><span class="label">[Balance traces by qclip and scale]</span></li>
+              <li><span class="label">[Balance traces by dividing by rms value]</span></li>
+              <li><span class="label">[Balance traces by subtracting the mean]</span></li>
+              <li><span class="label">[Multiply data by overall scale factor]</span></li>
+	      <li><span class="label">[Divide data by overall scale factor]</span></li>
+              <li><span class="label">[Bias data by adding an overall bias value]</span></li>
+              <li><span class="label">[Selects the parameter choices discussed]</span><br>Tpow = 2, gpow = .5, qclip = .95</li>
+              <li><span class="label">[Echoes information]</span></li>
+	      <li><span class="label">[Directory path prefix for storing temporary files]</span></li>
+		<br />
+		<p>Operation order:</p>                                                      
+
+		<p>out(t) = scale * BAL{CLIP[AGC{[t^tpow * exp(epow * t) * ( in(t)-bias )]^gpow}]}</p>
+
+            </ul>
+          </div>
+	    
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The jon flag selects the parameter choices discussed in
+	Claerbout's Imaging the Earth, pp 233-236.</p>
+
+	<p>Extremely large/small values may be lost during agc. Windowing
 	these off and applying a scale in a preliminary pass through
-	sugain may help.
+	sugain may help.</p>
 
-	Sugain only applies gain to traces with tr.mark=0. Use sushw,
+	<p>Sugain only applies gain to traces with tr.mark=0. Use sushw,
 	suchw, suedit, or suxedit to mark traces you do not want gained.
 	See the selfdocs of sushw, suchw, suedit, and suxedit for more
 	information about setting header fields. Use "sukeyword mark"
-	for more information about the mark header field.
-    </pre>]]>
-    </help>
+	for more information about the mark header field.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>SEP: Jon Claerbout<br />
+      	CWP: Jack K. Cohen, Brian Sumner, Dave Hale</p>
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#par">Parameters</a></li>
+            <li><a href="#notes">Notes</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.12 (0.3.0) | SU 41</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters exclusive="0">
       <parameter id="n0"><label>Gain whole data set (vs. trace by trace)</label><flag><property required="no"><keyword>panel=1</keyword><value/><default>off</default></property>
 	
@@ -128,12 +241,12 @@
 	
 	
       </flag></parameter>
-      <parameter id="n10"><label>Bal traces by dividing by rms value</label><flag><property required="no"><keyword>pbal=1</keyword><value/><default>off</default></property>
+      <parameter id="n10"><label>Balance traces by dividing by rms value</label><flag><property required="no"><keyword>pbal=1</keyword><value/><default>off</default></property>
 	
 	
 	
       </flag></parameter>
-      <parameter id="n11"><label>Bal traces by subtracting the mean</label><flag><property required="no"><keyword>mbal=1</keyword><value/><default>off</default></property>
+      <parameter id="n11"><label>Balance traces by subtracting the mean</label><flag><property required="no"><keyword>mbal=1</keyword><value/><default>off</default></property>
 	
 	
 	
@@ -153,12 +266,12 @@
 	
 	
       </float></parameter>
-      <parameter id="n15"><label>tpow=2, gpow=.5, qclip=.95</label><flag><property required="no"><keyword>jon=1</keyword><value/><default>off</default></property>
+      <parameter id="n15"><label>Selects the parameter choice discussed (Tpow=2, gpow=.5, qclip=.95)</label><flag><property required="no"><keyword>jon=1</keyword><value/><default>off</default></property>
 	
 	
 	
       </flag></parameter>
-      <parameter id="n16"><label>Echoes info</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
+      <parameter id="n16"><label>Echoes information</label><flag><property required="no"><keyword>verbose=1</keyword><value/><default>off</default></property>
 	
 	
 	
