@@ -17,7 +17,7 @@
 AC_INIT(configure.ac)
 
 PACKAGE=gebr-menus-su
-VERSION=0.1.3
+VERSION=0.1.3-1
 AC_SUBST(PACKAGE)
 AC_SUBST(VERSION)
 
