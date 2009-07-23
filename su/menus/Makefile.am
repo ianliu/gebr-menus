@@ -68,6 +68,7 @@ gebrmenu_DATA = \
 		sutetraray.mnu	    \
 		sutihalednmo.mnu    \
 		sutivel.mnu         \
+		suttoz.mnu          \
 		suvelan.mnu         \
 		suvelan_nsel.mnu    \
 		suvelan_uccs.mnu    \
@@ -83,6 +84,7 @@ gebrmenu_DATA = \
 		suxwigb.mnu	    \
 		suxwigb-simple.mnu  \
 		suximage.mnu        \
+		suztot.mnu          \
 		triseis.mnu         \
 		tvnmoqc.mnu         \
 		uni2tri.mnu	    \
