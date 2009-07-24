@@ -70,10 +70,10 @@ gebrmenu_DATA = \
 		sutivel.mnu         \
 		suttoz.mnu          \
 		suvelan.mnu         \
+		suvelan_nccs.mnu    \
 		suvelan_nsel.mnu    \
 		suvelan_uccs.mnu    \
 		suvelan_usel.mnu    \
-		suvelannccs.mnu     \
 		suvibro.mnu	    \
 		suvlength.mnu       \
 		suwaveform.mnu      \
