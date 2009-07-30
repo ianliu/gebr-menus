@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-gebrmenudir = $(datadir)/gebr/menus/
+gebrmenudir = $(datadir)/gebr/menus/shtools
 gebrmenu_DATA = \
 		cal.mnu \
 		cat.mnu \
@@ -30,5 +30,11 @@ gebrmenu_DATA = \
 		uname.mnu \
 		uptime.mnu \
 		xlhtml.mnu
+
+install:
+	bash -c 'for f in ${gebrmenu_DATA}; do cp $$f $$f.bak; done'
+	bash -c 'for f in ${gebrmenu_DATA}; do gebr-geoxml-menu-edit -f shtools/$$f $$f; done'
+	make install-data
+	bash -c 'for f in ${gebrmenu_DATA}; do mv $$f.bak $$f; done'
 
 EXTRA_DIST = $(gebrmenu_DATA)

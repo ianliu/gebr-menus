@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-gebrmenudir = $(datadir)/gebr/menus/
+gebrmenudir = $(datadir)/gebr/menus/seismicunix
 gebrmenu_DATA = \
 		a2b.mnu             \
 		b2a.mnu             \
@@ -90,5 +90,11 @@ gebrmenu_DATA = \
 		usernames.mnu       \
 		ximage.mnu	    \
 		xwigb.mnu
+
+install:
+	bash -c 'for f in ${gebrmenu_DATA}; do cp $$f $$f.bak; done'
+	bash -c 'for f in ${gebrmenu_DATA}; do gebr-geoxml-menu-edit -f seismicunix/$$f $$f; done'
+	make install-data
+	bash -c 'for f in ${gebrmenu_DATA}; do mv $$f.bak $$f; done'
 
 EXTRA_DIST = $(gebrmenu_DATA)
