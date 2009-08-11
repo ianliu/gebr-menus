@@ -27,6 +27,7 @@ gebrmenu_DATA = \
 		suaddhead.mnu       \
 		suaddnoise.mnu      \
 		suamp.mnu           \
+                suconv.mnu          \
 		sudivcor.mnu	    \
 		sufdmod2.mnu        \
 		sufft.mnu           \
