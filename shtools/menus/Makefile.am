@@ -31,10 +31,11 @@ gebrmenu_DATA = \
 		uptime.mnu \
 		xlhtml.mnu
 
+EXTRA_DIST = $(gebrmenu_DATA)
+
 install:
 	bash -c 'for f in ${gebrmenu_DATA}; do cp $$f $$f.bak; done'
 	bash -c 'for f in ${gebrmenu_DATA}; do gebr-geoxml-menu-edit -F shtools/$$f $$f; done'
 	make install-data
 	bash -c 'for f in ${gebrmenu_DATA}; do mv $$f.bak $$f; done'
 
-EXTRA_DIST = $(gebrmenu_DATA)
