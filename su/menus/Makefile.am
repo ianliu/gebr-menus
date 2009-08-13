@@ -101,3 +101,4 @@ install:
 	bash -c 'for f in ${gebrmenu_DATA}; do gebr-geoxml-menu-edit -F seismicunix/$$f $$f; done'
 	make install-data
 	bash -c 'for f in ${gebrmenu_DATA}; do mv $$f.bak $$f; done'
+
