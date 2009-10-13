@@ -79,7 +79,9 @@ gebrmenu_DATA = \
 		suvlength.mnu       \
 		suwaveform.mnu      \
 		suweight.mnu        \
-		suwellrf.mnu        \
+		suwellrf-1.mnu      \
+		suwellrf-2.mnu      \
+		suwellrf-3.mnu      \
 		suwind.mnu          \
 		suximage-simple.mnu \
 		suxwigb.mnu	    \
