@@ -18,6 +18,8 @@ gebrmenudir = $(datadir)/gebr/menus/seismicunix
 gebrmenu_DATA = \
 		a2b.mnu             \
 		b2a.mnu             \
+		dctcomp.mnu	    \
+		dctuncomp.mnu       \
 		gbbeam.mnu	    \
 		segyread.mnu        \
 		segywrite.mnu       \
@@ -33,6 +35,7 @@ gebrmenu_DATA = \
 		sufft.mnu           \
 		sufilter.mnu        \
 		sugain.mnu          \
+		suhilb.mnu	    \
 		sukdmig2d.mnu       \
 	        sukeycount.mnu      \
 		sukill.mnu          \
@@ -47,6 +50,7 @@ gebrmenu_DATA = \
 		sumigsplit.mnu	    \
 		sumix.mnu           \
 		sumute.mnu          \
+		sumute_byfile.mnu   \
 		sunmo.mnu           \
 		suop.mnu	    \
 		suop2.mnu	    \
@@ -63,6 +67,7 @@ gebrmenu_DATA = \
 		sustack.mnu         \
 		sustolt.mnu         \
 		sustrip.mnu	    \
+		suswapbytes.mnu	    \
 		sutab.mnu           \
 		sutaper.mnu         \
 		sutaup.mnu          \
@@ -84,6 +89,7 @@ gebrmenu_DATA = \
 		suwellrf-3.mnu      \
 		suwind.mnu          \
 		suximage-simple.mnu \
+		suxpicker.mnu	    \
 		suxwigb.mnu	    \
 		suxwigb-simple.mnu  \
 		suximage.mnu        \
@@ -94,6 +100,7 @@ gebrmenu_DATA = \
 		unif2.mnu	    \
 		usernames.mnu       \
 		ximage.mnu	    \
+		xpicker.mnu	    \
 		xwigb.mnu
 
 EXTRA_DIST = $(gebrmenu_DATA)
