@@ -54,6 +54,8 @@ gebrmenu_DATA = \
 		sunmo.mnu           \
 		suop.mnu	    \
 		suop2.mnu	    \
+		supack1.mnu	    \
+		supack2.mnu	    \
 		supef.mnu           \
 		suplane.mnu         \
 		supws.mnu	    \
@@ -63,6 +65,8 @@ gebrmenu_DATA = \
 		sushape.mnu         \
 		sushw.mnu	    \
 		susort.mnu	    \
+		suspecfk.mnu	    \
+		suspecfx.mnu	    \
 		suspike.mnu	    \
 		sustack.mnu         \
 		sustolt.mnu         \
