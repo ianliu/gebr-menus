@@ -81,6 +81,7 @@ gebrmenu_DATA = \
 		sutihalednmo.mnu    \
 		sutivel.mnu         \
 		suttoz.mnu          \
+		suvcat.mnu          \
 		suvelan.mnu         \
 		suvelan_nccs.mnu    \
 		suvelan_nsel.mnu    \
