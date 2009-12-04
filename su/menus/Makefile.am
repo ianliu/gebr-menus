@@ -31,6 +31,7 @@ gebrmenu_DATA = \
 		suamp.mnu           \
 		sucmp.mnu           \
                 suconv.mnu          \
+		sucountkey.mnu      \
 		sudivcor.mnu	    \
 		sufdmod2.mnu        \
 		sufft.mnu           \
