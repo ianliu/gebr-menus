@@ -20,7 +20,10 @@ gebrmenu_DATA = \
 		b2a.mnu             \
 		dctcomp.mnu	    \
 		dctuncomp.mnu       \
+		dzdv.mnu            \
 		gbbeam.mnu	    \
+		maxdiff.mnu         \
+		psmerge.mnu         \
 		segyread.mnu        \
 		segywrite.mnu       \
 		suabshw.mnu	    \
@@ -36,11 +39,16 @@ gebrmenu_DATA = \
 		sufdmod2.mnu        \
 		sufft.mnu           \
 		sufilter.mnu        \
+		sufxdecon.mnu       \
 		sugain.mnu          \
 		suhilb.mnu	    \
+		suhrot.mnu          \
+		suhrot_file.mnu     \
 		sukdmig2d.mnu       \
 	        sukeycount.mnu      \
 		sukill.mnu          \
+		sumedian.mnu        \
+		sumedian_byfile.mnu \
 		sumigfd.mnu         \
 		sumigffd.mnu        \
 		sumiggbzo.mnu	    \
@@ -61,9 +69,11 @@ gebrmenu_DATA = \
 		supef.mnu           \
 		suplane.mnu         \
 		supws.mnu	    \
+		suradon.mnu         \
 		suramp.mnu	    \
 		surange.mnu         \
 		surelan.mnu	    \
+		surelanan.mnu       \
 		sushape.mnu         \
 		sushw.mnu	    \
 		susort.mnu	    \
@@ -106,6 +116,7 @@ gebrmenu_DATA = \
 		uni2tri.mnu	    \
 		unif2.mnu	    \
 		usernames.mnu       \
+		velpert.mnu         \
 		ximage.mnu	    \
 		xpicker.mnu	    \
 		xwigb.mnu
