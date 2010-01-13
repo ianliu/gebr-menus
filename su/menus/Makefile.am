@@ -115,7 +115,6 @@ gebrmenu_DATA = \
 		tvnmoqc.mnu         \
 		uni2tri.mnu	    \
 		unif2.mnu	    \
-		usernames.mnu       \
 		velpert.mnu         \
 		ximage.mnu	    \
 		xpicker.mnu	    \
