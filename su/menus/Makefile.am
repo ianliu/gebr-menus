@@ -122,9 +122,4 @@ gebrmenu_DATA = \
 
 EXTRA_DIST = $(gebrmenu_DATA)
 
-install:
-	bash -c 'for f in ${gebrmenu_DATA}; do cp $$f $$f.bak; done'
-	bash -c 'for f in ${gebrmenu_DATA}; do gebr-geoxml-menu-edit -F seismicunix/$$f $$f; done'
-	make install-data
-	bash -c 'for f in ${gebrmenu_DATA}; do mv $$f.bak $$f; done'
 
