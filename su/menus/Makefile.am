@@ -27,6 +27,7 @@ gebrmenu_DATA = \
                 grm.mnu                \
                 h2b.mnu                \
                 maxdiff.mnu            \
+		mrafxzwt.mnu           \
                 prplot.mnu             \
                 psbbox.mnu             \
                 psimage.mnu            \
