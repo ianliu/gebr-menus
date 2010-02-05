@@ -66,6 +66,7 @@ gebrmenu_DATA = \
                 sufft.mnu              \
                 sufilter.mnu           \
                 suflip.mnu             \
+		sufrac.mnu             \
                 sufxdecon.mnu          \
                 sugabor.mnu            \
                 sugain.mnu             \
