@@ -58,6 +58,7 @@ gebrmenu_DATA = \
                 sucountkey.mnu         \
                 sudiff.mnu             \
                 sudipdivcor.mnu        \
+		sudipfilt.mnu          \
                 sudivcor.mnu           \
                 sudivstack.mnu         \
                 sueipofi.mnu           \
