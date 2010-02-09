@@ -71,6 +71,7 @@ gebrmenu_DATA = \
                 sugabor.mnu            \
                 sugain.mnu             \
                 sugethw.mnu            \
+		suharlan.mnu           \
                 suhilb.mnu             \
                 suhrot_file.mnu        \
                 suhrot.mnu             \
