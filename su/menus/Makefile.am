@@ -76,6 +76,7 @@ gebrmenu_DATA = \
                 suhrot_file.mnu        \
                 suhrot.mnu             \
                 suhtmath.mnu           \
+		suifft.mnu             \
                 suilog.mnu             \
                 suinterp.mnu           \
                 suk1k2filter.mnu       \
