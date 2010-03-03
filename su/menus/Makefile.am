@@ -170,6 +170,7 @@ gebrmenu_DATA = \
                 suwind.mnu             \
                 suximage.mnu           \
                 suximage-simple.mnu    \
+                suxmovie.mnu           \
                 suxpicker.mnu          \
                 suxwigb.mnu            \
                 suxwigb-simple.mnu     \
@@ -193,6 +194,7 @@ gebrmenu_DATA = \
                 wtcomp.mnu             \
                 wtuncomp.mnu           \
                 ximage.mnu             \
+                xmovie.mnu             \
                 xpicker.mnu            \
                 xwigb.mnu
 
