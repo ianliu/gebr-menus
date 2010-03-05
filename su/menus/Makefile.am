@@ -40,6 +40,7 @@ gebrmenu_DATA = \
                 segyhdrmod.mnu         \
                 segyread.mnu           \
                 segywrite.mnu          \
+		smooth2.mnu            \
                 su3dchart.mnu          \
                 suabshw.mnu            \
                 suacor.mnu             \
