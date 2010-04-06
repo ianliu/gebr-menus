@@ -85,6 +85,7 @@ gebrmenu_DATA = \
                 sukeycount.mnu         \
                 sukfilter.mnu          \
                 sukill.mnu             \
+		sulog.mnu              \
                 sumedian_byfile.mnu    \
                 sumedian.mnu           \
                 sumigfd.mnu            \
