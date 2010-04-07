@@ -134,6 +134,7 @@ gebrmenu_DATA = \
                 susort.mnu             \
                 susorty.mnu            \
                 suspecfk.mnu           \
+		suspeck1k2.mnu         \
                 suspecfx.mnu           \
                 suspike.mnu            \
                 sustack.mnu            \
