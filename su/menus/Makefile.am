@@ -204,6 +204,7 @@ gebrmenu_DATA = \
                 wptuncomp.mnu          \
                 wtcomp.mnu             \
                 wtuncomp.mnu           \
+		xgraph.mnu             \
                 ximage.mnu             \
                 xmovie.mnu             \
                 xpicker.mnu            \
