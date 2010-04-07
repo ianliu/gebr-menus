@@ -30,6 +30,7 @@ gebrmenu_DATA = \
 		mrafxzwt.mnu           \
                 prplot.mnu             \
                 psbbox.mnu             \
+		psgraph.mnu            \
                 psimage.mnu            \
                 pslabel.mnu            \
                 psmerge.mnu            \
@@ -115,6 +116,7 @@ gebrmenu_DATA = \
                 suplane.mnu            \
                 supofilt.mnu           \
                 supolar.mnu            \
+		supsgraph.mnu          \
                 supsimage.mnu          \
                 supswigb.mnu           \
                 supswigp.mnu           \
