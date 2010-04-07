@@ -156,6 +156,8 @@ gebrmenu_DATA = \
                 sutsq.mnu              \
                 suttoz.mnu             \
                 sutxtaper.mnu          \
+		suunpack1.mnu          \
+		suunpack2.mnu          \
                 suvcat.mnu             \
                 suvel2df.mnu           \
                 suvelan.mnu            \
