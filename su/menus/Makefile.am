@@ -179,6 +179,7 @@ gebrmenu_DATA = \
                 suwind.mnu             \
 		suxcor.mnu             \
 		suxcor-all.mnu         \
+		suxgraph.mnu           \
                 suximage.mnu           \
                 suximage-simple.mnu    \
                 suxmovie.mnu           \
