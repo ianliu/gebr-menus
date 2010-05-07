@@ -17,9 +17,10 @@
 SUBDIRS =
 
 EXTRA_DIST = \
-	     rpm/gebr.fedora.spec   \
-	     rpm/gebr.opensuse.spec \
-	     rpm/gebr.mandriva.spec \
+	     rpm/gebr-menus.spec.in             \
+	     rpm/gebr-menus-su.fedora.spec.in   \
+	     rpm/gebr-menus-su.mandriva.spec.in \
+	     rpm/gebr-menus-su.opensuse.spec.in \
              debian/changelog       \
              debian/compat          \
              debian/control         \
