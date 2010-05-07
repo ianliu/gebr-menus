@@ -1,5 +1,5 @@
 # GeBR Menus SU - Seismic Unix menus for GeBR
-# Copyright (C) 2008-2009 GeBR Core Team
+# Copyright (C) 2008-2010 Ricardo Biloti <biloti@gebrproject.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,16 +16,28 @@
 
 SUBDIRS =
 
-EXTRA_DIST =
-	rpm/gebr.fedora.spec \
-	rpm/gebr.opensuse.spec \
-	rpm/gebr.mandriva.spec
+EXTRA_DIST = \
+	     rpm/gebr.fedora.spec   \
+	     rpm/gebr.opensuse.spec \
+	     rpm/gebr.mandriva.spec \
+             debian/changelog       \
+             debian/compat          \
+             debian/control         \
+             debian/copyright       \
+             debian/dirs            \
+             debian/docs            \
+             debian/install         \
+             debian/postinst.ex     \
+             debian/postrm.ex       \
+             debian/preinst.ex      \
+             debian/prerm.ex        \
+             debian/rules
 
 packages: deb-package rpm-packages
 rpm-packages: fedora-package opensuse-package mandriva-package
 
 deb-package:
-	cd ..;dpkg-buildpackage -kA594D681 -tc -rfakeroot; cd -
+	cd ..; dpkg-buildpackage -kA594D681 -tc -rfakeroot; cd -
 
 rpm-structure:
 	cd ..; make dist; cd -
@@ -39,3 +51,15 @@ opensuse-package: rpm-structure
 
 mandriva-package: rpm-structure
 	rpmbuild -ba rpm/gebr-menus-su.mandriva.spec
+
+# packages: deb-package rpm-package
+# 
+# deb-package:
+# 	cd ..; dpkg-buildpackage -kA594D681 -tc -rfakeroot; cd -
+# 
+# rpm-package:
+# 	cd ..; make dist; cd -
+# 	mkdir -p rpm/BUILD rpm/RPMS rpm/SRPMS rpm/SOURCES 
+# 	cp ../@PACKAGE@-@VERSION@.tar.gz rpm/SOURCES
+# 	rpmbuild -ba rpm/gebr-menus.spec
+
