@@ -155,7 +155,7 @@ gebrmenu_DATA = \
                 sutaper.mnu            \
                 sutaup.mnu             \
                 sutetraray.mnu         \
-                sutihalednmo.mnu       \
+                sutihaledmo.mnu        \
                 sutivel.mnu            \
                 sutsq.mnu              \
                 suttoz.mnu             \
