@@ -132,7 +132,9 @@ gebrmenu_DATA = \
                 surelan.mnu            \
                 suresamp.mnu           \
                 suresstat.mnu          \
-                sushape.mnu            \
+                sushape-1.mnu          \
+                sushape-2.mnu          \
+                sushape-3.mnu          \
                 sushw.mnu              \
                 susort.mnu             \
                 susorty.mnu            \
