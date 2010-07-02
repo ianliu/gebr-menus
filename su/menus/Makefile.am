@@ -53,6 +53,7 @@ gebrmenu_DATA = \
                 rayt2d.mnu             \
                 recast.mnu             \
                 recip.mnu              \
+		regrid3.mnu            \
                 resamp.mnu             \
                 segyclean.mnu          \
                 segyhdrmod.mnu         \
@@ -70,6 +71,7 @@ gebrmenu_DATA = \
                 suaddevent.mnu         \
                 suaddhead.mnu          \
                 suaddnoise.mnu         \
+		suaddstatics.mnu       \
                 suamp.mnu              \
                 suascii.mnu            \
                 suattributes.mnu       \
@@ -106,9 +108,12 @@ gebrmenu_DATA = \
                 sufxdecon.mnu          \
                 sugabor.mnu            \
                 sugain.mnu             \
+		sugausstaper.mnu       \
                 sugazmig.mnu           \
                 sugethw.mnu            \
                 suget.mnu              \
+		sugoupillaud.mnu       \
+		sugoupillaudpo.mnu     \
 		suharlan.mnu           \
                 suhilb.mnu             \
                 suhrot_file.mnu        \
@@ -120,6 +125,7 @@ gebrmenu_DATA = \
                 suimp3d.mnu            \
                 suinterp.mnu           \
                 suintvel.mnu           \
+		suinvvxzco.mnu         \
                 suinvzco3d.mnu         \
                 suk1k2filter.mnu       \
                 sukdmig2d.mnu          \
@@ -131,6 +137,7 @@ gebrmenu_DATA = \
                 sukill.mnu             \
                 suktmig2d.mnu          \
 		sulog.mnu              \
+		sumax.mnu              \
                 sumean.mnu             \
                 sumedian_byfile.mnu    \
                 sumedian.mnu           \
@@ -153,9 +160,11 @@ gebrmenu_DATA = \
                 sumute_byfile.mnu      \
                 sumute.mnu             \
                 sunan.mnu              \
+		sunhmospike.mnu        \
                 sunmo.mnu              \
                 sunormalize.mnu        \
                 sunull.mnu             \
+		suocext.mnu            \
                 suoldtonew.mnu         \
                 suop2.mnu              \
                 suop.mnu               \
@@ -259,6 +268,8 @@ gebrmenu_DATA = \
                 swapbytes.mnu          \
                 sxplot.mnu             \
                 transp.mnu             \
+		tri2uni.mnu            \
+		trip.mnu               \
                 triseis.mnu            \
                 tvnmoqc.mnu            \
                 unglitch.mnu           \
@@ -268,9 +279,13 @@ gebrmenu_DATA = \
                 unisam_file1.mnu       \
                 unisam_file2.mnu       \
                 unisam.mnu             \
+		vel2stiff.mnu          \
                 velconv.mnu            \
                 velpertan.mnu          \
                 velpert.mnu            \
+		viewer3.mnu            \
+		vtlvz.mnu              \
+		wkbj.mnu               \
                 wpc1comp2.mnu          \
                 wpc1uncomp2.mnu        \
                 wpccompress.mnu        \
@@ -286,6 +301,7 @@ gebrmenu_DATA = \
                 xpicker.mnu            \
                 xrects.mnu             \
                 xwigb.mnu              \
+		xy2z.mnu               \
                 z2xyz.mnu
 
 EXTRA_DIST = $(gebrmenu_DATA)
