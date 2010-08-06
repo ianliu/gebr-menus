@@ -20,6 +20,7 @@ gebrmenu_DATA = \
                 a2b.mnu                \
                 b2a.mnu                \
                 bhedtopar.mnu          \
+		cdpfold.mnu            \
                 dctcomp.mnu            \
                 dctuncomp.mnu          \
                 dt1tosu.mnu            \
