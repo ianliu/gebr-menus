@@ -2,8 +2,7 @@
 %define version @VERSION@
 %define release 1%{dist}
 
-
-Name:    %{name}
+Name: %{name}
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -11,6 +10,7 @@ Group: Application/Misc
 URL: http://www.gebrproject.com
 Packager: Ricardo Biloti <biloti@gebrproject.com>
 Source: %{name}-%{version}.tar.gz
+BuildArch: noarch
 BuildRoot: /tmp/%{name}-%{version}
 Summary: Seismic Unix menus for GeBR
 %description
@@ -24,7 +24,6 @@ This package provides menus of Seismic Unix programs for GeBR.
 
 %prep
 %setup -q
-aclocal;automake --add-missing;autoconf
 
 %configure
 
