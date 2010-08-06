@@ -37,6 +37,7 @@ gebrmenu_DATA = \
                 maxdiff.mnu            \
 		mrafxzwt.mnu           \
                 normray.mnu            \
+		parsesukeycount.mnu    \
                 prplot.mnu             \
                 psbbox.mnu             \
                 pscontour.mnu          \
