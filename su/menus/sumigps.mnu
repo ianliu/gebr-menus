@@ -2,15 +2,15 @@
 <flow version="0.3.5">
   <title>SU Mig PS</title>
   <description>Migration by phase shift with turning rays</description>
-  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <!-- begin ttl -->
-  <title>GêBR - SU Mig PS</title>
+  <title xmlns="http://www.w3.org/1999/xhtml">GêBR - SU Mig PS</title>
   <!-- end ttl -->
 </head><body xmlns="http://www.w3.org/1999/xhtml">
-  <div class="outer-container">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
     <div class="inner-container">
       <div class="header">
         <div class="title">
@@ -41,15 +41,15 @@
 	May 12, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
-        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_4">
-	Credits</h2></a></li></ul></div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+	Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->May 12, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
@@ -58,8 +58,8 @@
   </div>
 
 
-</body></html>
-]]></help>
+
+</body></html>]]></help>
   <author>Davi Clemente</author>
   <email>davi.clemente@gebrproject.com</email>
   <dict>
@@ -67,7 +67,7 @@
   </dict>
   <date>
     <created>2010-05-13T00:53:02.420274Z</created>
-    <modified>2010-08-06T00:43:06.031831Z</modified>
+    <modified>2010-08-06T01:39:33.645211Z</modified>
     <lastrun/>
   </date>
   <category>Migration and Dip Moveout</category>
@@ -78,27 +78,27 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>SU Mig PS</title>
     <binary>sumigps</binary>
     <description>Migration by phase shift with turning rays</description>
-    <help><![CDATA[<html ><head ><meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <!-- begin ttl -->
-  <title >GêBR - SU Mig PS</title>
+  <title>GêBR - SU Mig PS</title>
   <!-- end ttl -->
-</head><body >
-  <div  class="outer-container">
-    <div  class="inner-container">
-      <div  class="header">
-        <div  class="title">
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
 	  <!-- begin tt2 -->
-         <span  class="flowtitle">SU Mig PS</span>
+         <span class="flowtitle">SU Mig PS</span>
          <!-- end tt2 -->
 
-          <div  class="description">
+          <div class="description">
 	    <!-- begin des -->
             Migration by phase shift with turning rays
             <!-- end des -->
@@ -106,24 +106,24 @@
         </div>
       </div>
 
-      <div  class="category">
+      <div class="category">
 	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
-      <div  class="main">
-        <div  class="content"><h2 id="header_0" >
+      <div class="main">
+        <div class="content"><h2 id="header_0">
 	Introduction</h2>
-<p >
+<p>
 	Migration by phase shift with turning rays.</p>
-<!-- begin par --><div class="parameters" >
-	<h2  id="header_1">
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
 		Parameters</h2>
-	<ul >
+	<ul>
 		<li>
-			<span class="label">Time sampling interval</span><br/>
+			<span class="label">Time sampling interval</span><br />
 			Default value is set from header or is 0.004.</li>
 		<li>
-			<span class="label">Distance between sucessive cdp's</span><br/>
+			<span class="label">Distance between sucessive cdp's</span><br />
 			Devault value is set from header or is 1.0.</li>
 		<li>
 			<span class="label">Trapezoidal window of frequencies to migrate</span></li>
@@ -132,10 +132,14 @@
 		<li>
 			<span class="label">Time samples</span>
 			<ul>
-			    <li>Normal</li>
-			    <li>Turned</li>
-			    <li>Normal and turned</li>
-			</ul></li>
+				<li>
+					Normal</li>
+				<li>
+					Turned</li>
+				<li>
+					Normal and turned</li>
+			</ul>
+		</li>
 		<li>
 			<span class="label">Interval velocities corresponding to times</span></li>
 		<li>
@@ -149,63 +153,63 @@
 		<li>
 			<span class="label">Echoes extra information</span></li>
 		<li>
-			<span class="label">Directory path for storing temporary files</span><br/>
-		If non-empty, use the value as a directory path prefix for storing temporary files; else, if the CWP_TMPDIR environment variable is set use its value for the path; else, use tmpfile().</li>
+			<span class="label">Directory path for storing temporary files</span><br />
+			If non-empty, use the value as a directory path prefix for storing temporary files; else, if the CWP_TMPDIR environment variable is set use its value for the path; else, use tmpfile().</li>
 	</ul>
 <!-- end lst --></div>
-<!-- end par --><h2 id="header_2" >
+<!-- end par --><h2 id="header_2">
 	Notes</h2>
-<p >
-	Input traces must be sorted by either increasing or decreasing cdp.<span  class="Apple-tab-span" style="white-space:pre"> </span></p>
-<div >
-	The <strong >Times corresponding to interval velocities</strong> and <strong >Interval velocities corresponding to times </strong>arrays specify an interval velocity function of time. Linear interpolation and constant extrapolation is used to determine interval velocities at times not specified.  Values specified in <strong >Times corresponding to interval velocities</strong> must increase monotonically.<span  class="Apple-tab-span" style="white-space:pre"> </span></div>
-<div >
+<p>
+	Input traces must be sorted by either increasing or decreasing cdp.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
+<div>
+	The <strong>Times corresponding to interval velocities</strong> and <strong>Interval velocities corresponding to times </strong>arrays specify an interval velocity function of time. Linear interpolation and constant extrapolation is used to determine interval velocities at times not specified.  Values specified in <strong>Times corresponding to interval velocities</strong> must increase monotonically.<span class="Apple-tab-span" style="white-space:pre"> </span></div>
+<div>
 	 </div>
-<div >
-	Alternatively, interval velocities may be stored in a binary file containing one velocity for every time sample.  If <strong >Binary file containing velocities</strong> is specified, then the <strong >Times corresponding to interval velocities</strong> and <strong >Interval velocities corresponding to times </strong> arrays are ignored.</div>
-<div >
+<div>
+	Alternatively, interval velocities may be stored in a binary file containing one velocity for every time sample.  If <strong>Binary file containing velocities</strong> is specified, then the <strong>Times corresponding to interval velocities</strong> and <strong>Interval velocities corresponding to times </strong> arrays are ignored.</div>
+<div>
 	 </div>
-<div >
+<div>
 	The time of first sample is assumed to be zero, regardless of the value of the trace header field delrt.</div>
-<div >
+<div>
 	 </div>
-<div >
+<div>
 	This program access the following header keywords:</div>
-<ul >
-	<li >
+<ul>
+	<li>
 		Number of samples</li>
-	<li >
+	<li>
 		Sample interval in microseconds</li>
-	<li >
+	<li>
 		Sample spacing between traces</li>
 </ul>
-<h2 id="header_3" >
+<h2 id="header_3">
 	Credits</h2>
-<p >
+<p>
 	 CWP: Dave Hale</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
-        <div  class="navigation"><h2 >Index</h2><ul ><li><a href="#header_0"><h2 id="header_0" >
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
-		Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2" >
-	Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3" >
-	Credits</h2></a></li></ul></div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div><div class="links"> </div>
 
-        <div  class="clearer"></div>
+        <div class="clearer"></div>
       </div>
 
-      <div  class="footer">
-        <span  class="left">GêBR 0.9.16 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+      <div class="footer">
+        <span class="left">GêBR 0.9.16 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->SU 42<!-- end ver --></span>
 
-        <div  class="clearer"></div>
+        <div class="clearer"></div>
       </div>
     </div>
   </div>
 
 
-</body></html>
-]]></help>
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -343,3 +347,4 @@
     </parameters>
   </program>
 </flow>
+ 

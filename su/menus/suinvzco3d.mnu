@@ -11,7 +11,7 @@
   <!-- end ttl -->
 </head><body xmlns="http://www.w3.org/1999/xhtml">
   <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
-    <div class="inner-container">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="inner-container">
       <div class="header">
         <div class="title">
 	  <!-- begin tt2 -->
@@ -41,15 +41,15 @@
 	Jun 09, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
-        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
-	Credits</h2></a></li></ul></div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+	Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->Jun 09, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
@@ -66,7 +66,7 @@
   </dict>
   <date>
     <created>2010-06-08T12:48:52.656821Z</created>
-    <modified>2010-08-06T00:43:05.529502Z</modified>
+    <modified>2010-08-06T01:42:03.153869Z</modified>
     <lastrun/>
   </date>
   <category>Migration and Dip Moveout</category>
@@ -77,7 +77,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>SU Inv Z CO3D</title>
     <binary>suinvzco3d</binary>
     <description>Seismic inversion of Common Offset data with V(Z) velocity function in 3D</description>
@@ -91,7 +91,7 @@
 </head><body xmlns="http://www.w3.org/1999/xhtml">
   <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
     <div xmlns="http://www.w3.org/1999/xhtml" class="inner-container">
-      <div class="header">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="header">
         <div class="title">
 	  <!-- begin tt2 -->
          <span class="flowtitle">SU Inv Z CO3D</span>
@@ -105,11 +105,11 @@
         </div>
       </div>
 
-      <div class="category">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="category">
 	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
-      <div class="main">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="main">
         <div class="content"><h2 id="header_0">
 	Introduction</h2>
 <p>
@@ -210,8 +210,7 @@
 	Traveltime and amplitude are calculated by ray tracing.<br />
 	Interpolation is used to calculate traveltime and amplitude.<br />
 	For each midpoint, traveltime and amplitude are calculated in the horizontal range of (xm-<b>Band centered at midpoints</b>*<b>X sampling interval of velocity</b>, xm+<b>Band centered at midpoints</b>*<b>X sampling interval of velocity</b>).<br />
-	Velocity is changed by linear interpolation in two upper trianglar corners whose width is nxc*<b>X sampling interval of velocity</b> 
-	and height is nzc*<b>Z sampling interval of velocity</b>.</p>
+	Velocity is changed by linear interpolation in two upper trianglar corners whose width is nxc*<b>X sampling interval of velocity</b> and height is nzc*<b>Z sampling interval of velocity</b>.</p>
 <p>
 	Eikonal equation will fail to solve if there is a polar turned ray. In this case, the program shows the related geometric information.</p>
 <p>
@@ -222,20 +221,17 @@
 	Meng Xu, Center for Wave Phenomena, 07/8/95.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
-        <div class="navigation"><h2>Index</h2>
-	<ul>
-	<li><a href="#header_0">Introduction</a></li>
-	<li><a href="#header_1">Parameters</a></li>
-	<li><a href="#header_2">Notes</a></li>
-	<li><a href="#header_3">Credits</a></li>
-	</ul>
-	</div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
-      <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+      <div xmlns="http://www.w3.org/1999/xhtml" class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
@@ -244,9 +240,10 @@
   </div>
 
 
-</body></html>
-]]></help>
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection=""><parameter><label>File containing velocity array</label><file directory="no" filter-name="" filter-pattern=""><property required="yes"><keyword>vfile=</keyword><value/><default/></property></file></parameter><parameter><label>Number of z samples (1st dimension) in velocity</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property></int></parameter><parameter><label>Number of midpoints of input traces</label><int><property required="yes"><keyword>nxm=</keyword><value/><default/></property></int></parameter><parameter><label>Number of lines</label><int><property required="yes"><keyword>ny=</keyword><value/><default/></property></int></parameter><parameter><label>Time sampling interval of input data</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property></float></parameter><parameter><label>Source-receiver offset</label><float><property required="no"><keyword>offs=</keyword><value/><default/></property></float></parameter><parameter><label>Midpoint properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Sampling interval of midpoints</label><float><property required="no"><keyword>dxm=</keyword><value/><default/></property></float></parameter><parameter><label>First midpoint in input trace</label><float><property required="no"><keyword>fxm=</keyword><value/><default>0</default></property></float></parameter><parameter><label>Skipped number of midpoints</label><int><property required="no"><keyword>nxd=</keyword><value/><default>5</default></property></int></parameter><parameter><label>Band centered at midpoints</label><int><property required="no"><keyword>nxb=</keyword><value/><default/></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Sampling interval of midpoints</label><float><property required="no"><keyword>dxm=</keyword><value/><default/></property></float></parameter><parameter><label>First midpoint in input trace</label><float><property required="no"><keyword>fxm=</keyword><value/><default>0</default></property></float></parameter><parameter><label>Skipped number of midpoints</label><int><property required="no"><keyword>nxd=</keyword><value/><default>5</default></property></int></parameter><parameter><label>Band centered at midpoints</label><int><property required="no"><keyword>nxb=</keyword><value/><default/></property></int></parameter></parameters></group></parameter><parameter><label>Velocity properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>X sampling interval of velocity</label><float><property required="no"><keyword>dx=</keyword><value/><default>50.0</default></property></float></parameter><parameter><label>First x sample of velocity</label><float><property required="no"><keyword>fx=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Z sampling interval of velocity</label><float><property required="no"><keyword>dz=</keyword><value/><default>50.0</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>X sampling interval of velocity</label><float><property required="no"><keyword>dx=</keyword><value/><default>50.0</default></property></float></parameter><parameter><label>First x sample of velocity</label><float><property required="no"><keyword>fx=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Z sampling interval of velocity</label><float><property required="no"><keyword>dz=</keyword><value/><default>50.0</default></property></float></parameter></parameters></group></parameter><parameter><label>X-coordinate properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>X-coordinate of first output trace</label><float><property required="no"><keyword>fxo=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Horizontal spacing of output trace</label><float><property required="no"><keyword>dxo=</keyword><value/><default>15.0</default></property></float></parameter><parameter><label>Number of output traces</label><int><property required="no"><keyword>nxo=</keyword><value/><default>101</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>X-coordinate of first output trace</label><float><property required="no"><keyword>fxo=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Horizontal spacing of output trace</label><float><property required="no"><keyword>dxo=</keyword><value/><default>15.0</default></property></float></parameter><parameter><label>Number of output traces</label><int><property required="no"><keyword>nxo=</keyword><value/><default>101</default></property></int></parameter></parameters></group></parameter><parameter><label>Y-coordinate properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Y-coordinate of first output trace</label><float><property required="no"><keyword>fyo=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Y-coordinate spacing of output trace</label><float><property required="no"><keyword>dyo=</keyword><value/><default>15.0</default></property></float></parameter><parameter><label>Number of output traces in y-direction</label><int><property required="no"><keyword>nyo=</keyword><value/><default>101</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Y-coordinate of first output trace</label><float><property required="no"><keyword>fyo=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Y-coordinate spacing of output trace</label><float><property required="no"><keyword>dyo=</keyword><value/><default>15.0</default></property></float></parameter><parameter><label>Number of output traces in y-direction</label><int><property required="no"><keyword>nyo=</keyword><value/><default>101</default></property></int></parameter></parameters></group></parameter><parameter><label>Z-coordinate properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Z-coordinate of first output trace</label><float><property required="no"><keyword>fzo=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Vertical spacing of output trace</label><float><property required="no"><keyword>dzo=</keyword><value/><default>15.0</default></property></float></parameter><parameter><label>Number of points in output trace</label><int><property required="no"><keyword>nzo=</keyword><value/><default>101</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Z-coordinate of first output trace</label><float><property required="no"><keyword>fzo=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Vertical spacing of output trace</label><float><property required="no"><keyword>dzo=</keyword><value/><default>15.0</default></property></float></parameter><parameter><label>Number of points in output trace</label><int><property required="no"><keyword>nzo=</keyword><value/><default>101</default></property></int></parameter></parameters></group></parameter><parameter><label>Maximum frequency set for operator antialiasing</label><float><property required="no"><keyword>fmax=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum dip angle allowed in the image</label><float><property required="no"><keyword>ang=</keyword><value/><default>180</default></property></float></parameter><parameter><label>Quiet mode</label><flag><property required="no"><keyword>verbose=0</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
   </program>
 </flow>
+ 
