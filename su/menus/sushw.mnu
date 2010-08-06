@@ -45,7 +45,8 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Set one or more Header Key Words.</p>
+          <p>This menu is used to set one or more header key words. Its may purpose is to
+             set acquisition geometry to datasets.</p>
           <p>The values of each header key word for each trace can be read from
           an input file or evaluated by its trace number.</p>
 
@@ -54,8 +55,7 @@
 	    <a name="keys" id="keys"></a>
             <h2>List of keywords for Seismic Un*x trace header</h2>
 	    <p>From SEG-Y Standart:</p>
-	    <blockquote>
-	      The SEG-Y trace headers contains trace attributes, which
+	    <blockquote>The SEG-Y trace headers contains trace attributes, which
 	      are defined as two-byte or four-byte, two's complement
 	      integers. The values in bytes 1-180 were defined in the
 	      1975 standard and these entries remain unchanged,
@@ -507,7 +507,7 @@
           <p>Feb 20, 2008: created by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
           <p>May 28, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
           <p>Jul 31, 2009: modified by Luis A. D'Afonseca, UNICAMP, luis.dafonseca@gmail.com</p>
-          <p>Aug 04, 2009: fixed by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
+          <p>Aug 06, 2010: fixed by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
 
           <!-- end cpy -->
         </div>
@@ -526,7 +526,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 04, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->Aug 06, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -542,7 +542,7 @@
   </dict>
   <date>
     <created>2008-02-25T15:00:00Z</created>
-    <modified>2010-08-06T00:43:07.781926Z</modified>
+    <modified>2010-08-06T13:30:11.788712Z</modified>
     <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
@@ -553,7 +553,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Set Header</title>
     <binary>sushw</binary>
@@ -601,7 +601,10 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Set one or more Header Key Words.</p>
+          <p>Set one or more Header Key Words. The main purpose of this program is to set acquisition geometry into
+          a data set or redefine header fields values.</p>
+          <p>Note that to add acquisition geometry information to a data set, it must have SU header already, which is
+             added by <strong>SU Add Header</strong> menu.</p>
           <p>The values of each header key word for each trace can be read from
           an input file or evaluated by its trace number.</p>
 
@@ -611,8 +614,8 @@
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-            <p>There is two ways of set header keywords, one from an binary header file, and
-            other from specifying header key words values by a formula.</p>
+            <p>There is two ways of set header keywords, one from a binary header file, and
+            another from specifying header key words values by a formula.</p>
 
             <p> To use the first option set the parameters: 
             <!-- begin lst -->
@@ -623,20 +626,25 @@
               </li>
 
               <li><span class="label">Binary file of values for key words</span>
-              <p> A binaru file with the values for the key words specified by
+              <p> A binary file with the values for the key words specified by
               the parameter <b>List of header key words</b>.</p>
               </li>
             </ul>
 
-            To use the second option set the key words on parameter:
+            To use the second option choose all key words you want to set with the parameter:
             <ul>
-              <li><span class="label">List of header fields</span></li>
+              <li><span class="label">List of header key words</span></li>
             </ul>
             and set the values for the following optional parameters as needed:
             <ul>
-              <li><span class="label">Value(s) on first trace</span></li>
-              <li><span class="label">Increment(s) within group</span></li>
-              <li><span class="label">Group increment(s)</span></li>
+              <li><span class="label">Value(s) on first trace</span><br/>
+		These are the values of the keyword fields selected by <strong>List of header fields</strong>
+		for the first trace of the data.</li>
+              <li><span class="label">Increment(s) within group</span><br/>
+		This parameter describes the increment of each keyword field from trace
+		to trace within the same group.</li>
+              <li><span class="label">Group increment(s)</span><br/>
+                This parameter describes the increment of each keyword field from first trace of a group to the first trace of the next group. Usually the group is the set of trace of a common-shot section.</li>
               <li><span class="label">Trace number shift(s)</span></li>
               <li><span class="label">Number of elements in group</span></li>
             </ul>
@@ -661,6 +669,54 @@
               <li> <dfn>j  </dfn> is the Number of elements in group</li>
             </ul>
 
+	    <a name="example" id="example"></a>
+	    <h2>Usage example</h2>
+
+	    <p>In this section we describe a simple acquistion geometry over a 2D line, just to
+	       exemplify how the acquisiont parameters would be used to define the parameters
+               of this program.</p>
+
+             <p>Consider a 2D acquisition line, over which 241 shots were performed. Each shot
+	     is recorded by 69 channels. This first station is 100 meters ahead the shot position, and further
+             stations are regularly placed at each 50 meters. From one shot to the next one,
+	     the shot position is displaced by 50 meters in the positive direction of the acquisition line.
+	     The data is recorded for 6 seconds
+             at a sampling rate of 4ms (4000 micro-seconds). Below one shot is represented.</p>
+
+<pre>
+      shot                         stations    
+        *             v       v       v  ...  v       v
+      ----------------------------------------------------->
+        |<-- 100 m -->|<-50m->|<-50m->|  ...  |<-50m->|
+</pre>
+             <p><br/></p>
+
+	     <p>The parameters to reflect such geometry must be set as:</p>
+	
+            <ul>
+              <li>List of header fields:
+		<ul>
+		<li>Sampling rate</li>
+		<li>X source coordinate</li>
+		<li>X group coordinate</li>
+		<li>Offset</li>
+		<li>CDP ensemble number</li>
+		</ul></li>
+            </ul>
+
+            <ul>
+              <li>Value(s) on first trace: 4000,0, 100,100,1</li>
+              <li>Increment(s) within group: 0,0,50,50,1</li>
+              <li>Group increment(s): 0,50,50,0,2</li>
+              <li>Trace number shift(s): (leave blank)</li>
+              <li>Number of elements in group: 69,69,69,69,69</li>
+            </ul>
+
+            <p>Note that each group (of traces) metioned above refers to one shot. Also note that the
+               only information not extract directly from the description above is the CDP ensemble number, which
+               must be computed from the acquisition parameters.</p>
+ 
+            		
             <!-- _______ LIST OFF KEY WORDS _______ -->
 
 	    <a name="keys" id="keys"></a>
@@ -1132,7 +1188,8 @@
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
 	    <!-- end mpr -->
-            <li><a href="#keys">Header keywords</a></li>
+            <li><a href="#keys">Keywords</a></li>
+            <li><a href="#example">Example</a></li>
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -1239,3 +1296,4 @@
       </parameter><parameter><label>Binary file of values for key words</label><file directory="no"><property required="no"><keyword>infile=</keyword><value/><default/></property></file></parameter><parameter><label>Value(s) on first trace</label><float><property required="no" separator=","><keyword>a=</keyword><value/><default/></property></float></parameter><parameter><label>Increment(s) within group</label><float><property required="no" separator=","><keyword>b=</keyword><value/><default/></property></float></parameter><parameter><label>Group increment(s)</label><float><property required="no" separator=","><keyword>c=</keyword><value/><default/></property></float></parameter><parameter><label>Trace number shift(s)</label><float><property required="no" separator=","><keyword>d=</keyword><value/><default/></property></float></parameter><parameter><label>Number of elements in group</label><int><property required="no" separator=","><keyword>j=</keyword><value/><default/></property></int></parameter></parameters>
   </program>
 </flow>
+ 
