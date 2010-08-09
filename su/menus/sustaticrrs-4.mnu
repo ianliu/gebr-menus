@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow version="0.3.5">
   <title>SU Static RRS 4</title>
-  <description>Elevation static corrections 4</description>
+  <description>Residual refraction statics are applied</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -27,7 +27,7 @@
 
           <div class="description">
 	    <!-- begin des -->
-            Elevation static corrections 4
+            Residual refraction statics are applied
             <!-- end des -->
           </div>
         </div>
@@ -58,6 +58,7 @@
 	  <!-- begin cpy -->
 	  
           <p>Dez 08, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+	  <p>Aug 09, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           
           <!-- end cpy -->
 	  
@@ -79,7 +80,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Dez 08, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 09, 2010</span>
 
         <div class="clearer"></div>
       </div>
@@ -95,7 +96,7 @@
   </dict>
   <date>
     <created>2009-11-30T18:26:52.254336Z</created>
-    <modified>2010-08-06T00:43:08.104630Z</modified>
+    <modified>2010-08-09T14:10:09.228477Z</modified>
     <lastrun/>
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
@@ -106,11 +107,11 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Static RRS 4</title>
     <binary>sustaticrrs hdrs=4 </binary>
-    <description>Elevation static corrections 4</description>
+    <description>Residual refraction statics are applied</description>
     <help><![CDATA[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -137,7 +138,7 @@
 
           <div class="description">
 	    <!-- begin des -->
-            Elevation static corrections 4
+            Residual refraction statics are applied
             <!-- end des -->
           </div>
         </div>
@@ -170,7 +171,7 @@
 
               <li><span class="label">Subweathering velocity</span><br/></li>
 
-              <li><span class="label">Subtract statics from traces(up shift)</span><br/></li>
+              <li><span class="label">Subtract statics from traces (up shift)</span><br/></li>
 
               <li><span class="label">Number of midpoints on line</span><br/></li>
 
@@ -190,27 +191,27 @@
 
           <p>Residual refraction statics are applied</p>
 
-          <p>This program access the following header keywords
+          <p>This program access the following header keywords:
           <ul>
-            <li>Number of samples</li> <!-- ns -->
-            <li>Sample interval in microseconds</li> <!-- dt -->
-            <li>Delay recording time in ms</li> <!-- delrt -->
-            <li>Receiver group elevation from sea level</li> <!-- gelev -->
-            <li>Source elevation from sea level</li> <!-- selev -->
-            <li>Source depth (positive)</li> <!-- sdepth -->
-            <li>Datum elevation at receiver group </li> <!-- gdel -->
-            <li>Datum elevation at source</li> <!-- sdel -->
-            <li>Subweathering velocity</li> <!-- swevel -->
-            <li>Uphole time at source</li> <!-- sut -->
-            <li>Scale factor for source/receiver elevations, datum and water depth</li> <!-- scalel -->
+            <li>Number of samples,</li> <!-- ns -->
+            <li>Sample interval in microseconds,</li> <!-- dt -->
+            <li>Delay recording time in ms,</li> <!-- delrt -->
+            <li>Receiver group elevation from sea level,</li> <!-- gelev -->
+            <li>Source elevation from sea level,</li> <!-- selev -->
+            <li>Source depth (positive),</li> <!-- sdepth -->
+            <li>Datum elevation at receiver group,</li> <!-- gdel -->
+            <li>Datum elevation at source,</li> <!-- sdel -->
+            <li>Subweathering velocity,</li> <!-- swevel -->
+            <li>Uphole time at source,</li> <!-- sut -->
+            <li>Scale factor for source/receiver elevations, datum and water depth.</li> <!-- scalel -->
           </ul>
           </p> 
 
-          <p>This program modified the following header keywords
+          <p>This program modified the following header keywords:
           <ul>
-            <li>Source static correction</li> <!-- sstat -->
-            <li>Group static correction</li> <!-- gstat -->
-            <li>Total static applied</li> <!-- tstat -->
+            <li>Source static correction,</li> <!-- sstat -->
+            <li>Group static correction,</li> <!-- gstat -->
+            <li>Total static applied.</li> <!-- tstat -->
           </ul>
           </p>
 
@@ -274,6 +275,7 @@
 </html>
 ]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0" selection=""><parameter><label>Weathering velocity</label><float><property required="no"><keyword>v0=</keyword><value/><default/></property></float></parameter><parameter><label>Subweathering velocity</label><float><property required="no"><keyword>v1=</keyword><value/><default/></property></float></parameter><parameter><label>Subtract statics from traces(up shift)</label><float><property required="no"><keyword>sign=</keyword><value/><default>-1</default></property></float></parameter><parameter><label>Number of midpoints on line</label><int><property required="no"><keyword>nsamp=</keyword><value/><default/></property></int></parameter><parameter><label>First x location in velocity model</label><float><property required="no"><keyword>fx=</keyword><value/><default/></property></float></parameter><parameter><label>Midpoint interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property></float></parameter></parameters>
+    <parameters default-selection="0" selection=""><parameter><label>Weathering velocity</label><float><property required="no"><keyword>v0=</keyword><value/><default/></property></float></parameter><parameter><label>Subweathering velocity</label><float><property required="no"><keyword>v1=</keyword><value/><default/></property></float></parameter><parameter><label>Subtract statics from traces (up shift)</label><flag><property required="no"><keyword>sign=-1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Number of midpoints on line</label><int><property required="no"><keyword>nsamp=</keyword><value/><default/></property></int></parameter><parameter><label>First x location in velocity model</label><float><property required="no"><keyword>fx=</keyword><value/><default/></property></float></parameter><parameter><label>Midpoint interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property></float></parameter></parameters>
   </program>
 </flow>
+ 
