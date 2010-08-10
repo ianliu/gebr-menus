@@ -56,6 +56,7 @@
 	  <!-- begin cpy -->
 	  
           <p>Nov 19, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 10, 2010: modified by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
 	  
         </div>
@@ -93,7 +94,7 @@
   </dict>
   <date>
     <created>2009-11-19T18:16:52.784696Z</created>
-    <modified>2010-08-06T00:43:06.557377Z</modified>
+    <modified>2010-08-10T20:00:33.102314Z</modified>
     <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
@@ -104,7 +105,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Transpose</title>
     <binary>supermute</binary>
@@ -197,7 +198,7 @@
 		The default value for this parameter is 1</li>
 
               <li><span class="label">New slow direction</span><br/>
-		The default value for this parameter is 1</li>
+		The default value for this parameter is 3</li>
 
               <li><span class="label">Output interval in new slow direction</span><br/>
 		The default value for this parameter is 1</li>
@@ -213,14 +214,14 @@
 	  <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-	 <p>This program access the following header keywords
+	 <p>This program accesses the following header keywords
           <ul>
             <li>Number of samples         </li> <!-- ns   -->
 	    <li>Number of traces</li> <!-- ntr -->
           </ul>
           </p> 
 
-          <p>This program modified the following header keywords
+          <p>This program modifies the following header keywords
           <ul>
 	    <li>Sample spacing for non-seismic data</li> <!-- d1 -->
 	    <li>First sample location for non-seismic data</li> <!-- f1 -->
@@ -292,7 +293,7 @@
                 <property required="no">
                   <keyword>o1=</keyword>
                   <value/>
-                  <default/>
+                  <default>1</default>
                 </property>
               </int>
             </parameter>
@@ -302,14 +303,14 @@
                 <property required="no">
                   <keyword>d1=</keyword>
                   <value/>
-                  <default/>
+                  <default>1</default>
                 </property>
               </int>
             </parameter>
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of samples</label>
+              <label>Output interval in new fast direction</label>
               <int>
                 <property required="no">
                   <keyword>n1=</keyword>
@@ -360,7 +361,7 @@
                 <property required="no">
                   <keyword>o2=</keyword>
                   <value/>
-                  <default/>
+                  <default>2</default>
                 </property>
               </int>
             </parameter>
@@ -370,14 +371,14 @@
                 <property required="no">
                   <keyword>d2=</keyword>
                   <value/>
-                  <default/>
+                  <default>1</default>
                 </property>
               </int>
             </parameter>
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of samples</label>
+              <label>Output interval in new med direction</label>
               <int>
                 <property required="no">
                   <keyword>n2=</keyword>
@@ -418,7 +419,7 @@
                 <property required="no">
                   <keyword>n3=</keyword>
                   <value/>
-                  <default/>
+                  <default>1</default>
                 </property>
               </int>
             </parameter>
@@ -428,7 +429,7 @@
                 <property required="no">
                   <keyword>o3=</keyword>
                   <value/>
-                  <default/>
+                  <default>3</default>
                 </property>
               </int>
             </parameter>
@@ -438,14 +439,14 @@
                 <property required="no">
                   <keyword>d3=</keyword>
                   <value/>
-                  <default/>
+                  <default>1</default>
                 </property>
               </int>
             </parameter>
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of samples</label>
+              <label>Output interval in new slow direction</label>
               <int>
                 <property required="no">
                   <keyword>n3=</keyword>
@@ -488,3 +489,4 @@
 </parameter></parameters>
   </program>
 </flow>
+ 
