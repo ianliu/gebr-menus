@@ -57,6 +57,7 @@
 	  <!-- begin cpy -->
 	  
           <p>Nov 17, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 10, 2010: modified by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
 	  
         </div>
@@ -93,7 +94,7 @@
   </dict>
   <date>
     <created>2009-11-17T13:33:41.395597Z</created>
-    <modified>2010-08-06T00:43:04.263628Z</modified>
+    <modified>2010-08-10T18:24:33.030166Z</modified>
     <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
@@ -285,7 +286,7 @@
                 <property required="no">
                   <keyword>id1s=</keyword>
                   <value/>
-                  <default/>
+                  <default>1</default>
                 </property>
               </int>
             </parameter>
@@ -295,20 +296,14 @@
                 <property required="no">
                   <keyword>if1s=</keyword>
                   <value/>
-                  <default/>
+                  <default>0</default>
                 </property>
               </int>
             </parameter>
             <parameter>
               <label>Number of samples selected</label>
-              <float>
-                <property required="no">
-                  <keyword>n1s=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              
+            <int><property required="no"><keyword>n1s=</keyword><value/><default/></property></int></parameter>
             <parameter>
               <label>Indices of samples selected</label>
               <int>
@@ -322,7 +317,7 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of samples</label>
+              <label>Index of first sample selected</label>
               <int>
                 <property required="no">
                   <keyword>n1=</keyword>
@@ -393,7 +388,7 @@
                 <property required="no">
                   <keyword>id2s=</keyword>
                   <value/>
-                  <default/>
+                  <default>1</default>
                 </property>
               </int>
             </parameter>
@@ -403,20 +398,14 @@
                 <property required="no">
                   <keyword>if2s=</keyword>
                   <value/>
-                  <default/>
+                  <default>0</default>
                 </property>
               </int>
             </parameter>
             <parameter>
               <label>Number of samples selected</label>
-              <float>
-                <property required="no">
-                  <keyword>n2s=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              
+            <int><property required="no"><keyword>n2s=</keyword><value/><default/></property></int></parameter>
             <parameter>
               <label>Indices of samples selected</label>
               <int>
@@ -430,7 +419,7 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of samples</label>
+              <label>Index of first sample selected</label>
               <int>
                 <property required="no">
                   <keyword>n2=</keyword>
@@ -497,11 +486,11 @@
             </parameter>
             <parameter>
               <label>Increment in samples selected</label>
-              <int>
+              <int min="">
                 <property required="no">
                   <keyword>id3s=</keyword>
                   <value/>
-                  <default/>
+                  <default>1</default>
                 </property>
               </int>
             </parameter>
@@ -511,20 +500,14 @@
                 <property required="no">
                   <keyword>if3s=</keyword>
                   <value/>
-                  <default/>
+                  <default>0</default>
                 </property>
               </int>
             </parameter>
             <parameter>
               <label>Number of samples selected</label>
-              <float>
-                <property required="no">
-                  <keyword>n3s=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              
+            <int><property required="no"><keyword>n3s=</keyword><value/><default/></property></int></parameter>
             <parameter>
               <label>Indices of samples selected</label>
               <int>
@@ -538,7 +521,7 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of samples</label>
+              <label>Index of first sample selected</label>
               <int>
                 <property required="no">
                   <keyword>n3=</keyword>
@@ -592,3 +575,4 @@
     </parameters>
   </program>
 </flow>
+ 
