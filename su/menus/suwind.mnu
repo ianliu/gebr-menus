@@ -54,6 +54,7 @@
 
           <p>GêBR core team</p>
 	  <p>Aug 10, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>	
+	  <p>Aug 10, 2010: modified by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>	
           <!-- end cpy -->
         </div>
 
@@ -86,7 +87,7 @@
   </dict>
   <date>
     <created>2007-08-26T15:00:00Z</created>
-    <modified>2010-08-06T00:43:09.019426Z</modified>
+    <modified>2010-08-10T17:52:10.470280Z</modified>
     <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
@@ -97,7 +98,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Window</title>
     <binary>suwind</binary>
@@ -166,19 +167,19 @@
           <li><span class="label">Time window control</span>
 	  <ul><br />
 	    <li><span class="label">Number of time samples to pass</span></li>
-	    <li><span class="label">Time sampling interval (sec)</span></li>  
-	    <li><span class="label">First sample</span></li>
+	    <li><span class="label">Time sampling interval (sec)</span><br/>The default value for this parameter is set from header</li>  
+	    <li><span class="label">First sample</span><br/>The default value for this parameter is set from header</li>
 	    <li><span class="label">Minimun time to pass</span><p>The default value for this parameter is 0.0</p></li>
-	    <li><span class="label">Maximun time to pass</span><p>The default value for this parameter is from header</p></li>
+	    <li><span class="label">Maximun time to pass</span><p>The default value for this parameter is set from header</p></li>
 	    <li><span class="label">Minimun time sample to pass</span><p>The default value for this parameter is 0</p></li>
-	    <li><span class="label">Maximun time sample to pass</span><p>The default value for this parameter is from header</p></li>
+	    <li><span class="label">Maximun time sample to pass</span><p>The default value for this parameter is set from header</p></li>
 	  </ul></li>
 
           <li><span class="label">Special selection options</span>
 	  <ul><br />
             <li><span class="label">Take absolute value of the key header word</span></li>
-	    <li><span class="label">Pass every j-th trace based at s (j value)</span><p>The default value for this parameter is 1</p></li>
- 	    <li><span class="label">Pass every j-th trace based at s (s value)</span><p>The default value for this parameter is 0</p></li>
+	    <li><span class="label">J value - Pass every j-th trace based at s (if ((key - s)%j) == 0)</span><p>The default value for this parameter is 1</p></li>
+ 	    <li><span class="label">S value - Pass every j-th trace based at s (if ((key - s)%j) == 0)</span><p>The default value for this parameter is 0</p></li>
   	    <li><span class="label">Number of initial traces to skip</span><p>The default value for this parameter is 0</p></li>
        	    <li><span class="label">Maximun number of skipped traces</span></li>
   	    <li><span class="label">Skip traces with specified key values</span></li>
@@ -201,50 +202,71 @@
 	  <a name="notes"></a>
           <h2>Notes</h2>
 
-	  <p>On large data sets, the count parameter should be set if	
+	  <p>On large data sets, the parameter <strong>Maximun number of skipped traces</strong> should be set if	
 	possible.  Otherwise, every trace in the data set will be	
-	examined.  However, the count parameter overrides the accept    
-	parameter, so you can't specify count if you want true		
-	unconditional acceptance.</p>					
+	examined.  However, the parameter <strong>Maximun number of skipped traces</strong> overrides the accept    
+	parameter, so you can't specify <strong>Maximun number of skipped traces</strong> if you want true		
+	unconditional acceptance.</p>	
 
-	<p>The accept option is a bit strange--it does NOT mean accept ONLY
+	<p> The <strong>Skip traces with specified key values</strong> option allows the user to skip over traces, which helps for selecting traces far from the beginning of the dataset.</p>			
+
+	<p>The <strong>Set order</strong> option will speed up the process if the data are sorted in according to the key.</p>
+
+	<p>The <strong>Pass traces with specified key values</strong> option is a bit strange - it does NOT mean accept ONLY
 	the traces on the accept list!  It means accept these traces,   
-	even if they would otherwise be rejected (except as noted in the
-	previous paragraph).  To implement accept-only, you can use the 
-	max=0 option (rejecting everything).  For example, to accept    
-	only the tracl values 4, 5 and 6:<br />				
-		... | suwind max=0 accept=4,5,6 | ...</p>		   	
+	even if they would otherwise be rejected.  To implement accept-only, you can use the 
+	<strong>Maximun value of key header word to pass</strong> option (rejecting everything).  For example, to accept    
+	only the <strong>Trace number sequence within line</strong> values 4, 5 and 6, set the parameters as below:<br />
+	Header keyword to window on= Trace number sequence within line<br/>				
+	Maximun value of key header word to pass= 0<br/>
+	Pass traces with specified key values= 4, 5, 6
+</p>	   	
 
        <p>Another example is the case of suppressing nonseismic traces in 
        a seismic data set. By the SEGY standard header field trace id, 
-       trid=1 designates traces as being seismic traces. Other traces, 
+       <strong>Trace identification code</strong>=1 designates traces as being seismic traces. Other traces, 
        such as calibration traces may be designated by another value.  
-      	Example:  trid=1 seismic and trid=0 is nonseismic. To reject    
-       nonseismic traces<br />						
-	       ... | suwind key=trid reject=0 | ...</p>			
-
-	<p>On most 32 bit machines, LONG_MIN, LONG_MAX and ULONG_MAX are   
-	about -2E9,+2E9 and 4E9, they are defined in limits.h.</p>		
+      	Example:  <strong>Trace identification code</strong>=1 is seismic and <strong>Trace identification code</strong>=0 is nonseismic. To reject    
+       nonseismic traces:<br />						
+	Header keyword to window on= Trace identification code<br/>
+	Skip traces with specified key values= 0</p>			
 
 	<p>Selecting times beyond the maximum in the data induces		
-	zero padding (up to SU_NFLTS).</p>					
+	zero padding.</p>					
 
 	<p>The time gating here is to the nearest neighboring sample or    
 	time value. Gating to the exact temporal value requires	 	
 	resampling if the selected times fall between samples on the    
-	trace. Use suresamp to perform the time gating in this case.</p>    
+	trace. Use the menu <strong>SU Resample</strong> to perform the time gating in this case.</p>    
 
-	<p>It doesn't really make sense to specify both itmin and tmin,	
-	but specifying itmin takes precedence over specifying tmin.	
-	Similarly, itmax takes precedence over tmax and tmax over nt.	
-	If dt in header is not set, then dt is mandatory	</p>
+	<p>It doesn't really make sense to specify both <strong>Minimun time sample to pass</strong> and <strong>Minimun time to pass</strong>,	
+	but specifying <strong>Minimun time sample to pass</strong> takes precedence over specifying <strong>Minimun time to pass</strong>.	
+	Similarly, <strong>Maximun time sample to pass</strong> takes precedence over <strong>Maximun time sample to pass</strong> and <strong>Maximun time sample to pass</strong> over <strong>Number of time samples to pass</strong>.</p>
+
+<p>This program accesses the following header keywords
+  <ul>
+    <li>Number of samples</li>  <!-- ns -->
+    <li>Sample interval in microseconds</li>  <!-- dt -->
+    <li>Delay recording time in microseconds</li>  <!-- delrt -->
+    <li>Header keyword</li>
+  </ul>
+</p>
+
+<p>This program modifies the following header keywords
+  <ul>
+    <li>Number of samples</li>  <!-- ns -->
+    <li>Delay recording time in microseconds</li>  <!-- delrt -->
+    <li>Number of traces</li>  <!-- ntr -->
+  </ul>
+</p>
 
 	  <a name="credits"></a>
 	  <h2>Credits</h2>
           <!-- begin cpy -->
 	  <p>SEP: Einar Kjartansson<br />
              CWP: Shuki Ronen, Jack Cohen, Chris Liner<br />
-             Warnemuende: Toralf Foerster</p>
+             Warnemuende: Toralf Foerster<br/>
+	     CENPET: Werner M. Heigl</p>
 
           <!-- end cpy -->
         </div>
@@ -284,7 +306,7 @@
       
       <parameter>
         <label>Header keyword to windown on</label>
-        <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default/></property>
+        <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default>tracl</default></property>
       <option><label>Alias filter frequency if used</label><value>afilf</value></option>
       <option><label>Alias filter slope</label><value>afils</value></option>
       <option><label>Alignment padding</label><value>shortpad</value></option>
@@ -369,11 +391,11 @@
       <parameter><label>Time window control</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Number of time samples to pass</label><int><property required="no"><keyword>nt=</keyword><value/><default/></property>
       </int></parameter><parameter><label>Time sampling interval (sec)</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
       </float></parameter><parameter><label>First sample</label><float><property required="no"><keyword>f1=</keyword><value/><default/></property>
-      </float></parameter><parameter><label>Minimun time to pass</label><float><property required="no"><keyword>tmin=</keyword><value/><default/></property>
+      </float></parameter><parameter><label>Minimun time to pass</label><float><property required="no"><keyword>tmin=</keyword><value/><default>0.0</default></property>
       </float></parameter><parameter><label>Maximun time to pass</label><float><property required="no"><keyword>tmax=</keyword><value/><default/></property>
-      </float></parameter><parameter><label>Minimun time sample to pass</label><int><property required="no"><keyword>itmin=</keyword><value/><default/></property>
+      </float></parameter><parameter><label>Minimun time sample to pass</label><int><property required="no"><keyword>itmin=</keyword><value/><default>0</default></property>
       </int></parameter><parameter><label>Maximun time sample to pass</label><int><property required="no"><keyword>itmax=</keyword><value/><default/></property>
-      </int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Number of time samples to pass</label><int><property required="no"><keyword>nt=</keyword><value/><default/></property>
+      </int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Minimun time sample to pass</label><int><property required="no"><keyword>nt=</keyword><value/><default/></property>
       </int></parameter><parameter><label>Time sampling interval (sec)</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
       </float></parameter><parameter><label>First sample</label><float><property required="no"><keyword>f1=</keyword><value/><default/></property>
       </float></parameter><parameter><label>Minimun time to pass</label><float><property required="no"><keyword>tmin=</keyword><value/><default/></property>
@@ -382,13 +404,13 @@
       </int></parameter><parameter><label>Maximun time sample to pass</label><int><property required="no"><keyword>itmax=</keyword><value/><default/></property>
       </int></parameter></parameters></group></parameter>
       <parameter><label>Special selection options</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Take absolute value of the key header word</label><flag><property required="no"><keyword>abs=1</keyword><value>off</value><default>off</default></property>
-      </flag></parameter><parameter><label>Pass every j-th trace based at s (if ((key - s)%j) == 0) (j value)</label><int><property required="no"><keyword>j=</keyword><value/><default/></property>
-      </int></parameter><parameter><label>Pass every j-th trace based at s (if ((key - s)%j) == 0) (s value)</label><int><property required="no"><keyword>s=</keyword><value/><default/></property>
-      </int></parameter><parameter><label>Number of initial traces to skip</label><int><property required="no"><keyword>skip=</keyword><value/><default/></property>
+      </flag></parameter><parameter><label>J value - Pass every j-th trace based at s (if ((key - s)%j) == 0)</label><int><property required="no"><keyword>j=</keyword><value/><default>1</default></property>
+      </int></parameter><parameter><label>S value - Pass every j-th trace based at s (if ((key - s)%j) == 0)</label><int><property required="no"><keyword>s=</keyword><value/><default>0</default></property>
+      </int></parameter><parameter><label>Number of initial traces to skip</label><int><property required="no"><keyword>skip=</keyword><value/><default>0</default></property>
       </int></parameter><parameter><label>Maximun number of skipped traces</label><int><property required="no"><keyword>count=</keyword><value/><default/></property>
-      </int></parameter><parameter><label>Skip traces with specified key values</label><int><property required="no"><keyword>reject=</keyword><value/><default/></property>
-      </int></parameter><parameter><label>Pass traces with specified key values (see help)</label><int><property required="no"><keyword>accept=</keyword><value/><default/></property>
-      </int></parameter><parameter><label>Sort order</label><enum><property required="no"><keyword>ordered=</keyword><value/><default/></property><option><label>increasing in keyword value</label><value>1</value></option><option><label>decreasing in keyword value</label><value>-1</value></option></enum></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Take absolute value of the key header word</label><flag><property required="no"><keyword>abs=1</keyword><value>off</value><default>off</default></property>
+      </int></parameter><parameter><label>Skip traces with specified key values</label><int><property required="no" separator=","><keyword>reject=</keyword><value/><default/></property>
+      </int></parameter><parameter><label>Pass traces with specified key values (see help)</label><int><property required="no" separator=","><keyword>accept=</keyword><value/><default/></property>
+      </int></parameter><parameter><label>Sort order</label><enum><property required="no"><keyword>ordered=</keyword><value/><default/></property><option><label>increasing in keyword value</label><value>1</value></option><option><label>decreasing in keyword value</label><value>-1</value></option></enum></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Pass traces with specified key values (see help)</label><flag><property required="no"><keyword>abs=1</keyword><value>off</value><default>off</default></property>
       </flag></parameter><parameter><label>Pass every j-th trace based at s (if ((key - s)%j) == 0) (j value)</label><int><property required="no"><keyword>j=</keyword><value/><default/></property>
       </int></parameter><parameter><label>Pass every j-th trace based at s (if ((key - s)%j) == 0) (s value)</label><int><property required="no"><keyword>s=</keyword><value/><default/></property>
       </int></parameter><parameter><label>Number of initial traces to skip</label><int><property required="no"><keyword>skip=</keyword><value/><default/></property>
@@ -399,3 +421,4 @@
     <parameter><label>Echoes information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
   </program>
 </flow>
+ 
