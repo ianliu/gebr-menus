@@ -56,6 +56,7 @@
 	  <!-- begin cpy -->
 	  
           <p>Nov 19, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 10, 2010: modified by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
 	  
         </div>
@@ -92,7 +93,7 @@
   </dict>
   <date>
     <created>2009-11-19T17:18:39.106781Z</created>
-    <modified>2010-08-06T00:43:05.467007Z</modified>
+    <modified>2010-08-10T19:29:45.604818Z</modified>
     <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
@@ -103,7 +104,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Interpolate</title>
     <binary>suinterp</binary>
@@ -168,18 +169,21 @@
 		The default value for this parameter is 500</li>
 
               <li><span class="label">Starting corner frequency of unaliased range</span><br/>
-		The default value for this parameter is 4.</li>
+		The default value for this parameter is 4.0</li>
 
               <li><span class="label">Ending corner frequency of unaliased range</span><br/>
-		The default value for this parameter is 20.</li>
+		The default value for this parameter is 20.0</li>
 
               <li><span class="label">Take vertical derivative on pick section</span><br/>
 		This parameter is useful if interpolating velocities instead of seismic</li>
 
-              <li><span class="label">Linear temporal interpolation</span><br/>
-		The default for this flag means use 8 point sinc temporal interpolation</li>
+              <li><span class="label">Method to compute temporal interpolation</span><br/>
+		<ul>
+	<li>8 point sinc</li>
+	<li>Linear<br/>(useful if interpolating velocities instead of seismic)</li>
+		</ul></li>
 
-              <li><span class="label">Nnumber of time samples to smooth for dip estimate</span><br/>
+              <li><span class="label">Number of time samples to smooth for dip estimate</span><br/>
 		The default value for this parameter is 5</li>
 
               <li><span class="label">Number of traces to smooth for dip estimate</span><br/>
@@ -188,20 +192,22 @@
               <li><span class="label">Number of ms agc for dip estimate</span><br/>
 		The default value for this parameter is 400</li>
 
-              <li><span class="label">Compute spatial derivative via differences</span>(will work on irregulary spaced data)<br/>
-		The default for this flag compute spatial derivative via FFT (assumes input traces regularly spaced and relatively	
-                  noise-free)</li>
+              <li><span class="label">Method to compute spatial derivative</span><br/>
+		<ul>
+	<li>FFT<br/>(assumes input traces regularly spaced and relatively noise-free)</li>
+	<li>Differences<br/>(will work on irregulary spaced data)</li>
+		</ul></li>
 
               <li><span class="label">Interpolation options</span><br/>
 		<ul>
 		  <li>Interpolate</li>
-		  <li>Output low-pass model (useful for QC if interpolator failing)</li>
+		  <li>Output low-pass model<br/>(useful for QC if interpolator failing)</li>
 		  <li>Output dip picks in units of samples/trace</li>
 		</ul></li>
 
               <li><span class="label">Echoes information</span><br/></li>
 
-              <li><span class="label">Use the value as a directory path prefix for storing temporary files</span><br/></li>
+              <li><span class="label">Directory for storing temporary files</span><br/></li>
 
             </ul>
             <!-- end lst -->
@@ -213,11 +219,10 @@
 	  <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>This program outputs 'ninterp' interpolated traces between each pair of
-	 input traces.  The values for lagc, freq1, and freq2 are only used for
+          <p>This program outputs <strong>Number of traces to output between each pair of input traces</strong> interpolated traces.  The values for <strong>Number of ms agc for dip estimate</strong>, <strong>Starting corner frequency of unaliased range</strong>, and <strong>Ending corner frequency of unaliased range</strong> are only used for
  	event tracking. The output data will be full bandwidth with no agc.  The
 	default parameters typically will do a satisfactory job of interpolation
- 	for dips up to about 12 ms/trace.  Using a larger value for freq2 causes
+ 	for dips up to about 12 ms/trace.  Using a larger value for <strong>Ending corner frequency of unaliased range</strong> causes
  	the algorithm to do a better job on the shallow dips, but to fail on the
  	steep dips.  Only one dip is assumed at each time sample between each pair
  	of input traces.</p>							
@@ -225,8 +230,8 @@
  	<p>The key assumption used here is that the low frequency data are unaliased
  	and can be used for event tracking. Those dip picks are used to interpolate
  	the original full-bandwidth data, giving some measure of interpolation
- 	at higher frequencies which otherwise would be aliased.  Using iopt equal
- 	to 1 allows you to visually check whether the low-pass picking model is
+ 	at higher frequencies which otherwise would be aliased.  Using <strong>Interpolation options</strong> equal
+ 	to <strong>Output low-pass model</strong> allows you to visually check whether the low-pass picking model is
  	aliased.</p>								
 
  	<p>Trace headers for interpolated traces are not updated correctly.	
@@ -236,7 +241,7 @@
 
  	<p>The place this code is most likely to fail is on the first breaks.</p>
 
-          <p>This program access the following header keywords
+          <p>This program accesses the following header keywords
           <ul>
             <li>Number of samples         </li> <!-- ns   -->
             <li>Sample interval in microseconds</li> <!-- dt -->
@@ -291,7 +296,7 @@
           <property required="no">
             <keyword>ninterp=</keyword>
             <value/>
-            <default/>
+            <default>1</default>
           </property>
         </int>
       </parameter>
@@ -301,7 +306,7 @@
           <property required="no">
             <keyword>nxmax=</keyword>
             <value/>
-            <default/>
+            <default>500</default>
           </property>
         </int>
       </parameter>
@@ -311,7 +316,7 @@
           <property required="no">
             <keyword>freq1=</keyword>
             <value/>
-            <default/>
+            <default>4.0</default>
           </property>
         </float>
       </parameter>
@@ -321,7 +326,7 @@
           <property required="no">
             <keyword>freq2=</keyword>
             <value/>
-            <default/>
+            <default>20.0</default>
           </property>
         </float>
       </parameter>
@@ -336,22 +341,16 @@
         </flag>
       </parameter>
       <parameter>
-        <label>Linear temporal interpolation</label>
-        <flag>
-          <property required="no">
-            <keyword>linear=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter>
+        <label>Method to compute temporal interpolation</label>
+        
+      <enum><property required="no"><keyword>linear=</keyword><value/><default>0</default></property><option><label>8 point sinc</label><value>0</value></option><option><label>Linear temporal interpolation</label><value>1</value></option></enum></parameter>
       <parameter>
-        <label>Nnumber of time samples to smooth for dip estimate</label>
+        <label>Number of time samples to smooth for dip estimate</label>
         <int>
           <property required="no">
             <keyword>lent=</keyword>
             <value/>
-            <default/>
+            <default>5</default>
           </property>
         </int>
       </parameter>
@@ -361,7 +360,7 @@
           <property required="no">
             <keyword>lenx=</keyword>
             <value/>
-            <default/>
+            <default>1</default>
           </property>
         </int>
       </parameter>
@@ -371,30 +370,24 @@
           <property required="no">
             <keyword>lagc=</keyword>
             <value/>
-            <default/>
+            <default>400</default>
           </property>
         </int>
       </parameter>
       <parameter>
-        <label>Compute spatial derivative via differences</label>
-        <flag>
-          <property required="no">
-            <keyword>xopt=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter>
+        <label>Method to compute spatial derivative</label>
+        
+      <enum><property required="no"><keyword>xopt=</keyword><value/><default>0</default></property><option><label>FFT</label><value>0</value></option><option><label>Differences</label><value>1</value></option></enum></parameter>
       <parameter>
         <label>Interpolation options</label>
         <enum>
           <property required="no">
             <keyword>iopt=</keyword>
             <value/>
-            <default/>
+            <default>0</default>
           </property>
           <option>
-            <label>Interrpolate</label>
+            <label>Interpolate</label>
             <value>0</value>
           </option>
           <option>
@@ -418,8 +411,8 @@
         </flag>
       </parameter>
       <parameter>
-        <label>Use the value as a directory path prefix for storing temporary files</label>
-        <file directory="yes">
+        <label>Directory for storing temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>tmpdir=</keyword>
             <value/>
@@ -430,3 +423,4 @@
     </parameters>
   </program>
 </flow>
+ 
