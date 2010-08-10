@@ -56,6 +56,7 @@
 	  <!-- begin cpy -->
 	  
           <p>Nov 25, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 10, 2010: modified by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
 	  
         </div>
@@ -92,7 +93,7 @@
   </dict>
   <date>
     <created>2009-11-25T17:11:34.880030Z</created>
-    <modified>2010-08-06T00:43:08.587045Z</modified>
+    <modified>2010-08-10T20:37:51.329574Z</modified>
     <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
@@ -103,7 +104,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU TX Taper</title>
     <binary>sutxtaper</binary>
@@ -207,16 +208,17 @@
 	  <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>Taper type is used for trace (x-domain) tapering as well 	
+          <p><strong>Taper type</strong> is used for trace (x-domain) tapering as well 	
   	 as for time domain tapering.<br />				
-   	The taper is applied to all traces >r1 (or key<min) and    
-   	>tr2 (or key >max) and all time samples <tbeg and >tend.<br />	
-   	Taper weights are amp*1 for traces n tr1 < n < tr2 and computed	
-   	for all other traces corresponding to the taper type.><br />	
+   	The taper is applied to all traces &lt;<strong>Number of traces to be tapered at begin</strong> (or <strong>Set key to compute x-domain taper weights</strong>&lt;<strong>Minimum value of key where taper starts</strong>) and    
+   	&gt;<strong>Number of traces to be tapered at end</strong> (or <strong>Set key to compute x-domain taper weights</strong>&gt;<strong>Maximum value of key where taper starts</strong>) and all time samples &lt;<strong>Length of taper (ms) at trace start</strong> and &gt;<strong>Length of taper (ms) at trace end</strong>.<br />
+	
+   	Taper weights are amp*1 for traces n <strong>Number of traces to be tapered at begin</strong> &lt; n &lt; <strong>Number of traces to be tapered at end</strong> and computed	
+   	for all other traces corresponding to the taper type.<br />	
    	If key is given the taper length is defined by dx, otherwise
-   	the length of taper is tr1 and (ntr-tr2) respectively.<br />	
-   	To eliminate the taper, choose tbeg=0. and tend=0. and tr1=0
-   	If key is set, min,max values take precedence over tr1,tr2.</p>
+   	the length of taper is <strong>Number of traces to be tapered at begin</strong> and (<strong>Number of traces</strong>-<strong>Number of traces to be tapered at end</strong>) respectively.<br />	
+   	To eliminate the taper, choose <strong>Length of taper (ms) at trace start</strong>=0. and <strong>Length of taper (ms) at trace end</strong>=0. and <strong>Number of traces to be tapered at begin</strong>=0
+   	If <strong>Set key to compute x-domain taper weights</strong> is set, <strong>Minimum value of key where taper starts</strong>, <strong>Maximum value of key where taper starts</strong> values take precedence over <strong>Number of traces to be tapered at begin</strong>, <strong>Number of traces to be tapered at end</strong>.</p>
 
           <p>This program access the following header keywords
           <ul>
@@ -274,7 +276,7 @@
           <property required="no">
             <keyword>low=</keyword>
             <value/>
-            <default/>
+            <default>0.0</default>
           </property>
         </float>
       </parameter>
@@ -284,7 +286,7 @@
           <property required="no">
             <keyword>tbeg=</keyword>
             <value/>
-            <default/>
+            <default>0</default>
           </property>
         </int>
       </parameter>
@@ -294,7 +296,7 @@
           <property required="no">
             <keyword>tend=</keyword>
             <value/>
-            <default/>
+            <default>0</default>
           </property>
         </int>
       </parameter>
@@ -304,7 +306,7 @@
           <property required="no">
             <keyword>taper=</keyword>
             <value/>
-            <default/>
+            <default>1</default>
           </property>
           <option>
             <label>Linear</label>
@@ -422,7 +424,7 @@
           <property required="no">
             <keyword>tr1=</keyword>
             <value/>
-            <default/>
+            <default>0</default>
           </property>
         </int>
       </parameter>
@@ -442,7 +444,7 @@
           <property required="no">
             <keyword>min=</keyword>
             <value/>
-            <default/>
+            <default>0</default>
           </property>
         </float>
       </parameter>
@@ -452,7 +454,7 @@
           <property required="no">
             <keyword>max=</keyword>
             <value/>
-            <default/>
+            <default>0</default>
           </property>
         </float>
       </parameter>
@@ -462,7 +464,7 @@
           <property required="no">
             <keyword>dx=</keyword>
             <value/>
-            <default/>
+            <default>1.0</default>
           </property>
         </float>
       </parameter>
@@ -478,3 +480,4 @@
 </parameter></parameters>
   </program>
 </flow>
+ 
