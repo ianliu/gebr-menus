@@ -51,8 +51,9 @@
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-          <p>GêBR core team</p>
-	  <p>Aug 06, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+          <p>Sep 27, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>
+	  <p>Aug 06, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrprojct.com&gt;</p>
+	  <p>Aug 11, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrprojct.com&gt;</p>
           <!-- end cpy -->
         </div>
 
@@ -70,7 +71,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 06, 2009 </span>
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 11, 2010 </span>
 
         <div class="clearer"></div>
       </div>
@@ -86,7 +87,7 @@
   </dict>
   <date>
     <created>2007-09-27T15:00:00Z</created>
-    <modified>2010-08-06T00:43:08.407550Z</modified>
+    <modified>2010-08-11T14:56:45.778595Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -97,7 +98,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Taper</title>
     <binary>sutaper</binary>
@@ -148,12 +149,12 @@
           <div class="parameters">
 
 	  <a name="par"></a>
-	  <h2>Optional parameters</h2>
+	  <h2>Parameters</h2>
 	  
 	  <!-- begin lst -->
             <ul>
 	  
-	  <li><span class="label">Number of traces</span><br /> If the number of traces is not set, then this parameter is mandatory</li>
+	  <li><span class="label">Number of traces</span><br /> If the number of traces is not set on header, then this parameter is mandatory.</li>
 
           <li><span class="label">Number of traces to be tapered at begining</span></li>
 
@@ -161,11 +162,11 @@
 
           <li><span class="label">Minimum amplitude factor</span></li>
 
-          <li><span class="label">Length of taper at trace start</span><br />Taper (ms)</li>
+          <li><span class="label">Length of taper at trace start</span><br />Taper in ms.</li>
 
-          <li><span class="label">Length of taper at trace end</span><br />Taper (ms)</li>
+          <li><span class="label">Length of taper at trace end</span><br />Taper in ms.</li>
 
-          <li><span class="label">Type of taper]</span>
+          <li><span class="label">Type of taper</span>
 		<ul>
 		<li>Linear (Default)</li>
 		<li>Sine</li>
@@ -183,13 +184,21 @@
 	  <a name="notes"></a>
           <h2>Notes</h2>
 
-	  <p>To eliminate the taper, choose length of taper at trace start=0 and length of taper at trace end=0 and number of traces on the begining=0</p>
+	  <p>To eliminate the taper, set parameters <b>Length of taper at trace start</b>, <b>Length of taper at trace end</b> and 
+	  <b>Number of traces on the begining</b>, with value 0.</p>
+
+	  <p>This program accesses the following header keywords:
+	    <ul>
+	       <li>Number of samples,</li>  <!-- ns -->
+	       <li>Number of traces.</li>  <!-- ntr -->
+	    </ul>
+	  </p>
 
 	  <a name="credits"></a>
 	  <h2>Credits</h2>
           <!-- begin cpy -->
-	  <p>CWP: Shuki, Jack <br />
-             CENPET: Werner M. Heigl - added repeat trace functionality</p>
+	  <p>CWP: Chris Liner, Jack K. Cohen.<br />
+             Rewrite: Tagir Galikeev, October 2002.</p>
 
           <!-- end cpy -->
         </div>
@@ -246,19 +255,19 @@
         
         
       </float></parameter>
-      <parameter><label>Length of taper at trace start</label><float><property required="no"><keyword>tbeg=</keyword><value/><default/></property>
+      <parameter><label>Length of taper at trace start</label><float><property required="no"><keyword>tbeg=</keyword><value/><default></default></property>
         
         
         
       </float></parameter>
-      <parameter><label>Length of taper at trace end</label><float><property required="no"><keyword>tend=</keyword><value/><default/></property>
+      <parameter><label>Length of taper at trace end</label><float><property required="no"><keyword>tend=</keyword><value/><default></default></property>
         
         
         
       </float></parameter>
       <parameter><label>Type of taper</label><enum><property required="no"><keyword>taper=</keyword><value/><default>1</default></property><option><label>Linear</label><value>1</value></option><option><label>Sine</label><value>2</value></option><option><label>Cosine</label><value>3</value></option><option><label>Gaussian (+/- 3.8)</label><value>4</value></option><option><label>Gaussian (+/- 2.0)</label><value>5</value></option></enum></parameter>
     <parameter>
-<label>Echoes information</label>
+<label>Echoes extra information</label>
 <flag>
 <property required="no">
 <keyword>verbose=1</keyword>
@@ -269,3 +278,4 @@
 </parameter></parameters>
   </program>
 </flow>
+ 
