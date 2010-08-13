@@ -56,6 +56,7 @@
 	  <!-- begin cpy -->
 	  
           <p>Nov 17, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 13, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
 	  
         </div>
@@ -76,7 +77,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Nov 17, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 13, 2010</span>
 
         <div class="clearer"></div>
       </div>
@@ -92,7 +93,7 @@
   </dict>
   <date>
     <created>2009-11-17T14:02:28.187849Z</created>
-    <modified>2010-08-06T00:43:04.959691Z</modified>
+    <modified>2010-08-13T17:10:15.184322Z</modified>
     <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
@@ -103,7 +104,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Flip</title>
     <binary>suflip</binary>
@@ -161,7 +162,7 @@
 
 	      
 	    <!-- begin lst --><ul>
-              <li><span class="label">Rotational sense of flip</span><br/>
+              <li><span class="label">Rotational sense of flip</span>
 		<ul>
 		  <li>Flip 90 deg clockwise</li>
 		  <li>Flip 90 deg counter-clockwise</li>
@@ -170,9 +171,9 @@
 		  <li>Flip top-to-bottom</li>
 		</ul></li>
 
-              <li><span class="label">Use the value as a directory path prefix for storing temporary files</span><br/></li>
+              <li><span class="label">Path prefix for temporary files</span></li>
 
-              <li><span class="label">Echoes information</span><br/></li>
+              <li><span class="label">Echoes extra information</span></li>
 
             </ul>
             <!-- end lst -->
@@ -184,22 +185,23 @@
 	  <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>Trace <b>Sample interval in microseconds</b> of header field is lost if value of <b>Rotational sense of flip</b> is -1 or +1.  It can be	
-        	reset using SU Set Header.</p>
+          <p>Trace "Sample interval in microseconds" of header field is lost if options of parameter <b>Rotational sense of flip</b> 
+	   is <b>Flip 90 deg counter-clockwise</b> or <b>Flip 90 deg clockwise</b>.<br/>
+	    It can be reset using program <b>SU Set Header</b>.</p>
 
 
-          <p>This program access the following header keywords
+          <p>This program accesses the following header keywords:
           <ul>
-            <li>Number of samples         </li> <!-- ns   -->
-            <li>Sample interval in microseconds</li> <!-- dt -->
+            <li>Number of samples,</li> <!-- ns   -->
+            <li>Sample interval in microseconds.</li> <!-- dt -->
           </ul>
           </p>    
 
-          <p>This program modified the following header keywords
+          <p>This program modifies the following header keywords:
           <ul>
-            <li>Number of samples         </li> <!-- ns   -->
-            <li>Sample interval in microseconds</li> <!-- dt -->
-            <li>Trace number sequence within line</li> <!-- tracl -->
+            <li>Number of samples,</li> <!-- ns   -->
+            <li>Sample interval in microseconds,</li> <!-- dt -->
+            <li>Trace number sequence within line.</li> <!-- tracl -->
           </ul>
           </p>  
 
@@ -251,7 +253,7 @@
           <property required="no">
             <keyword>flip=</keyword>
             <value/>
-            <default/>
+            <default>1</default>
           </property>
           <option>
             <label>Flip 90 deg clockwise</label>
@@ -276,8 +278,8 @@
         </enum>
       </parameter>
       <parameter>
-        <label>Use the value as a directory path prefix for storing temporary files</label>
-        <file directory="yes">
+        <label>Path prefix for temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>tmpdir=</keyword>
             <value/>
@@ -286,7 +288,7 @@
         </file>
       </parameter>
       <parameter>
-        <label>Echoes information</label>
+        <label>Echoes extra information</label>
         <flag>
           <property required="no">
             <keyword>verbose=1</keyword>
@@ -298,3 +300,4 @@
     </parameters>
   </program>
 </flow>
+ 
