@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow version="0.3.5">
   <title>SU Sort</title>
-  <description>Sort on any segy header keywords</description>
+  <description>Sort on any SEG-Y header keywords</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -27,7 +27,7 @@
 
           <div class="description">
            <!-- begin des -->
-            Sort on any segy header keywords
+            Sort on any SEG-Y header keywords
            <!-- end des -->
           </div>
         </div>
@@ -53,6 +53,7 @@
 
           <p>Mar 21, 2009: created by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
 	  <p>Jul 30, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
+	  <p>Aug 15, 2010: modified by Gabriel S. Sobral, UNICAMP, sobral@gebrproject.com</p>
           <!-- end cpy -->
         </div>
 
@@ -86,7 +87,7 @@
   </dict>
   <date>
     <created>2007-10-08T15:00:00Z</created>
-    <modified>2010-08-06T00:43:07.809836Z</modified>
+    <modified>2010-08-15T23:30:25.221883Z</modified>
     <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
@@ -97,11 +98,11 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Sort</title>
     <binary>susort</binary>
-    <description>Sort on any segy header keywords</description>
+    <description>Sort on any SEG-Y header keywords</description>
     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -180,12 +181,19 @@
           Therefore this program must be or on the begining of flow, where it
           reads from the disk, or at the end, where is writes to the disk.</p>
 
+<p>This program modifies the following header keywords
+  <ul>
+    <li>Trace number sequence within line</li>  <!-- tracl -->
+    <li>Trace number sequence within reel</li> <!-- tracr -->
+  </ul>
+</p>
+
 	  <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-          <p>SEP: Einar, Stew<br />
-             CWP: Shuki, Jack</p>
+          <p>SEP: Einar Kjartansson , Stew Levin<br />
+             CWP: Shuki Ronen,  Jack K. Cohen</p>
           <!-- end cpy -->
         </div>
 
@@ -560,3 +568,4 @@
       <reference><property required="no"><keyword/><value/><default>offset</default></property></reference></parameter></parameters></group></parameter></parameters>
   </program>
 </flow>
+ 
