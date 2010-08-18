@@ -57,6 +57,7 @@
 	  <!-- begin cpy -->
 	  
           <p>Oct 23, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 18, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
 	  
         </div>
@@ -77,7 +78,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Oct 23, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 18, 2010</span>
 
         <div class="clearer"></div>
       </div>
@@ -93,7 +94,7 @@
   </dict>
   <date>
     <created>2009-10-23T17:48:17.324432Z</created>
-    <modified>2010-08-06T00:43:10.198637Z</modified>
+    <modified>2010-08-18T14:45:18.565513Z</modified>
     <lastrun/>
   </date>
   <category>Data Compression</category>
@@ -104,7 +105,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>WP Compress</title>
     <binary>wptcomp</binary>
@@ -162,21 +163,33 @@
 
 	      
 	    <!-- begin lst --><ul>
-              <li class="req"><span class="reqlabel">Number of samples in the fast (first) dimension</span><br/> </li>
+              <li class="req"><span class="reqlabel">Number of samples in the fast (first) dimension</span></li>
 
-              <li class="req"><span class="reqlabel">Number of samples in the slow (second) dimension</span><br/> </li>
+              <li class="req"><span class="reqlabel">Number of samples in the slow (second) dimension</span></li>
 
-              <li><span class="label">Number of filters in direction 1</span><br/>
-		The default value for this parameter is 11 </li>
+              <li class="group"><span class="grouplabel">Filter properties on fast dimension</span>
+              <ul>
+                
+                <li><span class="label">Number of filters</span><br/>
+		        The default value for this parameter is 11 </li>
 
-              <li><span class="label">Number of filters in direction 2</span><br/>
-		The default value for this parameter is 11 </li>
+                <li><span class="label">filter stages</span><br/>
+		        Automatically set based on Number of samples in fast dimension </li>
 
-              <li><span class="label">filter stages in fast dimension</span><br/>
-		Automatically set based on Number of samples in fast dimension </li>
+            </ul></li>
 
-              <li><span class="label">filter stages in slow dimension</span><br/> 
-		Automatically set based on Number of samples in slow dimension </li>
+
+              <li class="group"><span class="grouplabel">Filter properties on slow dimension</span>
+                <ul>
+
+
+                <li><span class="label">Number of filters</span><br/>
+		        The default value for this parameter is 11 </li>
+
+                <li><span class="label">filter stages</span><br/> 
+		        Automatically set based on Number of samples in slow dimension </li>
+            </ul></li>
+
 
               <li><span class="label">Acceptable error</span><br/>
 		The default value for this parameter is 0.01 </li>
@@ -247,8 +260,9 @@
           </property>
         </int>
       </parameter>
-      <parameter>
-        <label>Number of filters in direction 1</label>
+      
+      <parameter><label>Filters properties on fast dimension</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
+        <label>Number of filters</label>
         <int>
           <property required="no">
             <keyword>nfilter1=</keyword>
@@ -256,19 +270,8 @@
             <default/>
           </property>
         </int>
-      </parameter>
-      <parameter>
-        <label>Number of filters in direction 2</label>
-        <int>
-          <property required="no">
-            <keyword>nfilter2=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter>
-      <parameter>
-        <label>Filter stages in fast dimension</label>
+      </parameter><parameter>
+        <label>Filter stages</label>
         <int>
           <property required="no">
             <keyword>nstage1=</keyword>
@@ -276,9 +279,23 @@
             <default/>
           </property>
         </int>
-      </parameter>
-      <parameter>
-        <label>Filter stages in slow dimension</label>
+      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        <label>Filter stages</label>
+        
+      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
+        <label>Filter stages in fast dimension</label>
+        
+      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group></parameter><parameter><label>Filters properties on slow dimension</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
+        <label>Number of filters</label>
+        <int>
+          <property required="no">
+            <keyword>nfilter2=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter><parameter>
+        <label>Filter stages</label>
         <int>
           <property required="no">
             <keyword>nstage2=</keyword>
@@ -286,7 +303,15 @@
             <default/>
           </property>
         </int>
-      </parameter>
+      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        <label>Filter stages</label>
+        
+      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
+        <label>Filter stages in slow dimension</label>
+        
+      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group></parameter>
+      
+      
       <parameter>
         <label>Acceptable error</label>
         <float>
@@ -300,3 +325,4 @@
     </parameters>
   </program>
 </flow>
+ 
