@@ -51,9 +51,10 @@
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-          <p>G&ecirc;BR core team</p>
-	  <p>Aug 10, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
-          <!-- end cpy -->
+      <p>Oct 17, 2007: written by G&ecirc;BR core team &lt;port@gebrproject.com&gt;</p>
+	  <p>Aug 10, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+	  <p>Aug 20, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+      <!-- end cpy -->
         </div>
 
         <div class="navigation">
@@ -69,7 +70,7 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 10, 2009</span>
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 20, 2010</span>
 
         <div class="clearer"></div>
       </div>
@@ -85,7 +86,7 @@
   </dict>
   <date>
     <created>2007-10-17T15:00:00Z</created>
-    <modified>2010-08-06T00:43:08.919505Z</modified>
+    <modified>2010-08-20T15:06:42.437301Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -96,7 +97,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Weight</title>
     <binary>suweight</binary>
@@ -131,7 +132,7 @@
 
       <div class="category">
         <!-- begin cat -->
-        Utilities | Seismic Unix
+        Seismic Unix | Utilities 
         <!-- end cat -->
       </div>
 
@@ -152,21 +153,24 @@
 	  <!-- begin lst -->
             <ul>
 	  
-	  <li><span class="label">Keyword of header field to weight traces by</span>
-	    <p>See help of menu SU Set Header</p></li>
+	  <li><span class="label">Header word to weight traces by</span><br/>
+	    See help of menu <b>SU Set Header</b> for more information.</li>
 	
-	  <li><span class="label">Constant weighting parameter</span>
-	    <p>The default value fot this parameter is 1.0</p></li>
+	  <li><span class="label">Constant parameter for weighting</span></li>
 
-	  <li><span class="label">variable weighting parameter</span>
-	    <p>The default value for this parameter is .0005</p></li>
+	  <li><span class="label">Linear parameter for weighting</span></li>
 
-	  <li><span class="label">Keyword of header field to draw weights from</span>
-	    <p>See help of menu SU Set Header</p></li>
+      <li class="group"><span class="grouplabel">Alternative weigth definition</span>
+      <ul>
+	    <li><span class="label">Header word to draw weights from</span><br/>
+	    See help of menu <b>SU Set Header</b> for more information.</li>
 
-	  <li><span class="label">Scale factor to apply to header field values</span>
-	    <p>The default value for this parameter is .0001</p></li>
-	
+	    <li><span class="label">Scale factor to apply to header field values</span></li>
+        
+      </ul></li>
+
+	    <li><span class="label">Weigth by inverse of header value</span></li>
+      
         </ul>
 
 	  <!-- end lst -->
@@ -184,7 +188,7 @@
            <p>The default form of the weighting is to multiply the amplitudes of thetraces by a factor of:
               (a +b*keyword).</p>
 
-           <p>If key2=  header field is  set then this program uses the weighting values read from that header field, instead. Note, that because most header fields are integers, the scale=.0001 permits 10001 in the header to represent 1.0001.</p>
+           <p>If parameter <b>Header word to draw weights from</b> header field is set then this program uses the weighting values read from that header field, instead. Note, that because most header fields are integers, the parameter <b>Scale factor to apply to header field values</b> equal a .0001 permits 10001 in the header to represent 1.0001.</p>
 
 	  <a name="credits"></a>
 	  <h2>Credits</h2>
@@ -311,12 +315,12 @@
       <option><label>Y source coordinate</label><value>sy</value></option>
       <option><label>Year data recorded</label><value>year</value></option>
       </enum>
-      </parameter><parameter><label>Constant parameter for weighting</label><float><property required="no"><keyword>a=</keyword><value/><default/></property>
+      </parameter><parameter><label>Constant parameter for weighting</label><float><property required="no"><keyword>a=</keyword><value/><default>1.0</default></property>
         
         
         
       </float></parameter>
-      <parameter><label>Linear parameter for weighting</label><float><property required="no"><keyword>b=</keyword><value/><default/></property>
+      <parameter><label>Linear parameter for weighting</label><float><property required="no"><keyword>b=</keyword><value/><default>.0005</default></property>
         
         
         
@@ -406,12 +410,12 @@
       <option><label>Y source coordinate</label><value>sy</value></option>
       <option><label>Year data recorded</label><value>year</value></option>
       </enum>
-      </parameter><parameter><label>Scale factor to apply to header field values</label><float><property required="no"><keyword>scale=</keyword><value/><default/></property>
+      </parameter><parameter><label>Scale factor to apply to header field values</label><float><property required="no"><keyword>scale=</keyword><value/><default>.0001</default></property>
         
         
         
       </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>Header word to draw weight from</label>
+        <label>Scale factor to apply to header field values</label>
         <enum><property required="no"><keyword>key2=</keyword><value>cdp</value><default/></property>
       <option><label>Alias filter frequency if used</label><value>afilf</value></option>
       <option><label>Alias filter slope</label><value>afils</value></option>
@@ -500,3 +504,4 @@
       </float></parameter></parameters></group></parameter><parameter><label>Weight by inverse of header value</label><flag><property required="no"><keyword>inv=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
   </program>
 </flow>
+ 
