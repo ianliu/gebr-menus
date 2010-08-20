@@ -53,6 +53,7 @@
 	  <!-- begin cpy -->
 	  
           <p>Apr 29, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 20, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
 	  
         </div>
@@ -74,7 +75,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Apr 29, 2010<!-- end ver --></span>
+		<!-- begin ver -->Aug 20, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -90,7 +91,7 @@
   </dict>
   <date>
     <created>2010-04-29T14:48:38.503725Z</created>
-    <modified>2010-08-06T00:43:07.749035Z</modified>
+    <modified>2010-08-20T15:36:33.749294Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -101,7 +102,7 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>SU Shift</title>
     <binary>sushift</binary>
     <description>Shifted/windowed traces in time</description>
@@ -183,7 +184,7 @@
           <p> 			
  	In the high resolution single channel seismic profiling the sample 	
  	interval is short, the shot rate and the number of samples are high.<br/>	
- 	To reduce the file size the "Delay recording time in ms" time is changed during a profiling	
+ 	To reduce the file size, use the option in header, "Delay recording time in ms", and time is changed during a profiling	
  	trip.<br> To process and display a seismic section a constant "Delay recording time in ms" is	
  	needed. This program does this job.</p>							
 
@@ -192,10 +193,10 @@
  	from the water bottom when created & which then need to have the 
  	water layer added.</p>
 
-	<p>This program accesses and modifies the following header keywords
+	<p>This program accesses and modifies the following header keywords:
 	  <ul>
-	    <li>Number of samples</li>  <!-- ns -->
-	    <li>Delay recording time in ms</li>  <!-- delrt -->
+	    <li>Number of samples,</li>  <!-- ns -->
+	    <li>Delay recording time in ms.</li>  <!-- delrt -->
 	  </ul>
 	</p>
 
@@ -299,3 +300,4 @@
     </parameters>
   </program>
 </flow>
+ 
