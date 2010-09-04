@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.5">
+  <title>SU TI Fowler</title>
+  <description>VTI constant velocity analysis via Fowler's method</description>
+  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>GêBR - SU TI Fowler</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU TI Fowler</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            VTI constant velocity analysis via Fowler's method
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat --><!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	VTI constant velocity prestack time migration velocity analysis via Fowler's method.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+	Credits</h2>
+<!-- begin cpy --><p>
+	Sep 04, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+	Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->Sep 04, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]></help>
+  <author>Davi Clemente</author>
+  <email>davi.clemente@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <date>
+    <created>2010-09-04T18:05:09.725710Z</created>
+    <modified>2010-09-04T20:13:29.091338Z</modified>
+    <lastrun/>
+  </date>
+  <category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <servers/>
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU TI Fowler</title>
+    <binary>sutifowler</binary>
+    <description>VTI constant velocity analysis via Fowler's method</description>
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title xmlns="http://www.w3.org/1999/xhtml">GêBR - SU TI Fowler</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU TI Fowler</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            VTI constant velocity analysis via Fowler's method
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Gain, NMO, Stack and Standard Processes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	VTI constant velocity prestack time migration velocity analysis via Fowler's method.</p>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+<!-- begin lst -->	<ul>
+		<li class="group">
+			<span class="grouplabel">CDPs properties</span>
+			<ul>
+				<li class="req">
+					<span class="reqlabel">Number of input cdp's</span></li>
+				<li>
+					<span class="label">CDP's X increment</span></li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Type of processing to do</span>
+			<ul>
+				<li>
+					Full prestack time migration</li>
+				<li>
+					only DMO</li>
+				<li>
+					only post-stack migrations</li>
+				<li>
+					only stacking velocity analysis</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Constant velocity prestack properties</span>
+			<ul>
+				<li>
+					<span class="label">Inputting precomputed constant velocity stacks</span></li>
+				<li>
+					<span class="label">Minimum velocity panel in input constant velocity stacks (m/s)</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">ETA properties</span>
+			<ul>
+				<li>
+					<span class="label">Number of ETA values to image</span></li>
+				<li>
+					<span class="label">Minimum ETA</span></li>
+				<li>
+					<span class="label">Maximum ETA</span></li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Thomsen's delta</span></li>
+		<li>
+			<span class="label">Assumed vp/vs ratio</span><br />
+			Not critical - default almost always ok.</li>
+		<li>
+			<span class="label">Numer of traces for spatial fft</span></li>
+		<li class="group">
+			<span class="grouplabel">Velocity panels properties</span>
+			<ul>
+				<li>
+					<span class="label">Number of velocity panels to output</span></li>
+				<li>
+					<span class="label">Minimum velocity panel to output (m/s)</span></li>
+				<li>
+					<span class="label">Maximum velocity panel to output (m/s)</span></li>
+				<li>
+					<span class="label">Number os stacking velocity panels to compute</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Taper properties</span>
+			<ul>
+				<li>
+					<span class="label">Lenght of mute taper (ms)</span></li>
+				<li>
+					<span class="label">Lenght of bottom taper (ms)</span></li>
+				<li>
+					<span class="label">Lenght of side taper (traces)</span></li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Do not mute to avoid non-hyperbolic moveout</span></li>
+		<li>
+			<span class="label">Output sample rate (s)</span></li>
+		<li>
+			<span class="label">Maximum number of offsets/input cmp</span></li>
+		<li>
+			<span class="label">Fraction of output to force withing sloth antialias limit</span><br />
+			This controls muting by offset of the input data prior to computing the constant velocity stacks for <b>Full prestack time migration</b> or <b>only DMO</b> options of <b>Type of processing to do.</b></li>
+		<li class="group">
+			<span class="grouplabel">Temporary files properties</span>
+			<ul>
+				<li>
+					<span class="label">Root name for temporary files</span></li>
+				<li>
+					<span class="label">Path name where to put memory files</span></li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Number of cmps per velocity analysis group</span></li>
+		<li>
+			<span class="label">The output file for printout from this program</span></li>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+	Notes</h2>
+<p>
+	Required trace header words on input are Number of samples, Sample interval in microseconds, CDP ensemble number and Offset.</p>
+<div>
+	On output, trace headers are rebuilt from scratch with:</div>
+<div>
+	 </div>
+<div>
+	<em>Number of samples:</em> number of samples</div>
+<div>
+	<em>Sample interval in microseconds:</em> sample rate in use</div>
+<div>
+	<em>CDP ensemble number:</em> the output cmp number (0 based)</div>
+<div>
+	<em>Offset:</em> the output velocity</div>
+<div>
+	<em>Trace number sequence within field record:</em> the output velocity index (0 based)</div>
+<div>
+	<em>Field record number:</em> index for velocity analysis group (0 based, groups of <strong>Number of cmps per velocity analysis group</strong> cdps)</div>
+<div>
+	<em>Energy source point number:</em> central cmp for velocity analysis group</div>
+<div>
+	<em>Instrument gain constant:</em> index for choice of eta (0 based)</div>
+<div>
+	<em>Instrument early or initial gain:</em> eta*100</div>
+<div>
+	<em>X source coordinate:</em> x coordinate as icmp * <strong>CDP's X increment</strong></div>
+<div>
+	<em>Trace number sequence within line:</em> sequential trace count (1 based)<span class="Apple-tab-span" style="white-space:pre"> </span></div>
+<div>
+	 </div>
+<div>
+	Due to aliasing considerations, the small offset-to-depth ratio assumption inherent in the TI DMO derivation, and the poor stacking of some large-offset events associated with TI non-hyperbolic moveout, a fairly stiff initial mute is recommended for the long offsets.  As a result, this method may not work well where you have multiple reflections to remove via stacking.</div>
+<div>
+	 </div>
+<div>
+	The temporary files can be split over multiple disks by building a .VND file in your working directory.  The .VND file is ascii text with the first line giving the number of directories followed by successive lines with one line per directory name.</div>
+<div>
+	 </div>
+<div>
+	The output data order has primary key equal to cdp, secondary key equal to eta, and tertiary key equal to velocity.</div>
+<div>
+	 </div>
+<h2 id="header_3">
+	Credits</h2>
+<p>
+	CWP: John Anderson (visitor to CSM from Mobil) Spring 1993.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter><label>CDPs properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
+        <label>Number of input cdp's</label>
+        <int>
+          <property required="yes">
+            <keyword>ncdps=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter><parameter>
+        <label>CDP's X increment</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default>25.0</default>
+          </property>
+        </float>
+      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        <label>CDP's X increment</label>
+        
+      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
+        <label>CDP x increment</label>
+        
+      <reference><property required="no"><keyword/><value/><default>25.0</default></property></reference></parameter></parameters></group></parameter>
+      <parameter>
+        <label>Type of processing to do</label>
+        <enum>
+          <property required="no">
+            <keyword>choose=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>Full prestack time migration</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>only DMO</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>only post-stack migrations</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>only stacking velocity analysis</label>
+            <value>4</value>
+          </option>
+        </enum>
+      </parameter>
+      
+      <parameter><label>Constant velocity prestack properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
+        <label>Inputting precomputed constant velocity stacks</label>
+        <flag>
+          <property required="no">
+            <keyword>getcvstacks=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter><parameter>
+        <label>Minimum velocity panel in input constant velocity stacks (m/s)</label>
+        <float>
+          <property required="no">
+            <keyword>vminstack=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        <label>Minimum velocity panel in input constant velocity stacks (m/s)</label>
+        
+      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
+        <label>Inputting precomputed constant velocity stacks</label>
+        
+      <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group></parameter>
+      
+      
+      
+      <parameter><label>ETA properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
+        <label>Number of ETA values to image</label>
+        <int>
+          <property required="no">
+            <keyword>neta=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter><parameter>
+        <label>Minimum ETA</label>
+        <float>
+          <property required="no">
+            <keyword>etamin=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter><parameter>
+        <label>Maximum ETA</label>
+        <float>
+          <property required="no">
+            <keyword>etamax=</keyword>
+            <value/>
+            <default>0.5</default>
+          </property>
+        </float>
+      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        <label>Number of ETA values to image</label>
+        
+      <reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter><parameter>
+        <label>Minimum ETA</label>
+        
+      <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter><parameter>
+        <label>Maximum ETA</label>
+        
+      <reference><property required="no"><keyword/><value/><default>0.5</default></property></reference></parameter></parameters></group></parameter>
+      
+      <parameter>
+        <label>Thomsen's delta</label>
+        <float>
+          <property required="no">
+            <keyword>d=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Assumed vp/vs ratio</label>
+        <float>
+          <property required="no">
+            <keyword>vpvs=</keyword>
+            <value/>
+            <default>0.5</default>
+          </property>
+        </float>
+      </parameter>
+      
+      
+      <parameter><label>Numer of traces for spatial fft</label><int><property required="no"><keyword>nxpad=</keyword><value/><default>0</default></property></int></parameter><parameter><label>Velocity panels properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
+        <label>Number of velocity panels to output</label>
+        <int>
+          <property required="no">
+            <keyword>nv=</keyword>
+            <value/>
+            <default>75</default>
+          </property>
+        </int>
+      </parameter><parameter>
+        <label>Minimum velocity panel to output (m/s)</label>
+        <float>
+          <property required="no">
+            <keyword>vmin=</keyword>
+            <value/>
+            <default>1500.0</default>
+          </property>
+        </float>
+      </parameter><parameter>
+        <label>Maximum velocity panel to output (m/s)</label>
+        <float>
+          <property required="no">
+            <keyword>vmax=</keyword>
+            <value/>
+            <default>8000.0</default>
+          </property>
+        </float>
+      </parameter><parameter>
+        <label>Number os stacking velocity panels to compute</label>
+        <int>
+          <property required="no">
+            <keyword>nvstack=</keyword>
+            <value/>
+            <default>180</default>
+          </property>
+        </int>
+      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        <label>Minimum velocity panel to output (m/s)</label>
+        
+      <reference><property required="no"><keyword/><value/><default>1500.0</default></property></reference></parameter><parameter>
+        <label>Number of velocity panels to output</label>
+        
+      <reference><property required="no"><keyword/><value/><default>75</default></property></reference></parameter><parameter>
+        <label>Maximum velocity panel to output (m/s)</label>
+        
+      <reference><property required="no"><keyword/><value/><default>8000.0</default></property></reference></parameter><parameter>
+        <label>Number os stacking velocity panels to compute</label>
+        
+      <reference><property required="no"><keyword/><value/><default>180</default></property></reference></parameter></parameters></group></parameter>
+      
+    <parameter><label>Taper properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Lenght of mute taper (ms)</label><int><property required="no"><keyword>lmute=</keyword><value/><default>24</default></property></int></parameter><parameter><label>Lenght of bottom taper (ms)</label><int><property required="no"><keyword>lbtaper=</keyword><value/><default>0</default></property></int></parameter><parameter><label>Lenght of side taper (traces)</label><int><property required="no"><keyword>lstaper=</keyword><value/><default>0</default></property></int></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Lenght of bottom taper (ms)</label><reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter><parameter><label>Lenght of mute taper (ms)</label><reference><property required="no"><keyword/><value/><default>24</default></property></reference></parameter><parameter><label>Lenght of side taper (traces)</label><reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter></parameters></group></parameter><parameter><label>Do not mute to avoid non-hyperbolic moveout</label><flag><property required="no"><keyword>nonhyp=0</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Output sample rate (s)</label><float><property required="no"><keyword>dtout=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum number of offsets/input cmp</label><int><property required="no"><keyword>mxfold=</keyword><value/><default>120</default></property></int></parameter><parameter><label>Fraction of output to force withing sloth antialias limit</label><float><property required="no"><keyword>salias=</keyword><value/><default>0.8</default></property></float></parameter><parameter><label>Temporary files properties</label><group instanciable="yes" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Root name for temporary files</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>file=</keyword><value/><default>sutifowler</default></property></file></parameter><parameter><label>Path name where to put memory files</label><file directory="yes" filter-name="" filter-pattern=""><property required="no"><keyword>p=</keyword><value/><default>not</default></property></file></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Root name for temporary files</label><reference><property required="no"><keyword/><value/><default>sutifowler</default></property></reference></parameter><parameter><label>Number of cmps per velocity analysis group</label><reference><property required="no"><keyword/><value/><default>not</default></property></reference></parameter></parameters></group></parameter><parameter><label>Number of cmps per velocity analysis group</label><int><property required="no"><keyword>ngroup=</keyword><value/><default>20</default></property></int></parameter><parameter><label>The output file for printout from this program</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>printfile=</keyword><value/><default>stderr</default></property></file></parameter></parameters>
+  </program>
+</flow>
+ 
