@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.5">
+  <title>SU CC Wavelet</title>
+  <description>Complex continuous wavelet transform of seismic traces</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>G&ecirc;BR - SU CC Wavelet</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU CC Wavelet</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Complex continuous wavelet transform of seismic traces
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Complex continuous wavelet transform of seismic traces.</p>
+
+	  <!-- begin par --><!-- end par -->
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+	  <!-- begin cpy -->
+	  
+          <p>Set 05, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+	  
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+	    <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->Set 05, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <date>
+    <created>2010-09-05T18:25:29.017930Z</created>
+    <modified>2010-09-05T19:11:29.037312Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <servers/>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU CC Wavelet</title>
+    <binary>succwt</binary>
+    <description>Complex continuous wavelet transform of seismic traces</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>G&ecirc;BR - SU CC Wavelet</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU CC Wavelet</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Complex continuous wavelet transform of seismic traces
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Complex continuous wavelet transform of seismic traces.</p>
+
+	  <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+	    <!-- begin lst --><ul>
+<li><span class="label">Number of octaves</span></li>
+<li><span class="label">Number of voices per octave</span></li>
+<li><span class="label">Highest frequency in transform</span></li>
+<li><span class="label">Power of scale value normalizing CWT</span><br/>Uses 0 for amp-preserved spec. decomp.</li>
+<li><span class="label">Time-domain inverse gaussian damping parameter</span><br/>Bigger value for this parameter means more wavelet oscillations, default gives minimal oscillations.</li>
+<li><span class="label">Wavelet transform kernel</span>
+<ul><li>Complex Morlet</li><li>Fourier (Exp[i 2 pi f t])</li>
+</ul></li>
+<li><span class="label">Frequency sampling mode</span>
+<ul><li>Dyadic (CWT standard)</li><li>Linear (Fourier standard)</li>
+</ul></li>
+<li><span class="label">Frequency sample interval in Hz</span><br/>Used only for <strong>Frequency sampling mode</strong> = <strong>Linear (Fourier standard)</strong></li>
+<li><span class="label">Sample interval override (in secs, if time data)</span></li>
+<li><span class="label">Echoes extra information</span></li>
+</ul>
+<!-- end lst -->
+            
+          </div>
+	  <!-- end par -->
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>
+          <ul>
+       <li>Total number of scales = <strong>Number of octaves</strong>*<strong>Number of voices per octave</strong></li>
+	 <li>Each input trace spawns <strong>Number of scales</strong> complex output traces</li>
+	 <li>Lowest frequency in the transform is <strong>Highest frequency in transform</strong>/(2^(<strong>Number of octaves</strong>-1/<strong>Number of voices per octave</strong>))</li>
+	 <li>Header field <strong>CDP ensemble number</strong> used as CWT spectrum counter</li>
+	 <li>Header field <strong>Trace number within CDP ensemble</strong> used as scale counter within CWT spectrum</li>
+	 <li>Header field <strong>Uphole time at receiver group</strong> holds number of CWT scales 'na'</li>	
+	 <li>Header field <strong>Reciprocal of scaling factor to normalize range</strong> holds CWT scale 'a'</li>
+	 </ul>
+          </p>
+          
+		<p>This program sets the following header keywords
+		  <ul>
+		    <li>Trace number sequence within line</li>  <!-- tracl -->
+		    <li>CDP ensemble number</li>  <!-- cdp -->
+		    <li>Trace number within CDP ensemble</li>  <!-- cdpt -->
+		    <li>Reciprocal of scaling factor to normalize range</li>  <!-- unscale -->
+		    <li>Uphole time at receiver group</li>  <!-- gut -->
+		  </ul>
+		</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p> Copyright (c) University of Tulsa, 2003-4.<br/>
+ 		All rights reserved.<br/>
+ 		Author:	UTulsa: Chris Liner, SEP: Bob Clapp.</p>
+
+	  <!-- begin cpy -->
+	  <!-- end cpy -->
+	  
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+	    <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+	    <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of octaves</label>
+        <int>
+          <property required="no">
+            <keyword>noct=</keyword>
+            <value/>
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of voices per octave</label>
+        <int>
+          <property required="no">
+            <keyword>nv=</keyword>
+            <value/>
+            <default>10</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Highest frequency in transform</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Power of scale value normalizing CWT</label>
+        <float>
+          <property required="no">
+            <keyword>p=</keyword>
+            <value/>
+            <default>-0.5</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Time-domain inverse gaussian damping parameter</label>
+        <float>
+          <property required="no">
+            <keyword>c=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Wavelet transform kernel</label>
+        <enum>
+          <property required="no">
+            <keyword>k=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>Complex Morlet</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Fourier (Exp[i 2 pi f t])</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Frequency sampling mode</label>
+        <enum>
+          <property required="no">
+            <keyword>fs=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>Dyadic (CWT standard)</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Linear (Fourier standard)</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Frequency sample interval in Hz</label>
+        <float>
+          <property required="no">
+            <keyword>df=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Sample interval override (in secs, if time data)</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>
+ 
