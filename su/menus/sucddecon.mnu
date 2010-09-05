@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.5">
+  <title>SU CD Decon</title>
+  <description>Deconvolution with user-supplied filter</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>G&ecirc;BR - SU CD Decon</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU CD Decon</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Deconvolution with user-supplied filter
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Deconvolution with user-supplied filter by straightforward
+ 	      complex division in the frequency domain.</p>
+
+	  <!-- begin par --><!-- end par -->
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+	  <!-- begin cpy -->
+	  
+          <p>Set 05, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+	  
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+	    <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->Set 05, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <date>
+    <created>2010-09-05T19:20:20.603104Z</created>
+    <modified>2010-09-05T20:14:46.350348Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <servers/>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU CD Decon</title>
+    <binary>sucddecon</binary>
+    <description>Deconvolution with user-supplied filter</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>G&ecirc;BR - SU CD Decon</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU CD Decon</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Deconvolution with user-supplied filter
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Deconvolution with user-supplied filter by straightforward
+ 	      complex division in the frequency domain.</p>
+
+	  <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+	    <!-- begin lst --><ul>
+<li class="group"><span class="grouplabel">Filter</span>
+<ul>
+<li class="req"><span class="reqlabel">List of filter values</span><br/></li>
+<li class="req"><span class="reqlabel">File containing SU traces to use as filter</span><br/></li>
+</ul></li>
+
+<li><span class="label">Traces to use as filter</span>
+<ul><li>Only the first trace of sufile</li><li>Trace by trace an entire gather</li>
+</ul></li>
+<li><span class="label">White noise factor for stabilizing results</span></li>
+<li><span class="label">Center the output on each trace</span><br/>If this flag is off, the output is not centered.</li>
+<li><span class="label">Echoes extra information</span></li>
+</ul>
+<!-- end lst -->
+            
+          </div>
+	  <!-- end par -->
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>For given time-domain input data I(t) and deconvolution	
+ filter F(t), the frequency-domain deconvolved trace can be written as:</p>
+	    <p>	
+D(f) = I(f) / F(f)<br/>
+D(f) = [I(f) * complex_conjugate[F(f)]] / [F(f)|F(f)|^2 + delta]</p>
+	       
+	     <p> The real scalar delta is introduced to prevent the resulting deconvolved
+ trace to be dominated by frequencies at which the filter power is close
+ to zero. As described above, delta is set to some fraction (<strong>White noise factor for stabilizing results</strong>) of 
+ the mean of the filter power spectra. Time sampling rate must be the 	
+ same in the input data and filter traces. If <strong>Traces to use as filter</strong> = <strong>Trace by trace an entire gather</strong> the two input files
+ must have the same number of traces. Data and filter traces don't need to
+ necessarily have the same number of samples, but the filter trace length be always equal or shorter than the data traces.</p>
+ 
+		<p>This program accesses the following header keywords
+		  <ul>
+		    <li>Number of samples</li>  <!-- ns -->
+		    <li>Sample interval in microseconds</li>  <!-- dt -->
+		  </ul>
+		</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Ivan Vasconcelos<br/>
+              some changes by John Stockwell.</p>
+
+	  <!-- begin cpy -->
+	  <!-- end cpy -->
+	  
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+	    <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+	    <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      
+    <parameter>
+        <label>Filter</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              
+              
+            <parameter>
+                <label>List of filter values</label>
+                <float>
+                  <property required="yes" separator=",">
+                    <keyword>filter=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter><parameter>
+                <label>File containing SU traces to use as filter</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>sufile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter></parameters>
+          </template-instance>
+          <parameters default-selection="1" selection="1">
+            
+            
+          <parameter>
+                <label>List of filter values</label>
+                
+              <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+                <label>File containing SU traces to use as filter</label>
+                
+              <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters>
+        </group>
+      </parameter><parameter><label>Traces to use as filter</label><enum><property required="no"><keyword>panel=</keyword><value/><default>0</default></property><option><label>Only the first trace of sufile</label><value>0</value></option><option><label>Trace by trace an entire gather</label><value>1</value></option></enum></parameter><parameter><label>White noise factor for stabilizing results</label><float><property required="no"><keyword>pnoise=</keyword><value/><default>0.001</default></property></float></parameter><parameter><label>Center the output on each trace</label><flag><property required="no"><keyword>sym=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Echoes extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
+  </program>
+</flow>
+ 
