@@ -66,7 +66,7 @@
   </dict>
   <date>
     <created>2010-09-04T18:05:09.725710Z</created>
-    <modified>2010-09-04T20:13:29.091338Z</modified>
+    <modified>2010-09-06T14:52:23.683096Z</modified>
     <lastrun/>
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
@@ -90,7 +90,7 @@
   <!-- end ttl -->
 </head><body xmlns="http://www.w3.org/1999/xhtml">
   <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
-    <div class="inner-container">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="inner-container">
       <div class="header">
         <div class="title">
 	  <!-- begin tt2 -->
@@ -122,7 +122,7 @@
 			<span class="grouplabel">CDPs properties</span>
 			<ul>
 				<li class="req">
-					<span class="reqlabel">Number of input cdp's</span></li>
+					<span class="reqlabel">Number of input CDP's</span></li>
 				<li>
 					<span class="label">CDP's X increment</span></li>
 			</ul>
@@ -166,7 +166,7 @@
 			<span class="label">Assumed vp/vs ratio</span><br />
 			Not critical - default almost always ok.</li>
 		<li>
-			<span class="label">Numer of traces for spatial fft</span></li>
+			<span class="label">Number of traces for spatial FFT</span></li>
 		<li class="group">
 			<span class="grouplabel">Velocity panels properties</span>
 			<ul>
@@ -224,7 +224,7 @@
 <div>
 	 </div>
 <div>
-	<em>Number of samples:</em> number of samples</div>
+	<em>Number of samples: </em>number of samples</div>
 <div>
 	<em>Sample interval in microseconds:</em> sample rate in use</div>
 <div>
@@ -234,13 +234,13 @@
 <div>
 	<em>Trace number sequence within field record:</em> the output velocity index (0 based)</div>
 <div>
-	<em>Field record number:</em> index for velocity analysis group (0 based, groups of <strong>Number of cmps per velocity analysis group</strong> cdps)</div>
+	<em>Field record number:</em> index for velocity analysis group (0 based, groups of <strong>Number of cmps per velocity analysis group</strong> CDP's)</div>
 <div>
 	<em>Energy source point number:</em> central cmp for velocity analysis group</div>
 <div>
-	<em>Instrument gain constant:</em> index for choice of eta (0 based)</div>
+	<em>Instrument gain constant:</em> index for choice of ETA (0 based)</div>
 <div>
-	<em>Instrument early or initial gain:</em> eta*100</div>
+	<em>Instrument early or initial gain:</em> ETA*100</div>
 <div>
 	<em>X source coordinate:</em> x coordinate as icmp * <strong>CDP's X increment</strong></div>
 <div>
@@ -256,7 +256,7 @@
 <div>
 	 </div>
 <div>
-	The output data order has primary key equal to cdp, secondary key equal to eta, and tertiary key equal to velocity.</div>
+	The output data order has primary key equal to CDP, secondary key equal to ETA, and tertiary key equal to velocity.</div>
 <div>
 	 </div>
 <h2 id="header_3">
@@ -287,8 +287,8 @@
 </body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
-      <parameter><label>CDPs properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
-        <label>Number of input cdp's</label>
+      <parameter><label>CDPs properties</label><group instanciable="no" expand="yes"><template-instance><parameters default-selection="0"><parameter>
+        <label>Number of input CDP's</label>
         <int>
           <property required="yes">
             <keyword>ncdps=</keyword>
@@ -306,9 +306,9 @@
           </property>
         </float>
       </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
-        <label>CDP's X increment</label>
+        <label>Number of input CDP's</label>
         
-      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
+      <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
         <label>CDP x increment</label>
         
       <reference><property required="no"><keyword/><value/><default>25.0</default></property></reference></parameter></parameters></group></parameter>
@@ -360,7 +360,7 @@
       </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
         <label>Minimum velocity panel in input constant velocity stacks (m/s)</label>
         
-      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
+      <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
         <label>Inputting precomputed constant velocity stacks</label>
         
       <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group></parameter>
@@ -427,7 +427,7 @@
       </parameter>
       
       
-      <parameter><label>Numer of traces for spatial fft</label><int><property required="no"><keyword>nxpad=</keyword><value/><default>0</default></property></int></parameter><parameter><label>Velocity panels properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
+      <parameter><label>Number of traces for spatial FFT</label><int><property required="no"><keyword>nxpad=</keyword><value/><default>0</default></property></int></parameter><parameter><label>Velocity panels properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
         <label>Number of velocity panels to output</label>
         <int>
           <property required="no">
