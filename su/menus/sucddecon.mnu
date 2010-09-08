@@ -91,7 +91,7 @@
   </dict>
   <date>
     <created>2010-09-05T19:20:20.603104Z</created>
-    <modified>2010-09-05T20:14:46.350348Z</modified>
+    <modified>2010-09-08T13:04:57.433391Z</modified>
     <lastrun/>
   </date>
   <category>Filtering, Transforms and Attributes</category>
@@ -157,14 +157,15 @@
             <h2>Parameters</h2>
 
 	    <!-- begin lst --><ul>
-<li class="group"><span class="grouplabel">Filter</span>
+<li class="group"><span class="grouplabel">Filter</span><br/>
+Only one of the parameters is used.
 <ul>
-<li class="req"><span class="reqlabel">List of filter values</span><br/></li>
-<li class="req"><span class="reqlabel">File containing SU traces to use as filter</span><br/></li>
+<li class="req"><span class="reqlabel">List of filter values</span></li>
+<li class="req"><span class="reqlabel">File containing SU traces to use as filter</span></li>
 </ul></li>
 
 <li><span class="label">Traces to use as filter</span>
-<ul><li>Only the first trace of sufile</li><li>Trace by trace an entire gather</li>
+<ul><li>Only the first trace of SU file</li><li>Trace by trace an entire gather</li>
 </ul></li>
 <li><span class="label">White noise factor for stabilizing results</span></li>
 <li><span class="label">Center the output on each trace</span><br/>If this flag is off, the output is not centered.</li>
@@ -245,7 +246,7 @@ D(f) = [I(f) * complex_conjugate[F(f)]] / [F(f)|F(f)|^2 + delta]</p>
       
     <parameter>
         <label>Filter</label>
-        <group instanciable="no" expand="no">
+        <group instanciable="no" expand="yes">
           <template-instance>
             <parameters default-selection="0">
               
@@ -279,7 +280,7 @@ D(f) = [I(f) * complex_conjugate[F(f)]] / [F(f)|F(f)|^2 + delta]</p>
               <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
                 <label>File containing SU traces to use as filter</label>
                 
-              <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters>
+              <reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters>
         </group>
       </parameter><parameter><label>Traces to use as filter</label><enum><property required="no"><keyword>panel=</keyword><value/><default>0</default></property><option><label>Only the first trace of sufile</label><value>0</value></option><option><label>Trace by trace an entire gather</label><value>1</value></option></enum></parameter><parameter><label>White noise factor for stabilizing results</label><float><property required="no"><keyword>pnoise=</keyword><value/><default>0.001</default></property></float></parameter><parameter><label>Center the output on each trace</label><flag><property required="no"><keyword>sym=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Echoes extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
   </program>
