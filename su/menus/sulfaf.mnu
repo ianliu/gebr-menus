@@ -2,21 +2,14 @@
 <flow version="0.3.5">
   <title>SU LFAF</title>
   <description>Low frequency array forming</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content=
-  "text/html; charset=utf-8" />
+  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <!-- begin ttl -->
-  <title>G&ecirc;BR - SU LFAF</title>
+  <title>GêBR - SU LFAF</title>
   <!-- end ttl -->
-</head>
-
-<body>
+</head><body xmlns="http://www.w3.org/1999/xhtml">
   <div class="outer-container">
     <div class="inner-container">
       <div class="header">
@@ -38,51 +31,34 @@
       </div>
 
       <div class="main">
-        <div class="content">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	Low frequency array forming.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+	Credits</h2>
+<!-- begin cpy --><p>
+	Sep 05, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
 
-          <a name="intro" id="intro"></a>
-          <h2>Introduction</h2>
-
-          <p>Low frequency array forming.</p>
-
-	  <!-- begin par --><!-- end par -->
-
-	  <a name="credits" id="credits"></a>
-          <h2>Credits</h2>
-
-	  <!-- begin cpy -->
-	  
-          <p>Set 05, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
-          <!-- end cpy -->
-	  
-        </div>
-
-        <div class="navigation">
-          <h2>Index</h2>
-
-          <ul>
-            <li><a href="#intro">Introduction</a></li>
-
-	    <!-- begin mpr --><!-- end mpr -->
-
-            <li><a href="#credits">Credits</a></li>
-          </ul>
-        </div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+	Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->Set 05, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
-</body>
-</html>
-]]></help>
+
+
+</body></html>]]></help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
@@ -90,7 +66,7 @@
   </dict>
   <date>
     <created>2010-09-05T22:24:29.270065Z</created>
-    <modified>2010-09-05T23:24:39.625402Z</modified>
+    <modified>2010-09-08T13:27:55.290797Z</modified>
     <lastrun/>
   </date>
   <category>Filtering, Transforms and Attributes</category>
@@ -105,22 +81,15 @@
     <title>SU LFAF</title>
     <binary>sulfaf</binary>
     <description>Low frequency array forming</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content=
-  "text/html; charset=utf-8" />
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <!-- begin ttl -->
-  <title>G&ecirc;BR - SU LFAF</title>
+  <title xmlns="http://www.w3.org/1999/xhtml">GêBR - SU LFAF</title>
   <!-- end ttl -->
-</head>
-
-<body>
-  <div class="outer-container">
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
     <div class="inner-container">
       <div class="header">
         <div class="title">
@@ -141,86 +110,71 @@
       </div>
 
       <div class="main">
-        <div class="content">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	Low frequency array forming.</p>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+<!-- begin lst -->	<ul>
+		<li>
+			<span class="label">Key header word describing the gathers</span></li>
+		<li>
+			<span class="label">Lower frequency</span></li>
+		<li>
+			<span class="label">High frequency</span></li>
+		<li>
+			<span class="label">Frequency ramp</span></li>
+		<li>
+			<span class="label">Surface wave velocity</span></li>
+		<li>
+			<span class="label">Trace spacing</span></li>
+		<li>
+			<span class="label">Size of mix</span><br />
+			Default is the entire gather.</li>
+		<li>
+			<span class="label">Add back ratio</span><br />
+			1.0 = pure filtered<br />
+			0.0 = original</li>
+		<li>
+			<span class="label">Triangular weight in mixing window</span></li>
+		<li>
+			<span class="label">Echoes extra information</span></li>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+	Notes</h2>
+<p>
+	The traces transformed into the frequency domain where a trace mix is performed in the specifed frequency range as Mix = <strong>Surface wave velocity</strong>/(<strong>Frequency</strong>*<strong>Trace spacing</strong>)</p>
+<p>
+	This program uses <strong>Get gather</strong> and <strong>Put gather</strong> so requires that the data be sorted into ensembles designated by <strong>Key header word describing the gathers</strong>, with the Number of traces field set to the number of traces in each respective ensemble.</p>
+<h2 id="header_3">
+	Credits</h2>
+<p>
+	Colorado School of Mines, 2010.</p>
+<!-- begin cpy --><!-- end cpy --></div>
 
-          <a name="intro" id="intro"></a>
-          <h2>Introduction</h2>
-
-          <p>Low frequency array forming.</p>
-
-	  <!-- begin par -->
-          <div class="parameters">
-
-            <a name="par" id="par"></a>
-            <h2>Parameters</h2>
-
-	    <!-- begin lst --><ul>
-<li><span class="label">Key header word describing the gathers</span></li>
-<li><span class="label">Lower frequency</span></li>
-<li><span class="label">High frequency</span></li>
-<li><span class="label">Frequency ramp</span></li>
-<li><span class="label">Surface wave velocity</span></li>
-<li><span class="label">Trace spacing</span></li>
-<li><span class="label">Size of mix</span><br/>Default is the entire gather</li>
-<li><span class="label">Add back ratio</span><br/>1.0 = pure filtered<br/> 0.0 = original</li>
-<li><span class="label">Triangular weight in mixing window</span></li>
-<li><span class="label">Echoes extra information</span></li>
-</ul>
-<!-- end lst -->
-            
-          </div>
-	  <!-- end par -->
-
-	  <a name="notes" id="notes"></a>
-          <h2>Notes</h2>
-
-          <p>The traces transformed into the frequency domain			
- where a trace mix is performed in the specifed frequency range	
- as Mix=<strong>Surface wave velocity</strong>/(<strong>Frequency</strong>*<strong>Trace spacing</strong>)</p>
-          <p>This program uses <strong>Get gather</strong> and <strong>Put gather</strong> so requires that  
- the  data be sorted into ensembles designated by <strong>Key header word describing the gathers</strong>, with the Number of traces
- field set to the number of traces in each respective ensemble.</p>
-
-	  <a name="credits" id="credits"></a>
-          <h2>Credits</h2>
-
-          <p>Colorado School of Mines, 2010.</p>
-
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
-        </div>
-
-        <div class="navigation">
-          <h2>Index</h2>
-
-          <ul>
-            <li><a href="#intro">Introduction</a></li>
-
-	    <!-- begin mpr -->
-            <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
-
-            <li><a href="#notes">Notes</a></li>
-
-            <li><a href="#credits">Credits</a></li>
-          </ul>
-        </div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
-</body>
-</html>
-]]></help>
+
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
       <parameter>
