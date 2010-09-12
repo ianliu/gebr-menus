@@ -66,7 +66,7 @@
   </dict>
   <date>
     <created>2010-09-04T23:04:16.006739Z</created>
-    <modified>2010-09-07T16:51:27.076434Z</modified>
+    <modified>2010-09-12T23:49:39.680688Z</modified>
     <lastrun/>
   </date>
   <category>Filtering, Transforms and Attributes</category>
@@ -81,21 +81,14 @@
     <title>SU Alford Rot</title>
     <binary>sualford</binary>
     <description>Trace by trace Alford Rotation of shear wave data volumes</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content=
-  "text/html; charset=utf-8" />
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <!-- begin ttl -->
-  <title>G&ecirc;BR - SU Alford Rot</title>
+  <title>GêBR - SU Alford Rot</title>
   <!-- end ttl -->
-</head>
-
-<body>
+</head><body xmlns="http://www.w3.org/1999/xhtml">
   <div class="outer-container">
     <div class="inner-container">
       <div class="header">
@@ -117,123 +110,120 @@
       </div>
 
       <div class="main">
-        <div class="content">
-
-          <a name="intro" id="intro"></a>
-          <h2>Introduction</h2>
-
-          <p>Trace by trace Alford Rotation of shear wave data volumes.</p>
-
-	  <!-- begin par -->
-          <div class="parameters">
-
-            <a name="par" id="par"></a>
-            <h2>Parameters</h2>
-
-	    <!-- begin lst --><ul>
-<li class="group"><span class="grouplabel">Input data volume files</span>
-
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	Trace by trace Alford Rotation of shear wave data volumes.</p>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+<!-- begin lst -->	<ul>
+		<li class="group">
+			<span class="grouplabel">Input data volume files</span>
+			<ul>
+				<li class="req">
+					<span class="reqlabel">Input file S11</span></li>
+				<li class="req">
+					<span class="reqlabel">Input file S12</span></li>
+				<li class="req">
+					<span class="reqlabel">Input file S21</span></li>
+				<li class="req">
+					<span class="reqlabel">Input file S22</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Output data volume files</span>
+			<ul>
+				<li class="req">
+					<span class="reqlabel">Output file S11</span></li>
+				<li class="req">
+					<span class="reqlabel">Output file S12</span></li>
+				<li class="req">
+					<span class="reqlabel">Output file S21</span></li>
+				<li class="req">
+					<span class="reqlabel">Output file S22</span></li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Increment to the angle by which the data sets are rotated</span></li>
+		<li>
+			<span class="label">Key header field storing the azimuths for the fast shear wave on output</span></li>
+		<li>
+			<span class="label">Key header field storing the quality factors of performed optimum rotations</span></li>
+		<li>
+			<span class="label">Key header field storing the lag, the fast and slow shear components</span></li>
+		<li>
+			<span class="label">Key header field containing the maximum normalized cross-correlation</span></li>
+		<li>
+			<span class="label">Minor time for best alford rotation interval</span></li>
+		<li>
+			<span class="label">Major time for best alford rotation interval</span></li>
+		<li>
+			<span class="label">Taper</span><br />
+			2*taper+1 is the length of the sample overlap between the unrotated data with the rotated data on the traces.<br />
+			The boundary between them is defined by time windowning.<br />
+			Taper = -1, for no-overlap<br />
+			Taper = 0, for overlap of one sample<br />
+			taper =&gt; 1, for use of cosine scale to interpolate between the unrotated and rotated parts of the traces</li>
+		<li>
+			<span class="label">Taper window</span><br />
+			Another taper used to taper the data within the window of analysis to diminish the effect of data near the window edges.In this way one can focus on a given reflector. Also given in number of samples.</li>
+		<li>
+			<span class="label">Maximum limit in ms for the lag between fast and slow shear waves</span><br />
+			If this threshold is attained or surpassed, the quality factor for the rotation is zeroed as well as all the parameters found for that certain rotation.</li>
+		<li>
+			<span class="label">Number of traces to be used per computation</span></li>
+		<li>
+			<span class="label">Total number of traces to be processed</span></li>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+	Notes</h2>
+<p>
+	The Alford Rotation is a method to rotate the four components of a shear wave survey into its natural coordinate system, where the fast and slow shear correspond to the inline to inline shear (S11) and xline to xline (S22) volumes, respectively.</p>
+<p>
+	This Alford Rotation code tries to maximize the energy in the diagonal volumes, i.e., S11 and S22, while minimizing the energy in the off-diagonals, i.e., in volumes S12 and S21, in a trace by trace manner. It then returns the new rotated volumes, saving the the quality factor for the rotation and azimuth angle of the fast shear wave direction for each trace headers of the new rotated S11 volume.</p>
+<p>
+	This program modifies the header keywords used in the parameters:</p>
 <ul>
-<li class="req"><span class="reqlabel">Input file S11</span><br/></li>
-<li class="req"><span class="reqlabel">Input file S12</span><br/></li>
-<li class="req"><span class="reqlabel">Input file S21</span><br/></li>
-<li class="req"><span class="reqlabel">Input file S22</span><br/></li>
-</ul></li>
-
-<li class="group"><span class="grouplabel">Output data volume files</span>
-
-<ul>
-<li class="req"><span class="reqlabel">Output file S11</span><br/></li>
-<li class="req"><span class="reqlabel">Output file S12</span><br/></li>
-<li class="req"><span class="reqlabel">Output file S21</span><br/></li>
-<li class="req"><span class="reqlabel">Output file S22</span><br/></li>
-</ul></li>
-
-<li><span class="label">Increment to the angle by which the data sets are rotated</span></li>
-<li><span class="label">Key header field storing the azimuths for the fast shear wave on output</span></li>
-<li><span class="label">Key header field storing the quality factors of performed optimum rotations</span></li>
-<li><span class="label">Key header field storing the lag, the fast and slow shear components</span></li>
-<li><span class="label">Key header field containing the maximum normalized cross-correlation</span></li>
-<li><span class="label">Taper</span><br/>2*taper+1 is the length of the sample overlap between the unrotated data with the rotated data on the traces.<br/>The boundary between them is defined by time windowning.<br/>
-Taper = -1, for no-overlap<br/>
-Taper = 0, for overlap of one sample<br/>
-taper =&gt; 1, for use of cosine scale to interpolate between the unrotated and rotated parts of the traces
-</li>
-<li><span class="label">Taper window</span><br/>Another taper used to taper the data within the window of analysis to diminish the effect of data near the window edges.In this way one can focus on a given reflector. Also given in number of samples.</li>
-<li><span class="label">Maximum limit in ms for the lag between fast and slow shear waves</span><br/>If this threshold is attained or surpassed, the quality factor for the rotation is zeroed as well as all the parameters found for that certain rotation.</li>
-<li><span class="label">Number of traces to be used per computation</span></li>
-<li><span class="label">Total number of traces to be processed</span></li>
+	<li>
+		Key header field storing the azimuths for the fast shear wave on output</li>
+	<li>
+		Key header field storing the quality factors of performed optimum rotations</li>
+	<li>
+		Key header field storing the lag, the fast and slow shear components</li>
+	<li>
+		Key header field containing the maximum normalized cross-correlation</li>
 </ul>
-<!-- end lst -->
-            
-          </div>
-	  <!-- end par -->
+<p>
+	 </p>
+<h2 id="header_3">
+	Credits</h2>
+<p>
+	CWP: Rodrigo Felicio Fuck<br />
+	Code translated and adapted from original version in Fortran by Ted Schuck (1993).</p>
+<!-- begin cpy --><!-- end cpy --></div>
 
-	  <a name="notes" id="notes"></a>
-          <h2>Notes</h2>
-
-          <p>The Alford Rotation is a method to rotate the four components         
- of a shear wave survey into its natural coordinate system, where      
- the fast and slow shear correspond to the inline to inline shear (S11)
- and xline to xline (S22) volumes, respectively. </p>
-          <p>This Alford Rotation code tries to maximize the energy in the         
- diagonal volumes, i.e., S11 and S22, while minimizing the energy      
- in the off-diagonals, i.e., in volumes S12 and S21, in a trace by     
- trace manner. It then returns the new rotated volumes, saving the     
- the quality factor for the rotation and azimuth angle of the fast     
- shear wave direction for each trace headers of the new rotated S11    
- volume.</p>
- 	    	<p>This program modifies the header keywords used in the parameters:
-		  <ul>
-		    <li>Key header field storing the azimuths for the fast shear wave on output</li>
-		    <li>Key header field storing the quality factors of performed optimum rotations</li>
-		    <li>Key header field storing the lag, the fast and slow shear components</li>
-		    <li>Key header field containing the maximum normalized cross-correlation</li>		    
-		  </ul>
-		</p>
-
-	  <a name="credits" id="credits"></a>
-          <h2>Credits</h2>
-
-          <p>CWP: Rodrigo Felicio Fuck<br/>
-      Code translated and adapted from original version in Fortran
-      by Ted Schuck (1993).</p>
-
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
-        </div>
-
-        <div class="navigation">
-          <h2>Index</h2>
-
-          <ul>
-            <li><a href="#intro">Introduction</a></li>
-
-	    <!-- begin mpr -->
-            <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
-
-            <li><a href="#notes">Notes</a></li>
-
-            <li><a href="#credits">Credits</a></li>
-          </ul>
-        </div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
-</body>
-</html>
-]]></help>
+
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
       <parameter>
@@ -764,7 +754,7 @@ taper =&gt; 1, for use of cosine scale to interpolate between the unrotated and 
       <option><label>Year data recorded</label><value>year</value></option>
       </enum>
       </parameter>
-      <parameter>
+      <parameter><label>Minor time for best alford rotation interval</label><float><property required="no"><keyword>tmin=</keyword><value/><default/></property></float></parameter><parameter><label>Major time for best alford rotation interval</label><float><property required="no"><keyword>tmax=</keyword><value/><default/></property></float></parameter><parameter>
         <label>Taper</label>
         <int>
           <property required="no">
