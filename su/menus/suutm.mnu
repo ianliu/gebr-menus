@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.5">
+  <title>SU UTM</title>
+  <description>UTM projection of longitude and latitude in SU trace headers</description>
+  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>GêBR - SU UTM</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU UTM</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            UTM projection of longitude and latitude in SU trace headers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	UTM projection of longitude and latitude in SU trace headers.</p>
+<h2 id="header_1">
+	Credits</h2>
+<!-- begin cpy --><p>
+	Sep 13, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+	Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->Sep 13, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]></help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <date>
+    <created>2010-09-13T14:41:41.457696Z</created>
+    <modified>2010-09-13T15:15:36.628740Z</modified>
+    <lastrun/>
+  </date>
+  <category>Import/Export</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <servers/>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU UTM</title>
+    <binary>suutm</binary>
+    <description>UTM projection of longitude and latitude in SU trace headers</description>
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title xmlns="http://www.w3.org/1999/xhtml">GêBR - SU UTM</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU UTM</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            UTM projection of longitude and latitude in SU trace headers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	UTM projection of longitude and latitude in SU trace headers.</p>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+<!-- begin lst -->	<ul>
+		<li>
+			<span class="label">Input coordinate units code</span><br />
+			Default value is set from header.
+			<ul>
+				<li>
+					Length (meters or feet; no UTM projection)</li>
+				<li>
+					Seconds of arc</li>
+				<li>
+					Decimal degrees</li>
+				<li>
+					Degrees, minutes, seconds</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Ellipsoid properties</span>
+			<ul>
+				<li>
+					<span class="label">Reference ellipsoid index</span><br />
+					Default is WGS 1984.<br />
+					For more information, see notes.</li>
+				<li>
+					<span class="label">User-specified semi-major axis of ellipsoid</span><br />
+					Default is set from <strong>Reference ellipsoid index</strong>.</li>
+				<li>
+					<span class="label">User-specified flattening of ellipsoid</span><br />
+					Default is set from <strong>Reference ellipsoid index</strong>.</li>
+				<li>
+					<span class="label">Echo ellipsoid parameters</span></li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Header key to store UTM zone number</span></li>
+		<li>
+			<span class="label">Central meridian for TM projection in degrees</span><br />
+			 Default uses the 60 standard UTM longitude zones.</li>
+		<li>
+			<span class="label">False Easting</span><br />
+			 Default is UTM.</li>
+		<li>
+			<span class="label">False Northing, southern hemisphere</span><br />
+			Default is UTM.</li>
+		<li>
+			<span class="label">False Northing, northern hemisphere</span><br />
+			Default is UTM.</li>
+	</ul>
+</div>
+<h2 id="header_2">
+	Notes</h2>
+<p>
+	Universal Transverse Mercator (UTM) coordinates are defined between latitudes 80S (-80) and 84N (84).<br />
+	Longitude values must be between -180 degrees (west) and 179.999... degrees (east).<br />
+	Latitudes are read from "Y source coordinate" and "Y group coordinate" from header (N positive), and longitudes are read from "X source coordinate" and "X group coordinate" from header (E positive). <br />
+	The UTM zone is determined from the receiver coordinates "Y group coordinate" and  "X group coordinate". </p>
+<p>
+	Use menu  <strong>SU Azimuth</strong> to calculate shot-receiver azimuths and offsets.</p>
+<p>
+	<u>Reference ellipsoids: </u><br />
+	<br />
+	An ellipsoid may be specified by its semi-major axis a and its flattening f, or one of the following ellipsoids may be selected by parameter <strong>Reference ellipsoid index</strong> (semi-major axes in meters):                       </p>
+<div>
+	     0 - Sphere with radius of 6371000 m                                </div>
+<div>
+	     1 -  Airy 1830                                                      </div>
+<div>
+	     2 -  Australian National 1965                                       </div>
+<div>
+	     3 -  Bessel 1841 (Ethiopia, Indonesia, Japan, Korea)                </div>
+<div>
+	     4 -  Bessel 1841 (Namibia)                                          </div>
+<div>
+	     5 -  Clarke 1866                                                    </div>
+<div>
+	     6 -  Clarke 1880                                                    </div>
+<div>
+	     7 -  Everest (Brunei, E. Malaysia)                                  </div>
+<div>
+	     8 -  Everest (India 1830)                                           </div>
+<div>
+	     9 -  Everest (India 1956)                                           </div>
+<div>
+	    10 - Everest (Pakistan)                                             </div>
+<div>
+	    11 - Everest (W. Malaysia, Singapore 1948)                          </div>
+<div>
+	    12 - Everest (W. Malaysia 1969)                                     </div>
+<div>
+	    13 - Geodetic Reference System 1980 (GRS 1980)                      </div>
+<div>
+	    14 - Helmert 1906                                                   </div>
+<div>
+	    15 - Hough 1960                                                     </div>
+<div>
+	    16 - Indonesian 1974                                                </div>
+<div>
+	    17 - International 1924 / Hayford 1909                              </div>
+<div>
+	    18 - Krassovsky 1940                                                </div>
+<div>
+	    19 - Modified Airy                                                  </div>
+<div>
+	    20 - Modified Fischer 1960                                          </div>
+<div>
+	    21 - South American 1969                                            </div>
+<div>
+	    22 - World Geodetic System 1972 (WGS 1972)                          </div>
+<div>
+	    23 - World Geodetic System 1984 (WGS 1984) / NAD 1983</div>
+<p>
+	<br />
+	<u>UTM grid:</u><br />
+	<br />
+	The Universal Transverse Mercator (UTM) system is a world wide coordinate system defined between 80S and 84N. <br />
+	It divides the Earth into 60 six-degree zones. Zone number 1 has its central meridian at 177W (-177 degrees), and numbers increase eastward.</p>
+<p>
+	Within each zone, an Easting of 500,000 m is assigned to its central meridian to avoid negative coordinates. <br />
+	On the northern hemisphere, Northings start at 0 m at the equator and increase northward.<br />
+	On the southern hemisphere a false Northing of 10,000,000 m is applied, i.e. Northings start at 10,000,000 m at the equator and decrease southward.<br />
+	<br />
+	This program accesses and modifies the following header keywords:</p>
+<ul>
+	<li>
+		X source coordinate,</li>
+	<li>
+		Y source coordinate,</li>
+	<li>
+		X group coordinate,</li>
+	<li>
+		Y group coordinate,</li>
+	<li>
+		Scale factor for source/receiver coordinates,</li>
+	<li>
+		 Coordinate units code.</li>
+</ul>
+<h2 id="header_3">
+	References</h2>
+<!-- List of references --><ul>
+	<li>
+		NIMA (2000). Department of Defense World Geodetic System 1984 - its definition and relationships with local geodetic systems.<br />
+		Technical Report TR8350.2. National Imagery and Mapping Agency, 
+		<div>
+			Geodesy and Geophysics Department, St. Louis, MO. 3rd edition.</div>
+	</li>
+	<li>
+		J. P. Snyder (1987). Map Projections - A Working Manual. <br />
+		U.S. Geological Survey Professional Paper 1395, 383 pages.<br />
+		U.S. Government Printing Office.</li>
+</ul>
+<h2 id="header_4">
+	Credits</h2>
+<p>
+	 Nils Maercklin, RISSC, University of Naples, Italy, March 2007.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	References</a></li><li><a href="#header_4">
+	Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Input coordinate units code</label>
+        <enum>
+          <property required="no">
+            <keyword>counit=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Length (meters or feet; no UTM projection)</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Seconds of arc</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Decimal degrees</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Degrees, minutes, seconds</label>
+            <value>4</value>
+          </option>
+        </enum>
+      </parameter>
+      
+      
+    <parameter><label>Ellipsoid properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
+        <label>Reference ellipsoid index</label>
+        <int>
+          <property required="no">
+            <keyword>idx=</keyword>
+            <value/>
+            <default>23</default>
+          </property>
+        </int>
+      </parameter><parameter><label>User-specified semi-major axis of ellipsoid</label><float><property required="no"><keyword>a=</keyword><value/><default/></property></float></parameter><parameter><label>User-specified flattening of ellipsoid</label><float><property required="no"><keyword>f=</keyword><value/><default/></property></float></parameter><parameter><label>Echo ellipsoid parameters</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        <label>Reference ellipsoid index</label>
+        
+      <reference><property required="no"><keyword/><value/><default>23</default></property></reference></parameter><parameter><label>User-specified semi-major axis of ellipsoid</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>User-specified flattening of ellipsoid</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Echo ellipsoid parameters</label><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group></parameter><parameter>
+        <label>Header key to store UTM zone number</label>
+        <enum><property required="no"><keyword>zkey=</keyword><value>cdp</value><default/></property>
+      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
+      <option><label>Alias filter slope</label><value>afils</value></option>
+      <option><label>Alignment padding</label><value>shortpad</value></option>
+      <option><label>CDP ensemble number</label><value>cdp</value></option>
+      <option><label>Coordinate units code</label><value>counit</value></option>
+      <option><label>Correlated flag</label><value>corr</value></option>
+      <option><label>Data use</label><value>duse</value></option>
+      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
+      <option><label>Datum elevation at source</label><value>sdel</value></option>
+      <option><label>Day of year</label><value>day</value></option>
+      <option><label>Delay recording time in ms</label><value>delrt</value></option>
+      <option><label>Energy source point number</label><value>ep</value></option>
+      <option><label>Field record number</label><value>fldr</value></option>
+      <option><label>Final mute time</label><value>mute</value></option>
+      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
+      <option><label>First trace location</label><value>f2</value></option>
+      <option><label>Gain type of field instruments code</label><value>gain</value></option>
+      <option><label>Gap size</label><value>gaps</value></option>
+      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
+      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
+      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
+      <option><label>Group static correction</label><value>gstat</value></option>
+      <option><label>High cut frequncy if used</label><value>hcf</value></option>
+      <option><label>High cut slope</label><value>hcs</value></option>
+      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
+      <option><label>Initial mute time</label><value>muts</value></option>
+      <option><label>Instrument early or initial gain</label><value>igi</value></option>
+      <option><label>Instrument gain constant</label><value>igc</value></option>
+      <option><label>Lag time A</label><value>laga</value></option>
+      <option><label>Lag time B</label><value>lagb</value></option>
+      <option><label>Low cut frequency if used</label><value>lcf</value></option>
+      <option><label>Low cut slope</label><value>lcs</value></option>
+      <option><label>Mark selected traces</label><value>mark</value></option>
+      <option><label>Minute of hour</label><value>minute</value></option>
+      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
+      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
+      <option><label>Notch filter slope</label><value>nofils</value></option>
+      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
+      <option><label>Number of samples</label><value>ns</value></option>
+      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
+      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
+      <option><label>Overtravel taper code</label><value>otrav</value></option>
+      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
+      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
+      <option><label>Sample interval in microseconds</label><value>dt</value></option>
+      <option><label>Sample spacing between traces</label><value>d2</value></option>
+      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
+      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
+      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
+      <option><label>Second of minute</label><value>sec</value></option>
+      <option><label>Source depth (positive)</label><value>sdepth</value></option>
+      <option><label>Source elevation from sea level</label><value>selev</value></option>
+      <option><label>Source static correction</label><value>sstat</value></option>
+      <option><label>Subweathering velocity</label><value>swevel</value></option>
+      <option><label>Sweep frequency at end</label><value>sfe</value></option>
+      <option><label>Sweep frequency at start</label><value>sfs</value></option>
+      <option><label>Sweep length in ms</label><value>slen</value></option>
+      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
+      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
+      <option><label>Sweep type code</label><value>styp</value></option>
+      <option><label>Taper type</label><value>tatyp</value></option>
+      <option><label>Time basis code</label><value>timbas</value></option>
+      <option><label>Total static applied</label><value>tstat</value></option>
+      <option><label>Trace identification code</label><value>trid</value></option>
+      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
+      <option><label>Trace number sequence within line</label><value>tracl</value></option>
+      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
+      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
+      <option><label>Trace weighting factor</label><value>trwf</value></option>
+      <option><label>Uphole time at receiver group</label><value>gut</value></option>
+      <option><label>Uphole time at source</label><value>sut</value></option>
+      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
+      <option><label>Water depth at source</label><value>swdep</value></option>
+      <option><label>Weathering velocity</label><value>wevel</value></option>
+      <option><label>X group coordinate</label><value>gx</value></option>
+      <option><label>X source coordinate</label><value>sx</value></option>
+      <option><label>Y group coordinate</label><value>gy</value></option>
+      <option><label>Y source coordinate</label><value>sy</value></option>
+      <option><label>Year data recorded</label><value>year</value></option>
+      </enum>
+      </parameter><parameter><label>Central meridian for TM projection in degrees</label><float><property required="no"><keyword>lon0=</keyword><value/><default/></property></float></parameter><parameter><label>False Easting</label><float><property required="no"><keyword>xoff=</keyword><value/><default>500000</default></property></float></parameter><parameter><label>False Northing, southern hemisphere</label><float><property required="no"><keyword>ysoff=</keyword><value/><default>10000000</default></property></float></parameter><parameter><label>False Northing, northern hemisphere</label><float><property required="no"><keyword>ynoff=</keyword><value/><default>0</default></property></float></parameter></parameters>
+  </program>
+</flow>
+ 
