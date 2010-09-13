@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.5">
+  <title>SU Load Header</title>
+  <description>Load information from an ASCII column file into headers</description>
+  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>G&ecirc;BR - SU Load Header</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU Load Header</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Load information from an ASCII column file into headers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Load information from an ASCII column file into headers.</p>
+
+	  <!-- begin par --><!-- end par -->
+	
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+	  <!-- begin cpy -->
+	  
+          <p>Set 12, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+	  
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+	    <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->Set 12, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <date>
+    <created>2010-09-13T00:34:15.202120Z</created>
+    <modified>2010-09-13T00:49:06.880721Z</modified>
+    <lastrun/>
+  </date>
+  <category>Import/Export</category>
+  <category>Seismic Unix</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <servers/>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Load Header</title>
+    <binary>sulhead</binary>
+    <description>Load information from an ASCII column file into headers</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>G&ecirc;BR - SU Load Header</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU Load Header</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Load information from an ASCII column file into headers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Load information from an ASCII column file into headers.</p>
+
+	  <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+    
+	    <!-- begin lst --><ul>
+<li class="req"><span class="reqlabel">Column input file</span><br/></li>
+<li class="req"><span class="reqlabel">Header key words for column entires</span></li>
+<li><span class="label">Column number to use to match rows to traces</span></li>
+<li><span class="label">Echoes extra information</span></li>
+</ul>
+<!-- end lst -->
+            
+          </div>
+	  <!-- end par -->
+
+	  <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>This utility reads the column file and loads the values into the
+ specified header locations. Each column represents one set of header  
+ words, one of them is used to match the rows to the traces.</p>
+ 	<p>Caveat: the user has to make it sure that number of entires in <strong>Header key words for column entires</strong> is equal the number of columns stored in the file.</p>
+
+	  <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Balasz Nemeth, Potash Corporation, Saskatoon Saskatchewan<br/> Given to CWP in 2008.</p>
+
+	  <!-- begin cpy -->
+	  <!-- end cpy -->
+	  
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+	    <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+	    <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Column input file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="yes">
+            <keyword>cf=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Header key words for column entires</label>
+        <enum><property required="yes" separator=","><keyword>key=</keyword><value>cdp</value><default/></property>
+      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
+      <option><label>Alias filter slope</label><value>afils</value></option>
+      <option><label>Alignment padding</label><value>shortpad</value></option>
+      <option><label>CDP ensemble number</label><value>cdp</value></option>
+      <option><label>Coordinate units code</label><value>counit</value></option>
+      <option><label>Correlated flag</label><value>corr</value></option>
+      <option><label>Data use</label><value>duse</value></option>
+      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
+      <option><label>Datum elevation at source</label><value>sdel</value></option>
+      <option><label>Day of year</label><value>day</value></option>
+      <option><label>Delay recording time in ms</label><value>delrt</value></option>
+      <option><label>Energy source point number</label><value>ep</value></option>
+      <option><label>Field record number</label><value>fldr</value></option>
+      <option><label>Final mute time</label><value>mute</value></option>
+      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
+      <option><label>First trace location</label><value>f2</value></option>
+      <option><label>Gain type of field instruments code</label><value>gain</value></option>
+      <option><label>Gap size</label><value>gaps</value></option>
+      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
+      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
+      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
+      <option><label>Group static correction</label><value>gstat</value></option>
+      <option><label>High cut frequncy if used</label><value>hcf</value></option>
+      <option><label>High cut slope</label><value>hcs</value></option>
+      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
+      <option><label>Initial mute time</label><value>muts</value></option>
+      <option><label>Instrument early or initial gain</label><value>igi</value></option>
+      <option><label>Instrument gain constant</label><value>igc</value></option>
+      <option><label>Lag time A</label><value>laga</value></option>
+      <option><label>Lag time B</label><value>lagb</value></option>
+      <option><label>Low cut frequency if used</label><value>lcf</value></option>
+      <option><label>Low cut slope</label><value>lcs</value></option>
+      <option><label>Mark selected traces</label><value>mark</value></option>
+      <option><label>Minute of hour</label><value>minute</value></option>
+      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
+      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
+      <option><label>Notch filter slope</label><value>nofils</value></option>
+      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
+      <option><label>Number of samples</label><value>ns</value></option>
+      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
+      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
+      <option><label>Overtravel taper code</label><value>otrav</value></option>
+      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
+      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
+      <option><label>Sample interval in microseconds</label><value>dt</value></option>
+      <option><label>Sample spacing between traces</label><value>d2</value></option>
+      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
+      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
+      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
+      <option><label>Second of minute</label><value>sec</value></option>
+      <option><label>Source depth (positive)</label><value>sdepth</value></option>
+      <option><label>Source elevation from sea level</label><value>selev</value></option>
+      <option><label>Source static correction</label><value>sstat</value></option>
+      <option><label>Subweathering velocity</label><value>swevel</value></option>
+      <option><label>Sweep frequency at end</label><value>sfe</value></option>
+      <option><label>Sweep frequency at start</label><value>sfs</value></option>
+      <option><label>Sweep length in ms</label><value>slen</value></option>
+      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
+      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
+      <option><label>Sweep type code</label><value>styp</value></option>
+      <option><label>Taper type</label><value>tatyp</value></option>
+      <option><label>Time basis code</label><value>timbas</value></option>
+      <option><label>Total static applied</label><value>tstat</value></option>
+      <option><label>Trace identification code</label><value>trid</value></option>
+      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
+      <option><label>Trace number sequence within line</label><value>tracl</value></option>
+      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
+      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
+      <option><label>Trace weighting factor</label><value>trwf</value></option>
+      <option><label>Uphole time at receiver group</label><value>gut</value></option>
+      <option><label>Uphole time at source</label><value>sut</value></option>
+      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
+      <option><label>Water depth at source</label><value>swdep</value></option>
+      <option><label>Weathering velocity</label><value>wevel</value></option>
+      <option><label>X group coordinate</label><value>gx</value></option>
+      <option><label>X source coordinate</label><value>sx</value></option>
+      <option><label>Y group coordinate</label><value>gy</value></option>
+      <option><label>Y source coordinate</label><value>sy</value></option>
+      <option><label>Year data recorded</label><value>year</value></option>
+      </enum>
+      </parameter>
+      <parameter>
+        <label>Column number to use to match rows to traces</label>
+        <int>
+          <property required="no">
+            <keyword>mc=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>
+ 
