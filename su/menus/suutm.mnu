@@ -66,7 +66,7 @@
   </dict>
   <date>
     <created>2010-09-13T14:41:41.457696Z</created>
-    <modified>2010-09-13T15:15:36.628740Z</modified>
+    <modified>2010-09-15T19:21:01.295749Z</modified>
     <lastrun/>
   </date>
   <category>Import/Export</category>
@@ -133,13 +133,36 @@
 			</ul>
 		</li>
 		<li class="group">
-			<span class="grouplabel">Ellipsoid properties</span>
+			<span class="grouplabel">Ellipsoid properties</span><br/>An ellipsoid may be specified by its semi-major axis a and its flattening <strong>User-specified flattening of ellipsoid</strong>, or one of the following ellipsoids may be selected by parameter <strong>Reference ellipsoid index</strong> (semi-major axes in meters):
 			<ul>
 				<li>
 					<span class="label">Reference ellipsoid index</span><br />
-					Default is WGS 1984.<br />
-					For more information, see notes.</li>
-				<li>
+		<ul>
+	<li>Sphere with radius of 6371000 m                </li>
+	<li>Airy 1830                                      </li>
+	<li>Australian National 1965                       </li>
+	<li>Bessel 1841 (Ethiopia, Indonesia, Japan, Korea)</li>
+	<li>Bessel 1841 (Namibia)                          </li>
+	<li>Clarke 1866                                    </li>
+	<li>Clarke 1880                                    </li>
+	<li>Everest (Brunei, E. Malaysia)                  </li>
+	<li>Everest (India 1830)                           </li>
+	<li>Everest (India 1956)                           </li>
+	<li>Everest (Pakistan)                             </li>
+	<li>Everest (W. Malaysia, Singapore 1948)          </li>
+	<li>Everest (W. Malaysia 1969)                     </li>
+	<li>Geodetic Reference System 1980 (GRS 1980)      </li>
+	<li>Helmert 1906                                   </li>
+	<li>Hough 1960                                     </li>
+	<li>Indonesian 1974                                </li>
+	<li>International 1924 / Hayford 1909              </li>
+	<li>Krassovsky 1940                                </li>
+	<li>Modified Airy                                  </li>
+	<li>Modified Fischer 1960                          </li>
+	<li>South American 1969                            </li>
+	<li>World Geodetic System 1972 (WGS 1972)          </li>
+	<li>World Geodetic System 1984 (WGS 1984) / NAD 1983</li>
+		</ul><li>
 					<span class="label">User-specified semi-major axis of ellipsoid</span><br />
 					Default is set from <strong>Reference ellipsoid index</strong>.</li>
 				<li>
@@ -174,58 +197,6 @@
 	The UTM zone is determined from the receiver coordinates "Y group coordinate" and  "X group coordinate". </p>
 <p>
 	Use menu  <strong>SU Azimuth</strong> to calculate shot-receiver azimuths and offsets.</p>
-<p>
-	<u>Reference ellipsoids: </u><br />
-	<br />
-	An ellipsoid may be specified by its semi-major axis a and its flattening f, or one of the following ellipsoids may be selected by parameter <strong>Reference ellipsoid index</strong> (semi-major axes in meters):                       </p>
-<div>
-	     0 - Sphere with radius of 6371000 m                                </div>
-<div>
-	     1 -  Airy 1830                                                      </div>
-<div>
-	     2 -  Australian National 1965                                       </div>
-<div>
-	     3 -  Bessel 1841 (Ethiopia, Indonesia, Japan, Korea)                </div>
-<div>
-	     4 -  Bessel 1841 (Namibia)                                          </div>
-<div>
-	     5 -  Clarke 1866                                                    </div>
-<div>
-	     6 -  Clarke 1880                                                    </div>
-<div>
-	     7 -  Everest (Brunei, E. Malaysia)                                  </div>
-<div>
-	     8 -  Everest (India 1830)                                           </div>
-<div>
-	     9 -  Everest (India 1956)                                           </div>
-<div>
-	    10 - Everest (Pakistan)                                             </div>
-<div>
-	    11 - Everest (W. Malaysia, Singapore 1948)                          </div>
-<div>
-	    12 - Everest (W. Malaysia 1969)                                     </div>
-<div>
-	    13 - Geodetic Reference System 1980 (GRS 1980)                      </div>
-<div>
-	    14 - Helmert 1906                                                   </div>
-<div>
-	    15 - Hough 1960                                                     </div>
-<div>
-	    16 - Indonesian 1974                                                </div>
-<div>
-	    17 - International 1924 / Hayford 1909                              </div>
-<div>
-	    18 - Krassovsky 1940                                                </div>
-<div>
-	    19 - Modified Airy                                                  </div>
-<div>
-	    20 - Modified Fischer 1960                                          </div>
-<div>
-	    21 - South American 1969                                            </div>
-<div>
-	    22 - World Geodetic System 1972 (WGS 1972)                          </div>
-<div>
-	    23 - World Geodetic System 1984 (WGS 1984) / NAD 1983</div>
 <p>
 	<br />
 	<u>UTM grid:</u><br />
@@ -292,7 +263,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>
+]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
       <parameter>
@@ -325,14 +297,8 @@
       
     <parameter><label>Ellipsoid properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
         <label>Reference ellipsoid index</label>
-        <int>
-          <property required="no">
-            <keyword>idx=</keyword>
-            <value/>
-            <default>23</default>
-          </property>
-        </int>
-      </parameter><parameter><label>User-specified semi-major axis of ellipsoid</label><float><property required="no"><keyword>a=</keyword><value/><default/></property></float></parameter><parameter><label>User-specified flattening of ellipsoid</label><float><property required="no"><keyword>f=</keyword><value/><default/></property></float></parameter><parameter><label>Echo ellipsoid parameters</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        
+      <enum><property required="no"><keyword>idx=</keyword><value/><default>23</default></property><option><label>Sphere with radius of 6371000 m</label><value>0</value></option><option><label>Airy 1830</label><value>1</value></option><option><label>Australian National 1965</label><value>2</value></option><option><label>Bessel 1841 (Ethiopia, Indonesia, Japan, Korea)</label><value>3</value></option><option><label>Bessel 1841 (Namibia)</label><value>4</value></option><option><label>Clarke 1866</label><value>5</value></option><option><label>Clarke 1880</label><value>6</value></option><option><label>Everest (Brunei, E. Malaysia)</label><value>7</value></option><option><label>Everest (India 1830)</label><value>8</value></option><option><label>Everest (India 1956)</label><value>9</value></option><option><label>Everest (Pakistan)</label><value>10</value></option><option><label>Everest (W. Malaysia, Singapore 1948)</label><value>11</value></option><option><label>Everest (W. Malaysia 1969)</label><value>12</value></option><option><label>Geodetic Reference System 1980 (GRS 1980)</label><value>13</value></option><option><label>Helmert 1906</label><value>14</value></option><option><label>Hough 1960</label><value>15</value></option><option><label>Indonesian 1974</label><value>16</value></option><option><label>International 1924 / Hayford 1909</label><value>17</value></option><option><label>Krassovsky 1940</label><value>18</value></option><option><label>Modified Airy</label><value>19</value></option><option><label>Modified Fischer 1960</label><value>20</value></option><option><label>South American 1969</label><value>21</value></option><option><label>World Geodetic System 1972 (WGS 1972)</label><value>22</value></option><option><label>World Geodetic System 1984 (WGS 1984) / NAD 1983</label><value>23</value></option></enum></parameter><parameter><label>User-specified semi-major axis of ellipsoid</label><float><property required="no"><keyword>a=</keyword><value/><default/></property></float></parameter><parameter><label>User-specified flattening of ellipsoid</label><float><property required="no"><keyword>f=</keyword><value/><default/></property></float></parameter><parameter><label>Echo ellipsoid parameters</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters></template-instance><parameters default-selection="0"><parameter>
         <label>Reference ellipsoid index</label>
         
       <reference><property required="no"><keyword/><value/><default>23</default></property></reference></parameter><parameter><label>User-specified semi-major axis of ellipsoid</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>User-specified flattening of ellipsoid</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Echo ellipsoid parameters</label><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group></parameter><parameter>
