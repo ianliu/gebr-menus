@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.5">
+  <title>SU Backus H</title>
+  <description>Calculate Thomsen anisotropy parameters from well log data</description>
+  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>GêBR - SU Backus H</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU Backus H</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Calculate Thomsen anisotropy parameters from well log data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	Calculate Thomsen anisotropy parameters from well log (vp,vs,rho) data and optionally include intrinsic VTI shale layers based on gramma ray log via backus averaging.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
+<h2 id="header_1">
+	Credits</h2>
+<!-- begin cpy --><p>
+	Sep 21, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+	Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->Sep 21, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]></help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <date>
+    <created>2010-09-21T14:45:52.829009Z</created>
+    <modified>2010-09-21T15:44:50.207680Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <servers/>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Backus H</title>
+    <binary>subackush</binary>
+    <description>Calculate Thomsen anisotropy parameters from well log data</description>
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>GêBR - SU Backus H</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">SU Backus H</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Calculate Thomsen anisotropy parameters from well log data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	Calculate Thomsen anisotropy parameters from well log (vp,vs,rho) data and optionally include ntrinsic VTI shale layers based on gramma ray log via backus averaging.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+<!-- begin lst -->	<ul>
+		<li>
+			<span class="label">Number of depth samples in Backus average window</span><br />
+			</li>
+		<li class="group">
+			<span class="grouplabel">Intrinsic anisotropy of shale layers can be included</span><br />
+			
+			<ul>
+				<li>
+					<span class="label">Input is vp_vs_rho_gr</span><br />
+					 If not set, default is no gamma ray log input for shale.</li>
+				<li>
+					<span class="label">Pure shale gamma ray value (API units)</span><br />
+					</li>
+				<li>
+					<span class="label">0% shale gamma ray value (API units)</span><br />
+					</li>
+				<li>
+					<span class="label">Include shale anisotropy parameters for</span><br />
+					
+					<ul>
+						<li>
+							Shale volume</li>
+						<li>
+							Pure shale only</li>
+					</ul>
+				</li>
+				<li>
+					<span class="label">Shale epsilon (Thomsen parameter)</span><br />
+					</li>
+				<li>
+					<span class="label">Shale delta (Thomsen parameter)</span><br />
+					</li>
+				<li>
+					<span class="label">Shale gamma (Thomsen parameter)</span><br />
+					</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<h2 id="header_2">
+	Notes</h2>
+<p>
+	1. Input are (P-wave velocity model, S-wave velocity model, density model)<span class="Apple-style-span" style="color: rgb(68, 68, 68); font-family: 'Lucida Sans Unicode', sans-serif; "> </span>traces in metric units.<br />
+	2. Output are: <br />
+	     Trace number sequence within line =  (1,2,3,4,5,6).<br />
+	     Quantity =  ( Vertical P-wave speed, Vertical S-wave speed, Density, Epsilon, Delta, Gamma).<br />
+	     Units =  (m/s, m/s, kg/m^3, nd, nd, nd).<br />
+	     Trace number sequence within line =  (7,8).<br />
+	     Quantity =  (Vsh, shaleEps) .<br />
+	     Units =  (nd, nd).<br />
+	(nd = Dimensionless).<br />
+	(Vsh= Shale volume fraction).<br />
+	<br />
+	3. Epsilon, Delta, etc. can be isolated by "Trace number sequence within line" header field. <br />
+	4. Vertical p-wave and s-wave speeds are backus averaged vertical wavespeeds.<br />
+	5. Density model is backus averaged density.</p>
+<h2 id="header_3">
+	References</h2>
+<!-- List of references --><ul>
+	<li>
+		Anisotropy parameters: Thomsen, 2002, DISC Notes (SEG).</li>
+	<li>
+		Backus Method: Berryman, Grechka, and Berge, 1997, SEP94.</li>
+	<li>
+		Shale params: Wang, 2002, Geophysics, p. 1427.</li>
+</ul>
+<h2 id="header_4">
+	Credits</h2>
+<p>
+	UHouston: Chris Liner.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	References</a></li><li><a href="#header_4">
+	Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+		<!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]></help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of depth samples in Backus average window</label>
+        <int>
+          <property required="no">
+            <keyword>navg=</keyword>
+            <value/>
+            <default>101</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Intrinsic anisotropy of shale layers can be included</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter><label>Input is vp_vs_rho_gr</label><flag><property required="no"><keyword>gr=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter>
+                <label>Pure shale gamma ray value (API units)</label>
+                <float>
+                  <property required="no">
+                    <keyword>grs=</keyword>
+                    <value/>
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+              
+              <parameter>
+                <label>0% shale gamma ray value (API units)</label>
+                <float>
+                  <property required="no">
+                    <keyword>grc=</keyword>
+                    <value/>
+                    <default>10</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Include shale anisotropy parameters for</label>
+                <enum>
+                  <property required="no">
+                    <keyword>smode=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                  <option>
+                    <label>Shale volume</label>
+                    <value>1</value>
+                  </option>
+                  <option>
+                    <label>Pure shale only</label>
+                    <value>0</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Shale epsilon (Thomsen parameter)</label>
+                <float>
+                  <property required="no">
+                    <keyword>se=</keyword>
+                    <value/>
+                    <default>0.209</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Shale delta (Thomsen parameter)</label>
+                <float>
+                  <property required="no">
+                    <keyword>sd=</keyword>
+                    <value/>
+                    <default>0.033</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Shale gamma (Thomsen parameter)</label>
+                <float>
+                  <property required="no">
+                    <keyword>sg=</keyword>
+                    <value/>
+                    <default>0.203</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Include shale anisotropy parameters for</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            
+            <parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter>
+              <label>Pure shale gamma ray value (API units)</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label>Shale epsilon (Thomsen parameter)</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.209</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label>Shale epsilon (Thomsen parameter)</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.209</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>
+ 
