@@ -12,8 +12,8 @@
 </head><body xmlns="http://www.w3.org/1999/xhtml">
   <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
     <div xmlns="http://www.w3.org/1999/xhtml" class="inner-container">
-      <div class="header">
-        <div class="title">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="header">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="title">
 	  <!-- begin tt2 -->
          <span class="flowtitle">SU LCT Header</span>
          <!-- end tt2 -->
@@ -26,12 +26,12 @@
         </div>
       </div>
 
-      <div class="category">
-	<!-- begin cat --><!-- end cat -->
+      <div xmlns="http://www.w3.org/1999/xhtml" class="category">
+	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
-      <div class="main">
-        <div class="content"><h2 id="header_0">
+      <div xmlns="http://www.w3.org/1999/xhtml" class="main">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="content"><h2 id="header_0">
 	Introduction</h2>
 <p>
 	Linear coordinate transformation of header words.</p>
@@ -41,18 +41,18 @@
 	Sep 21, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
-        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
 	Introduction</a></li><li><a href="#header_1">
 	Credits</a></li></ul></div>
 
-        <div class="clearer"></div>
+        <div xmlns="http://www.w3.org/1999/xhtml" class="clearer"></div>
       </div>
 
-      <div class="footer">
-        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+      <div xmlns="http://www.w3.org/1999/xhtml" class="footer">
+        <span xmlns="http://www.w3.org/1999/xhtml" class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->Sep 21, 2010<!-- end ver --></span>
 
-        <div class="clearer"></div>
+        <div xmlns="http://www.w3.org/1999/xhtml" class="clearer"></div>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@
   </dict>
   <date>
     <created>2010-09-21T16:24:47.837845Z</created>
-    <modified>2010-09-21T16:48:45.055854Z</modified>
+    <modified>2010-09-21T17:49:39.463861Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -81,16 +81,16 @@
     <title>SU LCT Header</title>
     <binary>sulcthw</binary>
     <description>Linear coordinate transformation of header words</description>
-    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <!-- begin ttl -->
-  <title>GêBR - SU LCT Header</title>
+  <title xmlns="http://www.w3.org/1999/xhtml">GêBR - SU LCT Header</title>
   <!-- end ttl -->
 </head><body xmlns="http://www.w3.org/1999/xhtml">
-  <div class="outer-container">
-    <div class="inner-container">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="inner-container">
       <div class="header">
         <div class="title">
 	  <!-- begin tt2 -->
@@ -150,31 +150,33 @@
 	<strong>Rotation around X</strong>, <strong>Rotation around Y</strong>, <strong>Rotation around Z</strong> = xr, yr, zr, respectively.</p>
 <p>
 	<u>Translation:</u><br />
-	x = x'+ xt;y = y'+ yt;z = z' + zt;</p>
+	x = x' + xt;<br />
+	y = y' + yt;<br />
+	z = z' + zt;</p>
 <div>
 	<u>Rotations:</u></div>
 <div>
-	<em>Around Z axis</em></div>
+	<em>Around Z axis:</em></div>
 <div>
-	X = x*cos(zr)+y*sin(zr);</div>
+	X = x*cos(zr) + y*sin(zr);</div>
 <div>
-	Y = y*cos(zr)-x*sin(zr);</div>
-<div>
-	 </div>
-<div>
-	<em>Around Y axis</em></div>
-<div>
-	Z = z*cos(yr)+x*sin(yr);</div>
-<div>
-	X = x*cos(yr)-z*sin(yr);</div>
+	Y = y*cos(zr) - x*sin(zr);</div>
 <div>
 	 </div>
 <div>
-	<em>Around X axis</em></div>
+	<em>Around Y axis:</em></div>
 <div>
-	Y = y*cos(xr)+z*sin(xr);</div>
+	Z = z*cos(yr) + x*sin(yr);</div>
 <div>
-	Z = Z*cos(xr)-y*sin(xr);</div>
+	X = x*cos(yr) - z*sin(yr);</div>
+<div>
+	 </div>
+<div>
+	<em>Around X axis:</em></div>
+<div>
+	Y = y*cos(xr) + z*sin(xr);</div>
+<div>
+	Z = Z*cos(xr) - y*sin(xr);</div>
 <div>
 	 </div>
 <div>
@@ -187,9 +189,9 @@
 	Header words triplets that are transformed:</div>
 <ul>
 	<li>
-		X source coordinate, Y source coordinate, Source elevation from sea level </li>
+		X source coordinate, Y source coordinate, Source elevation from sea level ;</li>
 	<li>
-		X group coordinate, Y group coordinate, Receiver group elevation from sea level</li>
+		X group coordinate, Y group coordinate, Receiver group elevation from sea level.</li>
 </ul>
 <h2 id="header_3">
 	Credits</h2>
