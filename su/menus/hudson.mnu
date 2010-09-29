@@ -66,7 +66,7 @@
   </dict>
   <date>
     <created>2010-09-14T16:49:57.829980Z</created>
-    <modified>2010-09-14T17:02:50.879449Z</modified>
+    <modified>2010-09-29T18:03:45.805022Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -77,9 +77,9 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="no" stdout="no" stderr="no" status="unconfigured" mpi="" version="SU 42">
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>Hudson</title>
-    <binary>hudson</binary>
+    <binary>hudson outpar=/dev/stderr</binary>
     <description>Compute effective parameters using Hudson's crack theory</description>
     <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
@@ -273,16 +273,8 @@
           </option>
         </enum>
       </parameter>
-      <parameter>
-        <label>Output file</label>
-        <file directory="no" filter-name="" filter-pattern="">
-          <property required="no">
-            <keyword>outpar=</keyword>
-            <value/>
-            <default>/dev/stdout</default>
-          </property>
-        </file>
-      </parameter>
+      
     </parameters>
   </program>
 </flow>
+ 
