@@ -91,7 +91,7 @@
   </dict>
   <date>
     <created>2010-09-17T15:32:37.483548Z</created>
-    <modified>2010-09-29T17:43:09.505966Z</modified>
+    <modified>2010-10-01T21:04:43.023433Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -106,22 +106,15 @@
     <title>Rand Vel 3D</title>
     <binary>randvel3d</binary>
     <description>Add a random velocity layer to a velocity model</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content=
-  "text/html; charset=utf-8" />
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <!-- begin ttl -->
-  <title>G&ecirc;BR - Rand Vel 3D</title>
+  <title xmlns="http://www.w3.org/1999/xhtml">GêBR - Rand Vel 3D</title>
   <!-- end ttl -->
-</head>
-
-<body>
-  <div class="outer-container">
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
     <div class="inner-container">
       <div class="header">
         <div class="title">
@@ -142,133 +135,152 @@
       </div>
 
       <div class="main">
-        <div class="content">
+        <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	Add a random velocity layer (RVL) to a gridded v(x,y,z) velocity model.</p>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+<!-- begin lst -->	<ul>
+		<li class="req">
+			<span class="reqlabel">Number of samples along 1st dimension</span></li>
+		<li class="req">
+			<span class="reqlabel">Number of samples along 2nd dimension</span></li>
+		<li>
+			<span class="label">Number of samples along 3rd dimension</span></li>
+		<li>
+			<span class="label">Mode of add layers</span>
+			<ul>
+				<li>
+					Add single layer populated with random vels</li>
+				<li>
+					Add number of const velocity layers of random thickness and vel</li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Random number seed</span><br />
+			Default is set from clock.</li>
+		<li class="group">
+			<span class="grouplabel">New layer geometry info</span>
+			<ul>
+				<li>
+					<span class="label">1st dimension beginning sample</span></li>
+				<li>
+					<span class="label">1st dimension ending sample</span><br />
+					Default value is <strong>Number of samples along 1st dimension</strong>/5 .</li>
+				<li>
+					<span class="label">2nd dimension beginning sample</span></li>
+				<li>
+					<span class="label">2nd dimension ending sample</span><br />
+					Default value is <strong>Number of samples along 2nd dimension</strong>.</li>
+				<li>
+					<span class="label">3rd dimension beginning sample</span></li>
+				<li>
+					<span class="label">3rd dimension ending sample</span><br />
+					Default value is <strong>Number of samples along 3rd dimension</strong>.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">New layer velocity info</span>
+			<ul>
+				<li>
+					<span class="label">Range (std dev) of random velocity in layer</span><br />
+					Default is v/3.<br />
+					Where v=v(0,0,i1) and i1=(1st dimension beginning sample+1st dimension ending sample)/2 .</li>
+				<li>
+					<span class="label">Attribution mode</span>
+					<ul>
+						<li>
+							Replace original velocity with random value</li>
+						<li>
+							Add random value to original velocity</li>
+					</ul>
+				</li>
+				<li>
+					<span class="label">Random velocity bias</span>
+					<ul>
+						<li>
+							Random velocities can be higher or lower than original</li>
+						<li>
+							Random velocities are always lower than original</li>
+						<li>
+							Random velocities are always higher than original</li>
+					</ul>
+				</li>
+				<li>
+					<span class="label">Fill layers with that constant velocity value</span><br />
+					If set, overrides the other parameters of this group.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Smoothing parameters</span><br />
+			0 = no smothing
+			<ul>
+				<li>
+					<span class="label">1st dimension operator length in samples</span></li>
+				<li>
+					<span class="label">2nd dimension operator length in samples</span></li>
+				<li>
+					<span class="label">3rd dimension operator length in samples</span></li>
+				<li>
+					<span class="label">Smoothing</span>
+					<ul>
+						<li>
+							on velocity</li>
+						<li>
+							on slowness</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Number of const velocity layers to add</span><br />
+			Default value is <strong>Number of samples along 1st dimension</strong>/10 .</li>
+		<li>
+			<span class="label">Percentage velocity deviation (max) from input model</span></li>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+	Notes</h2>
+<p>
+	Smoothing radii usually fall in the range of [0,20].</p>
+<p>
+	Smoothing radii can be used to set aspect ratio of random velocity anomalies in the new layer. For example (r1=5,r2=0,r3=0) will result in vertical vel streaks that mimick vertical fracturing.</p>
+<p>
+	Smoothing on slowness works better to preserve traveltimes relative to the unsmoothed case.</p>
+<p>
+	Default case is a random velocity (+/-30%) near surface layer whose thickness is 20% of the total 2D model thickness.</p>
+<p>
+	Each layer vel is a random perturbation on input model at that level.</p>
+<p>
+	The depth dimension is assumed to be along axis 1.</p>
+<h2 id="header_3">
+	Credits</h2>
+<p>
+	U Houston: Chris Liner c. 2008.</p>
+<!-- begin cpy --><!-- end cpy --></div>
 
-          <a name="intro" id="intro"></a>
-          <h2>Introduction</h2>
-
-          <p>Add a random velocity layer (RVL) to a gridded             
-            v(x,y,z) velocity model.</p>
-
-	  <!-- begin par -->
-          <div class="parameters">
-
-            <a name="par" id="par"></a>
-            <h2>Parameters</h2>
-
-	    <!-- begin lst --><ul>
-<li class="req"><span class="reqlabel">Number of samples along 1st dimension</span><br/></li>
-<li class="req"><span class="reqlabel">Number of samples along 2nd dimension</span><br/></li>
-<li><span class="label">Number of samples along 3rd dimension</span><br/></li>
-<li><span class="label">Mode of add layers</span><br/>
-<ul><li>Add single layer populated with random vels</li><li>Add number of const velocity layers of random thickness and vel</li>
-</ul></li>
-<li><span class="label">Random number seed</span><br/>Default is set from clock.</li>
-<li class="group"><span class="grouplabel">New layer geometry info</span><br/>
-
-<ul>
-<li><span class="label">1st dimension beginning sample</span><br/></li>
-<li><span class="label">1st dimension ending sample</span><br/>Default value is <strong>Number of samples along 1st dimension</strong>/5 .</li>
-<li><span class="label">2nd dimension beginning sample</span><br/></li>
-<li><span class="label">2nd dimension ending sample</span><br/>Default value is <strong>Number of samples along 2nd dimension</strong>.</li>
-<li><span class="label">3rd dimension beginning sample</span><br/></li>
-<li><span class="label">3rd dimension ending sample</span><br/>Default value is <strong>Number of samples along 3rd dimension</strong>.</li>
-</ul></li>
-
-<li class="group"><span class="grouplabel">New layer velocity info</span><br/>
-
-<ul>
-<li><span class="label">Range (std dev) of random velocity in layer</span><br/>Default is v/3.<br/>
-Where v=v(0,0,i1) and i1=(1st dimension beginning sample+1st dimension ending sample)/2 .</li>
-<li><span class="label">Add or replace</span><br/>
-<ul><li>Replace vel at that point with (v_orig+v_rand)</li><li>Add random vel to original vel (v_orig) at that point</li>
-</ul></li>
-<li><span class="label">Random vels type</span><br/>
-<ul><li>Random vels can be higher or lower than v_orig</li><li>Random vels are always lower than v_orig</li><li>Random vels are always higher than v_orig</li>
-</ul></li>
-<li><span class="label">Fill layers with that constant velocity value</span><br/>If set, overrides the other parameters of this group.</li>
-</ul></li>
-
-<li class="group"><span class="grouplabel">Smoothing parameters</span><br/>0 = no smothing
-
-<ul>
-<li><span class="label">1st dimension operator length in samples</span><br/></li>
-<li><span class="label">2nd dimension operator length in samples</span><br/></li>
-<li><span class="label">3rd dimension operator length in samples</span><br/></li>
-<li><span class="label">Smoothing</span><br/>
-<ul><li>on velocity</li><li>on slowness</li>
-</ul></li>
-</ul></li>
-
-<li><span class="label">Number of const velocity layers to add</span><br/>Default value is <strong>Number of samples along 1st dimension</strong>/10 .</li>
-<li><span class="label">Percentage velocity deviation (max) from input model</span><br/></li>
-</ul>
-<!-- end lst -->
-            
-          </div>
-	  <!-- end par -->
-
-	  <a name="notes" id="notes"></a>
-          <h2>Notes</h2>
-
-          <p>Smoothing radii usually fall in the range of [0,20].</p>
-          
-          <p>Smoothing radii can be used to set aspect ratio of random 
-          velocity anomalies in the new layer.  For example (r1=5,r2=0,r3=0) 
-          will result in vertical vel streaks that mimick vertical 
-          fracturing.</p>
-          
-          <p>Smoothing on slowness works better to preserve traveltimes 
-          relative to the unsmoothed case.</p>
-          
-          <p>Default case is a random velocity (+/-30%) near surface layer 
-          whose thickness is 20% of the total 2D model thickness.</p>
-          
-          <p>Each layer vel is a random perturbation on input model at that 
-          level.</p>
-          
-          <p>The depth dimension is assumed to be along axis 1.</p>
-
-	  <a name="credits" id="credits"></a>
-          <h2>Credits</h2>
-
-          <p>U Houston: Chris Liner c. 2008.</p>
-
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
-        </div>
-
-        <div class="navigation">
-          <h2>Index</h2>
-
-          <ul>
-            <li><a href="#intro">Introduction</a></li>
-
-	    <!-- begin mpr -->
-            <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
-
-            <li><a href="#notes">Notes</a></li>
-
-            <li><a href="#credits">Credits</a></li>
-          </ul>
-        </div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
-</body>
-</html>
-]]></help>
+
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0"><parameter><label>Number of samples along 1st dimension</label><int><property required="yes"><keyword>n1=</keyword><value/><default/></property></int></parameter><parameter><label>Number of samples along 2nd dimension</label><int><property required="yes"><keyword>n2=</keyword><value/><default/></property></int></parameter><parameter><label>Number of samples along 3rd dimension</label><int><property required="no"><keyword>n3=</keyword><value/><default>1</default></property></int></parameter><parameter><label>Mode of add layers</label><enum><property required="no"><keyword>mode=</keyword><value/><default>1</default></property><option><label>Add single layer populated with random vels</label><value>1</value></option><option><label>Add number of const velocity layers of random thickness and vel</label><value>2</value></option></enum></parameter><parameter><label>Random number seed</label><int min="0"><property required="no"><keyword>seed=</keyword><value/><default/></property></int></parameter><parameter><label>New layer geometry info</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>1st dimension beginning sample</label><int><property required="no"><keyword>i1beg=</keyword><value/><default>1</default></property></int></parameter><parameter><label>1st dimension ending sample</label><int><property required="no"><keyword>i1end=</keyword><value/><default/></property></int></parameter><parameter><label>2nd dimension beginning sample</label><int><property required="no"><keyword>i2beg=</keyword><value/><default>1</default></property></int></parameter><parameter><label>2nd dimension ending sample</label><int><property required="no"><keyword>i2end=</keyword><value/><default/></property></int></parameter><parameter><label>3rd dimension beginning sample</label><int><property required="no"><keyword>i3beg=</keyword><value/><default>1</default></property></int></parameter><parameter><label>3rd dimension ending sample</label><int><property required="no"><keyword>i3end=</keyword><value/><default/></property></int></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>1st dimension beginning sample</label><reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter><parameter><label>1st dimension ending sample</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>2nd dimension beginning sample</label><reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter><parameter><label>2nd dimension ending sample</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>3rd dimension beginning sample</label><reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter><parameter><label>3rd dimension ending sample</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>New layer velocity info</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Range (std dev) of random velocity in layer</label><float><property required="no"><keyword>vlsd=</keyword><value/><default/></property></float></parameter><parameter><label>Attribution mode</label><enum><property required="no"><keyword>add=</keyword><value/><default>1</default></property><option><label>Replace original velocity with random value</label><value>0</value></option><option><label>Add random value to original velocity</label><value>1</value></option></enum></parameter><parameter><label>Random velocity bias</label><enum><property required="no"><keyword>how=</keyword><value/><default>0</default></property><option><label>Random velocities can be higher or lower than original</label><value>0</value></option><option><label>Random velocities are always lower than original</label><value>1</value></option><option><label>Random velocities are always higher than original</label><value>2</value></option></enum></parameter><parameter><label>Fill layers with that constant velocity value</label><float><property required="no"><keyword>cvel=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Random velocity bias</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Add or replace</label><reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter><parameter><label>Random vels type</label><reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter><parameter><label>Fill layers with that constant velocity value</label><reference><property required="no"><keyword/><value/><default>2000</default></property></reference></parameter></parameters></group></parameter><parameter><label>Smoothing parameters</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>1st dimension operator length in samples</label><float><property required="no"><keyword>r1=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>2nd dimension operator length in samples</label><float><property required="no"><keyword>r2=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>3rd dimension operator length in samples</label><float><property required="no"><keyword>r3=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Smoothing</label><enum><property required="no"><keyword>slowness=</keyword><value/><default>0</default></property><option><label>on velocity</label><value>0</value></option><option><label>on slowness</label><value>1</value></option></enum></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>1st dimension operator length in samples</label><reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter><parameter><label>2nd dimension operator length in samples</label><reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter><parameter><label>3rd dimension operator length in samples</label><reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter><parameter><label>Smoothing</label><reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter></parameters></group></parameter><parameter><label>Number of const velocity layers to add</label><int><property required="no"><keyword>nrvl=</keyword><value/><default/></property></int></parameter><parameter><label>Percentage velocity deviation (max) from input model</label><float><property required="no"><keyword>pdv=</keyword><value/><default>10</default></property></float></parameter></parameters>
   </program>
