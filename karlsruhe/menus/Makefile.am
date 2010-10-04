@@ -16,7 +16,10 @@
 
 gebrmenudir = $(datadir)/gebr/menus/karlsruhe
 
-gebrmenu_DATA = crsstack.mnu
+gebrmenu_DATA = \
+		crsstack.mnu       \
+		crsstack-super.mnu \
+		crsstack-topo.mnu
 
 EXTRA_DIST = $(gebrmenu_DATA)
 

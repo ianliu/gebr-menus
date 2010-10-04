@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow version="0.3.6">
-  <title>CRS Stack</title>
-  <description>Perform CRS stacking</description>
+  <title>CRS Stack Super</title>
+  <description>Perform CRS stacking and Supergather</description>
   <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
@@ -20,7 +20,7 @@
 
           <div class="description">
 	    <!-- begin des -->
-            CRS stack
+            CRS stack and supergathers
             <!-- end des -->
           </div>
         </div>
@@ -40,9 +40,10 @@
 <h2 id="header_1">
 	Credits</h2>
 <p>
-	Jan 27, 2010: written by Luis A. D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;</p>
-<p>
-	Aug 31, 2010: updated by Fernando S. M. Nunes &lt;fsmn_ufpa@yahoo.com.br&gt;</p>
+	Sep 01, 2010: written by Fernando S. M. Nunes &lt;fsmn_ufpa@yahoo.com.br&gt; 
+</p>
+<p>and Luis A. D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;
+</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
@@ -70,7 +71,7 @@
   </dict>
   <date>
     <created>2010-01-27T16:52:48.735209Z</created>
-    <modified>2010-09-17T18:54:51.809647Z</modified>
+    <modified>2010-09-17T18:53:57.857551Z</modified>
     <lastrun/>
   </date>
   <category>WIT - TESTES</category>
@@ -80,11 +81,11 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="no" stdout="no" stderr="yes" status="unconfigured" mpi="" version="4.6">
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured" mpi="" version="5.1.3 25.04.2005">
     
-    <title>CRS Stack</title>
-    <binary>crsstack</binary>
-    <description>Perform CRS stacking</description>
+    <title>CRS Stack Super</title>
+    <binary>crsstack_supergathers</binary>
+    <description>Perform CRS stacking and Supergather</description>
     <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
@@ -103,7 +104,7 @@
 
           <div class="description">
 	    <!-- begin des -->
-            Perform CRS stacking
+            Perform CRS stacking and supergathers
             <!-- end des -->
           </div>
         </div>
@@ -141,7 +142,9 @@
 				<li><span class="label">Perform automatic CMP stack</span></li>
 				<li><span class="label">Perform ZO search/stack</span></li>
 				<li><span class="label">Perform CRS stack with initial attributes</span></li>
+				<li><span class="label">Perform CRS-partial stack to generate the supergathres</span></li>
 				<li><span class="label">Perform attribute optimization and stack</span></li>
+
 				<li><span class="label">Generate migration map</span></li>
 			</ul>
 		</li>
@@ -166,8 +169,8 @@
 				<li><span class="label">Section with reference stacking velocities</span></li>
 				<li><span class="label">Minimum stacking velocity (alternative to reference section)</span></li>
 				<li><span class="label">Maximum stacking velocity used if percentile variation is zero</span></li>
-				<li><span class="label">Percentile variation of stacking velocit</span><br/>
-                                The default value of this parameter is zero.</li>
+				<li><span class="label">Percentile variation of stacking velocit</span>
+				<br/>The default value of this parameter is zero.</li>
 			</ul>
 		</li>
 		<li class="group">
@@ -181,14 +184,14 @@
 				<br/>The default value of this parameter is the smallest offset in input data.</li>
 				<li><span class="label">Largest offset to be considered</span>
 				<br/>The default value of this parameter is the largest offset in input data.</li>
-				<li><span class="label">Largest product of angle between shot/receiver and profile and the respective offset</span><br/>
-                                The default value of this parameter is infinity.</li>
+				<li><span class="label">Largest product of angle between shot/receiver and profile and the respective offset</span>
+				<br/>The default value of this parameter is infinity.</li>
 			</ul>
 		</li>
 		<li class="group">
 			<span class="grouplabel">Muting of target zone</span>
-			<br/>The default behavior is to not apply any muting.
-                        <ul>
+                        <br/>The default behavior is to not apply any muting.
+			<ul>
 				<li><span class="label">List of picked minimum times to be simulated</span></li>
 				<li><span class="label">List of associated picked CDP numbers</span></li>
 			</ul>
@@ -197,7 +200,7 @@
 			<span class="grouplabel">Transformation of input data</span>
 			<ul>
 				<li><span class="label">Data for coherence analysis</span>
-				<br/>The default behavior is the original data.
+				<br/>The default of this parameter is the original data.</li>
 					<ul>
 						<li>Original data</li>
 						<li>Trace envelopes</li>
@@ -233,7 +236,7 @@
 			<span class="grouplabel">Parameters for coherence criteria</span>
 			<ul>
 				<li><span class="label">Coherence criterion</span>
-				<br/>The default value of this parameter is the semblance.
+				<br/>The default of this parameter is the semblance.</li>
 					<ul>
 						<li>Semblance</li>
 						<li>Mean semblance values</li>
@@ -315,6 +318,18 @@
                                 The default value of this parameter is 0.3.</li>
 				<li><span class="label">Relative size of aperture for plane wave search</span><br/>
                                 The default value of this parameter is 0.3.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Supergathers parameters</span>
+			<ul>
+				<li><span class="label">Use positive or negative offsets in supergathers</span><br/>
+                                The default value of this parameter is the positive offsets.</li>
+				<li><span class="label">Average receiver interval in generated supergathers</span><br/>
+				<li><span class="label">Use offset bins derived from the data or regular offsets bins with interval defined by average receiver interval </span><br/>
+                                The default value of this parameter is the regular offsets bins.</li>
+				<li><span class="label">Offset aperture used in partial stacking</span><br/>
+                                The default value of this parameter is Average receiver interval.</li>
 			</ul>
 		</li>
 	</ul>
@@ -454,77 +469,15 @@
             
             
             
-          <parameter>
-              <label>Perform automatic CMP stack</label>
-              <flag>
-                <property required="no">
-                  <keyword>autoCMPstack=1 ZOsearch=0 Inistack=0 Optimize=0 migmap=0</keyword>
-                  <value>off</value>
-                  <default>on</default>
-                </property>
-              </flag>
-            </parameter><parameter>
-              <label>Perform ZO search/stack</label>
-              <flag>
-                <property required="no">
-                  <keyword>autoCMPstack=0 ZOsearch=1 Inistack=0 Optimize=0 migmap=0</keyword>
-                  <value>off</value>
-                  <default>on</default>
-                </property>
-              </flag>
-            </parameter><parameter>
-              <label>Perform CRS stack with initial attributes</label>
-              <flag>
-                <property required="no">
-                  <keyword>autoCMPstack=0 ZOsearch=0 Inistack=1 Optimize=0 migmap=0</keyword>
-                  <value>off</value>
-                  <default>on</default>
-                </property>
-              </flag>
-            </parameter><parameter>
-              <label>Perform attribute optimization and stack</label>
-              <flag>
-                <property required="no">
-                  <keyword>autoCMPstack=0 ZOsearch=0 Inistack=0 Optimize=1 migmap=0</keyword>
-                  <value>off</value>
-                  <default>on</default>
-                </property>
-              </flag>
-            </parameter><parameter>
-              <label>Generate migration map</label>
-              <flag>
-                <property required="no">
-                  <keyword>autoCMPstack=0 ZOsearch=0 Inistack=0 Optimize=0 migmap=1</keyword>
-                  <value>off</value>
-                  <default>on</default>
-                </property>
-              </flag>
-            </parameter></parameters></template-instance>
+          <parameter><label>Automatic CMP stack</label><flag><property required="no"><keyword>autoCMPstack=1 ZOsearch=0 Inistack=0 Optimize=0 Supergathers=0 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Zero-offset search/stack</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=1 Inistack=0 Optimize=0 Supergathers=0 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Initial CRS stack</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=0 Inistack=1 Optimize=0 Supergathers=0 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Attribute optimization and stack</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=0 Inistack=0 Optimize=1 Supergathers=0 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Generate CRS supergathers</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=0 Inistack=0 Optimize=0 Supergathers=1 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Generate migration map</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=0 Inistack=0 Optimize=0 Supergathers=0 migmap=1</keyword><value>off</value><default>on</default></property></flag></parameter></parameters></template-instance>
         <parameters default-selection="1" selection="1">
             
             
             
             
             
-          <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group>
-      </parameter>
-      
-      <parameter><label>General Parameters</label><group instanciable="no" expand="yes"><template-instance><parameters default-selection="0"><parameter>
+          <parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group>
+      </parameter><parameter><label>General Parameters</label><group instanciable="no" expand="yes"><template-instance><parameters default-selection="0"><parameter>
               <label>Pre-stack data file</label>
               <file directory="no" filter-name="SU" filter-pattern="*.su *.SU">
                 <property required="yes">
@@ -579,24 +532,26 @@
           </property>
         </flag>
       </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
-        <label></label>
+        <label/>
         
       <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
-        <label></label>
+        <label/>
         
-      <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group></parameter><parameter>
+      <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group></parameter>
+      
+      <parameter>
         <label>Reference model for stacking velocity</label>
         <group instanciable="no" expand="no">
           <template-instance><parameters default-selection="0" selection="">
@@ -631,27 +586,27 @@
                 <property required="no">
                   <keyword>vnmovar=</keyword>
                   <value/>
-                  <default/>
+                  <default>0.0</default>
                 </property>
               </float>
             </parameter></parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
-              <label></label>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       
@@ -660,12 +615,12 @@
         <group instanciable="no" expand="no">
           <template-instance><parameters default-selection="0" selection="">
             <parameter>
-              <label>Maximum allowed angle between any shot/receiver line and the profile line in degree</label>
+              <label>Maximum allowed angle between any shot/receiver line and the profile line in degrees</label>
               <float>
                 <property required="no">
                   <keyword>maxangdev=</keyword>
                   <value/>
-                  <default></default>
+                  <default>90.0</default>
                 </property>
               </float>
             </parameter>
@@ -712,25 +667,25 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -754,11 +709,11 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
@@ -796,7 +751,7 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter>
           </parameters></group>
@@ -868,29 +823,29 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -924,17 +879,17 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -976,22 +931,22 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               
             <reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter>
             <parameter>
-              <label></label>
+              <label/>
               
-            <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
         <label>Parameters for automatic CMP search/stack</label>
         <group instanciable="no" expand="no">
           <template-instance><parameters default-selection="0" selection=""><parameter><label>Factor for sampling rate in q search related to input</label><float><property required="no"><keyword>qdtfac=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in q search</label><int><property required="no"><keyword>qiter=</keyword><value/><default>3</default></property></int></parameter></parameters></template-instance>
-        <parameters default-selection="0" selection=""><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group>
+        <parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group>
       </parameter>
-    <parameter><label>Parameters for angle and Rn search</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Maximum angle in degree to be searched for</label><float><property required="no"><keyword>maxangle=</keyword><value/><default>60.0</default></property></float></parameter><parameter><label>Minimum angle to be searched for</label><float><property required="no"><keyword>minangle=</keyword><value/><default/></property></float></parameter><parameter><label>Increment for first iteration of angle search</label><float><property required="no"><keyword>dangle=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in angle search</label><int><property required="no"><keyword>angleiter=</keyword><value/><default>3</default></property></int></parameter><parameter><label>Factor for sampling rate in Rn search related to input</label><float><property required="no"><keyword>Rndtfac=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in Rn search</label><int><property required="no"><keyword>Rniter=</keyword><value/><default>3</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group></parameter><parameter><label>Parameters for intial stack</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Factor for sampling rate in Rnip search related to input</label><float><property required="no"><keyword>Rnipdtfac=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in Rnip search</label><int><property required="no"><keyword>Rnipiter=</keyword><value/><default>3</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group></parameter><parameter><label>Parameters for optimization</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Coherence threshold for smallest traveltime</label><float><property required="no"><keyword>mincohthresh=</keyword><value/><default/></property></float></parameter><parameter><label>Coherence threshold for largest traveltime</label><float><property required="no"><keyword>maxcohthresh=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum number of optimization iterations</label><int min="10"><property required="no"><keyword>optiter=</keyword><value/><default>100</default></property></int></parameter><parameter><label>Maximum mean geometrical deviation to terminate</label><float><property required="no"><keyword>opteps=</keyword><value/><default>0.0001</default></property></float></parameter><parameter><label>Radius for Rn transformation</label><float><property required="no"><keyword>transrad=</keyword><value/><default>100.0</default></property></float></parameter><parameter><label>Variation of emergence angle in degrees</label><float><property required="no"><keyword>varangle=</keyword><value/><default>6.0</default></property></float></parameter><parameter><label>Percentile variation of Rnip</label><float><property required="no"><keyword>varRnip=</keyword><value/><default>5.0</default></property></float></parameter><parameter><label>Variation of transformed Rn in degrees</label><float><property required="no"><keyword>varRn=</keyword><value/><default>6.0</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group></parameter><parameter><label>Aperture parameters</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Minimum offset aperture for traveltime</label><float><property required="no"><keyword>minoffsetap=</keyword><value/><default/></property></float></parameter><parameter><label>Traveltime at which minimum offset aperture applies</label><float><property required="no"><keyword>minofftime=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum offset aperture for traveltime</label><float><property required="no"><keyword>maxoffsetap=</keyword><value/><default/></property></float></parameter><parameter><label>Traveltime at which maximum offset aperture applies</label><float><property required="no"><keyword>maxofftime=</keyword><value/><default/></property></float></parameter><parameter><label>Minimum aperture halfwidth in ZO section for traveltime zero</label><float><property required="no"><keyword>minxap=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum aperture in ZO section</label><float><property required="no"><keyword>maxxap=</keyword><value/><default/></property></float></parameter><parameter><label>Average shot interval</label><float><property required="no"><keyword>shotint=</keyword><value/><default/></property></float></parameter><parameter><label>Average model velocity</label><float><property required="no"><keyword>avgvel=</keyword><value/><default/></property></float></parameter><parameter><label>Mean frequency of signal wavelet</label><float><property required="no"><keyword>wavefr=</keyword><value/><default/></property></float></parameter><parameter><label>Relative size of cosine tapered aperture</label><float min="0" max="1"><property required="no"><keyword>tapratio=</keyword><value/><default>0.3</default></property></float></parameter><parameter><label>Relative size of aperture for plane wave search</label><float min="0.1" max="0.9"><property required="no"><keyword>pwaperfac=</keyword><value/><default>0.3</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group></parameter></parameters>
+    <parameter><label>Parameters for angle and Rn search</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Maximum angle in degrees to be searched for</label><float><property required="no"><keyword>maxangle=</keyword><value/><default>60.0</default></property></float></parameter><parameter><label>Minimum angle to be searched for</label><float><property required="no"><keyword>minangle=</keyword><value/><default/></property></float></parameter><parameter><label>Increment for first iteration of angle search</label><float><property required="no"><keyword>dangle=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in angle search</label><int><property required="no"><keyword>angleiter=</keyword><value/><default>3</default></property></int></parameter><parameter><label>Factor for sampling rate in Rn search related to input</label><float><property required="no"><keyword>Rndtfac=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in Rn search</label><int><property required="no"><keyword>Rniter=</keyword><value/><default>3</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Parameters for intial stack</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Factor for sampling rate in Rnip search related to input</label><float><property required="no"><keyword>Rnipdtfac=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in Rnip search</label><int><property required="no"><keyword>Rnipiter=</keyword><value/><default>3</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Parameters for optimization</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Coherence threshold for smallest traveltime</label><float><property required="no"><keyword>mincohthresh=</keyword><value/><default/></property></float></parameter><parameter><label>Coherence threshold for largest traveltime</label><float><property required="no"><keyword>maxcohthresh=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum number of optimization iterations</label><int min="10"><property required="no"><keyword>optiter=</keyword><value/><default>100</default></property></int></parameter><parameter><label>Maximum mean geometrical deviation to terminate</label><float><property required="no"><keyword>opteps=</keyword><value/><default>0.0001</default></property></float></parameter><parameter><label>Radius for Rn transformation</label><float><property required="no"><keyword>transrad=</keyword><value/><default>100.0</default></property></float></parameter><parameter><label>Variation of emergence angle in degrees</label><float><property required="no"><keyword>varangle=</keyword><value/><default>6.0</default></property></float></parameter><parameter><label>Percentile variation of Rnip</label><float><property required="no"><keyword>varRnip=</keyword><value/><default>5.0</default></property></float></parameter><parameter><label>Variation of transformed Rn in degrees</label><float><property required="no"><keyword>varRn=</keyword><value/><default>6.0</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Aperture parameters</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Minimum offset aperture for traveltime</label><float><property required="no"><keyword>minoffsetap=</keyword><value/><default/></property></float></parameter><parameter><label>Traveltime at which minimum offset aperture applies</label><float><property required="no"><keyword>minofftime=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum offset aperture for traveltime</label><float><property required="no"><keyword>maxoffsetap=</keyword><value/><default/></property></float></parameter><parameter><label>Traveltime at which maximum offset aperture applies</label><float><property required="no"><keyword>maxofftime=</keyword><value/><default/></property></float></parameter><parameter><label>Minimum aperture halfwidth in ZO section for traveltime zero</label><float><property required="no"><keyword>minxap=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum aperture in ZO section</label><float><property required="no"><keyword>maxxap=</keyword><value/><default/></property></float></parameter><parameter><label>Average shot interval</label><float><property required="no"><keyword>shotint=</keyword><value/><default/></property></float></parameter><parameter><label>Average model velocity</label><float><property required="no"><keyword>avgvel=</keyword><value/><default/></property></float></parameter><parameter><label>Mean frequency of signal wavelet</label><float><property required="no"><keyword>wavefr=</keyword><value/><default/></property></float></parameter><parameter><label>Relative size of cosine tapered aperture</label><float min="0" max="1"><property required="no"><keyword>tapratio=</keyword><value/><default>0.3</default></property></float></parameter><parameter><label>Relative size of aperture for plane wave search</label><float min="0.1" max="0.9"><property required="no"><keyword>pwaperfac=</keyword><value/><default>0.3</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Supergather parameters</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Offsets to use in supergather</label><enum><property required="no"><keyword>offsign=</keyword><value/><default>1</default></property><option><label>positive offsets</label><value>1</value></option><option><label>negative offsets</label><value>0</value></option></enum></parameter><parameter><label>Average receiver interval in generated supergathers</label><float><property required="yes"><keyword>recint=</keyword><value/><default></default></property></float></parameter><parameter><label>Use offset bins</label><enum><property required="no"><keyword>offreg=</keyword><value/><default>1</default></property><option><label>regularly defined by average receiver interval </label><value>1</value></option><option><label>derived from data</label><value>0</value></option></enum></parameter><parameter><label>Offset aperture used in partial stacking</label><float><property required="no"><keyword>offap=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter></parameters>
   </program>
 </flow>
  
