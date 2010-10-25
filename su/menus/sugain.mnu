@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>SU Gain</title>
   <description>Apply various types of gain to display traces</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -86,7 +86,7 @@
   </dict>
   <date>
     <created>2007-08-26T15:00:00Z</created>
-    <modified>2010-08-06T00:43:05.066332Z</modified>
+    <modified>2010-10-25T18:44:23.672589Z</modified>
     <lastrun/>
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
@@ -316,17 +316,17 @@
 	
 	
       </float></parameter>
-      <parameter><label>Take signed gpowth power of scaled data</label><float><property required="no"><keyword>gpow=</keyword><value/><default/></property></float></parameter><parameter><label>Do automatic gain control</label><flag><property required="no"><keyword>agc=1</keyword><value>off</value><default>on</default></property>
+      <parameter><label>Take signed gpowth power of scaled data</label><float><property required="no"><keyword>gpow=</keyword><value/><default/></property></float></parameter><parameter><label>Automatic gain control</label><flag><property required="no"><keyword>agc=1</keyword><value>off</value><default>off</default></property>
 	
 	
 	
       </flag></parameter>
-      <parameter><label>With gaussian taper</label><flag><property required="no"><keyword>gagc=1</keyword><value>off</value><default>on</default></property>
+      <parameter><label>Automatic gain control with gaussian taper</label><flag><property required="no"><keyword>gagc=1</keyword><value>off</value><default>off</default></property>
 	
 	
 	
       </flag></parameter>
-      <parameter><label>AGC window in seconds (use if agc or gagc is checked)</label><float><property required="no"><keyword>wagc=</keyword><value/><default>0.5</default></property>
+      <parameter><label>AGC window in seconds (use if agc or gagc is checked)</label><float><property required="no"><keyword>wagc=</keyword><value/><default></default></property>
 	
 	
 	
@@ -343,19 +343,7 @@
 	
 	
 	
-      </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Zero any value whose magnitude exceeds trapval</label><float><property required="no"><keyword>trap=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Zero any value whose magnitude exceeds clipval</label><float><property required="no"><keyword>clip=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Clip any value greater than</label><float><property required="no"><keyword>pclip=</keyword><value/><default/></property></float></parameter><parameter><label>Clip any value less than</label><float><property required="no"><keyword>nclip=</keyword><value/><default/></property></float></parameter><parameter><label>Clip by quantile on absolute values on trace</label><float><property required="no"><keyword>qclip=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter></parameters></group></parameter>
+      </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter>
       
       
       <parameter><label>Data balancing</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Balance traces by qclip and scale</label><flag><property required="no"><keyword>qbal=1</keyword><value>off</value><default>off</default></property>
@@ -370,19 +358,7 @@
 	
 	
 	
-      </flag></parameter><parameter><label>Balance traces by subtracting the maximum</label><flag><property required="no"><keyword>maxbal=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Balance traces by qclip and scale</label><flag><property required="no"><keyword>qbal=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Balance traces by dividing by rms value</label><flag><property required="no"><keyword>pbal=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Balance traces by subtracting the mean</label><flag><property required="no"><keyword>mbal=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Balance traces by subtracting the maximum</label><flag><property required="no"><keyword>maxbal=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters></group></parameter>
+      </flag></parameter><parameter><label>Balance traces by subtracting the maximum</label><flag><property required="no"><keyword>maxbal=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value>off</value><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value>off</value><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value>off</value><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value>off</value><default>off</default></property></reference></parameter></parameters></group></parameter>
       
       
       <parameter><label>Multiply data by overall scale factor</label><float><property required="no"><keyword>scale=</keyword><value/><default/></property>
@@ -418,3 +394,4 @@
     <parameter><label>Apply gain to traces with "Mark selected traces" keyword</label><enum><property required="no"><keyword>mark=</keyword><value/><default>0</default></property><option><label>equal to zero</label><value>0</value></option><option><label>different from zero</label><value>1</value></option></enum></parameter><parameter><label>Sample rate in seconds</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property></float></parameter></parameters>
   </program>
 </flow>
+ 
