@@ -2,14 +2,14 @@
 <flow version="0.3.5">
   <title>SU Mig Split-Step</title>
   <description>Split-step depth migration for zero-offset data</description>
-  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
   <!-- begin ttl -->
   <title>SU Mig Split-Step</title>
   <!-- end ttl -->
-</head><body xmlns="http://www.w3.org/1999/xhtml">
+</head><body>
   <div class="outer-container">
     <div class="inner-container">
       <div class="header">
@@ -87,28 +87,28 @@
     <title>SU Mig Split-Step</title>
     <binary>sumigsplit</binary>
     <description>Split-step depth migration for zero-offset data</description>
-    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
-  <title xmlns="http://www.w3.org/1999/xhtml">SU Mig Split-Step</title>
-</head><body xmlns="http://www.w3.org/1999/xhtml">
-  <div xmlns="http://www.w3.org/1999/xhtml" class="outer-container">
-    <div xmlns="http://www.w3.org/1999/xhtml" class="inner-container">
-      <div xmlns="http://www.w3.org/1999/xhtml" class="header">
-        <div xmlns="http://www.w3.org/1999/xhtml" class="title">
-          <span xmlns="http://www.w3.org/1999/xhtml" class="flowtitle">SU Mig Split-Step</span>
-	  <div xmlns="http://www.w3.org/1999/xhtml" class="description">Split-step depth migration for zero-offset data</div>
+  <title>SU Mig Split-Step</title>
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Mig Split-Step</span>
+	  <div class="description">Split-step depth migration for zero-offset data</div>
         </div>
       </div><!-- header -->
 
-      <div xmlns="http://www.w3.org/1999/xhtml" class="category">
+      <div class="category">
         Migration and Dip Moveout | Seismic Unix
       </div>
 
-      <div xmlns="http://www.w3.org/1999/xhtml" class="main">
-	<div xmlns="http://www.w3.org/1999/xhtml" class="content"><div xmlns="http://www.w3.org/1999/xhtml" class="parameters">
+      <div class="main">
+	<div class="content"><div class="parameters">
 	<h2 id="header_0">
 		Introduction</h2>
 	<p>
@@ -135,19 +135,19 @@
 		If non-empty, use the value as a directory path prefix for storing temporary files; else, if the CWP_TMPDIR environment variable is set use its value for the path; else, use tmpfile().</li>
 	</ul>
 </div>
-<h2 xmlns="http://www.w3.org/1999/xhtml" id="header_2">
+<h2 id="header_2">
 	Notes</h2>
-<p xmlns="http://www.w3.org/1999/xhtml">
+<p>
 	The <b>File with velocity profiles</b> consists of C-style binary floats. The structure of this file is <em>vfile[iz][ix]</em>. Note that this means that the x-direction is the fastest direction instead of z-direction.</p>
-<p xmlns="http://www.w3.org/1999/xhtml">
+<p>
 	Such a structure is more convenient for the downward continuation type migration algorithm than using z as fastest dimension as in other SU programs.</p>
-<p xmlns="http://www.w3.org/1999/xhtml">
+<p>
 	Because most of the tools in the SU package (such as <b>Uniform 2D Velocity</b>, <b>Uniform 2D Sample</b>, and <b>Make Velocity</b>) produce output with the structure <em>vfile[ix][iz]</em>, you will need to transpose the velocity files created by these programs. You may use the SU program <b>Transpose</b> in SU to transpose such files into the required <em>vfile[iz][ix]</em> structure.</p>
-<p xmlns="http://www.w3.org/1999/xhtml">
+<p>
 	(In C <em>v[iz][ix]</em> denotes a v(x,z) array, whereas <em>v[ix][iz]</em> denotes a v(z,x) array, the opposite of what Matlab and Fortran programmers may expect.)</p>
-<p xmlns="http://www.w3.org/1999/xhtml">
+<p>
 	This program accesses the following header keywords:</p>
-<ul xmlns="http://www.w3.org/1999/xhtml">
+<ul>
 	<li>
 		Number of depth samples</li>
 	<li>
@@ -157,9 +157,9 @@
 	<li>
 		Midpoint sampling interval</li>
 </ul>
-<p xmlns="http://www.w3.org/1999/xhtml">
+<p>
 	This program modifies the following header keywords:</p>
-<ul xmlns="http://www.w3.org/1999/xhtml">
+<ul>
 	<li>
 		Number of depth samples</li>
 	<li>
@@ -167,32 +167,32 @@
 	<li>
 		Delay recording time</li>
 </ul>
-<h2 xmlns="http://www.w3.org/1999/xhtml" id="header_3">
+<h2 id="header_3">
 	References</h2>
-<ul xmlns="http://www.w3.org/1999/xhtml">
+<ul>
 	<li>
 		Stoffa, P. L. and Fokkema, J. T. and Freire, R. M. and Kessinger, W. P., 1990, Split-step Fourier migration, Geophysics, 55, 410-421.</li>
 </ul>
-<h2 xmlns="http://www.w3.org/1999/xhtml" id="header_4">
+<h2 id="header_4">
 	Credits</h2>
-<p xmlns="http://www.w3.org/1999/xhtml">
+<p>
 	CWP Baoniu Han, July 21th, 1997</p>
 </div>
 
-        <div xmlns="http://www.w3.org/1999/xhtml" class="navigation"><h2 xmlns="http://www.w3.org/1999/xhtml">Index</h2><ul xmlns="http://www.w3.org/1999/xhtml"><li><a href="#header_0"><h2 id="header_0">
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
 		Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
 		Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
 	Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
 	References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
 	Credits</h2></a></li></ul></div>
 
-        <div xmlns="http://www.w3.org/1999/xhtml" class="clearer"></div>
+        <div class="clearer"></div>
       </div>
 
-      <div xmlns="http://www.w3.org/1999/xhtml" class="footer">
-        <span xmlns="http://www.w3.org/1999/xhtml" class="left">GêBR 0.9.12 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+      <div class="footer">
+        <span class="left">GêBR 0.9.12 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
 
-        <div xmlns="http://www.w3.org/1999/xhtml" class="clearer"></div>
+        <div class="clearer"></div>
       </div>
     </div>
   </div>
