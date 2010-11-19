@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>SU Synth Linear CW</title>
   <description>Synthetic seismograms for linear velocity</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -89,7 +89,7 @@
   </dict>
   <date>
     <created>2010-04-29T13:19:14.935034Z</created>
-    <modified>2010-08-06T00:43:08.279762Z</modified>
+    <modified>2010-11-19T18:51:29.184022Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -104,9 +104,9 @@
     <title>SU Synth Linear CW</title>
     <binary>susynlvcw</binary>
     <description>Synthetic seismograms for linear velocity</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
-  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
 
   <!-- begin ttl -->
   <title>SU Synth Linear CW</title>
@@ -137,7 +137,6 @@
 	Introduction</h2>
 <p>
 	Synthetic seismograms for linear velocity function for mode converted waves.</p>
-
 <!-- begin par --><div class="parameters">
 	<h2 id="header_1">
 		Parameters</h2>
@@ -158,9 +157,8 @@
 			<ul>
 				<li>
 					<span class="label">Array of offsets</span><br />
-					If this parameter are set, the other parameters of the group should not be specify.<br/>
+					If this parameter are set, the other parameters of the group should not be specify.<br />
 					Use only for non-uniform offsets.</li>
-
 				<li>
 					<span class="label">Number of source-receiver offsets</span></li>
 				<li>
@@ -168,7 +166,6 @@
 				<li>
 					<span class="label">First offset (km)</span><br />
 					See notes below</li>
-
 			</ul>
 		</li>
 		<li class="group">
@@ -216,7 +213,7 @@
 			<span class="label">Peak frequency of symmetric Ricker wavelet (Hz)</span></li>
 		<li>
 			<span class="label">Reflector(s)</span><br />
-			Amplitude:x1,z1;x2,z2;x3,z3;...</li>
+			Format: "amplitude:x1,z1;x2,z2;x3,z3;..."</li>
 		<li>
 			<span class="label">Smooth reflectors</span><br />
 			Piecewise cubic spline.</li>
@@ -236,10 +233,8 @@
 			<span class="label">Echoes extra information</span></li>
 	</ul>
 <!-- end lst --></div>
-<!-- end par -->
-
-<h2 id="header_2">Notes</h2>
-
+<!-- end par --><h2 id="header_2">
+	Notes</h2>
 <p>
 	Offsets are signed - may be positive or negative.<br />
 	Receiver locations are computed by adding the signed offset to the source location.</p>
@@ -290,28 +285,27 @@
 		X group coordinate</li>
 <!-- gx --></ul>
 <p>
-	<span class="credits">
-	<h2 id="header_3">Credits</h2>
+	 </p>
+<h2 id="header_3">
+	Credits</h2>
 <p>
 	Author: Dave Hale.</p>
 <p>
 	Modified: Mohammed Alfaraj to handle mode conversion<br />
 	Date of modification: 01/07/92.</p>
-
 <!-- begin cpy --><!-- end cpy --></div>
 
-        <div class="navigation"><h2>Index</h2><ul>
-	<li><a href="#header_0">Introduction</a></li>
-	<li><a href="#header_1">Parameters</a></li>
-	<li><a href="#header_2">Notes</a></li>
-	<li><a href="#header_3">Credits</a></li>
-	</ul></div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 		<!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
@@ -320,8 +314,8 @@
   </div>
 
 
-</body></html>
-]]></help>
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -361,35 +355,17 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of time samples</label>
-              <int>
-                <property required="no">
-                  <keyword>nt=</keyword>
-                  <value/>
-                  <default>101</default>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>101</default></property></reference></parameter>
             <parameter>
-              <label>Time sampling interval (sec)</label>
-              <float>
-                <property required="no">
-                  <keyword>dt=</keyword>
-                  <value/>
-                  <default>0.04</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.04</default></property></reference></parameter>
             <parameter>
-              <label>First time (sec)</label>
-              <float>
-                <property required="no">
-                  <keyword>ft=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -439,44 +415,20 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Array of offsets</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>xo=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter><parameter>
-              <label>Number of source-receiver offsets</label>
-              <int>
-                <property required="no">
-                  <keyword>nxo=</keyword>
-                  <value/>
-                  <default>1</default>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter>
             <parameter>
-              <label>Offset sampling interval (km)</label>
-              <float>
-                <property required="no">
-                  <keyword>dxo=</keyword>
-                  <value/>
-                  <default>0.05</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.05</default></property></reference></parameter>
             <parameter>
-              <label>First offset</label>
-              <float>
-                <property required="no">
-                  <keyword>fxo=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
             
           </parameters></group>
       </parameter>
@@ -517,35 +469,17 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of midpoints</label>
-              <int>
-                <property required="no">
-                  <keyword>nxm=</keyword>
-                  <value/>
-                  <default>101</default>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>101</default></property></reference></parameter>
             <parameter>
-              <label>Midpoint sampling interval (km)</label>
-              <float>
-                <property required="no">
-                  <keyword>dxm=</keyword>
-                  <value/>
-                  <default>0.05</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.05</default></property></reference></parameter>
             <parameter>
-              <label>First midpoint (km)</label>
-              <float>
-                <property required="no">
-                  <keyword>fxm=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -558,7 +492,7 @@
                 <property required="no">
                   <keyword>nxs=</keyword>
                   <value/>
-                  <default>101</default>
+                  <default></default>
                 </property>
               </int>
             </parameter>
@@ -568,7 +502,7 @@
                 <property required="no">
                   <keyword>dxs=</keyword>
                   <value/>
-                  <default>0.05</default>
+                  <default></default>
                 </property>
               </float>
             </parameter>
@@ -578,42 +512,24 @@
                 <property required="no">
                   <keyword>fxs=</keyword>
                   <value/>
-                  <default>0.0</default>
+                  <default></default>
                 </property>
               </float>
             </parameter>
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of shotpoints</label>
-              <int>
-                <property required="no">
-                  <keyword>nxs=</keyword>
-                  <value/>
-                  <default>101</default>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>101</default></property></reference></parameter>
             <parameter>
-              <label>Shotpoint sampling interval (km)</label>
-              <float>
-                <property required="no">
-                  <keyword>dxs=</keyword>
-                  <value/>
-                  <default>0.05</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.05</default></property></reference></parameter>
             <parameter>
-              <label>First shotpoint (km)</label>
-              <float>
-                <property required="no">
-                  <keyword>fxs=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -683,65 +599,29 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Velocity at x0, z0 (km/sec)</label>
-              <float>
-                <property required="no">
-                  <keyword>v00=</keyword>
-                  <value/>
-                  <default>2.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>2.0</default></property></reference></parameter>
             <parameter>
-              <label>Distance x at which velocity is specified</label>
-              <float>
-                <property required="no">
-                  <keyword>x0=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
             <parameter>
-              <label>Depth z at which velocity is specified</label>
-              <float>
-                <property required="no">
-                  <keyword>z0=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
             <parameter>
-              <label>Velocity ratio</label>
-              <float>
-                <property required="no">
-                  <keyword>gamma=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>1.0</default></property></reference></parameter>
             <parameter>
-              <label>Derivative of velocity with distance x (dv/dx)</label>
-              <float>
-                <property required="no">
-                  <keyword>dvdx=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
             <parameter>
-              <label>Derivative of velocity with depth z (dv/dz)</label>
-              <float>
-                <property required="no">
-                  <keyword>dvdz=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -754,17 +634,7 @@
           </property>
         </float>
       </parameter>
-      <parameter>
-        <label>Reflector(s)</label>
-        <string>
-          <property required="no" separator=";">
-            <keyword>ref=</keyword>
-            <value/>
-            <default>1:1,2</default>
-            <default>4,2</default>
-          </property>
-        </string>
-      </parameter>
+      <parameter><label>Reflectors</label><group instanciable="yes" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Reflector</label><string><property required="no"><keyword>ref=</keyword><value/><default>1:1,2;4,2</default></property></string></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Reflector(s)</label><reference><property required="no"><keyword/><value/><default>1:1,2;4,2</default></property></reference></parameter></parameters></group></parameter>
       <parameter>
         <label>Smooth reflectors</label>
         <flag>
@@ -848,3 +718,4 @@
     </parameters>
   </program>
 </flow>
+ 
