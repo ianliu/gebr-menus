@@ -73,7 +73,7 @@
   </dict>
   <date>
     <created>2010-03-02T23:54:45.199803Z</created>
-    <modified>2010-11-16T23:03:52.402660Z</modified>
+    <modified>2010-11-30T17:00:06.242902Z</modified>
     <lastrun/>
   </date>
   <category>Graphics</category>
@@ -88,14 +88,14 @@
     <title>SU X Movie</title>
     <binary>suxmovie</binary>
     <description>Display one or more frames of a SU data file</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
-<link rel="stylesheet" type="text/css" href="gebr.css" />
+<link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
 
 <!-- begin ttl -->
 <title>SU X Movie</title>
 <!-- end ttl -->
-</head><body>
+</head><body xmlns="http://www.w3.org/1999/xhtml">
 <div class="outer-container">
   <div class="inner-container">
     <div class="header">
@@ -120,235 +120,251 @@
 
     <div class="main">
       <div class="content"><h2 id="header_0">
-	  Introduction</h2>
-
-	<p>Display one or more frames of a SU data file.</p>
-
-	<h4> Window functionalities:</h4>
-
-            <p>
-            <table>
-              <tr>
-                <td>Button 1 </td>
-                <td>Zoom with rubberband box </td></tr>
-              <tr>
-                <td>Button 2 </td>
-                <td>Reverse the direction of the movie </td></tr>
-              <tr>
-                <td>Button 3 </td>
-                <td>Stop or start the movie </td></tr>
-              <tr>
-                <td>q or Q key </td>
-                <td>Quit window </td></tr>
-              <tr>
-                <td>s or S key </td>
-                <td>Stop display and switch to Step mode </td></tr>
-              <tr>
-                <td>c or C key</td>
-                <td>Set display mode to Continuous mode</td></tr>
-              <tr>
-                <td>f or F key</td>
-                <td>Set frame direction to Forward</td></tr>
-              <tr>
-                <td>n or N key</td>
-                <td>Same as 'f' key</td></tr>
-              <tr>
-                <td>b or B key</td>
-                <td>Set frame direction to Backward</td></tr>
-            </table>
-            </p>
-
-
-	<!-- begin par --><div class="parameters">
-	  <h2 id="header_1">
-	    Parameters</h2>
-
-	  <!-- begin lst -->	<ul>
-	    <li>
-	    <span class="label">Frame title (alow a printf format for frame value)</span><br/>
-	    The title string may contain a C printf format string containing a	
-	    conversion character for the frame number, e.g., try setting the title
-	    as "Frame %g".
-	    </li>
-	    <li class="group">
-	    <span class="grouplabel">Display options</span>
-	    <ul>
-	      <li>
-	      <span class="label">Slice movie</span></li>
-	      <li>
-	      <span class="label">Looping mode</span></li>
-	      <li>
-	      <span class="label">Delay between frames in microseconds</span></li>
-	      <li>
-	      <span class="label">Do not interpolate</span></li>
-	      <li>
-	      <span class="label">Start on step by step mode</span></li>
-	    </ul>
-	    </li>
-	    <li class="group">
-	    <span class="grouplabel">Fast dimension sampling (if different from file header)</span>
-	    <ul>
-	      <li>
-	      <span class="label">Number of samples in fast dimension</span></li>
-	      <li>
-	      <span class="label">First sample</span></li>
-	      <li>
-	      <span class="label">Sampling interval</span></li>
-	    </ul>
-	    </li>
-	    <li class="group">
-	    <span class="grouplabel">Slow dimension sampling (if different from file header)</span>
-	    <ul>
-	      <li>
-	      <span class="label">Number of traces in inline direction</span></li>
-	      <li>
-	      <span class="label">First sample</span></li>
-	      <li>
-	      <span class="label">Sampling interval</span></li>
-	    </ul>
-	    </li>
-	    <li class="group">
-	    <span class="grouplabel">Slowest dimension sampling (if different from file header)</span>
-	    <ul>
-	      <li>
-	      <span class="label">Number of traces in crossline direction</span></li>
-	      <li>
-	      <span class="label">First sample</span></li>
-	      <li>
-	      <span class="label">Sampling interval</span></li>
-	    </ul>
-	    </li>
-	    <li>
-	    <span class="label">Number of traces in data set (if different from file header)</span></li>
-	    <li class="group">
-	    <span class="grouplabel">Clipping properties</span>
-	    <ul>
-	      <li>
-	      <span class="label">Percentile used to determine clip value</span></li>
-	      <li>
-	      <span class="label">Percentile used to determine lower bound clip value</span></li>
-	      <li>
-	      <span class="label">Percentile used to determine upper bound clip value</span></li>
-	      <li>
-	      <span class="label">Clip value</span></li>
-	      <li>
-	      <span class="label">Lower bound clip value</span></li>
-	      <li>
-	      <span class="label">Upper bound clip value</span></li>
-	    </ul>
-	    </li>
-	    <li class="group">
-	    <span class="grouplabel">First axis options</span>
-	    <ul>
-	      <li>
-	      <span class="label">Label for the axis</span></li>
-	      <li>
-	      <span class="label">Value at which axis begins</span></li>
-	      <li>
-	      <span class="label">Value at which axis ends</span></li>
-	      <li>
-	      <span class="label">Number of tics between consecutive numbered tics</span></li>
-	    </ul>
-	    </li>
-	    <li class="group">
-	    <span class="grouplabel">Second axis options</span>
-	    <ul>
-	      <li>
-	      <span class="label">Label for the axis</span></li>
-	      <li>
-	      <span class="label">Value at which axis begins</span></li>
-	      <li>
-	      <span class="label">Value at which axis ends</span></li>
-	      <li>
-	      <span class="label">Number of tics between consecutive numbered tics</span></li>
-	    </ul>
-	    </li>
-	    <li class="group">
-	    <span class="grouplabel">Appearance properties</span>
-	    <ul>
-	      <li>
-	      <span class="label">Window title</span></li>
-	      <li>
-	      <span class="label">Window width in pixels</span></li>
-	      <li>
-	      <span class="label">Window height in pixels</span></li>
-	      <li>
-	      <span class="label">Swap axes</span></li>
-	      <li>
-	      <span class="label">Plot title font</span></li>
-	      <li>
-	      <span class="label">Plot title color</span></li>
-	      <li>
-	      <span class="label">Axes labels font</span></li>
-	      <li>
-	      <span class="label">Axes color</span></li>
-	    </ul>
-	    </li>
-	    <li class="group">
-	    <span class="grouplabel">Color options</span>
-	    <ul>
-	      <li>
-	      <span class="label">Colormap</span></li>
-	      <li>
-	      <span class="label">Hue mapped to the lowest value</span></li>
-	      <li>
-	      <span class="label">Hue mapped to the largest value</span></li>
-	      <li>
-	      <span class="label">Saturation</span></li>
-	      <li>
-	      <span class="label">Brightness</span></li>
-	      <li>
-	      <span class="label">Value mapped to white</span></li>
-	    </ul>
-	    </li>
-	    <li>
-	    <span class="label">Echoes extra information</span></li>
-	    <li>
-	    <span class="label">Directory for storing temporary files</span></li>
-	  </ul>
-	  <!-- end lst --></div>
-	<!-- end par -->
-
-	<h2 id="header_3"> Notes </h2>
-
-	<p>
-	For seismic data, the "fast dimension" is either time or
-	depth and the "slow dimension" is usually trace number.
-	</p>
-
-	<p>
-	The data is read to memory with and piped to <b>X Movie</b> with the
-	respective sampling parameters.
-	</p>
-
-	<h2 id="header_5"> Credits </h2>
-
-	<p>Seismic Unix Team</p>
-
-	<!-- begin cpy --><!-- end cpy --></div>
-
-      <div class="navigation"><h2>Index</h2>
-	<ul>
-	  <li><a href="#header_0"> Introduction</a></li>
-	  <li><a href="#header_1"> Parameters</a></li>
-	  <li><a href="#header_3"> Notes</a></li>
-	  <li><a href="#header_5"> Credits</a></li>
+	Introduction</h2>
+<p>
+	Display one or more frames of a SU data file.</p>
+<h4>
+	Window functionalities:</h4>
+<p>
+	 </p>
+<table>
+	<tbody>
+		<tr>
+			<td>
+				Button 1</td>
+			<td>
+				Zoom with rubberband box</td>
+		</tr>
+		<tr>
+			<td>
+				Button 2</td>
+			<td>
+				Reverse the direction of the movie</td>
+		</tr>
+		<tr>
+			<td>
+				Button 3</td>
+			<td>
+				Stop or start the movie</td>
+		</tr>
+		<tr>
+			<td>
+				q or Q key</td>
+			<td>
+				Quit window</td>
+		</tr>
+		<tr>
+			<td>
+				s or S key</td>
+			<td>
+				Stop display and switch to Step mode</td>
+		</tr>
+		<tr>
+			<td>
+				c or C key</td>
+			<td>
+				Set display mode to Continuous mode</td>
+		</tr>
+		<tr>
+			<td>
+				f or F key</td>
+			<td>
+				Set frame direction to Forward</td>
+		</tr>
+		<tr>
+			<td>
+				n or N key</td>
+			<td>
+				Same as 'f' key</td>
+		</tr>
+		<tr>
+			<td>
+				b or B key</td>
+			<td>
+				Set frame direction to Backward</td>
+		</tr>
+	</tbody>
+</table>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+<!-- begin lst -->	<ul>
+		<li>
+			<span class="label">Frame title (alow a printf format for frame value)</span><br />
+			The title string may contain a C printf format string containing a conversion character for the frame number, e.g., try setting the title as "Frame %g".</li>
+		<li class="group">
+			<span class="grouplabel">Display options</span>
+			<ul>
+				<li>
+					<span class="label">Slice movie</span></li>
+				<li>
+					<span class="label">Looping mode</span></li>
+				<li>
+					<span class="label">Delay between frames in microseconds</span></li>
+				<li>
+					<span class="label">Do not interpolate</span></li>
+				<li>
+					<span class="label">Start on step by step mode</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Fast dimension sampling (if different from file header)</span>
+			<ul>
+				<li>
+					<span class="label">Number of samples in fast dimension</span></li>
+				<li>
+					<span class="label">First sample</span></li>
+				<li>
+					<span class="label">Sampling interval</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Slow dimension sampling (if different from file header)</span>
+			<ul>
+				<li>
+					<span class="label">Number of traces in inline direction</span></li>
+				<li>
+					<span class="label">First sample</span></li>
+				<li>
+					<span class="label">Sampling interval</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Slowest dimension sampling (if different from file header)</span>
+			<ul>
+				<li>
+					<span class="label">Number of traces in crossline direction</span></li>
+				<li>
+					<span class="label">First sample</span></li>
+				<li>
+					<span class="label">Sampling interval</span></li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Number of traces in data set (if different from file header)</span></li>
+		<li class="group">
+			<span class="grouplabel">Clipping properties</span>
+			<ul>
+				<li>
+					<span class="label">Percentile used to determine clip value</span></li>
+				<li>
+					<span class="label">Percentile used to determine lower bound clip value</span></li>
+				<li>
+					<span class="label">Percentile used to determine upper bound clip value</span></li>
+				<li>
+					<span class="label">Clip value</span></li>
+				<li>
+					<span class="label">Lower bound clip value</span></li>
+				<li>
+					<span class="label">Upper bound clip value</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">First axis options</span>
+			<ul>
+				<li>
+					<span class="label">Label for the axis</span></li>
+				<li>
+					<span class="label">Value at which axis begins</span></li>
+				<li>
+					<span class="label">Value at which axis ends</span></li>
+				<li>
+					<span class="label">Number of tics between consecutive numbered tics</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Second axis options</span>
+			<ul>
+				<li>
+					<span class="label">Label for the axis</span></li>
+				<li>
+					<span class="label">Value at which axis begins</span></li>
+				<li>
+					<span class="label">Value at which axis ends</span></li>
+				<li>
+					<span class="label">Number of tics between consecutive numbered tics</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Appearance properties</span>
+			<ul>
+				<li>
+					<span class="label">Window title</span></li>
+				<li>
+					<span class="label">Window width in pixels</span></li>
+				<li>
+					<span class="label">Window height in pixels</span></li>
+				<li>
+					<span class="label">Swap axes</span></li>
+				<li>
+					<span class="label">Plot title font</span></li>
+				<li>
+					<span class="label">Plot title color</span></li>
+				<li>
+					<span class="label">Axes labels font</span></li>
+				<li>
+					<span class="label">Axes color</span></li>
+				<li>
+					<span class="label">Window geometry</span><br />
+					Define the geometry of the window through a string in the format "widthxheight+widthoff+heightoff"</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Color options</span>
+			<ul>
+				<li>
+					<span class="label">Colormap</span></li>
+				<li>
+					<span class="label">Hue mapped to the lowest value</span></li>
+				<li>
+					<span class="label">Hue mapped to the largest value</span></li>
+				<li>
+					<span class="label">Saturation</span></li>
+				<li>
+					<span class="label">Brightness</span></li>
+				<li>
+					<span class="label">Value mapped to white</span></li>
+			</ul>
+		</li>
+		<li>
+			<span class="label">Echoes extra information</span></li>
+		<li>
+			<span class="label">Parameters file</span></li>
+		<li>
+			<span class="label">Directory for storing temporary files</span></li>
 	</ul>
-      </div>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+	Notes</h2>
+<p>
+	For seismic data, the "fast dimension" is either time or depth and the "slow dimension" is usually trace number.</p>
+<p>
+	The data is read to memory with and piped to <b>X Movie</b> with the respective sampling parameters.</p>
+<h2 id="header_3">
+	Credits</h2>
+<p>
+	Seismic Unix Team</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+      <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div>
 
       <div class="clearer"></div>
     </div>
 
     <div class="footer">
-      <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!--end dtd -->) | SU 41 </span>
+      <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!--end dtd -->) | SU 41 </span>
 
       <div class="clearer"></div>
     </div>
   </div>
 </div>
 
-</body></html>
-]]></help>
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       
@@ -764,7 +780,7 @@
                 </property>
               </string>
             </parameter>
-          </parameters></template-instance>
+          <parameter><label>Window geometry</label><string><property required="no"><keyword>-geometry</keyword><value/><default/></property></string></parameter></parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
               <label/>
@@ -799,7 +815,7 @@
               <label/>
               
             <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-          </parameters></group>
+          <parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group>
       </parameter>
       <parameter><label>Color options</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter>
         <label>Colormap</label>
@@ -927,7 +943,7 @@
           </property>
         </flag>
       </parameter>
-    <parameter><label>Directory for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
+    <parameter><label>Parameters file</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>par=</keyword><value/><default/></property></file></parameter><parameter><label>Directory for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
 	
 	
 	
