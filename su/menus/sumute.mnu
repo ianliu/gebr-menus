@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>SU Mute</title>
   <description>Mute above (or below) a user-defined polygonal curve</description>
   <help><![CDATA[
@@ -91,7 +91,7 @@
   </dict>
   <date>
     <created>2007-09-16T15:00:00Z</created>
-    <modified>2010-08-06T00:43:06.256208Z</modified>
+    <modified>2010-11-30T17:42:32.207025Z</modified>
     <lastrun/>
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
@@ -102,26 +102,19 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     
     <title>SU Mute</title>
     <binary>sumute</binary>
     <description>Mute above (or below) a user-defined polygonal curve</description>
-        <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html>
-  <head>
-    <meta http-equiv="content-type" content=
-    "text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="gebr.css" />
+        <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
 
     <!-- begin ttl -->
   <title>SU Mute</title>
   <!-- end ttl -->
-  </head>
-
-  <body>
+  </head><body>
     <div class="outer-container">
       <div class="inner-container">
         <div class="header">
@@ -145,143 +138,115 @@
       </div>
 
         <div class="main">
-          <div class="content">
+          <div class="content"><h2 id="header_0">
+	Introduction</h2>
+<p>
+	Mute above (or below) a user-defined polygonal curve.</p>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+<!-- begin lst -->	<ul>
+		<li class="req">
+			<span class="label">Array of positions specified by keyword values</span></li>
+		<li class="req">
+			<span class="label"><span class="reqlabel">Array of corresponding time values (sec)</span></span><br />
+			These values are extrapolated to the left by the smallest time sample on the trace and to the right by the last value given in the array.</li>
+		<li class="req">
+			<span class="label">Parameters file</span></li>
+		<li>
+			<span class="label">Keyword specifying traces</span><br />
+			For a list of keywords, and their descriptions, see the help of menu SU Set Header.</li>
+		<li>
+			<span class="label">Number of points to taper before hard mute</span><br />
+			It uses sine squared taper.</li>
+		<li>
+			<span class="label">Mute mode</span><br />
+			In this context "above" means earlier time and "below" means later time. That is, above and below as seen on a seismic section.
+			<ul>
+				<li>
+					Mute above the polygonal curve</li>
+				<li>
+					Mute below the polygonal curve</li>
+				<li>
+					Mute below and above a straight line</li>
+			</ul>
+			The mode "Mute below and above a straight line" is intended for removing air waves. The mute is over a narrow window above and below the polygonal line specified.</li>
+		<li>
+			<span class="label">Linear velocity</span></li>
+		<li>
+			<span class="label">Time shift of linear mute</span></li>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+	Notes</h2>
+<p>
+	<strong>ATTENTION: </strong>Necessary define parameters <strong>Array of positions specified by keyword values</strong> and <strong>Array of corresponding time values (sec)</strong>, <u>or</u> <strong>Parameters file. </strong><br />
+	<br />
+	If data are spatial, such as the (z-x) output of a migration, then depth values are used in place of times. The value of the depth sampling interval is given by the "Sample spacing for non-seismic data" header field.<br />
+	<br />
+	Caveat: if data are seismic time sections, the keyword "Sample interval in microseconds" must be set. If data are seismic depth sections, the keyword "Trace identification code" must be set to 30, and "Sample spacing for non-seismic data" header field must be set.<br />
+	<br />
+	Besides keyword selected on parameter <b>Keyword specifying traces</b> this program also accesses the following trace keywords:</p>
+<ul>
+	<li>
+		Number of samples</li>
+<!-- ns    -->	<li>
+		Sampling interval in microseconds</li>
+<!-- dt    -->	<li>
+		Delay recording time in ms</li>
+<!-- delrt -->	<li>
+		Trace identification code</li>
+<!-- trid  -->	<li>
+		Sample spacing for non-seismic data</li>
+<!-- d1    --></ul>
+<p>
+	It modifies one of the following keywords:</p>
+<ul>
+	<li>
+		Initial mute time</li>
+<!-- muts -->	<li>
+		Final mute time</li>
+</ul>
+<h2 id="header_3">
+	Credits</h2>
+<p>
+	SEP: Shuki Ronen<br />
+	CWP: Jack K. Cohen, Dave Hale, John Stockwell<br />
+	DELPHI: Alexander Koek</p>
+<!-- begin cpy --><!-- end cpy --></div>
 
-            <a name="intro" id="intro"></a>
-            <h2>Introduction</h2>
-
-            <p>Mute above (or below) a user-defined polygonal curve.</p>
-
-            <!-- begin par -->
-            <div class="parameters">
-
-              <a name="par" id="par"></a>
-              <h2>Parameters</h2>
-
-              <!-- begin lst -->
-            <ul>
-                <li class="req">
-                <span class="reqlabel">Array of positions specified by keyword values</span></li>
-
-                <li class="req">
-                <span class="reqlabel">Array of corresponding time values (sec)</span><br/>
-                These values are extrapolated to the left by the smallest time sample on the trace and 
-                to the right by the last value given in the array.
-                </li>
-
-                <li><span class="label">Keyword specifying traces</span><br/>
-                For a list of keywords, and their descriptions, see the help of menu SU Set Header.</li>
-
-                <li><span class="label">Number of points to taper before hard mute</span><br/>
-                It uses sine squared taper.</li>
-
-                <li><span class="label">Mute mode</span><br/> 
-                In this context "above" means earlier time and "below" means later time. 
-                That is, above and below as seen on a seismic section.
-                <ul>
-                  <li>Mute above the polygonal curve</li>
-                  <li>Mute below the polygonal curve</li>
-                  <li>Mute below and above a straight line</li>
-                </ul>
-                The mode "Mute below and above a straight line" is intended for removing air waves.
-                The mute is over a narrow window above and below the polygonal line specified.
-                </li>
-
-                <li><span class="label">Linear velocity</span></li>
-
-                <li><span class="label">Time shift of linear mute</span></li>
-
-              </ul>
-
-              <!-- end lst -->
-
-          </div>
-            <!-- end par -->
-
-            <a name="notes" id="notes"></a>
-            <h2>Notes</h2>
-
-            <p>If data are spatial, such as the (z-x) output of a migration, then    
-            depth values are used in place of times. The value 
-            of the depth sampling interval is given by the "Sample spacing for
-            non-seismic data" header field.</p>
-
-            <p>Caveat: if data are seismic time sections, the keyword "Sample interval
-            in microseconds" must be set.
-            If data are seismic depth sections, the keyword "Trace identification code"
-            must be set to 30, and "Sample spacing for non-seismic data"
-            header field must be set.</p>
-
-            <p> Besides keyword selected on parameter <b>Keyword specifying traces</b>
-            this program also accesses the following trace keywords:
-            <ul>
-              <li> Number of samples                   </li> <!-- ns    -->
-              <li> Sampling interval in microseconds     </li> <!-- dt    -->
-              <li> Delay recording time in ms          </li> <!-- delrt -->
-              <li> Trace identification code           </li> <!-- trid  -->
-              <li> Sample spacing for non-seismic data </li> <!-- d1    -->
-            </ul>
-            It modifies one of the following keywords:
-            <ul>
-              <li> Initial mute time </li> <!-- muts -->
-              <li> Final mute time   </li> <!-- mute -->
-            </ul>
-            </p>
-
-            <a name="credits" id="credits"></a>
-            <h2>Credits</h2>
-
-            <p>SEP: Shuki Ronen<br />
-            CWP: Jack K. Cohen, Dave Hale, John Stockwell<br />
-            DELPHI: Alexander Koek</p>
-
-            <!-- begin cpy -->
-            <!-- end cpy -->
-
-          </div>
-
-          <div class="navigation">
-            <h2>Index</h2>
-
-            <ul>
-              <li><a href="#intro">Introduction</a></li>
-
-              <!-- begin mpr -->
-              <li><a href="#par">Parameters</a></li>
-              <!-- end mpr -->
-
-              <li><a href="#notes">Notes</a></li>
-
-              <li><a href="#credits">Credits</a></li>
-            </ul>
-          </div>
+          <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
+		Parameters</a></li><li><a href="#header_2">
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div>
 
           <div class="clearer"></div>
         </div>
 
         <div class="footer">
-          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+          <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
 
           <div class="clearer"></div>
         </div>
       </div>
     </div>
-  </body>
-</html>
-]]></help>
+  
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Array of positions specified by keyword values</label><float><property required="yes" separator=","><keyword>xmute=</keyword><value/><default/></property>
+      <parameter><label>Array of positions specified by keyword values</label><float><property required="no" separator=","><keyword>xmute=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
-      <parameter><label>Array of corresponding time values (sec)</label><float><property required="yes" separator=","><keyword>tmute=</keyword><value/><default/></property>
+      <parameter><label>Array of corresponding time values (sec)</label><float><property required="no" separator=","><keyword>tmute=</keyword><value/><default/></property>
         
         
         
       </float></parameter>
       
-      <parameter>
+      <parameter><label>Parameters file</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>par=</keyword><value/><default/></property></file></parameter><parameter>
         <label>Key header word specifying trace offset</label>
         <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default/></property>
       <option><label>Alias filter frequency if used</label><value>afilf</value></option>
@@ -379,3 +344,4 @@
     <parameter><label>Do not take absolute value of key</label><flag><property required="no"><keyword>absolute=0</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
   </program>
 </flow>
+ 
