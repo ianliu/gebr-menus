@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>SU Frac</title>
   <description>Fractional time derivative</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -92,7 +92,7 @@
   </dict>
   <date>
     <created>2010-02-05T20:33:24.835010Z</created>
-    <modified>2010-08-06T00:43:04.985727Z</modified>
+    <modified>2010-12-07T15:38:13.881559Z</modified>
     <lastrun/>
   </date>
   <category>Filtering, Transforms and Attributes</category>
@@ -263,7 +263,7 @@
             <parameter>
               <label>Comom operations</label>
               <enum>
-                <property required="yes">
+                <property required="no">
                   <keyword>power=</keyword>
                   <value/>
                   <default>0</default>
@@ -293,7 +293,7 @@
             <parameter>
               <label>Exponent of (-i omega) term</label>
               <float>
-                <property required="yes">
+                <property required="no">
                   <keyword>power=</keyword>
                   <value/>
                   <default/>
@@ -303,45 +303,13 @@
           </parameters></template-instance>
         <parameters default-selection="1" selection="1">
             <parameter>
-              <label>Comom operations</label>
-              <enum>
-                <property required="yes">
-                  <keyword>power=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-                <option>
-                  <label>Differentiation</label>
-                  <value>-1</value>
-                </option>
-                <option>
-                  <label>Semi-differentiation</label>
-                  <value>-0.5</value>
-                </option>
-                <option>
-                  <label>Phase shift only</label>
-                  <value>0</value>
-                </option>
-                <option>
-                  <label>Semi-integration</label>
-                  <value>0.5</value>
-                </option>
-                <option>
-                  <label>Integration</label>
-                  <value>1</value>
-                </option>
-              </enum>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default>0</default></property></reference></parameter>
             <parameter>
-              <label>Exponent of (-i omega) term</label>
-              <float>
-                <property required="yes">
-                  <keyword>power=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -377,3 +345,4 @@
     </parameters>
   </program>
 </flow>
+ 
