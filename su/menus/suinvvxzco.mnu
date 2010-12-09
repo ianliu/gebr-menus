@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>SU Inv VXZ CO</title>
   <description>Seismic Inversion of Common Offset data</description>
   <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -67,7 +67,7 @@
   </dict>
   <date>
     <created>2010-06-21T21:46:25.032381Z</created>
-    <modified>2010-08-06T01:43:02.840261Z</modified>
+    <modified>2010-12-09T17:35:18.425964Z</modified>
     <lastrun/>
   </date>
   <category>Migration and Dip Moveout</category>
@@ -80,7 +80,7 @@
   <servers/>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>SU Inv VXZ CO</title>
-    <binary>suinvvzco</binary>
+    <binary>suinvvxzco</binary>
     <description>Seismic Inversion of Common Offset data</description>
     <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
@@ -362,51 +362,21 @@
             
             
           <parameter>
-              <label>First X sample of velocity</label>
-              <float min="" max="">
-                <property required="no">
-                  <keyword>fx=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter><parameter>
-              <label>X sampling interval of velocity</label>
-              <float>
-                <property required="no">
-                  <keyword>dx=</keyword>
-                  <value/>
-                  <default>50.0</default>
-                </property>
-              </float>
-            </parameter><parameter>
-        <label>Z sampling interval of velocity</label>
-        <float min="" max="">
-          <property required="no">
-            <keyword>dz=</keyword>
-            <value/>
-            <default>50.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>Horizontal range in wich velocity is changed</label>
-        <int>
-          <property required="no">
-            <keyword>nxc=</keyword>
-            <value/>
-            <default>0</default>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Vertical range in wich velocity is changed</label>
-        <int>
-          <property required="no">
-            <keyword>nzc=</keyword>
-            <value/>
-            <default>0</default>
-          </property>
-        </int>
-      </parameter></parameters></group>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter><parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default>50.0</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>50.0</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>0</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>0</default></property></reference></parameter></parameters></group>
       </parameter>
       
       
@@ -447,42 +417,18 @@
           </property>
         </int>
       </parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>Sampling interval in midpoints</label>
-        <float min="" max="">
-          <property required="no">
-            <keyword>dxm=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>First midpoint in input trace</label>
-        <float min="" max="">
-          <property required="no">
-            <keyword>fxm=</keyword>
-            <value/>
-            <default>0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>Skipped number of midpoints</label>
-        <int min="" max="">
-          <property required="no">
-            <keyword>nxd=</keyword>
-            <value/>
-            <default>5</default>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Band centered at midpoints</label>
-        <int min="" max="">
-          <property required="no">
-            <keyword>nxb=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter></parameters></group></parameter><parameter><label>Output properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>0</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>5</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter></parameters></group></parameter><parameter><label>Output properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter>
         <label>X coordinate of first output trace</label>
         <float min="" max="">
           <property required="no">
@@ -537,60 +483,24 @@
           </property>
         </int>
       </parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>X coordinate of first output trace</label>
-        <float min="" max="">
-          <property required="no">
-            <keyword>fxo=</keyword>
-            <value/>
-            <default>0.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>Horizontal spacing of output trace</label>
-        <float>
-          <property required="no">
-            <keyword>dxo=</keyword>
-            <value/>
-            <default>15.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>Number of output traces</label>
-        <int>
-          <property required="no">
-            <keyword>nxo=</keyword>
-            <value/>
-            <default>101</default>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Z coordinate of first output trace</label>
-        <float>
-          <property required="no">
-            <keyword>fzo=</keyword>
-            <value/>
-            <default>0.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>Vertical spacing of output trace</label>
-        <float min="" max="">
-          <property required="no">
-            <keyword>dzo=</keyword>
-            <value/>
-            <default>15.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>Number of points in output trace</label>
-        <int>
-          <property required="no">
-            <keyword>nzo=</keyword>
-            <value/>
-            <default>101</default>
-          </property>
-        </int>
-      </parameter></parameters></group></parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>15.0</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>101</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>15.0</default></property></reference></parameter><parameter>
+        <label></label>
+        
+      <reference><property required="no"><keyword/><value></value><default>101</default></property></reference></parameter></parameters></group></parameter>
       
       
       
@@ -674,3 +584,4 @@
     </parameters>
   </program>
 </flow>
+ 
