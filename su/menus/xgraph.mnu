@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>X Graph</title>
   <description>Plot graphics from binary data sets</description>
   <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -68,7 +68,7 @@
   </dict>
   <date>
     <created>2010-03-22T14:16:09.798420Z</created>
-    <modified>2010-08-06T00:43:10.380473Z</modified>
+    <modified>2010-12-15T17:40:35.008835Z</modified>
     <lastrun/>
   </date>
   <category>Graphics</category>
@@ -83,9 +83,9 @@
     <title>X Graph</title>
     <binary>xgraph</binary>
     <description>Plot graphics from binary data sets</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <link rel="stylesheet" type="text/css" href="gebr.css" />
+    <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
 
     <!-- begin ttl -->
     <title>X Graph</title>
@@ -113,168 +113,150 @@
 
 	<div class="main">
 	  <div class="content"><h2 id="header_0">
-	      Introduction</h2>
-	    <p>
-	    Plot graphics from binary data sets.</p>
-	    <p>
-	    Window functionality:<br />
-	    q or Q key    -    Quit</p>
-	    <!-- begin par -->
-          <div class="parameters">
-	      <h2 id="header_1">
+	Introduction</h2>
+<p>
+	Plot graphics from binary data sets.</p>
+<p>
+	Window functionality:<br />
+	q or Q key - Quit</p>
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
 		Parameters</h2>
-	      <!-- begin lst -->
-            <ul>
+<!-- begin lst -->	<ul>
 		<li class="req">
-		<span class="reqlabel">Number of points per plot</span></li>
+			<span class="reqlabel">Number of points per plot</span></li>
 		<li>
-		<span class="label">Number of plots</span></li>
+			<span class="label">Number of plots</span></li>
 		<li>
-		<span class="label">Title of the plot</span></li>
+			<span class="label">Title of the plot</span></li>
 		<li>
-		<span class="label">Data pairing</span>
-		<ul>
-		  <li>
-		  X and Y interleaved</li>
-		  <li>
-		  All X first</li>
-		</ul>
+			<span class="label">Data pairing</span>
+			<ul>
+				<li>
+					X and Y interleaved</li>
+				<li>
+					All X first</li>
+			</ul>
 		</li>
 		<li class="group">
-		<span class="grouplabel">Axis 1 properties (fast dimension)</span><br />
-		Usually, fast dimension is time or depth.
-		<ul>
-		  <li>
-		  <span class="label">Axis label</span></li>
-		  <li>
-		  <span class="label">First sample</span><br />
-		  Not used if axis coordinates are supplied</li>
-		  <li>
-		  <span class="label">Sampling interval</span><br />
-		  0 if axis coordinates are supplied</li>
-		  <li>
-		  <span class="label">Value at which axis begins</span></li>
-		  <li>
-		  <span class="label">Value at which axis ends</span></li>
-		  <li>
-		  <span class="label">Number of tics between consecutive numbered tics</span></li>
-		</ul>
+			<span class="grouplabel">Axis 1 properties (fast dimension)</span><br />
+			Usually, fast dimension is time or depth.
+			<ul>
+				<li>
+					<span class="label">Axis label</span></li>
+				<li>
+					<span class="label">First sample</span><br />
+					Not used if axis coordinates are supplied</li>
+				<li>
+					<span class="label">Sampling interval</span><br />
+					0 if axis coordinates are supplied</li>
+				<li>
+					<span class="label">Value at which axis begins</span></li>
+				<li>
+					<span class="label">Value at which axis ends</span></li>
+				<li>
+					<span class="label">Number of tics between consecutive numbered tics</span></li>
+				<li>
+					<span class="label">Grid line style</span></li>
+			</ul>
 		</li>
-
 		<li class="group">
-		<span class="grouplabel">Axis 2 properties (slow dimension)</span>
-		<ul>
-		  <li>
-		  <span class="label">Axis label</span></li>
-		  <li>
-		  <span class="label">First sample</span><br />
-		  Not used if axis coordinates are supplied</li>
-		  <li>
-		  <span class="label">Sampling interval</span><br />
-		  0 if axis coordinates are supplied</li>
-		  <li>
-		  <span class="label">Value at which axis begins</span></li>
-		  <li>
-		  <span class="label">Value at which axis ends</span></li>
-		  <li>
-		  <span class="label">Number of tics between consecutive numbered tics</span></li>
-		</ul>
+			<span class="grouplabel">Axis 2 properties (slow dimension)</span>
+			<ul>
+				<li>
+					<span class="label">Axis label</span></li>
+				<li>
+					<span class="label">First sample</span><br />
+					Not used if axis coordinates are supplied</li>
+				<li>
+					<span class="label">Sampling interval</span><br />
+					0 if axis coordinates are supplied</li>
+				<li>
+					<span class="label">Value at which axis begins</span></li>
+				<li>
+					<span class="label">Value at which axis ends</span></li>
+				<li>
+					<span class="label">Number of tics between consecutive numbered tics</span></li>
+				<li>
+					<span class="label">Grid line style</span></li>
+			</ul>
 		</li>
-
 		<li class="group">
-		<span class="grouplabel">Appearance properties</span>
-		<ul>
-		  <li>
-		  <span class="label">Window title</span></li>
-		  <li>
-		  <span class="label">Window width (in pixels)</span></li>
-		  <li>
-		  <span class="label">Window height (in pixels)</span></li>
-		  <li>
-		  <span class="label">Swap axes to normal position</span></li>
-		  <li>
-		  <span class="label">Axes labels font</span></li>
-		  <li>
-		  <span class="label">Axes color</span></li>
-		  <li>
-		  <span class="label">Plot title font</span></li>
-		  <li>
-		  <span class="label">Plot title color</span></li>
-		  <li>
-		  <span class="label">Line Widths (in pixels)</span></li>
-		  <li>
-		  <span class="label">Line Colors</span></li>
-		  <li>
-		  <span class="label">Marks used to represent plotted points</span></li>
-		  <li>
-		  <span class="label">Size of marks (in pixels)</span></li>
-		</ul>
+			<span class="grouplabel">Appearance properties</span>
+			<ul>
+				<li>
+					<span class="label">Window title</span></li>
+				<li>
+					<span class="label">Window width (in pixels)</span></li>
+				<li>
+					<span class="label">Window height (in pixels)</span></li>
+				<li>
+					<span class="label">Swap axes to normal position</span></li>
+				<li>
+					<span class="label">Axes labels font</span></li>
+				<li>
+					<span class="label">Axes color</span></li>
+				<li>
+					<span class="label">Plot title font</span></li>
+				<li>
+					<span class="label">Plot title color</span></li>
+				<li>
+					<span class="label">Line Widths (in pixels)</span></li>
+				<li>
+					<span class="label">Line Colors</span></li>
+				<li>
+					<span class="label">Marks used to represent plotted points</span></li>
+				<li>
+					<span class="label">Size of marks (in pixels)</span></li>
+			</ul>
 		</li>
-
 		<li>
-		<span class="label">Reverse sequence of plotting curves</span></li>
-	      </ul>
-	      <!-- end lst -->
+			<span class="label">Reverse sequence of plotting curves</span></li>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+	Notes</h2>
+<p>
+	Data formats supported:</p>
+<ul>
+	<li>
+		1.a - [ x1, y1, x2, y2, ..., xn, yn ]</li>
+	<li>
+		1.b - [ x1, x2, ..., xn, y1, y2, ..., yn ] (must set <b>Data pairing</b> as "All X first"</li>
+	<li>
+		2 - [ y1, y2, ..., yn ] (must give non-zero <strong>Sampling interval in Axis 1</strong>)</li>
+	<li>
+		3 - [ x1, x2, ..., xn ] (must give non-zero <strong>Sampling interval in Axis 2</strong>)</li>
+	<li>
+		4 - null (must give non-zero <strong>Sampling intervals in Axes1 and 2</strong>)</li>
+</ul>
+<p>
+	The formats may be repeated and mixed in any order, but if formats 2-4 are used, <b>Sampling intervals in Axes 1 and 2</b> arrays must be specified including <b>Sampling interval in Axis 1</b> = 0.0 and/or <b>Sampling interval in Axis 2</b> = 0.0 entries for any internal occurences of format 1.</p>
+<p>
+	Similarly, the pairs array must contain place-keeping entries for plots of formats 2-4 if they are mixed with both formats 1.a and 1.b. Also, if formats 2-4 are used with non-zero <b>First samples in Axes 1 and 2</b>, then the corresponding arrays must be fully specified including <b>First samples in Axis 1</b> = 0.0 and/or <b>First samples in Axis 2</b> = 0.0 entries for any internal occurences of format 1 or formats 2-4 where the zero entries are desired.</p>
+<h2 id="header_3">
+	Credits</h2>
+<p>
+	Author: Dave Hale and Lydia Deng, Colorado School of Mines, 01/17/91</p>
+<p>
+	Modified by:<br />
+	Dave Hale, Colorado School of Mines, 04/18/91<br />
+	Craig Artley, Colorado School of Mines<br />
+	Stewart A. Levin, Mobil<br />
+	James Gunning (CSIRO)</p>
+<!-- begin cpy --><!-- end cpy --></div>
 
-          </div>
-          <!-- end par -->
-
-	    <h2 id="header_2">
-	      Notes</h2>
-	    <p>
-	    Data formats supported:</p>
-	    <ul>
-	      <li>
-	      1.a - [ x1, y1, x2, y2, ..., xn, yn ]</li>
-	      <li>
-	      1.b - [ x1, x2, ..., xn, y1, y2, ..., yn ] (must set <b>Data pairing</b> as "All X first"</li>
-	      <li>
-	      2 - [ y1, y2, ..., yn ] (must give non-zero <strong>Sampling interval in Axis 1</strong>)</li>
-	      <li>
-	      3 - [ x1, x2, ..., xn ] (must give non-zero <strong>Sampling interval in Axis 2</strong>)</li>
-	      <li>
-	      4 - null (must give non-zero <strong>Sampling intervals in Axes1 and 2</strong>)</li>
-	    </ul>
-	    <p>
-	    The formats may be repeated and mixed in any order, but if formats 2-4 are used,
-	    <b>Sampling intervals in Axes 1 and 2</b> arrays must be specified including
-	    <b>Sampling interval in Axis 1</b> = 0.0 and/or 
-	    <b>Sampling interval in Axis 2</b> = 0.0 entries for any internal occurences of format 1.</p>
-	    <p>
-	    Similarly, the pairs array must contain place-keeping entries for plots of formats 2-4 if
-	    they are mixed with both formats 1.a and 1.b. Also, if formats 2-4 are used with non-zero 
-	    <b>First samples in Axes 1 and 2</b>, then the corresponding arrays must be fully specified including
-	    <b>First samples in Axis 1</b> = 0.0 and/or 
-	    <b>First samples in Axis 2</b> = 0.0 entries for any internal occurences of format 1 or formats 2-4
-	    where the zero entries are desired.</p>
-
-
-	    <h2 id="header_3">
-	      Credits</h2>
-
-	    <p>
-	    Author: Dave Hale and Lydia Deng, Colorado School of Mines, 01/17/91</p>
-	    <p>
-	    Modified by:<br />
-	    Dave Hale, Colorado School of Mines, 04/18/91<br />
-	    Craig Artley, Colorado School of Mines<br />
-	    Stewart A. Levin, Mobil<br />
-	    James Gunning (CSIRO)</p>
-
-	    <!-- begin cpy --><!-- end cpy --></div>
-
-	  <div class="navigation"><h2>Index</h2>
-	    <ul><li><a href="#header_0">
-		Introduction</a></li><li><a href="#header_1">
+	  <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Introduction</a></li><li><a href="#header_1">
 		Parameters</a></li><li><a href="#header_2">
-		Notes</a></li><li><a href="#header_3">
-		Credits</a></li></ul></div>
+	Notes</a></li><li><a href="#header_3">
+	Credits</a></li></ul></div>
 
 	  <div class="clearer"></div>
 	</div>
 
 	<div class="footer">
-	  <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+	  <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
 	    <!-- begin ver -->SU 42<!-- end ver --></span>
 
 	  <div class="clearer"></div>
@@ -283,8 +265,8 @@
     </div>
 
 
-</body></html>
-]]></help>
+
+</body></html>]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -392,64 +374,34 @@
               </int>
             </parameter>
             
-          </parameters></template-instance>
+          <parameter><label>Grid line style</label><enum><property required="no"><keyword>grid1=</keyword><value/><default>none</default></property><option><label>No grid lines</label><value>none</value></option><option><label>Dotted grid lines</label><value>dot</value></option><option><label>Dashed grid lines</label><value>dash</value></option><option><label>Solid grid lines</label><value>solid</value></option></enum></parameter></parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Axis label</label>
-              <string><property required="no"><keyword>label1=</keyword><value/><default/></property>
-	
-	
-	
-      </string>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Sampling interval</label>
-              <float><property required="no" separator=","><keyword>d1=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter><parameter>
-              <label>First sample</label>
-              <float><property required="no" separator=","><keyword>f1=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             
             <parameter>
-              <label>Value at which axis begins</label>
-              <float>
-                <property required="no">
-                  <keyword>x1beg=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Value at which axis ends</label>
-              <float>
-                <property required="no">
-                  <keyword>x1end=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Number of tics between consecutive numbered tics</label>
-              <int>
-                <property required="no">
-                  <keyword>n1Tic=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             
-          </parameters></group>
+          <parameter><label>Grid line style</label><reference><property required="no"><keyword/><value/><default>none</default></property></reference></parameter></parameters></group>
       </parameter>
       <parameter>
         <label>Axis 2 properties (slow dimension)</label>
@@ -510,64 +462,34 @@
               </int>
             </parameter>
             
-          </parameters></template-instance>
+          <parameter><label>Grid line style</label><enum><property required="no"><keyword>grid2=</keyword><value/><default>none</default></property><option><label>No grid lines</label><value>none</value></option><option><label>Dotted grid lines</label><value>dot</value></option><option><label>Dashed grid lines</label><value>dash</value></option><option><label>Solid grid lines</label><value>solid</value></option></enum></parameter></parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Axis label</label>
-              <string><property required="no"><keyword>label2=</keyword><value/><default/></property>
-	
-	
-	
-      </string>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Sampling interval</label>
-              <float><property required="no" separator=","><keyword>d2=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter><parameter>
-              <label>First sample</label>
-              <float><property required="no" separator=","><keyword>f2=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             
             <parameter>
-              <label>Value at which axis begins</label>
-              <float>
-                <property required="no">
-                  <keyword>x2beg=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Value at which axis ends</label>
-              <float>
-                <property required="no">
-                  <keyword>x2end=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Number of tics between consecutive numbered tics</label>
-              <int>
-                <property required="no">
-                  <keyword>n2Tic=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             
-          </parameters></group>
+          <parameter><label>Grid line style</label><reference><property required="no"><keyword/><value/><default>none</default></property></reference></parameter></parameters></group>
       </parameter>
       <parameter>
         <label>Appearance properties</label>
@@ -680,109 +602,55 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Window title</label>
-              <string>
-                <property required="no">
-                  <keyword>windowtitle=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </string>
-            </parameter>
-            <parameter>
-              <label>Window width (in pixels)</label>
-              <int>
-                <property required="no">
-                  <keyword>width=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Window height (in pixels)</label>
-              <int>
-                <property required="no">
-                  <keyword>height=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Swap axes to normal position</label>
+              <label></label>
               
-            <flag><property required="no"><keyword>style=normal</keyword><value>off</value><default>on</default></property></flag></parameter>
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Axes labels font</label>
-              <string>
-                <property required="no">
-                  <keyword>labelFont=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </string>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Axes color</label>
-              <string>
-                <property required="no">
-                  <keyword>axesColor=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </string>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
+            <parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value>off</value><default>on</default></property></reference></parameter>
+            <parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
+            <parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             
             <parameter>
-              <label>Plot title font</label>
-              <string>
-                <property required="no">
-                  <keyword>titleFont=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </string>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Plot title color</label>
-              <string>
-                <property required="no">
-                  <keyword>titleColor=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </string>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             
             <parameter>
-              <label>Line Widths (in pixels)</label>
-              <int>
-                <property required="no" separator=",">
-                  <keyword>linewidth=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Line Colors</label>
+              <label></label>
               
-            <string><property required="no"><keyword>linecolor=</keyword><value/><default/></property></string></parameter>
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Marks used to represent plotted points</label>
+              <label></label>
               
-            <enum><property required="no" separator=","><keyword>mark=</keyword><value/><default/></property><option><label>Asterisk</label><value>1</value></option><option><label>X-cross</label><value>2</value></option><option><label>Open triangle</label><value>3</value></option><option><label>Open square</label><value>4</value></option><option><label>Open circle</label><value>5</value></option><option><label>Solid triangle</label><value>6</value></option><option><label>Solid square</label><value>7</value></option><option><label>Solid circle</label><value>8</value></option></enum></parameter>
+            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
             <parameter>
-              <label>Size of marks (in pixels)</label>
-              <int>
-                <property required="no" separator=",">
-                  <keyword>marksize=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label></label>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -799,3 +667,4 @@
     </parameters>
   </program>
 </flow>
+ 
