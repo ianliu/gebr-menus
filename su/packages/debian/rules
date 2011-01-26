@@ -24,7 +24,7 @@ configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
-	AUTOPOINT='intltoolize --automake --copy' autoreconf --install
+	autoreconf --install
 	./configure --prefix=/usr
 	touch configure-stamp
 
