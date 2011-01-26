@@ -19,7 +19,6 @@ gebrmenudir = $(datadir)/gebr/menus/seismicunix
 gebrmenu_DATA = \
                 a2b.mnu                \
 		a2i.mnu                \
-		avgspectra.mnu	       \
 		b2a.mnu		       \
 		bhedtopar.mnu	       \
 		cdpfold.mnu	       \

@@ -30,6 +30,7 @@ AC_PROG_CC
 
 AC_OUTPUT( Makefile
            menus/Makefile
+           demos/Makefile
            packages/Makefile
            packages/rpm/gebr-menus.spec )
 
