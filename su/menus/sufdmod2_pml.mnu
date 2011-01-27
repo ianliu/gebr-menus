@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>SU FD Modeling 2D PML</title>
   <description>Finite difference modeling for acoustic wave equation with PML</description>
   <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -90,7 +90,7 @@
   </dict>
   <date>
     <created>2010-05-04T15:18:55.783634Z</created>
-    <modified>2010-08-06T00:43:04.910764Z</modified>
+    <modified>2011-01-27T16:14:05.049952Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -397,25 +397,13 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>X coordinates of source</label>
-              <float>
-                <property required="yes" separator=",">
-                  <keyword>xs=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Z coordinates of source</label>
-              <float>
-                <property required="yes" separator=",">
-                  <keyword>zs=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -449,29 +437,17 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>Maximum time</label>
-              <float><property required="yes"><keyword>tmax=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Number of time samples</label>
-              <int><property required="no"><keyword>nt=</keyword><value/><default/></property>
-	
-	
-	
-      </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Number of time steps per output time step</label>
-              <int><property required="no"><keyword>mt=</keyword><value/><default>1</default></property>
-	
-	
-	
-      </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -495,7 +471,7 @@
       </float>
             </parameter>
             <parameter>
-              <label>X sampling interval</label>
+              <label>Z sampling interval</label>
               <float><property required="no"><keyword>dz=</keyword><value/><default>1.0</default></property>
 	
 	
@@ -513,37 +489,21 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>X sampling interval</label>
-              <float><property required="no"><keyword>dx=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>1.0</default></property></reference></parameter>
             <parameter>
-              <label>First x sample</label>
-              <float><property required="no"><keyword>fx=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
             <parameter>
-              <label>X sampling interval</label>
-              <float><property required="no"><keyword>dz=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>1.0</default></property></reference></parameter>
             <parameter>
-              <label>First z sample</label>
-              <float><property required="no"><keyword>fz=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -617,45 +577,25 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>X coordinate of vertical line</label>
-              <float><property required="no"><keyword>vsx=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Z coordinate of horizontal line</label>
-              <float min="" max=""><property required="no"><keyword>hsz=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Output file for vertical line</label>
-              <file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>vsfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Output file for horizontal line</label>
-              <file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>hsfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Output file for source point seismograms</label>
-              <file directory="no"><property required="no"><keyword>ssfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -717,27 +657,16 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>PML absorption parameter</label>
-              <float>
-                <property required="no">
-                  <keyword>pml_max=</keyword>
-                  <value/>
-                  <default>1000.0</default>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>1000.0</default></property></reference></parameter>
             <parameter>
-              <label>Half-thickness of pml layer</label>
-              <int>
-                <property required="no">
-                  <keyword>pml_thick=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter>
           </parameters></group>
       </parameter>
     </parameters>
   </program>
 </flow>
+ 
