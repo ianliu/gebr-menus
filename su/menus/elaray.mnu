@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>ELA Ray</title>
   <description>Ray tracing for elastic anisotropic models</description>
   <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -66,7 +66,7 @@
   </dict>
   <date>
     <created>2010-09-15T17:05:30.679338Z</created>
-    <modified>2010-09-17T00:58:36.410442Z</modified>
+    <modified>2011-02-03T13:01:20.743166Z</modified>
     <lastrun/>
   </date>
   <category>Seismic Unix</category>
@@ -298,13 +298,13 @@
             
             
           <parameter>
-                <label>Number of takeoff angles</label>
+                <label></label>
                 
               <reference><property required="no"><keyword/><value/><default>101</default></property></reference></parameter><parameter>
-                <label>First takeoff angle (in degrees)</label>
+                <label></label>
                 
               <reference><property required="no"><keyword/><value/><default>-45</default></property></reference></parameter><parameter>
-                <label>Last takeoff angle (in degrees)</label>
+                <label></label>
                 
               <reference><property required="no"><keyword/><value/><default>45</default></property></reference></parameter></parameters>
         </group>
@@ -343,7 +343,7 @@
           <property required="no">
             <keyword>nt=</keyword>
             <value/>
-            <default></default>
+            <default/>
           </property>
         </int>
       </parameter><parameter>
@@ -386,7 +386,7 @@
           </option>
         </enum>
       </parameter>
-      <parameter>
+      <parameter><label>Index of reflectors</label><group instanciable="yes" expand="yes"><template-instance><parameters default-selection="0"><parameter>
         <label>Index of reflector</label>
         <int>
           <property required="no" separator=",">
@@ -397,7 +397,10 @@
             <default>0</default>
           </property>
         </int>
-      </parameter><parameter>
+      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+        <label>Index of reflector</label>
+        
+      <reference><property required="no"><keyword/><value/><default>1</default><default>0</default><default>0</default></property></reference></parameter></parameters></group></parameter><parameter>
         <label>Display and store only rays incident at interface with this index value</label>
         <int>
           <property required="no">
@@ -424,3 +427,4 @@
     <parameter><label>File containing parameters for the plotting software</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>outparfile=</keyword><value/><default/></property></file></parameter></parameters>
   </program>
 </flow>
+ 
