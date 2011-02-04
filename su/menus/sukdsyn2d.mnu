@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<flow version="0.3.6">
   <title>SU K Depth Synthesis</title>
   <description>Kirchhoff depht synthesis of 2D seismic data</description>
   <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -67,7 +67,7 @@
   </dict>
   <date>
     <created>2010-05-30T23:15:18.697391Z</created>
-    <modified>2010-08-06T00:43:05.634210Z</modified>
+    <modified>2011-02-04T17:21:45.979818Z</modified>
     <lastrun/>
   </date>
   <category>Migration and Dip Moveout</category>
@@ -78,9 +78,9 @@
     <error/>
   </io>
   <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>SU K Depth Synthesis</title>
-    <binary>sukdsyn2</binary>
+    <binary>sukdsyn2d</binary>
     <description>Kirchhoff depth synthesis of 2D seismic data</description>
     <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
@@ -423,95 +423,41 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>First depht sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Number of depht samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Depht interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>First lateral sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Number of lateral samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Lateral Interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>X-coordinate of first source</label>
-              <float>
-                <property required="yes">
-                  <keyword>fs=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Number of sources</label>
-              <int>
-                <property required="yes">
-                  <keyword>ns=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>X-coordinate increment of sources</label>
-              <float>
-                <property required="yes">
-                  <keyword>ds=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       <parameter>
@@ -581,65 +527,29 @@
           </parameters></template-instance>
         <parameters default-selection="0" selection="">
             <parameter>
-              <label>First Z-coordinate in migrated section</label>
-              <float>
-                <property required="yes">
-                  <keyword>fz=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Vertical spacing of migrated section</label>
-              <float>
-                <property required="yes">
-                  <keyword>dz=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Number of depht points in migrated section</label>
-              <int>
-                <property required="yes">
-                  <keyword>nz=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>First x-coordinate of migrated section</label>
-              <float>
-                <property required="yes">
-                  <keyword>fx=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Horizontal spacing of migrated section</label>
-              <float>
-                <property required="yes">
-                  <keyword>dx=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
             <parameter>
-              <label>Number of lateral points in migrated section</label>
-              <int>
-                <property required="yes">
-                  <keyword>nx=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
           </parameters></group>
       </parameter>
       
@@ -671,33 +581,15 @@
           </property>
         </float>
       </parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>Number of time samples</label>
-        <int>
-          <property required="no">
-            <keyword>nt=</keyword>
-            <value/>
-            <default>501</default>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Time sampling interval (seconds)</label>
-        <float>
-          <property required="no">
-            <keyword>dt=</keyword>
-            <value/>
-            <default>0.004</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>First time (seconds)</label>
-        <float>
-          <property required="no">
-            <keyword>ft=</keyword>
-            <value/>
-            <default>0.0</default>
-          </property>
-        </float>
-      </parameter></parameters></group></parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>501</default></property></reference></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>0.004</default></property></reference></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter></parameters></group></parameter>
       
       
       
@@ -729,33 +621,15 @@
           </property>
         </float>
       </parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>Number of source-receiver offsets</label>
-        <int>
-          <property required="no">
-            <keyword>nxo=</keyword>
-            <value/>
-            <default>1</default>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Offset sampling interval</label>
-        <float>
-          <property required="no">
-            <keyword>dxo=</keyword>
-            <value/>
-            <default>25</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>First offset</label>
-        <float min="" max="">
-          <property required="no">
-            <keyword>fxo=</keyword>
-            <value/>
-            <default>0.0</default>
-          </property>
-        </float>
-      </parameter></parameters></group></parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>25</default></property></reference></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter></parameters></group></parameter>
       
       
       
@@ -787,33 +661,15 @@
           </property>
         </float>
       </parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>Number of shotpoints</label>
-        <int>
-          <property required="no">
-            <keyword>nxs=</keyword>
-            <value/>
-            <default>101</default>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Shotpoint sampling interval</label>
-        <float>
-          <property required="no">
-            <keyword>dxs=</keyword>
-            <value/>
-            <default>25</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>First shotpoint</label>
-        <float>
-          <property required="no">
-            <keyword>fxs=</keyword>
-            <value/>
-            <default>0.0</default>
-          </property>
-        </float>
-      </parameter></parameters></group></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>101</default></property></reference></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>25</default></property></reference></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter></parameters></group></parameter><parameter>
         <label>Maximum frequency in migration section (Hz)</label>
         <float>
           <property required="no">
@@ -896,3 +752,4 @@
     </parameters>
   </program>
 </flow>
+ 
