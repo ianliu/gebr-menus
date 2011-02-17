@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.6">
   <title>SU Vibro</title>
   <description>Generates a Vibroseis sweep</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -34,22 +35,22 @@
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Generates a Vibroseis sweep (linear, linear-segment, dB per Octave, dB per Hertz, T-power).</p>
+        Generates a Vibroseis sweep (linear, linear-segment, dB per Octave, dB per Hertz, T-power).</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	GêBR core team</p>
+        GêBR core team</p>
 <p>
-	Aug 11, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+        Aug 11, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
 <p>
-	Jul 21, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Jul 21, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
@@ -63,31 +64,33 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-17T15:00:00Z</created>
-    <modified>2010-08-06T16:30:31.235432Z</modified>
-    <lastrun/>
+    <modified>2011-02-17T13:32:10.789034Z</modified>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
   <io>
-    <input/>
-    <output/>
-    <error/>
+    <input />
+    <output />
+    <error />
   </io>
-  <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
+  <servers />
+  <program stdin="no" stdout="yes" stderr="yes"
+  status="unconfigured" version="SU 41" mpi="">
     <title>SU Vibro</title>
     <binary>suvibro</binary>
     <description>Generates a Vibroseis sweep</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
   
   <link rel="stylesheet" type="text/css" href="file:///usr/share/debr/gebr.css" />
@@ -101,7 +104,7 @@
           <!-- begin tt2 -->
           <span class="flowtitle">SU Vibro</span>
           <!-- end tt2 -->
-	  <div class="description">
+          <div class="description">
            <!-- begin des -->Generates a Vibroseis sweep <!-- end des -->
           </div>
         </div>
@@ -114,108 +117,108 @@
       </div>
 
       <div class="main">
-	<div class="content"><h2 id="header_0">
-	Introduction</h2>
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
 <p>
-	Generates a Vibroseis sweep (linear, linear-segment, dB per Octave, dB per Hertz, T-power).</p>
+        Generates a Vibroseis sweep (linear, linear-segment, dB per Octave, dB per Hertz, T-power).</p>
 <!-- begin par -->
           <div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<!-- begin lst -->
+        <h2 id="header_1">
+                Parameters</h2>
+        <!-- begin lst -->
             <ul>
-		<li>
-			<span class="label">Time sampling interval</span></li>
-		<li>
-			<span class="label">Sweep</span>
-			<ul>
-				<li>
-					Linear sweep</li>
-				<li>
-					Linear-segment</li>
-				<li>
-					Decibel per octave</li>
-				<li>
-					Decibel per hertz</li>
-				<li>
-					T-power</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Sweep constant</span></li>
-		<li>
-			<span class="label">Sweep frequency at start</span></li>
-		<li>
-			<span class="label">Sweep frequency at end</span></li>
-		<li>
-			<span class="label">Sweep length</span></li>
-		<li>
-			<span class="label">Initial phase</span></li>
-		<li>
-			<span class="label">Frequency segments</span></li>
-		<li>
-			<span class="label">Time segments</span></li>
-		<li>
-			<span class="label">Length of taper at start</span></li>
-		<li>
-			<span class="label">Length of taper at end</span></li>
-		<li>
-			<span class="label">Type of taper</span>
-			<ul>
-				<li>
-					Linear</li>
-				<li>
-					Sine</li>
-				<li>
-					Cosine</li>
-				<li>
-					Gaussian (+/- 3.8)</li>
-				<li>
-					Gaussian (+/- 2.0)</li>
-			</ul>
-		</li>
-	</ul>
+                <li>
+                        <span class="label">Time sampling interval</span></li>
+                <li>
+                        <span class="label">Sweep</span>
+                        <ul>
+                                <li>
+                                        Linear sweep</li>
+                                <li>
+                                        Linear-segment</li>
+                                <li>
+                                        Decibel per octave</li>
+                                <li>
+                                        Decibel per hertz</li>
+                                <li>
+                                        T-power</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Sweep constant</span></li>
+                <li>
+                        <span class="label">Sweep frequency at start</span></li>
+                <li>
+                        <span class="label">Sweep frequency at end</span></li>
+                <li>
+                        <span class="label">Sweep length</span></li>
+                <li>
+                        <span class="label">Initial phase</span></li>
+                <li>
+                        <span class="label">Frequency segments</span></li>
+                <li>
+                        <span class="label">Time segments</span></li>
+                <li>
+                        <span class="label">Length of taper at start</span></li>
+                <li>
+                        <span class="label">Length of taper at end</span></li>
+                <li>
+                        <span class="label">Type of taper</span>
+                        <ul>
+                                <li>
+                                        Linear</li>
+                                <li>
+                                        Sine</li>
+                                <li>
+                                        Cosine</li>
+                                <li>
+                                        Gaussian (+/- 3.8)</li>
+                                <li>
+                                        Gaussian (+/- 2.0)</li>
+                        </ul>
+                </li>
+        </ul>
   <!-- end lst -->
 
           </div>
           <!-- end par -->
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	The default tapers are linear envelopes. To eliminate the taper, choose <strong>Length of taper at start</strong> and <strong>end</strong> equal 0.0.</p>
+        The default tapers are linear envelopes. To eliminate the taper, choose <strong>Length of taper at start</strong> and <strong>end</strong> equal 0.0.</p>
 <p>
-	<strong>Sweep constant</strong> is active only with nonlinear options (<em>Decibel per octave</em>, <em>Decibel per hertz</em> and <em>T-power</em> only).<br />
-	<strong>Time segments</strong> and <strong>Frequency segments</strong> arrays are used when only when <em>Linear-segment</em> is choosen.</p>
+        <strong>Sweep constant</strong> is active only with nonlinear options (<em>Decibel per octave</em>, <em>Decibel per hertz</em> and <em>T-power</em> only).<br />
+        <strong>Time segments</strong> and <strong>Frequency segments</strong> arrays are used when only when <em>Linear-segment</em> is choosen.</p>
 <p>
-	This program set the following header keywords:</p>
+        This program set the following header keywords:</p>
 <ul>
-	<li>
-		Number of samples</li>
-	<li>
-		Sampling interval in microseconds</li>
-	<li>
-		Trace number sequence within line</li>
-	<li>
-		Sweep frequency at start</li>
-	<li>
-		Sweep frequency at end</li>
-	<li>
-		Sweep length in ms</li>
-	<li>
-		Sweep type code</li>
+        <li>
+                Number of samples</li>
+        <li>
+                Sampling interval in microseconds</li>
+        <li>
+                Trace number sequence within line</li>
+        <li>
+                Sweep frequency at start</li>
+        <li>
+                Sweep frequency at end</li>
+        <li>
+                Sweep length in ms</li>
+        <li>
+                Sweep type code</li>
 </ul>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Michel Dietrich<br />
-	Rewrite: Tagir Galikeev, CWP, 7 October 1994</p>
+        CWP: Michel Dietrich<br />
+        Rewrite: Tagir Galikeev, CWP, 7 October 1994</p>
 </div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
-		Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
-	Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
-	Credits</h2></a></li></ul></div>
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        Credits</h2></a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -230,52 +233,174 @@
 
 
 
-</body></html>]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Time sampling interval</label><float><property required="no"><keyword>dt=0.004</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Sweep</label><enum><property required="no"><keyword>sweep=</keyword><value/><default>1</default></property><option><label>linear sweep</label><value>1</value></option><option><label>Linear segment</label><value>2</value></option><option><label>Decibel per octave</label><value>3</value></option><option><label>Decibel per herz</label><value>4</value></option><option><label>T-power</label><value>5</value></option></enum></parameter>
-      <parameter><label>Sweep constant</label><float><property required="no"><keyword>swconst=</keyword><value/><default>0.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Sweep frequency at start</label><float><property required="no"><keyword>f1=</keyword><value/><default>10.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Sweep frequency at end</label><float><property required="no"><keyword>f2=</keyword><value/><default>60.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Sweep length</label><float><property required="no"><keyword>tv=</keyword><value/><default>10.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Initial phase</label><float><property required="no"><keyword>phz=</keyword><value/><default>0.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Frequency segments</label><float><property required="no" separator=","><keyword>fseg=</keyword><value/><default>10.0</default><default>60</default><default>0</default></property></float></parameter>
-      <parameter><label>Time segments</label><float><property required="no" separator=","><keyword>tseg=</keyword><value/><default>0.0</default><default>10.0</default></property></float></parameter>
-      <parameter><label>Length of taper at start</label><float><property required="no"><keyword>t1=</keyword><value/><default>1.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Length of taper at end</label><float><property required="no"><keyword>t2=</keyword><value/><default>1.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Type of taper</label><enum><property required="no"><keyword>taper=</keyword><value/><default>1</default></property><option><label>Linear</label><value>1</value></option><option><label>Sine</label><value>2</value></option><option><label>Cosine</label><value>3</value></option><option><label>Gaussian (+/- 3.8)</label><value>4</value></option><option><label>gaussian (+/- 2.0)</label><value>5</value></option></enum></parameter>
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=0.004</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Sweep</label>
+        <enum>
+          <property required="no">
+            <keyword>sweep=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+          <option>
+            <label>linear sweep</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Linear segment</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Decibel per octave</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Decibel per herz</label>
+            <value>4</value>
+          </option>
+          <option>
+            <label>T-power</label>
+            <value>5</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Sweep constant</label>
+        <float>
+          <property required="no">
+            <keyword>swconst=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Sweep frequency at start</label>
+        <float>
+          <property required="no">
+            <keyword>f1=</keyword>
+            <value />
+            <default>10.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Sweep frequency at end</label>
+        <float>
+          <property required="no">
+            <keyword>f2=</keyword>
+            <value />
+            <default>60.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Sweep length</label>
+        <float>
+          <property required="no">
+            <keyword>tv=</keyword>
+            <value />
+            <default>10.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Initial phase</label>
+        <float>
+          <property required="no">
+            <keyword>phz=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Frequency segments</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>fseg=</keyword>
+            <value />
+            <default>10.0</default>
+            <default>60</default>
+            <default>0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Time segments</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>tseg=</keyword>
+            <value />
+            <default>0.0</default>
+            <default>10.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Length of taper at start</label>
+        <float>
+          <property required="no">
+            <keyword>t1=</keyword>
+            <value />
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Length of taper at end</label>
+        <float>
+          <property required="no">
+            <keyword>t2=</keyword>
+            <value />
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Type of taper</label>
+        <enum>
+          <property required="no">
+            <keyword>taper=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+          <option>
+            <label>Linear</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Sine</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Cosine</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Gaussian (+/- 3.8)</label>
+            <value>4</value>
+          </option>
+          <option>
+            <label>gaussian (+/- 2.0)</label>
+            <value>5</value>
+          </option>
+        </enum>
+      </parameter>
     </parameters>
   </program>
 </flow>
+ 
