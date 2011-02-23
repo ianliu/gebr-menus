@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.6">
   <title>Ray Traveltime 2D</title>
-  <description>Traveltime Tables calculated by 2D paraxial ray tracing</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <description>Traveltime Tables calculated by 2D paraxial ray
+  tracing</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +23,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Ray Traveltime 2D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Traveltime Tables calculated by 2D paraxial ray tracing
             <!-- end des -->
           </div>
@@ -34,7 +36,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +47,17 @@
 
           <p>Traveltime Tables calculated by 2D paraxial ray tracing.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Abr 12, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +66,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +77,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Abr 12, 2010<!-- end ver --></span>
+                <!-- begin ver -->Abr 12, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +85,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-04-12T16:47:29.357551Z</created>
-    <modified>2010-08-06T00:43:03.614523Z</modified>
-    <lastrun/>
+    <modified>2011-02-23T13:20:21.023346Z</modified>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
   <io>
-    <input/>
-    <output/>
-    <error/>
+    <input />
+    <output />
+    <error />
   </io>
-  <servers/>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+  <servers />
+  <program stdin="no" stdout="no" stderr="yes"
+  status="unconfigured" version="SU 42" mpi="">
     <title>Ray Traveltime 2D</title>
     <binary>rayt2d</binary>
-    <description>Traveltime Tables calculated by 2D paraxial ray tracing</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <description>Traveltime Tables calculated by 2D paraxial ray
+    tracing</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +131,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Ray Traveltime 2D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Traveltime Tables calculated by 2D paraxial ray tracing
             <!-- end des -->
           </div>
@@ -138,7 +144,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,14 +155,14 @@
 
           <p>Traveltime Tables calculated by 2D paraxial ray tracing.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">File containning velocity</span><br/></li>
 
               <li class="req"><span class="reqlabel">File containning traveltime tables</span><br/></li>
@@ -203,7 +209,7 @@
               <li><span class="label">Number of sources</span><br/></li>
 
               <li><span class="label">X-coordinate increment of sources</span><br/>
-		The default value is 2 times a <b>Lateral interval</b> in traveltime table.</li>
+                The default value is 2 times a <b>Lateral interval</b> in traveltime table.</li>
 
               </ul></li>
 
@@ -215,7 +221,7 @@
               <li><span class="label">Number of time samples in ray tracing</span><br/></li>
 
               <li><span class="label">Ray tracing aperature in x-direction</span><br/>
-		The default value is 0.5 times a <b>Number of lateral samples</b> time <b>Lateral interval</b> both in velocity</li>
+                The default value is 0.5 times a <b>Number of lateral samples</b> time <b>Lateral interval</b> both in velocity</li>
 
               <li><span class="label">First take-off angle of rays (degrees)</span><br/></li>
 
@@ -243,7 +249,7 @@
               <ul>
 
               <li><span class="label">Compute quantities velocity analysis</span><br/>
-		Only if this parameter is set, the remaning parameters of this group need to be specify.</li>
+                Only if this parameter is set, the remaning parameters of this group need to be specify.</li>
 
               <li><span class="label">Input file of velocity variation</span><br/></li>
 
@@ -257,38 +263,38 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-	<ul>
-	   <li>Each traveltime table is calculated by paraxial ray tracing;<br/> 
-	       then traveltimes in shadow zones are compensated by solving eikonal	
-    		equation.</li>
-							
- 	    <li>Input velocity is uniformly sampled and smooth one preferred.</li>	
+        <ul>
+           <li>Each traveltime table is calculated by paraxial ray tracing;<br/> 
+               then traveltimes in shadow zones are compensated by solving eikonal      
+                equation.</li>
+                                                        
+            <li>Input velocity is uniformly sampled and smooth one preferred.</li>      
 
- 	    <li>Traveltime table and source ranges must be within velocity model.</li>	
+            <li>Traveltime table and source ranges must be within velocity model.</li>  
 
- 	    <li>Ray tracing aperature can be chosen as sum of migration aperature	
-    		plus half of maximum offset.</li>					
-	</ul>
-	  <a name="ref" id="ref"></a>
+            <li>Ray tracing aperature can be chosen as sum of migration aperature       
+                plus half of maximum offset.</li>                                       
+        </ul>
+          <a name="ref" id="ref"></a>
           <h2>References</h2>
 
-	  <!-- List of references -->
+          <!-- List of references -->
           <ul>
             <li>Beydoun, W. B., and Keho, T. H., 1987, The paraxial ray method:<br/>
-   		Geophysics, vol. 52, 1639-1653.</li>
+                Geophysics, vol. 52, 1639-1653.</li>
 
             <li> Cerveny, V., 1985, The application of ray tracing to the numerical
-   		modeling of seismic wavefields in complex structures, in Dohr, G.,
-   		ED., Seismic shear waves (part A: Theory): Geophysical Press,
-   		Number 15 in Handbook of Geophysical Exploration, 1-124.</li>
+                modeling of seismic wavefields in complex structures, in Dohr, G.,
+                ED., Seismic shear waves (part A: Theory): Geophysical Press,
+                Number 15 in Handbook of Geophysical Exploration, 1-124.</li>
           </ul>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Author:  Zhenyue Liu, 10/11/94,  Colorado School of Mines</p> 
@@ -296,9 +302,9 @@
           <p>Trino Salinas, 01/01/96 included the option to handle nonflat
           reference surfaces.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -307,9 +313,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -324,7 +330,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -332,7 +338,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -340,7 +347,7 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>vfile=</keyword>
-            <value/>
+            <value />
             <default>/dev/stdin</default>
           </property>
         </file>
@@ -350,7 +357,7 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>tfile=</keyword>
-            <value/>
+            <value />
             <default>/dev/stdout</default>
           </property>
         </file>
@@ -358,530 +365,551 @@
       <parameter>
         <label>Velocity properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First depth sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fz=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of depth samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nz=</keyword>
+                    <value />
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Depth interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First lateral sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fx=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of lateral samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nx=</keyword>
+                    <value />
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Lateral interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dx=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>First depth sample</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of depth samples</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>101</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Depth interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First lateral sample</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of lateral samples</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>101</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Lateral interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>First depth sample</label>
-              <float>
-                <property required="no">
-                  <keyword>fz=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of depth samples</label>
-              <int>
-                <property required="no">
-                  <keyword>nz=</keyword>
-                  <value/>
-                  <default>101</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Depth interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dz=</keyword>
-                  <value/>
-                  <default>100</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First lateral sample</label>
-              <float>
-                <property required="no">
-                  <keyword>fx=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of lateral samples</label>
-              <int>
-                <property required="no">
-                  <keyword>nx=</keyword>
-                  <value/>
-                  <default>101</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Lateral interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dx=</keyword>
-                  <value/>
-                  <default>100</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Traveltime table properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First depth sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fzo=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of depth samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nzo=</keyword>
+                    <value />
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Depth interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dzo=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First lateral sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxo=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of lateral samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxo=</keyword>
+                    <value />
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Lateral interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxo=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>First depth sample</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fzo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of depth samples</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nzo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>101</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Depth interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dzo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First lateral sample</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fxo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of lateral samples</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nxo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>101</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Lateral interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dxo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>First depth sample</label>
-              <float>
-                <property required="no">
-                  <keyword>fzo=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of depth samples</label>
-              <int>
-                <property required="no">
-                  <keyword>nzo=</keyword>
-                  <value/>
-                  <default>101</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Depth interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dzo=</keyword>
-                  <value/>
-                  <default>100</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First lateral sample</label>
-              <float>
-                <property required="no">
-                  <keyword>fxo=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of lateral samples</label>
-              <int>
-                <property required="no">
-                  <keyword>nxo=</keyword>
-                  <value/>
-                  <default>101</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Lateral interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dxo=</keyword>
-                  <value/>
-                  <default>100</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Source properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X-coordinate of first source</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxs=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of sources</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxs=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X-coordinate increment of sources</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxs=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>X-coordinate of first source</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fxs=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of sources</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nxs=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-coordinate increment of sources</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dxs=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-            
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>X-coordinate of first source</label>
-              <float>
-                <property required="no">
-                  <keyword>fxs=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of sources</label>
-              <int>
-                <property required="no">
-                  <keyword>nxs=</keyword>
-                  <value/>
-                  <default>1</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>X-coordinate increment of sources</label>
-              <float>
-                <property required="no">
-                  <keyword>dxs=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Ray tracing properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Time sample interval in ray tracing</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value />
+                    <default>0.008</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of time samples in ray
+                tracing</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value />
+                    <default>401</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Ray tracing aperature in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>aperx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First take-off angle of rays
+                (degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fa=</keyword>
+                    <value />
+                    <default>-60</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of rays</label>
+                <int>
+                  <property required="no">
+                    <keyword>na=</keyword>
+                    <value />
+                    <default>61</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Increment of take-off angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>da=</keyword>
+                    <value />
+                    <default>2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Minimum emergence angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>amin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum emergence angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>amax=</keyword>
+                    <value />
+                    <default>90</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Factor to determine radius for
+                extrapolation</label>
+                <float>
+                  <property required="no">
+                    <keyword>fac=</keyword>
+                    <value />
+                    <default>0.01</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Time sample interval in ray tracing</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dt=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.008</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of time samples in ray tracing</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nt=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>401</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Ray tracing aperature in x-direction</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>aperx=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First take-off angle of rays (degrees)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fa=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>-60</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of rays</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>na=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>61</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-          <parameter>
-              <label>Increment of take-off angle</label>
-              <float>
+            <parameter>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>da=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>2</default>
                 </property>
-              </float>
-            </parameter><parameter>
-              <label>Minimum emergence angle</label>
-              <float>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>amin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
-            </parameter><parameter>
-              <label>Maximum emergence angle</label>
-              <float>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>amax=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>90</default>
                 </property>
-              </float>
-            </parameter><parameter>
-        <label>Factor to determine radius for extrapolation</label>
-        <float>
-          <property required="no">
-            <keyword>fac=</keyword>
-            <value/>
-            <default>0.01</default>
-          </property>
-        </float>
-      </parameter></parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Time sample interval in ray tracing</label>
-              <float>
-                <property required="no">
-                  <keyword>dt=</keyword>
-                  <value/>
-                  <default>0.008</default>
-                </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of time samples in ray tracing</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nt=</keyword>
-                  <value/>
-                  <default>401</default>
+                  <keyword />
+                  <value></value>
+                  <default>0.01</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-            <parameter>
-              <label>Ray tracing aperature in x-direction</label>
-              <float>
-                <property required="no">
-                  <keyword>aperx=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First take-off angle of rays (degrees)</label>
-              <float>
-                <property required="no">
-                  <keyword>fa=</keyword>
-                  <value/>
-                  <default>-60</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of rays</label>
-              <int>
-                <property required="no">
-                  <keyword>na=</keyword>
-                  <value/>
-                  <default>61</default>
-                </property>
-              </int>
-            </parameter>
-          <parameter>
-              <label>Increment of take-off angle</label>
-              <float>
-                <property required="no">
-                  <keyword>da=</keyword>
-                  <value/>
-                  <default>2</default>
-                </property>
-              </float>
-            </parameter><parameter>
-              <label>Minimum emergence angle</label>
-              <float>
-                <property required="no">
-                  <keyword>amin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter><parameter>
-              <label>Maximum emergence angle</label>
-              <float>
-                <property required="no">
-                  <keyword>amax=</keyword>
-                  <value/>
-                  <default>90</default>
-                </property>
-              </float>
-            </parameter><parameter>
-        <label>Factor to determine radius for extrapolation</label>
-        <float>
-          <property required="no">
-            <keyword>fac=</keyword>
-            <value/>
-            <default>0.01</default>
-          </property>
-        </float>
-      </parameter></parameters></group>
+          </parameters>
+        </group>
       </parameter>
-      
       <parameter>
         <label>Recording surface (x1,z1;x2,z2;...)</label>
         <string>
           <property required="no" separator=";">
             <keyword>surf=</keyword>
-            <value/>
-            
-          <default>0,0</default><default>99999,0</default></property>
+            <value />
+            <default>0,0</default>
+            <default>99999,0</default>
+          </property>
         </string>
       </parameter>
       <parameter>
-              <label>Print verbal information at every ms sources</label>
-              <int>
-                <property required="no">
-                  <keyword>ms=</keyword>
-                  <value/>
-                  <default>10</default>
-                </property>
-              </int>
-            </parameter>
+        <label>Print verbal information at every ms sources</label>
+        <int>
+          <property required="no">
+            <keyword>ms=</keyword>
+            <value />
+            <default>10</default>
+          </property>
+        </int>
+      </parameter>
       <parameter>
         <label>Do not evaluate eikonal in shadow zones</label>
         <flag>
@@ -894,95 +922,110 @@
       </parameter>
       <parameter>
         <label>This is a restarted Job</label>
-        
-      <flag><property required="no"><keyword>restart=y</keyword><value>off</value><default>off</default></property></flag></parameter>
-      
+        <flag>
+          <property required="no">
+            <keyword>restart=y</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
       <parameter>
         <label>Quantities for velocity analysis</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Compute quantities velocity analysis</label>
+                <flag>
+                  <property required="no">
+                    <keyword>npv=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Input file of velocity variation</label>
+                <file directory="no" filter-name=""
+                filter-pattern="">
+                  <property required="no">
+                    <keyword>pvfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file of traveltime variation
+                tables</label>
+                <file directory="no" filter-name=""
+                filter-pattern="">
+                  <property required="no">
+                    <keyword>tvfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file of cosine tables</label>
+                <file directory="no" filter-name=""
+                filter-pattern="">
+                  <property required="no">
+                    <keyword>csfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-        <label>Compute quantities velocity analysis</label>
-        <flag>
-          <property required="no">
-            <keyword>npv=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-              <label>Input file of velocity variation</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>pvfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Output file of traveltime variation tables</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>tvfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Output file of cosine tables</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>csfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
-            </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-        <label>Compute quantities velocity analysis</label>
-        <flag>
-          <property required="no">
-            <keyword>npv=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-              <label>Input file of velocity variation</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>pvfile=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Output file of traveltime variation tables</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>tvfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
-            <parameter>
-              <label>Output file of cosine tables</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>csfile=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
     </parameters>
   </program>
 </flow>
+ 
