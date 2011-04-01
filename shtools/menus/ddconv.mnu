@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.6">
   <title>Case converter</title>
   <description>Convert file's content to upper or lower case</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -47,9 +48,9 @@
 
           <p>This simple menu converts text either to lower case or to upper case.</p>
 
-	    
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
@@ -80,42 +81,42 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
-    <created/>
-    <modified>2010-10-05T23:26:32.453979Z</modified>
-    <lastrun/>
+    <created />
+    <modified>2011-04-01T19:15:03.321789Z</modified>
+    <lastrun />
   </date>
   <category>File tools</category>
   <category>Shell tools</category>
   <io>
-    <input/>
-    <output/>
-    <error/>
+    <input />
+    <output />
+    <error />
   </io>
-  <servers/>
-  <program stdin="yes" stdout="yes" stderr="no" status="unconfigured" mpi="">
-    
+  <servers />
+  <program stdin="yes" stdout="yes" stderr="no" status="unconfigured" mpi="" version="dd 5.97">
     <title>Case converter</title>
     <binary>dd status=noxfer 2&gt;/dev/null</binary>
     <description>Convert file's content to upper or lower case</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
-
-  <!-- begin ttl -->
-  <title>Case converter</title>
-  <!-- end ttl -->
+  <title>
+    <!-- begin ttl -->Case converter<!-- end ttl -->
+  </title>
 </head>
 
 <body>
@@ -123,26 +124,22 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <!-- begin tt2 -->
-          <span class="flowtitle">Case converter</span>
-          <!-- end tt2 -->
-
+          <span class="flowtitle">
+            <!-- begin tt2 -->Case converter<!-- end tt2 -->
+          </span>
           <div class="description">
-           <!-- begin des -->
-            Convert file's content to upper or lower case
-           <!-- end des -->
+            <!-- begin des -->Convert file&apos;s content to upper or lower case<!-- end des -->
           </div>
         </div>
       </div>
 
       <div class="category">
-        <!-- begin cat -->
-        Shell tools
-        <!-- end cat -->
+        <!-- begin cat -->File tools | Shell tools<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content">
+          <!-- begin cnt -->
 
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
@@ -167,12 +164,13 @@
           </div>
           <!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>This program employs the dd utility, written by Paul Rubin, David MacKenzie, and Stuart Kemp, as part of the GNU core utils.</p>
           <!-- end cpy -->
+        <!-- end cnt -->
         </div>
 
         <div class="navigation">
@@ -183,7 +181,13 @@
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -193,7 +197,8 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.7 (<!-- begin dtd -->0.3.0<!-- end dtd -->) | dd 5.97</span>
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->dd 5.97<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -201,22 +206,28 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.gnu.org/software/coreutils/</url>
     <parameters default-selection="0" selection="">
-      <parameter><label>Conversion type</label><enum><property required="yes"><keyword>conv=</keyword><value/><default>lcase</default></property>
-        
-        
-        
-        <option>
-          <label>to lower case</label>
-          <value>lcase</value>
-        </option>
-        <option>
-          <label>to upper case</label>
-          <value>ucase</value>
-        </option>
-      </enum></parameter>
+      <parameter>
+        <label>Conversion type</label>
+        <enum>
+          <property required="yes">
+            <keyword>conv=</keyword>
+            <value />
+            <default>lcase</default>
+          </property>
+          <option>
+            <label>to lower case</label>
+            <value>lcase</value>
+          </option>
+          <option>
+            <label>to upper case</label>
+            <value>ucase</value>
+          </option>
+        </enum>
+      </parameter>
     </parameters>
   </program>
 </flow>

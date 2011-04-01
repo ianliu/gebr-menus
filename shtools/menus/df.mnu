@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.6">
   <title>Disk Space Usage</title>
   <description>Report file system disk space usage</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -47,7 +48,7 @@
 
           <p>This menu reports informations about file system disk space usage.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
@@ -60,7 +61,7 @@
           <h2>Index</h2>
 
           <ul>
-          	<li><a href="#intro">Introduction</a></li>
+                <li><a href="#intro">Introduction</a></li>
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -77,41 +78,41 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2008-02-08T15:00:00Z</created>
-    <modified>2010-10-06T00:20:29.617458Z</modified>
-    <lastrun/>
+    <modified>2011-04-01T19:15:15.041619Z</modified>
+    <lastrun />
   </date>
   <category>Shell tools</category>
   <io>
-    <input/>
-    <output/>
-    <error/>
+    <input />
+    <output />
+    <error />
   </io>
-  <servers/>
-  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="">
-    
+  <servers />
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="df 5.97">
     <title>Disk Space Usage</title>
     <binary>df</binary>
     <description>Report file system disk space usage</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
-
-  <!-- begin ttl -->
-  <title>Disk Usage</title>
-  <!-- end ttl -->
+  <title>
+    <!-- begin ttl -->Disk Space Usage<!-- end ttl -->
+  </title>
 </head>
 
 <body>
@@ -119,26 +120,22 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <!-- begin tt2 -->
-          <span class="flowtitle">Disk Usage</span>
-          <!-- end tt2 -->
-
+          <span class="flowtitle">
+            <!-- begin tt2 -->Disk Space Usage<!-- end tt2 -->
+          </span>
           <div class="description">
-           <!-- begin des -->
-            Report file system disk space usage
-           <!-- end des -->
+            <!-- begin des -->Report file system disk space usage<!-- end des -->
           </div>
         </div>
       </div>
 
       <div class="category">
-        <!-- begin cat -->
-        Shell tools
-        <!-- end cat -->
+        <!-- begin cat -->Shell tools<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content">
+          <!-- begin cnt -->
 
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
@@ -170,21 +167,21 @@
             <p>The G&ecirc;BR port of <strong>df</strong> implements the subset of
             parameters supported by df described below.</p>
 
-	    <!-- List of optional parameters -->
+            <!-- List of optional parameters -->
             <!-- begin lst -->
             <ul>
-		<li><span class="label">Include dummy file
-		systems</span><br/>Like proc, sysfsm udev, etc (rarely
-		useful).</li>
+                <li><span class="label">Include dummy file
+                systems</span><br/>Like proc, sysfsm udev, etc (rarely
+                useful).</li>
 
-		<li><span class="label">Block size (in bytes)</span><br/>Is
+                <li><span class="label">Block size (in bytes)</span><br/>Is
                 used to change the 1K default block size.</li>
 
-		<li><span class="label">Print sizes in human readable
-		format</span><br/>(e.g., 1K 234M 2G).</li> 
+                <li><span class="label">Print sizes in human readable
+                format</span><br/>(e.g., 1K 234M 2G).</li> 
 
-		<li><span class="label">Print sizes in human readable
-		format (powers of 1000 instead of 1024)</span></li>
+                <li><span class="label">Print sizes in human readable
+                format (powers of 1000 instead of 1024)</span></li>
 
                 <li><span class="label">List inode information
                 instead of block usage</span></li>
@@ -193,25 +190,26 @@
                 systems</span><br/>Ignoring NFS mounted file systems,
                 for example.</li>
 
-	        <li><span class="label">Invoke sync before getting
-	        usage info</span></li>
+                <li><span class="label">Invoke sync before getting
+                usage info</span></li>
 
-		<li><span class="label">Print file system type</span></li>
+                <li><span class="label">Print file system type</span></li>
 
-		<li><span class="label">Specific partition</span></li>
+                <li><span class="label">Specific partition</span></li>
 
              </ul>
             <!-- end lst -->
 
           </div>
           <!-- end par -->
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>df is part of the GNU core utils, and was written by 
              Torbjorn Granlund, David MacKenzie and Paul Eggert.</p>
           <!-- end cpy -->
+        <!-- end cnt -->
         </div>
 
         <div class="navigation">
@@ -222,7 +220,13 @@
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -232,7 +236,8 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.4 (<!-- begin dtd -->0.2.1<!-- end dtd -->) | df 5.97</span>
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->df 5.97<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -240,33 +245,100 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.gnu.org/software/coreutils/</url><parameters default-selection="0" selection="">
-      <parameter><label>Include dummy file systems</label><flag><property required="no"><keyword>-a</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter><label>Block size (in bytes)</label><int min="1"><property required="no"><keyword>--block-size=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Print sizes in human readable format</label><flag><property required="no"><keyword>-h</keyword><value>off</value><default>on</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter><label>Print sizes in human readable format (power of 1000 instead of 1024)</label><flag><property required="no"><keyword>-H</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      
-    <parameter><label>List inode information instead of block usage</label><flag><property required="no"><keyword>-i</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Limit listing to local file systems</label><flag><property required="no"><keyword>--local</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Invoke sync before getting usage info</label><flag><property required="no"><keyword>--sync</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Print file system type</label><flag><property required="no"><keyword>-T</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Specific partition</label><file directory="yes"><property required="no"><keyword/><value/><default/></property>
-        
-        
-        
-      </file></parameter></parameters>
+]]>
+</help>
+    <url>http://www.gnu.org/software/coreutils/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Include dummy file systems</label>
+        <flag>
+          <property required="no">
+            <keyword>-a</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Block size (in bytes)</label>
+        <int min="1">
+          <property required="no">
+            <keyword>--block-size=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Print sizes in human readable format</label>
+        <flag>
+          <property required="no">
+            <keyword>-h</keyword>
+            <value>off</value>
+            <default>on</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Print sizes in human readable format (power of 1000 instead of 1024)</label>
+        <flag>
+          <property required="no">
+            <keyword>-H</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>List inode information instead of block usage</label>
+        <flag>
+          <property required="no">
+            <keyword>-i</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Limit listing to local file systems</label>
+        <flag>
+          <property required="no">
+            <keyword>--local</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Invoke sync before getting usage info</label>
+        <flag>
+          <property required="no">
+            <keyword>--sync</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Print file system type</label>
+        <flag>
+          <property required="no">
+            <keyword>-T</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Specific partition</label>
+        <file directory="yes">
+          <property required="no">
+            <keyword />
+            <value />
+            <default />
+          </property>
+        </file>
+      </parameter>
+    </parameters>
   </program>
 </flow>

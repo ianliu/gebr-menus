@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.6">
   <title>FC HTML/URL to TXT</title>
   <description>Extract text content from HTML documents or URL's</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -47,14 +48,14 @@
 
           <p>Extract text content from HTML documents or URL's.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Mar 04, 2008: created by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
              Jan 23, 2009: revised by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
-   	     Mar 05, 2009: revised by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
-   	     Oct 06, 2010: revised by Gabriel Sobral &lt;sobral@gebrproject.com&gt;</p>
+             Mar 05, 2009: revised by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
+             Oct 06, 2010: revised by Gabriel Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
         </div>
 
@@ -79,42 +80,42 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-01-23T15:00:00Z</created>
-    <modified>2010-10-06T13:30:07.378052Z</modified>
-    <lastrun/>
+    <modified>2011-04-01T19:16:02.479867Z</modified>
+    <lastrun />
   </date>
   <category>File tools</category>
   <category>Shell tools</category>
   <io>
-    <input/>
-    <output/>
-    <error/>
+    <input />
+    <output />
+    <error />
   </io>
-  <servers/>
-  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="">
-    
+  <servers />
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="Elinks 0.11.1">
     <title>FC HTML/URL to TXT</title>
     <binary>elinks -dump-charset utf-8 -dump 1</binary>
     <description>Extract text content from HTML documents or URL's</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
-
-  <!-- begin ttl -->
-  <title>Dump HTML</title>
-  <!-- end ttl -->
+  <title>
+    <!-- begin ttl -->FC HTML/URL to TXT<!-- end ttl -->
+  </title>
 </head>
 
 <body>
@@ -122,26 +123,22 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <!-- begin tt2 -->
-          <span class="flowtitle">FC HTML to TXT</span>
-          <!-- end tt2 -->
-
+          <span class="flowtitle">
+            <!-- begin tt2 -->FC HTML/URL to TXT<!-- end tt2 -->
+          </span>
           <div class="description">
-           <!-- begin des -->
-            Extract text content from an HTML documents or URL's
-           <!-- end des -->
+            <!-- begin des -->Extract text content from HTML documents or URL&apos;s<!-- end des -->
           </div>
         </div>
       </div>
 
       <div class="category">
-        <!-- begin cat -->
-        File tools | Shell tools
-        <!-- end cat -->
+        <!-- begin cat -->File tools | Shell tools<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content">
+          <!-- begin cnt -->
 
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
@@ -154,7 +151,7 @@
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	    <!-- List of required parameters -->
+            <!-- List of required parameters -->
             <!-- begin lst -->
             <ul>
               <li><span class="label">Prevents printing of references (URIs) of document links</span></li>
@@ -165,19 +162,20 @@
 
           </div>
           <!-- end par -->
-	    
-	  <a name="details" id="details"></a>
+            
+          <a name="details" id="details"></a>
           <h2>Description</h2>
 
           <p>This program employs <a href="http://elinks.or.cz/">Elinks</a>, an advanced and well-established feature-rich text mode web (HTTP/FTP/..) browser.</p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Elinks was created and is maintained by Petr Baudis and contributors.</p>
           <!-- end cpy -->
+        <!-- end cnt -->
         </div>
 
         <div class="navigation">
@@ -188,9 +186,13 @@
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -200,7 +202,8 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.9 (<!-- begin dtd -->0.3.0<!-- end dtd -->) | Elinks 0.11.1</span>
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->Elinks 0.11.1<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -208,19 +211,30 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://elinks.or.cz/</url>
     <parameters default-selection="0" selection="">
-      <parameter><label>Prevents printing of references (URIs) of document links</label><flag><property required="no"><keyword>-no-references</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter><label>HTML file or URL</label><file directory="no" filter-name="" filter-pattern=""><property required="yes"><keyword></keyword><value/><default>http://sites.google.com/site/gebrproject</default></property>
-        
-        
-        
-      </file></parameter>
+      <parameter>
+        <label>Prevents printing of references (URIs) of document links</label>
+        <flag>
+          <property required="no">
+            <keyword>-no-references</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>HTML file or URL</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="yes">
+            <keyword />
+            <value />
+            <default>http://sites.google.com/site/gebrproject</default>
+          </property>
+        </file>
+      </parameter>
     </parameters>
   </program>
 </flow>

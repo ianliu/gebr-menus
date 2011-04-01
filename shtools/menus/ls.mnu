@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.6">
   <title>LS</title>
   <description>List directory contents</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -86,49 +87,53 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gmail.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-01-23T15:00:00Z</created>
-    <modified>2010-10-12T04:57:55.669165Z</modified>
-    <lastrun/>
+    <modified>2011-04-01T19:19:42.229552Z</modified>
+    <lastrun />
   </date>
   <category>Shell tools</category>
   <io>
-    <input/>
-    <output/>
-    <error/>
+    <input />
+    <output />
+    <error />
   </io>
-  <servers/>
-  <program stdin="no" stdout="yes" stderr="no" status="unconfigured" mpi="">
-    
+  <servers />
+  <program stdin="no" stdout="yes" stderr="no" status="unconfigured" mpi="" version="GNU ls 5.97">
     <title>LS</title>
     <binary>ls</binary>
     <description>List directory contents</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  
-  <link rel="stylesheet" type="text/css" href="gebr.css" />
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-  <!-- begin ttl -->
-  <title>LS</title>
-  <!-- end ttl -->
-</head><body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <title>
+    <!-- begin ttl -->LS<!-- end ttl -->
+  </title>
+</head>
+
+<body>
   <div class="outer-container">
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <!-- begin tt2 -->
-         <span class="flowtitle">LS</span>
-         <!-- end tt2 -->
-
+          <span class="flowtitle">
+            <!-- begin tt2 -->LS<!-- end tt2 -->
+          </span>
           <div class="description">
-           <!-- begin des -->
-            List directory contents
-            <!-- end des -->
+            <!-- begin des -->List directory contents<!-- end des -->
           </div>
         </div>
       </div>
@@ -138,338 +143,436 @@
       </div>
 
       <div class="main">
-        <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        <div class="content">
+          <!-- begin cnt --><h2 id="header_0">
+        Introduction</h2>
 <p>
-	List information about the in the prescribed directory or in the current one, in case none was provided. By default list files sorted alphabetically.</p>
+        List information about the in the prescribed directory or in the current one, in case none was provided. By default list files sorted alphabetically.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<ul>
-		<li>
-			<span class="label">List style</span><br />
-			Permits to choose among five different layouts for the list:
-			<ul>
-				<li>
-					Comma separated list</li>
-				<li>
-					One file per line</li>
-				<li>
-					Detailed list</li>
-				<li>
-					Detailed list without owner</li>
-				<li>
-					Detailed list without group</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Hidden files</span>
-			<ul>
-				<li>
-					Do not show</li>
-				<li>
-					Show all</li>
-				<li>
-					Show all but . and ..</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Sort criteria</span>
-			<ul>
-				<li>
-					Directory order</li>
-				<li>
-					Modification time</li>
-				<li>
-					Size</li>
-				<li>
-					Extension</li>
-				<li>
-					Version</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Reverse order while sorting</span></li>
-		<li>
-			<span class="label">Human readable size formats</span></li>
-		<li>
-			<span class="label">Size scale</span>
-			<ul>
-				<li>
-					bytes</li>
-				<li>
-					1024 bytes</li>
-				<li>
-					kilobytes</li>
-				<li>
-					1024^2 bytes</li>
-				<li>
-					megabytes</li>
-				<li>
-					1024^3 bytes</li>
-				<li>
-					gigabytes</li>
-				<li>
-					1024^4 bytes</li>
-				<li>
-					terabytes</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">List directory, instead of its content</span></li>
-		<li>
-			<span class="label">Dereference symbolic links</span></li>
-		<li>
-			<span class="label">List subdirectories recursively</span></li>
-		<li>
-			<span class="label">Apped suffix to explicit file type</span></li>
-		<li>
-			<span class="label">Time style</span><br />
-			Used with <strong>detailed list</strong> style.
-			<ul>
-				<li>
-					Localized</li>
-				<li>
-					YYYY-MM-DD/MM-DD HH:MM</li>
-				<li>
-					YYYY-MM-DD HH:MM</li>
-				<li>
-					YYYY-MM-DD HH:MM:SS TZ</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Ignore backup file (those ending with ~)</span></li>
-		<li>
-			<span class="label">Hide entries matching shell pattern</span></li>
-		<li>
-			<span class="label">Enclose entry names in double quotes</span></li>
-		<li>
-			<span class="label">Display numerical user and group IDs</span></li>
-		<li>
-			<span class="label">Directory</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+        <ul>
+                <li>
+                        <span class="label">List style</span><br />
+                        Permits to choose among five different layouts for the list:
+                        <ul>
+                                <li>
+                                        Comma separated list</li>
+                                <li>
+                                        One file per line</li>
+                                <li>
+                                        Detailed list</li>
+                                <li>
+                                        Detailed list without owner</li>
+                                <li>
+                                        Detailed list without group</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Hidden files</span>
+                        <ul>
+                                <li>
+                                        Do not show</li>
+                                <li>
+                                        Show all</li>
+                                <li>
+                                        Show all but . and ..</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Sort criteria</span>
+                        <ul>
+                                <li>
+                                        Directory order</li>
+                                <li>
+                                        Modification time</li>
+                                <li>
+                                        Size</li>
+                                <li>
+                                        Extension</li>
+                                <li>
+                                        Version</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Reverse order while sorting</span></li>
+                <li>
+                        <span class="label">Human readable size formats</span></li>
+                <li>
+                        <span class="label">Size scale</span>
+                        <ul>
+                                <li>
+                                        bytes</li>
+                                <li>
+                                        1024 bytes</li>
+                                <li>
+                                        kilobytes</li>
+                                <li>
+                                        1024^2 bytes</li>
+                                <li>
+                                        megabytes</li>
+                                <li>
+                                        1024^3 bytes</li>
+                                <li>
+                                        gigabytes</li>
+                                <li>
+                                        1024^4 bytes</li>
+                                <li>
+                                        terabytes</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">List directory, instead of its content</span></li>
+                <li>
+                        <span class="label">Dereference symbolic links</span></li>
+                <li>
+                        <span class="label">List subdirectories recursively</span></li>
+                <li>
+                        <span class="label">Apped suffix to explicit file type</span></li>
+                <li>
+                        <span class="label">Time style</span><br />
+                        Used with <strong>detailed list</strong> style.
+                        <ul>
+                                <li>
+                                        Localized</li>
+                                <li>
+                                        YYYY-MM-DD/MM-DD HH:MM</li>
+                                <li>
+                                        YYYY-MM-DD HH:MM</li>
+                                <li>
+                                        YYYY-MM-DD HH:MM:SS TZ</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Ignore backup file (those ending with ~)</span></li>
+                <li>
+                        <span class="label">Hide entries matching shell pattern</span></li>
+                <li>
+                        <span class="label">Enclose entry names in double quotes</span></li>
+                <li>
+                        <span class="label">Display numerical user and group IDs</span></li>
+                <li>
+                        <span class="label">Directory</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	The description of the parameters above was based on the GNU implementation of the ls shell command. For non-GNU versions, some of the options may not be supported or has different meanings.</p>
+        The description of the parameters above was based on the GNU implementation of the ls shell command. For non-GNU versions, some of the options may not be supported or has different meanings.</p>
 <p>
-	It is safer provide a directory to list, instead of relying on the "current one" default. The "current directory" is not defined by the directory where GêBR is running but by the directory where the GêBR daemon is running, which also depends on the server you choose to run the flow.</p>
+        It is safer provide a directory to list, instead of relying on the "current one" default. The "current directory" is not defined by the directory where GêBR is running but by the directory where the GêBR daemon is running, which also depends on the server you choose to run the flow.</p>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <p>
-	See the full documentation of the GNU ls command through its man or info pages.</p>
+        See the full documentation of the GNU ls command through its man or info pages.</p>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	GNU ls command was written by Richard Stallman and David MacKenzie as part of the GNU core utils package.</p>
-<!-- end cpy --></div>
+        GNU ls command was written by Richard Stallman and David MacKenzie as part of the GNU core utils package.</p>
+<!-- end cpy --><!-- end cnt -->
+        </div>
 
-        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	References</a></li><li><a href="#header_4">
-	Credits</a></li></ul></div>
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">GêBR 0.9.7 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | GNU ls 5.97</span>
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->GNU ls 5.97<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
-
-
-</body></html>]]></help>
+</body>
+</html>
+]]>
+</help>
     <url>http://www.gnu.org/software/coreutils/</url>
     <parameters default-selection="0" selection="">
-      <parameter><label>List style</label><enum><property required="no"><keyword/><value/><default>-l</default></property>
-        
-        
-        
-	<option>
-	  <label>Comma separated list</label>
-	  <value>-m</value>
-	</option>
-        <option>
-          <label>One file per line</label>
-          <value>-1</value>
-        </option>
-        <option>
-          <label>Detailed list</label>
-          <value>-l</value>
-        </option>
-        <option>
-          <label>Detailed list without owner</label>
-          <value>-g</value>
-        </option>
-        <option>
-          <label>detailed list without group</label>
-          <value>-l" "-G</value>
-        </option>
-      </enum></parameter>
-      <parameter><label>Hidden files</label><enum><property required="no"><keyword/><value/><default/></property>
-        
-        
-        
-        <option>
-          <label>Do not show</label>
-          <value/>
-        </option>
-        <option>
-          <label>Show all</label>
-          <value>-a</value>
-        </option>
-        <option>
-          <label>show all but . and ..</label>
-          <value>-A</value>
-        </option>
-      </enum></parameter>
-      <parameter><label>Sort criteria</label><enum><property required="no"><keyword>--sort=</keyword><value/><default/></property>
-        
-        
-        
-        
-        <option>
-          <label>Directory order</label>
-          <value>none</value>
-        </option><option>
-          <label>Modification time</label>
-          <value>time</value>
-        </option><option>
-          <label>Size</label>
-          <value>size</value>
-        </option><option>
-          <label>Extension</label>
-          <value>extension</value>
-        </option>
-        
-        
-        
-        
-        <option>
-          <label/>
-          <value>version</value>
-        </option>
-      </enum></parameter><parameter><label>Reverse order while sorting</label><flag><property required="no"><keyword>-r</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Human readable size formats</label><flag><property required="no"><keyword>-h</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter><parameter><label>Size scale</label><enum><property required="no"><keyword>--block-size=</keyword><value/><default>1</default></property>
-        
-        
-        
-        <option>
-          <label>bytes</label>
-          <value>1</value>
-        </option>
-        <option>
-          <label>1024 bytes</label>
-          <value>1k</value>
-        </option>
-        <option>
-          <label>kilobytes</label>
-          <value>1kB</value>
-        </option>
-        <option>
-          <label>1024^2 bytes</label>
-          <value>1M</value>
-        </option>
-        <option>
-          <label>megabytes</label>
-          <value>1MB</value>
-        </option>
-        <option>
-          <label>1024^3 bytes</label>
-          <value>1G</value>
-        </option>
-        <option>
-          <label>gigabytes</label>
-          <value>1GB</value>
-        </option>
-        <option>
-          <label>1024^4 bytes</label>
-          <value>1T</value>
-        </option>
-        <option>
-          <label>terabytes</label>
-          <value>1TB</value>
-        </option>
-      </enum></parameter><parameter><label>List directory, instead of its content</label><flag><property required="no"><keyword>-d</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter><label>Dereference symbolic links</label><flag><property required="no"><keyword>-L</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter><parameter><label>List subdirectories recursively</label><flag><property required="no"><keyword>-R</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter><label>Apped suffix to explicit file type</label><flag><property required="no"><keyword>-F</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter><label>Time style</label><enum><property required="no"><keyword>--time-style=</keyword><value/><default></default></property>
-        
-        
-        
-        <option>
-          <label>localized</label>
-          <value>locale</value>
-        </option>
-        <option>
-          <label>YYYY-MM-DD/MM-DD HH:MM</label>
-          <value>iso</value>
-        </option>
-        <option>
-          <label>YYYY-MM-DD HH:MM</label>
-          <value>long-iso</value>
-        </option><option>
-          <label>YYYY-MM-DD HH:MM:SS TZ</label>
-          <value>full-iso</value>
-        </option>
-        
-      </enum></parameter>
-      
-      
-      
-      
-      <parameter><label>Ignore backup file (those ending with ~)</label><flag><property required="no"><keyword>-B</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter><parameter><label>Hide entries matching shell pattern</label><string><property required="no"><keyword>--ignore=</keyword><value/><default/></property>
-        
-        
-        
-      </string></parameter><parameter><label>Enclose entry names in double quotes</label><flag><property required="no"><keyword>-Q</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      
-      
-      <parameter><label>Display numerical user and group IDs</label><flag><property required="no"><keyword>-n</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      
-      
-      <parameter><label>Directory</label><file directory="yes"><property required="no"><keyword/><value/><default/></property>
-        
-        
-        
-      </file></parameter>
+      <parameter>
+        <label>List style</label>
+        <enum>
+          <property required="no">
+            <keyword />
+            <value />
+            <default>-l</default>
+          </property>
+          <option>
+            <label>Comma separated list</label>
+            <value>-m</value>
+          </option>
+          <option>
+            <label>One file per line</label>
+            <value>-1</value>
+          </option>
+          <option>
+            <label>Detailed list</label>
+            <value>-l</value>
+          </option>
+          <option>
+            <label>Detailed list without owner</label>
+            <value>-g</value>
+          </option>
+          <option>
+            <label>detailed list without group</label>
+            <value>-l" "-G</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Hidden files</label>
+        <enum>
+          <property required="no">
+            <keyword />
+            <value />
+            <default />
+          </property>
+          <option>
+            <label>Do not show</label>
+            <value />
+          </option>
+          <option>
+            <label>Show all</label>
+            <value>-a</value>
+          </option>
+          <option>
+            <label>show all but . and ..</label>
+            <value>-A</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Sort criteria</label>
+        <enum>
+          <property required="no">
+            <keyword>--sort=</keyword>
+            <value />
+            <default />
+          </property>
+          <option>
+            <label>Directory order</label>
+            <value>none</value>
+          </option>
+          <option>
+            <label>Modification time</label>
+            <value>time</value>
+          </option>
+          <option>
+            <label>Size</label>
+            <value>size</value>
+          </option>
+          <option>
+            <label>Extension</label>
+            <value>extension</value>
+          </option>
+          <option>
+            <label />
+            <value>version</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Reverse order while sorting</label>
+        <flag>
+          <property required="no">
+            <keyword>-r</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Human readable size formats</label>
+        <flag>
+          <property required="no">
+            <keyword>-h</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Size scale</label>
+        <enum>
+          <property required="no">
+            <keyword>--block-size=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+          <option>
+            <label>bytes</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>1024 bytes</label>
+            <value>1k</value>
+          </option>
+          <option>
+            <label>kilobytes</label>
+            <value>1kB</value>
+          </option>
+          <option>
+            <label>1024^2 bytes</label>
+            <value>1M</value>
+          </option>
+          <option>
+            <label>megabytes</label>
+            <value>1MB</value>
+          </option>
+          <option>
+            <label>1024^3 bytes</label>
+            <value>1G</value>
+          </option>
+          <option>
+            <label>gigabytes</label>
+            <value>1GB</value>
+          </option>
+          <option>
+            <label>1024^4 bytes</label>
+            <value>1T</value>
+          </option>
+          <option>
+            <label>terabytes</label>
+            <value>1TB</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>List directory, instead of its content</label>
+        <flag>
+          <property required="no">
+            <keyword>-d</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Dereference symbolic links</label>
+        <flag>
+          <property required="no">
+            <keyword>-L</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>List subdirectories recursively</label>
+        <flag>
+          <property required="no">
+            <keyword>-R</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Apped suffix to explicit file type</label>
+        <flag>
+          <property required="no">
+            <keyword>-F</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Time style</label>
+        <enum>
+          <property required="no">
+            <keyword>--time-style=</keyword>
+            <value />
+            <default />
+          </property>
+          <option>
+            <label>localized</label>
+            <value>locale</value>
+          </option>
+          <option>
+            <label>YYYY-MM-DD/MM-DD HH:MM</label>
+            <value>iso</value>
+          </option>
+          <option>
+            <label>YYYY-MM-DD HH:MM</label>
+            <value>long-iso</value>
+          </option>
+          <option>
+            <label>YYYY-MM-DD HH:MM:SS TZ</label>
+            <value>full-iso</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Ignore backup file (those ending with ~)</label>
+        <flag>
+          <property required="no">
+            <keyword>-B</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Hide entries matching shell pattern</label>
+        <string>
+          <property required="no">
+            <keyword>--ignore=</keyword>
+            <value />
+            <default />
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Enclose entry names in double quotes</label>
+        <flag>
+          <property required="no">
+            <keyword>-Q</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Display numerical user and group IDs</label>
+        <flag>
+          <property required="no">
+            <keyword>-n</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory</label>
+        <file directory="yes">
+          <property required="no">
+            <keyword />
+            <value />
+            <default />
+          </property>
+        </file>
+      </parameter>
     </parameters>
   </program>
 </flow>
