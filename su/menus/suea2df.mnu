@@ -1,343 +1,381 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
-  <title>SU EA 2D FD</title>
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.6">
+  <title>SU EA 2D DF</title>
   <description>Elastic anisotropic 2D finite difference forward modeling</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  
-  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-  <!-- begin ttl -->
-  <title>SU EA 2D FD</title>
-  <!-- end ttl -->
-</head><body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <title>
+    <!-- begin ttl -->SU EA 2D DF<!-- end ttl -->
+  </title>
+</head>
+
+<body>
   <div class="outer-container">
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
-         <span class="flowtitle">SU EA 2D FD</span>
-         <!-- end tt2 -->
-
+          <span class="flowtitle">
+            <!-- begin tt2 -->SU EA 2D DF<!-- end tt2 -->
+          </span>
           <div class="description">
-	    <!-- begin des -->
-            Elastic anisotropic 2D finite difference forward modeling
-            <!-- end des -->
+            <!-- begin des -->Elastic anisotropic 2D finite difference forward modeling<!-- end des -->
           </div>
         </div>
       </div>
 
       <div class="category">
-	<!-- begin cat --><!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
-        <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        <div class="content">
+          <!-- begin cnt --><h2 id="header_0">
+        Introduction</h2>
 <p>
-	SU version of an elastic anisotropic 2D finite difference forward modeling, 4th order in space.</p>
+        SU version of an elastic anisotropic 2D finite difference forward modeling, 4th order in space.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Apr 28, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
-<!-- end cpy --></div>
+        Apr 28, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --><!-- end cnt -->
+        </div>
 
-        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Apr 28, 2010<!-- end ver --></span>
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->Apr 05, 2011<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
-
-
-</body></html>
-]]></help>
+</body>
+</html>
+]]>
+</help>
   <author>Davi Clemente</author>
   <email>davi.clemente@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-04-28T17:01:01.319178Z</created>
-    <modified>2010-08-06T00:43:04.783027Z</modified>
-    <lastrun/>
+    <modified>2011-04-05T20:13:20.869689Z</modified>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
   <io>
-    <input/>
-    <output/>
-    <error/>
+    <input />
+    <output />
+    <error />
   </io>
-  <servers/>
+  <servers />
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU EA 2D DF</title>
     <binary>suea2df</binary>
     <description>Elastic anisotropic 2D finite difference forward modeling</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  
-  <link rel="stylesheet" type="text/css" href="gebr.css" />
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-  <!-- begin ttl -->
-  <title>SU EA 2D DF</title>
-  <!-- end ttl -->
-</head><body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <title>
+    <!-- begin ttl -->SU EA 2D DF<!-- end ttl -->
+  </title>
+</head>
+
+<body>
   <div class="outer-container">
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
-         <span class="flowtitle">SU EA 2D DF</span>
-         <!-- end tt2 -->
-
+          <span class="flowtitle">
+            <!-- begin tt2 -->SU EA 2D DF<!-- end tt2 -->
+          </span>
           <div class="description">
-	    <!-- begin des -->
-            Elastic anisotropic 2D finite difference forward modeling
-            <!-- end des -->
+            <!-- begin des -->Elastic anisotropic 2D finite difference forward modeling<!-- end des -->
           </div>
         </div>
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
-        <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        <div class="content">
+          <!-- begin cnt --><h2 id="header_0">
+        Introduction</h2>
 <p>
-	SU version of an elastic anisotropic 2D finite difference forward modeling, 4th order in space.</p>
+        SU version of an elastic anisotropic 2D finite difference forward modeling, 4th order in space.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">c11 voigt elasticity parameter file</span></li>
-		<li class="req">
-			<span class="reqlabel">c55 voigt elasticity parameter file</span></li>
-		<li>
-			<span class="label">Density file</span></li>
-		<li class="group">
-			<span class="grouplabel">Anisotropy settings</span>
-			<ul>
-				<li>
-					<span class="label">Include anisotropy parameters</span><br/>
-					Only if this parameter is set, the remaning parameters of this group need to be specify</li>
-				<li>
-					<span class="label">Output mode</span></li>
-				<li>
-					<span class="label">c13 voigt elasticity parameter file</span></li>
-				<li>
-					<span class="label">c33 voigt elasticity parameter file</span></li>
-				<li>
-					<span class="label">c15 voigt elasticity parameter file</span></li>
-				<li>
-					<span class="label">c35 voigt elasticity parameter file</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Attenuation settings</span>
-			<ul>
-				<li>
-					<span class="label">Include attenuation parameters</span><br/>
-					Only if this parameter is set, the remaning parameters of this group need to be specify</li>
-				<li>
-					<span class="label">Q parameter file</span></li>
-			</ul>
-		</li>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">c11 voigt elasticity parameter file</span></li>
+                <li class="req">
+                        <span class="reqlabel">c55 voigt elasticity parameter file</span></li>
+                <li>
+                        <span class="label">Density file</span></li>
+                <li class="group">
+                        <span class="grouplabel">Anisotropy settings</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Include anisotropy parameters</span><br/>
+                                        Only if this parameter is set, the remaning parameters of this group need to be specify</li>
+                                <li>
+                                        <span class="label">Output mode</span></li>
+                                <li>
+                                        <span class="label">c13 voigt elasticity parameter file</span></li>
+                                <li>
+                                        <span class="label">c33 voigt elasticity parameter file</span></li>
+                                <li>
+                                        <span class="label">c15 voigt elasticity parameter file</span></li>
+                                <li>
+                                        <span class="label">c35 voigt elasticity parameter file</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Attenuation settings</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Include attenuation parameters</span><br/>
+                                        Only if this parameter is set, the remaning parameters of this group need to be specify</li>
+                                <li>
+                                        <span class="label">Q parameter file</span></li>
+                        </ul>
+                </li>
 
-		<li class="group">
-			<span class="grouplabel">Time settings</span>
-		<ul>
-			<li>
-				<span class="label">Time sampling interval (seconds)</span></li>
-			<li>
-				<span class="label">First time (seconds)</span></li>
-			<li>
-				<span class="label">Last time (seconds)</span></li>
-		</ul>
-		</li>
+                <li class="group">
+                        <span class="grouplabel">Time settings</span>
+                <ul>
+                        <li>
+                                <span class="label">Time sampling interval (seconds)</span></li>
+                        <li>
+                                <span class="label">First time (seconds)</span></li>
+                        <li>
+                                <span class="label">Last time (seconds)</span></li>
+                </ul>
+                </li>
 
-		<li class="group">
-			<span class="grouplabel">Slow dimension (x-direction) settings</span>
-			<ul>
-				<li>
-					<span class="label">Number of values</span></li>
-				<li>
-					<span class="label">Spatial sampling interval (meters)</span></li>
-				<li>
-					<span class="label">First x coordinate (meter)</span></li>
-			</ul>
-		</li>
+                <li class="group">
+                        <span class="grouplabel">Slow dimension (x-direction) settings</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of values</span></li>
+                                <li>
+                                        <span class="label">Spatial sampling interval (meters)</span></li>
+                                <li>
+                                        <span class="label">First x coordinate (meter)</span></li>
+                        </ul>
+                </li>
 
-		<li class="group">
-			<span class="grouplabel">Fast dimension (z-direction) settings</span>
-			<ul>
-				<li>
-					<span class="label">Number of values</span></li>
-				<li>
-					<span class="label">Spatial sampling interval (meters)</span></li>
-				<li>
-					<span class="label">First coordinate (meter)</span></li>
-			</ul>
-		</li>
+                <li class="group">
+                        <span class="grouplabel">Fast dimension (z-direction) settings</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of values</span></li>
+                                <li>
+                                        <span class="label">Spatial sampling interval (meters)</span></li>
+                                <li>
+                                        <span class="label">First coordinate (meter)</span></li>
+                        </ul>
+                </li>
 
-		<li class="group">
-			<span class="grouplabel">Source settings</span>
-			<ul>
-				<li>
-					<span class="label">Source x position (meters)</span></li>
-				<li>
-					<span class="label">Source location (meters)</span></li>
-				<li>
-					<span class="label">Source type</span></li>
-				<li>
-					<span class="label">Plane wave angle (only for 'P plane-wave' source type)</span></li>
-				<li>
-					<span class="label">Wave type</span></li>
-				<li>
-					<span class="label">Source duration (seconds)</span></li>
-				<li>
-					<span class="label">Source average frequency</span></li>
-			</ul>
-		</li>
+                <li class="group">
+                        <span class="grouplabel">Source settings</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Source x position (meters)</span></li>
+                                <li>
+                                        <span class="label">Source location (meters)</span></li>
+                                <li>
+                                        <span class="label">Source type</span></li>
+                                <li>
+                                        <span class="label">Plane wave angle (only for 'P plane-wave' source type)</span></li>
+                                <li>
+                                        <span class="label">Wave type</span></li>
+                                <li>
+                                        <span class="label">Source duration (seconds)</span></li>
+                                <li>
+                                        <span class="label">Source average frequency</span></li>
+                        </ul>
+                </li>
 
-		<li class="group">
-			<span class="grouplabel">Boundary condition settings</span>
-			<ul>
-				<li>
-					<span class="label">Top, left, bottom and right boundary condition</span><br />
-					 Values:
-					<div>
-						 = 0: none</div>
-					<div>
-						 = 1: symmetry</div>
-					<div>
-						 = 2: free surface (top only) </div>
-					<div>
-						 &gt; 2: absorbing (value indicates width of absorbing</div>
-				</li>
-				<li>
-					<span class="label">Boundary condition's inicial taper value for absorbing boundary</span></li>
-				<li>
-					<span class="label">Boundary condition's exponencial factor for absorbing boundary</span></li>
-			</ul>
-		</li>
+                <li class="group">
+                        <span class="grouplabel">Boundary condition settings</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Top, left, bottom and right boundary condition</span><br />
+                                         Values:
+                                        <div>
+                                                 = 0: none</div>
+                                        <div>
+                                                 = 1: symmetry</div>
+                                        <div>
+                                                 = 2: free surface (top only) </div>
+                                        <div>
+                                                 &gt; 2: absorbing (value indicates width of absorbing</div>
+                                </li>
+                                <li>
+                                        <span class="label">Boundary condition's inicial taper value for absorbing boundary</span></li>
+                                <li>
+                                        <span class="label">Boundary condition's exponencial factor for absorbing boundary</span></li>
+                        </ul>
+                </li>
 
-		<li class="group">
-			<span class="grouplabel">Optional settings</span>
-			<ul>
-				<li>
-					<span class="label">Name of source file</span></li>
-				<li>
-					<span class="label">Name of file containing snapshots</span></li>
-				<li>
-					<span class="label">Times of snapshots</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Seismogram properties</span>
-			<ul>
-				<li>
-					<span class="label">X coordinate of vertical line</span></li>
-				<li>
-					<span class="label">Z coordinate of horizontal line</span></li>
-				<li>
-					<span class="label">Output file for vertical line</span></li>
-				<li>
-					<span class="label">Output file for horizontal line</span></li>
-			</ul>
-		</li>
+                <li class="group">
+                        <span class="grouplabel">Optional settings</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Name of source file</span></li>
+                                <li>
+                                        <span class="label">Name of file containing snapshots</span></li>
+                                <li>
+                                        <span class="label">Times of snapshots</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Seismogram properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X coordinate of vertical line</span></li>
+                                <li>
+                                        <span class="label">Z coordinate of horizontal line</span></li>
+                                <li>
+                                        <span class="label">Output file for vertical line</span></li>
+                                <li>
+                                        <span class="label">Output file for horizontal line</span></li>
+                        </ul>
+                </li>
 
-		<li>
-			<span class="label">Use shear stress only in non-fluid media</span><br />
-			May help reduce dispersion</li>
-		<li>
-			<span class="label">Print progress on screen</span></li>
-	</ul>
+                <li>
+                        <span class="label">Use shear stress only in non-fluid media</span><br />
+                        May help reduce dispersion</li>
+                <li>
+                        <span class="label">Print progress on screen</span></li>
+        </ul>
 <!-- end lst --></div> <!-- end par -->
 
 <h2 id="header_2">Notes</h2>
 
 <p>
-	 The output file contains information generated by the input parameters, such as memory allocation, stability, etc. If your input file does not work, check this file first.</p>
+         The output file contains information generated by the input parameters, such as memory allocation, stability, etc. If your input file does not work, check this file first.</p>
 <p>
-	The model is specified as binary files of stiffness parameters and densities. These may be created any way the user desires. The program <strong>Uniform 2d velocity</strong> or <strong>Make velocity</strong> may be used to generate densities.<br/> You will need to transpose this file (densities), as the input format for <strong>SU EA 2D DF</strong> assumes that the fast dimesion is the horizontal or the x-dimension.</p>
+        The model is specified as binary files of stiffness parameters and densities. These may be created any way the user desires. The program <strong>Uniform 2d velocity</strong> or <strong>Make velocity</strong> may be used to generate densities.<br/> You will need to transpose this file (densities), as the input format for <strong>SU EA 2D DF</strong> assumes that the fast dimesion is the horizontal or the x-dimension.</p>
 
 <p>
-	If <strong>Include anisotropy parameters</strong> is active, then the program will expect the additional stiffnesss files.</p>
+        If <strong>Include anisotropy parameters</strong> is active, then the program will expect the additional stiffnesss files.</p>
 
 <div>
-	Output files (always generated)</div>
+        Output files (always generated)</div>
 <div>
-	hsfile</div>
+        hsfile</div>
 <div>
-	vrslfile</div>
+        vrslfile</div>
 <div>
-	hsfile.chd - header for hsfile</div>
+        hsfile.chd - header for hsfile</div>
 <div>
-	vrslfile.chd - header for vrslfile</div>
+        vrslfile.chd - header for vrslfile</div>
 <div>
-	hsfile.mod - model file</div>
+        hsfile.mod - model file</div>
 <div>
-	 </div>
+         </div>
 <div>
-	Output files (if requested)</div>
+        Output files (if requested)</div>
 <div>
-	sofile - ascii source file</div>
+        sofile - ascii source file</div>
 <div>
-	snfile  - su format snapshots file</div>
+        snfile  - su format snapshots file</div>
 <div>
-	 </div>
+         </div>
 <p>
-	Caveat:<br/>
-	A common error in using this program is to compute stiffnesses with a specified density, but forget to specify this density as the <strong>Density file</strong>.</p>
+        Caveat:<br/>
+        A common error in using this program is to compute stiffnesses with a specified density, but forget to specify this density as the <strong>Density file</strong>.</p>
 
 
 <h2 id="header_3">Credits</h2>
 <p>
-	 UU GEOPHY Chris Juhlin 15 May 1999<br />
-	Copyright (c) Uppsala University, 1998.<br />
-	All rights reserved.<br />
-	Parts of program use Seismic Unix Package - CSM<br />
-	Changes - C. Juhlin.<br />
-	Algorithm based on Juhlin (1995, Geophys. Prosp.) and Levander (1988, Geophysics).<br />
-	Attenuation included as in Graves (1996, BSSA).</p>
-<!-- begin cpy --><!-- end cpy --></div>
+         UU GEOPHY Chris Juhlin 15 May 1999<br />
+        Copyright (c) Uppsala University, 1998.<br />
+        All rights reserved.<br />
+        Parts of program use Seismic Unix Package - CSM<br />
+        Changes - C. Juhlin.<br />
+        Algorithm based on Juhlin (1995, Geophys. Prosp.) and Levander (1988, Geophysics).<br />
+        Attenuation included as in Graves (1996, BSSA).</p>
+<!-- begin cpy --><!-- end cpy --><!-- end cnt -->
+        </div>
 
+        <div class="navigation">
+          <h2>Index</h2>
 
-        <div class="navigation"><h2>Index</h2>
-	<ul>
-	<li><a href="#header_0">Introduction</a></li>
-	<li><a href="#header_1">Parameters</a></li>
-	<li><a href="#header_2">Notes</a></li>
-	<li><a href="#header_3">Credits</a></li>
-	</ul>
-	</div>
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
-
-
-</body></html>
-]]></help>
+</body>
+</html>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -345,8 +383,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>c11file=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </file>
       </parameter>
@@ -355,8 +393,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>c55file=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </file>
       </parameter>
@@ -365,8 +403,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>rhofile=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </file>
       </parameter>
@@ -390,8 +428,8 @@
                 <enum>
                   <property required="no">
                     <keyword>mode=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                   <option>
                     <label>Output particle velocity</label>
@@ -408,8 +446,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>c13file=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -418,8 +456,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>c33file=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -428,8 +466,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>c15file=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -438,8 +476,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>c35file=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -447,72 +485,64 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>Include anisotropy parameters</label>
-              <flag>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>aniso=1</keyword>
+                  <keyword />
                   <value>off</value>
                   <default>off</default>
                 </property>
-              </flag>
+              </reference>
             </parameter>
             <parameter>
-              <label>Output mode</label>
-              <enum>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>mode=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-                <option>
-                  <label>Output particle velocity</label>
-                  <value>0</value>
-                </option>
-                <option>
-                  <label>Output stresses (snapshot only)</label>
-                  <value>1</value>
-                </option>
-              </enum>
+              </reference>
             </parameter>
             <parameter>
-              <label>c13 voigt elasticity parameter file</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c13file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>c33 voigt elasticity parameter file</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c33file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>c15 voigt elasticity parameter file</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c15file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>c35 voigt elasticity parameter file</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c35file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
           </parameters>
         </group>
@@ -537,8 +567,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>qfile=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -546,24 +576,24 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>Include attenuation parameters</label>
-              <flag>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>qsw=1</keyword>
+                  <keyword />
                   <value>off</value>
                   <default>off</default>
                 </property>
-              </flag>
+              </reference>
             </parameter>
             <parameter>
-              <label>Q parameter filename</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>qfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
           </parameters>
         </group>
@@ -578,7 +608,7 @@
                 <float>
                   <property required="no">
                     <keyword>dt=</keyword>
-                    <value/>
+                    <value />
                     <default>0.001</default>
                   </property>
                 </float>
@@ -588,7 +618,7 @@
                 <float>
                   <property required="no">
                     <keyword>ft=</keyword>
-                    <value/>
+                    <value />
                     <default>0.0</default>
                   </property>
                 </float>
@@ -598,7 +628,7 @@
                 <float>
                   <property required="no">
                     <keyword>lt=</keyword>
-                    <value/>
+                    <value />
                     <default>1.0</default>
                   </property>
                 </float>
@@ -607,34 +637,34 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>Time sampling interval (seconds)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dt=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.001</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First time (seconds)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>ft=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Last time (seconds)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>lt=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
           </parameters>
         </group>
@@ -649,7 +679,7 @@
                 <int>
                   <property required="no">
                     <keyword>nx=</keyword>
-                    <value/>
+                    <value />
                     <default>200</default>
                   </property>
                 </int>
@@ -659,7 +689,7 @@
                 <float>
                   <property required="no">
                     <keyword>dx=</keyword>
-                    <value/>
+                    <value />
                     <default>10.0</default>
                   </property>
                 </float>
@@ -669,7 +699,7 @@
                 <float>
                   <property required="no">
                     <keyword>fx=</keyword>
-                    <value/>
+                    <value />
                     <default>-1000</default>
                   </property>
                 </float>
@@ -678,34 +708,34 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of values</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>200</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Spatial sampling interval (meters)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>10.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First x coordinate (meter)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>-1000</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
           </parameters>
         </group>
@@ -720,7 +750,7 @@
                 <int>
                   <property required="no">
                     <keyword>nz=</keyword>
-                    <value/>
+                    <value />
                     <default>100</default>
                   </property>
                 </int>
@@ -730,7 +760,7 @@
                 <float>
                   <property required="no">
                     <keyword>dz=</keyword>
-                    <value/>
+                    <value />
                     <default>10.0</default>
                   </property>
                 </float>
@@ -740,7 +770,7 @@
                 <float>
                   <property required="no">
                     <keyword>fz=</keyword>
-                    <value/>
+                    <value />
                     <default>0</default>
                   </property>
                 </float>
@@ -749,34 +779,34 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of values</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Spatial sampling interval (meters)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>10.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First coordinate (meter)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
           </parameters>
         </group>
@@ -791,7 +821,7 @@
                 <float>
                   <property required="no">
                     <keyword>sx=</keyword>
-                    <value/>
+                    <value />
                     <default>0</default>
                   </property>
                 </float>
@@ -801,7 +831,7 @@
                 <float>
                   <property required="no">
                     <keyword>sz=</keyword>
-                    <value/>
+                    <value />
                     <default>500</default>
                   </property>
                 </float>
@@ -811,7 +841,7 @@
                 <enum>
                   <property required="no">
                     <keyword>stype=</keyword>
-                    <value/>
+                    <value />
                     <default>p</default>
                   </property>
                   <option>
@@ -833,7 +863,7 @@
                 <float>
                   <property required="no">
                     <keyword>sang=</keyword>
-                    <value/>
+                    <value />
                     <default>0</default>
                   </property>
                 </float>
@@ -843,7 +873,7 @@
                 <enum>
                   <property required="no">
                     <keyword>wtype=</keyword>
-                    <value/>
+                    <value />
                     <default>dg</default>
                   </property>
                   <option>
@@ -873,7 +903,7 @@
                 <float min="" max="">
                   <property required="no">
                     <keyword>ts=</keyword>
-                    <value/>
+                    <value />
                     <default>0.05</default>
                   </property>
                 </float>
@@ -883,7 +913,7 @@
                 <float min="" max="">
                   <property required="no">
                     <keyword>favg=</keyword>
-                    <value/>
+                    <value />
                     <default>50</default>
                   </property>
                 </float>
@@ -892,106 +922,74 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>Source x position (meters)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>sx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Source location (meters)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>sz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>500</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Source type</label>
-              <enum>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>stype=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>p</default>
                 </property>
-                <option>
-                  <label>P-wave</label>
-                  <value>p</value>
-                </option>
-                <option>
-                  <label>Velocity</label>
-                  <value>v</value>
-                </option>
-                <option>
-                  <label>P plane-wave</label>
-                  <value>pw</value>
-                </option>
-              </enum>
+              </reference>
             </parameter>
             <parameter>
-              <label>Plane wave angle (only for 'P plane-wave' source type)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>sang=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Wave type</label>
-              <enum>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>wtype=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>dg</default>
                 </property>
-                <option>
-                  <label>Gaussian derivative</label>
-                  <value>dg</value>
-                </option>
-                <option>
-                  <label>Gaussian</label>
-                  <value>ga</value>
-                </option>
-                <option>
-                  <label>Ricker</label>
-                  <value>ri</value>
-                </option>
-                <option>
-                  <label>Spike</label>
-                  <value>sp</value>
-                </option>
-                <option>
-                  <label>Double spike</label>
-                  <value>sp2</value>
-                </option>
-              </enum>
+              </reference>
             </parameter>
             <parameter>
-              <label>Source duration (seconds)</label>
-              <float min="" max="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>ts=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.05</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Source average frequency</label>
-              <float min="" max="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>favg=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>50</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
           </parameters>
         </group>
@@ -1006,7 +1004,7 @@
                 <int min="0">
                   <property required="no" separator=",">
                     <keyword>bc=</keyword>
-                    <value/>
+                    <value />
                     <default>10</default>
                     <default>10</default>
                     <default>10</default>
@@ -1019,7 +1017,7 @@
                 <float>
                   <property required="no">
                     <keyword>bc_a=</keyword>
-                    <value/>
+                    <value />
                     <default>0.95</default>
                   </property>
                 </float>
@@ -1029,7 +1027,7 @@
                 <float>
                   <property required="no">
                     <keyword>bc_r=</keyword>
-                    <value/>
+                    <value />
                     <default>0</default>
                   </property>
                 </float>
@@ -1038,37 +1036,37 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>Top, left, bottom and right boundary condition</label>
-              <int min="0">
-                <property required="no" separator=",">
-                  <keyword>bc=</keyword>
-                  <value/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
                   <default>10</default>
                   <default>10</default>
                   <default>10</default>
                   <default>10</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Boundary condition's inicial taper value for absorbing boundary</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>bc_a=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.95</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Boundary condition's exponencial factor for absorbing boundary</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>bc_r=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
           </parameters>
         </group>
@@ -1083,8 +1081,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>sofile=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -1093,8 +1091,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>snfile=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -1103,8 +1101,8 @@
                 <float>
                   <property required="no" separator=",">
                     <keyword>snaptime=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </float>
               </parameter>
@@ -1112,34 +1110,34 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>Name of source file</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>sofile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Name of file containing snapshots</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>snfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Times of snapshots</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>snaptime=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
                 </property>
-              </float>
+              </reference>
             </parameter>
           </parameters>
         </group>
@@ -1154,8 +1152,8 @@
                 <float>
                   <property required="no">
                     <keyword>vsx=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </float>
               </parameter>
@@ -1164,8 +1162,8 @@
                 <float>
                   <property required="no">
                     <keyword>hsz=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </float>
               </parameter>
@@ -1174,8 +1172,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>vrslfile=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -1184,8 +1182,8 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>hsfile=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </file>
               </parameter>
@@ -1193,44 +1191,44 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label>X coordinate of vertical line</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>vsx=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z coordinate of horizontal line</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>hsz=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Output file for vertical line</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>vrslfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Output file for horizontal line</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>hsfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
           </parameters>
         </group>
