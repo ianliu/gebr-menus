@@ -16,20 +16,32 @@
 
 gebrmenudir = $(datadir)/gebr/menus/shtools
 gebrmenu_DATA = \
+		append.mnu \
 		cal.mnu \
-		cat.mnu \
 		catdoc.mnu \
+		cat.mnu \
+		cp.mnu \
 		ddconv.mnu \
 		df.mnu \
 		du.mnu \
+		echo.mnu \
 		elinks.mnu \
+		evince.mnu \
+		gcc.mnu \
+		gnutar.mnu \
+		gzip.mnu \
 		ls.mnu \
 		odt2txt.mnu \
 		pdftopsacro.mnu \
+		rm.mnu \
 		save.mnu \
+		sort.mnu \
 		uname.mnu \
 		uptime.mnu \
-		xlhtml.mnu
+		wget.mnu \
+		xlhtml.mnu \
+		xmessage.mnu \
+		zenity.mnu
 
 EXTRA_DIST = $(gebrmenu_DATA)
 
