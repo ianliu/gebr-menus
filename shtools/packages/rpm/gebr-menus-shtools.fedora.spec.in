@@ -1,17 +1,17 @@
 %define name @PACKAGE@
 %define version @VERSION@
-%define release fedora
-%define _topdir %(echo $PWD)/rpm
+%define release 1%{dist}
 
 Name: %{name}
 Version: %{version}
 Release: %{release}
 License: GPL
 Group: Application/Misc
-URL: http://groups.google.com/group/gebr
-Packager: Ricardo Biloti <biloti@gmail.com>
+URL: http://www.gebrproject.com
+Packager: Fabricio Matheus Goncalves <fmatheus@gebrproject.com>
 Source: %{name}-%{version}.tar.gz
 BuildRoot: /tmp/%{name}-%{version}
+BuildArch: noarch
 Summary: Extra menus for GêBR concerning several shell tools
 %description
 GÃªBR is an environment for seismic processing based on open-source
