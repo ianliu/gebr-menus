@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Maximum Difference</title>
   <description>Find absolute maximum difference in two SEG-Y data sets</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Maximum Difference</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Find absolute maximum difference in two SEG-Y data sets
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -47,18 +48,18 @@
 
           <p>Find absolute maximum difference in two SEG-Y data sets.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Nov 17, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 13, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -67,7 +68,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -85,31 +86,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-11-17T11:55:15.274866Z</created>
     <modified>2010-08-13T15:21:27.127514Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>Maximum Difference</title>
     <binary>maxdiff</binary>
     <description>Find absolute maximum difference in two SEG-Y data sets</description>
-    <help><![CDATA[
+    <help>
+      <![CDATA[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -129,12 +133,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Maximum Difference</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Find absolute maximum difference in two SEG-Y data sets
             <!-- end des -->
           </div>
@@ -142,7 +146,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -155,13 +159,13 @@
 
           <p>Find absolute maximum difference in two SEG-Y data sets.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">First file of SEG-Y data set</span></li>
 
               <li class="req"><span class="reqlabel">Second file of SEG-Y data set</span></li>
@@ -170,17 +174,17 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Seismix Un*x group.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -189,7 +193,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
 
             <li><a href="#credits">Credits</a></li>
@@ -208,8 +212,30 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0" selection=""><parameter><label>First file of SEG-Y data set</label><file directory="no" filter-name="SU file" filter-pattern="*.su *.SU"><property required="yes"><keyword> </keyword><value/><default/></property></file></parameter><parameter><label>Second file of SEG-Y data set</label><file directory="no" filter-name="SU file" filter-pattern="*.su *.SU"><property required="yes"><keyword> </keyword><value/><default/></property></file></parameter></parameters>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>First file of SEG-Y data set</label>
+        <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
+          <property required="yes">
+            <keyword></keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Second file of SEG-Y data set</label>
+        <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
+          <property required="yes">
+            <keyword></keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+    </parameters>
   </program>
 </flow>

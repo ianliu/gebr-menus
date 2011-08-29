@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Flip</title>
   <description>Flip a data set in various ways</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Flip</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Flip a data set in various ways
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -47,18 +48,18 @@
 
           <p>Flip a data set in various ways.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Nov 17, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 13, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -67,7 +68,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -85,31 +86,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-11-17T14:02:28.187849Z</created>
     <modified>2010-08-13T17:10:15.184322Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Flip</title>
     <binary>suflip</binary>
     <description>Flip a data set in various ways</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -128,12 +132,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Flip</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Flip a data set in various ways
             <!-- end des -->
           </div>
@@ -141,7 +145,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -154,22 +158,22 @@
 
           <p>Flip a data set in various ways.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li><span class="label">Rotational sense of flip</span>
-		<ul>
-		  <li>Flip 90 deg clockwise</li>
-		  <li>Flip 90 deg counter-clockwise</li>
-		  <li>Transpose data</li>
-		  <li>Flip right-to-left</li>
-		  <li>Flip top-to-bottom</li>
-		</ul></li>
+                <ul>
+                  <li>Flip 90 deg clockwise</li>
+                  <li>Flip 90 deg counter-clockwise</li>
+                  <li>Transpose data</li>
+                  <li>Flip right-to-left</li>
+                  <li>Flip top-to-bottom</li>
+                </ul></li>
 
               <li><span class="label">Path prefix for temporary files</span></li>
 
@@ -179,15 +183,15 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>Trace "Sampling interval in microseconds" of header field is lost if options of parameter <b>Rotational sense of flip</b> 
-	   is <b>Flip 90 deg counter-clockwise</b> or <b>Flip 90 deg clockwise</b>.<br/>
-	    It can be reset using program <b>SU Set Header</b>.</p>
+           is <b>Flip 90 deg counter-clockwise</b> or <b>Flip 90 deg clockwise</b>.<br/>
+            It can be reset using program <b>SU Set Header</b>.</p>
 
 
           <p>This program accesses the following header keywords:
@@ -206,14 +210,14 @@
           </p>  
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Chris Liner, Jack K. Cohen, John Stockwell</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -222,9 +226,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -244,7 +248,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -252,7 +257,7 @@
         <enum>
           <property required="no">
             <keyword>flip=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
           <option>
@@ -282,8 +287,8 @@
         <file directory="yes" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>tmpdir=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>

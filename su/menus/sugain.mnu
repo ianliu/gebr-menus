@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.6">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Gain</title>
   <description>Apply various types of gain to display traces</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -42,26 +43,26 @@
       <div class="main">
         <div class="content">
 
-	  <a name="intro" id="intro"></a>
-	  <h2>Introduction</h2>
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
 
-	  <p>Apply various types of gain to display traces.</p>
+          <p>Apply various types of gain to display traces.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Aug 26, 2007: created by Ricardo Biloti, UNICAMP, &lt;biloti@gebrproject.com&gt;</p>
-	  <p>Jun 01, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  <p>Jul 19, 2010: revised by Jorge Pizzolatto Filho, UNICAMP, &lt;jorge.pzt@gebrproject.com&gt;</p>        
-	  <!-- end cpy -->
+          <p>Jun 01, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Jul 19, 2010: revised by Jorge Pizzolatto Filho, UNICAMP, &lt;jorge.pzt@gebrproject.com&gt;</p>        
+          <!-- end cpy -->
         </div>
 
         <div class="navigation">
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#intro">Introduction</a></li>
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -78,31 +79,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-08-26T15:00:00Z</created>
     <modified>2010-10-25T18:44:23.672589Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Gain</title>
     <binary>sugain</binary>
     <description>Apply various types of gain to display traces</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -142,10 +146,10 @@
         <div class="main">
           <div class="content">
 
-	  <a name="intro" id="intro"></a>
-	  <h2>Introduction</h2>
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
 
-	  <p>Apply various types of gain to display traces.</p>
+          <p>Apply various types of gain to display traces.</p>
 
             <!-- begin par -->
           <div class="parameters">
@@ -162,7 +166,7 @@
 
                 <li><span class="label">Multiply data by exp(epow*t)</span></li>
 
-		<li><span class="label">Take signed gpowth power of scaled data</span></li>
+                <li><span class="label">Take signed gpowth power of scaled data</span></li>
 
                 <li><span class="label">Do automatic gain control</span></li>
 
@@ -170,33 +174,33 @@
 
                 <li><span class="label">AGC window in seconds (use if agc or gagc is checked)</span></li>
 
-		<li class="group"><span class="grouplabel">Data clipping</span>
-		<ul>
+                <li class="group"><span class="grouplabel">Data clipping</span>
+                <ul>
 
-                	<li><span class="label">Zero any value whose magnitude exceeds trapval</span></li>
+                        <li><span class="label">Zero any value whose magnitude exceeds trapval</span></li>
 
-                	<li><span class="label">Zero any value whose magnitude exceeds clipval</span></li>
+                        <li><span class="label">Zero any value whose magnitude exceeds clipval</span></li>
 
-			<li><span class="label">Clip any value greater than</span></li>
+                        <li><span class="label">Clip any value greater than</span></li>
 
-			<li><span class="label">Clip any value less than</span></li>
+                        <li><span class="label">Clip any value less than</span></li>
 
-                	<li><span class="label">Clip by quantile on absolute values on trace</span></li>
+                        <li><span class="label">Clip by quantile on absolute values on trace</span></li>
 
-		</ul></li>
+                </ul></li>
 
-		<li class="group"><span class="grouplabel">Data balancing</span>
-		<ul>
+                <li class="group"><span class="grouplabel">Data balancing</span>
+                <ul>
 
-                	<li><span class="label">Balance traces by quantile on absolute values and scale</span></li>
+                        <li><span class="label">Balance traces by quantile on absolute values and scale</span></li>
 
-                	<li><span class="label">Balance traces by dividing by rms value</span></li>
+                        <li><span class="label">Balance traces by dividing by rms value</span></li>
 
-                	<li><span class="label">Balance traces by subtracting the mean</span></li>
+                        <li><span class="label">Balance traces by subtracting the mean</span></li>
 
-			<li><span class="label">Balance traces by subtracting the maximum</span></li>
+                        <li><span class="label">Balance traces by subtracting the maximum</span></li>
 
-		</ul></li>
+                </ul></li>
 
                 <li><span class="label">Multiply data by overall scale factor</span></li>
 
@@ -206,20 +210,20 @@
 
                 <li><span class="label">Selects the parameter choices discussed</span><br/>
                 Parameter <b>Multiply data by t^tpow</b> = 2,<br/>
-		Parameter <b>Take signed gpowth power of scaled data</b> = 0.5,<br/>
-		Parameter <b>Clip by quantile on absolute values on trace</b> = 0.95.</li>
+                Parameter <b>Take signed gpowth power of scaled data</b> = 0.5,<br/>
+                Parameter <b>Clip by quantile on absolute values on trace</b> = 0.95.</li>
 
                 <li><span class="label">Echoes extra information</span></li>
 
                 <li><span class="label">Directory path prefix for storing temporary files</span></li>
 
-		<li><span class="label">Apply gain to traces with "Mark selected traces" keyword</span>
-		<ul>
-		    <li>Equal to zero</li>
-		    <li>Different from zero</li>
-		</ul></li>
+                <li><span class="label">Apply gain to traces with "Mark selected traces" keyword</span>
+                <ul>
+                    <li>Equal to zero</li>
+                    <li>Different from zero</li>
+                </ul></li>
 
-		<li><span class="label">Sample rate in seconds</span></li>
+                <li><span class="label">Sample rate in seconds</span></li>
 
               </ul>
               <!-- end lst -->
@@ -242,27 +246,27 @@
             sugain may help.</p>
 
             <p>The program <b>SU Gain</b> only applies gain to traces with parameter <b>Apply gain to traces with "Mark selected traces" keyword</b>
-		is equal a zero.<br/>
-	    Use program <b>SU Set Header</b> or <b>SU Change Header</b> to mark traces you do not want gained.<br/>
+                is equal a zero.<br/>
+            Use program <b>SU Set Header</b> or <b>SU Change Header</b> to mark traces you do not want gained.<br/>
             See the selfdocs of <b>SU Set Header</b> and <b>SU Change Header</b> for more
             information about setting header fields.</p>
 
-		<p>This program accesses the following header keywords:
-		<ul>
-    			<li>Number of samples,</li>  <!-- ns -->
-    			<li>Sampling interval in microseconds,</li>  <!-- dt -->
-    			<li>Delay recording time in microseconds,</li>  <!-- delrt -->
-    			<li>Mark selected traces,</li>  <!-- mark -->
-    			<li>Offset (signed distance from source to receiver group).</li>  <!-- offset -->
+                <p>This program accesses the following header keywords:
+                <ul>
+                        <li>Number of samples,</li>  <!-- ns -->
+                        <li>Sampling interval in microseconds,</li>  <!-- dt -->
+                        <li>Delay recording time in microseconds,</li>  <!-- delrt -->
+                        <li>Mark selected traces,</li>  <!-- mark -->
+                        <li>Offset (signed distance from source to receiver group).</li>  <!-- offset -->
 
-  		</ul>
-	</p>
+                </ul>
+        </p>
 
-	   <a name="ref" id="ref"></a>
-	   <h2>References</h2>
-	   <ul>
-     	   <li>Jon's second book, pages 233-236.</li>
-	   </ul>
+           <a name="ref" id="ref"></a>
+           <h2>References</h2>
+           <ul>
+           <li>Jon's second book, pages 233-236.</li>
+           </ul>
 
             <a name="credits" id="credits"></a>
             <h2>Credits</h2>
@@ -277,12 +281,12 @@
             <h2>Index</h2>
 
             <ul>
-	      <li><a href="#intro">Introduction</a></li>
+              <li><a href="#intro">Introduction</a></li>
               <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
               <li><a href="#notes">Notes</a></li>
-	      <li><a href="#ref">References</a></li>
+              <li><a href="#ref">References</a></li>
               <li><a href="#credits">Credits</a></li>
             </ul>
           </div>
@@ -299,98 +303,370 @@
     </div>
   </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Gain whole data set (vs. trace by trace)</label><flag><property required="no"><keyword>panel=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter>
-      <parameter><label>Multiply data by t^tpow</label><float><property required="no"><keyword>tpow=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Multiply data by exp(epow*t)</label><float><property required="no"><keyword>epow=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Take signed gpowth power of scaled data</label><float><property required="no"><keyword>gpow=</keyword><value/><default/></property></float></parameter><parameter><label>Automatic gain control</label><flag><property required="no"><keyword>agc=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter>
-      <parameter><label>Automatic gain control with gaussian taper</label><flag><property required="no"><keyword>gagc=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter>
-      <parameter><label>AGC window in seconds (use if agc or gagc is checked)</label><float><property required="no"><keyword>wagc=</keyword><value/><default></default></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Data clipping</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Zero any value whose magnitude exceeds trapval</label><float><property required="no"><keyword>trap=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Zero any value whose magnitude exceeds clipval</label><float><property required="no"><keyword>clip=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Clip any value greater than</label><float><property required="no"><keyword>pclip=</keyword><value/><default/></property></float></parameter><parameter><label>Clip any value less than</label><float><property required="no"><keyword>nclip=</keyword><value/><default/></property></float></parameter><parameter><label>Clip by quantile on absolute values on trace</label><float><property required="no"><keyword>qclip=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter>
-      
-      
-      <parameter><label>Data balancing</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Balance traces by qclip and scale</label><flag><property required="no"><keyword>qbal=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Balance traces by dividing by rms value</label><flag><property required="no"><keyword>pbal=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Balance traces by subtracting the mean</label><flag><property required="no"><keyword>mbal=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Balance traces by subtracting the maximum</label><flag><property required="no"><keyword>maxbal=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value>off</value><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value>off</value><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value>off</value><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value>off</value><default>off</default></property></reference></parameter></parameters></group></parameter>
-      
-      
-      <parameter><label>Multiply data by overall scale factor</label><float><property required="no"><keyword>scale=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Divide data by overall scale factor</label><float><property required="no"><keyword>norm=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Bias data by adding an overall bias value</label><float><property required="no"><keyword>bias=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Selects the parameter choice discussed (Tpow=2, gpow=.5, qclip=.95)</label><flag><property required="no"><keyword>jon=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter>
-      <parameter><label>Echoes information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter>
-      <parameter><label>Directory path prefix for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter>
-    <parameter><label>Apply gain to traces with "Mark selected traces" keyword</label><enum><property required="no"><keyword>mark=</keyword><value/><default>0</default></property><option><label>equal to zero</label><value>0</value></option><option><label>different from zero</label><value>1</value></option></enum></parameter><parameter><label>Sample rate in seconds</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property></float></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Gain whole data set (vs. trace by trace)</label>
+        <flag>
+          <property required="no">
+            <keyword>panel=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Multiply data by t^tpow</label>
+        <float>
+          <property required="no">
+            <keyword>tpow=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Multiply data by exp(epow*t)</label>
+        <float>
+          <property required="no">
+            <keyword>epow=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Take signed gpowth power of scaled data</label>
+        <float>
+          <property required="no">
+            <keyword>gpow=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Automatic gain control</label>
+        <flag>
+          <property required="no">
+            <keyword>agc=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Automatic gain control with gaussian taper</label>
+        <flag>
+          <property required="no">
+            <keyword>gagc=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>AGC window in seconds (use if agc or gagc is checked)</label>
+        <float>
+          <property required="no">
+            <keyword>wagc=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Data clipping</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Zero any value whose magnitude exceeds trapval</label>
+                <float>
+                  <property required="no">
+                    <keyword>trap=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Zero any value whose magnitude exceeds clipval</label>
+                <float>
+                  <property required="no">
+                    <keyword>clip=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Clip any value greater than</label>
+                <float>
+                  <property required="no">
+                    <keyword>pclip=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Clip any value less than</label>
+                <float>
+                  <property required="no">
+                    <keyword>nclip=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Clip by quantile on absolute values on trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>qclip=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Data balancing</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Balance traces by qclip and scale</label>
+                <flag>
+                  <property required="no">
+                    <keyword>qbal=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Balance traces by dividing by rms value</label>
+                <flag>
+                  <property required="no">
+                    <keyword>pbal=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Balance traces by subtracting the mean</label>
+                <flag>
+                  <property required="no">
+                    <keyword>mbal=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Balance traces by subtracting the maximum</label>
+                <flag>
+                  <property required="no">
+                    <keyword>maxbal=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Multiply data by overall scale factor</label>
+        <float>
+          <property required="no">
+            <keyword>scale=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Divide data by overall scale factor</label>
+        <float>
+          <property required="no">
+            <keyword>norm=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Bias data by adding an overall bias value</label>
+        <float>
+          <property required="no">
+            <keyword>bias=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Selects the parameter choice discussed (Tpow=2, gpow=.5, qclip=.95)</label>
+        <flag>
+          <property required="no">
+            <keyword>jon=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoes information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory path prefix for storing temporary files</label>
+        <file directory="yes">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Apply gain to traces with "Mark selected traces" keyword</label>
+        <enum>
+          <property required="no">
+            <keyword>mark=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+          <option>
+            <label>equal to zero</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>different from zero</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Sample rate in seconds</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+    </parameters>
   </program>
 </flow>

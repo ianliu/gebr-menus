@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU TI Vel</title>
   <description>SU Transversely Isotropic velocity table builder</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,13 +22,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU TI Vel</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    SU Transversely Isotropic velocity table builder
+            SU Transversely Isotropic velocity table builder
            <!-- end des -->
           </div>
         </div>
@@ -35,7 +36,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Seismic Unix | Simulation and Model Building
+        Seismic Unix | Simulation and Model Building
         <!-- end cat -->
       </div>
 
@@ -45,20 +46,20 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-	  <p>SU Transversely Isotropic velocity table builder.</p>
-	    
-	  <a name="credits" id="credits"></a>
+          <p>SU Transversely Isotropic velocity table builder.</p>
+            
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>written by GêBR core team &lt;gebr-devel@googlegroups.com&gt;</p>
-	  
-	  <p>Aug 11, 2009: modified by Luis A. D'Afonseca, UNICAMP -
+          <p>written by GêBR core team &lt;gebr-devel@googlegroups.com&gt;</p>
+          
+          <p>Aug 11, 2009: modified by Luis A. D'Afonseca, UNICAMP -
           luis.dafonseca@gmail.com</p>
 
-	  <p>May 20, 2010: modified by Gabriel S. Sobral, UNICAMP -
+          <p>May 20, 2010: modified by Gabriel S. Sobral, UNICAMP -
           sobral@gebrproject.com</p>
-	  
+          
           <!-- end cpy -->
         </div>
 
@@ -83,31 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-09-28T15:00:00Z</created>
     <modified>2010-08-06T00:43:08.482882Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU TI Vel</title>
     <binary>sutivel</binary>
     <description>SU Transversely Isotropic velocity table builder</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -126,13 +130,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU TI Vel</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    SU Transversely Isotropic velocity table builder
+            SU Transversely Isotropic velocity table builder
            <!-- end des -->
           </div>
         </div>
@@ -140,7 +144,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Seismic Unix | Simulation and Model Building
+        Seismic Unix | Simulation and Model Building
         <!-- end cat -->
       </div>
 
@@ -152,13 +156,13 @@
 
           <p>SU Transversely Isotropic velocity table builder.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst -->
+              
+            <!-- begin lst -->
             <ul>
               <li><span class="label">Alpha (vertical p velocity)</span><br/></li>
 
@@ -204,24 +208,24 @@
             <!-- end lst -->
 
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-	  <p>Output is ascii text with:
-	  <ul>
-	  <li>line 1: number of values</li>
-	  <li>line 2: abscissa increment (p or theta increment, always starts at zero)</li>
-	  <li>line 3-n: one value per line</li>
-	  </ul></p>
-	    
-	  <a name="credits" id="credits"></a>
+          <p>Output is ascii text with:
+          <ul>
+          <li>line 1: number of values</li>
+          <li>line 2: abscissa increment (p or theta increment, always starts at zero)</li>
+          <li>line 3-n: one value per line</li>
+          </ul></p>
+            
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>(Visitor to CSM from Mobil) John E. Anderson Spring 1994</p>
-	  
+          <p>(Visitor to CSM from Mobil) John E. Anderson Spring 1994</p>
+          
           <!-- end cpy -->
         </div>
 
@@ -231,11 +235,11 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
-	    <li><a href="#notes">Notes</a></li>
+            <li><a href="#notes">Notes</a></li>
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -253,54 +257,166 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Alpha (vertical p velocity)</label><float><property required="no"><keyword>a=</keyword><value/><default>2500</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Beta (vertical sv velocity)</label><float><property required="no"><keyword>b=</keyword><value/><default>1250</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Epsilon (horiz p-wave anisotropy)</label><float><property required="no"><keyword>e=</keyword><value/><default>0.20</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Delta (strange parameter)</label><float><property required="no"><keyword>d=</keyword><value/><default>0.10</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Number of angles to compute</label><int><property required="no"><keyword>nangle=</keyword><value/><default>9001</default></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Maximum angle in degrees</label><float><property required="no"><keyword>maxangle=</keyword><value/><default>90.0</default></property>
-        
-        
-        
-      </float></parameter>
-      
-      <parameter><label>Number of slowness</label><int><property required="no"><keyword>np=</keyword><value/><default>8001</default></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Ouput</label><enum><property required="no"><keyword>option=</keyword><value/><default/></property><option><label>Velocity NMO (p)</label><value>1</value></option><option><label>Velocity NMO (theta) in degrees</label><value>2</value></option><option><label>Velocity NMO (theta) in radians</label><value>3</value></option><option><label>Velocity of phase (p)</label><value>4</value></option><option><label>velocity of phase (theta) in degrees</label><value>5</value></option><option><label>Velocity of phase (theta) in radians</label><value>6</value></option><option><label>Fist derivative of velocity of phase (p)</label><value>7</value></option><option><label>Fist derivative of velocity of phase (theta) in degrees</label><value>8</value></option><option><label>Fist derivative of velocity of phase (theta) in radians</label><value>9</value></option><option><label>Second derivative of velocity of phase (p)</label><value>10</value></option><option><label>Second derivative of velocity of phase (theta) in degrees</label><value>11</value></option><option><label>Second derivative of velocity of phase (theta) in radians</label><value>12</value></option><option><label>(1/Velocity NMO(0)^2-1/Velocity NMO(theta)^2)/p^2 test vs theta</label><value>13</value></option><option><label>Velocity NMO for weak anisotropy</label><value>14</value></option></enum></parameter>
-      <parameter><label>Normalize</label><flag><property required="no"><keyword>normalize=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-    <parameter><label>Echoes extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Alpha (vertical p velocity)</label>
+        <float>
+          <property required="no">
+            <keyword>a=</keyword>
+            <value />
+            <default>2500</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Beta (vertical sv velocity)</label>
+        <float>
+          <property required="no">
+            <keyword>b=</keyword>
+            <value />
+            <default>1250</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Epsilon (horiz p-wave anisotropy)</label>
+        <float>
+          <property required="no">
+            <keyword>e=</keyword>
+            <value />
+            <default>0.20</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Delta (strange parameter)</label>
+        <float>
+          <property required="no">
+            <keyword>d=</keyword>
+            <value />
+            <default>0.10</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of angles to compute</label>
+        <int>
+          <property required="no">
+            <keyword>nangle=</keyword>
+            <value />
+            <default>9001</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum angle in degrees</label>
+        <float>
+          <property required="no">
+            <keyword>maxangle=</keyword>
+            <value />
+            <default>90.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of slowness</label>
+        <int>
+          <property required="no">
+            <keyword>np=</keyword>
+            <value />
+            <default>8001</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Ouput</label>
+        <enum>
+          <property required="no">
+            <keyword>option=</keyword>
+            <value />
+            <default />
+          </property>
+          <option>
+            <label>Velocity NMO (p)</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Velocity NMO (theta) in degrees</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Velocity NMO (theta) in radians</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Velocity of phase (p)</label>
+            <value>4</value>
+          </option>
+          <option>
+            <label>velocity of phase (theta) in degrees</label>
+            <value>5</value>
+          </option>
+          <option>
+            <label>Velocity of phase (theta) in radians</label>
+            <value>6</value>
+          </option>
+          <option>
+            <label>Fist derivative of velocity of phase (p)</label>
+            <value>7</value>
+          </option>
+          <option>
+            <label>Fist derivative of velocity of phase (theta) in degrees</label>
+            <value>8</value>
+          </option>
+          <option>
+            <label>Fist derivative of velocity of phase (theta) in radians</label>
+            <value>9</value>
+          </option>
+          <option>
+            <label>Second derivative of velocity of phase (p)</label>
+            <value>10</value>
+          </option>
+          <option>
+            <label>Second derivative of velocity of phase (theta) in degrees</label>
+            <value>11</value>
+          </option>
+          <option>
+            <label>Second derivative of velocity of phase (theta) in radians</label>
+            <value>12</value>
+          </option>
+          <option>
+            <label>(1/Velocity NMO(0)^2-1/Velocity NMO(theta)^2)/p^2 test vs theta</label>
+            <value>13</value>
+          </option>
+          <option>
+            <label>Velocity NMO for weak anisotropy</label>
+            <value>14</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Normalize</label>
+        <flag>
+          <property required="no">
+            <keyword>normalize=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

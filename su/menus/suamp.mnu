@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Amp</title>
   <description>Output attributes of trace from data</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -48,7 +49,7 @@
           <p>Output amplitude traces, phase traces, real parts or imaginary
              parts of trace from data in (frequency, x) domain.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
@@ -56,8 +57,8 @@
           <p>Oct 05, 2007: modified by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
           <p>Jun 09, 2008: revised by Daniela Amazonas, UFPA, daniela.amazonas@gmail.com</p>
           <p>Mar 05, 2009: revised by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
-   	  <p>Aug 10, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
-   	  <p>Aug 03, 2010: revised by Gabriel S. Sobral, UNICAMP, sobral@gebrproject.com</p>
+          <p>Aug 10, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
+          <p>Aug 03, 2010: revised by Gabriel S. Sobral, UNICAMP, sobral@gebrproject.com</p>
 
           <!-- end cpy -->
         </div>
@@ -82,31 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-09-16T15:00:00Z</created>
     <modified>2010-08-06T00:43:04.129646Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Amp</title>
     <binary>suamp</binary>
     <description>Output attributes of trace from data</description>
-    <help><![CDATA[
+    <help>
+      <![CDATA[
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="gebr.css" />
@@ -130,7 +134,7 @@
           <!-- begin tt2 -->
           <span class="flowtitle">SU Amp</span>
           <!-- end tt2 -->
-	  <div class="description">
+          <div class="description">
            <!-- begin des -->Output attributes of trace from data <!-- end des -->
           </div>
         </div>
@@ -143,55 +147,55 @@
       </div>
 
       <div class="main">
-	<div class="content">
+        <div class="content">
 
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
           <p>Output amplitude traces, phase traces, real parts or imaginary parts of trace from data in (frequency, x) domain.</p>
 
-	<!-- begin par -->
+        <!-- begin par -->
           <div class="parameters">
 
-	  <a name="par"></a>
-	  <h2>Parameters</h2>
+          <a name="par"></a>
+          <h2>Parameters</h2>
 
-	  <!-- begin lst -->
+          <!-- begin lst -->
             <ul>
-	  
-	  <li><span class="label">Output mode</span> Accepts one of the following options:
-	    <ul>
-	    <li>Amplitude traces</li>
-	    <li>Phase traces</li>
-	    <li>Real parts</li>
-	    <li>Imaginary parts</li>	   
-	    </ul></li>
+          
+          <li><span class="label">Output mode</span> Accepts one of the following options:
+            <ul>
+            <li>Amplitude traces</li>
+            <li>Phase traces</li>
+            <li>Real parts</li>
+            <li>Imaginary parts</li>       
+            </ul></li>
 
-	  <li><span class="label">Divide value at zero frequency by 2</span><br/>Operative only for Output mode = "Amplitude traces"</li>
+          <li><span class="label">Divide value at zero frequency by 2</span><br/>Operative only for Output mode = "Amplitude traces"</li>
 
           </ul>
-	  	
-	  <!-- end lst -->
+                
+          <!-- end lst -->
 
           </div>
           <!-- end par -->
-	
-	  <a name="notes"></a>
+        
+          <a name="notes"></a>
           <h2>Notes</h2>
 
-	  <p>The trace returned is half length from 0 to Nyquist.</p>
+          <p>The trace returned is half length from 0 to Nyquist.</p>
 
-	  <p>This program accesses and modifies the following header keywords
-  		<ul>
-		    <li>Number of samples</li>  <!-- ns -->
-		    <li>Trace identification code</li>  <!-- trid -->
-		</ul>
-	  </p>
+          <p>This program accesses and modifies the following header keywords
+                <ul>
+                    <li>Number of samples</li>  <!-- ns -->
+                    <li>Trace identification code</li>  <!-- trid -->
+                </ul>
+          </p>
 
-	  <a name="credits"></a>
-	  <h2>Credits</h2>
+          <a name="credits"></a>
+          <h2>Credits</h2>
           <!-- begin cpy -->
-	  <p>CWP: Shuki, Jack<br/>
+          <p>CWP: Shuki, Jack<br/>
           CENPET: Werner M. Heigl - added repeat trace functionality</p>
 
           <!-- end cpy -->
@@ -205,7 +209,7 @@
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -227,9 +231,46 @@
 </body>
 </html>
     
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Output mode</label><enum><property required="yes"><keyword>mode=</keyword><value/><default>amp</default></property><option><label>Amplitude traces</label><value>amp</value></option><option><label>Phase traces</label><value>phase</value></option><option><label>Real parts</label><value>real</value></option><option><label>Imaginary parts</label><value>imag</value></option></enum></parameter>
-    <parameter><label>Divide value at zero frequency by 2</label><flag><property required="no"><keyword>jack=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Output mode</label>
+        <enum>
+          <property required="yes">
+            <keyword>mode=</keyword>
+            <value />
+            <default>amp</default>
+          </property>
+          <option>
+            <label>Amplitude traces</label>
+            <value>amp</value>
+          </option>
+          <option>
+            <label>Phase traces</label>
+            <value>phase</value>
+          </option>
+          <option>
+            <label>Real parts</label>
+            <value>real</value>
+          </option>
+          <option>
+            <label>Imaginary parts</label>
+            <value>imag</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Divide value at zero frequency by 2</label>
+        <flag>
+          <property required="no">
+            <keyword>jack=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

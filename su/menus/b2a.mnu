@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>BIN to ASCII</title>
   <description>Convert binary floats to ASCII</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -47,14 +48,14 @@
 
           <p>Convert binary floats to ASCII.</p>
           
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Agu 26, 2007: written by GêBR Core Team gebr-devel@googlegroups.com</p>
           <p>Mar 17, 2008: revised by Daniela Rego Amazonas, UFPA - daniela.amazonas@gmail.com</p>
-	  <p>Jul 21, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
-	  <p>Jul 24, 2009: program help revised by Luis A. D'Afonseca, UNICAMP - luis.dafonseca@gmail.com</p>
+          <p>Jul 21, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+          <p>Jul 24, 2009: program help revised by Luis A. D'Afonseca, UNICAMP - luis.dafonseca@gmail.com</p>
           <!-- end cpy -->
         </div>
 
@@ -80,31 +81,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR Core Team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-08-26T15:00:00Z</created>
     <modified>2010-08-06T00:43:02.464298Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Import/Export</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>BIN to ASCII</title>
     <binary>b2a</binary>
     <description>Convert binary floats to ASCII</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -155,7 +159,7 @@
             <a name="par" id="par"></a>
             <h2>Optional parameters</h2>
 
-	    <!-- List of optional parameters -->
+            <!-- List of optional parameters -->
             <!-- begin lst -->
             <ul>
               <li><span class="label">Floats per line in output file</span>
@@ -172,7 +176,7 @@
           </div>
           <!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
@@ -189,7 +193,7 @@
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -207,18 +211,30 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Floats per line in output file</label><int min="1"><property required="no"><keyword>n1=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter>
-      <parameter><label>Destination file</label><file directory="no"><property required="no"><keyword>outpar=</keyword><value/><default>/dev/stdout</default></property>
-	
-	
-	
-      </file></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Floats per line in output file</label>
+        <int min="1">
+          <property required="no">
+            <keyword>n1=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Destination file</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>outpar=</keyword>
+            <value></value>
+            <default>/dev/stdout</default>
+          </property>
+        </file>
+      </parameter>
     </parameters>
   </program>
 </flow>

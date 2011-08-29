@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>X Image</title>
   <description>Image plot for binary data sets</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -81,31 +82,34 @@
   </body>
 </html>
 
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
-<created>2007-08-26T15:00:00Z</created>
-<modified>2010-08-06T00:43:10.412850Z</modified>
-<lastrun/>
-</date>
+    <created>2007-08-26T15:00:00Z</created>
+    <modified>2010-08-06T00:43:10.412850Z</modified>
+    <lastrun />
+  </date>
   <category>Graphics</category>
   <category>Seismic Unix</category>
-  <io>
-<input/>
-<output/>
-<error/>
-</io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>X Image</title>
     <binary>ximage</binary>
     <description>Image plot for binary data sets</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -408,174 +412,1252 @@
   </body>
 </html>
 
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      
-      
-      
-      
-      
-      
-      <parameter><label>Number of samples in fast dimension</label><int><property required="yes"><keyword>n1=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter><parameter><label>Title of the plot</label><string><property required="no"><keyword>title=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter><parameter><label>Colormap</label><enum><property required="no"><keyword>cmap=</keyword><value/><default>rgb0</default></property><option><label>White - Black</label><value>rgb0</value></option><option><label>Blue - white - red</label><value>rgb1</value></option><option><label>Green - white - red</label><value>rgb2</value></option><option><label>Blue - white - gray</label><value>rgb3</value></option><option><label>Green - white - gray</label><value>rgb4</value></option><option><label>Blue - white - maroon</label><value>rgb5</value></option><option><label>Green - white - maroon</label><value>rgb6</value></option><option><label>Blue - white - orange</label><value>rgb7</value></option><option><label>Green - white - orange</label><value>rgb8</value></option><option><label>Green - gray</label><value>rgb9</value></option><option><label>Blue - gray</label><value>rgb10</value></option><option><label>Blue - yellow - gray</label><value>rgb11</value></option><option><label>Black - white</label><value>hsv0</value></option><option><label>Red - yellow - green -blue</label><value>hsv1</value></option><option><label>Blue - green - yellow - red</label><value>hsv2</value></option><option><label>Light blue - green - maroon</label><value>hsv3</value></option><option><label>Light blue - white - red</label><value>hsv4</value></option><option><label>Red - white - light blue</label><value>hsv5</value></option><option><label>Light blue - green - yellow - red - white</label><value>hsv6</value></option><option><label>Light blue - green - white</label><value>hsv7</value></option><option><label>White - red - yellow - green - light blue</label><value>hsv8</value></option><option><label>White - green - light blue</label><value>hsv9</value></option><option><label>Green - white - light blue</label><value>hsv10</value></option><option><label>Marron - red - yellow (Fire)</label><value>hsv11</value></option><option><label>Yellow - red - marron (Fire)</label><value>hsv12</value></option><option><label>Marron - yellow - red</label><value>hsv13</value></option></enum></parameter><parameter><label>Axis 1 properties (fast dimension)</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Axis label</label><string><property required="no"><keyword>label1=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter><parameter><label>First sample</label><float><property required="no"><keyword>f1=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Sampling interval</label><float><property required="no"><keyword>d1=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Value at which axis begins</label><float><property required="no"><keyword>x1beg=</keyword><value/><default/></property></float></parameter><parameter><label>Value at which axis ends</label><float><property required="no"><keyword>x1end=</keyword><value/><default/></property></float></parameter><parameter><label>Interval between numbered tics</label><float><property required="no"><keyword>d1num=</keyword><value/><default/></property></float></parameter><parameter><label>First numbered tic</label><float><property required="no"><keyword>f1num=</keyword><value/><default/></property></float></parameter><parameter><label>Number of tics between consecutive numbered tics</label><int><property required="no"><keyword>n1tic=</keyword><value/><default/></property></int></parameter><parameter><label>Grid line style</label><enum><property required="no"><keyword>grid1=</keyword><value/><default>none</default></property><option><label>No grid lines</label><value>none</value></option><option><label>Dotted grid lines</label><value>dot</value></option><option><label>Dashed grid lines</label><value>dash</value></option><option><label>Solid grid lines</label><value>solid</value></option></enum></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Axis label</label><string><property required="no"><keyword>label1=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter><parameter><label>First sample</label><float><property required="no"><keyword>f1=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Sampling interval</label><float><property required="no"><keyword>d1=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Value at which axis begins</label><float><property required="no"><keyword>x1beg=</keyword><value/><default/></property></float></parameter><parameter><label>Value at which axis ends</label><float><property required="no"><keyword>x1end=</keyword><value/><default/></property></float></parameter><parameter><label>Interval between numbered tics</label><float><property required="no"><keyword>d1num=</keyword><value/><default/></property></float></parameter><parameter><label>First numbered tic</label><float><property required="no"><keyword>f1num=</keyword><value/><default/></property></float></parameter><parameter><label>Number of tics between consecutive numbered tics</label><int><property required="no"><keyword>n1tic=</keyword><value/><default/></property></int></parameter><parameter><label>Grid line style</label><enum><property required="no"><keyword>grid1=</keyword><value/><default>none</default></property><option><label>No grid lines</label><value>none</value></option><option><label>Dotted grid lines</label><value>dot</value></option><option><label>Dashed grid lines</label><value>dash</value></option><option><label>Solid grid lines</label><value>solid</value></option></enum></parameter></parameters></group></parameter><parameter><label>Axis 2 properties (slow dimension)</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Axis label</label><string><property required="no"><keyword>label2=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter><parameter><label>First sample</label><float><property required="no"><keyword>f2=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Sampling interval</label><float><property required="no"><keyword>d2=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Number of traces to be plotted</label><int><property required="no"><keyword>n2=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter><parameter><label>Value at which axis begins</label><float><property required="no"><keyword>x2beg=</keyword><value/><default/></property></float></parameter><parameter><label>Value at which axis ends</label><float><property required="no"><keyword>x2end=</keyword><value/><default/></property></float></parameter><parameter><label>Interval between numbered tics</label><float><property required="no"><keyword>d2num=</keyword><value/><default/></property></float></parameter><parameter><label>First numbered tic</label><float><property required="no"><keyword>f2num=</keyword><value/><default/></property></float></parameter><parameter><label>Number of tics between consecutive numbered tics</label><int><property required="no"><keyword>n2tic=</keyword><value/><default/></property></int></parameter><parameter><label>Grid line style</label><enum><property required="no"><keyword>grid2=</keyword><value/><default>none</default></property><option><label>No grid lines</label><value>none</value></option><option><label>Dotted grid lines</label><value>dot</value></option><option><label>Dashed grid lines</label><value>dash</value></option><option><label>Solid grid lines</label><value>solid</value></option></enum></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Axis label</label><string><property required="no"><keyword>label2=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter><parameter><label>First sample</label><float><property required="no"><keyword>f2=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Sampling interval</label><float><property required="no"><keyword>d2=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Number of traces to be plotted</label><int><property required="no"><keyword>n2=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter><parameter><label>Value at which axis begins</label><float><property required="no"><keyword>x2beg=</keyword><value/><default/></property></float></parameter><parameter><label>Value at which axis ends</label><float><property required="no"><keyword>x2end=</keyword><value/><default/></property></float></parameter><parameter><label>Interval between numbered tics</label><float><property required="no"><keyword>d2num=</keyword><value/><default/></property></float></parameter><parameter><label>First numbered tic</label><float><property required="no"><keyword>f2num=</keyword><value/><default/></property></float></parameter><parameter><label>Number of tics between consecutive numbered tics</label><int><property required="no"><keyword>n2tic=</keyword><value/><default/></property></int></parameter><parameter><label>Grid line style</label><enum><property required="no"><keyword>grid2=</keyword><value/><default>none</default></property><option><label>No grid lines</label><value>none</value></option><option><label>Dotted grid lines</label><value>dot</value></option><option><label>Dashed grid lines</label><value>dash</value></option><option><label>Solid grid lines</label><value>solid</value></option></enum></parameter></parameters></group></parameter><parameter><label>Colorscale bar properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Display the color scale</label><flag><property required="no"><keyword>legend=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Unit label for legend</label><string><property required="no"><keyword>units=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter><parameter><label>Colorscale bar width in pixels</label><int><property required="no"><keyword>lwidth=</keyword><value/><default>16</default></property></int></parameter><parameter><label>Colorscale bar height in pixels</label><int><property required="no"><keyword>lheight=</keyword><value/><default/></property></int></parameter><parameter><label>Colorscale x-position in pixels</label><int><property required="no"><keyword>lx=</keyword><value/><default>3</default></property></int></parameter><parameter><label>Colorscale y-position in pixels</label><int><property required="no"><keyword>ly=</keyword><value/><default/></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Display the color scale</label><flag><property required="no"><keyword>legend=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Unit label for legend</label><string><property required="no"><keyword>units=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter><parameter><label>Colorscale bar width in pixels</label><int><property required="no"><keyword>lwidth=</keyword><value/><default>16</default></property></int></parameter><parameter><label>Colorscale bar height in pixels</label><int><property required="no"><keyword>lheight=</keyword><value/><default/></property></int></parameter><parameter><label>Colorscale x-position in pixels</label><int><property required="no"><keyword>lx=</keyword><value/><default>3</default></property></int></parameter><parameter><label>Colorscale y-position in pixels</label><int><property required="no"><keyword>ly=</keyword><value/><default/></property></int></parameter></parameters></group></parameter><parameter><label>Clipping properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Percentile used to determine clip value</label><range min="0" max="100" inc="0.1" digits="1"><property required="no"><keyword>perc=</keyword><value>0.00</value><default>100.0</default></property>
-	
-	
-	
-      </range></parameter><parameter><label>Percentile used to determine lower bound clip value</label><float><property required="no"><keyword>bperc=</keyword><value/><default/></property></float></parameter><parameter><label>Percentile used to determine upper bound clip value</label><float><property required="no"><keyword>wperc=</keyword><value/><default/></property></float></parameter><parameter><label>Clip value</label><float><property required="no"><keyword>clip=</keyword><value/><default/></property></float></parameter><parameter><label>Lower bound clip value</label><float><property required="no"><keyword>bclip=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Upper bound clip value</label><float><property required="no"><keyword>wclip=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Balance clip equally</label><flag><property required="no"><keyword>balance=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Portion of the lower range to blank out</label><range min="0" max="1" inc="0.1" digits="1"><property required="no"><keyword>blank=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </range></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Percentile used to determine clip value</label><range min="0" max="100" inc="0.1" digits="1"><property required="no"><keyword>perc=</keyword><value>0.00</value><default>100.0</default></property>
-	
-	
-	
-      </range></parameter><parameter><label>Percentile used to determine lower bound clip value</label><float><property required="no"><keyword>bperc=</keyword><value/><default/></property></float></parameter><parameter><label>Percentile used to determine upper bound clip value</label><float><property required="no"><keyword>wperc=</keyword><value/><default/></property></float></parameter><parameter><label>Clip value</label><float><property required="no"><keyword>clip=</keyword><value/><default/></property></float></parameter><parameter><label>Lower bound clip value</label><float><property required="no"><keyword>bclip=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Upper bound clip value</label><float><property required="no"><keyword>wclip=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Balance clip equally</label><flag><property required="no"><keyword>balance=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Portion of the lower range to blank out</label><range min="0" max="1" inc="0.1" digits="1"><property required="no"><keyword>blank=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </range></parameter></parameters></group></parameter>
-      <parameter><label>Curves</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>File(s) containing points to draw curve(s)</label><file directory="no"><property required="no" separator=","><keyword>curve=</keyword><value/><default/></property></file></parameter><parameter><label>Number(s) of pairs in each file</label><int><property required="no" separator=","><keyword>npair=</keyword><value/><default/></property></int></parameter><parameter><label>Color(s) for curve(s)</label><string><property required="no" separator=","><keyword>curvecolor=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>File(s) containing points to draw curve(s)</label><file directory="no"><property required="no" separator=","><keyword>curve=</keyword><value/><default/></property></file></parameter><parameter><label>Number(s) of pairs in each file</label><int><property required="no" separator=","><keyword>npair=</keyword><value/><default/></property></int></parameter><parameter><label>Color(s) for curve(s)</label><string><property required="no" separator=","><keyword>curvecolor=</keyword><value/><default/></property>
-	
-	
-	
-      </string></parameter></parameters></group></parameter>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <parameter><label>Appearance properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Window title</label><string><property required="no"><keyword>windowtitle=</keyword><value/><default/></property></string></parameter><parameter><label>Upper left corner x coordinate in pixels</label><int><property required="no"><keyword>xbox=</keyword><value/><default>50</default></property></int></parameter><parameter><label>Upper left corner y coordinate in pixels</label><int><property required="no"><keyword>ybox=</keyword><value/><default>50</default></property></int></parameter><parameter><label>Window width in pixels</label><int><property required="no"><keyword>wbox=</keyword><value/><default>550</default></property></int></parameter><parameter><label>Window height in pixels</label><int><property required="no"><keyword>hbox=</keyword><value/><default>700</default></property></int></parameter><parameter><label>Swap axes</label><flag><property required="no"><keyword>style=normal</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Block interpolation</label><flag><property required="no"><keyword>blockinterp=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Plot title font</label><string><property required="no"><keyword>titlefont=</keyword><value/><default/></property></string></parameter><parameter><label>Plot title color</label><string><property required="no"><keyword>titlecolor=</keyword><value/><default>red</default></property></string></parameter><parameter><label>Axes labels font</label><string><property required="no"><keyword>labelfont=</keyword><value/><default/></property></string></parameter><parameter><label>Axes labels color</label><string><property required="no"><keyword>labelcolor=</keyword><value/><default>blue</default></property></string></parameter><parameter><label>Font name for colorscale bar labels</label><string><property required="no"><keyword>legendfont=</keyword><value/><default>times_roman10</default></property></string></parameter><parameter><label>Grid color</label><string><property required="no"><keyword>gridcolor=</keyword><value/><default>blue</default></property></string></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Window title</label><string><property required="no"><keyword>windowtitle=</keyword><value/><default/></property></string></parameter><parameter><label>Upper left corner x coordinate in pixels</label><int><property required="no"><keyword>xbox=</keyword><value/><default>50</default></property></int></parameter><parameter><label>Upper left corner y coordinate in pixels</label><int><property required="no"><keyword>ybox=</keyword><value/><default>50</default></property></int></parameter><parameter><label>Window width in pixels</label><int><property required="no"><keyword>wbox=</keyword><value/><default>550</default></property></int></parameter><parameter><label>Window height in pixels</label><int><property required="no"><keyword>hbox=</keyword><value/><default>700</default></property></int></parameter><parameter><label>Swap axes</label><flag><property required="no"><keyword>style=normal</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Block interpolation</label><flag><property required="no"><keyword>blockinterp=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter><parameter><label>Plot title font</label><string><property required="no"><keyword>titlefont=</keyword><value/><default/></property></string></parameter><parameter><label>Plot title color</label><string><property required="no"><keyword>titlecolor=</keyword><value/><default>red</default></property></string></parameter><parameter><label>Axes labels font</label><string><property required="no"><keyword>labelfont=</keyword><value/><default/></property></string></parameter><parameter><label>Axes labels color</label><string><property required="no"><keyword>labelcolor=</keyword><value/><default>blue</default></property></string></parameter><parameter><label>Font name for colorscale bar labels</label><string><property required="no"><keyword>legendfont=</keyword><value/><default>times_roman10</default></property></string></parameter><parameter><label>Grid color</label><string><property required="no"><keyword>gridcolor=</keyword><value/><default>blue</default></property></string></parameter></parameters></group></parameter>
-      
-      
-      
-      
-    <parameter><label>Quiet mode</label><flag><property required="no"><keyword>verbose=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>File to save mouse picks</label><file directory="no"><property required="no"><keyword>mpicks=</keyword><value/><default>/dev/stdout</default></property>
-	
-	
-	
-      </file></parameter><parameter><label>File for interactive plotting</label><file directory="no"><property required="no"><keyword>plotfile=</keyword><value/><default/></property></file></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of samples in fast dimension</label>
+        <int>
+          <property required="yes">
+            <keyword>n1=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Title of the plot</label>
+        <string>
+          <property required="no">
+            <keyword>title=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Colormap</label>
+        <enum>
+          <property required="no">
+            <keyword>cmap=</keyword>
+            <value />
+            <default>rgb0</default>
+          </property>
+          <option>
+            <label>White - Black</label>
+            <value>rgb0</value>
+          </option>
+          <option>
+            <label>Blue - white - red</label>
+            <value>rgb1</value>
+          </option>
+          <option>
+            <label>Green - white - red</label>
+            <value>rgb2</value>
+          </option>
+          <option>
+            <label>Blue - white - gray</label>
+            <value>rgb3</value>
+          </option>
+          <option>
+            <label>Green - white - gray</label>
+            <value>rgb4</value>
+          </option>
+          <option>
+            <label>Blue - white - maroon</label>
+            <value>rgb5</value>
+          </option>
+          <option>
+            <label>Green - white - maroon</label>
+            <value>rgb6</value>
+          </option>
+          <option>
+            <label>Blue - white - orange</label>
+            <value>rgb7</value>
+          </option>
+          <option>
+            <label>Green - white - orange</label>
+            <value>rgb8</value>
+          </option>
+          <option>
+            <label>Green - gray</label>
+            <value>rgb9</value>
+          </option>
+          <option>
+            <label>Blue - gray</label>
+            <value>rgb10</value>
+          </option>
+          <option>
+            <label>Blue - yellow - gray</label>
+            <value>rgb11</value>
+          </option>
+          <option>
+            <label>Black - white</label>
+            <value>hsv0</value>
+          </option>
+          <option>
+            <label>Red - yellow - green -blue</label>
+            <value>hsv1</value>
+          </option>
+          <option>
+            <label>Blue - green - yellow - red</label>
+            <value>hsv2</value>
+          </option>
+          <option>
+            <label>Light blue - green - maroon</label>
+            <value>hsv3</value>
+          </option>
+          <option>
+            <label>Light blue - white - red</label>
+            <value>hsv4</value>
+          </option>
+          <option>
+            <label>Red - white - light blue</label>
+            <value>hsv5</value>
+          </option>
+          <option>
+            <label>Light blue - green - yellow - red - white</label>
+            <value>hsv6</value>
+          </option>
+          <option>
+            <label>Light blue - green - white</label>
+            <value>hsv7</value>
+          </option>
+          <option>
+            <label>White - red - yellow - green - light blue</label>
+            <value>hsv8</value>
+          </option>
+          <option>
+            <label>White - green - light blue</label>
+            <value>hsv9</value>
+          </option>
+          <option>
+            <label>Green - white - light blue</label>
+            <value>hsv10</value>
+          </option>
+          <option>
+            <label>Marron - red - yellow (Fire)</label>
+            <value>hsv11</value>
+          </option>
+          <option>
+            <label>Yellow - red - marron (Fire)</label>
+            <value>hsv12</value>
+          </option>
+          <option>
+            <label>Marron - yellow - red</label>
+            <value>hsv13</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Axis 1 properties (fast dimension)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis begins</label>
+                <float>
+                  <property required="no">
+                    <keyword>x1beg=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis ends</label>
+                <float>
+                  <property required="no">
+                    <keyword>x1end=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Interval between numbered tics</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1num=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First numbered tic</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1num=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>n1tic=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Grid line style</label>
+                <enum>
+                  <property required="no">
+                    <keyword>grid1=</keyword>
+                    <value />
+                    <default>none</default>
+                  </property>
+                  <option>
+                    <label>No grid lines</label>
+                    <value>none</value>
+                  </option>
+                  <option>
+                    <label>Dotted grid lines</label>
+                    <value>dot</value>
+                  </option>
+                  <option>
+                    <label>Dashed grid lines</label>
+                    <value>dash</value>
+                  </option>
+                  <option>
+                    <label>Solid grid lines</label>
+                    <value>solid</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>none</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Axis 2 properties (slow dimension)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of traces to be plotted</label>
+                <int>
+                  <property required="no">
+                    <keyword>n2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Value at which axis begins</label>
+                <float>
+                  <property required="no">
+                    <keyword>x2beg=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis ends</label>
+                <float>
+                  <property required="no">
+                    <keyword>x2end=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Interval between numbered tics</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2num=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First numbered tic</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2num=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>n2tic=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Grid line style</label>
+                <enum>
+                  <property required="no">
+                    <keyword>grid2=</keyword>
+                    <value />
+                    <default>none</default>
+                  </property>
+                  <option>
+                    <label>No grid lines</label>
+                    <value>none</value>
+                  </option>
+                  <option>
+                    <label>Dotted grid lines</label>
+                    <value>dot</value>
+                  </option>
+                  <option>
+                    <label>Dashed grid lines</label>
+                    <value>dash</value>
+                  </option>
+                  <option>
+                    <label>Solid grid lines</label>
+                    <value>solid</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>none</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Colorscale bar properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Display the color scale</label>
+                <flag>
+                  <property required="no">
+                    <keyword>legend=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Unit label for legend</label>
+                <string>
+                  <property required="no">
+                    <keyword>units=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Colorscale bar width in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>lwidth=</keyword>
+                    <value />
+                    <default>16</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Colorscale bar height in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>lheight=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Colorscale x-position in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>lx=</keyword>
+                    <value />
+                    <default>3</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Colorscale y-position in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>ly=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>16</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>3</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Clipping properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Percentile used to determine clip value</label>
+                <range min="0" max="100" inc="0.1" digits="1">
+                  <property required="no">
+                    <keyword>perc=</keyword>
+                    <value>0.00</value>
+                    <default>100.0</default>
+                  </property>
+                </range>
+              </parameter>
+              <parameter>
+                <label>Percentile used to determine lower bound clip value</label>
+                <float>
+                  <property required="no">
+                    <keyword>bperc=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Percentile used to determine upper bound clip value</label>
+                <float>
+                  <property required="no">
+                    <keyword>wperc=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Clip value</label>
+                <float>
+                  <property required="no">
+                    <keyword>clip=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Lower bound clip value</label>
+                <float>
+                  <property required="no">
+                    <keyword>bclip=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Upper bound clip value</label>
+                <float>
+                  <property required="no">
+                    <keyword>wclip=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Balance clip equally</label>
+                <flag>
+                  <property required="no">
+                    <keyword>balance=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Portion of the lower range to blank out</label>
+                <range min="0" max="1" inc="0.1" digits="1">
+                  <property required="no">
+                    <keyword>blank=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </range>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>0.00</value>
+                  <default>100.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Curves</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>File(s) containing points to draw curve(s)</label>
+                <file directory="no">
+                  <property required="no" separator=",">
+                    <keyword>curve=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Number(s) of pairs in each file</label>
+                <int>
+                  <property required="no" separator=",">
+                    <keyword>npair=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Color(s) for curve(s)</label>
+                <string>
+                  <property required="no" separator=",">
+                    <keyword>curvecolor=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Appearance properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Window title</label>
+                <string>
+                  <property required="no">
+                    <keyword>windowtitle=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Upper left corner x coordinate in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>xbox=</keyword>
+                    <value />
+                    <default>50</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Upper left corner y coordinate in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>ybox=</keyword>
+                    <value />
+                    <default>50</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Window width in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>wbox=</keyword>
+                    <value />
+                    <default>550</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Window height in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>hbox=</keyword>
+                    <value />
+                    <default>700</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Swap axes</label>
+                <flag>
+                  <property required="no">
+                    <keyword>style=normal</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Block interpolation</label>
+                <flag>
+                  <property required="no">
+                    <keyword>blockinterp=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Plot title font</label>
+                <string>
+                  <property required="no">
+                    <keyword>titlefont=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Plot title color</label>
+                <string>
+                  <property required="no">
+                    <keyword>titlecolor=</keyword>
+                    <value />
+                    <default>red</default>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Axes labels font</label>
+                <string>
+                  <property required="no">
+                    <keyword>labelfont=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Axes labels color</label>
+                <string>
+                  <property required="no">
+                    <keyword>labelcolor=</keyword>
+                    <value />
+                    <default>blue</default>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Font name for colorscale bar labels</label>
+                <string>
+                  <property required="no">
+                    <keyword>legendfont=</keyword>
+                    <value />
+                    <default>times_roman10</default>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Grid color</label>
+                <string>
+                  <property required="no">
+                    <keyword>gridcolor=</keyword>
+                    <value />
+                    <default>blue</default>
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>550</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>700</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>red</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>blue</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>times_roman10</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>blue</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Quiet mode</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=0</keyword>
+            <value>off</value>
+            <default>on</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>File to save mouse picks</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>mpicks=</keyword>
+            <value></value>
+            <default>/dev/stdout</default>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>File for interactive plotting</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>plotfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+    </parameters>
   </program>
 </flow>

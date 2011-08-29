@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Binary Operations</title>
   <description>Do a binary operation on two data sets</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -79,31 +80,34 @@
     </div>
   </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-08T15:00:00Z</created>
     <modified>2010-08-13T15:04:19.616362Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Binary Operations</title>
     <binary>suop2</binary>
     <description>Do a binary operation on two data sets</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -143,16 +147,16 @@
         <div class="main">
           <div class="content">
 
-	 <a name="intro" id="intro"></a>
-	 <h2>Introduction</h2>
+         <a name="intro" id="intro"></a>
+         <h2>Introduction</h2>
 
-	 <p>Do a binary operation on two data sets, such diff, sum, prod, etc.</p>
+         <p>Do a binary operation on two data sets, such diff, sum, prod, etc.</p>
 
             <!-- begin par -->
           <div class="parameters">
               <a name="par" id="par"></a>
               <h2>Parameters</h2>
-	      <ul>
+              <ul>
               <!-- begin lst -->
 
                 <li class="req"><span class="reqlabel">First data set</span></li>
@@ -179,8 +183,8 @@
 
                 <li><span class="label">Weigth for second data set</span></li>
 
-		<li><span class="label">Output trace identification code</span></li>
-	
+                <li><span class="label">Output trace identification code</span></li>
+        
               </ul>
               <!-- end lst -->
 
@@ -193,12 +197,12 @@
             <p>Output = data1 "op" data2 with the header of data1</p>
 
             <p>With options <b>Quotient of two panels of seismic data</b> and <b>Quotient of a panel and single trace</b> of parameter
-	    <b>Operation</b>, divide by 0 is trapped and 0
+            <b>Operation</b>, divide by 0 is trapped and 0
             is returned.</p>
 
             <p>With option <b>Do "zipper" merge of two panels</b> of parameter <b>Operation</b>, it is possible to set the output trace
             id code.<br/> 
-	    This option processes the traces from two files interleaving its samples.  Both
+            This option processes the traces from two files interleaving its samples.  Both
             files must have the same trace length and must not longer
             than SU_NFLTS/2 (as in SU 39 SU_NFLTS=32768).</p>
 
@@ -233,15 +237,15 @@
             <h2>Index</h2>
 
             <ul>
-	    <li><a href="#intro">Introduction</a></li>
-	
+            <li><a href="#intro">Introduction</a></li>
+        
               <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
               <li><a href="#notes">Notes</a></li>
 
-              <li><a href="#credits">Credits</a></li>	
+              <li><a href="#credits">Credits</a></li>   
             </ul>
           </div>
 
@@ -257,29 +261,278 @@
     </div>
   </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>First data set</label><file directory="no" filter-name="SU file" filter-pattern="*.su *.SU"><property required="yes"><keyword> </keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      <parameter><label>Second data set</label><file directory="no" filter-name="SU file" filter-pattern="*.su *.SU"><property required="yes"><keyword> </keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      <parameter><label>Operation</label><enum><property required="no"><keyword>op=</keyword><value/><default>diff</default></property><option><label>Difference of two panels of seismic data</label><value>diff</value></option><option><label>Sum of two panels of seismic data</label><value>sum</value></option><option><label>Product of two panels of seismic data</label><value>prod</value></option><option><label>Quotient of two panels of seismic data</label><value>quo</value></option><option><label>Differences of a panel and single trace</label><value>ptdiff</value></option><option><label>Sum of a panel and single trace</label><value>ptsum</value></option><option><label>Product of a panel and single trace</label><value>ptprod</value></option><option><label>Quotient of a panel and single trace</label><value>ptquo</value></option><option><label>Do "zipper" merge of two panels</label><value>zipper</value></option></enum></parameter>
-      <parameter><label>Weigth for first data set</label><float><property required="no"><keyword>w1=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Weight for second data set</label><float><property required="no"><keyword>w2=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-    <parameter><label>Output trace identification code</label><enum><property required="no"><keyword>trid=</keyword><value/><default/></property><option><label>Unknown</label><value>0</value></option><option><label>Seismic data</label><value>1</value></option><option><label>Dead</label><value>2</value></option><option><label>Dummy</label><value>3</value></option><option><label>Time break</label><value>4</value></option><option><label>Uphole</label><value>5</value></option><option><label>Sweep</label><value>6</value></option><option><label>Timing</label><value>7</value></option><option><label>Water break</label><value>8</value></option><option><label>Near-field gun signature</label><value>9</value></option><option><label>Far-field gun signature</label><value>10</value></option><option><label>Seismic pressure sensor</label><value>11</value></option><option><label>Vertical component of multicomponent seismic sensor</label><value>12</value></option><option><label>Cross-line component of multicomponent seismic sensor</label><value>13</value></option><option><label>In-line component of multicomponent seismic sensor</label><value>14</value></option><option><label>Vertical component of rotated multicomponent seismic sensor</label><value>15</value></option><option><label>Transverse component of rotated multicomponent seismic sensor</label><value>16</value></option><option><label>Radial component of rotated multicomponent seismic sensor</label><value>17</value></option><option><label>Vibrator reaction mass</label><value>18</value></option><option><label>Vibrator baseplate</label><value>19</value></option><option><label>Vibrator estimated ground force</label><value>20</value></option><option><label>Vibrator reference</label><value>21</value></option><option><label>Time-velocity pairs</label><value>22</value></option><option><label>Autocorrelation</label><value>109</value></option><option><label>Fourier transformed - no packing</label><value>110</value></option><option><label>Fourier transformed - unpacked Nyquist</label><value>111</value></option><option><label>Fourier transformed - packed Nyquist</label><value>112</value></option><option><label>Fourier transformed - amplitude/phase</label><value>114</value></option><option><label>Complex time signal - amplitude/phase</label><value>115</value></option><option><label>Complex signal in the time domain</label><value>113</value></option><option><label>Real part of complex trace from 0 to Nyquist</label><value>116</value></option><option><label>Imag part of complex trace from 0 to Nyquist</label><value>117</value></option><option><label>Amplitude of complex trace from 0 to Nyquist</label><value>118</value></option><option><label>Phase of complex trace from 0 to Nyquist</label><value>119</value></option><option><label>Wavenumber time domain (k-t)</label><value>121</value></option><option><label>Wavenumber frequency (k-omega)</label><value>122</value></option><option><label>Envelope of the complex time trace</label><value>123</value></option><option><label>Phase of the complex time trace</label><value>124</value></option><option><label>Frequency of the complex time trace</label><value>125</value></option><option><label>Depth-Range (z-x) traces</label><value>130</value></option><option><label>Seismic data packed to bytes (by SU Pack Chars)</label><value>201</value></option><option><label>Seismic data packed to 2 bytes (by SU Pack Shorts)</label><value>202</value></option><option><label>Other</label><value>-1</value></option></enum></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>First data set</label>
+        <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
+          <property required="yes">
+            <keyword></keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Second data set</label>
+        <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
+          <property required="yes">
+            <keyword></keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Operation</label>
+        <enum>
+          <property required="no">
+            <keyword>op=</keyword>
+            <value />
+            <default>diff</default>
+          </property>
+          <option>
+            <label>Difference of two panels of seismic data</label>
+            <value>diff</value>
+          </option>
+          <option>
+            <label>Sum of two panels of seismic data</label>
+            <value>sum</value>
+          </option>
+          <option>
+            <label>Product of two panels of seismic data</label>
+            <value>prod</value>
+          </option>
+          <option>
+            <label>Quotient of two panels of seismic data</label>
+            <value>quo</value>
+          </option>
+          <option>
+            <label>Differences of a panel and single trace</label>
+            <value>ptdiff</value>
+          </option>
+          <option>
+            <label>Sum of a panel and single trace</label>
+            <value>ptsum</value>
+          </option>
+          <option>
+            <label>Product of a panel and single trace</label>
+            <value>ptprod</value>
+          </option>
+          <option>
+            <label>Quotient of a panel and single trace</label>
+            <value>ptquo</value>
+          </option>
+          <option>
+            <label>Do "zipper" merge of two panels</label>
+            <value>zipper</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Weigth for first data set</label>
+        <float>
+          <property required="no">
+            <keyword>w1=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Weight for second data set</label>
+        <float>
+          <property required="no">
+            <keyword>w2=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Output trace identification code</label>
+        <enum>
+          <property required="no">
+            <keyword>trid=</keyword>
+            <value />
+            <default />
+          </property>
+          <option>
+            <label>Unknown</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Seismic data</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Dead</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Dummy</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Time break</label>
+            <value>4</value>
+          </option>
+          <option>
+            <label>Uphole</label>
+            <value>5</value>
+          </option>
+          <option>
+            <label>Sweep</label>
+            <value>6</value>
+          </option>
+          <option>
+            <label>Timing</label>
+            <value>7</value>
+          </option>
+          <option>
+            <label>Water break</label>
+            <value>8</value>
+          </option>
+          <option>
+            <label>Near-field gun signature</label>
+            <value>9</value>
+          </option>
+          <option>
+            <label>Far-field gun signature</label>
+            <value>10</value>
+          </option>
+          <option>
+            <label>Seismic pressure sensor</label>
+            <value>11</value>
+          </option>
+          <option>
+            <label>Vertical component of multicomponent seismic sensor</label>
+            <value>12</value>
+          </option>
+          <option>
+            <label>Cross-line component of multicomponent seismic sensor</label>
+            <value>13</value>
+          </option>
+          <option>
+            <label>In-line component of multicomponent seismic sensor</label>
+            <value>14</value>
+          </option>
+          <option>
+            <label>Vertical component of rotated multicomponent seismic sensor</label>
+            <value>15</value>
+          </option>
+          <option>
+            <label>Transverse component of rotated multicomponent seismic sensor</label>
+            <value>16</value>
+          </option>
+          <option>
+            <label>Radial component of rotated multicomponent seismic sensor</label>
+            <value>17</value>
+          </option>
+          <option>
+            <label>Vibrator reaction mass</label>
+            <value>18</value>
+          </option>
+          <option>
+            <label>Vibrator baseplate</label>
+            <value>19</value>
+          </option>
+          <option>
+            <label>Vibrator estimated ground force</label>
+            <value>20</value>
+          </option>
+          <option>
+            <label>Vibrator reference</label>
+            <value>21</value>
+          </option>
+          <option>
+            <label>Time-velocity pairs</label>
+            <value>22</value>
+          </option>
+          <option>
+            <label>Autocorrelation</label>
+            <value>109</value>
+          </option>
+          <option>
+            <label>Fourier transformed - no packing</label>
+            <value>110</value>
+          </option>
+          <option>
+            <label>Fourier transformed - unpacked Nyquist</label>
+            <value>111</value>
+          </option>
+          <option>
+            <label>Fourier transformed - packed Nyquist</label>
+            <value>112</value>
+          </option>
+          <option>
+            <label>Fourier transformed - amplitude/phase</label>
+            <value>114</value>
+          </option>
+          <option>
+            <label>Complex time signal - amplitude/phase</label>
+            <value>115</value>
+          </option>
+          <option>
+            <label>Complex signal in the time domain</label>
+            <value>113</value>
+          </option>
+          <option>
+            <label>Real part of complex trace from 0 to Nyquist</label>
+            <value>116</value>
+          </option>
+          <option>
+            <label>Imag part of complex trace from 0 to Nyquist</label>
+            <value>117</value>
+          </option>
+          <option>
+            <label>Amplitude of complex trace from 0 to Nyquist</label>
+            <value>118</value>
+          </option>
+          <option>
+            <label>Phase of complex trace from 0 to Nyquist</label>
+            <value>119</value>
+          </option>
+          <option>
+            <label>Wavenumber time domain (k-t)</label>
+            <value>121</value>
+          </option>
+          <option>
+            <label>Wavenumber frequency (k-omega)</label>
+            <value>122</value>
+          </option>
+          <option>
+            <label>Envelope of the complex time trace</label>
+            <value>123</value>
+          </option>
+          <option>
+            <label>Phase of the complex time trace</label>
+            <value>124</value>
+          </option>
+          <option>
+            <label>Frequency of the complex time trace</label>
+            <value>125</value>
+          </option>
+          <option>
+            <label>Depth-Range (z-x) traces</label>
+            <value>130</value>
+          </option>
+          <option>
+            <label>Seismic data packed to bytes (by SU Pack Chars)</label>
+            <value>201</value>
+          </option>
+          <option>
+            <label>Seismic data packed to 2 bytes (by SU Pack Shorts)</label>
+            <value>202</value>
+          </option>
+          <option>
+            <label>Other</label>
+            <value>-1</value>
+          </option>
+        </enum>
+      </parameter>
+    </parameters>
   </program>
 </flow>

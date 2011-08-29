@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU CWT</title>
   <description>Generates continous wavelet transform amplitude</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU CWT</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generates continous wavelet transform amplitude
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -43,19 +44,19 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Generates continous wavelet transform amplitude, regularity	
+          <p>Generates continous wavelet transform amplitude, regularity        
          analysis in the wavelet basis.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Set 05, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Set 05, 2010<!-- end ver --></span>
+                <!-- begin ver -->Set 05, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-09-05T20:40:15.077275Z</created>
     <modified>2010-09-08T13:17:28.538078Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>SU CWT</title>
     <binary>sucwt</binary>
     <description>Generates continous wavelet transform amplitude</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -118,12 +123,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU CWT</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generates continous wavelet transform amplitude
             <!-- end des -->
           </div>
@@ -131,108 +136,108 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Generates continous wavelet transform amplitude, regularity analysis in the wavelet basis.</p>
+        Generates continous wavelet transform amplitude, regularity analysis in the wavelet basis.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="group">
-			<span class="grouplabel">Values for wavelet transform scales</span>
-			<ul>
-				<li>
-					<span class="label">Base</span></li>
-				<li>
-					<span class="label">First exponent</span></li>
-				<li>
-					<span class="label">Exponent increment</span></li>
-				<li>
-					<span class="label">Last exponent</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Wavelet parameters</span>
-			<ul>
-				<li>
-					<span class="label">Wavelet type</span>
-					<ul>
-						<li>
-							2nd derivative of Gaussian (Mexican hat)</li>
-						<li>
-							4th derivative of Gaussian (witch's hat)</li>
-						<li>
-							6th derivative of Gaussian (wizard's hat)</li>
-					</ul>
-				</li>
-				<li>
-					<span class="label">Number of samples in the wavelet</span></li>
-				<li>
-					<span class="label">Minimum x value wavelet is computed</span></li>
-				<li>
-					<span class="label">Center x value wavelet is computed</span></li>
-				<li>
-					<span class="label">Maximum x value wavelet is computed</span></li>
-				<li>
-					<span class="label">Sharpness parameter (sigma)</span><br />
-					( sigma &gt; 1 sharper).</li>
-				<li>
-					<span class="label">Divisor</span><br />
-					See notes for more information.</li>
-				<li>
-					<span class="label">Compute Holder regularity estimate</span></li>
-				<li>
-					<span class="label">Echoes extra information</span></li>
-			</ul>
-		</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">Values for wavelet transform scales</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Base</span></li>
+                                <li>
+                                        <span class="label">First exponent</span></li>
+                                <li>
+                                        <span class="label">Exponent increment</span></li>
+                                <li>
+                                        <span class="label">Last exponent</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Wavelet parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Wavelet type</span>
+                                        <ul>
+                                                <li>
+                                                        2nd derivative of Gaussian (Mexican hat)</li>
+                                                <li>
+                                                        4th derivative of Gaussian (witch's hat)</li>
+                                                <li>
+                                                        6th derivative of Gaussian (wizard's hat)</li>
+                                        </ul>
+                                </li>
+                                <li>
+                                        <span class="label">Number of samples in the wavelet</span></li>
+                                <li>
+                                        <span class="label">Minimum x value wavelet is computed</span></li>
+                                <li>
+                                        <span class="label">Center x value wavelet is computed</span></li>
+                                <li>
+                                        <span class="label">Maximum x value wavelet is computed</span></li>
+                                <li>
+                                        <span class="label">Sharpness parameter (sigma)</span><br />
+                                        ( sigma &gt; 1 sharper).</li>
+                                <li>
+                                        <span class="label">Divisor</span><br />
+                                        See notes for more information.</li>
+                                <li>
+                                        <span class="label">Compute Holder regularity estimate</span></li>
+                                <li>
+                                        <span class="label">Echoes extra information</span></li>
+                        </ul>
+                </li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	This is the CWT version of the time frequency analysis notion that is applied in <strong>SU Gabor</strong>.<br />
-	The parameter <strong>Base</strong> is the base of the power that is applied to scale the wavelet. Some mathematical literature assume <strong>Base</strong> = 2. <strong>Base</strong> = 10 works well here.</p>
+        This is the CWT version of the time frequency analysis notion that is applied in <strong>SU Gabor</strong>.<br />
+        The parameter <strong>Base</strong> is the base of the power that is applied to scale the wavelet. Some mathematical literature assume <strong>Base</strong> = 2. <strong>Base</strong> = 10 works well here.</p>
 <p>
-	Default option yields an output similar to that of <strong>SU Gabor</strong>. With the flag <strong>compute Holder regularity estimate</strong> on, an estimate of the instantaneous Holder regularity (the Holder exponent) is output for each input data value. The result is a Holder exponent trace for each corresponding input data trace.</p>
+        Default option yields an output similar to that of <strong>SU Gabor</strong>. With the flag <strong>compute Holder regularity estimate</strong> on, an estimate of the instantaneous Holder regularity (the Holder exponent) is output for each input data value. The result is a Holder exponent trace for each corresponding input data trace.</p>
 <p>
-	The strict definition of the Holder exponent is the maximum slope of the rise of the spectrum in the log(amplitude) versus log(scale) domain.</p>
+        The strict definition of the Holder exponent is the maximum slope of the rise of the spectrum in the log(amplitude) versus log(scale) domain.</p>
 <p>
-	<strong>Divisor</strong> =1.0 means the exponent is computed simply by fitting a line through all of the values in the transform. A value of <strong>Divisor</strong> &gt; 1.0 indicates that the Holder exponent is determined as the max of slopes found in (total scales)/<strong>Divisor</strong> length segments.</p>
+        <strong>Divisor</strong> =1.0 means the exponent is computed simply by fitting a line through all of the values in the transform. A value of <strong>Divisor</strong> &gt; 1.0 indicates that the Holder exponent is determined as the max of slopes found in (total scales)/<strong>Divisor</strong> length segments.</p>
 <p>
-	Some experimentation with the parameters <strong>Number of samples in the wavelet</strong>, <strong>First exponent</strong>, <strong>Last exponent</strong>, and <strong>Exponent increment</strong> may be necessary before a desirable output is obtained. The most effective way to proceed is to perform a number of tests with the flag <strong>Compute Holder regularity estimate</strong> off to determine the range of <strong>First exponent</strong>, <strong>Last exponent</strong>, and <strong>Exponent increment</strong> that best represents the data in the wavelet domain. Then experimentation with the flag <strong>Compute Holder regularity estimate</strong> on, and values of <strong>Divisor</strong> &gt;= 1.0 may proceed.</p>
+        Some experimentation with the parameters <strong>Number of samples in the wavelet</strong>, <strong>First exponent</strong>, <strong>Last exponent</strong>, and <strong>Exponent increment</strong> may be necessary before a desirable output is obtained. The most effective way to proceed is to perform a number of tests with the flag <strong>Compute Holder regularity estimate</strong> off to determine the range of <strong>First exponent</strong>, <strong>Last exponent</strong>, and <strong>Exponent increment</strong> that best represents the data in the wavelet domain. Then experimentation with the flag <strong>Compute Holder regularity estimate</strong> on, and values of <strong>Divisor</strong> &gt;= 1.0 may proceed.</p>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <!-- List of references --><ul>
-	<li>
-		Li C.H., (2004), Information passage from acoustic impedence to seismogram: Perspectives from wavelet-based multiscale analysis, Journal of Geophysical Research, vol. 109, B07301, p.1-10.</li>
-	<li>
-		Mallat, S. and W. L. Hwang, (1992), Singularity detection and processing with wavelets, IEEE Transactions on information, v 38, March 1992, p.617 - 643.</li>
+        <li>
+                Li C.H., (2004), Information passage from acoustic impedence to seismogram: Perspectives from wavelet-based multiscale analysis, Journal of Geophysical Research, vol. 109, B07301, p.1-10.</li>
+        <li>
+                Mallat, S. and W. L. Hwang, (1992), Singularity detection and processing with wavelets, IEEE Transactions on information, v 38, March 1992, p.617 - 643.</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: John Stockwell, Nov 2004<br />
-	inspired in part by "bhpcwt" in the BHP_SU package, code written by BHP: Michael Glinsky, c. 2002, based loosely on a Matlab CWT function.</p>
+        CWP: John Stockwell, Nov 2004<br />
+        inspired in part by "bhpcwt" in the BHP_SU package, code written by BHP: Michael Glinsky, c. 2002, based loosely on a Matlab CWT function.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	References</a></li><li><a href="#header_4">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -240,23 +245,304 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
-      
-      
-    <parameter><label>Values for wavelet transform scales</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
-        <label>Base</label>
-        <float>
-          <property required="no">
-            <keyword>base=</keyword>
-            <value/>
-            <default>10</default>
-          </property>
-        </float>
-      </parameter><parameter><label>First exponent</label><float><property required="no"><keyword>first=</keyword><value/><default>-1</default></property></float></parameter><parameter><label>Exponent increment</label><float><property required="no"><keyword>expinc=</keyword><value/><default>0.01</default></property></float></parameter><parameter><label>Last exponent</label><float><property required="no"><keyword>last=</keyword><value/><default>1.5</default></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter>
-        <label>Base</label>
-        
-      <reference><property required="no"><keyword/><value/><default>10</default></property></reference></parameter><parameter><label>First exponent</label><reference><property required="no"><keyword/><value/><default>-1</default></property></reference></parameter><parameter><label>Exponent increment</label><reference><property required="no"><keyword/><value/><default>0.01</default></property></reference></parameter><parameter><label>Last exponent</label><reference><property required="no"><keyword/><value/><default>1.5</default></property></reference></parameter></parameters></group></parameter><parameter><label>Wavelet parameters</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Wavelet type</label><enum><property required="no"><keyword>wtype=</keyword><value/><default>0</default></property><option><label>2nd derivative of Gaussian (Mexican hat)</label><value>0</value></option><option><label>4th derivative of Gaussian (witch's hat)</label><value>1</value></option><option><label>6th derivative of Gaussian (wizard's hat)</label><value>2</value></option></enum></parameter><parameter><label>Number of samples in the wavelet</label><int><property required="no"><keyword>nwavelet=</keyword><value/><default>1024</default></property></int></parameter><parameter><label>Minimum x value wavelet is computed</label><float><property required="no"><keyword>xmin=</keyword><value/><default>-20</default></property></float></parameter><parameter><label>Center x value wavelet is computed</label><float><property required="no"><keyword>xcenter=</keyword><value/><default>0</default></property></float></parameter><parameter><label>Maximum x value wavelet is computed</label><float><property required="no"><keyword>xmax=</keyword><value/><default>20</default></property></float></parameter><parameter><label>Sharpness parameter (sigma)</label><float><property required="no"><keyword>sigma=</keyword><value/><default>1</default></property></float></parameter><parameter><label>Divisor</label><float min="1.0"><property required="no"><keyword>divisor=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Compute Holder regularity estimate</label><flag><property required="no"><keyword>holder=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Echoes extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Wavelet type</label><reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter><parameter><label>Number of samples in the wavelet</label><reference><property required="no"><keyword/><value/><default>1024</default></property></reference></parameter><parameter><label>Minimum x value wavelet is computed</label><reference><property required="no"><keyword/><value/><default>-20</default></property></reference></parameter><parameter><label>Center x value wavelet is computed</label><reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter><parameter><label>Maximum x value wavelet is computed</label><reference><property required="no"><keyword/><value/><default>20</default></property></reference></parameter><parameter><label>Sharpness parameter (sigma)</label><reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter><parameter><label>Divisor</label><reference><property required="no"><keyword/><value/><default>1.0</default></property></reference></parameter><parameter><label>Compute Holder regularity estimate</label><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label>Echoes extra information</label><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group></parameter></parameters>
+      <parameter>
+        <label>Values for wavelet transform scales</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Base</label>
+                <float>
+                  <property required="no">
+                    <keyword>base=</keyword>
+                    <value />
+                    <default>10</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First exponent</label>
+                <float>
+                  <property required="no">
+                    <keyword>first=</keyword>
+                    <value />
+                    <default>-1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Exponent increment</label>
+                <float>
+                  <property required="no">
+                    <keyword>expinc=</keyword>
+                    <value />
+                    <default>0.01</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Last exponent</label>
+                <float>
+                  <property required="no">
+                    <keyword>last=</keyword>
+                    <value />
+                    <default>1.5</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>10</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>-1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>0.01</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1.5</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Wavelet parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Wavelet type</label>
+                <enum>
+                  <property required="no">
+                    <keyword>wtype=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                  <option>
+                    <label>2nd derivative of Gaussian (Mexican hat)</label>
+                    <value>0</value>
+                  </option>
+                  <option>
+                    <label>4th derivative of Gaussian (witch's hat)</label>
+                    <value>1</value>
+                  </option>
+                  <option>
+                    <label>6th derivative of Gaussian (wizard's hat)</label>
+                    <value>2</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Number of samples in the wavelet</label>
+                <int>
+                  <property required="no">
+                    <keyword>nwavelet=</keyword>
+                    <value />
+                    <default>1024</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Minimum x value wavelet is computed</label>
+                <float>
+                  <property required="no">
+                    <keyword>xmin=</keyword>
+                    <value />
+                    <default>-20</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Center x value wavelet is computed</label>
+                <float>
+                  <property required="no">
+                    <keyword>xcenter=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum x value wavelet is computed</label>
+                <float>
+                  <property required="no">
+                    <keyword>xmax=</keyword>
+                    <value />
+                    <default>20</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sharpness parameter (sigma)</label>
+                <float>
+                  <property required="no">
+                    <keyword>sigma=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Divisor</label>
+                <float min="1.0">
+                  <property required="no">
+                    <keyword>divisor=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Compute Holder regularity estimate</label>
+                <flag>
+                  <property required="no">
+                    <keyword>holder=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Echoes extra information</label>
+                <flag>
+                  <property required="no">
+                    <keyword>verbose=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1024</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>-20</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>20</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU FD Modeling 2D</title>
   <description>Finite-Difference Modeling (2nd order) for acoustic wave equation</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -53,7 +54,7 @@
           <!-- begin cpy -->
 
             <p>Aug 26, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>
-   	    <p>May 18, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;
+            <p>May 18, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;
 
             <!-- end cpy -->
         </div>
@@ -80,31 +81,34 @@
     </div>
   </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-08-26T15:00:00Z</created>
     <modified>2010-08-06T00:43:04.888708Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU FD Modeling 2D</title>
     <binary>sufdmod2</binary>
     <description>Finite-Difference Modeling (2nd order) for acoustic wave equation</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
     <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -134,122 +138,122 @@
 
         <div class="main">
           <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Finite-Difference Modeling (2nd order) for acoustic wave equation.</p>
+        Finite-Difference Modeling (2nd order) for acoustic wave equation.</p>
 
-	<p>The velocity model is read from the standard input and must be a binary C-style file
-	with floating point numbers.<br/> The parameters <b>Number of x samples</b> and
-	<b>Number of z samples</b> define the sizes of the sampling grid, where  
-	the z-direction is the fast dimension. </p>
+        <p>The velocity model is read from the standard input and must be a binary C-style file
+        with floating point numbers.<br/> The parameters <b>Number of x samples</b> and
+        <b>Number of z samples</b> define the sizes of the sampling grid, where  
+        the z-direction is the fast dimension. </p>
 
-	<p>This program will write the resulting wave field to the standard output with the same
-	x and z grid for each time step.</p>
+        <p>This program will write the resulting wave field to the standard output with the same
+        x and z grid for each time step.</p>
 
 
 <!-- begin par -->
           <div class="parameters">
-	<h2 id="header_1">Parameters</h2>
-	<!-- begin lst -->
+        <h2 id="header_1">Parameters</h2>
+        <!-- begin lst -->
             <ul>
 
-		<li class="req">
-			<span class="reqlabel">Number of x samples</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of z samples</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of x samples</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of z samples</span></li>
 
-		<li class="group">
-			<span class="grouplabel">Source</span>
-			<ul>
-				<li class="req">
-					<span class="reqlabel">x coordinates of source</span></li>
-				<li class="req">
-					<span class="reqlabel">z coordinates of source</span></li>
+                <li class="group">
+                        <span class="grouplabel">Source</span>
+                        <ul>
+                                <li class="req">
+                                        <span class="reqlabel">x coordinates of source</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">z coordinates of source</span></li>
 
-				<li>
-					<span class="label">Strength of source</span></li>
-			</ul>
-		</li>
+                                <li>
+                                        <span class="label">Strength of source</span></li>
+                        </ul>
+                </li>
 
-		<li class="group">
-			<span class="grouplabel">Time discretization</span>
+                <li class="group">
+                        <span class="grouplabel">Time discretization</span>
 
-			<ul>
-				<li class="req">
-					<span class="reqlabel">Maximum time</span></li>
+                        <ul>
+                                <li class="req">
+                                        <span class="reqlabel">Maximum time</span></li>
 
-				<li>
-					<span class="label">Number of time samples</span><br />
-					Default value is 1+(<b>Maximum time</b>)/("Time sampling interval").</li>
-				<li>
-					<span class="label">Number of time steps per output time step</span><br />
-					The default value for this parameter is 1.</li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Spacial grid</span>
-			<ul>
-				<li>
-					<span class="label">x sampling interval</span><br />
-					The default value for this parameter is 1.0.</li>
-				<li>
-					<span class="label">First x sample</span><br />
-					The default value for this parameter is 0.0.</li>
-				<li>
-					<span class="label">z sampling interval</span><br />
-					The default value for this parameter is 1.0.</li>
-				<li>
-					<span class="label">First z sample</span><br />
-					The default value for this parameter is 0.0.</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Maximum frequency in source wavelet</span></li>
-		<li>
-			<span class="label">Peak frequency in Ricker wavelet</span><br/>
-			Defalt value is 0.5*<b>Maximum frequency in source wavelet</b>.</li>
-		<li>
-			<span class="label">Input file containing density</span></li>
+                                <li>
+                                        <span class="label">Number of time samples</span><br />
+                                        Default value is 1+(<b>Maximum time</b>)/("Time sampling interval").</li>
+                                <li>
+                                        <span class="label">Number of time steps per output time step</span><br />
+                                        The default value for this parameter is 1.</li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Spacial grid</span>
+                        <ul>
+                                <li>
+                                        <span class="label">x sampling interval</span><br />
+                                        The default value for this parameter is 1.0.</li>
+                                <li>
+                                        <span class="label">First x sample</span><br />
+                                        The default value for this parameter is 0.0.</li>
+                                <li>
+                                        <span class="label">z sampling interval</span><br />
+                                        The default value for this parameter is 1.0.</li>
+                                <li>
+                                        <span class="label">First z sample</span><br />
+                                        The default value for this parameter is 0.0.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Maximum frequency in source wavelet</span></li>
+                <li>
+                        <span class="label">Peak frequency in Ricker wavelet</span><br/>
+                        Defalt value is 0.5*<b>Maximum frequency in source wavelet</b>.</li>
+                <li>
+                        <span class="label">Input file containing density</span></li>
 
-		<li class="group">
-			<span class="grouplabel">Seismograms</span>
-			<ul>
-				<li>
-					<span class="label">x coordinate of vertical line of seismograms</span></li>
-				<li>
-					<span class="label">z coordinate of horizontal line of seismograms</span></li>
-				<li>
-					<span class="label">Output file for vertical line of seismograms</span></li>
-				<li>
-					<span class="label">Output file for horizontal line of seismograms</span></li>
-				<li>
-					<span class="label">Output file for source point seismograms</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Absorbing boundary conditions</span><br />
-			On top,left,bottom,right sides of the model,<br/>
-			Use 0,1,1,1 for free surface condition on the top.</li>
-		<li>
-			<span class="label">Verbose mode</span>
-			<ul>
-				<li>Quiet mode</li>
-				<li>Diagnostic messages</li>
-				<li>More complete diagnostic messages</li>
-			</ul></li>
-	</ul>
+                <li class="group">
+                        <span class="grouplabel">Seismograms</span>
+                        <ul>
+                                <li>
+                                        <span class="label">x coordinate of vertical line of seismograms</span></li>
+                                <li>
+                                        <span class="label">z coordinate of horizontal line of seismograms</span></li>
+                                <li>
+                                        <span class="label">Output file for vertical line of seismograms</span></li>
+                                <li>
+                                        <span class="label">Output file for horizontal line of seismograms</span></li>
+                                <li>
+                                        <span class="label">Output file for source point seismograms</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Absorbing boundary conditions</span><br />
+                        On top,left,bottom,right sides of the model,<br/>
+                        Use 0,1,1,1 for free surface condition on the top.</li>
+                <li>
+                        <span class="label">Verbose mode</span>
+                        <ul>
+                                <li>Quiet mode</li>
+                                <li>Diagnostic messages</li>
+                                <li>More complete diagnostic messages</li>
+                        </ul></li>
+        </ul>
   <!-- end lst -->
 
           </div>
           <!-- end par -->
 <h2 id="header_3">
-	Notes</h2>
+        Notes</h2>
 <p>
-	In this version is not avaiable the option to input a name of file that contains sources coordinates.</p>
+        In this version is not avaiable the option to input a name of file that contains sources coordinates.</p>
 <p>
-	This program uses the traditional explicit second order differencing method.</p>
+        This program uses the traditional explicit second order differencing method.</p>
 <p>
-	The input velocity and density files contain C-style binary floating numbers with the z-direction being the fast dimension in the file. Here v[ix][iz] means that this is a v(z,x) velocity function.</p>
+        The input velocity and density files contain C-style binary floating numbers with the z-direction being the fast dimension in the file. Here v[ix][iz] means that this is a v(z,x) velocity function.</p>
 
 <p>This program sets the following header keywords
   <ul>
@@ -268,23 +272,23 @@
 </p>
 
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Authors: CWP:Dave Hale<br />
-	CWP:modified for SU by John Stockwell, 1993.</p>
+        Authors: CWP:Dave Hale<br />
+        CWP:modified for SU by John Stockwell, 1993.</p>
 <p>
-	Modifications: Tony Kocurko (TK:)<br />
-	Memorial University in Newfoundland and Labrador<br />
-	- Allow user to supply the name of a file containing shot point locations, rather than supplying them as values to the x and z coordinates of source command line arguments.<br />
-	- Correct the calculation of izs[is].</p>
+        Modifications: Tony Kocurko (TK:)<br />
+        Memorial University in Newfoundland and Labrador<br />
+        - Allow user to supply the name of a file containing shot point locations, rather than supplying them as values to the x and z coordinates of source command line arguments.<br />
+        - Correct the calculation of izs[is].</p>
 </div>
 
           <div class="navigation"><h2>Index</h2><ul>
-	<li><a href="#header_0">Introduction</a></li>
-	<li><a href="#header_1">Parameters</a></li>
-	<li><a href="#header_3">Notes</a></li>
-	<li><a href="#header_4">Credits</a></li>
-	</ul></div>
+        <li><a href="#header_0">Introduction</a></li>
+        <li><a href="#header_1">Parameters</a></li>
+        <li><a href="#header_3">Notes</a></li>
+        <li><a href="#header_4">Credits</a></li>
+        </ul></div>
 
           <div class="clearer"></div>
         </div>
@@ -299,146 +303,439 @@
   
 
 </body></html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of x samples</label><int><property required="yes"><keyword>nx=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter>
-      <parameter><label>Number of z samples</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter>
-      <parameter><label>Sources</label><group instanciable="no" expand="yes"><template-instance><parameters default-selection="0" selection=""><parameter><label>X coordinates of source</label><float><property required="yes" separator=","><keyword>xs=</keyword><value/><default/></property></float></parameter><parameter><label>Z coordinates of source</label><float><property required="yes" separator=","><keyword>zs=</keyword><value/><default/></property></float></parameter><parameter><label>Strength of source</label><float><property required="no"><keyword>sstrength=</keyword><value/><default>1.0</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>X coordinates of source</label><float><property required="yes" separator=","><keyword>xs=</keyword><value/><default/></property></float></parameter><parameter><label>Z coordinates of source</label><float><property required="yes" separator=","><keyword>zs=</keyword><value/><default/></property></float></parameter><parameter><label>Strength of source</label><float><property required="no"><keyword>sstrength=</keyword><value/><default>1.0</default></property></float></parameter></parameters></group></parameter>
-      
-      
-      
-      <parameter><label>Time discretization</label><group instanciable="no" expand="yes"><template-instance><parameters default-selection="0" selection=""><parameter><label>Maximum time</label><float><property required="yes"><keyword>tmax=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Number of time samples</label><int><property required="no"><keyword>nt=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter><parameter><label>Number of time steps per output time step</label><int><property required="no"><keyword>mt=</keyword><value/><default>1</default></property>
-	
-	
-	
-      </int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Maximum time</label><float><property required="yes"><keyword>tmax=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Number of time samples</label><int><property required="no"><keyword>nt=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter><parameter><label>Number of time steps per output time step</label><int><property required="no"><keyword>mt=</keyword><value/><default>1</default></property>
-	
-	
-	
-      </int></parameter></parameters></group></parameter>
-      
-      <parameter><label>Spacial grid</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>X sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float></parameter><parameter><label>First x sample</label><float><property required="no"><keyword>fx=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float></parameter><parameter><label>Z sampling interval</label><float><property required="no"><keyword>dz=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float></parameter><parameter><label>First z sample</label><float><property required="no"><keyword>fz=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>X sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float></parameter><parameter><label>First x sample</label><float><property required="no"><keyword>fx=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float></parameter><parameter><label>Z sampling interval</label><float><property required="no"><keyword>dz=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float></parameter><parameter><label>First z sample</label><float><property required="no"><keyword>fz=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float></parameter></parameters></group></parameter>
-      
-      
-      
-      <parameter><label>Maximum frequency in source wavelet</label><float><property required="no"><keyword>fmax=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Peak frequency in ricker wavelet</label><float><property required="no"><keyword>fpeak=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Input file containing density</label><file directory="no"><property required="no"><keyword>dfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter>
-      <parameter><label>Seismograms</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>X coordinate of vertical line of seismograms</label><float><property required="no"><keyword>vsx=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Z coordinate of horizontal line of seismograms</label><float><property required="no"><keyword>hsz=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Output file for vertical line of seismograms</label><file directory="no"><property required="no"><keyword>vsfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter><parameter><label>Output file for horizontal line of seismograms</label><file directory="no"><property required="no"><keyword>hsfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter><parameter><label>Output file for source point seismograms</label><file directory="no"><property required="no"><keyword>ssfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>X coordinate of vertical line of seismograms</label><float><property required="no"><keyword>vsx=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Z coordinate of horizontal line of seismograms</label><float><property required="no"><keyword>hsz=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Output file for vertical line of seismograms</label><file directory="no"><property required="no"><keyword>vsfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter><parameter><label>Output file for horizontal line of seismograms</label><file directory="no"><property required="no"><keyword>hsfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter><parameter><label>Output file for source point seismograms</label><file directory="no"><property required="no"><keyword>ssfile=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter></parameters></group></parameter>
-      
-      
-      
-      
-      
-      <parameter><label>Absorbing boundary conditions</label><int min="0" max="1"><property required="no" separator=","><keyword>abs=</keyword><value/><default>1</default><default>1</default><default>1</default><default>1</default></property></int></parameter><parameter><label>Verbose mode</label><enum><property required="no"><keyword>verbose=</keyword><value/><default>0</default></property><option><label>Quiet</label><value>0</value></option><option><label>Diagnostic messages</label><value>1</value></option><option><label>More complete diagnostic messages</label><value>2</value></option></enum></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of x samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nx=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of z samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Sources</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X coordinates of source</label>
+                <float>
+                  <property required="yes" separator=",">
+                    <keyword>xs=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z coordinates of source</label>
+                <float>
+                  <property required="yes" separator=",">
+                    <keyword>zs=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Strength of source</label>
+                <float>
+                  <property required="no">
+                    <keyword>sstrength=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Time discretization</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Maximum time</label>
+                <float>
+                  <property required="yes">
+                    <keyword>tmax=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of time steps per output time step</label>
+                <int>
+                  <property required="no">
+                    <keyword>mt=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Spacial grid</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dx=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First x sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fx=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First z sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fz=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Maximum frequency in source wavelet</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Peak frequency in ricker wavelet</label>
+        <float>
+          <property required="no">
+            <keyword>fpeak=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Input file containing density</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>dfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Seismograms</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X coordinate of vertical line of seismograms</label>
+                <float>
+                  <property required="no">
+                    <keyword>vsx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z coordinate of horizontal line of seismograms</label>
+                <float>
+                  <property required="no">
+                    <keyword>hsz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Output file for vertical line of seismograms</label>
+                <file directory="no">
+                  <property required="no">
+                    <keyword>vsfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file for horizontal line of seismograms</label>
+                <file directory="no">
+                  <property required="no">
+                    <keyword>hsfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file for source point seismograms</label>
+                <file directory="no">
+                  <property required="no">
+                    <keyword>ssfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Absorbing boundary conditions</label>
+        <int min="0" max="1">
+          <property required="no" separator=",">
+            <keyword>abs=</keyword>
+            <value />
+            <default>1</default>
+            <default>1</default>
+            <default>1</default>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Verbose mode</label>
+        <enum>
+          <property required="no">
+            <keyword>verbose=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+          <option>
+            <label>Quiet</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Diagnostic messages</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>More complete diagnostic messages</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
     </parameters>
   </program>
 </flow>

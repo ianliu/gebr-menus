@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Reduce</title>
   <description>Convert traces to display in reduced time</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Reduce</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Convert traces to display in reduced time
             <!-- end des -->
           </div>
@@ -27,27 +28,27 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Convert traces to display in reduced time.</p>
+        Convert traces to display in reduced time.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Dez 10, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Dez 10, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <p>
-	Aug 06, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Aug 06, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
@@ -61,31 +62,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-12-10T19:57:39.414514Z</created>
     <modified>2010-08-16T14:02:19.049335Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Reduce</title>
     <binary>sureduce</binary>
     <description>Convert traces to display in reduced time</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -97,12 +101,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Reduce</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Convert traces to display in reduced time
             <!-- end des -->
           </div>
@@ -110,54 +114,54 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Convert traces to display in reduced time.</p>
+        Convert traces to display in reduced time.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Sampling interval in microseconds</span><br />
-			If not set in header, this parameter is mandatory.</li>
-		<li>
-			<span class="label">Reducing velocity in km/sec</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Sampling interval in microseconds</span><br />
+                        If not set in header, this parameter is mandatory.</li>
+                <li>
+                        <span class="label">Reducing velocity in km/sec</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Useful for plotting refraction seismic data.</p>
+        Useful for plotting refraction seismic data.</p>
 <p>
-	This program access the following header keywords</p>
+        This program access the following header keywords</p>
 <ul>
-	<li>
-		Number of samples</li>
-<!-- ns -->	<li>
-		Sampling interval in microseconds</li>
-<!-- dt-->	<li>
-		Offset (signed distance from source to receiver group)</li>
+        <li>
+                Number of samples</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds</li>
+<!-- dt-->      <li>
+                Offset (signed distance from source to receiver group)</li>
 </ul>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	UC Davis: Mike Begnaud March 1995</p>
+        UC Davis: Mike Begnaud March 1995</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
-	<div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-		Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-		Notes</a></li><li><a href="#header_3">
-		Credits</a></li></ul></div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+                Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+                Notes</a></li><li><a href="#header_3">
+                Credits</a></li></ul></div>
 
-	<div class="clearer"></div>
+        <div class="clearer"></div>
       </div>
 
       <div class="footer">
@@ -168,7 +172,8 @@
     </div>
   </div>
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -176,8 +181,8 @@
         <int>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -186,7 +191,7 @@
         <float>
           <property required="no">
             <keyword>rv=</keyword>
-            <value/>
+            <value />
             <default>8.0</default>
           </property>
         </float>

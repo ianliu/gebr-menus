@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.6">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Velocity Conversion</title>
   <description>Velocity conversion</description>
-  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
+  <help>
+    <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
   <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="content-type" content="text/html; charset=utf-8" />
   <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
 
@@ -14,12 +15,12 @@
     <div xmlns="http://www.w3.org/1999/xhtml" class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Velocity Conversion</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Velocity conversion
             <!-- end des -->
           </div>
@@ -27,32 +28,32 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Do a conversion between choosen input and output velocity function types.</p>
+        Do a conversion between choosen input and output velocity function types.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	May 13, 2010: written by Davi Costa Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        May 13, 2010: written by Davi Costa Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <p>
-	Dec 15, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Dec 15, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
-		<!-- begin ver -->Dec 15, 2010<!-- end ver --></span>
+                <!-- begin ver -->Dec 15, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -60,30 +61,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Davi Clemente</author>
   <email>davi.clemente@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-13T14:26:41.148219Z</created>
     <modified>2010-12-15T18:39:53.060992Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>Velocity Conversion</title>
     <binary>velconv</binary>
     <description>Velocity conversion</description>
-    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
 
@@ -95,12 +100,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Velocity Conversion</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Velocity conversion
             <!-- end des -->
           </div>
@@ -108,89 +113,89 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Do a conversion between choosen input and output velocity function types.</p>
+        Do a conversion between choosen input and output velocity function types.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<p>
-		Valid types for input and output data are:</p>
-	<ul>
-		<li class="req">
-			<span class="reqlabel">Input data type</span></li>
-		<li class="req">
-			<span class="reqlabel">Output data type</span>
-			<ul>
-				<li>
-					Interval velocity as a function of time</li>
-				<li>
-					RMS velocity as a function of time</li>
-				<li>
-					Velocity as a function of depth</li>
-				<li>
-					Depth as a function of time</li>
-				<li>
-					Time as a function of depth</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Number of traces</span></li>
-		<li class="group">
-			<span class="grouplabel">Time properties</span>
-			<ul>
-				<li>
-					<span class="label">Number of time samples</span></li>
-				<li>
-					<span class="label">Time sampling interval</span></li>
-				<li>
-					<span class="label">First time</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Depth properties</span>
-			<ul>
-				<li>
-					<span class="label">Number of depth samples</span></li>
-				<li>
-					<span class="label">Depth sampling interval</span></li>
-				<li>
-					<span class="label">First depth</span></li>
-			</ul>
-		</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <p>
+                Valid types for input and output data are:</p>
+        <ul>
+                <li class="req">
+                        <span class="reqlabel">Input data type</span></li>
+                <li class="req">
+                        <span class="reqlabel">Output data type</span>
+                        <ul>
+                                <li>
+                                        Interval velocity as a function of time</li>
+                                <li>
+                                        RMS velocity as a function of time</li>
+                                <li>
+                                        Velocity as a function of depth</li>
+                                <li>
+                                        Depth as a function of time</li>
+                                <li>
+                                        Time as a function of depth</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of traces</span></li>
+                <li class="group">
+                        <span class="grouplabel">Time properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of time samples</span></li>
+                                <li>
+                                        <span class="label">Time sampling interval</span></li>
+                                <li>
+                                        <span class="label">First time</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Depth properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of depth samples</span></li>
+                                <li>
+                                        <span class="label">Depth sampling interval</span></li>
+                                <li>
+                                        <span class="label">First depth</span></li>
+                        </ul>
+                </li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	<b>Time properties </b>options are used only for input and output functions of time, choosen on <strong>Input/Outpu data type</strong> options (<strong>Interval velocity as a function of time</strong> and <strong>RMS velocity as a function of time</strong>).</p>
+        <b>Time properties </b>options are used only for input and output functions of time, choosen on <strong>Input/Outpu data type</strong> options (<strong>Interval velocity as a function of time</strong> and <strong>RMS velocity as a function of time</strong>).</p>
 <p>
-	Likewise, <b>Depth properties</b> options are used only for input and output functions of depth.</p>
+        Likewise, <b>Depth properties</b> options are used only for input and output functions of depth.</p>
 <p>
-	The input and output data formats are C-style binary floats.</p>
+        The input and output data formats are C-style binary floats.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Author: Dave Hale, Colorado School of Mines, 07/07/89.</p>
+        Author: Dave Hale, Colorado School of Mines, 07/07/89.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -198,127 +203,222 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Input data type</label>
-        
-      <enum><property required="yes"><keyword>intype=</keyword><value/><default>vintt</default></property><option><label>Interval velocity as function of time</label><value>vintt</value></option><option><label>RMS velocity as a function of time</label><value>vrmst</value></option><option><label>Velocity as a function of depht</label><value>vintz</value></option><option><label>Depht as a function of time</label><value>zt</value></option><option><label>Time as a function of depht</label><value>tz</value></option></enum></parameter>
+        <enum>
+          <property required="yes">
+            <keyword>intype=</keyword>
+            <value />
+            <default>vintt</default>
+          </property>
+          <option>
+            <label>Interval velocity as function of time</label>
+            <value>vintt</value>
+          </option>
+          <option>
+            <label>RMS velocity as a function of time</label>
+            <value>vrmst</value>
+          </option>
+          <option>
+            <label>Velocity as a function of depht</label>
+            <value>vintz</value>
+          </option>
+          <option>
+            <label>Depht as a function of time</label>
+            <value>zt</value>
+          </option>
+          <option>
+            <label>Time as a function of depht</label>
+            <value>tz</value>
+          </option>
+        </enum>
+      </parameter>
       <parameter>
         <label>Output data type</label>
-        
-      <enum><property required="yes"><keyword>outtype=</keyword><value/><default>vintt</default></property><option><label>Interval velocity as function of time</label><value>vintt</value></option><option><label>RMS velocity as a function of time</label><value>vrmst</value></option><option><label>Velocity as a function of depht</label><value>vintz</value></option><option><label>Depht as a function of time</label><value>zt</value></option><option><label>Time as a function of depht</label><value>tz</value></option></enum></parameter>
+        <enum>
+          <property required="yes">
+            <keyword>outtype=</keyword>
+            <value />
+            <default>vintt</default>
+          </property>
+          <option>
+            <label>Interval velocity as function of time</label>
+            <value>vintt</value>
+          </option>
+          <option>
+            <label>RMS velocity as a function of time</label>
+            <value>vrmst</value>
+          </option>
+          <option>
+            <label>Velocity as a function of depht</label>
+            <value>vintz</value>
+          </option>
+          <option>
+            <label>Depht as a function of time</label>
+            <value>zt</value>
+          </option>
+          <option>
+            <label>Time as a function of depht</label>
+            <value>tz</value>
+          </option>
+        </enum>
+      </parameter>
       <parameter>
         <label>Number of traces</label>
         <int>
           <property required="no">
             <keyword>nx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Time properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First time</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of time samples</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nt=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value />
+                  <default />
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Time sampling interval</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dt=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First time</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>ft=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label/>
-              
-            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-            <parameter>
-              <label/>
-              
-            <reference><property required="no"><keyword/><value/><default>1.0</default></property></reference></parameter>
-            <parameter>
-              <label/>
-              
-            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Depth properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of depth samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Depth sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First depth</label>
+                <float>
+                  <property required="no">
+                    <keyword>fz=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of depth samples</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nz=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value />
+                  <default />
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Depth sampling interval</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First depth</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>fz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label/>
-              
-            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-            <parameter>
-              <label/>
-              
-            <reference><property required="no"><keyword/><value/><default>1.0</default></property></reference></parameter>
-            <parameter>
-              <label/>
-              
-            <reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
-      
     </parameters>
   </program>
 </flow>

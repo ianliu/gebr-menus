@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Correlation</title>
   <description>Correlation with user-supplied filter only in the first trace</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Correlation</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Correlation with user-supplied filter only in the first trace
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Correlation with user-supplied filter only in the first trace.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Mar 16, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver --> Mar 16, 2010 <!-- end ver --></span>
+                <!-- begin ver --> Mar 16, 2010 <!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-03-15T14:36:59.793815Z</created>
     <modified>2010-08-06T00:43:09.147873Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Correlation</title>
     <binary>suxcor panel=0</binary>
     <description>Correlation with user-supplied filter only in the first trace</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +130,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Correlation</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Correlation with user-supplied filter only in the first trace
             <!-- end des -->
           </div>
@@ -138,7 +143,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,16 +154,16 @@
 
           <p>Correlation with user-supplied filter only in the first trace.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="group"><span class="grouplabel">Filter to use</span><br/>
-		Use one of the parameters 
+                Use one of the parameters 
               <ul>
               <li class="req"><span class="reqlabel">File containing SU traces to use as filter</span><br/></li>
 
@@ -169,49 +174,49 @@
               <li><span class="label">Output number of samples for correlating of vibroseis data</span><br/></li>
 
               <li><span class="label">Supplied trace is</span><br/>
-		<ul>
-		<li>First element of correlation</li>
-		<li>Second element of correlation</li>
-		</ul></li>
+                <ul>
+                <li>First element of correlation</li>
+                <li>Second element of correlation</li>
+                </ul></li>
 
             </ul>
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>It is quietly assumed that the time sampling interval on the	
- 	single trace and the output traces is the same as that on the traces	
- 	in the input file.</p>
+          <p>It is quietly assumed that the time sampling interval on the       
+        single trace and the output traces is the same as that on the traces    
+        in the input file.</p>
 
- 	<p>The SU file used as filter may actually have more than one trace, in this menu, only the first trace is used. 
- 	The menu <b>SU Correlation All</b> uses all traces.</p>
+        <p>The SU file used as filter may actually have more than one trace, in this menu, only the first trace is used. 
+        The menu <b>SU Correlation All</b> uses all traces.</p>
 
-     	<p>The default window is non-sloping and takes the entire trace	
-	into account.</p>
+        <p>The default window is non-sloping and takes the entire trace 
+        into account.</p>
 
-	<p>This program accesses and modifies the folowing header keywords:
-  	<ul>
-	<li>Number of samples.</li>  <!-- ns -->
-  	</ul>
-	</p>
+        <p>This program accesses and modifies the folowing header keywords:
+        <ul>
+        <li>Number of samples.</li>  <!-- ns -->
+        </ul>
+        </p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Jack K. Cohen, Michel Dietrich.<br />
              CWP: modified by Ttjan to include cross correlation of panels
-	   permitting spatially and temporally varying cross correlation.<br />
+           permitting spatially and temporally varying cross correlation.<br />
              UTK: modified by Rick Williams for vibroseis correlation option.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -220,9 +225,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -235,7 +240,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -243,64 +248,68 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Filter to use</label>
         <group instanciable="no" expand="yes">
-          <template-instance><parameters default-selection="1" selection="1">
+          <template-instance>
+            <parameters default-selection="1" selection="1">
+              <parameter>
+                <label>File containing SU traces to use as filter</label>
+                <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
+                  <property required="yes">
+                    <keyword>sufile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>User-supplied correlation filter (ascii)</label>
+                <float>
+                  <property required="yes">
+                    <keyword>filter=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="1" selection="1">
             <parameter>
-              <label>File containing SU traces to use as filter</label>
-              <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
-                <property required="yes">
-                  <keyword>sufile=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>User-supplied correlation filter (ascii)</label>
-              <float>
-                <property required="yes">
-                  <keyword>filter=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="1" selection="1">
-            <parameter>
-              <label>File containing SU traces to use as filter</label>
-              <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
-                <property required="yes">
-                  <keyword>sufile=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>User-supplied correlation filter (ascii)</label>
-              <float>
-                <property required="yes">
-                  <keyword>filter=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Output number of samples for correlating of vibroseis data</label>
         <int>
           <property required="no">
             <keyword>vibroseis=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -309,7 +318,7 @@
         <enum>
           <property required="no">
             <keyword>first=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
           <option>
@@ -322,10 +331,6 @@
           </option>
         </enum>
       </parameter>
-      
-      
-      
-      
     </parameters>
   </program>
 </flow>

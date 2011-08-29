@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Mig Topo 2D</title>
   <description>Kirchhoff Depth Migration of 2D postack/prestack data</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Mig Topo 2D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Kirchhoff Depth Migration of 2D postack/prestack data
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,18 +46,18 @@
 
           <p>Kirchhoff Depth Migration of 2D postack/prestack data from the (variable topography) recording surface.</p>
 
-	  <!-- begin par --><!-- end par -->
-	   
+          <!-- begin par --><!-- end par -->
+           
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>May 31, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -65,7 +66,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -76,7 +77,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->May 31, 2010<!-- end ver --></span>
+                <!-- begin ver -->May 31, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -84,30 +85,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-31T13:23:30.374605Z</created>
     <modified>2010-08-06T00:43:06.172422Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Mig Topo 2D</title>
     <binary>sumigtopo2d</binary>
     <description>Kirchhoff Depth Migration of 2D postack/prestack data</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -119,12 +124,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Mig Topo 2D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Kirchhoff Depth Migration of 2D postack/prestack data
             <!-- end des -->
           </div>
@@ -132,169 +137,169 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Kirchhoff Depth Migration of 2D postack/prestack data from the (variable topography) recording surface..</p>
+        Kirchhoff Depth Migration of 2D postack/prestack data from the (variable topography) recording surface..</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">File for input traveltime tables</span></li>
-		<li class="group">
-			<span class="grouplabel">Description of traveltime table</span>
-			<ul>
-				<li class="req">
-					<span class="reqlabel">First depth sample</span></li>
-				<li class="req">
-					<span class="reqlabel">Number of depth samples</span></li>
-				<li class="req">
-					<span class="reqlabel">Depth interval</span></li>
-				<li class="req">
-					<span class="reqlabel">First lateral sample</span></li>
-				<li class="req">
-					<span class="reqlabel">Number of lateral samples</span></li>
-				<li class="req">
-					<span class="reqlabel">Lateral interval</span></li>
-				<li class="req">
-					<span class="reqlabel">X-coordinate of first source</span></li>
-				<li class="req">
-					<span class="reqlabel">Number of sources</span></li>
-				<li class="req">
-					<span class="reqlabel">X-coordinate increment of sources</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Input data parameters</span>
-			<ul>
-				<li class="req">
-					<span class="reqlabel">X-coordinate of the first input trace</span></li>
-				<li class="req">
-					<span class="reqlabel">Number of input trace locations in surface</span></li>
-				<li class="req">
-					<span class="reqlabel">Horizontal spacing of input data</span></li>
-				<li>
-					<span class="label">Time sampling interval of input data</span><br />
-					Default can be the parameter "Sampling interval in microseconds" from header.</li>
-				<li>
-					<span class="label">First time sample of input data</span></li>
-				<li>
-					<span class="label">Sampling interval of midpoints</span><br />
-					Default can be the parameter "Sample spacing between traces " from header.</li>
-				<li>
-					<span class="label">Recording surface (x1,z1;x2,z2;...)</span></li>
-				<li>
-					<span class="label">Frequency-highcut for input traces</span><br />
-					Default value is 0.25/<b>Time sampling interval of input data</b>.</li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Output trace parameters</span>
-			<ul>
-				<li>
-					<span class="label">Z-coordinate of first point in output trace</span><br />
-					Default value is the same value of parameter <b>First depth sample (in traveltime table)</b>.</li>
-				<li>
-					<span class="label">Vertical spacing of output trace</span><br />
-					Default value is the 0.2 * <b>Depth interval (in traveltime table)</b>.</li>
-				<li>
-					<span class="label">Number of points in output trace</span><br />
-					Default value is 5*(<b>Number of depth samples (in traveltime table)</b> - 1) + 1.</li>
-				<li>
-					<span class="label">X-coordinate of first output trace</span><br />
-					Default value is the same value of parameter <b>First lateral sample (in traveltime table)</b>.</li>
-				<li>
-					<span class="label">Horizontal spacing of output trace in X</span><br />
-					Default value is the 0.5 * <b>Lateral interval (in traveltime table)</b>.</li>
-				<li>
-					<span class="label">Number of output traces in X</span><br />
-					Default value is 2*(<b>Number of lateral samples (in traveltime table)</b> - 1) + 1.</li>
-				<li>
-					<span class="label">First offest in output</span></li>
-				<li>
-					<span class="label">Offset increment in output</span></li>
-				<li>
-					<span class="label">Number of offsets in output</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Migration parameters</span>
-			<ul>
-				<li>
-					<span class="label">Maximum absolute offset allowed in migration</span></li>
-				<li>
-					<span class="label">Migration lateral aperature</span><br />
-					Default value is <b>Number of lateral samples (in traveltime table)</b> * <b>Lateral interval (in traveltime table)</b>/2.</li>
-				<li>
-					<span class="label">Migration angle aperature from vertical </span></li>
-				<li>
-					<span class="label">Maximum number of input traces to be migrated</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Reference velocity value at surface</span><br />
-			Velocity in m/s.</li>
-		<li>
-			<span class="label">Reference velocity vertical gradient</span></li>
-		<li>
-			<span class="label">Flag for no line source</span></li>
-		<li>
-			<span class="label">Job print file name </span></li>
-		<li>
-			<span class="label">Print verbal information at every defined number of traces</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">File for input traveltime tables</span></li>
+                <li class="group">
+                        <span class="grouplabel">Description of traveltime table</span>
+                        <ul>
+                                <li class="req">
+                                        <span class="reqlabel">First depth sample</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Number of depth samples</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Depth interval</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">First lateral sample</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Number of lateral samples</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Lateral interval</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">X-coordinate of first source</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Number of sources</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">X-coordinate increment of sources</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Input data parameters</span>
+                        <ul>
+                                <li class="req">
+                                        <span class="reqlabel">X-coordinate of the first input trace</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Number of input trace locations in surface</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Horizontal spacing of input data</span></li>
+                                <li>
+                                        <span class="label">Time sampling interval of input data</span><br />
+                                        Default can be the parameter "Sampling interval in microseconds" from header.</li>
+                                <li>
+                                        <span class="label">First time sample of input data</span></li>
+                                <li>
+                                        <span class="label">Sampling interval of midpoints</span><br />
+                                        Default can be the parameter "Sample spacing between traces " from header.</li>
+                                <li>
+                                        <span class="label">Recording surface (x1,z1;x2,z2;...)</span></li>
+                                <li>
+                                        <span class="label">Frequency-highcut for input traces</span><br />
+                                        Default value is 0.25/<b>Time sampling interval of input data</b>.</li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Output trace parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Z-coordinate of first point in output trace</span><br />
+                                        Default value is the same value of parameter <b>First depth sample (in traveltime table)</b>.</li>
+                                <li>
+                                        <span class="label">Vertical spacing of output trace</span><br />
+                                        Default value is the 0.2 * <b>Depth interval (in traveltime table)</b>.</li>
+                                <li>
+                                        <span class="label">Number of points in output trace</span><br />
+                                        Default value is 5*(<b>Number of depth samples (in traveltime table)</b> - 1) + 1.</li>
+                                <li>
+                                        <span class="label">X-coordinate of first output trace</span><br />
+                                        Default value is the same value of parameter <b>First lateral sample (in traveltime table)</b>.</li>
+                                <li>
+                                        <span class="label">Horizontal spacing of output trace in X</span><br />
+                                        Default value is the 0.5 * <b>Lateral interval (in traveltime table)</b>.</li>
+                                <li>
+                                        <span class="label">Number of output traces in X</span><br />
+                                        Default value is 2*(<b>Number of lateral samples (in traveltime table)</b> - 1) + 1.</li>
+                                <li>
+                                        <span class="label">First offest in output</span></li>
+                                <li>
+                                        <span class="label">Offset increment in output</span></li>
+                                <li>
+                                        <span class="label">Number of offsets in output</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Migration parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Maximum absolute offset allowed in migration</span></li>
+                                <li>
+                                        <span class="label">Migration lateral aperature</span><br />
+                                        Default value is <b>Number of lateral samples (in traveltime table)</b> * <b>Lateral interval (in traveltime table)</b>/2.</li>
+                                <li>
+                                        <span class="label">Migration angle aperature from vertical </span></li>
+                                <li>
+                                        <span class="label">Maximum number of input traces to be migrated</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Reference velocity value at surface</span><br />
+                        Velocity in m/s.</li>
+                <li>
+                        <span class="label">Reference velocity vertical gradient</span></li>
+                <li>
+                        <span class="label">Flag for no line source</span></li>
+                <li>
+                        <span class="label">Job print file name </span></li>
+                <li>
+                        <span class="label">Print verbal information at every defined number of traces</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Traveltime tables were generated by program <b>Ray Traveltime 2D</b> (or any other one that considers topography) on relatively coarse grids, with dimension "Number of samples"*<b>Number of lateral samples (in traveltime table)</b>*<b>Number of depth samples (in traveltime table)</b>.<br />
-	In the migration process, traveltimes are interpolated into shot/gephone positions and output grids.</p>
+        Traveltime tables were generated by program <b>Ray Traveltime 2D</b> (or any other one that considers topography) on relatively coarse grids, with dimension "Number of samples"*<b>Number of lateral samples (in traveltime table)</b>*<b>Number of depth samples (in traveltime table)</b>.<br />
+        In the migration process, traveltimes are interpolated into shot/gephone positions and output grids.</p>
 <p>
-	Input seismic traces must be SU format and can be any type of gathers (common shot, common offset, common CDP, and so on).</p>
+        Input seismic traces must be SU format and can be any type of gathers (common shot, common offset, common CDP, and so on).</p>
 <p>
-	Migrated traces are output in CDP gathers if velocity analysis is required, with dimension <b>Number of output traces</b>*<b>Number of offsets in output</b>*<b>Number of points in output trace</b>.</p>
+        Migrated traces are output in CDP gathers if velocity analysis is required, with dimension <b>Number of output traces</b>*<b>Number of offsets in output</b>*<b>Number of points in output trace</b>.</p>
 <p>
-	If the offset value of an input trace is not in the offset array of output, the nearest one in the array is chosen.</p>
+        If the offset value of an input trace is not in the offset array of output, the nearest one in the array is chosen.</p>
 <p>
-	Amplitudes are computed using the reference velocity profile, v(z), specified by the parameters <b>Reference velocity value at surface</b> and <b>Reference velocity vertical gradient</b>.</p>
+        Amplitudes are computed using the reference velocity profile, v(z), specified by the parameters <b>Reference velocity value at surface</b> and <b>Reference velocity vertical gradient</b>.</p>
 <p>
-	Input traces must specify source and receiver positions via the header fields "X source coordinate" and "X group coordinate". Offset is computed automatically.</p>
+        Input traces must specify source and receiver positions via the header fields "X source coordinate" and "X group coordinate". Offset is computed automatically.</p>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <!-- List of references --><ul>
-	<li>
-		Bleistein, N., Cohen, J., and Hagin, F., 1987, Two and one-half dimensional Born inversion with arbitrary reference: Geophysics, 52, 26-36.</li>
-	<li>
-		Liu,Z., 1993, A Kirchhoff approach to seismic modeling and pre-stack depth migration: CWP Annual Report, CWP, Colorado School of Mines..</li>
-	<li>
-		Wiggins, J. W., 1984, Kirchhoff integral extrapolation and migration of nonplanar data: Geophysics, 49, 1239- 1248.</li>
+        <li>
+                Bleistein, N., Cohen, J., and Hagin, F., 1987, Two and one-half dimensional Born inversion with arbitrary reference: Geophysics, 52, 26-36.</li>
+        <li>
+                Liu,Z., 1993, A Kirchhoff approach to seismic modeling and pre-stack depth migration: CWP Annual Report, CWP, Colorado School of Mines..</li>
+        <li>
+                Wiggins, J. W., 1984, Kirchhoff integral extrapolation and migration of nonplanar data: Geophysics, 49, 1239- 1248.</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Author: Zhenyue Liu, 03/01/95, Colorado School of Mines</p>
+        Author: Zhenyue Liu, 03/01/95, Colorado School of Mines</p>
 <p>
-	Trino Salinas, 07/01/96, Colorado School of Mines, extended the code to migrate data from a nonflat recording surface.</p>
+        Trino Salinas, 07/01/96, Colorado School of Mines, extended the code to migrate data from a nonflat recording surface.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
-		Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
-	Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
-	References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
-	Credits</h2></a></li></ul></div>
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
+        Credits</h2></a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -302,7 +307,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -310,601 +316,663 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>ttfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
       <parameter>
         <label>Description of traveltime table</label>
         <group instanciable="no" expand="yes">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First depth sample</label>
+                <float>
+                  <property required="yes">
+                    <keyword>fzt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of depth samples</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nzt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Depth interval</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dzt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First lateral sample</label>
+                <float>
+                  <property required="yes">
+                    <keyword>fxt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of lateral samples</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nxt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Lateral interval</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dxt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X-coordinate of first source</label>
+                <float>
+                  <property required="yes">
+                    <keyword>fs=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of sources</label>
+                <int>
+                  <property required="yes">
+                    <keyword>ns=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X-coordinate increment of sources</label>
+                <float>
+                  <property required="yes">
+                    <keyword>ds=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>First depth sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fzt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of depth samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nzt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Depth interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dzt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First lateral sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of lateral samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Lateral interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-coordinate of first source</label>
-              <float>
-                <property required="yes">
-                  <keyword>fs=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of sources</label>
-              <int>
-                <property required="yes">
-                  <keyword>ns=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-coordinate increment of sources</label>
-              <float>
-                <property required="yes">
-                  <keyword>ds=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>First depth sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of depth samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Depth interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First lateral sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of lateral samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Lateral interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>X-coordinate of first source</label>
-              <float>
-                <property required="yes">
-                  <keyword>fs=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of sources</label>
-              <int>
-                <property required="yes">
-                  <keyword>ns=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>X-coordinate increment of sources</label>
-              <float>
-                <property required="yes">
-                  <keyword>ds=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Input data parameters</label>
         <group instanciable="no" expand="yes">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X-coordinate of the first input trace</label>
+                <float>
+                  <property required="yes">
+                    <keyword>fxi=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of input trace locations in surface</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nxi=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Horizontal spacing of input data</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dxi=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval of input data</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First time sample of input data</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval of midpoints</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxm=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Recording surface (x1,z1;x2,z2;...)</label>
+                <string>
+                  <property required="no" separator=";">
+                    <keyword>surf=</keyword>
+                    <value />
+                    <default>0,0</default>
+                    <default>99999,0</default>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Frequency-highcut for input traces</label>
+                <float>
+                  <property required="no">
+                    <keyword>fmax=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>X-coordinate of the first input trace</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of input trace locations in surface</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Horizontal spacing of input data</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Time sampling interval of input data</label>
-              <float><property required="no"><keyword>dt=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>First time sample of input data</label>
-              <float><property required="no"><keyword>ft=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>Sampling interval of midpoints</label>
-              <float><property required="no"><keyword>dxm=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-        <label>Recording surface (x1,z1;x2,z2;...)</label>
-        <string>
-          <property required="no" separator=";">
-            <keyword>surf=</keyword>
-            <value/>
-            
-          <default>0,0</default><default>99999,0</default></property>
-        </string>
-      </parameter>
-            <parameter>
-              <label>Frequency-highcut for input traces</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fmax=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
-            </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>X-coordinate of the first input trace</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of input trace locations in surface</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Horizontal spacing of input data</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Time sampling interval of input data</label>
-              <float><property required="no"><keyword>dt=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>First time sample of input data</label>
-              <float><property required="no"><keyword>ft=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>Sampling interval of midpoints</label>
-              <float><property required="no"><keyword>dxm=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-        <label>Recording surface (x1,z1;x2,z2;...)</label>
-        <string>
-          <property required="no" separator=";">
-            <keyword>surf=</keyword>
-            <value/>
-            
-          <default>0,0</default><default>99999,0</default></property>
-        </string>
-      </parameter>
-            <parameter>
-              <label>Frequency-highcut for input traces</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fmax=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></group>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>0,0</default>
+                  <default>99999,0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Output trace parameters</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Z-coordinate of first point in output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>fzo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Vertical spacing of output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>dzo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of points in output trace</label>
+                <int>
+                  <property required="no">
+                    <keyword>nzo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X-coordinate of first output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal spacing of output trace in X</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of output traces in X</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First offest in output</label>
+                <float>
+                  <property required="no">
+                    <keyword>off0=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Offset increment in output</label>
+                <float>
+                  <property required="no">
+                    <keyword>doff=</keyword>
+                    <value />
+                    <default>99999</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of offsets in output</label>
+                <int>
+                  <property required="no">
+                    <keyword>noff=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Z-coordinate of first point in output trace</label>
-              <float><property required="no"><keyword>fzo=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
             </parameter>
             <parameter>
-              <label>Vertical spacing of output trace</label>
-              <float><property required="no"><keyword>dzo=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of points in output trace</label>
-              <int><property required="no"><keyword>nzo=</keyword><value/><default/></property>
-        
-        
-        
-      </int>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-coordinate of first output trace</label>
-              <float><property required="no"><keyword>fxo=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
             </parameter>
             <parameter>
-              <label>Horizontal spacing of output trace in X</label>
-              <float><property required="no"><keyword>dxo=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of output traces in X</label>
-              <int><property required="no"><keyword>nxo=</keyword><value/><default/></property>
-        
-        
-        
-      </int>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
             </parameter>
             <parameter>
-              <label>First offest in output</label>
-              <float><property required="no"><keyword>off0=</keyword><value/><default>0</default></property>
-        
-        
-        
-      </float>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>0</default>
+                </property>
+              </reference>
             </parameter>
             <parameter>
-              <label>Offset increment in output</label>
-              <float><property required="no"><keyword>doff=</keyword><value/><default>99999</default></property>
-        
-        
-        
-      </float>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>99999</default>
+                </property>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of offsets in output</label>
-              <int><property required="no"><keyword>noff=</keyword><value/><default>1</default></property>
-        
-        
-        
-      </int>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1</default>
+                </property>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Z-coordinate of first point in output trace</label>
-              <float><property required="no"><keyword>fzo=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>Vertical spacing of output trace</label>
-              <float><property required="no"><keyword>dzo=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>Number of points in output trace</label>
-              <int><property required="no"><keyword>nzo=</keyword><value/><default/></property>
-        
-        
-        
-      </int>
-            </parameter>
-            <parameter>
-              <label>X-coordinate of first output trace</label>
-              <float><property required="no"><keyword>fxo=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>Horizontal spacing of output trace in X</label>
-              <float><property required="no"><keyword>dxo=</keyword><value/><default/></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>Number of output traces in X</label>
-              <int><property required="no"><keyword>nxo=</keyword><value/><default/></property>
-        
-        
-        
-      </int>
-            </parameter>
-            <parameter>
-              <label>First offest in output</label>
-              <float><property required="no"><keyword>off0=</keyword><value/><default>0</default></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>Offset increment in output</label>
-              <float><property required="no"><keyword>doff=</keyword><value/><default>99999</default></property>
-        
-        
-        
-      </float>
-            </parameter>
-            <parameter>
-              <label>Number of offsets in output</label>
-              <int><property required="no"><keyword>noff=</keyword><value/><default>1</default></property>
-        
-        
-        
-      </int>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Migration parameters</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Maximum absolute offset allowed in migration</label>
+                <float>
+                  <property required="no">
+                    <keyword>offmax=</keyword>
+                    <value />
+                    <default>99999</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Migration lateral aperature</label>
+                <float>
+                  <property required="no">
+                    <keyword>aperx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Migration angle aperature from vertical</label>
+                <float>
+                  <property required="no">
+                    <keyword>angmax=</keyword>
+                    <value />
+                    <default>60</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum number of input traces to be migrated</label>
+                <int>
+                  <property required="no">
+                    <keyword>ntr=</keyword>
+                    <value />
+                    <default>100000</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Maximum absolute offset allowed in migration</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>offmax=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>99999</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Migration lateral aperature</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>aperx=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Migration angle aperature from vertical </label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>angmax=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>60</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Maximum number of input traces to be migrated</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>ntr=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100000</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Maximum absolute offset allowed in migration</label>
-              <float>
-                <property required="no">
-                  <keyword>offmax=</keyword>
-                  <value/>
-                  <default>99999</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Migration lateral aperature</label>
-              <float>
-                <property required="no">
-                  <keyword>aperx=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Migration angle aperature from vertical </label>
-              <float>
-                <property required="no">
-                  <keyword>angmax=</keyword>
-                  <value/>
-                  <default>60</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Maximum number of input traces to be migrated</label>
-              <int>
-                <property required="no">
-                  <keyword>ntr=</keyword>
-                  <value/>
-                  <default>100000</default>
-                </property>
-              </int>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Reference velocity value at surface</label>
         <float>
           <property required="no">
             <keyword>v0=</keyword>
-            <value/>
+            <value />
             <default>1500</default>
           </property>
         </float>
@@ -914,7 +982,7 @@
         <float>
           <property required="no">
             <keyword>dvz=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>
@@ -930,12 +998,12 @@
         </flag>
       </parameter>
       <parameter>
-        <label>Job print file name </label>
+        <label>Job print file name</label>
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>jpfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -944,7 +1012,7 @@
         <int>
           <property required="no">
             <keyword>mtr=</keyword>
-            <value/>
+            <value />
             <default>100</default>
           </property>
         </int>

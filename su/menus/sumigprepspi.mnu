@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Mig Pre PSPI</title>
   <description>The 2-D Prestack Phase-Shift-Plus interpolation depth Migration</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -42,17 +43,17 @@
       <div class="main">
         <div class="content">
 
-	    
-	  <a name="details" id="details"></a>
+            
+          <a name="details" id="details"></a>
           <h2>Introduction</h2>
 
           <p>The 2-D prestack Phase-Shift-Plus interpolation depth migration.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
-	
-	  <p>May 24, 2010: written by G&ecirc;BR core team &lt;port@gebrproject.com&gt;</p>
+        
+          <p>May 24, 2010: written by G&ecirc;BR core team &lt;port@gebrproject.com&gt;</p>
           <p>Jul 23, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>May 24, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
@@ -81,31 +82,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-05T15:00:00Z</created>
     <modified>2010-08-06T00:43:05.975419Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Mig Pre PSPI</title>
     <binary>sumigprepspi</binary>
     <description>The 2-D prestack commom-shot Phase-Shift-Plus interpolation depth migration</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -148,7 +152,7 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-	  <p>The 2-D prestack Phase-Shift-Plus interpolation depth migration.</p>
+          <p>The 2-D prestack Phase-Shift-Plus interpolation depth migration.</p>
 
           <!-- begin par -->
           <div class="parameters">
@@ -164,8 +168,8 @@
                <li class="req"><span class="reqlabel">Number of shot gathers to be migrated</span> 
               </li>
 
-	      <li class="group"><span class="grouplabel">Samples properties</span>
-	      <ul>
+              <li class="group"><span class="grouplabel">Samples properties</span>
+              <ul>
 
                  <li class="req"><span class="reqlabel">Number of depth sapmles</span> 
                  </li>
@@ -179,19 +183,19 @@
                  <li><span class="label">Time sampling interval</span> 
                  </li>
 
-	      </ul></li>
+              </ul></li>
 
               <li class="req"><span class="reqlabel">Velocity profile</span><br/>
-              	It must be binary format.
+                It must be binary format.
               </li>
 
 
               <li><span class="label">Peak frequency</span><br/>
-              	The peak frequency of Ricker wavelet used as source wavelet.
+                The peak frequency of Ricker wavelet used as source wavelet.
               </li>
 
-	      <li class="group"><span class="grouplabel">Frequencies to build a Hamming window</span>
-	      <ul>
+              <li class="group"><span class="grouplabel">Frequencies to build a Hamming window</span>
+              <ul>
 
                  <li><span class="label">Frequency 1</span>
                  </li>
@@ -205,7 +209,7 @@
                  <li><span class="label">Frequency 4</span>
                  </li>
 
-	     </ul></li>
+             </ul></li>
 
               <li><span class="label">Number of zero traces padded on left side</span> 
               </li>
@@ -221,9 +225,9 @@
           </div>
           <!-- end par -->
 
-	    
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p> The input velocity file consists of C-style binary floats.
@@ -251,24 +255,24 @@
              See selfdocs of  <b>SU Sort</b> and <b>SU Change Header</b>. Also:   sukeyword scalco <p>
 
           <p>This program accesses the following header keywords:
-	    <ul>
-		<li>Number of samples</li> <!-- ns -->
-		<li>Sampling interval in microseconds</li> <!-- dt -->
-		<li>Delay recording time in ms</li> <!-- delrt -->
-		<li>Sample spacing between traces</li> <!-- d2 -->
-	    </ul>
-	  <p>
+            <ul>
+                <li>Number of samples</li> <!-- ns -->
+                <li>Sampling interval in microseconds</li> <!-- dt -->
+                <li>Delay recording time in ms</li> <!-- delrt -->
+                <li>Sample spacing between traces</li> <!-- d2 -->
+            </ul>
+          <p>
 
           <p>This program modifies the following header keywords:
-	    <ul>
-		<li>Number of samples</li> <!-- ns -->
-		<li>Sampling interval in microseconds</li> <!-- dt -->
-		<li>Delay recording time in ms</li> <!-- delrt -->
-	    </ul>
-	  <p>
+            <ul>
+                <li>Number of samples</li> <!-- ns -->
+                <li>Sampling interval in microseconds</li> <!-- dt -->
+                <li>Delay recording time in ms</li> <!-- delrt -->
+            </ul>
+          <p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
@@ -281,7 +285,7 @@
           "goto-loop" in two places with "do { }while loops".
           Fixed it so that shot point, receiver point, and scalco are honored.<p>
 
-	  
+          
 
           <!-- end cpy -->
         </div>
@@ -290,11 +294,11 @@
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#intro">Introduction</a></li>
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -314,82 +318,262 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of total horizontal output samples</label><int><property required="yes"><keyword>nxo=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Number of shot gathers to be migrated</label><int><property required="yes"><keyword>nxshot=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      
-      
-      
-      <parameter><label>Samples properties</label><group instanciable="no" expand="yes"><template-instance><parameters default-selection="0" selection=""><parameter><label>Number of depth samples</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter><parameter><label>Horizontal sampling interval</label><float><property required="yes"><keyword>dx=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter><parameter><label>Depth sampling interval</label><float><property required="yes"><keyword>dz=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter><parameter><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Number of depth samples</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter><parameter><label>Horizontal sampling interval</label><float><property required="yes"><keyword>dx=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter><parameter><label>Depth sampling interval</label><float><property required="yes"><keyword>dz=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter><parameter><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter></parameters></group></parameter><parameter><label>Velocity profile</label><file directory="no"><property required="yes"><keyword>vfile=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      <parameter><label>Peak frequency</label><float><property required="no"><keyword>fmax=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Frequencies to build a Hamming window</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Frequency 1</label><float><property required="no"><keyword>f1=</keyword><value/><default>5</default></property></float></parameter><parameter><label>Frequency 2</label><float><property required="no"><keyword>f2=</keyword><value/><default>10</default></property></float></parameter><parameter><label>Frequency 3</label><float><property required="no"><keyword>f3=</keyword><value/><default>40</default></property></float></parameter><parameter><label>Frequency 4</label><float><property required="no"><keyword>f4=</keyword><value/><default>50</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Frequency 1</label><float><property required="no"><keyword>f1=</keyword><value/><default>5</default></property></float></parameter><parameter><label>Frequency 2</label><float><property required="no"><keyword>f2=</keyword><value/><default>10</default></property></float></parameter><parameter><label>Frequency 3</label><float><property required="no"><keyword>f3=</keyword><value/><default>40</default></property></float></parameter><parameter><label>Frequency 4</label><float><property required="no"><keyword>f4=</keyword><value/><default>50</default></property></float></parameter></parameters></group></parameter>
-      
-      
-      
-      <parameter><label>Number of zero traces padded on left side</label><int><property required="no"><keyword>lpad=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Number of zero traces padded on right side</label><int><property required="no"><keyword>rpad=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Echoes extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of total horizontal output samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nxo=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of shot gathers to be migrated</label>
+        <int>
+          <property required="yes">
+            <keyword>nxshot=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Samples properties</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of depth samples</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Horizontal sampling interval</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Depth sampling interval</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Velocity profile</label>
+        <file directory="no">
+          <property required="yes">
+            <keyword>vfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Peak frequency</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Frequencies to build a Hamming window</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Frequency 1</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1=</keyword>
+                    <value />
+                    <default>5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 2</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2=</keyword>
+                    <value />
+                    <default>10</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 3</label>
+                <float>
+                  <property required="no">
+                    <keyword>f3=</keyword>
+                    <value />
+                    <default>40</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 4</label>
+                <float>
+                  <property required="no">
+                    <keyword>f4=</keyword>
+                    <value />
+                    <default>50</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>10</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>40</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Number of zero traces padded on left side</label>
+        <int>
+          <property required="no">
+            <keyword>lpad=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of zero traces padded on right side</label>
+        <int>
+          <property required="no">
+            <keyword>rpad=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
     </parameters>
   </program>
 </flow>

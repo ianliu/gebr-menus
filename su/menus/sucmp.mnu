@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Compare</title>
   <description>Compare two seismic data sets</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Compare</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Compare two seismic data sets
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -48,17 +49,17 @@
           <p>Compare two seismic data sets, returns 0 to the shell, 
              if the same and 1 if different.</p>
 
-	  <!-- begin par --><!-- end par -->
-	   
+          <!-- begin par --><!-- end par -->
+           
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Dez 02, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -67,7 +68,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -85,31 +86,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-12-02T17:30:37.556898Z</created>
     <modified>2010-08-06T00:43:04.330715Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="no" status="unconfigured" version="SU 41">
-    
     <title>SU Compare</title>
     <binary>sucmp</binary>
     <description>Compare two seismic data sets</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -128,12 +132,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Compare</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Compare two seismic data sets
             <!-- end des -->
           </div>
@@ -141,7 +145,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -154,61 +158,61 @@
 
           <p>Compare two seismic data sets, returns 0 to the shell, 
              if the same and 1 if different. It case the data set were
-	     different, a message will be printed out, otherwise nothing
-	     is expected to be displayed.</p>
+             different, a message will be printed out, otherwise nothing
+             is expected to be displayed.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">First file to compare</span><br/></li>
 
               <li class="req"><span class="reqlabel">Second file to compare</span><br/></li>
 
               <li><span class="label">Normalized difference threshold value</span><br/>
-		The default value for this parameter is 1.0 e-4</li>
+                The default value for this parameter is 1.0 e-4</li>
 
             </ul>
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>This program is the seismic equivalent of the Unix cmp
- 	  command.  However, unlike cmp), it understands seismic data
- 	  and will consider files which have only small numerical
- 	  differences to be the same.</p>
+          command.  However, unlike cmp), it understands seismic data
+          and will consider files which have only small numerical
+          differences to be the same.</p>
 
- 	  <p>SU Compare first checks that the number of traces and
- 	  number of samples are the same. It then compares the trace
- 	  headers bit for bit. Finally it checks that the fractional
- 	  difference of A &amp; B is less than limit.</p>
+          <p>SU Compare first checks that the number of traces and
+          number of samples are the same. It then compares the trace
+          headers bit for bit. Finally it checks that the fractional
+          difference of A &amp; B is less than limit.</p>
 
-	  <p>This program is intended as an aid in regression testing
- 	  changes to seismic processing programs.</p>
+          <p>This program is intended as an aid in regression testing
+          changes to seismic processing programs.</p>
 
-	  <p>Note that the program exits as soon as the files fail to
-	  match.</p>
-	
-	  <p>Because of the overloading of trace header fields in
-	  CWP/SU, the headers are compared bit for bit.</p>
+          <p>Note that the program exits as soon as the files fail to
+          match.</p>
+        
+          <p>Because of the overloading of trace header fields in
+          CWP/SU, the headers are compared bit for bit.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Reginald H. Beardsley, rhb@acm.org</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -217,9 +221,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -239,16 +243,17 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>First file to compare</label>
         <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
           <property required="yes">
-            <keyword> </keyword>
-            <value/>
-            <default/>
+            <keyword></keyword>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -256,9 +261,9 @@
         <label>Second file to compare</label>
         <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
           <property required="yes">
-            <keyword> </keyword>
-            <value/>
-            <default/>
+            <keyword></keyword>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -267,8 +272,8 @@
         <float min="0.0">
           <property required="no">
             <keyword>limit=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>

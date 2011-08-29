@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Add Statics</title>
   <description>Add random statics on seismic data</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Add Statics</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Add random statics on seismic data
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Add random statics on seismic data.</p>
 
-	  <!-- begin par --><!-- end par -->
-	
+          <!-- begin par --><!-- end par -->
+        
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Jun 11, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Jun 11, 2010<!-- end ver --></span>
+                <!-- begin ver -->Jun 11, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-06-11T16:10:53.820888Z</created>
     <modified>2010-08-06T00:43:04.105932Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Add Statics</title>
     <binary>suaddstatics</binary>
     <description>Add random statics on seismic data</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +130,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Add Statics</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Add random statics on seismic data
             <!-- end des -->
           </div>
@@ -138,7 +143,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,13 +154,13 @@
 
           <p>Add random statics on seismic data.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">Static shift</span><br/>The static shift will be generated randomly in the interval [+<b>Static shift</b>,-<b>Static shift</b>] (ms).</li>
 
               <li class="req"><span class="reqlabel">Input data file</span></li>
@@ -169,7 +174,7 @@
               <li class="req"><span class="reqlabel">Maximum fold of input data</span></li>
 
               <li><span class="label">Time sampling interval (ms)</span><br/>
-		Default value is set from header.</li>
+                Default value is set from header.</li>
 
               <li><span class="label">Seed for random number generator</span></li>
 
@@ -179,35 +184,35 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>
-	 Input data should be sorted into CDP gathers.</p>			
+         Input data should be sorted into CDP gathers.</p>                      
 
- 	<p>Program <b>SU Add Statics</b> applies static time shifts in a surface consistent way on seismic data sets.<br/> This program writes the static time shifts in the header field "Total static applied".<br/> To perform the actual shifts the user should use the program <b>SU Static</b> after <b>SU Add Statics</b>.<br/> Program  <b>SU Add Statics</b> outputs the corrupted data set to stdout.</p>
+        <p>Program <b>SU Add Statics</b> applies static time shifts in a surface consistent way on seismic data sets.<br/> This program writes the static time shifts in the header field "Total static applied".<br/> To perform the actual shifts the user should use the program <b>SU Static</b> after <b>SU Add Statics</b>.<br/> Program  <b>SU Add Statics</b> outputs the corrupted data set to stdout.</p>
 
-	<p>This program uses the following header keywords:
-	  <ul>
-	    <li>CDP ensemble number,</li>  <!-- cdp -->
-	    <li>X source coordinate,</li>  <!-- sx -->
-	    <li>X group coordinate,</li>  <!-- gx -->
-	    <li>Total static applied,</li>  <!-- tstat -->
-	    <li>Sampling interval in microseconds.</li>  <!-- dt -->
-	  </ul>
-	</p>
+        <p>This program uses the following header keywords:
+          <ul>
+            <li>CDP ensemble number,</li>  <!-- cdp -->
+            <li>X source coordinate,</li>  <!-- sx -->
+            <li>X group coordinate,</li>  <!-- gx -->
+            <li>Total static applied,</li>  <!-- tstat -->
+            <li>Sampling interval in microseconds.</li>  <!-- dt -->
+          </ul>
+        </p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP Wences Gouveia, 11/07/94,  Colorado School of Mines.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -216,9 +221,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -231,7 +236,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -239,7 +244,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -247,8 +253,8 @@
         <float>
           <property required="yes">
             <keyword>shift=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -257,17 +263,18 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>datafile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Number of source locations</label>
         <int>
           <property required="yes">
             <keyword>sources=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -276,8 +283,8 @@
         <int>
           <property required="yes">
             <keyword>receivers=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -286,8 +293,8 @@
         <int>
           <property required="yes">
             <keyword>cmps=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -296,19 +303,18 @@
         <int>
           <property required="yes">
             <keyword>maxfold=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
-      
       <parameter>
         <label>Time sampling interval (ms)</label>
         <float>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -317,8 +323,8 @@
         <int>
           <property required="no">
             <keyword>seed=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU FD Modeling 1D</title>
   <description>Finite difference modeling (1st order) for the acoustic wave equation</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU FD Modeling 1D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Finite difference modeling (1st order) for the acoustic wave equation
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,16 +46,16 @@
 
           <p>Finite difference modeling (1st order) for the acoustic wave equation.</p>
 
-	  <!-- begin par --><!-- end par -->
-	  
-	  <a name="credits" id="credits"></a>
+          <!-- begin par --><!-- end par -->
+          
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>May 03, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -74,7 +75,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->May 03, 2010<!-- end ver --></span>
+                <!-- begin ver -->May 03, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -82,30 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-03T18:37:24.246244Z</created>
     <modified>2010-08-06T00:43:04.861190Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU FD Modeling 1D</title>
     <binary>sufdmod1</binary>
     <description>Finite difference modeling (1st order) for the acoustic wave equation</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -124,12 +129,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU FD Modeling 1D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Finite difference modeling (1st order) for the acoustic wave equation
             <!-- end des -->
           </div>
@@ -137,7 +142,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -147,16 +152,16 @@
           <h2>Introduction</h2>
 
           <p>Finite difference modeling (1st order) for the acoustic wave equation.</p>
-	   
-	  <p>This program need to receive a Binary file containing velocities and creates a SU file containing seismogram.</p>
+           
+          <p>This program need to receive a Binary file containing velocities and creates a SU file containing seismogram.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	    <!-- begin lst --><ul>
+            <!-- begin lst --><ul>
 
               <li class="req"><span class="reqlabel">Number of z samples</span></li>
 
@@ -178,11 +183,11 @@
 
               <li><span class="label">Source type</span>
 
-		<ul>
-		<li>Gauss</li>
-		<li>Ricker 1</li>
-		<li>Ricker 2</li>
-		</ul></li>
+                <ul>
+                <li>Gauss</li>
+                <li>Ricker 1</li>
+                <li>Ricker 2</li>
+                </ul></li>
 
               <li><span class="label">Approximate source center frequency (Hz)</span></li>
 
@@ -200,36 +205,36 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>This program uses a first order explicit velocity/pressure finite	
+          <p>This program uses a first order explicit velocity/pressure finite  
   difference equation.</p>
 
-	  <p>The source function is applied on the pressure component.</p>
+          <p>The source function is applied on the pressure component.</p>
 
-	  <p>If no density file is given, constant density is assumed.</p>
+          <p>If no density file is given, constant density is assumed.</p>
 
-	  <p>Wavefield can be easily viewed with <strong>SU X Image</strong>, user must provide <b>First sample in slow dimension</b> equal a 0 to the <strong>X Image</strong> program in order to  get correct time labelling.</p>
+          <p>Wavefield can be easily viewed with <strong>SU X Image</strong>, user must provide <b>First sample in slow dimension</b> equal a 0 to the <strong>X Image</strong> program in order to  get correct time labelling.</p>
 
-	  <p>Seismic trace is shifted in order to get a zero phase source.</p>
+          <p>Seismic trace is shifted in order to get a zero phase source.</p>
 
-	  <p>Source begins and stop when it's amplitude is 10^-4, it's maximum.</p>
+          <p>Source begins and stop when it's amplitude is 10^-4, it's maximum.</p>
 
-	  <p>Time and depth undersampling only modify the output trace and snapshots.</p>
+          <p>Time and depth undersampling only modify the output trace and snapshots.</p>
 
-	  <p>These parameters are useful for keeping snapshot file small and the number of samples under SU_NFLTS.</p>
+          <p>These parameters are useful for keeping snapshot file small and the number of samples under SU_NFLTS.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Colorado School of Mines</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -238,9 +243,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -253,7 +258,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -261,26 +266,27 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
-      
-      
       <parameter>
         <label>Number of z samples</label>
-        <int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
-	
-	
-	
-      </int>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
       </parameter>
       <parameter>
         <label>Maximum propagation time</label>
         <float>
           <property required="yes">
             <keyword>tmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -289,33 +295,37 @@
         <float>
           <property required="yes">
             <keyword>sz=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
       <parameter>
         <label>Z sampling interval</label>
-        <float><property required="no"><keyword>dz=</keyword><value/><default>1</default></property>
-	
-	
-	
-      </float>
+        <float>
+          <property required="no">
+            <keyword>dz=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </float>
       </parameter>
       <parameter>
         <label>First depht sample</label>
-        <float><property required="no"><keyword>fz=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float>
+        <float>
+          <property required="no">
+            <keyword>fz=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
       </parameter>
       <parameter>
         <label>Coordinate of receiver</label>
         <float>
           <property required="no">
             <keyword>rz=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </float>
@@ -325,8 +335,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>dfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -335,8 +345,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>wfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -345,8 +355,8 @@
         <int min="0" max="1">
           <property required="no" separator=",">
             <keyword>abs=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -355,7 +365,7 @@
         <enum>
           <property required="no">
             <keyword>styp=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
           <option>
@@ -377,25 +387,27 @@
         <float>
           <property required="no">
             <keyword>freq=</keyword>
-            <value/>
+            <value />
             <default>15.0</default>
           </property>
         </float>
       </parameter>
       <parameter>
         <label>Number of time samples</label>
-        <int><property required="no"><keyword>nt=</keyword><value/><default/></property>
-	
-	
-	
-      </int>
+        <int>
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
       </parameter>
       <parameter>
         <label>Trace undersampling factor for trace and snapshots</label>
         <int>
           <property required="no">
             <keyword>td=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -405,7 +417,7 @@
         <int>
           <property required="no">
             <keyword>zd=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>

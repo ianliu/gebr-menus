@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Swap Bytes</title>
   <description>Swap the bytes of various data types</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,13 +22,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">Swap Bytes</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Swap the bytes of various  data types	
+            Swap the bytes of various  data types       
            <!-- end des -->
           </div>
         </div>
@@ -35,7 +36,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -48,13 +49,13 @@
           <p>Swap the bytes of various  data types.</p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>Out 13, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  <p>Aug 15, 2010: revised by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
-	  
+          <p>Out 13, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 15, 2010: revised by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          
           <!-- end cpy -->
         </div>
 
@@ -80,31 +81,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-13T17:53:12.948842Z</created>
     <modified>2010-08-16T03:47:01.558398Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>Swap Bytes</title>
     <binary>swapbytes</binary>
     <description>Swap the bytes of various data types</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -123,13 +127,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">Swap Bytes</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Swap the bytes of various data types
+            Swap the bytes of various data types
            <!-- end des -->
           </div>
         </div>
@@ -137,7 +141,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -149,24 +153,24 @@
 
           <p>Swap the bytes of various  data types.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst -->
+              
+            <!-- begin lst -->
             <ul>
               <li><span class="label">Input type</span><br/>
-	        <ul>
-		  <li>Float</li>
-		  <li>Double</li>
-		  <li>Short</li>
-		  <li>Unsigned short</li>
-		  <li>Long</li>
-		  <li>Unsigned long</li>
-		  <li>Int</li>
-		</ul></li>
+                <ul>
+                  <li>Float</li>
+                  <li>Double</li>
+                  <li>Short</li>
+                  <li>Unsigned short</li>
+                  <li>Long</li>
+                  <li>Unsigned long</li>
+                  <li>Int</li>
+                </ul></li>
 
               <li><span class="label">Output parameter file</span><br/>Contains the number of values</li>
 
@@ -176,30 +180,30 @@
             <!-- end lst -->
 
           </div>
-	  <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p> The byte order of the mantissa of binary data values on PC's and DEC's
- 		is the reverse of so called "big endian" machines (IBM RS6000, SUN,etc.)
- 		hence the need for byte-swapping capability. The subroutines in this code
- 		have been tested for swapping between PCs and	big endian machines, but
- 		have not been tested for DEC products.</p>
-	  <p> Caveat:<br />								
-	 2 byte short, 4 byte long, 4 byte float, 4 byte int,			
- 	and 8 bit double assumed.</p>
+                is the reverse of so called "big endian" machines (IBM RS6000, SUN,etc.)
+                hence the need for byte-swapping capability. The subroutines in this code
+                have been tested for swapping between PCs and   big endian machines, but
+                have not been tested for DEC products.</p>
+          <p> Caveat:<br />                                                             
+         2 byte short, 4 byte long, 4 byte float, 4 byte int,                   
+        and 8 bit double assumed.</p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: John Stockwell (Jan 1994)<br />
- 	      Institut fur Geophysik, Hamburg: Jens Hartmann supplied byte swapping subroutines</p>
+              Institut fur Geophysik, Hamburg: Jens Hartmann supplied byte swapping subroutines</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -208,9 +212,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -230,7 +234,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -238,7 +243,7 @@
         <enum>
           <property required="no">
             <keyword>in=</keyword>
-            <value/>
+            <value />
             <default>float</default>
           </property>
           <option>
@@ -276,8 +281,8 @@
         <file directory="no">
           <property required="no">
             <keyword>outpar=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>

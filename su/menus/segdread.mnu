@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SEG-D Read</title>
   <description>Read an SEG-D tape</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SEG-D Read</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Read an SEG-D tape
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Read an SEG-D tape.</p>
+        Read an SEG-D tape.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Sep 12, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+        Sep 12, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Set 12, 2010<!-- end ver --></span>
+                <!-- begin ver -->Set 12, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -58,30 +59,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-09-13T00:01:51.552859Z</created>
     <modified>2010-09-14T20:37:40.455826Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Import/Export</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>SEG-D Read</title>
     <binary>segdread</binary>
     <description>Read an SEG-D tape</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -93,12 +98,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SEG-D Read</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Read an SEG-D tape
             <!-- end des -->
           </div>
@@ -106,83 +111,83 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Read an SEG-D tape.</p>
+        Read an SEG-D tape.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">Input tape device</span></li>
-		<li>
-			<span class="label">IO option</span>
-			<ul>
-				<li>
-					Record devices (9-track reel tape drive)</li>
-				<li>
-					Pipe, disk and fixed-block 8mm drives</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Information mode</span>
-			<ul>
-				<li>
-					Quiet mode</li>
-				<li>
-					Echo every 'vblock' traces</li>
-				<li>
-					Echo information about blocks</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Echo every 'vblock' traces under Information mode</span></li>
-		<li>
-			<span class="label">First shot to read</span></li>
-		<li>
-			<span class="label">Last shot to read</span></li>
-		<li>
-			<span class="label">Apply gain</span></li>
-		<li>
-			<span class="label">Recovery auxiliary traces</span></li>
-		<li>
-			<span class="label">Maximum consecutive tape IO errors</span></li>
-		<li>
-			<span class="label">Number of data samples</span><br />
-			Override of computed <strong>Number of data samples</strong> to work around SEG-D flaws. Ignored when <strong>IO option</strong> = <strong>Record devices (9-track reel tape drive)</strong>.</li>
-		<li>
-			<span class="label">Pivot year</span><br />
-			Use current century for 2 digit years less than <strong>Pivot year</strong>, previous century otherwise.</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Input tape device</span></li>
+                <li>
+                        <span class="label">IO option</span>
+                        <ul>
+                                <li>
+                                        Record devices (9-track reel tape drive)</li>
+                                <li>
+                                        Pipe, disk and fixed-block 8mm drives</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Information mode</span>
+                        <ul>
+                                <li>
+                                        Quiet mode</li>
+                                <li>
+                                        Echo every 'vblock' traces</li>
+                                <li>
+                                        Echo information about blocks</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Echo every 'vblock' traces under Information mode</span></li>
+                <li>
+                        <span class="label">First shot to read</span></li>
+                <li>
+                        <span class="label">Last shot to read</span></li>
+                <li>
+                        <span class="label">Apply gain</span></li>
+                <li>
+                        <span class="label">Recovery auxiliary traces</span></li>
+                <li>
+                        <span class="label">Maximum consecutive tape IO errors</span></li>
+                <li>
+                        <span class="label">Number of data samples</span><br />
+                        Override of computed <strong>Number of data samples</strong> to work around SEG-D flaws. Ignored when <strong>IO option</strong> = <strong>Record devices (9-track reel tape drive)</strong>.</li>
+                <li>
+                        <span class="label">Pivot year</span><br />
+                        Use current century for 2 digit years less than <strong>Pivot year</strong>, previous century otherwise.</li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Credits</h2>
+        Credits</h2>
 <div>
-	<u>Version 1:</u> IPRA, Pau, France: Dominique Rousset, rousset@iprrs1.univ-pau.fr</div>
+        <u>Version 1:</u> IPRA, Pau, France: Dominique Rousset, rousset@iprrs1.univ-pau.fr</div>
 <div>
-	<u>Version 2.2:</u> EOST, Strasbourg, France: Celine Girard .</div>
+        <u>Version 2.2:</u> EOST, Strasbourg, France: Celine Girard .</div>
 <div>
-	<u>Versions 2.3:</u> EOST, Strasbourg, France: Marc Schaming, mschaming@eost.u-strasbg.fr .</div>
+        <u>Versions 2.3:</u> EOST, Strasbourg, France: Marc Schaming, mschaming@eost.u-strasbg.fr .</div>
 <div>
-	<u>Version 2.4 and 2.5:</u> SEP, Stanford University: Stew Levin, stew@sep.stanford.edu .</div>
+        <u>Version 2.4 and 2.5:</u> SEP, Stanford University: Stew Levin, stew@sep.stanford.edu .</div>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -190,7 +195,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
       <parameter>
@@ -198,8 +204,8 @@
         <string>
           <property required="yes">
             <keyword>tape=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </string>
       </parameter>
@@ -208,7 +214,7 @@
         <enum>
           <property required="no">
             <keyword>use_stdio=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
           <option>
@@ -226,7 +232,7 @@
         <enum>
           <property required="no">
             <keyword>verbose=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
           <option>
@@ -248,7 +254,7 @@
         <int>
           <property required="no">
             <keyword>vblock=</keyword>
-            <value/>
+            <value />
             <default>50</default>
           </property>
         </int>
@@ -258,7 +264,7 @@
         <int>
           <property required="no">
             <keyword>ptmin=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -268,8 +274,8 @@
         <int>
           <property required="no">
             <keyword>ptmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -298,7 +304,7 @@
         <int>
           <property required="no">
             <keyword>errmax=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
         </int>
@@ -308,7 +314,7 @@
         <int>
           <property required="no">
             <keyword>ns=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
         </int>
@@ -318,7 +324,7 @@
         <int>
           <property required="no">
             <keyword>pivot_year=</keyword>
-            <value/>
+            <value />
             <default>30</default>
           </property>
         </int>

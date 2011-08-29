@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>GRM</title>
   <description>Generalized Reciprocal refraction analysis for a single layer</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">GRM</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generalized Reciprocal refraction analysis for a single layer
             <!-- end des -->
           </div>
@@ -27,67 +28,70 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Gain, NMO, Stack and Standard Processes | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Generalized Reciprocal refraction analysis for a single layer.</p>
+        Generalized Reciprocal refraction analysis for a single layer.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Dec 02, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Dec 02, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <p>
-	Jul 28, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Jul 28, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
-	<div class="navigation"><h2>Index</h2>
-	  <ul>
-	    <li><a href="#header_0">Introduction</a></li>
-	    <li><a href="#header_1">Credits</a></li>
-	  </ul>
-	</div>
+        <div class="navigation"><h2>Index</h2>
+          <ul>
+            <li><a href="#header_0">Introduction</a></li>
+            <li><a href="#header_1">Credits</a></li>
+          </ul>
+        </div>
 
-	<div class="clearer"></div>
+        <div class="clearer"></div>
       </div>
 
       <div class="footer">
-	<span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Dez 02, 2009</span>
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Dez 02, 2009</span>
 
         <div class="clearer"></div>
       </div>
     </div>
   </div>
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-12-02T17:43:36.301035Z</created>
     <modified>2010-08-06T16:22:36.934997Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>GRM</title>
     <binary>grm</binary>
     <description>Generalized Reciprocal refraction analysis for a single layer</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -99,12 +103,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">GRM</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generalized Reciprocal refraction analysis for a single layer
             <!-- end des -->
           </div>
@@ -112,79 +116,79 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Gain, NMO, Stack and Standard Processes | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Generalized Reciprocal refraction analysis for a single layer.</p>
+        Generalized Reciprocal refraction analysis for a single layer.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">Number of arrival time pairs</span></li>
-		<li class="req">
-			<span class="reqlabel">Geophone spacing (m)</span></li>
-		<li class="req">
-			<span class="reqlabel">Velocity in weathering layer (m/s)</span></li>
-		<li class="req">
-			<span class="reqlabel">Give time (ms)</span><br />
-			If set to 0, use last time as a-b</li>
-		<li>
-			<span class="label">Value of XY</span><br />
-			If you want to override the optimum XY algorithm in the program. If it is not an integer multiple of <strong>Geophone spacing</strong>, then it will be converted to the closest one.</li>
-		<li>
-			<span class="label">Maximum offset distance allowed when searching for optimum XY</span><br />
-			The default value for this parameter is 2*<strong>Geophone spacing</strong>*10.</li>
-		<li>
-			<span class="label">Size of increment in x during verical depth search (m)</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of arrival time pairs</span></li>
+                <li class="req">
+                        <span class="reqlabel">Geophone spacing (m)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Velocity in weathering layer (m/s)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Give time (ms)</span><br />
+                        If set to 0, use last time as a-b</li>
+                <li>
+                        <span class="label">Value of XY</span><br />
+                        If you want to override the optimum XY algorithm in the program. If it is not an integer multiple of <strong>Geophone spacing</strong>, then it will be converted to the closest one.</li>
+                <li>
+                        <span class="label">Maximum offset distance allowed when searching for optimum XY</span><br />
+                        The default value for this parameter is 2*<strong>Geophone spacing</strong>*10.</li>
+                <li>
+                        <span class="label">Size of increment in x during verical depth search (m)</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	<u>Input file:</u><br />
-	<br />
-	4 column ASCII, with: x, y, forward time, reverse time.</p>
+        <u>Input file:</u><br />
+        <br />
+        4 column ASCII, with: x, y, forward time, reverse time.</p>
 <p>
-	<u>Output file:</u><br />
-	<br />
-	1) XY optimum.<br />
-	<br />
-	2) Apparent refractor velcocity.<br />
-	<br />
-	3) x, y, z(x,y), y-z(x,y), where;</p>
+        <u>Output file:</u><br />
+        <br />
+        1) XY optimum.<br />
+        <br />
+        2) Apparent refractor velcocity.<br />
+        <br />
+        3) x, y, z(x,y), y-z(x,y), where;</p>
 <p>
-	z(x,y) = calculated (GRM) depth below (x,y).<br />
-	y-z(x,y) = GRM depth subtracted from y - absolute depth.<br />
-	<br />
-	4) x, y, d(x,y), y-d(x,y), (error), where:</p>
+        z(x,y) = calculated (GRM) depth below (x,y).<br />
+        y-z(x,y) = GRM depth subtracted from y - absolute depth.<br />
+        <br />
+        4) x, y, d(x,y), y-d(x,y), (error), where:</p>
 <p>
-	d(x,y) = dip corrected depth estimate below (x,y).<br />
-	y-d(x,y) = dip corrected absolute depth.<br />
-	error = estimated error in depth due only to the inexact matching of tangents to arcs in dip estimate.</p>
+        d(x,y) = dip corrected depth estimate below (x,y).<br />
+        y-d(x,y) = dip corrected absolute depth.<br />
+        error = estimated error in depth due only to the inexact matching of tangents to arcs in dip estimate.</p>
 <p>
-	If the XY calculation is bypassed and XY specified, the values used will precede <em>1)</em> above. XY optimum will still be calculated and displayed for reference.</p>
+        If the XY calculation is bypassed and XY specified, the values used will precede <em>1)</em> above. XY optimum will still be calculated and displayed for reference.</p>
 <p>
-	Uses average refactor velocity along interface.</p>
+        Uses average refactor velocity along interface.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Steven D. Sheaffer</p>
+        CWP: Steven D. Sheaffer</p>
 <p>
-	D. Palmer, "The Generalized Reciprocal Method of Seismic Refraction Interpretation", SEG, 1982.</p>
+        D. Palmer, "The Generalized Reciprocal Method of Seismic Refraction Interpretation", SEG, 1982.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
@@ -198,7 +202,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -206,8 +211,8 @@
         <int>
           <property required="yes">
             <keyword>nt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -216,8 +221,8 @@
         <float>
           <property required="yes">
             <keyword>dx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -226,8 +231,8 @@
         <float>
           <property required="yes">
             <keyword>v0=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -236,8 +241,8 @@
         <float>
           <property required="yes">
             <keyword>abtime=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -246,8 +251,8 @@
         <float>
           <property required="no">
             <keyword>xy=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -256,8 +261,8 @@
         <float>
           <property required="no">
             <keyword>xymax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -266,7 +271,7 @@
         <float>
           <property required="no">
             <keyword>depthres=</keyword>
-            <value/>
+            <value />
             <default>0.5</default>
           </property>
         </float>

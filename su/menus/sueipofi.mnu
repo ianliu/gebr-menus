@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU SVD Polarization Filter</title>
   <description>Eigenimage (SVD) based polarization filter</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU SVD Polarization Filter</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Eigenimage (SVD) based polarization filter
             <!-- end des -->
           </div>
@@ -27,25 +28,25 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Eigenimage (SVD) based polarization filter for three-component data.</p>
+        Eigenimage (SVD) based polarization filter for three-component data.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Nov 25, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Nov 25, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <p>
-	Mar 18, 2010: edited by Luis D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;</p>
+        Mar 18, 2010: edited by Luis D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -60,31 +61,34 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-11-25T17:59:25.704579Z</created>
     <modified>2010-08-06T00:43:04.802515Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU SVD Polarization Filter</title>
     <binary>sueipofi</binary>
     <description>Eigenimage (SVD) based polarization filter</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -96,12 +100,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU SVD Polarization Filter</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Eigenimage (SVD) based polarization filter
             <!-- end des -->
           </div>
@@ -109,86 +113,86 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Eigenimage (SVD) based polarization filter for three-component data.</p>
+        Eigenimage (SVD) based polarization filter for three-component data.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Time sampling intervall in seconds</span><br />
-			The default value for this parameter is set from header.</li>
-		<li>
-			<span class="label">SVD time window length in seconds</span><br />
-			The default value for this parameter is 0.1.</li>
-		<li>
-			<span class="label">Exponent of filter weights</span><br />
-			The default value for this parameter is 1.0.</li>
-		<li>
-			<span class="label">Interpolation between initially calculated weights</span></li>
-		<li>
-			<span class="label">Base name for additional output file(s) of filter weights</span></li>
-		<li>
-			<span class="label">Assume rectilinearity along first principal axis </span></li>
-		<li>
-			<span class="label">Assume rectilinearity along second principal axis </span></li>
-		<li>
-			<span class="label">Assume planarity</span></li>
-		<li>
-			<span class="label">Echoes information</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Time sampling intervall in seconds</span><br />
+                        The default value for this parameter is set from header.</li>
+                <li>
+                        <span class="label">SVD time window length in seconds</span><br />
+                        The default value for this parameter is 0.1.</li>
+                <li>
+                        <span class="label">Exponent of filter weights</span><br />
+                        The default value for this parameter is 1.0.</li>
+                <li>
+                        <span class="label">Interpolation between initially calculated weights</span></li>
+                <li>
+                        <span class="label">Base name for additional output file(s) of filter weights</span></li>
+                <li>
+                        <span class="label">Assume rectilinearity along first principal axis </span></li>
+                <li>
+                        <span class="label">Assume rectilinearity along second principal axis </span></li>
+                <li>
+                        <span class="label">Assume planarity</span></li>
+                <li>
+                        <span class="label">Echoes information</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Each three adjacent traces are considered as one three-component dataset.</p>
+        Each three adjacent traces are considered as one three-component dataset.</p>
 <p>
-	The filter is the sum of the first two eigenimages of the singular value decomposition (SVD) of the signal matrix (time window).<br />
-	Weighting functions depending on linearity and planarity of the signal are applied, additionally. To avoid edge effects, these are interpolated linearily or via cubic splines between initially calculated values of non-overlapping time windows.<br />
-	The algorithm is based on the assumption that the particle motion trajectory is essentially 2D (elliptical polarization).</p>
+        The filter is the sum of the first two eigenimages of the singular value decomposition (SVD) of the signal matrix (time window).<br />
+        Weighting functions depending on linearity and planarity of the signal are applied, additionally. To avoid edge effects, these are interpolated linearily or via cubic splines between initially calculated values of non-overlapping time windows.<br />
+        The algorithm is based on the assumption that the particle motion trajectory is essentially 2D (elliptical polarization).</p>
 <p>
-	Caveat:<br />
-	Cubic spline interpolation may result in filter weights exceeding the set of values of initial weights. Weights outside the valid interval [0.0, 1.0] are clipped.</p>
+        Caveat:<br />
+        Cubic spline interpolation may result in filter weights exceeding the set of values of initial weights. Weights outside the valid interval [0.0, 1.0] are clipped.</p>
 <p>
-	This program access the following header keywords</p>
+        This program access the following header keywords</p>
 <ul>
-	<li>
-		Number of samples</li>
-<!-- ns   -->	<li>
-		Sampling interval in microseconds</li>
+        <li>
+                Number of samples</li>
+<!-- ns   -->   <li>
+                Sampling interval in microseconds</li>
 <!-- dt --></ul>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <!-- List of references --><ul>
-	<li>
-		Franco, R. de, and Musacchio, G., 2000: Polarization Filter with Singular Value Decomposition, submitted to Geophysics and published electronically in Geophysics online (www.geo-online.org).</li>
-	<li>
-		Jurkevics, A., 1988: Polarization analysis of three-comomponent array data, Bulletin of the Seismological Society of America, vol. 78, no. 5.</li>
-	<li>
-		Press, W. H., Teukolsky, S. A., Vetterling, W. T., and Flannery, B. P.<br />
-		1996: Numerical Recipes in C - The Art of Scientific Computing,<br />
-		Cambridge University Press, Cambridge.</li>
+        <li>
+                Franco, R. de, and Musacchio, G., 2000: Polarization Filter with Singular Value Decomposition, submitted to Geophysics and published electronically in Geophysics online (www.geo-online.org).</li>
+        <li>
+                Jurkevics, A., 1988: Polarization analysis of three-comomponent array data, Bulletin of the Seismological Society of America, vol. 78, no. 5.</li>
+        <li>
+                Press, W. H., Teukolsky, S. A., Vetterling, W. T., and Flannery, B. P.<br />
+                1996: Numerical Recipes in C - The Art of Scientific Computing,<br />
+                Cambridge University Press, Cambridge.</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Nils Maercklin,<br />
-	GeoForschungsZentrum (GFZ) Potsdam, Germany, 2001.<br />
-	E-mail: nils@gfz-potsdam.de</p>
+        Nils Maercklin,<br />
+        GeoForschungsZentrum (GFZ) Potsdam, Germany, 2001.<br />
+        E-mail: nils@gfz-potsdam.de</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
-	<div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	      Introduction</a></li><li><a href="#header_1">
-	      Parameters</a></li><li><a href="#header_2">
-	      Notes</a></li><li><a href="#header_3">
-	      References</a></li><li><a href="#header_4">
-	      Credits</a></li></ul></div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+              Introduction</a></li><li><a href="#header_1">
+              Parameters</a></li><li><a href="#header_2">
+              Notes</a></li><li><a href="#header_3">
+              References</a></li><li><a href="#header_4">
+              Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -203,7 +207,8 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -211,8 +216,8 @@
         <int>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -221,8 +226,8 @@
         <float>
           <property required="no">
             <keyword>wl=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -231,8 +236,8 @@
         <float>
           <property required="no">
             <keyword>pwr=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -241,8 +246,8 @@
         <enum>
           <property required="no">
             <keyword>interp=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
           <option>
             <label>Linear</label>
@@ -254,14 +259,13 @@
           </option>
         </enum>
       </parameter>
-      
       <parameter>
         <label>Base name for additional output file(s) of filter weights</label>
         <string>
           <property required="no">
             <keyword>file=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </string>
       </parameter>
@@ -295,7 +299,7 @@
           </property>
         </flag>
       </parameter>
-    <parameter>
+      <parameter>
         <label>Echoes information</label>
         <flag>
           <property required="no">
@@ -304,6 +308,7 @@
             <default>off</default>
           </property>
         </flag>
-      </parameter></parameters>
+      </parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Shift</title>
   <description>Shifted/windowed traces in time</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Shift</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Shifted/windowed traces in time
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Shifted/windowed traces in time.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Apr 29, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 20, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Aug 20, 2010<!-- end ver --></span>
+                <!-- begin ver -->Aug 20, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-04-29T14:48:38.503725Z</created>
     <modified>2010-09-13T13:39:35.561887Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Utilities</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>SU Shift</title>
     <binary>sushift</binary>
     <description>Shifted/windowed traces in time</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -118,12 +123,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Shift</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Shifted/windowed traces in time
             <!-- end des -->
           </div>
@@ -131,75 +136,75 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Shifted/windowed traces in time.</p>
+        Shifted/windowed traces in time.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<p>
-		Defaults for <b>Minimum time to pass</b> and <b>Maximum time to pass</b> are calculated from the first trace.</p>
-	<ul>
-		<li>
-			<span class="label">Minimum time to pass</span><br />
-			Must be given in seconds.</li>
-		<li>
-			<span class="label">Maximum time to pass</span><br />
-			Must be given in seconds.</li>
-		<li>
-			<span class="label">Sample rate in microseconds</span></li>
-		<li>
-			<span class="label">Value to place in padded samples</span></li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <p>
+                Defaults for <b>Minimum time to pass</b> and <b>Maximum time to pass</b> are calculated from the first trace.</p>
+        <ul>
+                <li>
+                        <span class="label">Minimum time to pass</span><br />
+                        Must be given in seconds.</li>
+                <li>
+                        <span class="label">Maximum time to pass</span><br />
+                        Must be given in seconds.</li>
+                <li>
+                        <span class="label">Sample rate in microseconds</span></li>
+                <li>
+                        <span class="label">Value to place in padded samples</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	In the high resolution single channel seismic profiling the sample interval is short, the shot rate and the number of samples are high.<br />
-	To reduce the file size, use the option in header, "Delay recording time in ms", and time is changed during a profiling trip.<br />
-	To process and display a seismic section a constant "Delay recording time in ms" is needed. This program does this job.</p>
+        In the high resolution single channel seismic profiling the sample interval is short, the shot rate and the number of samples are high.<br />
+        To reduce the file size, use the option in header, "Delay recording time in ms", and time is changed during a profiling trip.<br />
+        To process and display a seismic section a constant "Delay recording time in ms" is needed. This program does this job.</p>
 <p>
-	The parameters <b>Sample rate in microsecond</b> and <b>Value to place in padded samples</b> options are intended for manipulating velocity volumes in trace format.<br />
-	In particular models which were hung from the water bottom when created &amp; which then need to have the water layer added.</p>
+        The parameters <b>Sample rate in microsecond</b> and <b>Value to place in padded samples</b> options are intended for manipulating velocity volumes in trace format.<br />
+        In particular models which were hung from the water bottom when created &amp; which then need to have the water layer added.</p>
 <p>
-	This program accesses and modifies the following header keywords:</p>
+        This program accesses and modifies the following header keywords:</p>
 <ul>
-	<li>
-		Number of samples,</li>
-<!-- ns -->	<li>
-		Delay recording time in ms.</li>
+        <li>
+                Number of samples,</li>
+<!-- ns -->     <li>
+                Delay recording time in ms.</li>
 <!-- delrt --></ul>
 <p>
-	 </p>
+         </p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Author: Toralf Foerster,<br />
-	Institut fuer Ostseeforschung Warnemuende,<br />
-	Sektion Marine Geologie,<br />
-	Seestrasse 15,<br />
-	D-18119 Rostock, Germany.</p>
+        Author: Toralf Foerster,<br />
+        Institut fuer Ostseeforschung Warnemuende,<br />
+        Sektion Marine Geologie,<br />
+        Seestrasse 15,<br />
+        D-18119 Rostock, Germany.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -207,7 +212,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -215,8 +221,8 @@
         <float>
           <property required="no">
             <keyword>tmin=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -225,8 +231,8 @@
         <float>
           <property required="no">
             <keyword>tmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -235,8 +241,8 @@
         <int>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -245,7 +251,7 @@
         <float>
           <property required="no">
             <keyword>fill=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>

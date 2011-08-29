@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>CDP fold</title>
   <description>Computes and depicts the CDP fold of SU data</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">CDP fold</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Computes and depicts the CDP fold of SU data
             <!-- end des -->
           </div>
@@ -27,73 +28,67 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Editing, Sorting and Manipulation | Graphics | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Editing, Sorting and Manipulation | Graphics | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	This menus computes and depicts the CDP fold of a SU data. The input SU data must be sorted by CDP. If this is not the case, prepend the flow with <strong>SU Sort</strong>.</p>
+        This menus computes and depicts the CDP fold of a SU data. The input SU data must be sorted by CDP. If this is not the case, prepend the flow with <strong>SU Sort</strong>.</p>
 <h2 id="header_1">
-	Description</h2>
+        Description</h2>
 <p>
-	Despite the menu is preset to compute CDP fold, it can be adjusted to compute and depict fold with respect to other header fields.</p>
+        Despite the menu is preset to compute CDP fold, it can be adjusted to compute and depict fold with respect to other header fields.</p>
 <h2 id="header_2">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Ago 06, 2010: written by Ricardo Biloti &lt;biloti@gebrproject.com&gt;</p>
+        Ago 06, 2010: written by Ricardo Biloti &lt;biloti@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2>
-	<ul><li><a href="#header_0">Introduction</a></li>
-	    <li><a href="#header_1">Description</a></li>
-	    <li><a href="#header_2">Credits</a></li>
-	</ul></div>
+        <ul><li><a href="#header_0">Introduction</a></li>
+            <li><a href="#header_1">Description</a></li>
+            <li><a href="#header_2">Credits</a></li>
+        </ul></div>
 
         <div class="clearer"></div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Aug 06, 2010<!-- end ver --></span>
+                <!-- begin ver -->Aug 06, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div></body></html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-08-06T14:11:46.127788Z</created>
     <modified>2010-08-06T14:27:05.779388Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Graphics</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers>
-    <server address="127.0.0.1">
-      <io>
-        <input>/home/biloti/AGU2010/data-sn20-decon-CDP.su</input>
-        <output/>
-        <error/>
-      </io>
-      <lastrun/>
-    </server>
-  </servers>
+  <server address="127.0.0.1">
+    <io>
+      <input>/home/biloti/AGU2010/data-sn20-decon-CDP.su</input>
+      <output />
+      <error />
+    </io>
+    <lastrun />
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Key Count</title>
     <binary>sukeycount</binary>
     <description>Writes a count of a selected key</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -110,16 +105,16 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <span class="flowtitle">SU Key Count</span>
+          <span class="flowtitle">SU Key Count</span>
 
           <div class="description">
-	    Writes a count of a selected key
+            Writes a count of a selected key
           </div>
         </div>
       </div>
 
       <div class="category">
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
       </div>
 
       <div class="main">
@@ -130,13 +125,13 @@
 
           <p>Writes the key and the count to the terminal or a text file when a change of key occurs.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <ul>
+              
+            <ul>
               <li class="req"><span class="reqlabel">Header keyword to count changings</span><br />See help of menu SU Set Header.</li>
 
               <li><span class="label">Echoes information</span><br/> </li>
@@ -144,9 +139,9 @@
             </ul>
 
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>Writes the key and the count to the terminal or a text file when a change of key occurs. 
@@ -154,14 +149,14 @@
           <p>Note that for key values  1 2 3 4 2 5 <br />
             value 2 is counted once per occurrence since this program only recognizes a change of key, not total occurrence. </p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Seismic Unix Development Team</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -170,9 +165,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -192,100 +187,358 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
-      
-    <parameter>
+      <parameter>
         <label>Header keyword to count changings</label>
-        <enum><property required="yes"><keyword>key=</keyword><value/><default>cdp</default></property>
-      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
-      <option><label>Alias filter slope</label><value>afils</value></option>
-      <option><label>Alignment padding</label><value>shortpad</value></option>
-      <option><label>CDP ensemble number</label><value>cdp</value></option>
-      <option><label>Coordinate units code</label><value>counit</value></option>
-      <option><label>Correlated flag</label><value>corr</value></option>
-      <option><label>Data use</label><value>duse</value></option>
-      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
-      <option><label>Datum elevation at source</label><value>sdel</value></option>
-      <option><label>Day of year</label><value>day</value></option>
-      <option><label>Delay recording time in ms</label><value>delrt</value></option>
-      <option><label>Energy source point number</label><value>ep</value></option>
-      <option><label>Field record number</label><value>fldr</value></option>
-      <option><label>Final mute time</label><value>mute</value></option>
-      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
-      <option><label>First trace location</label><value>f2</value></option>
-      <option><label>Gain type of field instruments code</label><value>gain</value></option>
-      <option><label>Gap size</label><value>gaps</value></option>
-      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
-      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
-      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
-      <option><label>Group static correction</label><value>gstat</value></option>
-      <option><label>High cut frequncy if used</label><value>hcf</value></option>
-      <option><label>High cut slope</label><value>hcs</value></option>
-      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
-      <option><label>Initial mute time</label><value>muts</value></option>
-      <option><label>Instrument early or initial gain</label><value>igi</value></option>
-      <option><label>Instrument gain constant</label><value>igc</value></option>
-      <option><label>Lag time A</label><value>laga</value></option>
-      <option><label>Lag time B</label><value>lagb</value></option>
-      <option><label>Low cut frequency if used</label><value>lcf</value></option>
-      <option><label>Low cut slope</label><value>lcs</value></option>
-      <option><label>Mark selected traces</label><value>mark</value></option>
-      <option><label>Minute of hour</label><value>minute</value></option>
-      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
-      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
-      <option><label>Notch filter slope</label><value>nofils</value></option>
-      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
-      <option><label>Number of samples</label><value>ns</value></option>
-      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
-      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      <option><label>Overtravel taper code</label><value>otrav</value></option>
-      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
-      <option><label>Sampling interval in microseconds</label><value>dt</value></option>
-      <option><label>Sample spacing between traces</label><value>d2</value></option>
-      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
-      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
-      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
-      <option><label>Second of minute</label><value>sec</value></option>
-      <option><label>Source depth (positive)</label><value>sdepth</value></option>
-      <option><label>Source elevation from sea level</label><value>selev</value></option>
-      <option><label>Source static correction</label><value>sstat</value></option>
-      <option><label>Subweathering velocity</label><value>swevel</value></option>
-      <option><label>Sweep frequency at end</label><value>sfe</value></option>
-      <option><label>Sweep frequency at start</label><value>sfs</value></option>
-      <option><label>Sweep length in ms</label><value>slen</value></option>
-      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
-      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
-      <option><label>Sweep type code</label><value>styp</value></option>
-      <option><label>Taper type</label><value>tatyp</value></option>
-      <option><label>Time basis code</label><value>timbas</value></option>
-      <option><label>Total static applied</label><value>tstat</value></option>
-      <option><label>Trace identification code</label><value>trid</value></option>
-      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
-      <option><label>Trace number sequence within line</label><value>tracl</value></option>
-      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
-      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      <option><label>Trace weighting factor</label><value>trwf</value></option>
-      <option><label>Uphole time at receiver group</label><value>gut</value></option>
-      <option><label>Uphole time at source</label><value>sut</value></option>
-      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
-      <option><label>Water depth at source</label><value>swdep</value></option>
-      <option><label>Weathering velocity</label><value>wevel</value></option>
-      <option><label>X group coordinate</label><value>gx</value></option>
-      <option><label>X source coordinate</label><value>sx</value></option>
-      <option><label>Y group coordinate</label><value>gy</value></option>
-      <option><label>Y source coordinate</label><value>sy</value></option>
-      <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
-      </parameter><parameter><label>Echoes information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
+        <enum>
+          <property required="yes">
+            <keyword>key=</keyword>
+            <value />
+            <default>cdp</default>
+          </property>
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Echoes information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="4.2.1">
     <title>Parse SU Key Count</title>
     <binary>sed -n 's/^.*= \([0-9]*\).*has *\([0-9]*\).*$/\1 \2/p'</binary>
     <description>Filter SU Key Count to strip text</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -297,12 +550,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Parse SU Key Count</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Filter SU Key Count to strip text
             <!-- end des -->
           </div>
@@ -310,39 +563,39 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Shell tools<!-- end cat -->
+        <!-- begin cat -->Shell tools<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	This program strips all verbose text in the output of SU Key Count, producing only two-column numerical output suitable for displaying.</p>
+        This program strips all verbose text in the output of SU Key Count, producing only two-column numerical output suitable for displaying.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Description</h2>
-	<ul>
-	</ul>
+        <h2 id="header_1">
+                Description</h2>
+        <ul>
+        </ul>
 </div>
 <p>
-	This program is implemented over a sed line editor with a regular expression to strip all text from SU Key Count output.</p>
+        This program is implemented over a sed line editor with a regular expression to strip all text from SU Key Count output.</p>
 <p>
-	To produce CDP fold for example, assemble a flow chaining SU Key Count and this program. In SU Key Count select CDP key. Feed the flow with a CDP sorted data. The output can be displayed with Grace.</p>
+        To produce CDP fold for example, assemble a flow chaining SU Key Count and this program. In SU Key Count select CDP key. Feed the flow with a CDP sorted data. The output can be displayed with Grace.</p>
 <h2 id="header_2">
-	Credits</h2>
+        Credits</h2>
 <p>
-	This program implements a special regular expression for sed line editor, from Gnu Project. The regular expression was designed by Ricardo Biloti &lt;biloti@gebrproject.com&gt;.</p>
+        This program implements a special regular expression for sed line editor, from Gnu Project. The regular expression was designed by Ricardo Biloti &lt;biloti@gebrproject.com&gt;.</p>
       <!-- begin cpy --><!-- end cpy -->
     </div>
 
     <div class="navigation">
       <h2>Index</h2>
       <ul>
-	<li><a href="#header_0"> Introduction</a></li>
-	    <!-- begin mpr --><!-- end mpr -->
+        <li><a href="#header_0"> Introduction</a></li>
+            <!-- begin mpr --><!-- end mpr -->
 
-	<li><a href="#header_1"> Description</a></li>
-	<li><a href="#header_2"> Credits</a></li>
+        <li><a href="#header_1"> Description</a></li>
+        <li><a href="#header_2"> Credits</a></li>
       </ul>
     </div>
 
@@ -359,16 +612,17 @@
 </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://sed.sf.net/</url>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </program>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" mpi="" version="Grace 5.1.22">
-    
     <title>Grace</title>
     <binary>xmgrace -pipe -free</binary>
     <description>WYSIWYG 2D plotting tool for numerical data</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -404,9 +658,9 @@
           <h2>Introduction</h2>
 
           <p><a href="http://plasma-gate.weizmann.ac.il/Grace/">Grace</a> is a WYSIWYG 2D plotting tool for the X Window System and M*tif.
-	  Grace runs on practically any version of Unix-like OS. As well, it has been
-	  successfully ported to VMS, OS/2, and Win9*/NT/2000/XP (some minor functionality
-	  may be missing, though).</p>
+          Grace runs on practically any version of Unix-like OS. As well, it has been
+          successfully ported to VMS, OS/2, and Win9*/NT/2000/XP (some minor functionality
+          may be missing, though).</p>
 
           <div class="parameters">
 
@@ -414,16 +668,16 @@
             <h2>Required parameters</h2>
 
             <p>Grace plots data written in ascii format, by columns, like<br />
- 	    x<sub>1</sub> &nbsp; y<sub>1</sub><br />
- 	    x<sub>2</sub> &nbsp; y<sub>2</sub><br />
- 	    x<sub>3</sub> &nbsp; y<sub>3</sub><br />
- 	    ...<br />
- 	    x<sub>n</sub> &nbsp; y<sub>n</sub><br />
-	   </p>
+            x<sub>1</sub> &nbsp; y<sub>1</sub><br />
+            x<sub>2</sub> &nbsp; y<sub>2</sub><br />
+            x<sub>3</sub> &nbsp; y<sub>3</sub><br />
+            ...<br />
+            x<sub>n</sub> &nbsp; y<sub>n</sub><br />
+           </p>
 
            <h2>Optional parameters</h2>
 
-	    <!-- List of optional parameters -->
+            <!-- List of optional parameters -->
             <ul>
               <li><span class="label">[Hide all tool bars]</span> opens the Grace
               window just with graph itself.</li>
@@ -431,35 +685,35 @@
               <li><span class="label">[Add timestamp to graph]</span> prints the
               current time at bottom left of the graph.</li>
 
-	      <li><span class="label">[Input data in format (X Y1 Y2 Y3...)]</span> means that the first numeric column will provide the abscissas and all remaining columns will provide the ordinates of several sets.</li>
+              <li><span class="label">[Input data in format (X Y1 Y2 Y3...)]</span> means that the first numeric column will provide the abscissas and all remaining columns will provide the ordinates of several sets.</li>
 
-	      <li><span class="label">[Parameter file]</span> is a way to import a set
+              <li><span class="label">[Parameter file]</span> is a way to import a set
               of predefined style options to the current graph. Refer to Grace User's Guide for
               more information.</li>
 
-	      <li><span class="label">[Save graph to file]</span> instead of showing it.</li>
+              <li><span class="label">[Save graph to file]</span> instead of showing it.</li>
 
-	      <li><span class="label">[Export device]</span> is used to select the type
+              <li><span class="label">[Export device]</span> is used to select the type
               of file generated (PNG, EPS or JPEG).</li>
 
             </ul>
           </div>
-	    
-	  <a name="ref" id="ref"></a>
+            
+          <a name="ref" id="ref"></a>
           <h2>References</h2>
 
-	  <!-- List of references -->
+          <!-- List of references -->
           <ul>
             <li><a href="http://plasma-gate.weizmann.ac.il/Grace/doc/Tutorial.html">Grace
-	    Tutorial</a></li>
+            Tutorial</a></li>
 
             <li><a href="http://plasma-gate.weizmann.ac.il/Grace/doc/UsersGuide.html">Grace
-	    Users's Guide</a></li>
+            Users's Guide</a></li>
 
             <li><a href="http://plasma-gate.weizmann.ac.il/Grace/doc/FAQ.html">FAQ</a></li>
           </ul>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Grace is maintained by Evgeny Stambulchik. Please refer to
@@ -493,19 +747,82 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://plasma-gate.weizmann.ac.il/Grace/</url><parameters default-selection="0" selection="">
-      <parameter><label>Hide all tool bars</label><flag><property required="no"><keyword>-barebones</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      
-      <parameter><label>Add timestamp to graph</label><flag><property required="no"><keyword>-timestamp</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Input data in format (X Y1 Y2 Y3 ...)</label><flag><property required="no"><keyword>-nxy</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Parameter file</label><file directory="no"><property required="no"><keyword>-param </keyword><value/><default/></property></file></parameter><parameter><label>Save graph to file</label><file directory="no"><property required="no"><keyword>-hardcopy -printfile </keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter><parameter><label>Export device</label><enum><property required="no"><keyword>-hdevice </keyword><value/><default>PNG</default></property><option><label/><value>PNG</value></option><option><label/><value>EPS</value></option><option><label/><value>JPEG</value></option></enum></parameter>
+]]>
+</help>
+    <url>http://plasma-gate.weizmann.ac.il/Grace/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Hide all tool bars</label>
+        <flag>
+          <property required="no">
+            <keyword>-barebones</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Add timestamp to graph</label>
+        <flag>
+          <property required="no">
+            <keyword>-timestamp</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Input data in format (X Y1 Y2 Y3 ...)</label>
+        <flag>
+          <property required="no">
+            <keyword>-nxy</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Parameter file</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>-param</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Save graph to file</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>-hardcopy -printfile</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Export device</label>
+        <enum>
+          <property required="no">
+            <keyword>-hdevice</keyword>
+            <value />
+            <default>PNG</default>
+          </property>
+          <option>
+            <label />
+            <value>PNG</value>
+          </option>
+          <option>
+            <label />
+            <value>EPS</value>
+          </option>
+          <option>
+            <label />
+            <value>JPEG</value>
+          </option>
+        </enum>
+      </parameter>
     </parameters>
   </program>
 </flow>

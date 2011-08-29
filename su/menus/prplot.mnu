@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Printer Plot</title>
   <description>Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2)</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,13 +22,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">Printer Plot</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2)
+            Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2)
            <!-- end des -->
           </div>
         </div>
@@ -35,7 +36,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Graphics | Seismic Unix
+        Graphics | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -47,16 +48,16 @@
 
           <p>Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2).</p>
 
-	 
+         
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>Out 01, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Out 01, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 
-	  <p>Abr 14, 2010: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  
+          <p>Abr 14, 2010: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          
           <!-- end cpy -->
         </div>
 
@@ -82,31 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-01T19:40:17.495537Z</created>
     <modified>2010-08-06T00:43:02.933881Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Graphics</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>Printer Plot</title>
     <binary>prplot</binary>
     <description>Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2)</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -123,224 +127,281 @@
   <body>
     <div class="outer-container">
       <div class="inner-container">
-	<div class="header">
-	  <div class="title">
-	    <!-- begin tt2 -->
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
           <span class="flowtitle">Printer Plot</span>
           <!-- end tt2 -->
 
-	    <div class="description">
+            <div class="description">
            <!-- begin des -->
-	      Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2)
-	     <!-- end des -->
+              Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2)
+             <!-- end des -->
           </div>
-	  </div>
-	</div>
+          </div>
+        </div>
 
-	<div class="category">
+        <div class="category">
         <!-- begin cat -->
-	  Graphics | Seismic Unix
-	  <!-- end cat -->
+          Graphics | Seismic Unix
+          <!-- end cat -->
       </div>
 
-	<div class="main">
-	  <div class="content">
+        <div class="main">
+          <div class="content">
 
-	    <a name="intro" id="intro"></a>
-	    <h2>Introduction</h2>
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
 
-	    <p>Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2).</p>
+            <p>Printer plot of 1-D arrays f(x1) from a 2-D function f(x1,x2).</p>
 
-	    <!-- begin par -->
-	    <div class="parameters">
+            <!-- begin par -->
+            <div class="parameters">
 
-	      <a name="par" id="par"></a>
-	      <h2>Parameters</h2>
+              <a name="par" id="par"></a>
+              <h2>Parameters</h2>
 
 
-	      <!-- begin lst -->
+              <!-- begin lst -->
             <ul>
-		<li class="group"><span class="grouplabel">First dimension properties</span><br/> 
+                <li class="group"><span class="grouplabel">First dimension properties</span><br/> 
 
-		<ul>
-		  <li><span class="label">Number of samples</span><br/></li>
+                <ul>
+                  <li><span class="label">Number of samples</span><br/></li>
 
-		  <li><span class="label">Sampling interval</span><br/>
-		  The default value for this parameter is the value of <b>Sampling interval</b>.</li>
+                  <li><span class="label">Sampling interval</span><br/>
+                  The default value for this parameter is the value of <b>Sampling interval</b>.</li>
 
-		  <li><span class="label">First sample</span><br/> </li>
+                  <li><span class="label">First sample</span><br/> </li>
 
-		</ul></li>
+                </ul></li>
 
-		<li class="group"><span class="grouplabel">Second dimension properties</span><br/> 
+                <li class="group"><span class="grouplabel">Second dimension properties</span><br/> 
 
-		<ul>
-		  <li><span class="label">Axis label</span><br/> </li>
+                <ul>
+                  <li><span class="label">Axis label</span><br/> </li>
 
-		  <li><span class="label">Number of samples</span><br/> </li>
+                  <li><span class="label">Number of samples</span><br/> </li>
 
-		  <li><span class="label">Sampling interval</span><br/></li>
+                  <li><span class="label">Sampling interval</span><br/></li>
 
-		  <li><span class="label">First sample</span><br/>
-		  The default value for this parameter is the value of <b>Sampling interval</b>.</li>
-
-
-		</ul></li>
-
-	      </ul>
+                  <li><span class="label">First sample</span><br/>
+                  The default value for this parameter is the value of <b>Sampling interval</b>.</li>
 
 
-	      <!-- end lst -->
+                </ul></li>
+
+              </ul>
+
+
+              <!-- end lst -->
 
           </div>
-	    <!-- end par -->
+            <!-- end par -->
 
 
-	    <a name="credits" id="credits"></a>
-	    <h2>Credits</h2>
+            <a name="credits" id="credits"></a>
+            <h2>Credits</h2>
 
-	    <p>Author: Dave Hale, Colorado School of Mines, 07/07/89</p>
+            <p>Author: Dave Hale, Colorado School of Mines, 07/07/89</p>
 
-	    <!-- begin cpy -->
-	    <!-- end cpy -->
+            <!-- begin cpy -->
+            <!-- end cpy -->
 
-	  </div>
+          </div>
 
-	  <div class="navigation">
-	    <h2>Index</h2>
+          <div class="navigation">
+            <h2>Index</h2>
 
-	    <ul>
-	      <li><a href="#intro">Introduction</a></li>
+            <ul>
+              <li><a href="#intro">Introduction</a></li>
 
-	      <!-- begin mpr -->
-	      <li><a href="#par">Parameters</a></li>
-	      <!-- end mpr -->
+              <!-- begin mpr -->
+              <li><a href="#par">Parameters</a></li>
+              <!-- end mpr -->
 
-	      <li><a href="#credits">Credits</a></li>
-	    </ul>
-	  </div>
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div>
 
-	  <div class="clearer"></div>
-	</div>
+          <div class="clearer"></div>
+        </div>
 
-	<div class="footer">
-	  <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
 
-	  <div class="clearer"></div>
-	</div>
+          <div class="clearer"></div>
+        </div>
       </div>
     </div>
   </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>First dimension properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
-            
-          <parameter><label>Number of samples</label><int><property required="no"><keyword>n1=</keyword><value/><default/></property></int></parameter><parameter>
-        <label>Sampling interval</label>
-        <float>
-          <property required="no">
-            <keyword>d1=</keyword>
-            <value/>
-            <default>1.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>First sample</label>
-        <float>
-          <property required="no">
-            <keyword>f1=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </float>
-      </parameter></parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            
-          <parameter><label>Number of samples</label><int><property required="no"><keyword>n1=</keyword><value/><default/></property></int></parameter><parameter>
-        <label>Sampling interval</label>
-        <float>
-          <property required="no">
-            <keyword>d1=</keyword>
-            <value/>
-            <default>1.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>First sample</label>
-        <float>
-          <property required="no">
-            <keyword>f1=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </float>
-      </parameter></parameters></group>
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>n1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
       </parameter>
-      
-      
-      
-      <parameter><label>Second dimension properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Axis label</label><string><property required="no"><keyword>label2=</keyword><value/><default>Trace</default></property></string></parameter><parameter>
-        <label>Number of samples</label>
-        <int>
-          <property required="no">
-            <keyword>n2=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Sampling interval</label>
-        <float>
-          <property required="no">
-            <keyword>d2=</keyword>
-            <value/>
-            <default>1.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>First sample</label>
-        <float>
-          <property required="no">
-            <keyword>f2=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </float>
-      </parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Axis label</label><string><property required="no"><keyword>label2=</keyword><value/><default>Trace</default></property></string></parameter><parameter>
-        <label>Number of samples</label>
-        <int>
-          <property required="no">
-            <keyword>n2=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Sampling interval</label>
-        <float>
-          <property required="no">
-            <keyword>d2=</keyword>
-            <value/>
-            <default>1.0</default>
-          </property>
-        </float>
-      </parameter><parameter>
-        <label>First sample</label>
-        <float>
-          <property required="no">
-            <keyword>f2=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </float>
-      </parameter></parameters></group></parameter>
-      
-      
+      <parameter>
+        <label>Second dimension properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label2=</keyword>
+                    <value />
+                    <default>Trace</default>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Number of samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>n2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>Trace</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
     </parameters>
   </program>
 </flow>

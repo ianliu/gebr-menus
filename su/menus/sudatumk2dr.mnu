@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Datum K2 DR</title>
   <description>Kirchhoff datuming of receivers for 2D prestack data</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Datum K2 DR</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Kirchhoff datuming of receivers for 2D prestack data
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Kirchhoff datuming of receivers for 2D prestack data.</p>
+        Kirchhoff datuming of receivers for 2D prestack data.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Abr 23, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+        Abr 23, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver --><!-- end ver --></span>
+                <!-- begin ver --><!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -58,30 +59,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-04-23T19:32:52.012857Z</created>
     <modified>2010-08-06T01:46:12.551600Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="no" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>SU Datum K2 DR</title>
     <binary>sudatumk2dr</binary>
     <description>Kirchhoff datuming of receivers for 2D prestack data</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -93,12 +98,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Datum K2 DR</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Kirchhoff datuming of receivers for 2D prestack data
             <!-- end des -->
           </div>
@@ -106,185 +111,185 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Kirchhoff datuming of receivers for 2D prestack data.</p>
+        Kirchhoff datuming of receivers for 2D prestack data.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<div class="parameters">
-<!-- begin lst -->		<ul>
-			<li class="req">
-				<span class="reqlabel">File for input seismic traces</span></li>
-			<li class="req">
-				<span class="reqlabel">File for common offset migration output</span></li>
-			<li class="group">
-				<span class="grouplabel">Traveltime tables properties</span>
-				<ul>
-					<li class="req">
-						<span class="reqlabel">File for input traveltime tables</span></li>
-					<li class="req">
-						<span class="reqlabel">First depth sample</span></li>
-					<li class="req">
-						<span class="reqlabel">Number of depth samples</span></li>
-					<li class="req">
-						<span class="reqlabel">Depth interval</span></li>
-					<li class="req">
-						<span class="reqlabel">First lateral sample</span></li>
-					<li class="req">
-						<span class="reqlabel">Number of lateral samples</span></li>
-					<li class="req">
-						<span class="reqlabel">Lateral interval</span></li>
-					<li class="req">
-						<span class="reqlabel">Number of sources</span></li>
-					<li class="req">
-						<span class="reqlabel">X-coordinate of first source</span></li>
-					<li class="req">
-						<span class="reqlabel">X-coordinate increment of sources</span></li>
-				</ul>
-			</li>
-			<li class="group">
-				<span class="grouplabel">Surface properties</span>
-				<ul>
-					<li class="req">
-						<span class="reqlabel">X-coordinate of the first surface location</span></li>
-					<li class="req">
-						<span class="reqlabel">Horizontal spacing on surface</span></li>
-					<li class="req">
-						<span class="reqlabel">Number of input surface locations</span></li>
-				</ul>
-			</li>
-			<li class="req">
-				<span class="reqlabel">Sign of the datuming process</span></li>
-			<li>
-				<span class="label">Time sampling interval of input data</span><br />
-				The default value can be set from header.</li>
-			<li>
-				<span class="label">First time sample of input data</span><br />
-				The default value can be set from header.</li>
-			<li>
-				<span class="label">Recording surface (x1,z1;x2,z2;...)</span></li>
-			<li class="group">
-				<span class="grouplabel">Output traces properties</span>
-				<ul>
-					<li>
-						<span class="label">Z-coordinate of first point</span><br />
-						The default value is the same value of parameter <b>First depth sample</b> (in traveltime table).</li>
-					<li>
-						<span class="label">Vertical spacing</span><br />
-						The default value is 0.2 times the value of parameter <b>Depth interval</b> (in traveltime table).</li>
-					<li>
-						<span class="label">Number of points</span><br />
-						The default value is 5 times the value of parameter <b>Number of depth samples</b> (in traveltime table) minus 1, that result plus 1.</li>
-				</ul>
-			</li>
-			<li class="group">
-				<span class="grouplabel">Shots and receiver properties</span>
-				<ul>
-					<li>
-						<span class="label">X-coordinate of first shot</span><br />
-						The default value is the same value of parameter <b>First lateral sample</b> (in traveltime table).</li>
-					<li>
-						<span class="label">Shot horizontal spacing</span><br />
-						The default value is 0.5 times the value of parameter <b>Lateral interval</b> (in traveltime table).</li>
-					<li>
-						<span class="label">Number of shots</span><br />
-						The default value is the 2 times the value of parameter <b>Number of lateral samples</b> (in traveltime table) minus 1, that result plus 1.</li>
-					<li>
-						<span class="label">X-coordinate of first receiver</span><br />
-						The default value is the same value of parameter <b>First lateral sample</b> (in traveltime table).</li>
-					<li>
-						<span class="label">Receiver horizontal spacing</span><br />
-						The default value is the 0.5 times the value of parameter <b>Lateral interval</b> (in traveltime table).</li>
-					<li>
-						<span class="label">Number of receivers per shot</span><br />
-						The default value is the same value of parameter <b>Number of shots</b>.</li>
-				</ul>
-			</li>
-			<li>
-				<span class="label">Frequency-highcut for input traces</span></li>
-			<li class="group">
-				<span class="grouplabel">Migration properties</span>
-				<ul>
-					<li>
-						<span class="label">Maximum absolute offset allowed in migration</span></li>
-					<li>
-						<span class="label">Migration lateral aperature</span></li>
-					<li>
-						<span class="label">Migration angle aperature from vertical</span></li>
-				</ul>
-			</li>
-			<li>
-				<span class="label">Reference velocity value at surface</span></li>
-			<li>
-				<span class="label">Reference velocity vertical gradient</span></li>
-			<li>
-				<span class="label">Disable antialiase filter</span></li>
-			<li>
-				<span class="label">Job print file name</span></li>
-			<li>
-				<span class="label">Print verbal information at every migrated traces</span></li>
-			<li>
-				<span class="label">Maximum number of input traces to be migrated</span></li>
-			<li>
-				Echoes extra information</li>
-		</ul>
-<!-- end lst -->	</div>
+        <h2 id="header_1">
+                Parameters</h2>
+        <div class="parameters">
+<!-- begin lst -->              <ul>
+                        <li class="req">
+                                <span class="reqlabel">File for input seismic traces</span></li>
+                        <li class="req">
+                                <span class="reqlabel">File for common offset migration output</span></li>
+                        <li class="group">
+                                <span class="grouplabel">Traveltime tables properties</span>
+                                <ul>
+                                        <li class="req">
+                                                <span class="reqlabel">File for input traveltime tables</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">First depth sample</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">Number of depth samples</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">Depth interval</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">First lateral sample</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">Number of lateral samples</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">Lateral interval</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">Number of sources</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">X-coordinate of first source</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">X-coordinate increment of sources</span></li>
+                                </ul>
+                        </li>
+                        <li class="group">
+                                <span class="grouplabel">Surface properties</span>
+                                <ul>
+                                        <li class="req">
+                                                <span class="reqlabel">X-coordinate of the first surface location</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">Horizontal spacing on surface</span></li>
+                                        <li class="req">
+                                                <span class="reqlabel">Number of input surface locations</span></li>
+                                </ul>
+                        </li>
+                        <li class="req">
+                                <span class="reqlabel">Sign of the datuming process</span></li>
+                        <li>
+                                <span class="label">Time sampling interval of input data</span><br />
+                                The default value can be set from header.</li>
+                        <li>
+                                <span class="label">First time sample of input data</span><br />
+                                The default value can be set from header.</li>
+                        <li>
+                                <span class="label">Recording surface (x1,z1;x2,z2;...)</span></li>
+                        <li class="group">
+                                <span class="grouplabel">Output traces properties</span>
+                                <ul>
+                                        <li>
+                                                <span class="label">Z-coordinate of first point</span><br />
+                                                The default value is the same value of parameter <b>First depth sample</b> (in traveltime table).</li>
+                                        <li>
+                                                <span class="label">Vertical spacing</span><br />
+                                                The default value is 0.2 times the value of parameter <b>Depth interval</b> (in traveltime table).</li>
+                                        <li>
+                                                <span class="label">Number of points</span><br />
+                                                The default value is 5 times the value of parameter <b>Number of depth samples</b> (in traveltime table) minus 1, that result plus 1.</li>
+                                </ul>
+                        </li>
+                        <li class="group">
+                                <span class="grouplabel">Shots and receiver properties</span>
+                                <ul>
+                                        <li>
+                                                <span class="label">X-coordinate of first shot</span><br />
+                                                The default value is the same value of parameter <b>First lateral sample</b> (in traveltime table).</li>
+                                        <li>
+                                                <span class="label">Shot horizontal spacing</span><br />
+                                                The default value is 0.5 times the value of parameter <b>Lateral interval</b> (in traveltime table).</li>
+                                        <li>
+                                                <span class="label">Number of shots</span><br />
+                                                The default value is the 2 times the value of parameter <b>Number of lateral samples</b> (in traveltime table) minus 1, that result plus 1.</li>
+                                        <li>
+                                                <span class="label">X-coordinate of first receiver</span><br />
+                                                The default value is the same value of parameter <b>First lateral sample</b> (in traveltime table).</li>
+                                        <li>
+                                                <span class="label">Receiver horizontal spacing</span><br />
+                                                The default value is the 0.5 times the value of parameter <b>Lateral interval</b> (in traveltime table).</li>
+                                        <li>
+                                                <span class="label">Number of receivers per shot</span><br />
+                                                The default value is the same value of parameter <b>Number of shots</b>.</li>
+                                </ul>
+                        </li>
+                        <li>
+                                <span class="label">Frequency-highcut for input traces</span></li>
+                        <li class="group">
+                                <span class="grouplabel">Migration properties</span>
+                                <ul>
+                                        <li>
+                                                <span class="label">Maximum absolute offset allowed in migration</span></li>
+                                        <li>
+                                                <span class="label">Migration lateral aperature</span></li>
+                                        <li>
+                                                <span class="label">Migration angle aperature from vertical</span></li>
+                                </ul>
+                        </li>
+                        <li>
+                                <span class="label">Reference velocity value at surface</span></li>
+                        <li>
+                                <span class="label">Reference velocity vertical gradient</span></li>
+                        <li>
+                                <span class="label">Disable antialiase filter</span></li>
+                        <li>
+                                <span class="label">Job print file name</span></li>
+                        <li>
+                                <span class="label">Print verbal information at every migrated traces</span></li>
+                        <li>
+                                <span class="label">Maximum number of input traces to be migrated</span></li>
+                        <li>
+                                Echoes extra information</li>
+                </ul>
+<!-- end lst -->        </div>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <ul>
-	<li>
-		Traveltime tables were generated by program <b>Ray traveltime 2D</b> (or other ones) on relatively coarse grids, with dimension (<strong>Number of sources</strong>)*(<strong>Number of lateral samples in traveltime table</strong>)*(<strong>Number of depth samples in traveltime table</strong>). In the migration process, traveltimes are interpolated into shot/gephone positions and output grids.</li>
-	<li>
-		Input traces must be SU format and organized in common receiver gathers.</li>
-	<li>
-		If the offset value of an input trace is not in the offset array of output, the nearest one in the array is chosen.</li>
-	<li>
-		Amplitudes are computed using the reference velocity profile, v(z), specified by the parameters <b>Reference velocity value at surface</b> and <b>Reference velocity vertical gradient</b>.</li>
-	<li>
-		Input traces must specify source and receiver positions via the header fields "X source coordinate" and "X group coordinate". Offset is computed automatically.</li>
+        <li>
+                Traveltime tables were generated by program <b>Ray traveltime 2D</b> (or other ones) on relatively coarse grids, with dimension (<strong>Number of sources</strong>)*(<strong>Number of lateral samples in traveltime table</strong>)*(<strong>Number of depth samples in traveltime table</strong>). In the migration process, traveltimes are interpolated into shot/gephone positions and output grids.</li>
+        <li>
+                Input traces must be SU format and organized in common receiver gathers.</li>
+        <li>
+                If the offset value of an input trace is not in the offset array of output, the nearest one in the array is chosen.</li>
+        <li>
+                Amplitudes are computed using the reference velocity profile, v(z), specified by the parameters <b>Reference velocity value at surface</b> and <b>Reference velocity vertical gradient</b>.</li>
+        <li>
+                Input traces must specify source and receiver positions via the header fields "X source coordinate" and "X group coordinate". Offset is computed automatically.</li>
 </ul>
 <p>
-	This code implements a Kirchhoff extrapolation operator that allows to transfer data from one reference surface to another. The formula used in this application is a far field approximation of the Berryhill's original formula (Berryhill, 1979). This equation is the result of a stationary phase analysis to get an analog asymptotic expansion for the two-and-one half dimensional extrapolation formula (Bleistein, 1984).</p>
+        This code implements a Kirchhoff extrapolation operator that allows to transfer data from one reference surface to another. The formula used in this application is a far field approximation of the Berryhill's original formula (Berryhill, 1979). This equation is the result of a stationary phase analysis to get an analog asymptotic expansion for the two-and-one half dimensional extrapolation formula (Bleistein, 1984).</p>
 <p>
-	The extrapolation formula permits the downward continuation of upgoing waves and upward continuation of downgoing waves. For upward continuation of upgoing waves and downward continuation of downgoing waves, the conjugate transpose of the equation is used (Bevc, 1993).</p>
+        The extrapolation formula permits the downward continuation of upgoing waves and upward continuation of downgoing waves. For upward continuation of upgoing waves and downward continuation of downgoing waves, the conjugate transpose of the equation is used (Bevc, 1993).</p>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <ul>
-	<li>
-		Berryhill, J.R., 1979, Wave equation datuming: Geophysics, 44, 1329--1344.<br />
-		1984, Wave equation datuming before stack (short note) : Geophysics, 49, 2064--2067.</li>
-	<li>
-		Bevc, D., 1993, Data parallel wave equation datuming with irregular acquisition topography : 63rd Ann. Internat.<br />
-		Mtg., SEG, Expanded Abstracts, 197--200.</li>
-	<li>
-		Bleistein, N., 1984, Mathematical methods for wave phenomena, Academic Press Inc. (Harcourt Brace Jovanovich Publishers), New York.</li>
+        <li>
+                Berryhill, J.R., 1979, Wave equation datuming: Geophysics, 44, 1329--1344.<br />
+                1984, Wave equation datuming before stack (short note) : Geophysics, 49, 2064--2067.</li>
+        <li>
+                Bevc, D., 1993, Data parallel wave equation datuming with irregular acquisition topography : 63rd Ann. Internat.<br />
+                Mtg., SEG, Expanded Abstracts, 197--200.</li>
+        <li>
+                Bleistein, N., 1984, Mathematical methods for wave phenomena, Academic Press Inc. (Harcourt Brace Jovanovich Publishers), New York.</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	 Author: Trino Salinas, 05/01/96, Colorado School of Mines</p>
+         Author: Trino Salinas, 05/01/96, Colorado School of Mines</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	References</a></li><li><a href="#header_4">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.16 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -292,7 +297,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -300,7 +306,7 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>infile=</keyword>
-            <value/>
+            <value></value>
             <default>/dev/stdin</default>
           </property>
         </file>
@@ -310,7 +316,7 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>outfile=</keyword>
-            <value/>
+            <value></value>
             <default>/dev/stdout</default>
           </property>
         </file>
@@ -318,285 +324,291 @@
       <parameter>
         <label>Traveltime tables properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>File for input traveltime tables</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>ttfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>First depth sample</label>
+                <float>
+                  <property required="yes">
+                    <keyword>fzt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of depth samples</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nzt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Depth interval</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dzt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First lateral sample</label>
+                <float>
+                  <property required="yes">
+                    <keyword>fxt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of lateral samples</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nxt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Lateral interval</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dxt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of sources</label>
+                <int>
+                  <property required="yes">
+                    <keyword>ns=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X-coordinate of first source</label>
+                <float>
+                  <property required="yes">
+                    <keyword>fs=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X-coordinate increment of sources</label>
+                <float>
+                  <property required="yes">
+                    <keyword>ds=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>File for input traveltime tables</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="yes">
-                  <keyword>ttfile=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>First depth sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fzt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of depth samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nzt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Depth interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dzt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First lateral sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of lateral samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Lateral interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxt=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of sources</label>
-              <int>
-                <property required="yes">
-                  <keyword>ns=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-coordinate of first source</label>
-              <float>
-                <property required="yes">
-                  <keyword>fs=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-coordinate increment of sources</label>
-              <float>
-                <property required="yes">
-                  <keyword>ds=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>File for input traveltime tables</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="yes">
-                  <keyword>ttfile=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>First depth sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of depth samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Depth interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dzt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First lateral sample</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of lateral samples</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Lateral interval</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of sources</label>
-              <int>
-                <property required="yes">
-                  <keyword>ns=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>X-coordinate of first source</label>
-              <float>
-                <property required="yes">
-                  <keyword>fs=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>X-coordinate increment of sources</label>
-              <float>
-                <property required="yes">
-                  <keyword>ds=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Surface properties</label>
         <group instanciable="no" expand="yes">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X-coordinate of the first surface location</label>
+                <float>
+                  <property required="yes">
+                    <keyword>fxi=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal spacing on surface</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dxi=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of input surface locations</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nxi=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>X-coordinate of the first surface location</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxi=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Horizontal spacing on surface</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxi=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of input surface locations</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxi=</keyword>
-                  <value/>
-                  <default/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>X-coordinate of the first surface location</label>
-              <float>
-                <property required="yes">
-                  <keyword>fxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Horizontal spacing on surface</label>
-              <float>
-                <property required="yes">
-                  <keyword>dxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of input surface locations</label>
-              <int>
-                <property required="yes">
-                  <keyword>nxi=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Sign of the datuming process</label>
         <enum>
           <property required="yes">
             <keyword>sgn=</keyword>
-            <value/>
+            <value />
             <default>-1</default>
           </property>
           <option>
@@ -614,8 +626,8 @@
         <float>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -624,8 +636,8 @@
         <float>
           <property required="no">
             <keyword>ft=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -634,293 +646,301 @@
         <string>
           <property required="no" separator=";">
             <keyword>surf=</keyword>
-            <value/>
-            
-          <default>0,0</default><default>99999,0</default></property>
+            <value></value>
+            <default>0,0</default>
+            <default>99999,0</default>
+          </property>
         </string>
       </parameter>
       <parameter>
         <label>Output traces properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Z-coordinate of first point</label>
+                <float>
+                  <property required="no">
+                    <keyword>fzo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Vertical spacing</label>
+                <float>
+                  <property required="no">
+                    <keyword>dzo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of points</label>
+                <int>
+                  <property required="no">
+                    <keyword>nzo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Z-coordinate of first point</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fzo=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Vertical spacing</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dzo=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of points</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nzo=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Z-coordinate of first point</label>
-              <float>
-                <property required="no">
-                  <keyword>fzo=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Vertical spacing</label>
-              <float>
-                <property required="no">
-                  <keyword>dzo=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of points</label>
-              <int>
-                <property required="no">
-                  <keyword>nzo=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Shots and receiver properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X-coordinate of first shot</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxso=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Shot horizontal spacing</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxso=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of shots</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxso=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X-coordinate of first receiver</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxgo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Receiver horizontal spacing</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxgo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of receivers per shot</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxgo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>X-coordinate of first shot</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fxso=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Shot horizontal spacing</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dxso=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of shots</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nxso=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-coordinate of first receiver</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fxgo=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
-            </parameter>
-            
-            <parameter>
-              <label>Receiver horizontal spacing</label>
-              <float>
-                <property required="no">
-                  <keyword>dxgo=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of receivers per shot</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nxgo=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </int>
-            </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>X-coordinate of first shot</label>
-              <float>
-                <property required="no">
-                  <keyword>fxso=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Shot horizontal spacing</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dxso=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-            <parameter>
-              <label>Number of shots</label>
-              <int>
-                <property required="no">
-                  <keyword>nxso=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>X-coordinate of first receiver</label>
-              <float>
-                <property required="no">
-                  <keyword>fxgo=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            
-            <parameter>
-              <label>Receiver horizontal spacing</label>
-              <float>
-                <property required="no">
-                  <keyword>dxgo=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of receivers per shot</label>
-              <int>
-                <property required="no">
-                  <keyword>nxgo=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </int>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Frequency-highcut for input traces</label>
         <float>
           <property required="no">
             <keyword>fmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
       <parameter>
         <label>Migration properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Maximum absolute offset allowed in migration</label>
+                <float>
+                  <property required="no">
+                    <keyword>offmax=</keyword>
+                    <value />
+                    <default>99999</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Migration lateral aperature</label>
+                <float>
+                  <property required="no">
+                    <keyword>aperx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Migration angle aperature from vertical</label>
+                <float>
+                  <property required="no">
+                    <keyword>angmax=</keyword>
+                    <value />
+                    <default>60</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Maximum absolute offset allowed in migration</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>offmax=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>99999</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Migration lateral aperature</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>aperx=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Migration angle aperature from vertical</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>angmax=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>60</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Maximum absolute offset allowed in migration</label>
-              <float>
-                <property required="no">
-                  <keyword>offmax=</keyword>
-                  <value/>
-                  <default>99999</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Migration lateral aperature</label>
-              <float>
-                <property required="no">
-                  <keyword>aperx=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Migration angle aperature from vertical</label>
-              <float>
-                <property required="no">
-                  <keyword>angmax=</keyword>
-                  <value/>
-                  <default>60</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Reference velocity value at surface</label>
         <float>
           <property required="no">
             <keyword>v0=</keyword>
-            <value/>
+            <value />
             <default>1500</default>
           </property>
         </float>
@@ -930,7 +950,7 @@
         <float>
           <property required="no">
             <keyword>dvz=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>
@@ -950,7 +970,7 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>jpfile=</keyword>
-            <value/>
+            <value></value>
             <default>/dev/stderr</default>
           </property>
         </file>
@@ -960,7 +980,7 @@
         <int>
           <property required="no">
             <keyword>mtr=</keyword>
-            <value/>
+            <value />
             <default>100</default>
           </property>
         </int>
@@ -970,7 +990,7 @@
         <int>
           <property required="no">
             <keyword>ntr=</keyword>
-            <value/>
+            <value />
             <default>100000</default>
           </property>
         </int>

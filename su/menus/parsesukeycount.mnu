@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Parse SU Key Count</title>
   <description>Filter SU Key Count info to strip text</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Parse SU Key Count</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Filter SU Key Count info to strip text
             <!-- end des -->
           </div>
@@ -27,63 +28,67 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Shell tools<!-- end cat -->
+        <!-- begin cat -->Shell tools<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	This menu parses the output produced by <strong>SU Key Count</strong>, striping all verbose text.</p>
+        This menu parses the output produced by <strong>SU Key Count</strong>, striping all verbose text.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Aug 03, 2010: written by Ricardo Biloti &lt;biloti@gebrproject.com&gt;</p>
+        Aug 03, 2010: written by Ricardo Biloti &lt;biloti@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
-	<div class="navigation">
-	  <h2>Index</h2>
-	  <ul>
-	    <li><a href="#header_0">Introduction</a></li>
-	    <li><a href="#header_1">Credits</a></li>
-	  </ul>
-	</div>
+        <div class="navigation">
+          <h2>Index</h2>
+          <ul>
+            <li><a href="#header_0">Introduction</a></li>
+            <li><a href="#header_1">Credits</a></li>
+          </ul>
+        </div>
 
-	<div class="clearer"></div>
+        <div class="clearer"></div>
       </div>
 
       <div class="footer">
-	<span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-	  <!-- begin ver -->Aug 03, 2010<!-- end ver --></span>
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+          <!-- begin ver -->Aug 03, 2010<!-- end ver --></span>
 
-	<div class="clearer"></div>
+        <div class="clearer"></div>
       </div>
     </div>
   </div>
 </body></html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-08-03T19:34:16.052423Z</created>
     <modified>2010-08-06T14:09:13.603408Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Shell tools</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="sed 4.2.1">
     <title>Parse SU Key Count</title>
     <binary>sed -n 's/^.*= \([0-9]*\).*has *\([0-9]*\).*$/\1 \2/p'</binary>
     <description>Filter SU Key Count to strip text</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -95,12 +100,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Parse SU Key Count</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Filter SU Key Count to strip text
             <!-- end des -->
           </div>
@@ -108,52 +113,53 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Shell tools<!-- end cat -->
+        <!-- begin cat -->Shell tools<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	This program strips all verbose text in the output of <strong>SU Key Count</strong>, producing only two-column numerical output suitable for displaying.</p>
+        This program strips all verbose text in the output of <strong>SU Key Count</strong>, producing only two-column numerical output suitable for displaying.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Description</h2>
-	<ul>
-	</ul>
+        <h2 id="header_1">
+                Description</h2>
+        <ul>
+        </ul>
 </div>
 <p>
-	This program is implemented over a sed line editor with a regular expression to strip all text from SU Key Count output.</p>
+        This program is implemented over a sed line editor with a regular expression to strip all text from SU Key Count output.</p>
 <p>
-	To produce CDP fold for example, assemble a flow chaining <strong>SU Key Count</strong> and this program. In SU Key Count select CDP key. Feed the flow with a CDP sorted data. The output can be displayed with Grace.</p>
+        To produce CDP fold for example, assemble a flow chaining <strong>SU Key Count</strong> and this program. In SU Key Count select CDP key. Feed the flow with a CDP sorted data. The output can be displayed with Grace.</p>
 <h2 id="header_2">
-	Credits</h2>
+        Credits</h2>
 <p>
-	This program implements a special regular expression for sed line editor, from Gnu Project. The regular expression was designed by Ricardo Biloti &lt;biloti@gebrproject.com&gt;.</p>
+        This program implements a special regular expression for sed line editor, from Gnu Project. The regular expression was designed by Ricardo Biloti &lt;biloti@gebrproject.com&gt;.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
-	<div class="navigation"><h2>Index</h2>
-	  <ul>
-	    <li><a href="#header_0">Introduction</a></li>
-	    <li><a href="#header_1">Description</a></li>
-	    <li><a href="#header_2">Credits</a></li>
-	  </ul>
-	</div>
+        <div class="navigation"><h2>Index</h2>
+          <ul>
+            <li><a href="#header_0">Introduction</a></li>
+            <li><a href="#header_1">Description</a></li>
+            <li><a href="#header_2">Credits</a></li>
+          </ul>
+        </div>
 
-	<div class="clearer"></div>
+        <div class="clearer"></div>
       </div>
 
       <div class="footer">
-	<span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-	  <!-- begin ver -->sed 4.2.1<!-- end ver --></span>
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+          <!-- begin ver -->sed 4.2.1<!-- end ver --></span>
 
-	<div class="clearer"></div>
+        <div class="clearer"></div>
       </div>
     </div>
   </div>
 </body></html>
-]]></help>
+]]>
+</help>
     <url>http://sed.sf.net/</url>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </program>
 </flow>

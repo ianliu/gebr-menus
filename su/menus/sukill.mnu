@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Kill</title>
   <description>Zero out traces</description>
-  <help><![CDATA[
+  <help>
+    <![CDATA[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -22,13 +23,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Kill</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Zero out traces
+            Zero out traces
            <!-- end des -->
           </div>
         </div>
@@ -36,7 +37,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -49,15 +50,15 @@
           <p>Zero out traces.</p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>Written by GêBR core team &lt;gebr-devel@googlegroups.com&gt;</p>
-	  <p>Aug 11, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+          <p>Written by GêBR core team &lt;gebr-devel@googlegroups.com&gt;</p>
+          <p>Aug 11, 2009: revised by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
 
-	  <p>Aug 15, 2010: revised by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>
-	  
+          <p>Aug 15, 2010: revised by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>
+          
           <!-- end cpy -->
         </div>
 
@@ -83,31 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-09-16T15:00:00Z</created>
     <modified>2010-08-16T02:46:52.259643Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Kill</title>
     <binary>sukill</binary>
     <description>Zero out traces</description>
-    <help><![CDATA[
+    <help>
+      <![CDATA[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -127,13 +131,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Kill</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Zero out traces
+            Zero out traces
            <!-- end des -->
           </div>
         </div>
@@ -141,7 +145,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -153,12 +157,12 @@
 
           <p>Zero out traces.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
-	  <h2>Parameters</h2>
+          <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst -->
+              
+            <!-- begin lst -->
             <ul>
               <li class="req"><span class="reqlabel">First trace to kill</span><br/></li>
 
@@ -170,25 +174,25 @@
             <!-- end lst -->
 
           </div>
-	  <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-	<p>This program accesses the following header keywords
-	  <ul>
-	    <li>Number of samples</li>  <!-- ns -->
-	  </ul>
-	</p>
+        <p>This program accesses the following header keywords
+          <ul>
+            <li>Number of samples</li>  <!-- ns -->
+          </ul>
+        </p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Chris Liner, Jack K. Cohen</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -197,9 +201,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -219,18 +223,30 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>First trace to kill</label><int><property required="yes"><keyword>min=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Number of traces to kill</label><int><property required="no"><keyword>count=</keyword><value/><default>1</default></property>
-        
-        
-        
-      </int></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>First trace to kill</label>
+        <int>
+          <property required="yes">
+            <keyword>min=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces to kill</label>
+        <int>
+          <property required="no">
+            <keyword>count=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
     </parameters>
   </program>
 </flow>

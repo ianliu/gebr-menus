@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Centroid Sample</title>
   <description>Centroid sample seismic traces</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Centroid Sample</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Centroid sample seismic traces
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Centroid sample seismic traces.</p>
+        Centroid sample seismic traces.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Aug 27, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Aug 27, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Aug 27, 2010<!-- end ver --></span>
+                <!-- begin ver -->Aug 27, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -58,30 +59,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-08-27T15:39:38.939209Z</created>
     <modified>2010-08-31T16:52:05.899764Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>SU Centroid Sample</title>
     <binary>sucentsamp</binary>
     <description>Centroid sample seismic traces</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -93,12 +98,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Centroid Sample</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Centroid sample seismic traces
             <!-- end des -->
           </div>
@@ -106,62 +111,62 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Centroid sample seismic traces.</p>
+        Centroid sample seismic traces.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Sampling interval</span><br />
-			Default value is set from header.</li>
-		<li>
-			<span class="label">Minimum samples in lobe for inclusion</span></li>
-		<li>
-			<span class="label">Stop advisory messages</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Sampling interval</span><br />
+                        Default value is set from header.</li>
+                <li>
+                        <span class="label">Minimum samples in lobe for inclusion</span></li>
+                <li>
+                        <span class="label">Stop advisory messages</span></li>
+        </ul>
 </div>
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	This program takes seismic traces as input, and returns traces<br />
-	consisting of spikes of height equal to the area of each lobe<br />
-	of each oscillation, located at the centroid of the lobe in question.<br />
-	The height of each spike equal to the area of the corresponding lobe.<br />
-	<br />
-	<strong>Caveat: </strong>No check is made that the data are real time traces!<br />
-	<br />
-	This program accesses the following header keywords:</p>
+        This program takes seismic traces as input, and returns traces<br />
+        consisting of spikes of height equal to the area of each lobe<br />
+        of each oscillation, located at the centroid of the lobe in question.<br />
+        The height of each spike equal to the area of the corresponding lobe.<br />
+        <br />
+        <strong>Caveat: </strong>No check is made that the data are real time traces!<br />
+        <br />
+        This program accesses the following header keywords:</p>
 <ul>
-	<li>
-		Number of samples,</li>
-	<li>
-		Sampling interval in microseconds.</li>
+        <li>
+                Number of samples,</li>
+        <li>
+                Sampling interval in microseconds.</li>
 </ul>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Providence Technologies: Tom Morgan.</p>
+        Providence Technologies: Tom Morgan.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -169,21 +174,31 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
-      
       <parameter>
         <label>Sampling interval</label>
         <float>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
-    <parameter><label>Minimum samples in lobe for inclusion</label><int><property required="no"><keyword>nvals_min=</keyword><value/><default>1</default></property></int></parameter><parameter>
+      <parameter>
+        <label>Minimum samples in lobe for inclusion</label>
+        <int>
+          <property required="no">
+            <keyword>nvals_min=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
         <label>Stop advisory messages</label>
         <flag>
           <property required="no">
@@ -192,6 +207,7 @@
             <default>off</default>
           </property>
         </flag>
-      </parameter></parameters>
+      </parameter>
+    </parameters>
   </program>
 </flow>

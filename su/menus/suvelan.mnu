@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Velan</title>
   <description>Compute stacking velocity semblance for CDP gathers</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -42,18 +43,18 @@
       <div class="main">
         <div class="content">
 
-	  <a name="intro" id="intro"></a>
-	  <h2>Introduction</h2>
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
 
-	  <p>Compute stacking velocity semblance for CDP gathers.</p>
+          <p>Compute stacking velocity semblance for CDP gathers.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>GêBR core team</p>
-	  <p>Jul 30, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
-	  <p>Jul 18, 2010: reviewed by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>
+          <p>Jul 30, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+          <p>Jul 18, 2010: reviewed by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>
 
           <!-- end cpy -->
         </div>
@@ -62,7 +63,7 @@
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#intro">Introduction</a></li>
             <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
@@ -79,31 +80,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-08-29T15:00:00Z</created>
     <modified>2010-08-06T00:43:08.714798Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Velan</title>
     <binary>suvelan</binary>
     <description>Compute stacking velocity semblance for CDP gathers</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -127,7 +131,7 @@
           <!-- end tt2 -->
           <div class="description">
            <!-- begin des -->
-	     Compute stacking velocity semblance for CDP gathers            
+             Compute stacking velocity semblance for CDP gathers            
            <!-- end des -->
           </div>
         </div>
@@ -142,10 +146,10 @@
       <div class="main">
         <div class="content">
 
-	  <a name="intro" id="intro"></a>
-	  <h2>Introduction</h2>
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
 
-	  <p>Compute stacking velocity semblance for CDP gathers.</p>
+          <p>Compute stacking velocity semblance for CDP gathers.</p>
 
           <!-- begin par -->
           <div class="parameters">
@@ -153,7 +157,7 @@
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	    <!-- List of optional parameters -->
+            <!-- List of optional parameters -->
             <!-- begin lst -->
             <ul>
               <li><span class="label">Number of velocities</span><br />The default value for this parameter is 50</li>
@@ -166,7 +170,7 @@
 
               <li><span class="label">Part of denominator of quadratic term</span><br />The default value for this parameter is 0.0</li>
 
- 		<li><span class="label">NMO stretch mute value</span><br />
+                <li><span class="label">NMO stretch mute value</span><br />
                 Any sample with value of NMO stretch exceeding the value of this parameter will be zeroed.
                 The defaul value for this parameter is 1.5.
                 </li>
@@ -186,100 +190,100 @@
 
           </div>
           <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-	 <p>Velocity analysis is usually a two-dimensional screen for optimal values of
- 	the vertical two-way traveltime and stacking velocity. But if the travel-  
- 	time curve is no longer close to a hyperbola, the quadratic term of the      
- 	traveltime series should be considered. In its easiest form (with <strong>Part of denominator of quadratic term</strong>=0) 
- 	the optimizion of all parameters requires a three-dimensional screen. This 
- 	is done by a repetition of the conventional two-dimensional screen with a  
- 	variation of the quadratic term. The extended quadratic term is more accurate, 
- 	though the function is no more a polynomial. When screening for optimal    
- 	values the theoretical dependencies between these parameters can be taken   
- 	into account. The traveltime function is defined by</p>                        
+         <p>Velocity analysis is usually a two-dimensional screen for optimal values of
+        the vertical two-way traveltime and stacking velocity. But if the travel-  
+        time curve is no longer close to a hyperbola, the quadratic term of the      
+        traveltime series should be considered. In its easiest form (with <strong>Part of denominator of quadratic term</strong>=0) 
+        the optimizion of all parameters requires a three-dimensional screen. This 
+        is done by a repetition of the conventional two-dimensional screen with a  
+        variation of the quadratic term. The extended quadratic term is more accurate, 
+        though the function is no more a polynomial. When screening for optimal    
+        values the theoretical dependencies between these parameters can be taken   
+        into account. The traveltime function is defined by</p>                        
 
 <pre>                1            anis1                                          
  t^2 = t_0^2 + --- x^2 + ------------- x^4                                 
                v^2       1 + anis2 x^2</pre>
 
-	<p>Where<br/>
+        <p>Where<br/>
 anis1 = <strong>Numerator of quadratic term</strong><br/>
-	   anis2 = <strong>Part of denominator of quadratic term</strong></p>                                     
-	
- 	<p>The coefficients anis1, anis2 are assumed to be small, that means the non- 
- 	hyperbolicity is assumed to be small. Triplications cannot be handled.</p>     
+           anis2 = <strong>Part of denominator of quadratic term</strong></p>                                     
+        
+        <p>The coefficients anis1, anis2 are assumed to be small, that means the non- 
+        hyperbolicity is assumed to be small. Triplications cannot be handled.</p>     
 
-	 <p>Semblance is defined by the following quotient:</p>			     
+         <p>Semblance is defined by the following quotient:</p>                      
 
-<pre>                  n-1              					     
-               [ sum q(t,j) ]^2     					     
-                  j=0              					     
-       s(t) = ------------------   					     
-                  n-1                 					     
-               n sum [q(t,j)]^2      					     
-                   j=0</pre>               					     
+<pre>                  n-1                                                           
+               [ sum q(t,j) ]^2                                              
+                  j=0                                                        
+       s(t) = ------------------                                             
+                  n-1                                                        
+               n sum [q(t,j)]^2                                              
+                   j=0</pre>                                                         
 
-	<p></p>
+        <p></p>
 
-	<p>Where n is the number of non-zero samples after muting.		     
- 	Smoothing (<strong>Length of semblance num and den smoothing window</strong>) is applied separately to the numerator and denominator 
- 	before computing this semblance quotient.</p>				     
+        <p>Where n is the number of non-zero samples after muting.                   
+        Smoothing (<strong>Length of semblance num and den smoothing window</strong>) is applied separately to the numerator and denominator 
+        before computing this semblance quotient.</p>                                
 
-	<p>Then, the semblance is set to the power of the parameter <strong>Semblance value to the power</strong>. With <strong>Semblance value to the power</strong> > 1 
- 	the difference between semblance values is stretched in the upper half of  
- 	the range of semblance values [0,1], but compressed in the lower half of   
- 	it; thus, the few large semblance values are enhanced. With <strong>Semblance value to the power</strong> '<' 1 the    
- 	many small values are enhanced, thus more discernible against background   
- 	noise. Of course, always at the expanse of the respective other feature.</p>   
+        <p>Then, the semblance is set to the power of the parameter <strong>Semblance value to the power</strong>. With <strong>Semblance value to the power</strong> > 1 
+        the difference between semblance values is stretched in the upper half of  
+        the range of semblance values [0,1], but compressed in the lower half of   
+        it; thus, the few large semblance values are enhanced. With <strong>Semblance value to the power</strong> '<' 1 the    
+        many small values are enhanced, thus more discernible against background   
+        noise. Of course, always at the expanse of the respective other feature.</p>   
 
- 	<p>Input traces should be sorted by CDP - suvelan outputs a group of	     
- 	semblance traces every time CDP changes.  Therefore, the output will	     
- 	be useful only if CDP gathers are input.</p>	
+        <p>Input traces should be sorted by CDP - suvelan outputs a group of         
+        semblance traces every time CDP changes.  Therefore, the output will         
+        be useful only if CDP gathers are input.</p>    
 
-	<p>This program accesses the following header keywords:
-		<ul>
-    			<li>Number of samples</li>  <!-- ns -->
-    			<li>Sampling interval in microseconds</li>  <!-- dt -->
-    			<li>Delay recording time in microseconds</li>  <!-- delrt -->
-    			<li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
-    			<li>CDP ensemble number</li>  <!-- cdp -->
-  		</ul>
-	</p>	
+        <p>This program accesses the following header keywords:
+                <ul>
+                        <li>Number of samples</li>  <!-- ns -->
+                        <li>Sampling interval in microseconds</li>  <!-- dt -->
+                        <li>Delay recording time in microseconds</li>  <!-- delrt -->
+                        <li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
+                        <li>CDP ensemble number</li>  <!-- cdp -->
+                </ul>
+        </p>    
 
-	<p>This program modifies the following header keywords:
-		<ul>
-    			<li>Number of samples</li>  <!-- ns -->
-    			<li>Sampling interval in microseconds</li>  <!-- dt -->
-    			<li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
-    			<li>CDP ensemble number</li>  <!-- cdp -->
-  		</ul>
-	</p>
+        <p>This program modifies the following header keywords:
+                <ul>
+                        <li>Number of samples</li>  <!-- ns -->
+                        <li>Sampling interval in microseconds</li>  <!-- dt -->
+                        <li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
+                        <li>CDP ensemble number</li>  <!-- cdp -->
+                </ul>
+        </p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>CWP, Colorado School of Mines:<br />
            Dave Hale (everything except ...)<br />
            Bjoern Rommel (... the quartic term)<br />
-      	   SINTEF, IKU Petroleumsforskning<br />
+           SINTEF, IKU Petroleumsforskning<br />
            Bjoern Rommel (... the power-of-semblance function)</p>
 
-	  <!-- end cpy -->
+          <!-- end cpy -->
         </div>
         <div class="navigation">
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>
-	
+            <li><a href="#intro">Introduction</a></li>
+        
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -300,58 +304,110 @@ anis1 = <strong>Numerator of quadratic term</strong><br/>
 </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of velocities</label><range min="1" max="10000" inc="1" digits=""><property required="no"><keyword>nv=</keyword><value/><default>50</default></property>
-	
-	
-	
-      </range></parameter>
-      <parameter><label>Velocity sampling interval</label><float><property required="no"><keyword>dv=</keyword><value/><default>50</default></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>First velocity</label><float><property required="no"><keyword>fv=</keyword><value/><default>1500</default></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Numerator of quadratic term</label><float><property required="no"><keyword>anis1=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Part of denominator of quadratic term</label><float><property required="no"><keyword>anis2=</keyword><value/><default>0.0</default></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>NMO stretch mute value</label><float><property required="no"><keyword>smute=</keyword><value/><default>1.5</default></property>
-	
-	
-	
-      </float></parameter>
-      <parameter><label>Ratio of output to input time sampling intervals</label><int><property required="no"><keyword>dtratio=</keyword><value/><default>5</default></property>
-	
-	
-	
-      </int></parameter>
-      <parameter><label>Length of semblance num and den smoothing window</label><int min="1"><property required="no"><keyword>nsmooth=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter>
-      <parameter><label>Semblance value to the power</label><float><property required="no"><keyword>pwr=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float></parameter><parameter><label>Echos extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter>
-      
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of velocities</label>
+        <range min="1" max="10000" inc="1" digits="">
+          <property required="no">
+            <keyword>nv=</keyword>
+            <value />
+            <default>50</default>
+          </property>
+        </range>
+      </parameter>
+      <parameter>
+        <label>Velocity sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dv=</keyword>
+            <value />
+            <default>50</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First velocity</label>
+        <float>
+          <property required="no">
+            <keyword>fv=</keyword>
+            <value />
+            <default>1500</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Numerator of quadratic term</label>
+        <float>
+          <property required="no">
+            <keyword>anis1=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Part of denominator of quadratic term</label>
+        <float>
+          <property required="no">
+            <keyword>anis2=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>NMO stretch mute value</label>
+        <float>
+          <property required="no">
+            <keyword>smute=</keyword>
+            <value />
+            <default>1.5</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Ratio of output to input time sampling intervals</label>
+        <int>
+          <property required="no">
+            <keyword>dtratio=</keyword>
+            <value />
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Length of semblance num and den smoothing window</label>
+        <int min="1">
+          <property required="no">
+            <keyword>nsmooth=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Semblance value to the power</label>
+        <float>
+          <property required="no">
+            <keyword>pwr=</keyword>
+            <value />
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echos extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
     </parameters>
   </program>
 </flow>

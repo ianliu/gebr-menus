@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Well RF 1</title>
   <description>Convert well log, from one data file, to reflective function of time</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,13 +22,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Well RF 1</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Convert well log, from one data file, to reflective function of time
+            Convert well log, from one data file, to reflective function of time
            <!-- end des -->
           </div>
         </div>
@@ -35,7 +36,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Seismic Unix | Simulation and Model Building
+        Seismic Unix | Simulation and Model Building
         <!-- end cat -->
       </div>
 
@@ -48,21 +49,21 @@
           <p>Convert well log depth, velocity, density data into a
           uniformly sampled normal incidence Reflectivity Function of time.</p>
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>This menu reads one file with depth, velocity density values.
           See menus <b>SU Well RF 2</b> and <b>SU Well RF 3</b>
           for diferent combinations of well log data on input files.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Written by G&ecirc;BR core team</p>
-	  <p>Aug 11, 2009: modified by Jorge Pizzolatto Filho  &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  <p>Oct 13, 2009: modified by Luis A. D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;</p>
-	  
+          <p>Aug 11, 2009: modified by Jorge Pizzolatto Filho  &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Oct 13, 2009: modified by Luis A. D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;</p>
+          
           <!-- end cpy -->
         </div>
 
@@ -90,31 +91,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-13T15:00:00Z</created>
     <modified>2010-08-06T00:43:08.939917Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Well RF 1</title>
     <binary>suwellrf</binary>
     <description>Convert well log, from one data file, to reflective function of time</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -133,13 +137,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Well RF 1</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Convert well log, from one data file, to reflective function of time
+            Convert well log, from one data file, to reflective function of time
            <!-- end des -->
           </div>
         </div>
@@ -147,7 +151,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Seismic Unix | Simulation and Model Building
+        Seismic Unix | Simulation and Model Building
         <!-- end cat -->
       </div>
 
@@ -157,16 +161,16 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Convert well log depth, velocity, density data into a	
+          <p>Convert well log depth, velocity, density data into a      
           uniformly sampled normal incidence Reflectivity Function of time.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	    <!-- begin lst -->
+            <!-- begin lst -->
             <ul>
               <li class="req"><span class="reqlabel">File containing depth, velocity, and density values</span></li>
 
@@ -182,9 +186,9 @@
             <!-- end lst -->
 
           </div>
-	  <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>This menu reads one file with depth, velocity density values.
@@ -208,15 +212,15 @@
 
           <p>See also menu <b>SU Resample</b>.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <p>Author: CWP: John Stockwell, Summer 2001, updated Summer 2002.<br/>
+          <p>Author: CWP: John Stockwell, Summer 2001, updated Summer 2002.<br/>
              Inspired by a project by GP grad student Leo BrownCWP: John Stockwell February 1999</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -225,9 +229,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -248,29 +252,50 @@
 </body>
 </html>
 
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>File containing depth, velocity, and density values</label><file directory="no"><property required="yes"><keyword>dvrfile=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      
-      
-      
-      
-      
-      <parameter><label>Number of log entries in file</label><int><property required="yes"><keyword>nval=</keyword><value/><default/></property></int></parameter>
-      <parameter><label>Desired time sampling interval (sec) in output</label><float><property required="no"><keyword>dtout=</keyword><value/><default>0.004</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Number of traces to output</label><float><property required="no"><keyword>ntr=</keyword><value/><default>1</default></property>
-        
-        
-        
-      </float></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>File containing depth, velocity, and density values</label>
+        <file directory="no">
+          <property required="yes">
+            <keyword>dvrfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of log entries in file</label>
+        <int>
+          <property required="yes">
+            <keyword>nval=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Desired time sampling interval (sec) in output</label>
+        <float>
+          <property required="no">
+            <keyword>dtout=</keyword>
+            <value />
+            <default>0.004</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of traces to output</label>
+        <float>
+          <property required="no">
+            <keyword>ntr=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </float>
+      </parameter>
     </parameters>
   </program>
 </flow>

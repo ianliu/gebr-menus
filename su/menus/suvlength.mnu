@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Variable Length</title>
   <description>Adjust variable length traces to common length</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -47,12 +48,12 @@
 
           <p>Adjust variable length traces to common length.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Mar 21, 2009: revised by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
-	  <p>Aug 11, 2009: revised by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
+          <p>Aug 11, 2009: revised by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
           <!-- end cpy -->
         </div>
 
@@ -77,31 +78,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-17T15:00:00Z</created>
     <modified>2010-08-06T00:43:08.866171Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Variable Length</title>
     <binary>suvlength</binary>
     <description>Adjust variable length traces to common length</description>
-    <help><![CDATA[
+    <help>
+      <![CDATA[
 <html>
 <head>
   <meta name="generator" content=
@@ -123,7 +127,7 @@
           <!-- begin tt2 -->
           <span class="flowtitle">SU Variable Length</span>
           <!-- end tt2 -->
-	  <div class="description">
+          <div class="description">
            <!-- begin des -->Adjust variable length traces to common length <!-- end des -->
           </div>
         </div>
@@ -136,35 +140,35 @@
       </div>
 
       <div class="main">
-	<div class="content">
+        <div class="content">
 
-	  <a name="intro" id="intro"></a>
-	  <h2>Introduction</h2>
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
 
-	  <p>Adjust variable length traces to common length.</p>
+          <p>Adjust variable length traces to common length.</p>
 
-	<!-- begin par -->
+        <!-- begin par -->
           <div class="parameters">
 
-	  <a name="par"></a>
-	  <h2>Optional parameters</h2>
-	  
-	  <!-- begin lst -->
+          <a name="par"></a>
+          <h2>Optional parameters</h2>
+          
+          <!-- begin lst -->
             <ul>
-	  <li><span class="label">Output number of samples</span></li>
-	  </ul>
+          <li><span class="label">Output number of samples</span></li>
+          </ul>
 
-	  <!-- end lst -->
+          <!-- end lst -->
 
           </div>
           <!-- end par -->
 
-	  <a name="credits" id="credits"></a>
-	  <h2>Credits</h2>
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>SU Variable length is part of Seismic Un*x package.</p>
-	
+          <p>SU Variable length is part of Seismic Un*x package.</p>
+        
          <!-- end cpy -->
         </div>
 
@@ -172,13 +176,13 @@
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#intro">Introduction</a></li>
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
-	    <li><a href="#credits">Credits</a></li>
+            <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
 
@@ -194,9 +198,20 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Output number of samples</label><int><property required="no"><keyword>ns=</keyword><value/><default/></property></int></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Output number of samples</label>
+        <int>
+          <property required="no">
+            <keyword>ns=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
     </parameters>
   </program>
 </flow>

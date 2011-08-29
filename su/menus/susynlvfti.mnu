@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.6">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Synth Linear FTI</title>
   <description>Synthetic seismograms for Linear Velocity</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Synth Linear FTI</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Synthetic seismograms for Linear Velocity
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Synthetic seismograms for Linear Velocity function in a Factorized Transversely Isotropic medium.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
-	 
-	  <a name="credits" id="credits"></a>
+          <!-- begin par --><!-- end par -->
+            
+         
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Apr 29, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Apr 29, 2010<!-- end ver --></span>
+                <!-- begin ver -->Apr 29, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-04-29T18:38:28.798332Z</created>
     <modified>2010-11-19T18:51:30.611870Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Synth Linear FTI</title>
     <binary>susynlvfti</binary>
     <description>Synthetic seismograms for Linear Velocity</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +130,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Synth Linear FTI</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Synthetic seismograms for Linear Velocity
             <!-- end des -->
           </div>
@@ -138,7 +143,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,13 +154,13 @@
 
           <p>Synthetic seismograms for Linear Velocity function in a Factorized Transversely Isotropic medium.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="group"><span class="grouplabel">Time properties</span>
 
               <ul>
@@ -241,8 +246,8 @@
 
               <ul>
               <li><span class="label">Angle of symmetry axis with the vertical (degrees)</span></li>
-		
-		<p>Define the media using either:</p>
+                
+                <p>Define the media using either:</p>
               <li><span class="label">Ratio of elastic coef.(c1111/c3333)</span></li>
 
               <li><span class="label">Ratio of elastic coef.(c1133/c3333)</span></li>
@@ -272,48 +277,48 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>Offsets are signed - may be positive or negative. Receiver locations are computed by adding the signed offset to the source location.</p>
 
-	<p>Specify either midpoint sampling or shotpoint sampling, but not both. If neither is specified, the default is the midpoint sampling above.</p>
+        <p>Specify either midpoint sampling or shotpoint sampling, but not both. If neither is specified, the default is the midpoint sampling above.</p>
 
-	<p>More than one reflector may be specified. Do this by putting additional entries on the parameter <strong>Reflector(s)</strong>. When obliquity factors are included, then only the left side of each reflector (as the x,z reflector coordinates are traversed) is reflecting.  For example, if x coordinates increase, then the top side of a reflector is reflecting.</p>
+        <p>More than one reflector may be specified. Do this by putting additional entries on the parameter <strong>Reflector(s)</strong>. When obliquity factors are included, then only the left side of each reflector (as the x,z reflector coordinates are traversed) is reflecting.  For example, if x coordinates increase, then the top side of a reflector is reflecting.</p>
 
 <p>Concerning the choice of <strong>delta</strong> and <strong>epsilon</strong>: The difference between <strong>delta</strong>, and <strong>epsilon</strong> should not exceed one. A possible break down of the program is the result. This is caused primarly by the break down in the two point, ray-tracing. Also keep the values of <strong>delta</strong> and <strong>epsilon</strong> between 2 and -2.</p>
 
 <p>This program sets the following header keywords:
   <ul>
-    	<li>Trace identification code</li>  <!-- trid -->
-	<li>Coordinate units code</li>  <!-- counit -->
-	<li>Number of samples</li>  <!-- ns -->
-	<li>Sampling interval in microseconds</li>  <!-- dt -->
-	<li>Delay recording time in ms</li>  <!-- delrt -->
-	<li>Trace number sequence within line</li>  <!-- tracl -->
-	<li>Trace number sequence within reel</li>  <!-- tracr -->
-	<li>Field record number</li>  <!-- fldr -->
-	<li>Trace number sequence within field record</li>  <!-- tracf -->
-	<li>CDP ensemble number</li>  <!-- cdp -->
-	<li>Trace number within CDP ensemble</li>  <!-- cdpt -->
-	<li>Sample spacing between traces</li>  <!-- d2 -->
-	<li>First trace location</li>  <!-- f2 -->
-	<li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
-	<li>X source coordinate</li>  <!-- sx -->
-	<li>X group coordinate</li>  <!-- gx -->
+        <li>Trace identification code</li>  <!-- trid -->
+        <li>Coordinate units code</li>  <!-- counit -->
+        <li>Number of samples</li>  <!-- ns -->
+        <li>Sampling interval in microseconds</li>  <!-- dt -->
+        <li>Delay recording time in ms</li>  <!-- delrt -->
+        <li>Trace number sequence within line</li>  <!-- tracl -->
+        <li>Trace number sequence within reel</li>  <!-- tracr -->
+        <li>Field record number</li>  <!-- fldr -->
+        <li>Trace number sequence within field record</li>  <!-- tracf -->
+        <li>CDP ensemble number</li>  <!-- cdp -->
+        <li>Trace number within CDP ensemble</li>  <!-- cdpt -->
+        <li>Sample spacing between traces</li>  <!-- d2 -->
+        <li>First trace location</li>  <!-- f2 -->
+        <li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
+        <li>X source coordinate</li>  <!-- sx -->
+        <li>X group coordinate</li>  <!-- gx -->
   </ul>
 </p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Author: Dave Hale, 09/17/91, Colorado School of Mines<br/>Upgrade to Transversely Isotropic medium: T. Alkhallfah, 4/15/93</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -322,9 +327,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -337,7 +342,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -345,65 +350,87 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Time properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value />
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval (sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value />
+                    <default>0.04</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First time (sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of time samples</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nt=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>101</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Time sampling interval (sec)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dt=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.04</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First time (sec)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>ft=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>101</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.04</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Input lenght unit</label>
         <enum>
           <property required="no">
             <keyword>kilounits=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
           <option>
@@ -419,256 +446,388 @@
       <parameter>
         <label>Offset properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of source-receiver offsets</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxo=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Offset sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxo=</keyword>
+                    <value />
+                    <default>0.05</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxo=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Array of offsets (for non-uniform offsets)</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>xo=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of source-receiver offsets</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nxo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>1</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Offset sampling interval</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dxo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.05</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First offset</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>fxo=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Array of offsets (for non-uniform offsets)</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>xo=</keyword>
-                  <value/>
-                  <default/>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>1</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.05</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Midpoint properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of midpoints</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxm=</keyword>
+                    <value />
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Midpoint sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxm=</keyword>
+                    <value />
+                    <default>0.05</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First midpoint</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxm=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of midpoints</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nxm=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>101</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Midpoint sampling interval</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dxm=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.05</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First midpoint</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>fxm=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>101</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.05</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Shotpoint properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of shotpoints</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxs=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Shotpoint sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxs=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shotpoint</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxs=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of shotpoints</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nxs=</keyword>
-                  <value/>
-                  <default></default>
+                  <keyword />
+                  <value />
+                  <default>101</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Shotpoint sampling interval</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dxs=</keyword>
-                  <value/>
-                  <default></default>
+                  <keyword />
+                  <value />
+                  <default>0.05</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First shotpoint</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>fxs=</keyword>
-                  <value/>
-                  <default></default>
+                  <keyword />
+                  <value />
+                  <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>101</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.05</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Velocity properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Depht z at which velocity is specified</label>
+                <float>
+                  <property required="no">
+                    <keyword>z0=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Distance x at which velocity is specified</label>
+                <float>
+                  <property required="no">
+                    <keyword>x0=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Velocity at (x,z)</label>
+                <float>
+                  <property required="no">
+                    <keyword>v00=</keyword>
+                    <value />
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Derivative of velocity with distance x (dv/dx)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dvdx=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Derivative of velocity with depth z (dv/dz)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dvdz=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Depht z at which velocity is specified</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>z0=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Distance x at which velocity is specified</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>x0=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Velocity at (x,z)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>v00=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>2.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Derivative of velocity with distance x (dv/dx)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dvdx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Derivative of velocity with depth z (dv/dz)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dvdz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>2.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Peak frequency of symmetric Ricker Wavelet (Hz)</label>
         <float>
           <property required="no">
             <keyword>fpeak=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
-      <parameter><label>Reflectors</label><group instanciable="yes" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Reflector</label><string><property required="no"><keyword>ref=</keyword><value/><default>1:1,2;4,2</default></property></string></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Reflector(s)</label><reference><property required="no"><keyword/><value/><default>1:1,2;4,2</default></property></reference></parameter></parameters></group></parameter>
+      <parameter>
+        <label>Reflectors</label>
+        <group instanciable="yes" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Reflector</label>
+                <string>
+                  <property required="no">
+                    <keyword>ref=</keyword>
+                    <value />
+                    <default>1:1,2;4,2</default>
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Reflector(s)</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1:1,2;4,2</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
       <parameter>
         <label>Smooth reflectors</label>
         <flag>
@@ -714,8 +873,8 @@
         <float>
           <property required="no">
             <keyword>tmin=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -724,7 +883,7 @@
         <int>
           <property required="no">
             <keyword>ndpfz=</keyword>
-            <value/>
+            <value />
             <default>5</default>
           </property>
         </int>
@@ -742,158 +901,224 @@
       <parameter>
         <label>Transversely isotropic media</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Angle of symmetry axis with the vertical (degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>angxs=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Ratio of elastic coef.(c1111/c3333)</label>
+                <float>
+                  <property required="no">
+                    <keyword>a=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Ratio of elastic coef.(c1133/c3333)</label>
+                <float>
+                  <property required="no">
+                    <keyword>f=</keyword>
+                    <value />
+                    <default>0.4</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Ratio of elastic coef.(c1313/c3333)</label>
+                <float>
+                  <property required="no">
+                    <keyword>l=</keyword>
+                    <value />
+                    <default>0.3</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Angle of symmetry axis with the vertical (degrees)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>angxs=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Ratio of elastic coef.(c1111/c3333)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>a=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Ratio of elastic coef.(c1133/c3333)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>f=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.4</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Ratio of elastic coef.(c1313/c3333)</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>l=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.3</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>1.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.4</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.3</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Tompson's parameters</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Delta (Thomsen's 1986 defined parameter)</label>
+                <float min="-2.0" max="2.0">
+                  <property required="no">
+                    <keyword>delta=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Epsilon (Thomsen's 1986 defined parameter)</label>
+                <float min="-2.0" max="2.0">
+                  <property required="no">
+                    <keyword>epsilon=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of iterations in Snell's law and offset searches</label>
+                <int>
+                  <property required="no">
+                    <keyword>ntries=</keyword>
+                    <value />
+                    <default>40</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Lateral offset tolerance</label>
+                <float>
+                  <property required="no">
+                    <keyword>epsx=</keyword>
+                    <value />
+                    <default>0.001</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Reflection time tolerance</label>
+                <float>
+                  <property required="no">
+                    <keyword>epst=</keyword>
+                    <value />
+                    <default>0.0001</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Max number of iterations in travel time integrations</label>
+                <int>
+                  <property required="no">
+                    <keyword>nitmax=</keyword>
+                    <value />
+                    <default>12</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Delta (Thomsen's 1986 defined parameter)</label>
-              <float min="-2.0" max="2.0">
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>delta=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Epsilon (Thomsen's 1986 defined parameter)</label>
-              <float min="-2.0" max="2.0">
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>epsilon=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of iterations in Snell's law and offset searches</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>ntries=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>40</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Lateral offset tolerance</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>epsx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.001</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Reflection time tolerance</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>epst=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>0.0001</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Max number of iterations in travel time integrations</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nitmax=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>12</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>40</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.001</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>0.0001</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>12</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
     </parameters>
   </program>

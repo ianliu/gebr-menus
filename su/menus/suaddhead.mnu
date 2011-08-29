@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Add Header</title>
   <description>Put headers on bare traces</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -34,27 +35,27 @@
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Put headers on bare traces and set the <strong>number of traces</strong> and <strong>number of samples</strong> fields.</p>
+        Put headers on bare traces and set the <strong>number of traces</strong> and <strong>number of samples</strong> fields.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Aug 26, 2007: written by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
+        Aug 26, 2007: written by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
 <p>
-	Jun 2, 2008: revised by Daniela Amazonas, UFPA, daniela.amazonas@gmail.com</p>
+        Jun 2, 2008: revised by Daniela Amazonas, UFPA, daniela.amazonas@gmail.com</p>
 <p>
-	Mar 22, 2009: revised by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
+        Mar 22, 2009: revised by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
 <p>
-	Jul 31, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
+        Jul 31, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
 <p>
-	Apr 19, 2010: revised by Gabriel S. Sobral, UNICAMP, sobral@gebrproject.com</p>
+        Apr 19, 2010: revised by Gabriel S. Sobral, UNICAMP, sobral@gebrproject.com</p>
 </div>
 
 <div class="navigation"><h2>Index</h2>
   <ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -69,31 +70,34 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-08-26T15:00:00Z</created>
     <modified>2010-08-06T00:43:04.055631Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Import/Export</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Add Header</title>
     <binary>suaddhead</binary>
     <description>Put headers on bare traces</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -125,59 +129,59 @@
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Put headers on bare traces and set the number of traces and number of samples fields.</p>
+        Put headers on bare traces and set the number of traces and number of samples fields.</p>
 <!-- begin par -->
           <div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- List of required parameters -->	<!-- begin lst -->
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- List of required parameters -->    <!-- begin lst -->
             <ul>
-		<li>
-			<span class="label">Number of samples per trace</span></li>
-	</ul>
-<!-- List of optional parameters -->	<ul>
-		<li>
-			<span class="label">Data written unformatted from Fortran (instead of from C)</span></li>
-		<li>
-			<span class="label">Trace sorting code</span>
-			<ul>
-				<li>
-					As recorded (no sorting at all)</li>
-				<li>
-					CDP ensemble</li>
-				<li>
-					Single fold continuous profile</li>
-				<li>
-					Horizontally stacked</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Number of data traces per record</span><br />
-			Is used to specify how many traces are in each cdp (if your choice for trace sorting order is CDP ensemble).</li>
-	</ul>
-	<h2 id="header_2">
-		Notes</h2>
-	<p>
-		Caution: An incorrect <strong>Number of samples per trace</strong> field will munge subsequent processing.</p>
-	<p>
-		Trace header fields set: Number of samples, </p>
+                <li>
+                        <span class="label">Number of samples per trace</span></li>
+        </ul>
+<!-- List of optional parameters -->    <ul>
+                <li>
+                        <span class="label">Data written unformatted from Fortran (instead of from C)</span></li>
+                <li>
+                        <span class="label">Trace sorting code</span>
+                        <ul>
+                                <li>
+                                        As recorded (no sorting at all)</li>
+                                <li>
+                                        CDP ensemble</li>
+                                <li>
+                                        Single fold continuous profile</li>
+                                <li>
+                                        Horizontally stacked</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of data traces per record</span><br />
+                        Is used to specify how many traces are in each cdp (if your choice for trace sorting order is CDP ensemble).</li>
+        </ul>
+        <h2 id="header_2">
+                Notes</h2>
+        <p>
+                Caution: An incorrect <strong>Number of samples per trace</strong> field will munge subsequent processing.</p>
+        <p>
+                Trace header fields set: Number of samples, </p>
   <!-- end lst -->
 
           </div>
           <!-- end par -->
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <div class="parameters">
-	Trace number sequence within line.<span class="Apple-tab-span" style="white-space:pre"> </span>
-	<div>
-		Use <strong>SU Set Header</strong> or <strong>SU Change Header</strong> to set other needed fields.<span class="Apple-tab-span" style="white-space:pre"> </span></div>
+        Trace number sequence within line.<span class="Apple-tab-span" style="white-space:pre"> </span>
+        <div>
+                Use <strong>SU Set Header</strong> or <strong>SU Change Header</strong> to set other needed fields.<span class="Apple-tab-span" style="white-space:pre"> </span></div>
 </div>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	SEP: Einar Kjartansson<br />
-	CWP: Jack K. Cohen</p>
+        SEP: Einar Kjartansson<br />
+        CWP: Jack K. Cohen</p>
 </div>
 
 <div class="navigation"><h2>Index</h2>
@@ -200,20 +204,74 @@
 
     
 </body></html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of samples per trace</label><int min="1"><property required="yes"><keyword>ns=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter>
-      <parameter><label>Binary file format</label><enum><property required="no"><keyword>ftn=</keyword><value/><default>0</default></property><option><label>Unformated C data</label><value>0</value></option><option><label>Unformated Fortran data</label><value>1</value></option></enum></parameter>
-      <parameter><label>Trace sorting code</label><enum><property required="no"><keyword>tsort=</keyword><value/><default>3</default></property><option><label>As recorded (no sorting)</label><value>1</value></option><option><label>CDP ensemble</label><value>2</value></option><option><label>Single fold continuous profile</label><value>3</value></option><option><label>Horizontally stacked</label><value>4</value></option></enum></parameter>
-      <parameter><label>Number of data traces per record</label><int><property required="no"><keyword>ntrpr=</keyword><value/><default>1</default></property>
-	
-	
-	
-      </int></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of samples per trace</label>
+        <int min="1">
+          <property required="yes">
+            <keyword>ns=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Binary file format</label>
+        <enum>
+          <property required="no">
+            <keyword>ftn=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+          <option>
+            <label>Unformated C data</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Unformated Fortran data</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Trace sorting code</label>
+        <enum>
+          <property required="no">
+            <keyword>tsort=</keyword>
+            <value />
+            <default>3</default>
+          </property>
+          <option>
+            <label>As recorded (no sorting)</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>CDP ensemble</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Single fold continuous profile</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Horizontally stacked</label>
+            <value>4</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Number of data traces per record</label>
+        <int>
+          <property required="no">
+            <keyword>ntrpr=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
     </parameters>
   </program>
 </flow>

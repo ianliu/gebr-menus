@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Unif to Ani</title>
   <description>Generate a 2-D uniformly sampled profile of elastic constants</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Unif to Ani</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generate a 2-D uniformly sampled profile of elastic constants
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Generate a 2-D uniformly sampled profile of elastic constants from a layered model.</p>
+        Generate a 2-D uniformly sampled profile of elastic constants from a layered model.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Sep 28, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Sep 28, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Sep 28, 2010<!-- end ver --></span>
+                <!-- begin ver -->Sep 28, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -58,30 +59,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-09-28T13:33:46.292251Z</created>
     <modified>2010-09-29T14:48:18.245538Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>Unif to Ani</title>
     <binary>unif2aniso</binary>
     <description>Generate a 2-D uniformly sampled profile of elastic constants</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -93,12 +98,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Unif to Ani</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generate a 2-D uniformly sampled profile of elastic constants
             <!-- end des -->
           </div>
@@ -106,228 +111,228 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Generate a 2-D uniformly sampled profile of elastic constants from a layered model.</p>
+        Generate a 2-D uniformly sampled profile of elastic constants from a layered model.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Number of interfaces</span></li>
-		<li class="group">
-			<span class="grouplabel">1st dimension (z) properties</span>
-			<ul>
-				<li>
-					<span class="label">Number of samples</span></li>
-				<li>
-					<span class="label">First sample</span></li>
-				<li>
-					<span class="label">Sampling interval</span></li>
-				<li>
-					<span class="label">Depth z at which P and S-velocity is specified</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">2nd dimension (x) properties</span>
-			<ul>
-				<li>
-					<span class="label">Number of samples</span></li>
-				<li>
-					<span class="label">First sample</span></li>
-				<li>
-					<span class="label">Sampling interval</span></li>
-				<li>
-					<span class="label">Distance x at which P and S-velocity is specified</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Maximum number of points on interfaces</span></li>
-		<li class="group">
-			<span class="grouplabel">Properties at each Distance x and Depth z</span>
-			<ul>
-				<li>
-					<span class="label">P-velocity</span></li>
-				<li>
-					<span class="label">S-velocity</span></li>
-				<li>
-					<span class="label">Density</span></li>
-				<li>
-					<span class="label">Attenuation Q</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Thomsen or Sayers parameters</span>
-			<ul>
-				<li>
-					<span class="label">Epsilon</span></li>
-				<li>
-					<span class="label">Delta</span></li>
-				<li>
-					<span class="label">Gamma</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Derivates of Q</span>
-			<ul>
-				<li>
-					<span class="label">X-derivative</span></li>
-				<li>
-					<span class="label">Z-derivative</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Derivates of density</span>
-			<ul>
-				<li>
-					<span class="label">X-derivative</span></li>
-				<li>
-					<span class="label">Z-derivative</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Derivates of P-velocity</span>
-			<ul>
-				<li>
-					<span class="label">X-derivative</span></li>
-				<li>
-					<span class="label">Z-derivative</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Derivates of S-velocity</span>
-			<ul>
-				<li>
-					<span class="label">X-derivative</span></li>
-				<li>
-					<span class="label">Z-derivative</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Derivates of epsilon</span>
-			<ul>
-				<li>
-					<span class="label">X-derivative</span></li>
-				<li>
-					<span class="label">Z-derivative with depth z</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Derivates of delta</span>
-			<ul>
-				<li>
-					<span class="label">X-derivative</span></li>
-				<li>
-					<span class="label">Z-derivative</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Derivates of gamma</span>
-			<ul>
-				<li>
-					<span class="label">X-derivative</span></li>
-				<li>
-					<span class="label">Z-derivative</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Rotation angle(s) in each layer</span></li>
-		<li class="group">
-			<span class="grouplabel">Output files</span>
-			<ul>
-				<li>
-					<span class="label">For c11 values</span></li>
-				<li>
-					<span class="label">For c13 values</span></li>
-				<li>
-					<span class="label">For c15 values</span></li>
-				<li>
-					<span class="label">For c33 values</span></li>
-				<li>
-					<span class="label">For c35 values</span></li>
-				<li>
-					<span class="label">For c44 values</span></li>
-				<li>
-					<span class="label">For c55 values</span></li>
-				<li>
-					<span class="label">For c66 values</span></li>
-				<li>
-					<span class="label">For density values</span></li>
-				<li>
-					<span class="label">For Q values</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Type of parameters</span>
-			<ul>
-				<li>
-					Sayers parameters</li>
-				<li>
-					Thomsen parameters</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Interface interpolation method</span>
-			<ul>
-				<li>
-					Linear interpolation</li>
-				<li>
-					Monotonic cubic interpolation</li>
-				<li>
-					Akima's cubic interpolation</li>
-				<li>
-					Cubic spline interpolation</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Filename to output a sample of input dataset</span></li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Number of interfaces</span></li>
+                <li class="group">
+                        <span class="grouplabel">1st dimension (z) properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of samples</span></li>
+                                <li>
+                                        <span class="label">First sample</span></li>
+                                <li>
+                                        <span class="label">Sampling interval</span></li>
+                                <li>
+                                        <span class="label">Depth z at which P and S-velocity is specified</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">2nd dimension (x) properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of samples</span></li>
+                                <li>
+                                        <span class="label">First sample</span></li>
+                                <li>
+                                        <span class="label">Sampling interval</span></li>
+                                <li>
+                                        <span class="label">Distance x at which P and S-velocity is specified</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Maximum number of points on interfaces</span></li>
+                <li class="group">
+                        <span class="grouplabel">Properties at each Distance x and Depth z</span>
+                        <ul>
+                                <li>
+                                        <span class="label">P-velocity</span></li>
+                                <li>
+                                        <span class="label">S-velocity</span></li>
+                                <li>
+                                        <span class="label">Density</span></li>
+                                <li>
+                                        <span class="label">Attenuation Q</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Thomsen or Sayers parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Epsilon</span></li>
+                                <li>
+                                        <span class="label">Delta</span></li>
+                                <li>
+                                        <span class="label">Gamma</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Derivates of Q</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X-derivative</span></li>
+                                <li>
+                                        <span class="label">Z-derivative</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Derivates of density</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X-derivative</span></li>
+                                <li>
+                                        <span class="label">Z-derivative</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Derivates of P-velocity</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X-derivative</span></li>
+                                <li>
+                                        <span class="label">Z-derivative</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Derivates of S-velocity</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X-derivative</span></li>
+                                <li>
+                                        <span class="label">Z-derivative</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Derivates of epsilon</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X-derivative</span></li>
+                                <li>
+                                        <span class="label">Z-derivative with depth z</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Derivates of delta</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X-derivative</span></li>
+                                <li>
+                                        <span class="label">Z-derivative</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Derivates of gamma</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X-derivative</span></li>
+                                <li>
+                                        <span class="label">Z-derivative</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Rotation angle(s) in each layer</span></li>
+                <li class="group">
+                        <span class="grouplabel">Output files</span>
+                        <ul>
+                                <li>
+                                        <span class="label">For c11 values</span></li>
+                                <li>
+                                        <span class="label">For c13 values</span></li>
+                                <li>
+                                        <span class="label">For c15 values</span></li>
+                                <li>
+                                        <span class="label">For c33 values</span></li>
+                                <li>
+                                        <span class="label">For c35 values</span></li>
+                                <li>
+                                        <span class="label">For c44 values</span></li>
+                                <li>
+                                        <span class="label">For c55 values</span></li>
+                                <li>
+                                        <span class="label">For c66 values</span></li>
+                                <li>
+                                        <span class="label">For density values</span></li>
+                                <li>
+                                        <span class="label">For Q values</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Type of parameters</span>
+                        <ul>
+                                <li>
+                                        Sayers parameters</li>
+                                <li>
+                                        Thomsen parameters</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Interface interpolation method</span>
+                        <ul>
+                                <li>
+                                        Linear interpolation</li>
+                                <li>
+                                        Monotonic cubic interpolation</li>
+                                <li>
+                                        Akima's cubic interpolation</li>
+                                <li>
+                                        Cubic spline interpolation</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Filename to output a sample of input dataset</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
 </div>
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	The input file is an ASCII file containing x and z values representing a piecewise continuous velocity model with a flat surface on top.<br />
-	The surface and each successive boundary between media is represented by a list of selected x and z pairs written column form.<br />
-	The first and last x values must be the same for all boundaries. Use the entry (1.0, -99999) to separate the entries for successive boundaries. No boundary may cross another. Note that the choice of the method of interpolation may cause boundaries to cross that do not appear to cross in the input data file.<br />
-	<br />
-	The number of interfaces is specified by the parameter <strong>Number of interfaces</strong>. This number does not include the top surface of the model.<br />
-	The input data format is the same as a CSHOT model file with all comments removed.<br />
-	<br />
-	The algorithm works by transforming the P-wavespeed , S-wavespeed, density and the Thomsen or Sayers parameters epsilon, delta, and gamma into elastic stiffness coefficients. Furthermore, the<span class="Apple-tab-span" style="white-space:pre"> </span>user can specify rotations, phi, to the elasticity tensor in each layer.<br />
-	<br />
-	Common ranges of Thomsen parameters are:<br />
-	    epsilon:      0.0   -&gt;  0.5<br />
-	    delta:         -0.2  -&gt;  0.4<br />
-	    gamma:     0.0   -&gt;  0.4<br />
-	<br />
-	If only P-wave, S-wave velocities and density is given as input, the model is, by definition,  isotropic.<br />
-	If files containing Thomsen/Sayers parameters are given, the model will be assumed to have VTI symmetry.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
+        The input file is an ASCII file containing x and z values representing a piecewise continuous velocity model with a flat surface on top.<br />
+        The surface and each successive boundary between media is represented by a list of selected x and z pairs written column form.<br />
+        The first and last x values must be the same for all boundaries. Use the entry (1.0, -99999) to separate the entries for successive boundaries. No boundary may cross another. Note that the choice of the method of interpolation may cause boundaries to cross that do not appear to cross in the input data file.<br />
+        <br />
+        The number of interfaces is specified by the parameter <strong>Number of interfaces</strong>. This number does not include the top surface of the model.<br />
+        The input data format is the same as a CSHOT model file with all comments removed.<br />
+        <br />
+        The algorithm works by transforming the P-wavespeed , S-wavespeed, density and the Thomsen or Sayers parameters epsilon, delta, and gamma into elastic stiffness coefficients. Furthermore, the<span class="Apple-tab-span" style="white-space:pre"> </span>user can specify rotations, phi, to the elasticity tensor in each layer.<br />
+        <br />
+        Common ranges of Thomsen parameters are:<br />
+            epsilon:      0.0   -&gt;  0.5<br />
+            delta:         -0.2  -&gt;  0.4<br />
+            gamma:     0.0   -&gt;  0.4<br />
+        <br />
+        If only P-wave, S-wave velocities and density is given as input, the model is, by definition,  isotropic.<br />
+        If files containing Thomsen/Sayers parameters are given, the model will be assumed to have VTI symmetry.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: John Stockwell, April 2005. <br />
-	CWP: based on program unif2 by Zhenyue Liu, 1994. </p>
+        CWP: John Stockwell, April 2005. <br />
+        CWP: based on program unif2 by Zhenyue Liu, 1994. </p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -336,44 +341,1017 @@
 
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0"><parameter><label>Number of interfaces</label><int min="0"><property required="no"><keyword>ninf=</keyword><value/><default>5</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>1st dimension (z) properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Number of samples</label><int><property required="no"><keyword>nz=</keyword><value/><default>100</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>First sample</label><float><property required="no"><keyword>fz=</keyword><value/><default>0.0</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Sampling interval</label><float><property required="no"><keyword>dz=</keyword><value/><default>10</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Depth z at which P and S-velocity is specified</label><float><property required="no" separator=","><keyword>z0=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Number of samples</label><reference><property required="no"><keyword/><value/><default>100</default></property></reference></parameter><parameter><label>First sample</label><reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter><parameter><label>Sampling interval</label><reference><property required="no"><keyword/><value/><default>10</default></property></reference></parameter><parameter><label>Depth z at which P and S-velocity is specified</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>2nd dimension (x) properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Number of samples</label><int><property required="no"><keyword>nx=</keyword><value/><default>100</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>First sample</label><float><property required="no"><keyword>fx=</keyword><value/><default>0.0</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default>10</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Distance x at which P and S-velocity is specified</label><float><property required="no" separator=","><keyword>x0=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Number of samples</label><reference><property required="no"><keyword/><value/><default>100</default></property></reference></parameter><parameter><label>First sample</label><reference><property required="no"><keyword/><value/><default>0.0</default></property></reference></parameter><parameter><label>Sampling interval</label><reference><property required="no"><keyword/><value/><default>10</default></property></reference></parameter><parameter><label>Distance x at which P and S-velocity is specified</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Maximum number of points on interfaces</label><int><property required="no"><keyword>npmax=</keyword><value/><default>201</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>Properties at each Distance x and Depth z</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>P-velocity</label><float><property required="no" separator=","><keyword>vp00=</keyword><value/><default/></property></float></parameter><parameter><label>S-velocity</label><float><property required="no" separator=","><keyword>vs00=</keyword><value/><default/></property></float></parameter><parameter><label>Density</label><float><property required="no" separator=","><keyword>rho00=</keyword><value/><default/></property></float></parameter><parameter><label>Attenuation Q</label><float><property required="no" separator=","><keyword>q00=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>P-velocity</label><reference><property required="no"><keyword/><value/><default>1500</default><default>2000</default></property></reference></parameter><parameter><label>S-velocity</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Density</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Attenuation Q</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Thomsen or Sayers parameters</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Epsilon</label><float><property required="no" separator=","><keyword>eps00=</keyword><value/><default/></property></float></parameter><parameter><label>Delta</label><float><property required="no" separator=","><keyword>delta00=</keyword><value/><default/></property></float></parameter><parameter><label>Gamma</label><float><property required="no" separator=","><keyword>gamma00=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Epsilon</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Delta</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Gamma</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Derivates of Q</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><float><property required="no" separator=","><keyword>dqdx=</keyword><value/><default/></property></float></parameter><parameter><label>Z-derivative</label><float><property required="no" separator=","><keyword>dqdz=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Z-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Derivates of density</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><float><property required="no" separator=","><keyword>drdx=</keyword><value/><default/></property></float></parameter><parameter><label>Z-derivative</label><float><property required="no" separator=","><keyword>drdz=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Z-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Derivates of P-velocity</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><float><property required="no" separator=","><keyword>dvpdx=</keyword><value/><default/></property></float></parameter><parameter><label>Z-derivative</label><float><property required="no" separator=","><keyword>dvpdz=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Z-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Derivates of S-velocity</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><float><property required="no" separator=","><keyword>dvsdx=</keyword><value/><default/></property></float></parameter><parameter><label>Z-derivative</label><float><property required="no" separator=","><keyword>dvsdz=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Z-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Derivates of epsilon</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><float><property required="no" separator=","><keyword>dedx=</keyword><value/><default/></property></float></parameter><parameter><label>Z-derivative with depth z</label><float><property required="no" separator=","><keyword>dedz=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Z-derivative with depth z</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Derivates of delta</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><float><property required="no" separator=","><keyword>dddx=</keyword><value/><default/></property></float></parameter><parameter><label>Z-derivative</label><float><property required="no" separator=","><keyword>dddz=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Z-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Derivates of gamma</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><float><property required="no" separator=","><keyword>dgdx=</keyword><value/><default/></property></float></parameter><parameter><label>Z-derivative</label><float><property required="no" separator=","><keyword>dgdz=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>X-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>Z-derivative</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Rotation angle(s) in each layer</label><float><property required="no" separator=","><keyword>phi00=</keyword><value/><default/></property></float></parameter><parameter><label>Output files</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>For c11 values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>c11_file=</keyword><value/><default>c11_file</default></property></file></parameter><parameter><label>For c13 values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>c13_file=</keyword><value/><default>c13_file</default></property></file></parameter><parameter><label>For c15 values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>c15_file=</keyword><value/><default>c15_file</default></property></file></parameter><parameter><label>For c33 values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>c33_file=</keyword><value/><default>c33_file</default></property></file></parameter><parameter><label>For c35 values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>c35_file=</keyword><value/><default>c35_file</default></property></file></parameter><parameter><label>For c44 values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>c44_file=</keyword><value/><default>c44_file</default></property></file></parameter><parameter><label>For c55 values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>c55_file=</keyword><value/><default>c55_file</default></property></file></parameter><parameter><label>For c66 values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>c66_file=</keyword><value/><default>c66_file</default></property></file></parameter><parameter><label>For density values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>rho_file=</keyword><value/><default>rho_file</default></property></file></parameter><parameter><label>For Q values</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>q_file=</keyword><value/><default>q_file</default></property></file></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>For c11 values</label><reference><property required="no"><keyword/><value/><default>c11_file</default></property></reference></parameter><parameter><label>For c13 values</label><reference><property required="no"><keyword/><value/><default>c13_file</default></property></reference></parameter><parameter><label>For c15 values</label><reference><property required="no"><keyword/><value/><default>c15_file</default></property></reference></parameter><parameter><label>For c33 values</label><reference><property required="no"><keyword/><value/><default>c33_file</default></property></reference></parameter><parameter><label>For c35 values</label><reference><property required="no"><keyword/><value/><default>c35_file</default></property></reference></parameter><parameter><label>For c44 values</label><reference><property required="no"><keyword/><value/><default>c44_file</default></property></reference></parameter><parameter><label>For c55 values</label><reference><property required="no"><keyword/><value/><default>c55_file</default></property></reference></parameter><parameter><label>For c66 values</label><reference><property required="no"><keyword/><value/><default>c66_file</default></property></reference></parameter><parameter><label>For density values</label><reference><property required="no"><keyword/><value/><default>rho_file</default></property></reference></parameter><parameter><label>For Q values</label><reference><property required="no"><keyword/><value/><default>q_file</default></property></reference></parameter></parameters></group></parameter><parameter><label>Type of parameters</label><enum><property required="no"><keyword>paramtype=</keyword><value/><default>1</default></property><option><label>Sayers parameters</label><value>0</value></option><option><label>Thomsen parameters</label><value>1</value></option></enum></parameter><parameter><label>Interface interpolation method</label><enum><property required="no"><keyword>method=</keyword><value/><default>linear</default></property><option><label>Linear interpolation</label><value>linear</value></option><option><label>Monotonic cubic interpolation</label><value>mono</value></option><option><label>Akima's cubic interpolation</label><value>akima</value></option><option><label>Cubic spline interpolation</label><value>spline</value></option></enum></parameter><parameter><label>Filename to output a sample of input dataset</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>tfile=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter><parameter><label>Echoes extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of interfaces</label>
+        <int min="0">
+          <property required="no">
+            <keyword>ninf=</keyword>
+            <value />
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>1st dimension (z) properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nz=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fz=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value />
+                    <default>10</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Depth z at which P and S-velocity is specified</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>z0=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>10</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>2nd dimension (x) properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nx=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fx=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dx=</keyword>
+                    <value />
+                    <default>10</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Distance x at which P and S-velocity is specified</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>x0=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>10</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Maximum number of points on interfaces</label>
+        <int>
+          <property required="no">
+            <keyword>npmax=</keyword>
+            <value />
+            <default>201</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Properties at each Distance x and Depth z</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>P-velocity</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>vp00=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>S-velocity</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>vs00=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>rho00=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Attenuation Q</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>q00=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1500</default>
+                  <default>2000</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Thomsen or Sayers parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Epsilon</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>eps00=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Delta</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>delta00=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gamma</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>gamma00=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Derivates of Q</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>X-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dqdx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dqdz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Derivates of density</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>X-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>drdx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>drdz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Derivates of P-velocity</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>X-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dvpdx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dvpdz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Derivates of S-velocity</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>X-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dvsdx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dvsdz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Derivates of epsilon</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>X-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dedx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-derivative with depth z</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dedz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Derivates of delta</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>X-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dddx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dddz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Derivates of gamma</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>X-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dgdx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-derivative</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dgdz=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Rotation angle(s) in each layer</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>phi00=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Output files</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>For c11 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c11_file=</keyword>
+                    <value />
+                    <default>c11_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c13 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c13_file=</keyword>
+                    <value />
+                    <default>c13_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c15 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c15_file=</keyword>
+                    <value />
+                    <default>c15_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c33 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c33_file=</keyword>
+                    <value />
+                    <default>c33_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c35 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c35_file=</keyword>
+                    <value />
+                    <default>c35_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c44 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c44_file=</keyword>
+                    <value />
+                    <default>c44_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c55 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c55_file=</keyword>
+                    <value />
+                    <default>c55_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c66 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c66_file=</keyword>
+                    <value />
+                    <default>c66_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For density values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>rho_file=</keyword>
+                    <value />
+                    <default>rho_file</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For Q values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>q_file=</keyword>
+                    <value />
+                    <default>q_file</default>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c11_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c13_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c15_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c33_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c35_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c44_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c55_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c66_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>rho_file</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>q_file</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Type of parameters</label>
+        <enum>
+          <property required="no">
+            <keyword>paramtype=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+          <option>
+            <label>Sayers parameters</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Thomsen parameters</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Interface interpolation method</label>
+        <enum>
+          <property required="no">
+            <keyword>method=</keyword>
+            <value />
+            <default>linear</default>
+          </property>
+          <option>
+            <label>Linear interpolation</label>
+            <value>linear</value>
+          </option>
+          <option>
+            <label>Monotonic cubic interpolation</label>
+            <value>mono</value>
+          </option>
+          <option>
+            <label>Akima's cubic interpolation</label>
+            <value>akima</value>
+          </option>
+          <option>
+            <label>Cubic spline interpolation</label>
+            <value>spline</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Filename to output a sample of input dataset</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU FX Decon</title>
   <description>Random noise attenuation by FX-Deconvolution</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU FX Decon</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Random noise attenuation by FX-Deconvolution
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
@@ -47,19 +48,19 @@
 
           <p>Random noise attenuation by FX-Deconvolution.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Dec 03, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 
           <p>Aug 03, 2010: reviewed by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -68,7 +69,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -86,31 +87,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-12-03T16:41:42.028784Z</created>
     <modified>2010-08-06T00:43:05.012146Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU FX Decon</title>
     <binary>sufxdecon</binary>
     <description>Random noise attenuation by FX-Deconvolution</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -129,12 +133,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU FX Decon</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Random noise attenuation by FX-Deconvolution
             <!-- end des -->
           </div>
@@ -142,7 +146,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
@@ -155,34 +159,34 @@
 
           <p>Random noise attenuation by FX-Deconvolution.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li><span class="label">Length of taper</span><br/>
-		The default value for this parameter is 0.1</li>
+                The default value for this parameter is 0.1</li>
 
               <li><span class="label">Minimum frequency to process in Hz</span><br/>
-		The default value for this parameter is 6.0</li>
+                The default value for this parameter is 6.0</li>
 
               <li><span class="label">Maximum frequency to process in Hz</span><br/>
-		The default value for this parameter is 0.6/(2*dt)</li>
+                The default value for this parameter is 0.6/(2*dt)</li>
 
               <li><span class="label">Time sampling interval</span><br/>
                 This parameter is used only if the time sampling is not set on
                 the file header. The default value is 0.004.</li>
 
               <li><span class="label">Time window length</span><br/>
-		The default value for this parameter is entire trace (minimum .3 for lower freqs)</li>
+                The default value for this parameter is entire trace (minimum .3 for lower freqs)</li>
 
               <li><span class="label">Number of traces in window </span><br/>
-		The default value for this parameter is 10</li>
+                The default value for this parameter is 10</li>
 
               <li><span class="label">Number of traces for filter</span><br/>
-		The default value for this parameter is 4</li>
+                The default value for this parameter is 4</li>
 
               <li><span class="label">Echoes information</span><br/></li>
 
@@ -192,49 +196,49 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>Each trace is transformed to the frequency domain.<br />             
         For each frequency, Wiener filtering, with unity prediction in 
         space, is used to predict the next sample.<br />                     
         At the end of the process, data is mapped back to t-x domain.</p>
-	
-	<p>This program accesses the following header keywords
+        
+        <p>This program accesses the following header keywords
           <ul>
             <li>Number of samples         </li> <!-- ns   -->
             <li>Sampling interval in microseconds</li> <!-- dt -->
-	    <li>Sample spacing for non-seismic data</li> <!-- d1 -->
+            <li>Sample spacing for non-seismic data</li> <!-- d1 -->
           </ul>
           </p>  
 
-	  <a name="ref" id="ref"></a>
+          <a name="ref" id="ref"></a>
           <h2>References</h2>
 
-	  <!-- List of references -->
+          <!-- List of references -->
           <ul>
 
             <li>Canales(1984):'Random noise reduction' 54th. SEGM</li>
 
             <li>Gulunay(1986):'FXDECON and complex Wiener Predicition<br />  
-                       filter' 56th. SEGM	</li>
+                       filter' 56th. SEGM       </li>
 
-	    <li>Galbraith(1991):'Random noise attenuation by F-X<br />    
+            <li>Galbraith(1991):'Random noise attenuation by F-X<br />    
                              prediction: a tutorial' 61th. SEGM</li>
 
           </ul>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Carlos E. Theodoro (10/07/97)</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -243,9 +247,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -267,7 +271,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -275,7 +280,7 @@
         <float>
           <property required="no">
             <keyword>taper=</keyword>
-            <value/>
+            <value />
             <default>0.1</default>
           </property>
         </float>
@@ -285,7 +290,7 @@
         <float>
           <property required="no">
             <keyword>fmin=</keyword>
-            <value/>
+            <value />
             <default>6.0</default>
           </property>
         </float>
@@ -295,22 +300,28 @@
         <float>
           <property required="no">
             <keyword>fmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
-      <parameter><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter><parameter>
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
         <label>Time window length</label>
         <float>
           <property required="no">
             <keyword>twlen=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -319,7 +330,7 @@
         <int>
           <property required="no">
             <keyword>ntrw=</keyword>
-            <value/>
+            <value />
             <default>10</default>
           </property>
         </int>
@@ -329,7 +340,7 @@
         <int>
           <property required="no">
             <keyword>ntrf=</keyword>
-            <value/>
+            <value />
             <default>4</default>
           </property>
         </int>
@@ -349,8 +360,8 @@
         <file directory="yes" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>tmpdir=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>

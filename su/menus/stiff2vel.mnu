@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Stiffness to Velocity</title>
   <description>Transforms 2D elastic stiffness to velocity</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Stiffness to Velocities</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Transforms 2D elastic stiffness to velocity
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Transform 2D elastic stiffness to velocity.</p>
+        Transform 2D elastic stiffness to velocity.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Sep 16, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Sep 16, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Sep 16, 2010<!-- end ver --></span>
+                <!-- begin ver -->Sep 16, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -59,30 +60,34 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
   <author>Davi Clemente</author>
   <email>davi.clemente@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-09-16T18:20:23.975535Z</created>
     <modified>2010-09-21T14:21:05.294009Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>Stiff to Velocity</title>
     <binary>stiff2vel</binary>
     <description>Transforms 2D elastic stifness to velocity</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -94,12 +99,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Stiff to Velocity</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Transforms 2D elastic stifness to velocity
             <!-- end des -->
           </div>
@@ -107,84 +112,84 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Transform 2D elastic stiffness to velocity.</p>
+        Transform 2D elastic stiffness to velocity.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">Number of x samples (2nd dimension)</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of z samples (1st dimension)</span></li>
-		<li class="group">
-			<span class="grouplabel">Input files</span>
-			<ul>
-				<li class="req">
-					<span class="reqlabel">File containing densities (x,z)</span></li>
-				<li class="req">
-					<span class="reqlabel">File containing c11 (x,z)</span></li>
-				<li class="req">
-					<span class="reqlabel">File containing c13 (x,z)</span></li>
-				<li class="req">
-					<span class="reqlabel">File containing c33 (x,z)</span></li>
-				<li class="req">
-					<span class="reqlabel">File containing c44 (x,z)</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Output files</span>
-			<ul>
-				<li>
-					<span class="label">File containing P-wave velocities</span></li>
-				<li>
-					<span class="label">File containing S-wave velocities</span></li>
-				<li>
-					<span class="label">File containing densities</span></li>
-				<li>
-					<span class="label">File containing Thomsen epsilon</span></li>
-				<li>
-					<span class="label">File containing Thomsen delta</span></li>
-			</ul>
-		</li>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of x samples (2nd dimension)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of z samples (1st dimension)</span></li>
+                <li class="group">
+                        <span class="grouplabel">Input files</span>
+                        <ul>
+                                <li class="req">
+                                        <span class="reqlabel">File containing densities (x,z)</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">File containing c11 (x,z)</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">File containing c13 (x,z)</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">File containing c33 (x,z)</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">File containing c44 (x,z)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Output files</span>
+                        <ul>
+                                <li>
+                                        <span class="label">File containing P-wave velocities</span></li>
+                                <li>
+                                        <span class="label">File containing S-wave velocities</span></li>
+                                <li>
+                                        <span class="label">File containing densities</span></li>
+                                <li>
+                                        <span class="label">File containing Thomsen epsilon</span></li>
+                                <li>
+                                        <span class="label">File containing Thomsen delta</span></li>
+                        </ul>
+                </li>
         <li><span class="label">Quiet mode</span></li>
-	</ul>
+        </ul>
 </div>
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <div>
-	 1. All quantities in MKS units.</div>
+         1. All quantities in MKS units.</div>
 <div>
-	 2. Isotropy implied by c11(x,z) = c33(x,z) = 0.</div>
+         2. Isotropy implied by c11(x,z) = c33(x,z) = 0.</div>
 <div>
-	 3. Vertical symmetry axis is assumed.</div>
+         3. Vertical symmetry axis is assumed.</div>
 <div>
-	 </div>
+         </div>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Aramco: Chris Liner 9/25/2005.<br />
-	(based on <strong>Velocity to Stiffnesses</strong>).</p>
+        Aramco: Chris Liner 9/25/2005.<br />
+        (based on <strong>Velocity to Stiffnesses</strong>).</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -193,8 +198,262 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0"><parameter><label>Number of x samples (2nd dimension)</label><int><property required="yes"><keyword>nx=</keyword><value/><default/></property></int></parameter><parameter><label>Number of z samples (1st dimension)</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property></int></parameter><parameter><label>Input Files</label><group instanciable="no" expand="yes"><template-instance><parameters default-selection="0"><parameter><label>File containing densities (x,z)</label><file directory="no" filter-name="" filter-pattern=""><property required="yes"><keyword>rho_file=</keyword><value/><default>rho.bin</default></property></file></parameter><parameter><label>File containing c11 (x,z)</label><file directory="no" filter-name="" filter-pattern=""><property required="yes"><keyword>c11_file=</keyword><value/><default>c11.bin</default></property></file></parameter><parameter><label>File containing c13 (x,z)</label><file directory="no" filter-name="" filter-pattern=""><property required="yes"><keyword>c13_file=</keyword><value/><default>c13.bin</default></property></file></parameter><parameter><label>File containing c44 (x,z)</label><file directory="no" filter-name="" filter-pattern=""><property required="yes"><keyword>c44_file=</keyword><value/><default>c44.bin</default></property></file></parameter><parameter><label>File containing c33 (x,z)</label><file directory="no" filter-name="" filter-pattern=""><property required="yes"><keyword>c33_file=</keyword><value/><default>c33.bin</default></property></file></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>File containing c11 (x,z)</label><reference><property required="no"><keyword/><value/><default>c11.bin</default></property></reference></parameter><parameter><label>File containing densities (x,z)</label><reference><property required="no"><keyword/><value/><default>rho.bin</default></property></reference></parameter><parameter><label>File containing c13 (x,z)</label><reference><property required="no"><keyword/><value/><default>c13.bin</default></property></reference></parameter><parameter><label>File containing c44 (x,z)</label><reference><property required="no"><keyword/><value/><default>c44.bin</default></property></reference></parameter><parameter><label>File containing c33 (x,z)</label><reference><property required="no"><keyword/><value/><default>c33.bin</default></property></reference></parameter></parameters></group></parameter><parameter><label>Output files</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>File containing P-wave velocities</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>vp_file=</keyword><value/><default>vp.bin</default></property></file></parameter><parameter><label>File containing S-wave velocities</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>vs_file=</keyword><value/><default>vs.bin</default></property></file></parameter><parameter><label>File containing densities</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>rho_file=</keyword><value/><default>rho.bin</default></property></file></parameter><parameter><label>File containing Thomsen epsilon</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>eps_file=</keyword><value/><default>eps.bin</default></property></file></parameter><parameter><label>File containing Thomsen delta</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>delta_file=</keyword><value/><default>delta.bin</default></property></file></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>File containing P-wave velocities</label><reference><property required="no"><keyword/><value/><default>vp.bin</default></property></reference></parameter><parameter><label>File containing S-wave velocities</label><reference><property required="no"><keyword/><value/><default>vs.bin</default></property></reference></parameter><parameter><label>File containing densities</label><reference><property required="no"><keyword/><value/><default>rho.bin</default></property></reference></parameter><parameter><label>File containing Thomsen epsilon</label><reference><property required="no"><keyword/><value/><default>eps.bin</default></property></reference></parameter><parameter><label>File containing Thomsen delta</label><reference><property required="no"><keyword/><value/><default>delta.bin</default></property></reference></parameter></parameters></group></parameter><parameter><label>Quiet mode</label><flag><property required="no"><keyword>verbose=0</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of x samples (2nd dimension)</label>
+        <int>
+          <property required="yes">
+            <keyword>nx=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of z samples (1st dimension)</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Input Files</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>File containing densities (x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>rho_file=</keyword>
+                    <value />
+                    <default>rho.bin</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing c11 (x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>c11_file=</keyword>
+                    <value />
+                    <default>c11.bin</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing c13 (x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>c13_file=</keyword>
+                    <value />
+                    <default>c13.bin</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing c44 (x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>c44_file=</keyword>
+                    <value />
+                    <default>c44.bin</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing c33 (x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>c33_file=</keyword>
+                    <value />
+                    <default>c33.bin</default>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c11.bin</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>rho.bin</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c13.bin</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c44.bin</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>c33.bin</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output files</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>File containing P-wave velocities</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>vp_file=</keyword>
+                    <value />
+                    <default>vp.bin</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing S-wave velocities</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>vs_file=</keyword>
+                    <value />
+                    <default>vs.bin</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing densities</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>rho_file=</keyword>
+                    <value />
+                    <default>rho.bin</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing Thomsen epsilon</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>eps_file=</keyword>
+                    <value />
+                    <default>eps.bin</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing Thomsen delta</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>delta_file=</keyword>
+                    <value />
+                    <default>delta.bin</default>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>vp.bin</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>vs.bin</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>rho.bin</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>eps.bin</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>delta.bin</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Quiet mode</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

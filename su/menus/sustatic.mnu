@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Static</title>
   <description>Elevation static corrections</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Static</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Elevation static corrections
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Gain, NMO, Stack and Standard Processes | Seismic Unix
        <!-- end cat -->
       </div>
@@ -45,21 +46,21 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Elevation static corrections, apply corrections from	
-	     headers.</p>
+          <p>Elevation static corrections, apply corrections from       
+             headers.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
-	  <a name="credits" id="credits"></a>
+          <!-- begin par --><!-- end par -->
+            
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Nov 11, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  <p>Jul 26, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Jul 26, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -68,7 +69,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
 
             <li><a href="#credits">Credits</a></li>
@@ -87,31 +88,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-11-11T13:26:25.681836Z</created>
     <modified>2010-08-06T00:43:08.004032Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Static</title>
     <binary>sustatic</binary>
     <description>Elevation static corrections</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -130,12 +134,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Static</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Elevation static corrections
             <!-- end des -->
           </div>
@@ -143,7 +147,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Gain, NMO, Stack and Standard Processes | Seismic Unix
        <!-- end cat -->
       </div>
@@ -156,94 +160,94 @@
 
           <p>Elevation static corrections, apply corrections from headers.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li><span class="label">Weathering velocity</span><br/></li>
 
               <li><span class="label">Subweathering velocity</span><br/></li>
 
               <li><span class="label">Statics</span><br/>
-		<ul>
-		<li>Calculated statics</li>
-		<li>Read statics from header</li>
-		</ul></li>
+                <ul>
+                <li>Calculated statics</li>
+                <li>Read statics from header</li>
+                </ul></li>
 
               <li><span class="label">Sign</span><br/>
-		<ul>
-		<li>Subtract statics from traces(up shift)</li>
-		<li>Default statics</li>
-		</ul></li>
+                <ul>
+                <li>Subtract statics from traces(up shift)</li>
+                <li>Default statics</li>
+                </ul></li>
 
             </ul>
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>For option <b>Read statics from header</b> in parameter <b>Statics</b>, statics calculation is not performed, statics correction  
-  	is applied to the data by reading statics (in ms) from the header.</p>	
+        is applied to the data by reading statics (in ms) from the header.</p>  
 
- 	<p>For option <b>Calculated statics</b> in <b>Statics</b>, field statics are calculated, and				
- 	input field sut is assumed measured in ms.</p>		
+        <p>For option <b>Calculated statics</b> in <b>Statics</b>, field statics are calculated, and                            
+        input field sut is assumed measured in ms.</p>          
 
- 	<p>output field sstat = 10^scalel*(sdel - selev + sdepth)/swevel<br />	
- 	output field gstat = sstat - sut/1000.<br />
- 	output field tstat = sstat + gstat + 10^scalel*(selev - gelev)/wevel</p>
+        <p>output field sstat = 10^scalel*(sdel - selev + sdepth)/swevel<br />  
+        output field gstat = sstat - sut/1000.<br />
+        output field tstat = sstat + gstat + 10^scalel*(selev - gelev)/wevel</p>
 
           <p>This program access the following header keywords
           <ul>
             <li>Number of samples         </li> <!-- ns   -->
             <li>Sampling interval in microseconds</li> <!-- dt -->
-	    <li>Delay recording time in ms</li> <!-- delrt -->
-	    <li>Receiver group elevation from sea level</li> <!-- gelev -->
-	    <li>Source elevation from sea level</li> <!-- selev -->
-	    <li>Source depth (positive)</li> <!-- sdepth -->
-	    <li>Datum elevation at receiver group</li> <!-- gdel -->
-	    <li>Datum elevation at source </li> <!-- sdel -->
-	    <li>Subweathering velocity</li> <!-- swevel -->
-	    <li>Uphole time at source</li> <!-- sut -->
-	    <li>Scale factor for source/receiver elevations, datum and water depth</li> <!-- scalel -->
-	    <li>Field record number</li> <!-- fldr -->
-	    <li>Trace number sequence within field record </li> <!-- tracf -->
+            <li>Delay recording time in ms</li> <!-- delrt -->
+            <li>Receiver group elevation from sea level</li> <!-- gelev -->
+            <li>Source elevation from sea level</li> <!-- selev -->
+            <li>Source depth (positive)</li> <!-- sdepth -->
+            <li>Datum elevation at receiver group</li> <!-- gdel -->
+            <li>Datum elevation at source </li> <!-- sdel -->
+            <li>Subweathering velocity</li> <!-- swevel -->
+            <li>Uphole time at source</li> <!-- sut -->
+            <li>Scale factor for source/receiver elevations, datum and water depth</li> <!-- scalel -->
+            <li>Field record number</li> <!-- fldr -->
+            <li>Trace number sequence within field record </li> <!-- tracf -->
           </ul>
           </p>
 
-	  <p>This program modified the following header keywords
-	  <ul>
-	    <li>Source static correction</li> <!-- sstat -->
-	    <li>Group static correction</li> <!-- gstat -->
-	    <li>Total static applied</li> <!-- tstat -->
-	  </ul>
-	  </p>
+          <p>This program modified the following header keywords
+          <ul>
+            <li>Source static correction</li> <!-- sstat -->
+            <li>Group static correction</li> <!-- gstat -->
+            <li>Total static applied</li> <!-- tstat -->
+          </ul>
+          </p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Jamie Burns</p>
 
-	<p>CWP: Modified by Mohammed Alfaraj, 11/10/1992, for reading
-	     statics from headers and including sign (+-) option</p>
+        <p>CWP: Modified by Mohammed Alfaraj, 11/10/1992, for reading
+             statics from headers and including sign (+-) option</p>
 
       <p>CWP: Modified by Timo Tjan, 29 June 1995, to include input of
            source and receiver statics from files.</p> 
 
-	<p>modified by Thomas Pratt, USGS, Feb, 2000 to read statics from
- 	     the output files of suresstat</p>
+        <p>modified by Thomas Pratt, USGS, Feb, 2000 to read statics from
+             the output files of suresstat</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -252,9 +256,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -274,7 +278,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -282,8 +287,8 @@
         <float>
           <property required="no">
             <keyword>v0=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -292,8 +297,8 @@
         <float>
           <property required="no">
             <keyword>v1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -302,8 +307,8 @@
         <enum>
           <property required="no">
             <keyword>hdrs=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
           <option>
             <label>Calculated statics</label>
@@ -320,8 +325,8 @@
         <enum>
           <property required="no">
             <keyword>sign=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
           <option>
             <label>Subtract statics from traces(up shift)</label>

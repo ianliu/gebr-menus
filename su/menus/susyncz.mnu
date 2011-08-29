@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Synth CZ</title>
   <description>Synthetic seismograms for piecewise constant V(Z) function</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Synth CZ</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Synthetic seismograms for piecewise constant V(Z) function
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Synthetic seismograms for piecewise constant V(Z) function.<br/> True amplitude (primaries only) modeling for 2.5D.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>May 05, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->May 05, 2010<!-- end ver --></span>
+                <!-- begin ver -->May 05, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-05T17:39:39.937370Z</created>
     <modified>2010-08-06T00:43:08.245087Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Synth CZ</title>
     <binary>susyncz</binary>
     <description>Synthetic seismograms for piecewise constant V(Z) function</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +130,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Synth CZ</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Synthetic seismograms for piecewise constant V(Z) function
             <!-- end des -->
           </div>
@@ -138,7 +143,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,28 +154,28 @@
 
           <p>Synthetic seismograms for piecewise constant V(Z) function.<br/> True amplitude (primaries only) modeling for 2.5D.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="group"><span class="grouplabel">Interface & surface properties</span>
 
               <ul>
               <li><span class="label">Number of interfaces</span><br/>
-		Not including upper surface.</li>
+                Not including upper surface.</li>
 
               <li><span class="label">Dips of interfaces in degrees</span><br/>
-		Default value for this parameter is 5*i (i=1,2,3,4).</li>
+                Default value for this parameter is 5*i (i=1,2,3,4).</li>
 
               <li><span class="label">Z-intercepts of interfaces</span><br/>
-		Intercepts at x=0<br/>
-		Default value for this parameter is 100*i (i=1,2,3,4).</li>
+                Intercepts at x=0<br/>
+                Default value for this parameter is 100*i (i=1,2,3,4).</li>
 
               <li><span class="label">Velocities below surface & interfaces</span><br/>
-		Default value for this parameter is 1500 + 500*i (i=0,1,2,3,4).</li>
+                Default value for this parameter is 1500 + 500*i (i=0,1,2,3,4).</li>
 
               <li><span class="label">Densities below surface & interfaces</span></li>
 
@@ -192,44 +197,44 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
-	  <a name="details" id="details"></a>
+          <!-- end par -->
+            
+          <a name="details" id="details"></a>
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>Data for Brian Sumner's CZ suite.</p>					
+          <p>Data for Brian Sumner's CZ suite.</p>                                      
 
- 	<p>The program produces zero-offset data over dipping reflectors.</p>	
+        <p>The program produces zero-offset data over dipping reflectors.</p>   
 
- 	<p>In the original fortran code, some arrays had the index interval 1.<br/>
-	<b>Number of interfaces</b>, as a natural way to index over the subsurface reflectors.</p>
+        <p>In the original fortran code, some arrays had the index interval 1.<br/>
+        <b>Number of interfaces</b>, as a natural way to index over the subsurface reflectors.</p>
 
-	<p>This indexing was preserved in this C translation.<br/>	
- 	Consequently, some arrays in the code do not use the 0 "slot".</p>
+        <p>This indexing was preserved in this C translation.<br/>      
+        Consequently, some arrays in the code do not use the 0 "slot".</p>
 
-	<p>This program set the following header keywords:
- 	 <ul>
-	      <li>Trace number sequence within line,</li> <!-- tracl -->
-	      <li>Number of samples,</li>  <!-- ns -->
-	      <li>Sampling interval in microseconds,</li> <!-- dt -->
-	      <li>Delay recording time in ms,</li> <!-- delrt -->
-	      <li>Number of traces,</li> <!-- ntr -->
-	      <li>X source coordinate,</li> <!-- sx -->
-	      <li>X group coordinate.</li> <!-- gx -->
-	  </ul>
-	</p>
+        <p>This program set the following header keywords:
+         <ul>
+              <li>Trace number sequence within line,</li> <!-- tracl -->
+              <li>Number of samples,</li>  <!-- ns -->
+              <li>Sampling interval in microseconds,</li> <!-- dt -->
+              <li>Delay recording time in ms,</li> <!-- delrt -->
+              <li>Number of traces,</li> <!-- ntr -->
+              <li>X source coordinate,</li> <!-- sx -->
+              <li>X group coordinate.</li> <!-- gx -->
+          </ul>
+        </p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Brian Sumner, 1983, 1985, Fortran design and code.<br/> 
-      	     CWP: Stockwell & Cohen, 1995, translation to C.</p>
+             CWP: Stockwell & Cohen, 1995, translation to C.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -238,9 +243,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -253,7 +258,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -261,131 +266,135 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Interface &amp; surface properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of interfaces</label>
+                <int>
+                  <property required="no">
+                    <keyword>ninf=</keyword>
+                    <value />
+                    <default>4</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Dips of interfaces in degrees</label>
+                <float>
+                  <property required="no">
+                    <keyword>dip=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-intercepts of interfaces</label>
+                <float>
+                  <property required="no">
+                    <keyword>zint=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Velocities below surface &amp; interfaces</label>
+                <float>
+                  <property required="no">
+                    <keyword>v=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Densities below surface &amp; interfaces</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>rho=</keyword>
+                    <value />
+                    <default>1</default>
+                    <default>1</default>
+                    <default>1</default>
+                    <default>1</default>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of interfaces</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>ninf=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>4</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Dips of interfaces in degrees</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dip=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z-intercepts of interfaces</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>zint=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Velocities below surface &amp; interfaces</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>v=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Densities below surface &amp; interfaces</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>rho=</keyword>
-                  <value/>
-                  <default>1</default>
-                  <default>1</default>
-                  <default>1</default>
-                  <default>1</default>
-                  <default>1</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Number of interfaces</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>ninf=</keyword>
-                  <value/>
-                  <default>4</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Dips of interfaces in degrees</label>
-              <float>
-                <property required="no">
-                  <keyword>dip=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z-intercepts of interfaces</label>
-              <float>
-                <property required="no">
-                  <keyword>zint=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Velocities below surface &amp; interfaces</label>
-              <float>
-                <property required="no">
-                  <keyword>v=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Densities below surface &amp; interfaces</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>rho=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>1</default>
                   <default>1</default>
                   <default>1</default>
                   <default>1</default>
                   <default>1</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Number of (identical) lines</label>
         <int>
           <property required="no">
             <keyword>nline=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -395,7 +404,7 @@
         <int>
           <property required="no">
             <keyword>ntr=</keyword>
-            <value/>
+            <value />
             <default>32</default>
           </property>
         </int>
@@ -405,7 +414,7 @@
         <float>
           <property required="no">
             <keyword>dx=</keyword>
-            <value/>
+            <value />
             <default>10</default>
           </property>
         </float>
@@ -415,7 +424,7 @@
         <float>
           <property required="no">
             <keyword>tdelay=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
         </float>
@@ -425,7 +434,7 @@
         <float>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
+            <value />
             <default>0.004</default>
           </property>
         </float>
@@ -435,7 +444,7 @@
         <int>
           <property required="no">
             <keyword>nt=</keyword>
-            <value/>
+            <value />
             <default>128</default>
           </property>
         </int>

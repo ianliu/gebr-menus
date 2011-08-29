@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.6">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Cell Auto</title>
   <description>Two-dimensional cellular automata</description>
-  <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
+  <help>
+    <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Cell Auto</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Two-dimensional cellular automata
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Two-dimensional cellular automata.</p>
+        Two-dimensional cellular automata.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Jan 26, 2011: written by Gabriel dos Santos Sobral &lt;sobral@gebrproject.com&gt;</p>
+        Jan 26, 2011: written by Gabriel dos Santos Sobral &lt;sobral@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.10.0 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
-		<!-- begin ver -->Jan 26, 2011<!-- end ver --></span>
+                <!-- begin ver -->Jan 26, 2011<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -58,30 +59,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Gabriel dos Santos Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2011-01-26T12:02:04.162366Z</created>
     <modified>2011-01-26T12:42:41.225038Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>Cell Auto</title>
     <binary>cellauto</binary>
     <description>Two-dimensional cellular automata</description>
-    <help><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
+    <help>
+      <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
 
@@ -93,12 +98,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Cell Auto</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Two-dimensional cellular automata
             <!-- end des -->
           </div>
@@ -106,91 +111,91 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Two-dimensional cellular automata.</p>
+        Two-dimensional cellular automata.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Number of samples in first and second dimensions</span></li>
-		<li>
-			<span class="label">CA Rule (Wolfram classification)</span></li>
-		<li>
-			<span class="label">Random number seed</span><br />
-			Defaul is from clock</li>
-		<li class="group">
-			<span class="grouplabel">Initial Conditions</span>
-			<ul>
-				<li>
-					<span class="label">Initial condition (t=0)</span>
-					<ul>
-						<li>
-							Centered unit value</li>
-						<li>
-							Multiple random units</li>
-					</ul>
-				</li>
-				<li>
-					<span class="label">Number of random units</span><br />
-					Only if <strong>Initial condition</strong> = <strong>Multiple random Units</strong></li>
-				<li>
-					<span class="label">Random units position</span><br />
-					Only if <strong>Initial condition</strong> = <strong>Multiple random Units</strong>
-					<ul>
-						<li>
-							at t=0</li>
-						<li>
-							at random t</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Fill Options</span>
-			<ul>
-				<li>
-					<span class="label">Fill image</span><br />
-					If disable, don't fill image</li>
-				<li>
-					<span class="label">Value to fill zero values</span></li>
-				<li>
-					<span class="label">Value to fill non-zero values</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Echoes extra information</span><br />
-			If enables, the output echos 'porosity' of the CA in bottom half of image</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Number of samples in first and second dimensions</span></li>
+                <li>
+                        <span class="label">CA Rule (Wolfram classification)</span></li>
+                <li>
+                        <span class="label">Random number seed</span><br />
+                        Defaul is from clock</li>
+                <li class="group">
+                        <span class="grouplabel">Initial Conditions</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Initial condition (t=0)</span>
+                                        <ul>
+                                                <li>
+                                                        Centered unit value</li>
+                                                <li>
+                                                        Multiple random units</li>
+                                        </ul>
+                                </li>
+                                <li>
+                                        <span class="label">Number of random units</span><br />
+                                        Only if <strong>Initial condition</strong> = <strong>Multiple random Units</strong></li>
+                                <li>
+                                        <span class="label">Random units position</span><br />
+                                        Only if <strong>Initial condition</strong> = <strong>Multiple random Units</strong>
+                                        <ul>
+                                                <li>
+                                                        at t=0</li>
+                                                <li>
+                                                        at random t</li>
+                                        </ul>
+                                </li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Fill Options</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Fill image</span><br />
+                                        If disable, don't fill image</li>
+                                <li>
+                                        <span class="label">Value to fill zero values</span></li>
+                                <li>
+                                        <span class="label">Value to fill non-zero values</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Echoes extra information</span><br />
+                        If enables, the output echos 'porosity' of the CA in bottom half of image</li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	This program generates a select set of Wolframs fundamental cellular automata. This may be useful for constructing rough, vuggy wavespeed<span class="Apple-tab-span" style="white-space:pre"> </span>profiles. The numbering scheme follows Stephen Wolfram's.</p>
+        This program generates a select set of Wolframs fundamental cellular automata. This may be useful for constructing rough, vuggy wavespeed<span class="Apple-tab-span" style="white-space:pre"> </span>profiles. The numbering scheme follows Stephen Wolfram's.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	UHouston: Chris Liner</p>
+        UHouston: Chris Liner</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.10.0 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -198,7 +203,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
       <parameter>
@@ -206,8 +212,8 @@
         <int>
           <property required="no">
             <keyword>n1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -216,7 +222,7 @@
         <enum>
           <property required="no">
             <keyword>rule=</keyword>
-            <value/>
+            <value />
             <default>30</default>
           </property>
           <option>
@@ -306,8 +312,8 @@
         <int>
           <property required="no">
             <keyword>seed=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -316,15 +322,12 @@
         <group instanciable="no" expand="no">
           <template-instance>
             <parameters default-selection="0">
-              
-              
-              
-            <parameter>
+              <parameter>
                 <label>Initial condition (t=0)</label>
                 <enum>
                   <property required="no">
                     <keyword>ic=</keyword>
-                    <value/>
+                    <value />
                     <default>1</default>
                   </property>
                   <option>
@@ -336,21 +339,23 @@
                     <value>2</value>
                   </option>
                 </enum>
-              </parameter><parameter>
+              </parameter>
+              <parameter>
                 <label>Number of random units</label>
                 <int>
                   <property required="no">
                     <keyword>nc=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </int>
-              </parameter><parameter>
+              </parameter>
+              <parameter>
                 <label>Random units position</label>
                 <enum>
                   <property required="no">
                     <keyword>tc=</keyword>
-                    <value/>
+                    <value />
                     <default>1</default>
                   </property>
                   <option>
@@ -362,22 +367,41 @@
                     <value>2</value>
                   </option>
                 </enum>
-              </parameter></parameters>
+              </parameter>
+            </parameters>
           </template-instance>
           <parameters default-selection="0">
-            
-            
-            
-          <parameter>
-                <label>Initial condition (t=0)</label>
-                
-              <reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter><parameter>
-                <label>Number of random units</label>
-                
-              <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
-                <label>Random units position</label>
-                
-              <reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter></parameters>
+            <parameter>
+              <label>Initial condition (t=0)</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label>Number of random units</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label>Random units position</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
         </group>
       </parameter>
       <parameter>
@@ -385,10 +409,7 @@
         <group instanciable="no" expand="no">
           <template-instance>
             <parameters default-selection="0">
-              
-              
-              
-            <parameter>
+              <parameter>
                 <label>Fill image</label>
                 <flag>
                   <property required="no">
@@ -397,40 +418,61 @@
                     <default>off</default>
                   </property>
                 </flag>
-              </parameter><parameter>
+              </parameter>
+              <parameter>
                 <label>Value to fill zero values</label>
                 <int>
                   <property required="no">
                     <keyword>f0=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </int>
-              </parameter><parameter>
+              </parameter>
+              <parameter>
                 <label>Value to fill non-zero values</label>
                 <int>
                   <property required="no">
                     <keyword>f1=</keyword>
-                    <value/>
-                    <default/>
+                    <value />
+                    <default />
                   </property>
                 </int>
-              </parameter></parameters>
+              </parameter>
+            </parameters>
           </template-instance>
           <parameters default-selection="0">
-            
-            
-            
-          <parameter>
-                <label>Fill image</label>
-                
-              <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter>
-                <label>Value to fill zero values</label>
-                
-              <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
-                <label>Value to fill non-zero values</label>
-                
-              <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters>
+            <parameter>
+              <label>Fill image</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label>Value to fill zero values</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label>Value to fill non-zero values</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
         </group>
       </parameter>
       <parameter>

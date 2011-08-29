@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>UTM Convert</title>
   <description>Convert longitude and latitude to UTM, and vice versa</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">UTM Convert</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Convert longitude and latitude to UTM, and vice versa
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Convert longitude and latitude to UTM, and vice versa.</p>
+        Convert longitude and latitude to UTM, and vice versa.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Sep 13, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Sep 13, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Sep 13, 2010<!-- end ver --></span>
+                <!-- begin ver -->Sep 13, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -58,30 +59,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-09-13T14:41:41.457696Z</created>
     <modified>2010-09-16T16:43:40.322922Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Import/Export</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>UTM Convert</title>
     <binary>utmconv</binary>
     <description>Convert longitude and latitude to UTM, and vice versa</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -93,12 +98,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">UTM Convert</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Convert longitude and latitude to UTM, and vice versa
             <!-- end des -->
           </div>
@@ -106,155 +111,155 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Convert longitude and latitude to UTM, and vice versa.</p>
+        Convert longitude and latitude to UTM, and vice versa.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<ul>
-		<li class="group">
-			<span class="grouplabel">Ellipsoid properties</span>
-			<ul>
-				<li>
-					<span class="label">Reference ellipsoid index</span><br/>An ellipsoid may be specified by its semi-major axis a and its flattening <strong>User-specified flattening of ellipsoid</strong>, or one of the following ellipsoids may be selected by parameter <strong>Reference ellipsoid index</strong> (semi-major axes in meters):
-							<ul>
-	<li>Sphere with radius of 6371000 m                </li>
-	<li>Airy 1830                                      </li>
-	<li>Australian National 1965                       </li>
-	<li>Bessel 1841 (Ethiopia, Indonesia, Japan, Korea)</li>
-	<li>Bessel 1841 (Namibia)                          </li>
-	<li>Clarke 1866                                    </li>
-	<li>Clarke 1880                                    </li>
-	<li>Everest (Brunei, E. Malaysia)                  </li>
-	<li>Everest (India 1830)                           </li>
-	<li>Everest (India 1956)                           </li>
-	<li>Everest (Pakistan)                             </li>
-	<li>Everest (W. Malaysia, Singapore 1948)          </li>
-	<li>Everest (W. Malaysia 1969)                     </li>
-	<li>Geodetic Reference System 1980 (GRS 1980)      </li>
-	<li>Helmert 1906                                   </li>
-	<li>Hough 1960                                     </li>
-	<li>Indonesian 1974                                </li>
-	<li>International 1924 / Hayford 1909              </li>
-	<li>Krassovsky 1940                                </li>
-	<li>Modified Airy                                  </li>
-	<li>Modified Fischer 1960                          </li>
-	<li>South American 1969                            </li>
-	<li>World Geodetic System 1972 (WGS 1972)          </li>
-	<li>World Geodetic System 1984 (WGS 1984) / NAD 1983</li>
-		</ul></li>
-				<li>
-					<span class="label">User-specified semi-major axis of ellipsoid</span><br />
-					Default is set from <strong>Reference ellipsoid index</strong>.</li>
-				<li>
-					<span class="label">User-specified flattening of ellipsoid</span><br />
-					Default is set from <strong>Reference ellipsoid index</strong>.</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Output number format</span><br />
-			 Print style for one float (based on C).</li>
-		<li>
-			<span class="label">Use UTM letter designator for latitude/Northing</span></li>
-		<li>
-			<span class="label">Convert</span>
-			<ul>
-				<li>Latitude and longitude to UTM</li>
-				<li>UTM to latitude and longitude</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Echo parameters and number of converted coords</span></li>
-		<li>
-			<span class="label">Central meridian for TM projection in degrees</span><br />
-			 Default uses the 60 standard UTM longitude zones.</li>
-		<li>
-			<span class="label">False Easting</span><br />
-			 Default is UTM.</li>
-		<li>
-			<span class="label">False Northing, southern hemisphere</span><br />
-			 Default is UTM.</li>
-		<li>
-			<span class="label">False Northing, northern hemisphere</span><br />
-			 Default is UTM.</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+        <ul>
+                <li class="group">
+                        <span class="grouplabel">Ellipsoid properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Reference ellipsoid index</span><br/>An ellipsoid may be specified by its semi-major axis a and its flattening <strong>User-specified flattening of ellipsoid</strong>, or one of the following ellipsoids may be selected by parameter <strong>Reference ellipsoid index</strong> (semi-major axes in meters):
+                                                        <ul>
+        <li>Sphere with radius of 6371000 m                </li>
+        <li>Airy 1830                                      </li>
+        <li>Australian National 1965                       </li>
+        <li>Bessel 1841 (Ethiopia, Indonesia, Japan, Korea)</li>
+        <li>Bessel 1841 (Namibia)                          </li>
+        <li>Clarke 1866                                    </li>
+        <li>Clarke 1880                                    </li>
+        <li>Everest (Brunei, E. Malaysia)                  </li>
+        <li>Everest (India 1830)                           </li>
+        <li>Everest (India 1956)                           </li>
+        <li>Everest (Pakistan)                             </li>
+        <li>Everest (W. Malaysia, Singapore 1948)          </li>
+        <li>Everest (W. Malaysia 1969)                     </li>
+        <li>Geodetic Reference System 1980 (GRS 1980)      </li>
+        <li>Helmert 1906                                   </li>
+        <li>Hough 1960                                     </li>
+        <li>Indonesian 1974                                </li>
+        <li>International 1924 / Hayford 1909              </li>
+        <li>Krassovsky 1940                                </li>
+        <li>Modified Airy                                  </li>
+        <li>Modified Fischer 1960                          </li>
+        <li>South American 1969                            </li>
+        <li>World Geodetic System 1972 (WGS 1972)          </li>
+        <li>World Geodetic System 1984 (WGS 1984) / NAD 1983</li>
+                </ul></li>
+                                <li>
+                                        <span class="label">User-specified semi-major axis of ellipsoid</span><br />
+                                        Default is set from <strong>Reference ellipsoid index</strong>.</li>
+                                <li>
+                                        <span class="label">User-specified flattening of ellipsoid</span><br />
+                                        Default is set from <strong>Reference ellipsoid index</strong>.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Output number format</span><br />
+                         Print style for one float (based on C).</li>
+                <li>
+                        <span class="label">Use UTM letter designator for latitude/Northing</span></li>
+                <li>
+                        <span class="label">Convert</span>
+                        <ul>
+                                <li>Latitude and longitude to UTM</li>
+                                <li>UTM to latitude and longitude</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Echo parameters and number of converted coords</span></li>
+                <li>
+                        <span class="label">Central meridian for TM projection in degrees</span><br />
+                         Default uses the 60 standard UTM longitude zones.</li>
+                <li>
+                        <span class="label">False Easting</span><br />
+                         Default is UTM.</li>
+                <li>
+                        <span class="label">False Northing, southern hemisphere</span><br />
+                         Default is UTM.</li>
+                <li>
+                        <span class="label">False Northing, northern hemisphere</span><br />
+                         Default is UTM.</li>
+        </ul>
 </div>
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Universal Transverse Mercator (UTM) coordinates are defined between latitudes 80S (-80) and 84N (84).<br />
-	Longitude values must be between -180 degrees (west) and 179.999... degrees (east).</p>
-	<p>Input and output is in ASCII format. For a conversion from longitude and latitude to UTM, input is a two-column table of longitude and latitude in decimal degrees. Output is a three-column table of     
+        Universal Transverse Mercator (UTM) coordinates are defined between latitudes 80S (-80) and 84N (84).<br />
+        Longitude values must be between -180 degrees (west) and 179.999... degrees (east).</p>
+        <p>Input and output is in ASCII format. For a conversion from longitude and latitude to UTM, input is a two-column table of longitude and latitude in decimal degrees. Output is a three-column table of     
     UTM Easting, UTM Northing, and UTM zone. The zone is given either  
     by the zone number only (default, negative on southern hemisphere) 
     or by the positive zone number plus a letter designator.</p>
-	
+        
 <p>
-	<br />
-	<u>UTM grid:</u><br />
-	<br />
-	The Universal Transverse Mercator (UTM) system is a world wide coordinate system defined between 80S and 84N. <br />
-	It divides the Earth into 60 six-degree zones. Zone number 1 has its central meridian at 177W (-177 degrees), and numbers increase eastward.</p>
+        <br />
+        <u>UTM grid:</u><br />
+        <br />
+        The Universal Transverse Mercator (UTM) system is a world wide coordinate system defined between 80S and 84N. <br />
+        It divides the Earth into 60 six-degree zones. Zone number 1 has its central meridian at 177W (-177 degrees), and numbers increase eastward.</p>
 <p>
-	Within each zone, an Easting of 500,000 m is assigned to its central meridian to avoid negative coordinates. <br />
-	On the northern hemisphere, Northings start at 0 m at the equator and increase northward.<br />
-	On the southern hemisphere a false Northing of 10,000,000 m is applied, i.e. Northings start at 10,000,000 m at the equator and decrease southward.<br />
-	Letters are sometimes used to identify different zones of latitude. The letters C-M indicate zones on the southern and the letters N-X zones on the northern hemisphere.</p>
-	<br />
-	<p>This program accesses and modifies the following header keywords:
+        Within each zone, an Easting of 500,000 m is assigned to its central meridian to avoid negative coordinates. <br />
+        On the northern hemisphere, Northings start at 0 m at the equator and increase northward.<br />
+        On the southern hemisphere a false Northing of 10,000,000 m is applied, i.e. Northings start at 10,000,000 m at the equator and decrease southward.<br />
+        Letters are sometimes used to identify different zones of latitude. The letters C-M indicate zones on the southern and the letters N-X zones on the northern hemisphere.</p>
+        <br />
+        <p>This program accesses and modifies the following header keywords:
 <ul>
-	<li>
-		X source coordinate,</li>
-	<li>
-		Y source coordinate,</li>
-	<li>
-		X group coordinate,</li>
-	<li>
-		Y group coordinate,</li>
-	<li>
-		Scale factor for source/receiver coordinates,</li>
-	<li>
-		 Coordinate units code.</li>
+        <li>
+                X source coordinate,</li>
+        <li>
+                Y source coordinate,</li>
+        <li>
+                X group coordinate,</li>
+        <li>
+                Y group coordinate,</li>
+        <li>
+                Scale factor for source/receiver coordinates,</li>
+        <li>
+                 Coordinate units code.</li>
 </ul></p>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <!-- List of references --><ul>
-	<li>
-		NIMA (2000). Department of Defense World Geodetic System 1984 - its definition and relationships with local geodetic systems.<br />
-		Technical Report TR8350.2. National Imagery and Mapping Agency, 
-		<div>
-			Geodesy and Geophysics Department, St. Louis, MO. 3rd edition.</div>
-	</li>
-	<li>
-		J. P. Snyder (1987). Map Projections - A Working Manual. <br />
-		U.S. Geological Survey Professional Paper 1395, 383 pages.<br />
-		U.S. Government Printing Office.</li>
+        <li>
+                NIMA (2000). Department of Defense World Geodetic System 1984 - its definition and relationships with local geodetic systems.<br />
+                Technical Report TR8350.2. National Imagery and Mapping Agency, 
+                <div>
+                        Geodesy and Geophysics Department, St. Louis, MO. 3rd edition.</div>
+        </li>
+        <li>
+                J. P. Snyder (1987). Map Projections - A Working Manual. <br />
+                U.S. Geological Survey Professional Paper 1395, 383 pages.<br />
+                U.S. Government Printing Office.</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	 Nils Maercklin, RISSC, University of Naples, Italy, March 2007.</p>
+         Nils Maercklin, RISSC, University of Naples, Italy, March 2007.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	References</a></li><li><a href="#header_4">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -264,18 +269,265 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
-      
-      
-      
-    <parameter><label>Ellipsoid properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
-        <label>Reference ellipsoid index</label>
-        
-      <enum><property required="no"><keyword>idx=</keyword><value/><default>23</default></property><option><label>Sphere with radius of 6371000 m</label><value>0</value></option><option><label>Airy 1830</label><value>1</value></option><option><label>Australian National 1965</label><value>2</value></option><option><label>Bessel 1841 (Ethiopia, Indonesia, Japan, Korea)</label><value>3</value></option><option><label>Bessel 1841 (Namibia)</label><value>4</value></option><option><label>Clarke 1866</label><value>5</value></option><option><label>Clarke 1880</label><value>6</value></option><option><label>Everest (Brunei, E. Malaysia)</label><value>7</value></option><option><label>Everest (India 1830)</label><value>8</value></option><option><label>Everest (India 1956)</label><value>9</value></option><option><label>Everest (Pakistan)</label><value>10</value></option><option><label>Everest (W. Malaysia, Singapore 1948)</label><value>11</value></option><option><label>Everest (W. Malaysia 1969)</label><value>12</value></option><option><label>Geodetic Reference System 1980 (GRS 1980)</label><value>13</value></option><option><label>Helmert 1906</label><value>14</value></option><option><label>Hough 1960</label><value>15</value></option><option><label>Indonesian 1974</label><value>16</value></option><option><label>International 1924 / Hayford 1909</label><value>17</value></option><option><label>Krassovsky 1940</label><value>18</value></option><option><label>Modified Airy</label><value>19</value></option><option><label>Modified Fischer 1960</label><value>20</value></option><option><label>South American 1969</label><value>21</value></option><option><label>World Geodetic System 1972 (WGS 1972)</label><value>22</value></option><option><label>World Geodetic System 1984 (WGS 1984) / NAD 1983</label><value>23</value></option></enum></parameter><parameter><label>User-specified semi-major axis of ellipsoid</label><float><property required="no"><keyword>a=</keyword><value/><default/></property></float></parameter><parameter><label>User-specified flattening of ellipsoid</label><float><property required="no"><keyword>f=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter>
-        <label>Reference ellipsoid index</label>
-        
-      <reference><property required="no"><keyword/><value/><default>23</default></property></reference></parameter><parameter><label>User-specified semi-major axis of ellipsoid</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>User-specified flattening of ellipsoid</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Output number format</label><string><property required="no"><keyword>format=</keyword><value/><default>%.3f</default></property></string></parameter><parameter><label>Use UTM letter designator for latitude/Northing</label><flag><property required="no"><keyword>letter=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Convert</label><enum><property required="no"><keyword>invert=</keyword><value/><default>0</default></property><option><label>Latitude and longitude to UTM</label><value>0</value></option><option><label>UTM to latitude and longitude</label><value>1</value></option></enum></parameter><parameter><label>Echo parameters and number of converted coords</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Central meridian for TM projection in degrees</label><float><property required="no"><keyword>lon0=</keyword><value/><default/></property></float></parameter><parameter><label>False Easting</label><float><property required="no"><keyword>xoff=</keyword><value/><default>500000</default></property></float></parameter><parameter><label>False Northing, southern hemisphere</label><float><property required="no"><keyword>ysoff=</keyword><value/><default>10000000</default></property></float></parameter><parameter><label>False Northing, northern hemisphere</label><float><property required="no"><keyword>ynoff=</keyword><value/><default>0</default></property></float></parameter></parameters>
+      <parameter>
+        <label>Ellipsoid properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Reference ellipsoid index</label>
+                <enum>
+                  <property required="no">
+                    <keyword>idx=</keyword>
+                    <value />
+                    <default>23</default>
+                  </property>
+                  <option>
+                    <label>Sphere with radius of 6371000 m</label>
+                    <value>0</value>
+                  </option>
+                  <option>
+                    <label>Airy 1830</label>
+                    <value>1</value>
+                  </option>
+                  <option>
+                    <label>Australian National 1965</label>
+                    <value>2</value>
+                  </option>
+                  <option>
+                    <label>Bessel 1841 (Ethiopia, Indonesia, Japan, Korea)</label>
+                    <value>3</value>
+                  </option>
+                  <option>
+                    <label>Bessel 1841 (Namibia)</label>
+                    <value>4</value>
+                  </option>
+                  <option>
+                    <label>Clarke 1866</label>
+                    <value>5</value>
+                  </option>
+                  <option>
+                    <label>Clarke 1880</label>
+                    <value>6</value>
+                  </option>
+                  <option>
+                    <label>Everest (Brunei, E. Malaysia)</label>
+                    <value>7</value>
+                  </option>
+                  <option>
+                    <label>Everest (India 1830)</label>
+                    <value>8</value>
+                  </option>
+                  <option>
+                    <label>Everest (India 1956)</label>
+                    <value>9</value>
+                  </option>
+                  <option>
+                    <label>Everest (Pakistan)</label>
+                    <value>10</value>
+                  </option>
+                  <option>
+                    <label>Everest (W. Malaysia, Singapore 1948)</label>
+                    <value>11</value>
+                  </option>
+                  <option>
+                    <label>Everest (W. Malaysia 1969)</label>
+                    <value>12</value>
+                  </option>
+                  <option>
+                    <label>Geodetic Reference System 1980 (GRS 1980)</label>
+                    <value>13</value>
+                  </option>
+                  <option>
+                    <label>Helmert 1906</label>
+                    <value>14</value>
+                  </option>
+                  <option>
+                    <label>Hough 1960</label>
+                    <value>15</value>
+                  </option>
+                  <option>
+                    <label>Indonesian 1974</label>
+                    <value>16</value>
+                  </option>
+                  <option>
+                    <label>International 1924 / Hayford 1909</label>
+                    <value>17</value>
+                  </option>
+                  <option>
+                    <label>Krassovsky 1940</label>
+                    <value>18</value>
+                  </option>
+                  <option>
+                    <label>Modified Airy</label>
+                    <value>19</value>
+                  </option>
+                  <option>
+                    <label>Modified Fischer 1960</label>
+                    <value>20</value>
+                  </option>
+                  <option>
+                    <label>South American 1969</label>
+                    <value>21</value>
+                  </option>
+                  <option>
+                    <label>World Geodetic System 1972 (WGS 1972)</label>
+                    <value>22</value>
+                  </option>
+                  <option>
+                    <label>World Geodetic System 1984 (WGS 1984) / NAD 1983</label>
+                    <value>23</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>User-specified semi-major axis of ellipsoid</label>
+                <float>
+                  <property required="no">
+                    <keyword>a=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>User-specified flattening of ellipsoid</label>
+                <float>
+                  <property required="no">
+                    <keyword>f=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>23</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output number format</label>
+        <string>
+          <property required="no">
+            <keyword>format=</keyword>
+            <value></value>
+            <default>%.3f</default>
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Use UTM letter designator for latitude/Northing</label>
+        <flag>
+          <property required="no">
+            <keyword>letter=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Convert</label>
+        <enum>
+          <property required="no">
+            <keyword>invert=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+          <option>
+            <label>Latitude and longitude to UTM</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>UTM to latitude and longitude</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Echo parameters and number of converted coords</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Central meridian for TM projection in degrees</label>
+        <float>
+          <property required="no">
+            <keyword>lon0=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>False Easting</label>
+        <float>
+          <property required="no">
+            <keyword>xoff=</keyword>
+            <value />
+            <default>500000</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>False Northing, southern hemisphere</label>
+        <float>
+          <property required="no">
+            <keyword>ysoff=</keyword>
+            <value />
+            <default>10000000</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>False Northing, northern hemisphere</label>
+        <float>
+          <property required="no">
+            <keyword>ynoff=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Median by File</title>
   <description>Median filter about a user-defined polygonal curve</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Median by File</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Median filter about a user-defined polygonal curve
             <!-- end des -->
           </div>
@@ -27,25 +28,25 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Median filter about a user-defined polygonal curve with the distance along the curve specified by key header word.</p>
+        Median filter about a user-defined polygonal curve with the distance along the curve specified by key header word.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Oct 22, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Oct 22, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
@@ -59,31 +60,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-22T11:45:52.728785Z</created>
     <modified>2010-08-06T01:40:50.163997Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Median by File</title>
     <binary>sumedian</binary>
     <description>Median filter about a user-defined polygonal curve</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -95,12 +99,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Median by File</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Median filter about a user-defined polygonal curve
             <!-- end des -->
           </div>
@@ -108,104 +112,104 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Median filter about a user-defined polygonal curve with the distance along the curve specified by key header word</p>
+        Median filter about a user-defined polygonal curve with the distance along the curve specified by key header word</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">Number of x and t values defining median times</span></li>
-		<li class="req">
-			<span class="reqlabel">File containing position values as specified by keyword</span></li>
-		<li class="req">
-			<span class="reqlabel">File containing corresponding time values in seconds</span></li>
-		<li>
-			<span class="label">Key header word specifying trace number</span><br />
-			For more information about header keywords, see help of menu <b>SU Set Header</b>.</li>
-		<li>
-			<span class="label">Median filter</span></li>
-		<li>
-			<span class="label">Array of weights for weighted moving average</span></li>
-		<li>
-			<span class="label">Sign</span>
-			<ul>
-				<li>
-					Upward shift</li>
-				<li>
-					Downward shift</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Odd number of traces to median filter</span></li>
-		<li>
-			<span class="label">Do not subtract filtered data from input</span></li>
-		<li>
-			<span class="label">Echoes information</span></li>
-		<li>
-			<span class="label">Directory path for storing temporary files</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of x and t values defining median times</span></li>
+                <li class="req">
+                        <span class="reqlabel">File containing position values as specified by keyword</span></li>
+                <li class="req">
+                        <span class="reqlabel">File containing corresponding time values in seconds</span></li>
+                <li>
+                        <span class="label">Key header word specifying trace number</span><br />
+                        For more information about header keywords, see help of menu <b>SU Set Header</b>.</li>
+                <li>
+                        <span class="label">Median filter</span></li>
+                <li>
+                        <span class="label">Array of weights for weighted moving average</span></li>
+                <li>
+                        <span class="label">Sign</span>
+                        <ul>
+                                <li>
+                                        Upward shift</li>
+                                <li>
+                                        Downward shift</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Odd number of traces to median filter</span></li>
+                <li>
+                        <span class="label">Do not subtract filtered data from input</span></li>
+                <li>
+                        <span class="label">Echoes information</span></li>
+                <li>
+                        <span class="label">Directory path for storing temporary files</span></li>
+        </ul>
 </div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Median filtering is a process for suppressing a particular moveout on seismic sections. Its advantage over traditional dip filtering is that events with arbitrary moveout may be suppressed. Median filtering is commonly used in up/down wavefield separation of VSP data.</p>
+        Median filtering is a process for suppressing a particular moveout on seismic sections. Its advantage over traditional dip filtering is that events with arbitrary moveout may be suppressed. Median filtering is commonly used in up/down wavefield separation of VSP data.</p>
 <p>
-	The process generally consists of 3 steps:</p>
+        The process generally consists of 3 steps:</p>
 <p>
-	1. A copy of the data panel is shifted such that the polygon in x,t specifying moveout is flattened to horizontal. The x,t pairs are specified by the values in the datafiles specified on parameters <strong>File containing position values as specified by keyword </strong>and <strong>File containing corresponding time values in seconds</strong>. For fractional shift, the shifted data is interpolated.</p>
+        1. A copy of the data panel is shifted such that the polygon in x,t specifying moveout is flattened to horizontal. The x,t pairs are specified by the values in the datafiles specified on parameters <strong>File containing position values as specified by keyword </strong>and <strong>File containing corresponding time values in seconds</strong>. For fractional shift, the shifted data is interpolated.</p>
 <p>
-	2. Then a mix (weighted moving average) is performed over the shifted panel to emphasize events with the specified moveout and suppress events with other moveouts.</p>
+        2. Then a mix (weighted moving average) is performed over the shifted panel to emphasize events with the specified moveout and suppress events with other moveouts.</p>
 <p>
-	3. The panel is then shifted back (and interpolated) to its original moveout, and subtracted from the original data. Thus all events with the user-specified moveout are removed.</p>
+        3. The panel is then shifted back (and interpolated) to its original moveout, and subtracted from the original data. Thus all events with the user-specified moveout are removed.</p>
 <p>
-	For VSP data, the following modifications are provided:</p>
+        For VSP data, the following modifications are provided:</p>
 <p>
-	1. The moveout polygon in x,t is usually the first break times for each trace. The parameter sign allows for downward shift in order align upgoing events.</p>
+        1. The moveout polygon in x,t is usually the first break times for each trace. The parameter sign allows for downward shift in order align upgoing events.</p>
 <p>
-	2. Alternative to a mix, a median filter can be applied by choosing <strong>Median filter </strong>and <strong>Array of weights for weighted moving average</strong> equal to the number of traces filtered.</p>
+        2. Alternative to a mix, a median filter can be applied by choosing <strong>Median filter </strong>and <strong>Array of weights for weighted moving average</strong> equal to the number of traces filtered.</p>
 <p>
-	3. By turning on <strong>Do not subtract filtered data from input</strong>, the filtered panel is only shifted back but not subtracted from the original data.</p>
+        3. By turning on <strong>Do not subtract filtered data from input</strong>, the filtered panel is only shifted back but not subtracted from the original data.</p>
 <p>
-	The files specified on <strong>File containing position values as specified by keyword </strong>and <strong>File containing corresponding time values in seconds</strong> are files of binary (C-style) floats.</p>
+        The files specified on <strong>File containing position values as specified by keyword </strong>and <strong>File containing corresponding time values in seconds</strong> are files of binary (C-style) floats.</p>
 <p>
-	The number of values defined by <strong>Array of weights for weighted moving average</strong> determines the number of traces to be averaged, the values determine the weights.</p>
+        The number of values defined by <strong>Array of weights for weighted moving average</strong> determines the number of traces to be averaged, the values determine the weights.</p>
 <p>
-	Caveat:<br />
-	The median filter may perform poorly on the edges of a section.<br />
-	Choosing larger beginning and ending mix values may help, but may also introduce additional artifacts.</p>
+        Caveat:<br />
+        The median filter may perform poorly on the edges of a section.<br />
+        Choosing larger beginning and ending mix values may help, but may also introduce additional artifacts.</p>
 <p>
-	This program access the following header keywords</p>
+        This program access the following header keywords</p>
 <ul>
-	<li>
-		Number of samples</li>
-<!-- ns   -->	<li>
-		Sampling interval in microseconds</li>
-<!-- dt -->	<li>
-		Delay recording time in ms</li>
-<!-- delrt -->	<li>
-		Keyword</li>
+        <li>
+                Number of samples</li>
+<!-- ns   -->   <li>
+                Sampling interval in microseconds</li>
+<!-- dt -->     <li>
+                Delay recording time in ms</li>
+<!-- delrt -->  <li>
+                Keyword</li>
 </ul>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: John Stockwell, based in part on sumute, sureduce, sumix.<br />
-	CENPET: Werner M. Heigl - fixed various errors, added VSP functionality.</p>
+        CWP: John Stockwell, based in part on sumute, sureduce, sumix.<br />
+        CENPET: Werner M. Heigl - fixed various errors, added VSP functionality.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
@@ -219,20 +223,27 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Number of x and t values defining median times</label>
-        
-      <int><property required="yes"><keyword>nshift=</keyword><value/><default/></property></int></parameter>
+        <int>
+          <property required="yes">
+            <keyword>nshift=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
       <parameter>
         <label>File containing position values as specified by keyword</label>
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>xfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -241,120 +252,379 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>tfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
       <parameter>
         <label>Key header word specifying trace number</label>
-        <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default/></property>
-      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
-      <option><label>Alias filter slope</label><value>afils</value></option>
-      <option><label>Alignment padding</label><value>shortpad</value></option>
-      <option><label>CDP ensemble number</label><value>cdp</value></option>
-      <option><label>Coordinate units code</label><value>counit</value></option>
-      <option><label>Correlated flag</label><value>corr</value></option>
-      <option><label>Data use</label><value>duse</value></option>
-      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
-      <option><label>Datum elevation at source</label><value>sdel</value></option>
-      <option><label>Day of year</label><value>day</value></option>
-      <option><label>Delay recording time in ms</label><value>delrt</value></option>
-      <option><label>Energy source point number</label><value>ep</value></option>
-      <option><label>Field record number</label><value>fldr</value></option>
-      <option><label>Final mute time</label><value>mute</value></option>
-      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
-      <option><label>First trace location</label><value>f2</value></option>
-      <option><label>Gain type of field instruments code</label><value>gain</value></option>
-      <option><label>Gap size</label><value>gaps</value></option>
-      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
-      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
-      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
-      <option><label>Group static correction</label><value>gstat</value></option>
-      <option><label>High cut frequncy if used</label><value>hcf</value></option>
-      <option><label>High cut slope</label><value>hcs</value></option>
-      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
-      <option><label>Initial mute time</label><value>muts</value></option>
-      <option><label>Instrument early or initial gain</label><value>igi</value></option>
-      <option><label>Instrument gain constant</label><value>igc</value></option>
-      <option><label>Lag time A</label><value>laga</value></option>
-      <option><label>Lag time B</label><value>lagb</value></option>
-      <option><label>Low cut frequency if used</label><value>lcf</value></option>
-      <option><label>Low cut slope</label><value>lcs</value></option>
-      <option><label>Mark selected traces</label><value>mark</value></option>
-      <option><label>Minute of hour</label><value>minute</value></option>
-      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
-      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
-      <option><label>Notch filter slope</label><value>nofils</value></option>
-      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
-      <option><label>Number of samples</label><value>ns</value></option>
-      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
-      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      <option><label>Overtravel taper code</label><value>otrav</value></option>
-      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
-      <option><label>Sampling interval in microseconds</label><value>dt</value></option>
-      <option><label>Sample spacing between traces</label><value>d2</value></option>
-      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
-      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
-      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
-      <option><label>Second of minute</label><value>sec</value></option>
-      <option><label>Source depth (positive)</label><value>sdepth</value></option>
-      <option><label>Source elevation from sea level</label><value>selev</value></option>
-      <option><label>Source static correction</label><value>sstat</value></option>
-      <option><label>Subweathering velocity</label><value>swevel</value></option>
-      <option><label>Sweep frequency at end</label><value>sfe</value></option>
-      <option><label>Sweep frequency at start</label><value>sfs</value></option>
-      <option><label>Sweep length in ms</label><value>slen</value></option>
-      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
-      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
-      <option><label>Sweep type code</label><value>styp</value></option>
-      <option><label>Taper type</label><value>tatyp</value></option>
-      <option><label>Time basis code</label><value>timbas</value></option>
-      <option><label>Total static applied</label><value>tstat</value></option>
-      <option><label>Trace identification code</label><value>trid</value></option>
-      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
-      <option><label>Trace number sequence within line</label><value>tracl</value></option>
-      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
-      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      <option><label>Trace weighting factor</label><value>trwf</value></option>
-      <option><label>Uphole time at receiver group</label><value>gut</value></option>
-      <option><label>Uphole time at source</label><value>sut</value></option>
-      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
-      <option><label>Water depth at source</label><value>swdep</value></option>
-      <option><label>Weathering velocity</label><value>wevel</value></option>
-      <option><label>X group coordinate</label><value>gx</value></option>
-      <option><label>X source coordinate</label><value>sx</value></option>
-      <option><label>Y group coordinate</label><value>gy</value></option>
-      <option><label>Y source coordinate</label><value>sy</value></option>
-      <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
+        <enum>
+          <property required="no">
+            <keyword>key=</keyword>
+            <value>cdp</value>
+            <default />
+          </property>
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
       </parameter>
       <parameter>
         <label>Median filter</label>
-        
-      <enum><property required="no"><keyword>median=</keyword><value/><default>0</default></property><option><label>Weighted moving average filter</label><value>0</value></option><option><label>Median filter</label><value>1</value></option></enum></parameter>
-      
-      
-      
-      
-      
-      
-    <parameter>
+        <enum>
+          <property required="no">
+            <keyword>median=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+          <option>
+            <label>Weighted moving average filter</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Median filter</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
         <label>Array of weights for weighted moving average</label>
         <float>
           <property required="no" separator=",">
             <keyword>mix=</keyword>
-            <value/>
-            
-          <default>0.6</default><default>1.0</default><default>1.0</default><default>1.0</default><default>0.6</default></property>
+            <value />
+            <default>0.6</default>
+            <default>1.0</default>
+            <default>1.0</default>
+            <default>1.0</default>
+            <default>0.6</default>
+          </property>
         </float>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Sign</label>
         <enum>
           <property required="no">
             <keyword>sign=</keyword>
-            <value/>
+            <value />
             <default>-1</default>
           </property>
           <option>
@@ -366,16 +636,18 @@
             <value>1</value>
           </option>
         </enum>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Odd nnumber of traces to median filter</label>
         <int min="3">
           <property required="no">
             <keyword>nmed=</keyword>
-            <value/>
+            <value />
             <default>5</default>
           </property>
         </int>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Do not subtract filtered data from input</label>
         <flag>
           <property required="no">
@@ -384,7 +656,8 @@
             <default>off</default>
           </property>
         </flag>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Echoes extra information</label>
         <flag>
           <property required="no">
@@ -393,15 +666,17 @@
             <default>off</default>
           </property>
         </flag>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Directory path for storing temporary files</label>
         <file directory="yes" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>tmpdir=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
-      </parameter></parameters>
+      </parameter>
+    </parameters>
   </program>
 </flow>

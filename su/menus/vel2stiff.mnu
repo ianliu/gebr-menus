@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Velocities to Stiffnesses</title>
   <description>Transforms velocities to elastic stiffnesses</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Velocities to Stiffnesses</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Transforms velocities to elastic stiffnesses
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Transforms velocities, densities, and Thomsen or Sayers parameters to elastic stiffnesses.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Jun 11, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Jun 11, 2010<!-- end ver --></span>
+                <!-- begin ver -->Jun 11, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-06-11T15:29:49.036726Z</created>
     <modified>2010-08-06T00:43:09.948381Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>Velocities to Stiffnesses</title>
     <binary>vel2stiff</binary>
     <description>Transforms velocities to elastic stiffnesses</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +130,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Velocities to Stiffnesses</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Transforms velocities to elastic stiffnesses
             <!-- end des -->
           </div>
@@ -138,7 +143,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,14 +154,14 @@
 
           <p>Transforms velocities, densities, and Thomsen or Sayers parameters to elastic stiffnesses.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
 
-	    <!-- begin lst --><ul>
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">File with P-wave velocities</span></li>
 
               <li class="req"><span class="reqlabel">File with S-wave velocities</span></li>
@@ -167,11 +172,11 @@
 
               <ul>
 
-		<li><span class="label">Type of parameters</span><br/>
-		<ul>
-		   <li>Thomsen parameter</li>
-		   <li>Sayers parameters</li>
-		</ul></li>
+                <li><span class="label">Type of parameters</span><br/>
+                <ul>
+                   <li>Thomsen parameter</li>
+                   <li>Sayers parameters</li>
+                </ul></li>
 
               <li><span class="label">Epsilon</span></li>
 
@@ -208,55 +213,55 @@
 
               <li><span class="label">Number of z samples 1st (fast) dimension</span></li>
 
-	      <li><span class="label">Quiet mode</span></li>
+              <li><span class="label">Quiet mode</span></li>
 
             </ul>
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-        <p>Transforms velocities, density and Thomsen or Sayers parameters	
- 	epsilon, delta, and gamma into elastic stiffness coefficients.</p>	
+        <p>Transforms velocities, density and Thomsen or Sayers parameters      
+        epsilon, delta, and gamma into elastic stiffness coefficients.</p>      
 
- 	<p>If only P-wave, S-wave velocities and density is given as input,	
- 	the model is assumed to be isotropic.<p>			
+        <p>If only P-wave, S-wave velocities and density is given as input,     
+        the model is assumed to be isotropic.<p>                        
 
- 	<p>If files containing Thomsen or Sayers parameters are given, the model 
- 	will be assumed to have VTI symmetry.</p>		 			
+        <p>If files containing Thomsen or Sayers parameters are given, the model 
+        will be assumed to have VTI symmetry.</p>                                       
 
- 	<p>All input files <b>File with P-wave velocities</b>, <b>File with S-wave velocities</b>, <b>File with densities</b> etc. are assumed to consist  
- 	only of C style binary floating point numbers representing the       
- 	corresponding  material values of P-wave velocities, S-wave velocities, densities etc.<br/> Similarly, the output files consist of the coresponding stiffnesses as C style binary floats.<br/> 
- 	If the output files are to be used as input for a modeling program,   
- 	such as menu <b>SU EA 2D FD</b>, then further, the contents are assumed be of the form of an array with depth as the fast dimension.</p>
+        <p>All input files <b>File with P-wave velocities</b>, <b>File with S-wave velocities</b>, <b>File with densities</b> etc. are assumed to consist  
+        only of C style binary floating point numbers representing the       
+        corresponding  material values of P-wave velocities, S-wave velocities, densities etc.<br/> Similarly, the output files consist of the coresponding stiffnesses as C style binary floats.<br/> 
+        If the output files are to be used as input for a modeling program,   
+        such as menu <b>SU EA 2D FD</b>, then further, the contents are assumed be of the form of an array with depth as the fast dimension.</p>
 
-	  <a name="ref" id="ref"></a>
+          <a name="ref" id="ref"></a>
           <h2>References</h2>
 
-	  <!-- List of references -->
+          <!-- List of references -->
           <ul>
             <li> Sayers, C. M.: Simplified anisotropy parameters for transversely isotropic sedimentary rocks. Geophysics 1995, pages 1933-1935.</li>
 
           </ul>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Author: CWP: Sverre Brandsberg-Dahl 1999.</p>
 
-  	<p>Extended:<br/>
-  	CWP: Stig-Kyrre Foss 2001<br/>
-  	- to include the option to use the parameters by Sayers (1995) 
-  	instead of the Thomsen parameters.</p>
+        <p>Extended:<br/>
+        CWP: Stig-Kyrre Foss 2001<br/>
+        - to include the option to use the parameters by Sayers (1995) 
+        instead of the Thomsen parameters.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -265,9 +270,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -282,7 +287,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -290,7 +295,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -298,8 +304,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>vpfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -308,8 +314,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>vsfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -318,298 +324,297 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>rhofile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
       <parameter>
         <label>Files with Thomsen or Sayers parameters</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Type of parameters</label>
+                <enum>
+                  <property required="no">
+                    <keyword>paramtype=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                  <option>
+                    <label>Thomsen parameters</label>
+                    <value>1</value>
+                  </option>
+                  <option>
+                    <label>Sayers parameters</label>
+                    <value>0</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Epsilon</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>epsfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Delta</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>deltafile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Gamma</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>gammafile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-        <label>Type of parameters</label>
-        <enum>
-          <property required="no">
-            <keyword>paramtype=</keyword>
-            <value/>
-            <default>1</default>
-          </property>
-          <option>
-            <label>Thomsen parameters</label>
-            <value>1</value>
-          </option>
-          <option>
-            <label>Sayers parameters</label>
-            <value>0</value>
-          </option>
-        </enum>
-      </parameter><parameter>
-              <label>Epsilon</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>epsfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default>1</default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Delta</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>deltafile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Gamma</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>gammafile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
-            </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-        <label>Type of parameters</label>
-        <enum>
-          <property required="no">
-            <keyword>paramtype=</keyword>
-            <value/>
-            <default>1</default>
-          </property>
-          <option>
-            <label>Thomsen parameters</label>
-            <value>1</value>
-          </option>
-          <option>
-            <label>Sayers parameters</label>
-            <value>0</value>
-          </option>
-        </enum>
-      </parameter><parameter>
-              <label>Epsilon</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>epsfile=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>Delta</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>deltafile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
-            <parameter>
-              <label>Gamma</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>gammafile=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Angle of axis of symmetry from vertical (radians)</label>
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>phifile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
       <parameter>
         <label>Outputs filename</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>For c11 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c11_file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c13 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c13_file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c15 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c15_file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c33 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c33_file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c35 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c35_file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c44 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c44_file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c55 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c55_file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>For c66 values</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>c66_file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>For c11 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c11_file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>For c13 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c13_file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>For c15 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c15_file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>For c33 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c33_file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>For c35 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c35_file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>For c44 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c44_file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>For c55 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c55_file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>For c66 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>c66_file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>For c11 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>c11_file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>For c13 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>c13_file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>For c15 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>c15_file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>For c33 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>c33_file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>For c35 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>c35_file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>For c44 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>c44_file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>For c55 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>c55_file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>For c66 values</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>c66_file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
-      
       <parameter>
         <label>Number of x samples 2nd (slow) dimension</label>
         <int>
           <property required="no">
             <keyword>nx=</keyword>
-            <value/>
+            <value />
             <default>101</default>
           </property>
         </int>
@@ -619,7 +624,7 @@
         <int>
           <property required="no">
             <keyword>nz=</keyword>
-            <value/>
+            <value />
             <default>101</default>
           </property>
         </int>

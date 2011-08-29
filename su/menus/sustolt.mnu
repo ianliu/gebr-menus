@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Stolt</title>
   <description>Stolt migration for stacked data or common-offset gathers</description>
-  <help><![CDATA[
+  <help>
+    <![CDATA[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -48,9 +49,9 @@
 
           <p>Stolt time migration for stacked data or common-offset gathers.</p>
 
-	  <a name="ref" id="ref"></a>
-	  <h2>References</h2>
-	  <!-- List of references -->
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>
+          <!-- List of references -->
           <ul>
             <li>&Ouml; Yilmaz. Seismic Data Analysis: Processing,
             Inversion, and Interpretation of Seismic Data. Society
@@ -63,13 +64,13 @@
             Geophysicists, Tulsa, 4th edition, 2002.</li>
           </ul>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>May 05, 2009: revised by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
-	  <p>May 29, 2009: revised by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
-	  <p>May 24, 2010: revised by Gabriel S. Sobral, UNICAMP, sobral@gebrproject.com</p>	
+          <p>May 29, 2009: revised by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
+          <p>May 24, 2010: revised by Gabriel S. Sobral, UNICAMP, sobral@gebrproject.com</p>    
           <!-- end cpy -->
         </div>
 
@@ -95,31 +96,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-09-16T15:00:00Z</created>
     <modified>2010-08-06T00:43:08.178403Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Stolt</title>
     <binary>sustolt</binary>
     <description>Stolt migration for stacked data or common-offset gathers</description>
-            <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="gebr.css" />
     <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
     
@@ -150,95 +154,95 @@
 
         <div class="main">
           <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Stolt migration for stacked data or common-offset gathers</p>
+        Stolt migration for stacked data or common-offset gathers</p>
 <!-- begin par -->
           <div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<!-- begin lst -->
+        <h2 id="header_1">
+                Parameters</h2>
+        <!-- begin lst -->
             <ul>
-		<li>
-			<span class="label">CDP properties</span>
-			<ul>
-				<li>
-					<span class="label">Minimum CDP in dataset</span></li>
-				<li>
-					<span class="label">Maximum CDP in dataset</span></li>
-				<li>
-					<span class="label">Distance between adjacent CDP bins (meters)</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Number of offsets to mix (for unstacked data only)</span></li>
-		<li>
-			<span class="label">RMS velocities</span>
-			<ul>
-				<li>
-					<span class="label">Times corresponding to RMS velocities below (s)</span></li>
-				<li>
-					<span class="label">RMS velocities corresponding to times above (m/s)</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Stretch factor</span><br />
-			0.6 typical if velocity RMS increasing</li>
-		<li>
-			<span class="label">Scale factor to velocities</span></li>
-		<li>
-			<span class="label">Maximum frequency in input data (Hz)</span></li>
-		<li>
-			<span class="label">Length of side tapers (number of traces)</span></li>
-		<li>
-			<span class="label">Length of bottom tapers (number of traces)</span></li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-		<li>
-			<span class="label">Directory path for storing temporary files</span><br />
-			If non-empty, use the value as a directory path prefix for storing temporary files; else if the the CWP_TMPDIR environment variable is set use its value for the path; else use tmpfile().</li>
-	</ul>
+                <li>
+                        <span class="label">CDP properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Minimum CDP in dataset</span></li>
+                                <li>
+                                        <span class="label">Maximum CDP in dataset</span></li>
+                                <li>
+                                        <span class="label">Distance between adjacent CDP bins (meters)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of offsets to mix (for unstacked data only)</span></li>
+                <li>
+                        <span class="label">RMS velocities</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Times corresponding to RMS velocities below (s)</span></li>
+                                <li>
+                                        <span class="label">RMS velocities corresponding to times above (m/s)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Stretch factor</span><br />
+                        0.6 typical if velocity RMS increasing</li>
+                <li>
+                        <span class="label">Scale factor to velocities</span></li>
+                <li>
+                        <span class="label">Maximum frequency in input data (Hz)</span></li>
+                <li>
+                        <span class="label">Length of side tapers (number of traces)</span></li>
+                <li>
+                        <span class="label">Length of bottom tapers (number of traces)</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+                <li>
+                        <span class="label">Directory path for storing temporary files</span><br />
+                        If non-empty, use the value as a directory path prefix for storing temporary files; else if the the CWP_TMPDIR environment variable is set use its value for the path; else use tmpfile().</li>
+        </ul>
   <!-- end lst -->
 
           </div>
           <!-- end par -->
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	If unstacked traces are input, they should be sorted into common-offset gathers. One common-offset gather ends and another begins when the offset field of the trace headers changes.</p>
+        If unstacked traces are input, they should be sorted into common-offset gathers. One common-offset gather ends and another begins when the offset field of the trace headers changes.</p>
 <p>
-	The CDP field of the input trace headers must be the CDP bin NUMBER, NOT the cdp location expressed in units of meters or feet.</p>
+        The CDP field of the input trace headers must be the CDP bin NUMBER, NOT the cdp location expressed in units of meters or feet.</p>
 <p>
-	The <strong>Number of offsets to mix</strong> should be specified for unstacked data only. <strong>Number of offsets to mix</strong> should typically equal the ratio of the shotpoint spacing to the CDP spacing. This choice ensures that every CDP will be represented in each offset mix. Traces in each mix will contribute through migration to other traces in adjacent CDPs within that mix.</p>
+        The <strong>Number of offsets to mix</strong> should be specified for unstacked data only. <strong>Number of offsets to mix</strong> should typically equal the ratio of the shotpoint spacing to the CDP spacing. This choice ensures that every CDP will be represented in each offset mix. Traces in each mix will contribute through migration to other traces in adjacent CDPs within that mix.</p>
 <p>
-	The <strong>Times corresponding to RMS velocities</strong> and <strong>RMS velocities corresponding to times</strong> specify a velocity function of time that is used to implement Stolt's stretch for depth-variable velocity. The <strong>Stretch factor</strong> is often referred to as the "W" factor. The times in <strong>Times corresponding to RMS velocities</strong> must be monotonically increasing.</p>
+        The <strong>Times corresponding to RMS velocities</strong> and <strong>RMS velocities corresponding to times</strong> specify a velocity function of time that is used to implement Stolt's stretch for depth-variable velocity. The <strong>Stretch factor</strong> is often referred to as the "W" factor. The times in <strong>Times corresponding to RMS velocities</strong> must be monotonically increasing.</p>
 <p>
-	This program accesses the following header keywords:</p>
+        This program accesses the following header keywords:</p>
 <ul>
-	<li>
-		Number of samples</li>
-<!-- ns -->	<li>
-		Sample interval (in microseconds)</li>
-<!-- dt -->	<li>
-		Delay recording time (in microseconds)</li>
-<!-- delrt -->	<li>
-		Offset (signed distance from source to receiver group)</li>
-<!-- offset -->	<li>
-		CDP ensemble number</li>
+        <li>
+                Number of samples</li>
+<!-- ns -->     <li>
+                Sample interval (in microseconds)</li>
+<!-- dt -->     <li>
+                Delay recording time (in microseconds)</li>
+<!-- delrt -->  <li>
+                Offset (signed distance from source to receiver group)</li>
+<!-- offset --> <li>
+                CDP ensemble number</li>
 <!-- cdp --></ul>
 <p>
-	 </p>
+         </p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Dave Hale c. 1990</p>
+        CWP: Dave Hale c. 1990</p>
 </div>
 
           <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div><div class="links"> </div>
 
           <div class="clearer"></div>
         </div>
@@ -253,65 +257,212 @@
   
 
 
-</body></html>]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      
-      <parameter><label>CDP properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Minimum CDP in dataset</label><int><property required="yes"><keyword>cdpmin=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter><parameter><label>Maximum CDP in dataset</label><int><property required="yes"><keyword>cdpmax=</keyword><value/><default/></property></int></parameter><parameter><label>Distance between adjacent CDP bins (m)</label><float><property required="yes"><keyword>dxcdp=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Minimum CDP in dataset</label><int><property required="yes"><keyword>cdpmin=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter><parameter><label>Maximum CDP in dataset</label><int><property required="yes"><keyword>cdpmax=</keyword><value/><default/></property></int></parameter><parameter><label>Distance between adjacent CDP bins (m)</label><float><property required="yes"><keyword>dxcdp=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter></parameters></group></parameter>
-      
-      <parameter><label>Number of offsets to mix (for unstacked data only)</label><int min="1"><property required="no"><keyword>noffmix=</keyword><value/><default>1</default></property>
-        
-        
-        
-      </int></parameter>
-      
-      
-      <parameter><label>RMS velocities</label><group instanciable="yes" expand="yes"><template-instance><parameters default-selection="0" selection=""><parameter><label>Times corresponding to RMS velocities below (s)</label><float><property required="no"><keyword>tmig=</keyword><value/><default>0</default></property></float></parameter><parameter><label>RMS velocities corresponding to times above (m/s)</label><float min=""><property required="no"><keyword>vmig=</keyword><value/><default>1500</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>RMS velocities corresponding to times above (m/s)</label><float><property required="no" separator=","><keyword>tmig=</keyword><value/><default>0</default></property></float></parameter><parameter><label>RMS velocities corresponding to times above (m/s)</label><float min=""><property required="no" separator=","><keyword>vmig=</keyword><value/><default>1500</default></property></float></parameter></parameters></group></parameter><parameter><label>Stretch factor</label><float><property required="no"><keyword>smig=</keyword><value/><default>1.0</default></property></float></parameter>
-      <parameter><label>Scale factor to velocities</label><float><property required="no"><keyword>vscale=</keyword><value/><default>1.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Maximum frequency in input data (Hz)</label><float><property required="no"><keyword>fmax=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Length of side tapers (# traces)</label><int min="0"><property required="no"><keyword>lstaper=</keyword><value/><default>0</default></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Length of bottom tapers (# traces)</label><int min="0"><property required="no"><keyword>lbtaper=</keyword><value/><default>0</default></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Echoes extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      <parameter><label>Directory path for storing temporary files</label><file directory="yes" filter-name="" filter-pattern=""><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>CDP properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Minimum CDP in dataset</label>
+                <int>
+                  <property required="yes">
+                    <keyword>cdpmin=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Maximum CDP in dataset</label>
+                <int>
+                  <property required="yes">
+                    <keyword>cdpmax=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Distance between adjacent CDP bins (m)</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dxcdp=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Number of offsets to mix (for unstacked data only)</label>
+        <int min="1">
+          <property required="no">
+            <keyword>noffmix=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>RMS velocities</label>
+        <group instanciable="yes" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Times corresponding to RMS velocities below (s)</label>
+                <float>
+                  <property required="no">
+                    <keyword>tmig=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>RMS velocities corresponding to times above (m/s)</label>
+                <float min="">
+                  <property required="no">
+                    <keyword>vmig=</keyword>
+                    <value />
+                    <default>1500</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>1500</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Stretch factor</label>
+        <float>
+          <property required="no">
+            <keyword>smig=</keyword>
+            <value />
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Scale factor to velocities</label>
+        <float>
+          <property required="no">
+            <keyword>vscale=</keyword>
+            <value />
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum frequency in input data (Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Length of side tapers (# traces)</label>
+        <int min="0">
+          <property required="no">
+            <keyword>lstaper=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Length of bottom tapers (# traces)</label>
+        <int min="0">
+          <property required="no">
+            <keyword>lbtaper=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory path for storing temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
     </parameters>
   </program>
 </flow>

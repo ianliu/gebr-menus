@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Mig GBeams Ani</title>
   <description>Migration via Gaussian beams anisotropic media (P-wave)</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Mig GBeams Ani</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Migration via Gaussian beams anisotropic media (P-wave)
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Migration via Gaussian beams anisotropic media (P-wave).</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Jun 09, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Jun 09, 2010<!-- end ver --></span>
+                <!-- begin ver -->Jun 09, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-06-09T14:34:07.132272Z</created>
     <modified>2010-08-06T00:43:05.888716Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Mig GBeams Ani</title>
     <binary>sumiggbzoan</binary>
     <description>Migration via Gaussian beams anisotropic media (P-wave)</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -118,12 +123,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Mig GBeams Ani</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Migration via Gaussian beams anisotropic media (P-wave)
             <!-- end des -->
           </div>
@@ -131,138 +136,138 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Migration via Gaussian beams anisotropic media (P-wave).</p>
+        Migration via Gaussian beams anisotropic media (P-wave).</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">File containing a3333(x,z)</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of inline samples (traces)</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of depth samples</span></li>
-		<li class="group">
-			<span class="grouplabel">Sampling properties</span>
-			<ul>
-				<li>
-					<span class="label">Time sampling interval</span><br />
-					Default value is "Sampling interval in microseconds" from header.</li>
-				<li>
-					<span class="label">Inline sampling interval (trace spacing)</span><br />
-					Default value is "Sample spacing between traces" from header.</li>
-				<li>
-					<span class="label">Depth sampling interval </span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Frequency properties</span>
-			<ul>
-				<li>
-					<span class="label">Minimum frequency</span><br />
-					Default value is 0.025/<b>Time sampling interval</b>.</li>
-				<li>
-					<span class="label">Maximum frequency</span><br />
-					Default value is 10*<b>Minimum frequency</b>.</li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Angle properties</span>
-			<ul>
-				<li>
-					<span class="label">Minimum emergence angle</span><br />
-					Default value is negative of <b>Maximum emergence angle</b>, and must be &gt; of -90 degrees.</li>
-				<li>
-					<span class="label">Maximum emergence angle</span><br />
-					Must be &lt; of 90 degrees.</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Beam half-width</span><br />
-			Default value is 0.5*"Average velocity"/<b>Minimum frequency</b>.</li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-		<li class="group">
-			<span class="grouplabel">Parameters for general anisotropic media</span><br />
-			Confined to a vertical plane.
-			<ul>
-				<li>
-					<span class="label">File containing a1111(x,z)</span></li>
-				<li>
-					<span class="label">File containing a1133(x,z)</span></li>
-				<li>
-					<span class="label">File containing a1313(x,z)</span></li>
-				<li>
-					<span class="label">File containing a1113(x,z)</span></li>
-				<li>
-					<span class="label">File containing a3313(x,z)</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Transversely isotropic media Thomsen's parameters</span>
-			<ul>
-				<li>
-					<span class="label">File containing delta(x,z)</span></li>
-				<li>
-					<span class="label">File containing epsilon(x,z)</span></li>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">File containing a3333(x,z)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of inline samples (traces)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of depth samples</span></li>
+                <li class="group">
+                        <span class="grouplabel">Sampling properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Time sampling interval</span><br />
+                                        Default value is "Sampling interval in microseconds" from header.</li>
+                                <li>
+                                        <span class="label">Inline sampling interval (trace spacing)</span><br />
+                                        Default value is "Sample spacing between traces" from header.</li>
+                                <li>
+                                        <span class="label">Depth sampling interval </span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Frequency properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Minimum frequency</span><br />
+                                        Default value is 0.025/<b>Time sampling interval</b>.</li>
+                                <li>
+                                        <span class="label">Maximum frequency</span><br />
+                                        Default value is 10*<b>Minimum frequency</b>.</li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Angle properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Minimum emergence angle</span><br />
+                                        Default value is negative of <b>Maximum emergence angle</b>, and must be &gt; of -90 degrees.</li>
+                                <li>
+                                        <span class="label">Maximum emergence angle</span><br />
+                                        Must be &lt; of 90 degrees.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Beam half-width</span><br />
+                        Default value is 0.5*"Average velocity"/<b>Minimum frequency</b>.</li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+                <li class="group">
+                        <span class="grouplabel">Parameters for general anisotropic media</span><br />
+                        Confined to a vertical plane.
+                        <ul>
+                                <li>
+                                        <span class="label">File containing a1111(x,z)</span></li>
+                                <li>
+                                        <span class="label">File containing a1133(x,z)</span></li>
+                                <li>
+                                        <span class="label">File containing a1313(x,z)</span></li>
+                                <li>
+                                        <span class="label">File containing a1113(x,z)</span></li>
+                                <li>
+                                        <span class="label">File containing a3313(x,z)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Transversely isotropic media Thomsen's parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">File containing delta(x,z)</span></li>
+                                <li>
+                                        <span class="label">File containing epsilon(x,z)</span></li>
 
-				<li>
-					<span class="label">File containing a1313(x,z)</span></li>
+                                <li>
+                                        <span class="label">File containing a1313(x,z)</span></li>
 
-			</ul>
-		</li>
-	</ul>
+                        </ul>
+                </li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	If anisotropy parameters are not given the program considers the medium to be isotropic.</p>
+        If anisotropy parameters are not given the program considers the medium to be isotropic.</p>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <!-- List of references --><ul>
-	<li>
-		Alkhailfah, T., 1993, Gaussian beam migration for anisotropic media: submitted to Geophysics.</li>
-	<li>
-		Cerveny, V., 1972, Seismic rays and ray intensities in inhomogeneous anisotropic media:<br />
-		Geophys. J. R. Astr. Soc., 29, 1--13.</li>
-	<li>
-		Hale, D., 1992, Migration by the Kirchhoff,<br />
-		slant stack, and Gaussian beam methods:<br />
-		CWP,1992 Report 121, Colorado School of Mines.</li>
-	<li>
-		Hale, D., 1992, Computational Aspects of Gaussian Beam migration:<br />
-		CWP,1992 Report 121, Colorado School of Mines.</li>
+        <li>
+                Alkhailfah, T., 1993, Gaussian beam migration for anisotropic media: submitted to Geophysics.</li>
+        <li>
+                Cerveny, V., 1972, Seismic rays and ray intensities in inhomogeneous anisotropic media:<br />
+                Geophys. J. R. Astr. Soc., 29, 1--13.</li>
+        <li>
+                Hale, D., 1992, Migration by the Kirchhoff,<br />
+                slant stack, and Gaussian beam methods:<br />
+                CWP,1992 Report 121, Colorado School of Mines.</li>
+        <li>
+                Hale, D., 1992, Computational Aspects of Gaussian Beam migration:<br />
+                CWP,1992 Report 121, Colorado School of Mines.</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Tariq Alkhalifah, based on MIGGBZO by Dave Hale,<br />
-	CWP: repackaged as an SU program by John Stockwell, April 2006.</p>
+        CWP: Tariq Alkhalifah, based on MIGGBZO by Dave Hale,<br />
+        CWP: repackaged as an SU program by John Stockwell, April 2006.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2>
-	<ul>
-	<li><a href="#header_0">Introduction</a></li>
-	<li><a href="#header_1">Parameters</a></li>
-	<li><a href="#header_2">Notes</a></li>
-	<li><a href="#header_3">References</a></li>
-	<li><a href="#header_4">Credits</a></li>
-	</ul>
-	</div>
+        <ul>
+        <li><a href="#header_0">Introduction</a></li>
+        <li><a href="#header_1">Parameters</a></li>
+        <li><a href="#header_2">Notes</a></li>
+        <li><a href="#header_3">References</a></li>
+        <li><a href="#header_4">Credits</a></li>
+        </ul>
+        </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -271,7 +276,8 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -279,8 +285,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>a3333file=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -289,8 +295,8 @@
         <int>
           <property required="yes">
             <keyword>nx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -299,182 +305,191 @@
         <int>
           <property required="yes">
             <keyword>nz=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
       <parameter>
         <label>Sampling properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Time sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Inline sampling interval (trace spacing)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dx=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Depth sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Time sampling interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dt=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Inline sampling interval (trace spacing)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dx=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Depth sampling interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Time sampling interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dt=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Inline sampling interval (trace spacing)</label>
-              <float>
-                <property required="no">
-                  <keyword>dx=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Depth sampling interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dz=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Frequency properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Minimum frequency</label>
+                <float>
+                  <property required="no">
+                    <keyword>fmin=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum frequency</label>
+                <float>
+                  <property required="no">
+                    <keyword>fmax=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Minimum frequency</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fmin=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Maximum frequency</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fmax=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Minimum frequency</label>
-              <float>
-                <property required="no">
-                  <keyword>fmin=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Maximum frequency</label>
-              <float>
-                <property required="no">
-                  <keyword>fmax=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Angle properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Minimum emergence angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>amin=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum emergence angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>amax=</keyword>
+                    <value />
+                    <default>60</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Minimum emergence angle</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>amin=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Maximum emergence angle</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>amax=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>60</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Minimum emergence angle</label>
-              <float>
-                <property required="no">
-                  <keyword>amin=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Maximum emergence angle</label>
-              <float>
-                <property required="no">
-                  <keyword>amax=</keyword>
-                  <value/>
-                  <default>60</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Beam half-width</label>
         <float>
           <property required="no">
             <keyword>bwh=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -491,176 +506,184 @@
       <parameter>
         <label>Parameters for general anisotropic media</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>File containing a1111(x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>a1111file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing a1133(x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>a1133file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing a1313(x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>a1313file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing a1113(x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>a1113file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing a3313(x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>a3313file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>File containing a1111(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>a1111file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>File containing a1133(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>a1133file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>File containing a1313(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>a1313file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>File containing a1113(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>a1113file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>File containing a3313(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>a3313file=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>File containing a1111(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>a1111file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>File containing a1133(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>a1133file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>File containing a1313(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>a1313file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>File containing a1113(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>a1113file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-            <parameter>
-              <label>File containing a3313(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>a3313file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Transversely isotropic media Thomsen's parameters</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>File containing delta(x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>deltafile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing epsilon(x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>epsilonfile=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing a1313(x,z)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>a1313file=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>File containing delta(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>deltafile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>File containing epsilon(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>epsilonfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
-            </parameter>
-          <parameter>
-              <label>File containing a1313(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>a1313file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter></parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>File containing delta(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>deltafile=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
+              </reference>
             </parameter>
             <parameter>
-              <label>File containing epsilon(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>epsilonfile=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </file>
+              </reference>
             </parameter>
-          <parameter>
-              <label>File containing a1313(x,z)</label>
-              <file directory="no" filter-name="" filter-pattern="">
-                <property required="no">
-                  <keyword>a1313file=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </file>
-            </parameter></parameters></group>
+          </parameters>
+        </group>
       </parameter>
     </parameters>
   </program>

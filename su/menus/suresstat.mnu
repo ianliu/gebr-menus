@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Receivers Statics</title>
   <description>Surface consistent source and receiver statics calculation</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,13 +15,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Receivers Statics</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Surface consistent source and receiver statics calculation
+            Surface consistent source and receiver statics calculation
            <!-- end des -->
           </div>
         </div>
@@ -28,26 +29,26 @@
 
       <div class="category">
         <!-- begin cat -->
-	Gain, NMO, Stack and Standard Processes | Seismic Unix
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
         <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Surface consistent source and receiver statics calculation.</p>
+        Surface consistent source and receiver statics calculation.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Out 13, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Out 13, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <p>
-	Jul 21, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Jul 21, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
@@ -61,31 +62,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-13T19:16:36.269503Z</created>
     <modified>2010-08-06T16:30:30.535041Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Receivers Statics</title>
     <binary>suresstat</binary>
     <description>Surface consistent source and receiver statics calculation</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -95,13 +99,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Receivers Statics</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Surface consistent source and receiver statics calculation
+            Surface consistent source and receiver statics calculation
            <!-- end des -->
           </div>
         </div>
@@ -109,122 +113,122 @@
 
       <div class="category">
         <!-- begin cat -->
-	Gain, NMO, Stack and Standard Processes | Seismic Unix
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
         <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Surface consistent source and receiver statics calculation.</p>
+        Surface consistent source and receiver statics calculation.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<!-- begin lst -->
+        <h2 id="header_1">
+                Parameters</h2>
+        <!-- begin lst -->
             <ul>
-		<li class="req">
-			<span class="reqlabel">Output file source statics</span></li>
-		<li class="req">
-			<span class="reqlabel">Output file receiver statics</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of traces in input data set</span><br />
-			Must be equal to the number of prestack traces.</li>
-		<li>
-			<span class="label">Maximun static shift</span><br />
-			Sets the maximum allowable shift desired (in samples, not time)</li>
-		<li>
-			<span class="label">Number of iterations</span><br />
-			Sets the number of iterations desired.</li>
-		<li>
-			<span class="label">Largest shot number</span><br />
-			Must be equal to the maximum <em>Field record number</em> in the data. Note that this number might be different from the actual number of shot records in the data (i.e., the maximum ep number).</li>
-		<li>
-			<span class="label">Largest receiver number</span><br />
-			Must be equal to the largest number of receivers per shot in the whole data.</li>
-		<li>
-			<span class="label">Maximum number of cmp's</span><br />
-			Must be equal the number of prestack traces in the data.</li>
-		<li class="group">
-			<span class="grouplabel">Gather fold properties</span>
-			<ul>
-				<li>
-					<span class="label">Maximum shot gather fold</span><br />
-					Must be equal to <b>Largest receiver number</b> parameter.</li>
-				<li>
-					<span class="label">Maximum receiver gather fold</span><br />
-					Must be equal to the maximum ep number.</li>
-				<li>
-					<span class="label">Maximum cmp's gather fold</span><br />
-					Must be equal to the maximum CDP fold.</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Subtract super trace 1 from super trace 2</span></li>
-		<li>
-			<span class="label">Mode</span>
-			<ul>
-				<li>
-					Use global maximum in cross-correllation window</li>
-				<li>
-					Choose the peak percent smaller than the global max</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Percent of global max (used only for percent smaller than the global max)</span><br />
-			The default value for this parameter is 10.0</li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-	</ul>
+                <li class="req">
+                        <span class="reqlabel">Output file source statics</span></li>
+                <li class="req">
+                        <span class="reqlabel">Output file receiver statics</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of traces in input data set</span><br />
+                        Must be equal to the number of prestack traces.</li>
+                <li>
+                        <span class="label">Maximun static shift</span><br />
+                        Sets the maximum allowable shift desired (in samples, not time)</li>
+                <li>
+                        <span class="label">Number of iterations</span><br />
+                        Sets the number of iterations desired.</li>
+                <li>
+                        <span class="label">Largest shot number</span><br />
+                        Must be equal to the maximum <em>Field record number</em> in the data. Note that this number might be different from the actual number of shot records in the data (i.e., the maximum ep number).</li>
+                <li>
+                        <span class="label">Largest receiver number</span><br />
+                        Must be equal to the largest number of receivers per shot in the whole data.</li>
+                <li>
+                        <span class="label">Maximum number of cmp's</span><br />
+                        Must be equal the number of prestack traces in the data.</li>
+                <li class="group">
+                        <span class="grouplabel">Gather fold properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Maximum shot gather fold</span><br />
+                                        Must be equal to <b>Largest receiver number</b> parameter.</li>
+                                <li>
+                                        <span class="label">Maximum receiver gather fold</span><br />
+                                        Must be equal to the maximum ep number.</li>
+                                <li>
+                                        <span class="label">Maximum cmp's gather fold</span><br />
+                                        Must be equal to the maximum CDP fold.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Subtract super trace 1 from super trace 2</span></li>
+                <li>
+                        <span class="label">Mode</span>
+                        <ul>
+                                <li>
+                                        Use global maximum in cross-correllation window</li>
+                                <li>
+                                        Choose the peak percent smaller than the global max</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Percent of global max (used only for percent smaller than the global max)</span><br />
+                        The default value for this parameter is 10.0</li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
   <!-- end lst -->
 
           </div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Estimates surface-consistent source and receiver statics, meaning that there is one static correction value estimated for each shot and receiver position.</p>
+        Estimates surface-consistent source and receiver statics, meaning that there is one static correction value estimated for each shot and receiver position.</p>
 <p>
-	The method employed here is based on the method of Ronen and Claerbout: Geophysics 50, 2759-2767 (1985).</p>
+        The method employed here is based on the method of Ronen and Claerbout: Geophysics 50, 2759-2767 (1985).</p>
 <p>
-	The input consists of moveout-corrected SU data sorted in shot gathers.<br />
-	The output files are binary files containing the source and receiver statics, as a function of shot number (trace header <em>Field record number</em>) and receiver station number (trace header  <em>Trace number sequence within field record</em>).</p>
+        The input consists of moveout-corrected SU data sorted in shot gathers.<br />
+        The output files are binary files containing the source and receiver statics, as a function of shot number (trace header <em>Field record number</em>) and receiver station number (trace header  <em>Trace number sequence within field record</em>).</p>
 <p>
-	The code builds a supertrace1 and supertrace2, which are subsequently cross-correllated. The program then picks the time lag associated with the largest peak in the cross-correllation according to two possible criteria set by the parameter <strong>Mode</strong>. If it's set to <strong>Use global maximum in cross-correllation window</strong>, the maximum of the cross-correllation window is chosen. If it's <strong>Choose the peak perc=percent smaller than the global max</strong>, the program will pick a peak which is up to the value set on <strong>Percent of global max</strong> smaller than the global maximum, but closer to zero lag than the global maximum. (Choosing <strong>Use global maximum in cross-correllation window</strong> is recommended.)</p>
+        The code builds a supertrace1 and supertrace2, which are subsequently cross-correllated. The program then picks the time lag associated with the largest peak in the cross-correllation according to two possible criteria set by the parameter <strong>Mode</strong>. If it's set to <strong>Use global maximum in cross-correllation window</strong>, the maximum of the cross-correllation window is chosen. If it's <strong>Choose the peak perc=percent smaller than the global max</strong>, the program will pick a peak which is up to the value set on <strong>Percent of global max</strong> smaller than the global maximum, but closer to zero lag than the global maximum. (Choosing <strong>Use global maximum in cross-correllation window</strong> is recommended.)</p>
 <p>
-	The geometry can be irregular: the program simply computes a static correction for each shot record (<em>Field record number </em>= 1 to the value set on <strong>Largest shot number</strong>), with any missing shots being assigned a static of 0. A static correction for each receiver station is calculated, with missing receivers again assigned a static of 0.</p>
+        The geometry can be irregular: the program simply computes a static correction for each shot record (<em>Field record number </em>= 1 to the value set on <strong>Largest shot number</strong>), with any missing shots being assigned a static of 0. A static correction for each receiver station is calculated, with missing receivers again assigned a static of 0.</p>
 <p>
-	This program access the following header keywords</p>
+        This program access the following header keywords</p>
 <ul>
-	<li>
-		Number of samples</li>
-	<li>
-		Sampling interval in microseconds</li>
-	<li>
-		Trace number sequence within field record</li>
-	<li>
-		Field record number</li>
-	<li>
-		CDP ensemble number</li>
+        <li>
+                Number of samples</li>
+        <li>
+                Sampling interval in microseconds</li>
+        <li>
+                Trace number sequence within field record</li>
+        <li>
+                Field record number</li>
+        <li>
+                CDP ensemble number</li>
 </ul>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <!-- List of references --><ul>
-	<li>
-		Ronen, J. and Claerbout, J., 1985, Surface-consistent residual statics estimation by stack-power maximization: Geophysics, vol. 50, 2759-2767.</li>
+        <li>
+                Ronen, J. and Claerbout, J., 1985, Surface-consistent residual statics estimation by stack-power maximization: Geophysics, vol. 50, 2759-2767.</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Timo Tjan, 4 October 1994<br />
-	rewritten by Thomas Pratt, USGS, Feb. 2000.</p>
+        CWP: Timo Tjan, 4 October 1994<br />
+        rewritten by Thomas Pratt, USGS, Feb. 2000.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
-		Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
-	Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
-	References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
-	Credits</h2></a></li></ul></div>
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
+        Credits</h2></a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -238,7 +242,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -246,8 +251,8 @@
         <file directory="no">
           <property required="yes">
             <keyword>ssol=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -256,8 +261,8 @@
         <file directory="no">
           <property required="yes">
             <keyword>rsol=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -266,8 +271,8 @@
         <int min="1">
           <property required="yes">
             <keyword>ntraces=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -276,7 +281,7 @@
         <int>
           <property required="no">
             <keyword>ntpick=</keyword>
-            <value/>
+            <value />
             <default>50</default>
           </property>
         </int>
@@ -286,7 +291,7 @@
         <int>
           <property required="no">
             <keyword>niter=</keyword>
-            <value/>
+            <value />
             <default>5</default>
           </property>
         </int>
@@ -296,7 +301,7 @@
         <int>
           <property required="no">
             <keyword>nshot=</keyword>
-            <value/>
+            <value />
             <default>240</default>
           </property>
         </int>
@@ -306,7 +311,7 @@
         <int>
           <property required="no">
             <keyword>nr=</keyword>
-            <value/>
+            <value />
             <default>335</default>
           </property>
         </int>
@@ -316,7 +321,7 @@
         <int>
           <property required="no">
             <keyword>nc=</keyword>
-            <value/>
+            <value />
             <default>574</default>
           </property>
         </int>
@@ -324,70 +329,73 @@
       <parameter>
         <label>Gather fold properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Maximum shot gather fold</label>
+                <int>
+                  <property required="no">
+                    <keyword>sfold=</keyword>
+                    <value />
+                    <default>96</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Maximum receiver gather fold</label>
+                <int>
+                  <property required="no">
+                    <keyword>rfold=</keyword>
+                    <value />
+                    <default>96</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Maximum cmp's gather fold</label>
+                <int>
+                  <property required="no">
+                    <keyword>cfold=</keyword>
+                    <value />
+                    <default>48</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Maximum shot gather fold</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>sfold=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>96</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Maximum receiver gather fold</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>rfold=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>96</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Maximum cmp's gather fold</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>cfold=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>48</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Maximum shot gather fold</label>
-              <int>
-                <property required="no">
-                  <keyword>sfold=</keyword>
-                  <value/>
-                  <default>96</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Maximum receiver gather fold</label>
-              <int>
-                <property required="no">
-                  <keyword>rfold=</keyword>
-                  <value/>
-                  <default>96</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Maximum cmp's gather fold</label>
-              <int>
-                <property required="no">
-                  <keyword>cfold=</keyword>
-                  <value/>
-                  <default>48</default>
-                </property>
-              </int>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Subtract super trace 1 from super trace 2</label>
@@ -404,7 +412,7 @@
         <enum>
           <property required="no">
             <keyword>mode=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
           <option>
@@ -422,7 +430,7 @@
         <float min="0" max="100">
           <property required="no">
             <keyword>perc=</keyword>
-            <value/>
+            <value />
             <default>10</default>
           </property>
         </float>
@@ -437,6 +445,16 @@
           </property>
         </flag>
       </parameter>
-    <parameter><label>Time sampling rate</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property></float></parameter></parameters>
+      <parameter>
+        <label>Time sampling rate</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Spec FX</title>
   <description>Fourier spectrum (T -&gt; F) of traces</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,13 +22,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Spec FX</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Fourier spectrum (T &rarr; F) of traces
+            Fourier spectrum (T &rarr; F) of traces
            <!-- end des -->
           </div>
         </div>
@@ -35,7 +36,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Filtering, Transforms and Attributes | Seismic Unix
+        Filtering, Transforms and Attributes | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -48,12 +49,12 @@
           <p>Fourier spectrum (T &rarr; F) of traces.</p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>Out 08, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  
+          <p>Out 08, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          
           <!-- end cpy -->
         </div>
 
@@ -79,31 +80,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-08T14:41:12.216596Z</created>
     <modified>2010-08-06T00:43:07.869827Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Spec FX</title>
     <binary>suspecfx</binary>
     <description>Fourier spectrum (T -&gt; F) of traces</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -122,13 +126,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Spec FX</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Fourier spectrum (T &rarr; F) of traces
+            Fourier spectrum (T &rarr; F) of traces
            <!-- end des -->
           </div>
         </div>
@@ -136,7 +140,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Filtering, Transforms and Attributes | Seismic Unix
+        Filtering, Transforms and Attributes | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -148,25 +152,25 @@
 
           <p>Fourier spectrum (T &rarr; F) of traces.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst -->
+              
+            <!-- begin lst -->
             <ul>
               <li><span class="label">Time sampling interval</span><br/>
-		The default value for this parameter is set from header</li>
+                The default value for this parameter is set from header</li>
 
             </ul>
             
             <!-- end lst -->
 
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>To facilitate further processing, the sampling interval
@@ -187,14 +191,14 @@
           </ul>
           </p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Dave (algorithm), Jack (reformatting for SU)</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -203,9 +207,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -225,8 +229,20 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0" selection=""><parameter><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property></float></parameter></parameters>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+    </parameters>
   </program>
 </flow>

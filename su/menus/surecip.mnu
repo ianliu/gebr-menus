@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Reciprocity</title>
   <description>Sum traces with equal positive and negative offsets</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Reciprocity</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Sum traces with equal positive and negative offsets
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -46,20 +47,20 @@
           <h2>Introduction</h2>
 
           <p> Sum traces with equal positive and negative offsets (i.e. assume
- 	reciprocity holds).</p>
+        reciprocity holds).</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Nov 25, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 15, 2010: revised by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -68,7 +69,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -86,31 +87,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-11-25T17:00:41.736080Z</created>
     <modified>2010-08-16T03:00:15.691891Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Reciprocity</title>
     <binary>surecip</binary>
     <description>Sum traces with equal positive and negative offsets</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -129,12 +133,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Reciprocity</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Sum traces with equal positive and negative offsets
             <!-- end des -->
           </div>
@@ -142,7 +146,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -154,17 +158,17 @@
           <h2>Introduction</h2>
 
           <p> Sum traces with equal positive and negative offsets (i.e. assume
- 	reciprocity holds).</p>
+        reciprocity holds).</p>
 
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>The assumption is that this operation is not a mainstay processing
-	item.  Hence the recommended implemention via the 'recip' shell
-	script.  If it becomes a mainstay, then a much faster code can
-	quickly drummed up by incorporating portions of suabshw and
-	susort.</p>
+        item.  Hence the recommended implemention via the 'recip' shell
+        script.  If it becomes a mainstay, then a much faster code can
+        quickly drummed up by incorporating portions of suabshw and
+        susort.</p>
 
           <p>This program access the following header keywords
           <ul>
@@ -176,21 +180,21 @@
           <ul>
             <li>Number of horizontally summed traces</li> <!-- nhs   -->
             <li>Trace number sequence within line</li> <!-- tracl -->
-	    <li>X source coordinate</li> <!-- sx -->
-	    <li>X group coordinate</li> <!-- gx -->
+            <li>X source coordinate</li> <!-- sx -->
+            <li>X group coordinate</li> <!-- gx -->
           </ul>
           </p> 
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>SEP: Shuki Ronen<br />
-	     CWP: Jack Cohen</p>
+             CWP: Jack Cohen</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -217,8 +221,9 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </program>
 </flow>

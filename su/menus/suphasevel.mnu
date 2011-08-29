@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Phase Vel</title>
   <description>Multi-mode phase velocity dispersion map</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Phase Vel</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Multi-mode phase velocity dispersion map
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Gain, NMO, Stack and Standard Processes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Gain, NMO, Stack and Standard Processes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	 Multi-mode phase velocity dispersion map computed from shot record(s).</p>
+         Multi-mode phase velocity dispersion map computed from shot record(s).</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Aug 30, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Aug 30, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Aug 30, 2010<!-- end ver --></span>
+                <!-- begin ver -->Aug 30, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -58,30 +59,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-08-30T13:30:55.477764Z</created>
     <modified>2010-08-31T16:29:12.640367Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>SU Phase Vel</title>
     <binary>suphasevel</binary>
     <description>Multi-mode phase velocity dispersion map</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -93,12 +98,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Phase Vel</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Multi-mode phase velocity dispersion map
             <!-- end des -->
           </div>
@@ -106,106 +111,106 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Gain, NMO, Stack and Standard Processes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Gain, NMO, Stack and Standard Processes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	 Multi-mode phase velocity dispersion map computed from shot record(s).</p>
+         Multi-mode phase velocity dispersion map computed from shot record(s).</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="group">
-			<span class="grouplabel">Phase velocity properties</span>
-			<ul>
-				<li>
-					<span class="label">Minimum phase velocity (m/s)</span></li>
-				<li>
-					<span class="label">Number of phase velocities</span></li>
-				<li>
-					<span class="label">Phase velocity step (m/s)</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Maximum frequency to process (Hz)</span><br />
-			If set as zero,  process to nyquist.</li>
-		<li>
-			<span class="label">Sampling interval</span></li>
-		<li>
-			<span class="label">Normalize by amplitude spectrum</span></li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-		<li>
-			<span class="label">Directory for storing temporary files</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">Phase velocity properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Minimum phase velocity (m/s)</span></li>
+                                <li>
+                                        <span class="label">Number of phase velocities</span></li>
+                                <li>
+                                        <span class="label">Phase velocity step (m/s)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Maximum frequency to process (Hz)</span><br />
+                        If set as zero,  process to nyquist.</li>
+                <li>
+                        <span class="label">Sampling interval</span></li>
+                <li>
+                        <span class="label">Normalize by amplitude spectrum</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+                <li>
+                        <span class="label">Directory for storing temporary files</span></li>
+        </ul>
 </div>
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Offsets read from headers.<br />
-	1. Output is complex frequency data.<br />
-	2. Offset header word must be set (signed offset is ok).<br />
-	3. Parameter <strong>Normalize by amplitude spectrum</strong> set on, tends to blow up aliasing and other artifacts.<br />
-	4. For correct application of menu <strong>SU iFFT</strong> later, use parameter <strong>Maximum frequency to process (Hz)</strong> equal a zero.<br />
-	5. Works for 2D or 3D shots in any offset order.<br />
-	<br />
-	This program accesses the following header keywords:</p>
+        Offsets read from headers.<br />
+        1. Output is complex frequency data.<br />
+        2. Offset header word must be set (signed offset is ok).<br />
+        3. Parameter <strong>Normalize by amplitude spectrum</strong> set on, tends to blow up aliasing and other artifacts.<br />
+        4. For correct application of menu <strong>SU iFFT</strong> later, use parameter <strong>Maximum frequency to process (Hz)</strong> equal a zero.<br />
+        5. Works for 2D or 3D shots in any offset order.<br />
+        <br />
+        This program accesses the following header keywords:</p>
 <ul>
-	<li>
-		Sampling interval in microseconds,</li>
-	<li>
-		Offset (signed distance from source to receiver group),</li>
-	<li>
-		Number of samples.</li>
+        <li>
+                Sampling interval in microseconds,</li>
+        <li>
+                Offset (signed distance from source to receiver group),</li>
+        <li>
+                Number of samples.</li>
 </ul>
 <p>
-	This program modifies the following header keywords:</p>
+        This program modifies the following header keywords:</p>
 <ul>
-	<li>
-		Sampling interval in microseconds,</li>
-	<li>
-		Number of samples,</li>
-	<li>
-		Trace identification code,</li>
-	<li>
-		Sample spacing for non-seismic data,</li>
-	<li>
-		First sample location for non-seismic data,</li>
-	<li>
-		Sample spacing between traces,</li>
-	<li>
-		First trace location,</li>
-	<li>
-		Trace number sequence within line.</li>
+        <li>
+                Sampling interval in microseconds,</li>
+        <li>
+                Number of samples,</li>
+        <li>
+                Trace identification code,</li>
+        <li>
+                Sample spacing for non-seismic data,</li>
+        <li>
+                First sample location for non-seismic data,</li>
+        <li>
+                Sample spacing between traces,</li>
+        <li>
+                First trace location,</li>
+        <li>
+                Trace number sequence within line.</li>
 </ul>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <!-- List of references --><ul>
-	<li>
-		 Park, Miller, and Xia (1998, SEG Abstracts)</li>
+        <li>
+                 Park, Miller, and Xia (1998, SEG Abstracts)</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	   <span class="Apple-style-span" style="font-family: monospace; white-space: pre; ">UHouston: Chris Liner, June 2008.</span></p>
+           <span class="Apple-style-span" style="font-family: monospace; white-space: pre; ">UHouston: Chris Liner, June 2008.</span></p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	References</a></li><li><a href="#header_4">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -213,7 +218,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
       <parameter>
@@ -226,7 +232,7 @@
                 <float>
                   <property required="no">
                     <keyword>fv=</keyword>
-                    <value/>
+                    <value />
                     <default>330</default>
                   </property>
                 </float>
@@ -236,7 +242,7 @@
                 <int>
                   <property required="no">
                     <keyword>nv=</keyword>
-                    <value/>
+                    <value />
                     <default>100</default>
                   </property>
                 </int>
@@ -246,7 +252,7 @@
                 <float>
                   <property required="no">
                     <keyword>dv=</keyword>
-                    <value/>
+                    <value />
                     <default>25</default>
                   </property>
                 </float>
@@ -255,31 +261,31 @@
           </template-instance>
           <parameters default-selection="0">
             <parameter>
-              <label>Minimum phase velocity (m/s)</label>
+              <label></label>
               <reference>
                 <property required="no">
-                  <keyword/>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>330</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label>Number of phase velocities</label>
+              <label></label>
               <reference>
                 <property required="no">
-                  <keyword/>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>100</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label>Phase velocity step (m/s)</label>
+              <label></label>
               <reference>
                 <property required="no">
-                  <keyword/>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>25</default>
                 </property>
               </reference>
@@ -292,15 +298,22 @@
         <float>
           <property required="no">
             <keyword>fmax=</keyword>
-            <value/>
+            <value />
             <default>50</default>
           </property>
         </float>
       </parameter>
-      
-      
-      
-    <parameter><label>Sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property></float></parameter><parameter>
+      <parameter>
+        <label>Sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
         <label>Normalize by amplitude spectrum</label>
         <flag>
           <property required="no">
@@ -309,7 +322,8 @@
             <default>off</default>
           </property>
         </flag>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Echoes extra information</label>
         <flag>
           <property required="no">
@@ -318,13 +332,17 @@
             <default>off</default>
           </property>
         </flag>
-      </parameter><parameter>
+      </parameter>
+      <parameter>
         <label>Directory for storing temporary files</label>
-        <file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
-	
-	
-	
-      </file>
-      </parameter></parameters>
+        <file directory="yes">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+    </parameters>
   </program>
 </flow>

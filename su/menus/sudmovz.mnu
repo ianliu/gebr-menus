@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU DMO VZ</title>
   <description>DMO for V(Z) media for common-offset gathers</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU DMO VZ</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             DMO for V(Z) media for common-offset gathers
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>DMO for V(Z) media for common-offset gathers.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Jun 01, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Jun 01, 2010<!-- end ver --></span>
+                <!-- begin ver -->Jun 01, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-06-01T15:05:12.512237Z</created>
     <modified>2010-08-06T00:43:04.722419Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU DMO VZ</title>
     <binary>sudmovz</binary>
     <description>DMO for V(Z) media for common-offset gathers</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +130,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU DMO VZ</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             DMO for V(Z) media for common-offset gathers
             <!-- end des -->
           </div>
@@ -138,7 +143,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,14 +154,14 @@
 
           <p>DMO for V(Z) media for common-offset gathers.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">Minimum CDP for wich to aply DMO</span></li>
 
               <li class="req"><span class="reqlabel">Maximum CDP for wich to aply DMO</span></li>
@@ -166,7 +171,7 @@
               <li class="req"><span class="reqlabel">Number of offsets to mix</span></li>
 
               <li><span class="label">Binary file containing interval velocities (m/s)</span><br/>
-		File non-ascII.</li>
+                File non-ascII.</li>
 
               <li><span class="label">Times corresponding to interval velocities (s)</span></li>
 
@@ -184,32 +189,32 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p> 
 Input traces should be sorted into common-offset gathers.  One common-
 offset gather ends and another begins when the offset field of the trace
-headers changes.</p>						
+headers changes.</p>                                            
 
 <p>The CDP field of the input trace headers must be the cdp bin NUMBER, NOT
-the CDP location expressed in units of meters or feet.</p>		
+the CDP location expressed in units of meters or feet.</p>              
 
 <p>The parameter <b>Number of offsets to mix</b> should typically equal the ratio of
 the shotpoint spacing to the CDP spacing.  This choice ensures that every
-CDP will be represented in each offset mix.<br/>  Traces in each mix will	
+CDP will be represented in each offset mix.<br/>  Traces in each mix will       
 contribute through DMO to other traces in adjacent CDPs within that mix.</p>
 
-<p><b>Binary file containing interval velocities (m/s)</b> should contain the regularly sampled interval velocities as a	
- function of time.  If <b>Binary file containing interval velocities (m/s)</b> is not supplied, the interval velocity	
+<p><b>Binary file containing interval velocities (m/s)</b> should contain the regularly sampled interval velocities as a        
+ function of time.  If <b>Binary file containing interval velocities (m/s)</b> is not supplied, the interval velocity   
  function is defined by linear interpolation of the values in the <b>Times corresponding to interval velocities (s)</b> and 
 <b>Interval velocities corresponding to times (m/s)</b> arrays.<br/>The times parameter <b>Times corresponding to interval velocities (s)</b>
  must be monotonically increasing.</p>
 
-<p>For each offset, the minimum time to process is determined using the parameter <b>Stretch mute used for NMO correction</b>.<br/>	
+<p>For each offset, the minimum time to process is determined using the parameter <b>Stretch mute used for NMO correction</b>.<br/>     
 The DMO correction is not computed for samples that have experienced greater stretch during NMO.</p>
 
 <p>This program accesses the following header keywords:
@@ -224,11 +229,11 @@ The DMO correction is not computed for samples that have experienced greater str
 
 
 
-	  <a name="ref" id="ref"></a>
+          <a name="ref" id="ref"></a>
           <h2>References</h2>
 
 
-	  <!-- List of references -->
+          <!-- List of references -->
           <ul>
 
             <li>Artley, C., 1992,<br/>
@@ -238,14 +243,14 @@ The DMO correction is not computed for samples that have experienced greater str
 
           </ul>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Craig Artley.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -254,9 +259,9 @@ The DMO correction is not computed for samples that have experienced greater str
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -271,7 +276,7 @@ The DMO correction is not computed for samples that have experienced greater str
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -279,7 +284,8 @@ The DMO correction is not computed for samples that have experienced greater str
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -287,8 +293,8 @@ The DMO correction is not computed for samples that have experienced greater str
         <int>
           <property required="yes">
             <keyword>cdpmin=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -297,8 +303,8 @@ The DMO correction is not computed for samples that have experienced greater str
         <int>
           <property required="yes">
             <keyword>cdpmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -307,8 +313,8 @@ The DMO correction is not computed for samples that have experienced greater str
         <float min="0">
           <property required="yes">
             <keyword>dxcdp=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -317,8 +323,8 @@ The DMO correction is not computed for samples that have experienced greater str
         <int>
           <property required="yes">
             <keyword>noffmix=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -327,8 +333,8 @@ The DMO correction is not computed for samples that have experienced greater str
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>vfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -337,7 +343,7 @@ The DMO correction is not computed for samples that have experienced greater str
         <float>
           <property required="no">
             <keyword>tdmo=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>
@@ -347,7 +353,7 @@ The DMO correction is not computed for samples that have experienced greater str
         <float>
           <property required="no">
             <keyword>vdmo=</keyword>
-            <value/>
+            <value />
             <default>1500.0</default>
           </property>
         </float>
@@ -357,8 +363,8 @@ The DMO correction is not computed for samples that have experienced greater str
         <float>
           <property required="no">
             <keyword>fmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -367,7 +373,7 @@ The DMO correction is not computed for samples that have experienced greater str
         <float>
           <property required="no">
             <keyword>smute=</keyword>
-            <value/>
+            <value />
             <default>1.5</default>
           </property>
         </float>
@@ -377,7 +383,7 @@ The DMO correction is not computed for samples that have experienced greater str
         <float>
           <property required="no">
             <keyword>speed=</keyword>
-            <value/>
+            <value />
             <default>1.0</default>
           </property>
         </float>

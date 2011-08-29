@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.6">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Ray Data</title>
   <description>Display ray data from ELA Ray</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Ray Data</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Display ray data from ELA Ray
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,16 +46,16 @@
 
           <p>Simple program to display ray data from <strong>ELA Ray</strong>.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Set 07, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -74,7 +75,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Set 07, 2010<!-- end ver --></span>
+                <!-- begin ver -->Set 07, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -82,30 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-09-07T11:01:48.600222Z</created>
     <modified>2011-02-03T15:15:59.017644Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Graphics</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>Ray Data</title>
     <binary>raydata</binary>
     <description>Display ray data from ELA Ray</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -117,12 +122,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Ray Data</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Display ray data from ELA Ray
             <!-- end des -->
           </div>
@@ -130,68 +135,68 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Simple program to display ray data from <strong>ELA Ray</strong>.</p>
+        Simple program to display ray data from <strong>ELA Ray</strong>.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Index of interest</span></li>
-		<li>
-			<span class="label">Output type</span>
-			<ul>
-				<li>
-					Binary</li>
-				<li>
-					ASCII</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Output x_t</span></li>
-		<li>
-			<span class="label">Output x_px</span></li>
-		<li>
-			<span class="label">Output x_pz</span></li>
-		<li>
-			<span class="label">Output x_vgx</span></li>
-		<li>
-			<span class="label">Output x_vgz</span></li>
-		<li>
-			<span class="label">Output px_vgx</span></li>
-		<li>
-			<span class="label">Output x_polange</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Index of interest</span></li>
+                <li>
+                        <span class="label">Output type</span>
+                        <ul>
+                                <li>
+                                        Binary</li>
+                                <li>
+                                        ASCII</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Output x_t</span></li>
+                <li>
+                        <span class="label">Output x_px</span></li>
+                <li>
+                        <span class="label">Output x_pz</span></li>
+                <li>
+                        <span class="label">Output x_vgx</span></li>
+                <li>
+                        <span class="label">Output x_vgz</span></li>
+                <li>
+                        <span class="label">Output px_vgx</span></li>
+                <li>
+                        <span class="label">Output x_polange</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Simple program to display some of the computed ray data.<br />
-	Output is written into files &lt;*.data&gt;.</p>
+        Simple program to display some of the computed ray data.<br />
+        Output is written into files &lt;*.data&gt;.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Author: Andreas Rueger, Colorado School of Mines, 02/15/94.</p>
+        Author: Andreas Rueger, Colorado School of Mines, 02/15/94.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -199,7 +204,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
       <parameter>
@@ -207,8 +213,8 @@
         <int>
           <property required="no">
             <keyword>kend=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -217,7 +223,7 @@
         <enum>
           <property required="no">
             <keyword>ascci=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
           <option>
@@ -230,7 +236,76 @@
           </option>
         </enum>
       </parameter>
-      
-    <parameter><label>Output x__t</label><flag><property required="no"><keyword>t=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Output x__px</label><flag><property required="no"><keyword>px=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Output x__pz</label><flag><property required="no"><keyword>pz=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Output x__vgx</label><flag><property required="no"><keyword>vgx=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Output x__vgz</label><flag><property required="no"><keyword>vgz=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Output px__vgx</label><flag><property required="no"><keyword>pxvx=1</keyword><value>off</value><default>off</default></property></flag></parameter><parameter><label>Output x__polange</label><flag><property required="no"><keyword>pol=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
+      <parameter>
+        <label>Output x__t</label>
+        <flag>
+          <property required="no">
+            <keyword>t=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Output x__px</label>
+        <flag>
+          <property required="no">
+            <keyword>px=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Output x__pz</label>
+        <flag>
+          <property required="no">
+            <keyword>pz=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Output x__vgx</label>
+        <flag>
+          <property required="no">
+            <keyword>vgx=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Output x__vgz</label>
+        <flag>
+          <property required="no">
+            <keyword>vgz=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Output px__vgx</label>
+        <flag>
+          <property required="no">
+            <keyword>pxvx=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Output x__polange</label>
+        <flag>
+          <property required="no">
+            <keyword>pol=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Mig PSPI</title>
   <description>Gazdag's phase-shift plus interpolation depth migration for zero-offset data</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -42,18 +43,18 @@
       <div class="main">
         <div class="content">
 
-	    
-	  <a name="details" id="details"></a>
+            
+          <a name="details" id="details"></a>
           <h2>Introduction</h2>
 
           <p>Gazdag's phase-shift plus interpolation migration for zero-offset data, which can handle the lateral velocity variation.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>GêBR core team</p>
-	  <p>Jul 23, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com<p/>
+          <p>Jul 23, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com<p/>
 
           <!-- end cpy -->
         </div>
@@ -81,31 +82,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-05T15:00:00Z</created>
     <modified>2010-08-06T00:43:06.058771Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Mig PSPI</title>
     <binary>sumigpspi</binary>
     <description>Gazdag's phase-shift plus interpolation depth migration for zero-offset data</description>
-    <help><![CDATA[
+    <help>
+      <![CDATA[
 <html>
 <head>
   <meta name="generator" content=
@@ -163,7 +167,7 @@
 
           <li><span class="label">Directory path prefix for storing temporary files</span></li>
 
-	  <li><span class="label">Echoes extra information</span></li>
+          <li><span class="label">Echoes extra information</span></li>
 
           </ul>
 
@@ -185,21 +189,21 @@
           <p>Because most of the tools in the SU package (such as <strong> Uniform 2D Velocity</strong>, <strong>Uniform Sample 2D</strong>, and <strong> Make Velocity</strong>) produce output with the structure [ix][iz], you will need to transpose the velocity files created by these programs. You may use the SU program <strong>Transpose</strong> in SU to transpose such files into the required [iz][ix] structure. </p>
           
           <p>This program accesses the following header keywords:
-  		<ul>
-    			<li>Number of samples</li>  <!-- ns -->
-    			<li>Sampling interval in microseconds</li>  <!-- dt -->
-    			<li>Delay recording time in microseconds</li>  <!-- delrt -->
-    			<li>Sample spacing between traces</li>  <!-- d2 -->
-  		</ul>
-	  </p>
+                <ul>
+                        <li>Number of samples</li>  <!-- ns -->
+                        <li>Sampling interval in microseconds</li>  <!-- dt -->
+                        <li>Delay recording time in microseconds</li>  <!-- delrt -->
+                        <li>Sample spacing between traces</li>  <!-- d2 -->
+                </ul>
+          </p>
 
           <p>This program modifies the following header keywords:
-  		<ul>
-    			<li>Number of samples</li>  <!-- ns -->
-    			<li>Sampling interval in microseconds</li>  <!-- dt -->
-    			<li>Delay recording time in microseconds</li>  <!-- delrt -->
-  		</ul>
-	  </p>
+                <ul>
+                        <li>Number of samples</li>  <!-- ns -->
+                        <li>Sampling interval in microseconds</li>  <!-- dt -->
+                        <li>Delay recording time in microseconds</li>  <!-- delrt -->
+                </ul>
+          </p>
 
 
           <a name="credits"></a>
@@ -217,7 +221,7 @@
           <ul>
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -238,42 +242,80 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of depth samples</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Depth sampling interval</label><float><property required="yes"><keyword>dz=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Name of file containing velocities</label><file directory="no"><property required="yes"><keyword>vfile=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      <parameter><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Midpoint sampling interval</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Directory path for storing temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-    <parameter><label>Echos extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of depth samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Depth sampling interval</label>
+        <float>
+          <property required="yes">
+            <keyword>dz=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Name of file containing velocities</label>
+        <file directory="no">
+          <property required="yes">
+            <keyword>vfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Midpoint sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Directory path for storing temporary files</label>
+        <file directory="yes">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Echos extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

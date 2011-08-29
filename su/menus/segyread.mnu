@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU SEG-Y Read</title>
   <description>Read a SEG-Y tape</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
     
     <link rel="stylesheet" type="text/css" href="gebr.css" />
@@ -32,20 +33,20 @@
 
         <div class="main">
           <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Read an SEG-Y tape.</p>
+        Read an SEG-Y tape.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Set 16, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>
+        Set 16, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>
 <p>
-	Apr 19, 2010: modified by Davi Clemente &lt;davi.clementet@gebrproject.com&gt;</p>
+        Apr 19, 2010: modified by Davi Clemente &lt;davi.clementet@gebrproject.com&gt;</p>
 </div>
 
               <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
               <div class="clearer"></div>
             </div>
@@ -60,31 +61,34 @@
       
     
 </body></html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-09-16T15:00:00Z</created>
     <modified>2010-08-06T00:43:03.790031Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Import/Export</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU SEG-Y Read</title>
     <binary>segyread</binary>
     <description>Read a SEG-Y tape</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
 
     <link rel="stylesheet" type="text/css" href="gebr.css" />
@@ -95,147 +99,147 @@
     </head><body>
     <div class="outer-container">
       <div class="inner-container">
-	<div class="header">
-	  <div class="title">
-	    <!-- begin tt2 -->
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
           <span class="flowtitle">SU SEG-Y read</span>
           <!-- end tt2 -->
-	    <div class="description">
+            <div class="description">
            <!-- begin des -->Read an SEG-Y tape <!-- end des -->
           </div>
-	  </div>
-	</div><!-- header -->
+          </div>
+        </div><!-- header -->
 
-	<div class="category">
+        <div class="category">
         <!-- begin cat -->
-	  Import/Export | Seismic Unix
-	  <!-- end cat -->
+          Import/Export | Seismic Unix
+          <!-- end cat -->
       </div>
 
-	<div class="main">
-	  <div class="content">
-	    <h2 id="header_0">	Introduction</h2>
+        <div class="main">
+          <div class="content">
+            <h2 id="header_0">  Introduction</h2>
 
-	    <p>	Read an SEG-Y tape.</p>
+            <p> Read an SEG-Y tape.</p>
 
-	    <!-- begin par -->
+            <!-- begin par -->
           <div class="parameters">
-	      <h2 id="header_1">Parameters</h2>
+              <h2 id="header_1">Parameters</h2>
 
-	<p>
-		For a SEG-Y diskfile just type the file name.</p>
-	<p>
-		To read from the standard input use an hyfen, "-", in this parameter.<br />
-		Under Solaris there is a caveat for this option, you can not use the option <b>For 8mm EXABYTE drives</b>.</p>
-	<p>
-		To read from a tape this parameter must be set to the device name on the system. Traditionally this whould be "/dev/rmt0". However, in the modern world tape device names are much less uniform. The magic name can often be deduced by "ls /dev". Likely man pages with the names of the tape devices are: "mt", "sd" "st". Also try "man -k scsi", "man mt", etc.Sometimes "mt status" will tell the device name.</p>
-	<p>
-		Remark: a SEG-Y file is not the same as an su file. A SEG-Y file consists of three parts: an ebcdic header, a binary reel header, and the traces.The traces are (usually) in 32 bit IBM floating point format. An SU file consists only of the trace portion written in the native binary floats.</p>
-	<p>
-		Usefull on some 8mm EXABYTE drives. The default is for buffered device (9-track reel tape drive)</p>
-	<p>
-		For 8mm EXABYTE drives off (default) indata is accessed with 'read', for 8mm EXABYTE drives on indata is accessed with 'fread'. We suggest that you try 8mm EXABYTE drives off even with EXABYTE tapes.<br />
-		Caveat: may be slow on an 8mm streaming (EXABYTE) tapedrive.</p>
-	<p>
-		Warning:<strong>SU SEG-Y Read</strong> or <strong>SU SEG-Y Write</strong> to 8mm tape is fragile. You must allow sufficient time between successive reads and writes.</p>
-	<!-- begin lst -->
+        <p>
+                For a SEG-Y diskfile just type the file name.</p>
+        <p>
+                To read from the standard input use an hyfen, "-", in this parameter.<br />
+                Under Solaris there is a caveat for this option, you can not use the option <b>For 8mm EXABYTE drives</b>.</p>
+        <p>
+                To read from a tape this parameter must be set to the device name on the system. Traditionally this whould be "/dev/rmt0". However, in the modern world tape device names are much less uniform. The magic name can often be deduced by "ls /dev". Likely man pages with the names of the tape devices are: "mt", "sd" "st". Also try "man -k scsi", "man mt", etc.Sometimes "mt status" will tell the device name.</p>
+        <p>
+                Remark: a SEG-Y file is not the same as an su file. A SEG-Y file consists of three parts: an ebcdic header, a binary reel header, and the traces.The traces are (usually) in 32 bit IBM floating point format. An SU file consists only of the trace portion written in the native binary floats.</p>
+        <p>
+                Usefull on some 8mm EXABYTE drives. The default is for buffered device (9-track reel tape drive)</p>
+        <p>
+                For 8mm EXABYTE drives off (default) indata is accessed with 'read', for 8mm EXABYTE drives on indata is accessed with 'fread'. We suggest that you try 8mm EXABYTE drives off even with EXABYTE tapes.<br />
+                Caveat: may be slow on an 8mm streaming (EXABYTE) tapedrive.</p>
+        <p>
+                Warning:<strong>SU SEG-Y Read</strong> or <strong>SU SEG-Y Write</strong> to 8mm tape is fragile. You must allow sufficient time between successive reads and writes.</p>
+        <!-- begin lst -->
             <ul>
-		<li class="req">
-			<span class="reqlabel">Input tape device or SEG-Y filename</span></li>
-		<li>
-			<span class="label">For 8mm EXABYTE drives</span></li>
-		<li>
-			<span class="label">Echoing every trace</span></li>
-		<li>
-			<span class="label">File to store ebcdic block</span> as ascii</li>
-		<li>
-			<span class="label">File to store binary date</span></li>
-		<li>
-			<span class="label">File to store extended text block</span></li>
-		<li>
-			<span class="label">Number of samples</span></li>
-		<li>
-			<span class="label">First trace to read</span></li>
-		<li>
-			<span class="label">Last trace to read</span></li>
-		<li>
-			<span class="label">Allowable number of consecutive tape IO errors</span></li>
-		<li>
-			<span class="label">File formats</span></li>
-		<li>
-			<span class="label">Apply trace weighting factor</span></li>
-		<li>
-			<span class="label">Override and attempt conversion</span> as ascii</li>
-		<li>
-			<span class="label">Do not perform to ascii conversion on 3200 byte textural</span></li>
-		<li>
-			<span class="label">Echoes information</span></li>
-		<li class="group">
-			<span class="grouplabel">Float point representation</span>
-			<ul>
-				<li>
-					<span class="label">Assume data is in native format</span>
-					<p>
-						The defult behavior is to convert to native format.</p>
-				</li>
-				<li>
-					<span class="label">Machine endian</span>
-					<ul>
-						<li>
-							Little endian</li>
-						<li>
-							Big endian</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Remapping</span>
-			<p>
-				These parameters allow you to remap keyword information on header. The fisrt parameter list the keywords to be remapped and the second where and how they will be placed.</p>
-			<p>
-				The new mapping is specified by a position and a type as Xt. Where, in correspondence with the SEG-Y standard (1975), X denotes the byte number starting at 1 and the type is one character among 'f', 'l', 's' and 'b'. </p>
-			<ul>
-				<li>
-					<span class="label">Keys to be remapped</span>
-					<p>
-						For the meaning of header keywords see help of menu SU Set Header.</p>
-				</li>
-				<li>
-					<span class="label">New mapping (position and type)</span>
-					<ul>
-						<li>
-							f - Float (4 bytes)</li>
-						<li>
-							l - Long int (4 bytes)</li>
-						<li>
-							s - Short int (2 bytes)</li>
-						<li>
-							b - Byte (1 byte)</li>
-					</ul>
-				</li>
-				For examle, 221f maps a float on location 221.
-			</ul>
-		</li>
-	</ul>
+                <li class="req">
+                        <span class="reqlabel">Input tape device or SEG-Y filename</span></li>
+                <li>
+                        <span class="label">For 8mm EXABYTE drives</span></li>
+                <li>
+                        <span class="label">Echoing every trace</span></li>
+                <li>
+                        <span class="label">File to store ebcdic block</span> as ascii</li>
+                <li>
+                        <span class="label">File to store binary date</span></li>
+                <li>
+                        <span class="label">File to store extended text block</span></li>
+                <li>
+                        <span class="label">Number of samples</span></li>
+                <li>
+                        <span class="label">First trace to read</span></li>
+                <li>
+                        <span class="label">Last trace to read</span></li>
+                <li>
+                        <span class="label">Allowable number of consecutive tape IO errors</span></li>
+                <li>
+                        <span class="label">File formats</span></li>
+                <li>
+                        <span class="label">Apply trace weighting factor</span></li>
+                <li>
+                        <span class="label">Override and attempt conversion</span> as ascii</li>
+                <li>
+                        <span class="label">Do not perform to ascii conversion on 3200 byte textural</span></li>
+                <li>
+                        <span class="label">Echoes information</span></li>
+                <li class="group">
+                        <span class="grouplabel">Float point representation</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Assume data is in native format</span>
+                                        <p>
+                                                The defult behavior is to convert to native format.</p>
+                                </li>
+                                <li>
+                                        <span class="label">Machine endian</span>
+                                        <ul>
+                                                <li>
+                                                        Little endian</li>
+                                                <li>
+                                                        Big endian</li>
+                                        </ul>
+                                </li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Remapping</span>
+                        <p>
+                                These parameters allow you to remap keyword information on header. The fisrt parameter list the keywords to be remapped and the second where and how they will be placed.</p>
+                        <p>
+                                The new mapping is specified by a position and a type as Xt. Where, in correspondence with the SEG-Y standard (1975), X denotes the byte number starting at 1 and the type is one character among 'f', 'l', 's' and 'b'. </p>
+                        <ul>
+                                <li>
+                                        <span class="label">Keys to be remapped</span>
+                                        <p>
+                                                For the meaning of header keywords see help of menu SU Set Header.</p>
+                                </li>
+                                <li>
+                                        <span class="label">New mapping (position and type)</span>
+                                        <ul>
+                                                <li>
+                                                        f - Float (4 bytes)</li>
+                                                <li>
+                                                        l - Long int (4 bytes)</li>
+                                                <li>
+                                                        s - Short int (2 bytes)</li>
+                                                <li>
+                                                        b - Byte (1 byte)</li>
+                                        </ul>
+                                </li>
+                                For examle, 221f maps a float on location 221.
+                        </ul>
+                </li>
+        </ul>
   <!-- end lst -->
 
           </div>
           <!-- end par -->
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	If you have a tape with multiple sequences of ebcdic header, binary header,traces, use the device that invokes the no-rewind option and issue multiple segyread commands (making an appropriate shell script if you want to save all the headers). Consider using &gt;&gt; you want a single trace file in the end. Similar considerations apply for multiple reels of tapes, but use the standard rewind on end of file.</p>
+        If you have a tape with multiple sequences of ebcdic header, binary header,traces, use the device that invokes the no-rewind option and issue multiple segyread commands (making an appropriate shell script if you want to save all the headers). Consider using &gt;&gt; you want a single trace file in the end. Similar considerations apply for multiple reels of tapes, but use the standard rewind on end of file.</p>
 <p>
-	Warning: may return the error message "efclose: fclose failed" intermittently when SEG-Y reading/SEG-Y writing to 8mm (EXABYTE) tape even if actual <strong>SU SEG-Y Read</strong>/<strong>SU SEG-Y Write</strong> is successful. However, this error message may be returned if your tape drive has a fixed block size set.</p>
+        Warning: may return the error message "efclose: fclose failed" intermittently when SEG-Y reading/SEG-Y writing to 8mm (EXABYTE) tape even if actual <strong>SU SEG-Y Read</strong>/<strong>SU SEG-Y Write</strong> is successful. However, this error message may be returned if your tape drive has a fixed block size set.</p>
 <p>
-	Caution: When reading or writing SEG-Y tapes, the tape drive should be set to be able to read variable block length tape files.</p>
+        Caution: When reading or writing SEG-Y tapes, the tape drive should be set to be able to read variable block length tape files.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	SEP: Einar Kjartansson<br />
-	CWP: Jack K. CohenBrian Sumner, Chris Liner<br />
-	CWP: John Stockwell (added 8mm tape stuff)</p>
+        SEP: Einar Kjartansson<br />
+        CWP: Jack K. CohenBrian Sumner, Chris Liner<br />
+        CWP: John Stockwell (added 8mm tape stuff)</p>
 </div>
 
 <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
@@ -257,253 +261,610 @@
     
   
 </body></html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Input tape device or seg-y filename</label><file directory="no"><property required="yes"><keyword>tape=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      <parameter><label>For 8mm EXABYTE drives</label><flag><property required="no"><keyword>buff=0</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      
-      <parameter><label>Echoing every trace</label><int><property required="no"><keyword>vblock=</keyword><value/><default>50</default></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>File to store ebcdic block</label><file directory="no"><property required="no"><keyword>hfile=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      <parameter><label>File to store binary date</label><file directory="no"><property required="no"><keyword>bfile=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      <parameter><label>File to store extended text block</label><file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>xfile=</keyword><value/><default/></property></file></parameter><parameter><label>Number of samples</label><int><property required="no"><keyword>ns=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter><parameter><label>First trace to read</label><int><property required="no"><keyword>trmin=</keyword><value/><default>1</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>Last trace to read</label><int><property required="no"><keyword>trmax=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter><parameter><label>Allowable number of consecutive tape IO errors</label><int><property required="no"><keyword>errmax=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter><parameter><label>File format</label><enum><property required="no"><keyword>format=</keyword><value/><default/></property><option><label>IBM floating point, 4 bytes</label><value>1</value></option><option><label>Two's complement integer, 4 bytes</label><value>2</value></option><option><label>Two's complement integer, 2 bytes</label><value>3</value></option><option><label>IEEE floating point, 4 bytes</label><value>5</value></option><option><label>Two's complement integer, 1 bytes</label><value>8</value></option></enum></parameter><parameter><label>Apply trace weighting factor</label><flag><property required="no"><keyword>trcwt=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter><parameter><label>Override and attempt conversion</label><flag><property required="no"><keyword>over=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
-      
-      
-      <parameter><label>Do not perform to ascii conversion on 3200 byte textural</label><flag><property required="no"><keyword>ebcdic=0</keyword><value>off</value><default>off</default></property></flag></parameter>
-      
-      
-      
-      
-      
-      
-      
-    <parameter><label>Echoes exta information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter><parameter><label>Float point representation</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Assume data is in native format</label><flag><property required="no"><keyword>conv=0</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter><parameter>
-        <label>Machine endian</label>
-        
-      <enum><property required="no"><keyword>endian=</keyword><value/><default/></property><option><label>Little endian</label><value>0</value></option><option><label>Big endian</label><value>1</value></option></enum></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Assume data is in native format</label><flag><property required="no"><keyword>conv=0</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter><parameter>
-        <label>Machine endian</label>
-        
-      <enum><property required="no"><keyword>endian=</keyword><value/><default/></property><option><label>Little endian</label><value>0</value></option><option><label>Big endian</label><value>1</value></option></enum></parameter></parameters></group></parameter><parameter><label>Remapping</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>Keys to be remapped</label>
-        <enum><property required="no" separator=","><keyword>remap=</keyword><value>cdp</value><default/></property>
-      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
-      <option><label>Alias filter slope</label><value>afils</value></option>
-      <option><label>Alignment padding</label><value>shortpad</value></option>
-      <option><label>CDP ensemble number</label><value>cdp</value></option>
-      <option><label>Coordinate units code</label><value>counit</value></option>
-      <option><label>Correlated flag</label><value>corr</value></option>
-      <option><label>Data use</label><value>duse</value></option>
-      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
-      <option><label>Datum elevation at source</label><value>sdel</value></option>
-      <option><label>Day of year</label><value>day</value></option>
-      <option><label>Delay recording time in ms</label><value>delrt</value></option>
-      <option><label>Energy source point number</label><value>ep</value></option>
-      <option><label>Field record number</label><value>fldr</value></option>
-      <option><label>Final mute time</label><value>mute</value></option>
-      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
-      <option><label>First trace location</label><value>f2</value></option>
-      <option><label>Gain type of field instruments code</label><value>gain</value></option>
-      <option><label>Gap size</label><value>gaps</value></option>
-      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
-      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
-      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
-      <option><label>Group static correction</label><value>gstat</value></option>
-      <option><label>High cut frequncy if used</label><value>hcf</value></option>
-      <option><label>High cut slope</label><value>hcs</value></option>
-      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
-      <option><label>Initial mute time</label><value>muts</value></option>
-      <option><label>Instrument early or initial gain</label><value>igi</value></option>
-      <option><label>Instrument gain constant</label><value>igc</value></option>
-      <option><label>Lag time A</label><value>laga</value></option>
-      <option><label>Lag time B</label><value>lagb</value></option>
-      <option><label>Low cut frequency if used</label><value>lcf</value></option>
-      <option><label>Low cut slope</label><value>lcs</value></option>
-      <option><label>Mark selected traces</label><value>mark</value></option>
-      <option><label>Minute of hour</label><value>minute</value></option>
-      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
-      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
-      <option><label>Notch filter slope</label><value>nofils</value></option>
-      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
-      <option><label>Number of samples</label><value>ns</value></option>
-      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
-      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      <option><label>Overtravel taper code</label><value>otrav</value></option>
-      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
-      <option><label>Sampling interval in microseconds</label><value>dt</value></option>
-      <option><label>Sample spacing between traces</label><value>d2</value></option>
-      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
-      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
-      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
-      <option><label>Second of minute</label><value>sec</value></option>
-      <option><label>Source depth (positive)</label><value>sdepth</value></option>
-      <option><label>Source elevation from sea level</label><value>selev</value></option>
-      <option><label>Source static correction</label><value>sstat</value></option>
-      <option><label>Subweathering velocity</label><value>swevel</value></option>
-      <option><label>Sweep frequency at end</label><value>sfe</value></option>
-      <option><label>Sweep frequency at start</label><value>sfs</value></option>
-      <option><label>Sweep length in ms</label><value>slen</value></option>
-      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
-      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
-      <option><label>Sweep type code</label><value>styp</value></option>
-      <option><label>Taper type</label><value>tatyp</value></option>
-      <option><label>Time basis code</label><value>timbas</value></option>
-      <option><label>Total static applied</label><value>tstat</value></option>
-      <option><label>Trace identification code</label><value>trid</value></option>
-      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
-      <option><label>Trace number sequence within line</label><value>tracl</value></option>
-      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
-      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      <option><label>Trace weighting factor</label><value>trwf</value></option>
-      <option><label>Uphole time at receiver group</label><value>gut</value></option>
-      <option><label>Uphole time at source</label><value>sut</value></option>
-      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
-      <option><label>Water depth at source</label><value>swdep</value></option>
-      <option><label>Weathering velocity</label><value>wevel</value></option>
-      <option><label>X group coordinate</label><value>gx</value></option>
-      <option><label>X source coordinate</label><value>sx</value></option>
-      <option><label>Y group coordinate</label><value>gy</value></option>
-      <option><label>Y source coordinate</label><value>sy</value></option>
-      <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
-      </parameter><parameter><label>New mapping (position and type)</label><string><property required="no" separator=","><keyword>byte=</keyword><value/><default/></property></string></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>Keys to be remapped</label>
-        <enum><property required="no" separator=","><keyword>remap=</keyword><value>cdp</value><default/></property>
-      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
-      <option><label>Alias filter slope</label><value>afils</value></option>
-      <option><label>Alignment padding</label><value>shortpad</value></option>
-      <option><label>CDP ensemble number</label><value>cdp</value></option>
-      <option><label>Coordinate units code</label><value>counit</value></option>
-      <option><label>Correlated flag</label><value>corr</value></option>
-      <option><label>Data use</label><value>duse</value></option>
-      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
-      <option><label>Datum elevation at source</label><value>sdel</value></option>
-      <option><label>Day of year</label><value>day</value></option>
-      <option><label>Delay recording time in ms</label><value>delrt</value></option>
-      <option><label>Energy source point number</label><value>ep</value></option>
-      <option><label>Field record number</label><value>fldr</value></option>
-      <option><label>Final mute time</label><value>mute</value></option>
-      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
-      <option><label>First trace location</label><value>f2</value></option>
-      <option><label>Gain type of field instruments code</label><value>gain</value></option>
-      <option><label>Gap size</label><value>gaps</value></option>
-      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
-      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
-      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
-      <option><label>Group static correction</label><value>gstat</value></option>
-      <option><label>High cut frequncy if used</label><value>hcf</value></option>
-      <option><label>High cut slope</label><value>hcs</value></option>
-      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
-      <option><label>Initial mute time</label><value>muts</value></option>
-      <option><label>Instrument early or initial gain</label><value>igi</value></option>
-      <option><label>Instrument gain constant</label><value>igc</value></option>
-      <option><label>Lag time A</label><value>laga</value></option>
-      <option><label>Lag time B</label><value>lagb</value></option>
-      <option><label>Low cut frequency if used</label><value>lcf</value></option>
-      <option><label>Low cut slope</label><value>lcs</value></option>
-      <option><label>Mark selected traces</label><value>mark</value></option>
-      <option><label>Minute of hour</label><value>minute</value></option>
-      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
-      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
-      <option><label>Notch filter slope</label><value>nofils</value></option>
-      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
-      <option><label>Number of samples</label><value>ns</value></option>
-      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
-      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      <option><label>Overtravel taper code</label><value>otrav</value></option>
-      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
-      <option><label>Sampling interval in microseconds</label><value>dt</value></option>
-      <option><label>Sample spacing between traces</label><value>d2</value></option>
-      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
-      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
-      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
-      <option><label>Second of minute</label><value>sec</value></option>
-      <option><label>Source depth (positive)</label><value>sdepth</value></option>
-      <option><label>Source elevation from sea level</label><value>selev</value></option>
-      <option><label>Source static correction</label><value>sstat</value></option>
-      <option><label>Subweathering velocity</label><value>swevel</value></option>
-      <option><label>Sweep frequency at end</label><value>sfe</value></option>
-      <option><label>Sweep frequency at start</label><value>sfs</value></option>
-      <option><label>Sweep length in ms</label><value>slen</value></option>
-      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
-      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
-      <option><label>Sweep type code</label><value>styp</value></option>
-      <option><label>Taper type</label><value>tatyp</value></option>
-      <option><label>Time basis code</label><value>timbas</value></option>
-      <option><label>Total static applied</label><value>tstat</value></option>
-      <option><label>Trace identification code</label><value>trid</value></option>
-      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
-      <option><label>Trace number sequence within line</label><value>tracl</value></option>
-      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
-      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      <option><label>Trace weighting factor</label><value>trwf</value></option>
-      <option><label>Uphole time at receiver group</label><value>gut</value></option>
-      <option><label>Uphole time at source</label><value>sut</value></option>
-      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
-      <option><label>Water depth at source</label><value>swdep</value></option>
-      <option><label>Weathering velocity</label><value>wevel</value></option>
-      <option><label>X group coordinate</label><value>gx</value></option>
-      <option><label>X source coordinate</label><value>sx</value></option>
-      <option><label>Y group coordinate</label><value>gy</value></option>
-      <option><label>Y source coordinate</label><value>sy</value></option>
-      <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
-      </parameter><parameter><label>New mapping (position and type)</label><string><property required="no" separator=","><keyword>byte=</keyword><value/><default/></property></string></parameter></parameters></group></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Input tape device or seg-y filename</label>
+        <file directory="no">
+          <property required="yes">
+            <keyword>tape=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>For 8mm EXABYTE drives</label>
+        <flag>
+          <property required="no">
+            <keyword>buff=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoing every trace</label>
+        <int>
+          <property required="no">
+            <keyword>vblock=</keyword>
+            <value />
+            <default>50</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>File to store ebcdic block</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>hfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>File to store binary date</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>bfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>File to store extended text block</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>xfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of samples</label>
+        <int>
+          <property required="no">
+            <keyword>ns=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>First trace to read</label>
+        <int>
+          <property required="no">
+            <keyword>trmin=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Last trace to read</label>
+        <int>
+          <property required="no">
+            <keyword>trmax=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Allowable number of consecutive tape IO errors</label>
+        <int>
+          <property required="no">
+            <keyword>errmax=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>File format</label>
+        <enum>
+          <property required="no">
+            <keyword>format=</keyword>
+            <value />
+            <default />
+          </property>
+          <option>
+            <label>IBM floating point, 4 bytes</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Two's complement integer, 4 bytes</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Two's complement integer, 2 bytes</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>IEEE floating point, 4 bytes</label>
+            <value>5</value>
+          </option>
+          <option>
+            <label>Two's complement integer, 1 bytes</label>
+            <value>8</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Apply trace weighting factor</label>
+        <flag>
+          <property required="no">
+            <keyword>trcwt=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Override and attempt conversion</label>
+        <flag>
+          <property required="no">
+            <keyword>over=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Do not perform to ascii conversion on 3200 byte textural</label>
+        <flag>
+          <property required="no">
+            <keyword>ebcdic=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoes exta information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Float point representation</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Assume data is in native format</label>
+                <flag>
+                  <property required="no">
+                    <keyword>conv=0</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Machine endian</label>
+                <enum>
+                  <property required="no">
+                    <keyword>endian=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                  <option>
+                    <label>Little endian</label>
+                    <value>0</value>
+                  </option>
+                  <option>
+                    <label>Big endian</label>
+                    <value>1</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Remapping</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Keys to be remapped</label>
+                <enum>
+                  <property required="no" separator=",">
+                    <keyword>remap=</keyword>
+                    <value>cdp</value>
+                    <default />
+                  </property>
+                  <option>
+                    <label>Alias filter frequency if used</label>
+                    <value>afilf</value>
+                  </option>
+                  <option>
+                    <label>Alias filter slope</label>
+                    <value>afils</value>
+                  </option>
+                  <option>
+                    <label>Alignment padding</label>
+                    <value>shortpad</value>
+                  </option>
+                  <option>
+                    <label>CDP ensemble number</label>
+                    <value>cdp</value>
+                  </option>
+                  <option>
+                    <label>Coordinate units code</label>
+                    <value>counit</value>
+                  </option>
+                  <option>
+                    <label>Correlated flag</label>
+                    <value>corr</value>
+                  </option>
+                  <option>
+                    <label>Data use</label>
+                    <value>duse</value>
+                  </option>
+                  <option>
+                    <label>Datum elevation at receiver group</label>
+                    <value>gdel</value>
+                  </option>
+                  <option>
+                    <label>Datum elevation at source</label>
+                    <value>sdel</value>
+                  </option>
+                  <option>
+                    <label>Day of year</label>
+                    <value>day</value>
+                  </option>
+                  <option>
+                    <label>Delay recording time in ms</label>
+                    <value>delrt</value>
+                  </option>
+                  <option>
+                    <label>Energy source point number</label>
+                    <value>ep</value>
+                  </option>
+                  <option>
+                    <label>Field record number</label>
+                    <value>fldr</value>
+                  </option>
+                  <option>
+                    <label>Final mute time</label>
+                    <value>mute</value>
+                  </option>
+                  <option>
+                    <label>First sample location for non-seismic data</label>
+                    <value>f1</value>
+                  </option>
+                  <option>
+                    <label>First trace location</label>
+                    <value>f2</value>
+                  </option>
+                  <option>
+                    <label>Gain type of field instruments code</label>
+                    <value>gain</value>
+                  </option>
+                  <option>
+                    <label>Gap size</label>
+                    <value>gaps</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of last trace within original field record</label>
+                    <value>grnlof</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of roll switch position one</label>
+                    <value>grnors</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of trace one within original field record</label>
+                    <value>grnofr</value>
+                  </option>
+                  <option>
+                    <label>Group static correction</label>
+                    <value>gstat</value>
+                  </option>
+                  <option>
+                    <label>High cut frequncy if used</label>
+                    <value>hcf</value>
+                  </option>
+                  <option>
+                    <label>High cut slope</label>
+                    <value>hcs</value>
+                  </option>
+                  <option>
+                    <label>Hour of day (24 hour clock)</label>
+                    <value>hour</value>
+                  </option>
+                  <option>
+                    <label>Initial mute time</label>
+                    <value>muts</value>
+                  </option>
+                  <option>
+                    <label>Instrument early or initial gain</label>
+                    <value>igi</value>
+                  </option>
+                  <option>
+                    <label>Instrument gain constant</label>
+                    <value>igc</value>
+                  </option>
+                  <option>
+                    <label>Lag time A</label>
+                    <value>laga</value>
+                  </option>
+                  <option>
+                    <label>Lag time B</label>
+                    <value>lagb</value>
+                  </option>
+                  <option>
+                    <label>Low cut frequency if used</label>
+                    <value>lcf</value>
+                  </option>
+                  <option>
+                    <label>Low cut slope</label>
+                    <value>lcs</value>
+                  </option>
+                  <option>
+                    <label>Mark selected traces</label>
+                    <value>mark</value>
+                  </option>
+                  <option>
+                    <label>Minute of hour</label>
+                    <value>minute</value>
+                  </option>
+                  <option>
+                    <label>Negative of power used for dynamic range compression</label>
+                    <value>ungpow</value>
+                  </option>
+                  <option>
+                    <label>Notch filter frequency if used</label>
+                    <value>nofilf</value>
+                  </option>
+                  <option>
+                    <label>Notch filter slope</label>
+                    <value>nofils</value>
+                  </option>
+                  <option>
+                    <label>Number of horizontally summed traces</label>
+                    <value>nhs</value>
+                  </option>
+                  <option>
+                    <label>Number of samples</label>
+                    <value>ns</value>
+                  </option>
+                  <option>
+                    <label>Number of traces</label>
+                    <value>ntr</value>
+                  </option>
+                  <option>
+                    <label>Number of vertically summed traces</label>
+                    <value>nvs</value>
+                  </option>
+                  <option>
+                    <label>Offset (signed distance from source to receiver group)</label>
+                    <value>offset</value>
+                  </option>
+                  <option>
+                    <label>Overtravel taper code</label>
+                    <value>otrav</value>
+                  </option>
+                  <option>
+                    <label>Receiver group elevation from sea level</label>
+                    <value>gelev</value>
+                  </option>
+                  <option>
+                    <label>Reciprocal of scaling factor to normalize range</label>
+                    <value>unscale</value>
+                  </option>
+                  <option>
+                    <label>Sampling interval in microseconds</label>
+                    <value>dt</value>
+                  </option>
+                  <option>
+                    <label>Sample spacing between traces</label>
+                    <value>d2</value>
+                  </option>
+                  <option>
+                    <label>Sample spacing for non-seismic data</label>
+                    <value>d1</value>
+                  </option>
+                  <option>
+                    <label>Scale factor for source/receiver coordinates</label>
+                    <value>scalco</value>
+                  </option>
+                  <option>
+                    <label>Scale factor for source/receiver elevations, datum and water depth</label>
+                    <value>scalel</value>
+                  </option>
+                  <option>
+                    <label>Second of minute</label>
+                    <value>sec</value>
+                  </option>
+                  <option>
+                    <label>Source depth (positive)</label>
+                    <value>sdepth</value>
+                  </option>
+                  <option>
+                    <label>Source elevation from sea level</label>
+                    <value>selev</value>
+                  </option>
+                  <option>
+                    <label>Source static correction</label>
+                    <value>sstat</value>
+                  </option>
+                  <option>
+                    <label>Subweathering velocity</label>
+                    <value>swevel</value>
+                  </option>
+                  <option>
+                    <label>Sweep frequency at end</label>
+                    <value>sfe</value>
+                  </option>
+                  <option>
+                    <label>Sweep frequency at start</label>
+                    <value>sfs</value>
+                  </option>
+                  <option>
+                    <label>Sweep length in ms</label>
+                    <value>slen</value>
+                  </option>
+                  <option>
+                    <label>Sweep trace length at end in ms</label>
+                    <value>stae</value>
+                  </option>
+                  <option>
+                    <label>Sweep trace length at start in ms</label>
+                    <value>stas</value>
+                  </option>
+                  <option>
+                    <label>Sweep type code</label>
+                    <value>styp</value>
+                  </option>
+                  <option>
+                    <label>Taper type</label>
+                    <value>tatyp</value>
+                  </option>
+                  <option>
+                    <label>Time basis code</label>
+                    <value>timbas</value>
+                  </option>
+                  <option>
+                    <label>Total static applied</label>
+                    <value>tstat</value>
+                  </option>
+                  <option>
+                    <label>Trace identification code</label>
+                    <value>trid</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within field record</label>
+                    <value>tracf</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within line</label>
+                    <value>tracl</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within reel</label>
+                    <value>tracr</value>
+                  </option>
+                  <option>
+                    <label>Trace number within CDP ensemble</label>
+                    <value>cdpt</value>
+                  </option>
+                  <option>
+                    <label>Trace weighting factor</label>
+                    <value>trwf</value>
+                  </option>
+                  <option>
+                    <label>Uphole time at receiver group</label>
+                    <value>gut</value>
+                  </option>
+                  <option>
+                    <label>Uphole time at source</label>
+                    <value>sut</value>
+                  </option>
+                  <option>
+                    <label>Water depth at receiver group</label>
+                    <value>gwdep</value>
+                  </option>
+                  <option>
+                    <label>Water depth at source</label>
+                    <value>swdep</value>
+                  </option>
+                  <option>
+                    <label>Weathering velocity</label>
+                    <value>wevel</value>
+                  </option>
+                  <option>
+                    <label>X group coordinate</label>
+                    <value>gx</value>
+                  </option>
+                  <option>
+                    <label>X source coordinate</label>
+                    <value>sx</value>
+                  </option>
+                  <option>
+                    <label>Y group coordinate</label>
+                    <value>gy</value>
+                  </option>
+                  <option>
+                    <label>Y source coordinate</label>
+                    <value>sy</value>
+                  </option>
+                  <option>
+                    <label>Year data recorded</label>
+                    <value>year</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>New mapping (position and type)</label>
+                <string>
+                  <property required="no" separator=",">
+                    <keyword>byte=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>cdp</value>
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
   </program>
 </flow>

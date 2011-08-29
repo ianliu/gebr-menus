@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU K Filter</title>
   <description>Radially symmetric K-domain</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU K Filter</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Radially symmetric K-domain
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
@@ -45,21 +46,21 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Radially symmetric K-domain, sin^2-tapered, polygonal	
-		  filter.</p>
+          <p>Radially symmetric K-domain, sin^2-tapered, polygonal      
+                  filter.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Dec 10, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 09, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -68,7 +69,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
 
             <li><a href="#credits">Credits</a></li>
@@ -87,31 +88,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-12-10T18:23:30.645779Z</created>
     <modified>2010-08-09T14:32:33.156719Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU K Filter</title>
     <binary>sukfilter</binary>
     <description>Radially symmetric K-domain</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -130,12 +134,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU K Filter</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Radially symmetric K-domain
             <!-- end des -->
           </div>
@@ -143,7 +147,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
@@ -154,55 +158,55 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Radially symmetric K-domain, sin^2-tapered, polygonal	
-		  filter.</p>
+          <p>Radially symmetric K-domain, sin^2-tapered, polygonal      
+                  filter.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li><span class="label">Array of K filter wavenumbers</span><br/>
-		The default value is 0.10*(nyq),0.15*(nyq),0.45*(nyq),0.50*(nyq).<br/>
-		 The nyquist wavenumbers, nyq=sqrt(nyq1^2 + nyq2^2) is computed internally.</li>
+                The default value is 0.10*(nyq),0.15*(nyq),0.45*(nyq),0.50*(nyq).<br/>
+                 The nyquist wavenumbers, nyq=sqrt(nyq1^2 + nyq2^2) is computed internally.</li>
 
               <li><span class="label">Array of K filter amplitudes</span><br/>
-		The default value is =0.,1.,...,1.,0., (trapezoid-like bandpass filter).</li>
+                The default value is =0.,1.,...,1.,0., (trapezoid-like bandpass filter).</li>
 
               <li><span class="label">Sampling interval in first (fast) dimension</span><br/>
-		The default value is set from "Sample spacing for non-seismic data" from header, or is 1.0.</li>
+                The default value is set from "Sample spacing for non-seismic data" from header, or is 1.0.</li>
 
               <li><span class="label">Sampling interval in second (slow) dimension</span><br/>
-		The default value is set from "Sample spacing for non-seismic data" from header, or is 1.0.</li>
+                The default value is set from "Sample spacing for non-seismic data" from header, or is 1.0.</li>
 
-	      <li><span class="label">Quiet mode</span></li>
+              <li><span class="label">Quiet mode</span></li>
 
             </ul>
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>The filter is assumed to be symmetric, to yield real output.</p>		
+          <p>The filter is assumed to be symmetric, to yield real output.</p>           
 
- 	<p>Because the data are assumed to be purely spatial (i.e. non-seismic), 
- 	the data are assumed to have trace id (30), corresponding to (z,x) data.</p>
+        <p>Because the data are assumed to be purely spatial (i.e. non-seismic), 
+        the data are assumed to have trace id (30), corresponding to (z,x) data.</p>
 
- 	<p>The relation: w = 2 pi F is well known for frequency, but there	
- 	doesn't seem to be a commonly used letter corresponding to F for the	
- 	spatial conjugate transform variables.<br/>We use K1 and K2 for this.
-	 More specifically we assume a phase:<br />
-	 <pre>					
-		-i(k1*x1 + k2*x2) = -2*pi*i(K1*x1 + K2*x2)
-	</pre>		
- 	and K1, K2 define our respective wavenumbers.</p>
+        <p>The relation: w = 2 pi F is well known for frequency, but there      
+        doesn't seem to be a commonly used letter corresponding to F for the    
+        spatial conjugate transform variables.<br/>We use K1 and K2 for this.
+         More specifically we assume a phase:<br />
+         <pre>                                  
+                -i(k1*x1 + k2*x2) = -2*pi*i(K1*x1 + K2*x2)
+        </pre>          
+        and K1, K2 define our respective wavenumbers.</p>
 
           <p>This program access the following header keywords:
           <ul>
@@ -213,14 +217,14 @@
           </p>  
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: John Stockwell, June 1997</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -229,9 +233,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -251,7 +255,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -259,8 +264,8 @@
         <float>
           <property required="no" separator=",">
             <keyword>k=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -269,8 +274,8 @@
         <float>
           <property required="no" separator=",">
             <keyword>amps=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -279,8 +284,8 @@
         <float>
           <property required="no">
             <keyword>d1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -289,11 +294,21 @@
         <float>
           <property required="no">
             <keyword>d2=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
-    <parameter><label>Quiet mode</label><flag><property required="no"><keyword>verbose=0</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
+      <parameter>
+        <label>Quiet mode</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

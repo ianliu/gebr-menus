@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Smooth 3D</title>
   <description>3D grid velocity smoothing by the damped least squares</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Smooth 3D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             3D grid velocity smoothing by the damped least squares
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,16 +46,16 @@
 
           <p>3D grid velocity smoothing by the damped least squares.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
-	  <a name="credits" id="credits"></a>
+          <!-- begin par --><!-- end par -->
+            
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Mai 02, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -74,7 +75,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver --><!-- end ver --></span>
+                <!-- begin ver --><!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -82,30 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-02T22:56:58.385813Z</created>
     <modified>2010-08-06T00:43:03.878833Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>Smooth 3D</title>
     <binary>smooth3d</binary>
     <description>3D grid velocity smoothing by the damped least squares</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -117,12 +122,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Smooth 3D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             3D grid velocity smoothing by the damped least squares
             <!-- end des -->
           </div>
@@ -130,105 +135,105 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	3D grid velocity smoothing by the damped least squares.</p>
+        3D grid velocity smoothing by the damped least squares.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">Number of samples along 1st dimension</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of samples along 2nd dimension</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of samples along 3rd dimension</span></li>
-		<li class="group">
-			<span class="grouplabel">Smoothing operators</span>
-			<ul>
-				<li>
-					<span class="label">1st dimension</span><br />
-					0 = no smoothing</li>
-				<li>
-					<span class="label">2nd dimension</span><br />
-					0 = no smoothing</li>
-				<li>
-					<span class="label">3rd dimension</span><br />
-					0 = no smoothing</li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Sample intervals</span>
-			<ul>
-				<li>
-					<span class="label">1st dimension</span></li>
-				<li>
-					<span class="label">2nd dimension</span></li>
-				<li>
-					<span class="label">3rd dimension</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Number of iterations used</span></li>
-		<li>
-			<span class="label">Which dimension the time axis is</span><br />
-			0 = no time axis</li>
-		<li>
-			<span class="label">Which dimension the depth axis is</span><br />
-			Ignored when dimension for time axis &gt; 0</li>
-		<li>
-			<span class="label">The relative weight at maximum depth or time</span></li>
-		<li>
-			<span class="label">Print minimum wavelengths</span></li>
-		<li>
-			<span class="label">Smoothing on slowness</span><br />
-			If disable, smoothing on velocity</li>
-		<li>
-			<span class="label">Velocity values below it are cliped before smoothing</span></li>
-		<li>
-			<span class="label">Velocity values above it are cliped before smoothing</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of samples along 1st dimension</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of samples along 2nd dimension</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of samples along 3rd dimension</span></li>
+                <li class="group">
+                        <span class="grouplabel">Smoothing operators</span>
+                        <ul>
+                                <li>
+                                        <span class="label">1st dimension</span><br />
+                                        0 = no smoothing</li>
+                                <li>
+                                        <span class="label">2nd dimension</span><br />
+                                        0 = no smoothing</li>
+                                <li>
+                                        <span class="label">3rd dimension</span><br />
+                                        0 = no smoothing</li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Sample intervals</span>
+                        <ul>
+                                <li>
+                                        <span class="label">1st dimension</span></li>
+                                <li>
+                                        <span class="label">2nd dimension</span></li>
+                                <li>
+                                        <span class="label">3rd dimension</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of iterations used</span></li>
+                <li>
+                        <span class="label">Which dimension the time axis is</span><br />
+                        0 = no time axis</li>
+                <li>
+                        <span class="label">Which dimension the depth axis is</span><br />
+                        Ignored when dimension for time axis &gt; 0</li>
+                <li>
+                        <span class="label">The relative weight at maximum depth or time</span></li>
+                <li>
+                        <span class="label">Print minimum wavelengths</span></li>
+                <li>
+                        <span class="label">Smoothing on slowness</span><br />
+                        If disable, smoothing on velocity</li>
+                <li>
+                        <span class="label">Velocity values below it are cliped before smoothing</span></li>
+                <li>
+                        <span class="label">Velocity values above it are cliped before smoothing</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <ul>
-	<li>
-		<strong>Number of iterations used</strong> controls the orders of derivatives to be smoothed in the output velocity. e.g., <strong>Number of iterations used </strong>= 2 means derivatives until 2nd order smoothed.</li>
-	<li>
-		<strong>The relative weight at maximum depth or time</strong> is the multipler of smoothing parameters at the bottom compared to those at the surface.</li>
-	<li>
-		Minimum wavelengths of each dimension and the total may be printed for the resulting output velocity is. To compute these parameters for the input velocity, use <strong>Smoothing parameter in 1st dimension</strong> = <strong>Smoothing parameter in 2nd dimension</strong> = <strong>Smoothing parameter in 3rd dimension</strong> = 0.</li>
-	<li>
-		Smoothing directly on slowness works better to preserve traveltime. So the program optionally converts the input velocity into slowness and smooths the slowness, then converts back into velocity.</li>
+        <li>
+                <strong>Number of iterations used</strong> controls the orders of derivatives to be smoothed in the output velocity. e.g., <strong>Number of iterations used </strong>= 2 means derivatives until 2nd order smoothed.</li>
+        <li>
+                <strong>The relative weight at maximum depth or time</strong> is the multipler of smoothing parameters at the bottom compared to those at the surface.</li>
+        <li>
+                Minimum wavelengths of each dimension and the total may be printed for the resulting output velocity is. To compute these parameters for the input velocity, use <strong>Smoothing parameter in 1st dimension</strong> = <strong>Smoothing parameter in 2nd dimension</strong> = <strong>Smoothing parameter in 3rd dimension</strong> = 0.</li>
+        <li>
+                Smoothing directly on slowness works better to preserve traveltime. So the program optionally converts the input velocity into slowness and smooths the slowness, then converts back into velocity.</li>
 </ul>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <p>
-	Liu, Z., 1994,"A velocity smoothing technique based on damped least squares in Project Reveiew, May 10, 1994, Consortium Project on Seismic Inverse Methods for Complex Stuctures.</p>
+        Liu, Z., 1994,"A velocity smoothing technique based on damped least squares in Project Reveiew, May 10, 1994, Consortium Project on Seismic Inverse Methods for Complex Stuctures.</p>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Author: CWP: Zhenyue Liu March 1995</p>
+        Author: CWP: Zhenyue Liu March 1995</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
-		Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
-	Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
-	References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
-	Credits</h2></a></li></ul></div>
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
+        Credits</h2></a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -236,7 +241,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -244,8 +250,8 @@
         <int>
           <property required="yes">
             <keyword>n1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -254,8 +260,8 @@
         <int>
           <property required="yes">
             <keyword>n2=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -264,153 +270,159 @@
         <int>
           <property required="yes">
             <keyword>n3=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
       <parameter>
         <label>Smoothing operators</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>1st dimension</label>
+                <float>
+                  <property required="no">
+                    <keyword>r1=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>2nd dimension</label>
+                <float>
+                  <property required="no">
+                    <keyword>r2=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>3rd dimension</label>
+                <float>
+                  <property required="no">
+                    <keyword>r3=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>1st dimension</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>r1=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>2nd dimension</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>r2=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>3rd dimension</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>r3=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>1st dimension</label>
-              <float>
-                <property required="no">
-                  <keyword>r1=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>2nd dimension</label>
-              <float>
-                <property required="no">
-                  <keyword>r2=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>3rd dimension</label>
-              <float>
-                <property required="no">
-                  <keyword>r3=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Sample intervals</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>1st dimension</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>2nd dimension</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>3rd dimension</label>
+                <float>
+                  <property required="no">
+                    <keyword>d3=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>1st dimension</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>d1=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>2nd dimension</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>d2=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>3rd dimension</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>d3=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>1st dimension</label>
-              <float>
-                <property required="no">
-                  <keyword>d1=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>2nd dimension</label>
-              <float>
-                <property required="no">
-                  <keyword>d2=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>3rd dimension</label>
-              <float>
-                <property required="no">
-                  <keyword>d3=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Number of iterations used</label>
         <int>
           <property required="no">
             <keyword>iter=</keyword>
-            <value/>
+            <value />
             <default>2</default>
           </property>
         </int>
@@ -420,7 +432,7 @@
         <int>
           <property required="no">
             <keyword>time=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
         </int>
@@ -430,7 +442,7 @@
         <int>
           <property required="no">
             <keyword>depth=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -440,7 +452,7 @@
         <float>
           <property required="no">
             <keyword>mu=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </float>
@@ -470,7 +482,7 @@
         <float>
           <property required="no">
             <keyword>vminc=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
         </float>
@@ -480,7 +492,7 @@
         <float>
           <property required="no">
             <keyword>vmaxc=</keyword>
-            <value/>
+            <value />
             <default>99999</default>
           </property>
         </float>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU VCAT</title>
   <description>Append one data set to another, with or without an overlapping region</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,13 +22,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU VCAT</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Append one data set to another, with or without an overlapping region
+            Append one data set to another, with or without an overlapping region
            <!-- end des -->
           </div>
         </div>
@@ -35,7 +36,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -49,14 +50,14 @@
            overlapping region. Data in the overlap may be     
            determined by one of several methods.</p>
 
-	 
+         
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>Out 08, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  
+          <p>Out 08, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          
           <!-- end cpy -->
         </div>
 
@@ -82,31 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-08T15:47:56.545170Z</created>
     <modified>2010-08-06T00:43:08.658431Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU VCAT</title>
     <binary>suvcat</binary>
     <description>Append one data set to another, with or without an overlapping region</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,13 +129,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU VCAT</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Append one data set to another, with or without an overlapping region
+            Append one data set to another, with or without an overlapping region
            <!-- end des -->
           </div>
         </div>
@@ -139,7 +143,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -153,14 +157,14 @@
            overlapping region. Data in the overlap may be     
            determined by one of several methods.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst -->
+              
+            <!-- begin lst -->
             <ul>
               <li class="req"><span class="reqlabel">SU data 1</span><br/></li>
 
@@ -172,36 +176,36 @@
 
               <li><span class="label">Type of taper or combination
               method in the overlap region</span><br/>
-		<ul>
-		<li>Average</li>
-		<li>Maximun magnitude</li>
-		<li>Cosine scaled</li>
-		<li>Summation</li>
+                <ul>
+                <li>Average</li>
+                <li>Maximun magnitude</li>
+                <li>Cosine scaled</li>
+                <li>Summation</li>
             </ul>
 
               <!-- end lst -->
 
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>This program vertically concatenates traces from data 2
- 	on to the end of the corresponding traces in data 1, with a
- 	region of overlap. Data in the overlapping region is combined
- 	by the method specified. The currently available methods
- 	are:</p>
+        on to the end of the corresponding traces in data 1, with a
+        region of overlap. Data in the overlapping region is combined
+        by the method specified. The currently available methods
+        are:</p>
 
-	  <p><b>Averag:</b> Output is assigned the unweighted average
+          <p><b>Averag:</b> Output is assigned the unweighted average
                   of each point in the overlap.</p>
 
-	  <p><b>Maximun Magnitude:</b> Output is assigned the value of
+          <p><b>Maximun Magnitude:</b> Output is assigned the value of
                   the maximum absolute value of each point in the
                   overlap.</p>
 
-	  <p><b>Cosine scaled:</b> Output is assigned the weighted
+          <p><b>Cosine scaled:</b> Output is assigned the weighted
                   average of each point in the overlap, where the
                   output is the sum of cos(x) times the values on the
                   first section, and 1-cos(x) times the values on the
@@ -211,19 +215,19 @@
                   the lower section in the lower part of the
                   overlap.</p>
 
-	  <p><b>Summation:</b> Output is assigned the sum of the
+          <p><b>Summation:</b> Output is assigned the sum of the
                   amplitudes at each sample in the overlap.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Jack K. Cohen, Michel Dietrich (Original SUVCAT)<br />
-	     Steven D. Sheaffer (modifed to include overlap)<br />
- 	     IfG Kiel: Thies Beilecke (added taptype=3)</p>
+             Steven D. Sheaffer (modifed to include overlap)<br />
+             IfG Kiel: Thies Beilecke (added taptype=3)</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -232,9 +236,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -254,16 +258,37 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
-      <parameter><label>SU data 1</label><file directory="no" filter-name="SU file" filter-pattern="*.su *.SU"><property required="yes"><keyword> </keyword><value/><default/></property></file></parameter><parameter><label>SU data 2</label><file directory="no" filter-name="SU file" filter-pattern="*.su *.SU"><property required="yes"><keyword> </keyword><value/><default/></property></file></parameter><parameter>
+      <parameter>
+        <label>SU data 1</label>
+        <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
+          <property required="yes">
+            <keyword></keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>SU data 2</label>
+        <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
+          <property required="yes">
+            <keyword></keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
         <label>Length of overlap in integer number of samples</label>
         <int min="0">
           <property required="no">
             <keyword>taplen=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -272,7 +297,7 @@
         <enum>
           <property required="yes">
             <keyword>taptype=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
           <option>

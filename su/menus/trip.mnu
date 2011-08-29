@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Tri Plane 3D Viewer</title>
   <description>Tri-plane 3D data viewer</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Tri Plane 3D Viewer</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Tri-plane 3D data viewer
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat --><!-- end cat -->
+        <!-- begin cat --><!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	<span class="h3">Tri-plane 3D data viewer.</span></p>
+        <span class="h3">Tri-plane 3D data viewer.</span></p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Jun 26, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Jun 26, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver --><!-- end ver --></span>
+                <!-- begin ver --><!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -58,30 +59,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Davi Clemente</author>
   <email>davi.clemente@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-06-26T04:24:49.509584Z</created>
     <modified>2010-08-06T01:30:52.659447Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>Tri-plane 3D viewer</title>
     <binary>trip</binary>
     <description>Tri-plane 3D data viewer</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -93,12 +98,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Tri-plane 3D viewer</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Tri-plane 3D data viewer
             <!-- end des -->
           </div>
@@ -106,67 +111,67 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Tri-plane 3D data viewer.</p>
+        Tri-plane 3D data viewer.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-	</ul>
-	<ul>
-		<li class="req">
-			<span class="reqlabel">Number of x samples (1st dimension)</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of y samples (2nd dimension)</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of z samples (3rd dimension)</span></li>
-		<li>
-			<span class="label">X-intercept of view plane facing x-axis</span></li>
-		<li>
-			<span class="label">Y-intercept of view plane facing y-axis</span></li>
-		<li>
-			<span class="label">Z-intercept of view plane facing z-axis</span></li>
-		<li>
-			<span class="label">Stride in the fastest (first) dimension</span></li>
-		<li>
-			<span class="label">Stride in the second dimension</span></li>
-		<li>
-			<span class="label">Stride in the third dimension</span></li>
-		<li>
-			<span class="label">Black and white mode</span><br />
-			If disabel, use Hue colors</li>
-		<li>
-			<span class="label">Quaternion definition</span></li>
-		<li>
-			<span class="label">Trackball size</span><br />
-			The larger, the slower it rotates</li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+        </ul>
+        <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of x samples (1st dimension)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of y samples (2nd dimension)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of z samples (3rd dimension)</span></li>
+                <li>
+                        <span class="label">X-intercept of view plane facing x-axis</span></li>
+                <li>
+                        <span class="label">Y-intercept of view plane facing y-axis</span></li>
+                <li>
+                        <span class="label">Z-intercept of view plane facing z-axis</span></li>
+                <li>
+                        <span class="label">Stride in the fastest (first) dimension</span></li>
+                <li>
+                        <span class="label">Stride in the second dimension</span></li>
+                <li>
+                        <span class="label">Stride in the third dimension</span></li>
+                <li>
+                        <span class="label">Black and white mode</span><br />
+                        If disabel, use Hue colors</li>
+                <li>
+                        <span class="label">Quaternion definition</span></li>
+                <li>
+                        <span class="label">Trackball size</span><br />
+                        The larger, the slower it rotates</li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
 </div>
 <h2 id="header_2">
-	Credits</h2>
+        Credits</h2>
 <p>
-	 CWP: Zhaobo Meng, 1996</p>
+         CWP: Zhaobo Meng, 1996</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -175,7 +180,8 @@
 
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -183,8 +189,8 @@
         <int>
           <property required="yes">
             <keyword>n1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -193,8 +199,8 @@
         <int>
           <property required="yes">
             <keyword>n2=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -203,8 +209,8 @@
         <int min="" max="">
           <property required="yes">
             <keyword>n3=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -213,8 +219,8 @@
         <int min="" max="">
           <property required="no">
             <keyword>cx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -223,8 +229,8 @@
         <int min="" max="">
           <property required="no">
             <keyword>cy=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -233,8 +239,8 @@
         <int>
           <property required="no">
             <keyword>cz=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -243,7 +249,7 @@
         <int>
           <property required="no">
             <keyword>n1s=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -253,7 +259,7 @@
         <int>
           <property required="no">
             <keyword>n2s=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -263,7 +269,7 @@
         <int>
           <property required="no">
             <keyword>n3s=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -283,7 +289,7 @@
         <float>
           <property required="no" separator=",">
             <keyword>q=</keyword>
-            <value/>
+            <value />
             <default>-0.6</default>
             <default>0.06</default>
             <default>-0.06</default>
@@ -296,7 +302,7 @@
         <float>
           <property required="no">
             <keyword>tbs=</keyword>
-            <value/>
+            <value />
             <default>0.8</default>
           </property>
         </float>

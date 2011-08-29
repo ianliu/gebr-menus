@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Polarization</title>
   <description>Polarization analysis of three-component data</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Polarization</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Polarization analysis of three-component data
             <!-- end des -->
           </div>
@@ -27,28 +28,28 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Filtering, Transforms and Attributes | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Polarization analysis of three-component data.</p>
+        Polarization analysis of three-component data.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Dec 10, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Dec 10, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <p>
-	Jul 31, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Jul 31, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
-	<div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-		Introduction</a></li><li><a href="#header_1">
-		Credits</a></li></ul>
-	</div>
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+                Introduction</a></li><li><a href="#header_1">
+                Credits</a></li></ul>
+        </div>
 
         <div class="clearer"></div>
       </div>
@@ -61,31 +62,34 @@
     </div>
   </div>
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-12-10T18:44:25.453919Z</created>
     <modified>2010-08-06T16:30:30.152580Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="no" stderr="no" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Polatization</title>
     <binary>supolar</binary>
     <description>Polarization analysis of three-component data</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -97,12 +101,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Polatization</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Polarization analysis of three-component data
             <!-- end des -->
           </div>
@@ -110,137 +114,137 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Polarization analysis of three-component data.</p>
+        Polarization analysis of three-component data.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Time sampling intervall in seconds</span></li>
-		<li>
-			<span class="label">Correlation window length in seconds</span></li>
-		<li>
-			<span class="label">Correlation window shape</span>
-			<ul>
-				<li>
-					Boxcar</li>
-				<li>
-					Hanning</li>
-				<li>
-					Bartlett</li>
-				<li>
-					Welsh</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Base of output file name(s)</span></li>
-		<li>
-			<span class="label">Rectilinearity</span>
-			<ul>
-				<li>
-					Rectilinearity evaluating 2 eigenvalues</li>
-				<li>
-					Rectilinearity evaluating 3 eigenvalues</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Contrast parameter for rectilinearity</span></li>
-		<li class="group">
-			<span class="grouplabel">Create SU Files of:</span><br />
-			Evaluate to create a file with these attributes. Each option generates it's own file.
-			<ul>
-				<li>
-					<span class="label">3 components of polarization direction</span></li>
-				<li>
-					<span class="label">Global polarization parameter</span></li>
-				<li>
-					<span class="label">Principal, subprincipal, and transverse ellipticities</span></li>
-				<li>
-					<span class="label">Planarity measure</span></li>
-				<li>
-					<span class="label">Flatness or oblateness coefficient</span></li>
-				<li>
-					<span class="label">Linearity coefficient</span></li>
-				<li>
-					<span class="label">Amplitude parameters</span><br />
-					Instantaneous, quadratic, and eigenresultant ir, qr, and er.</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Incidence angle of principal axis</span></li>
-		<li>
-			<span class="label">Horizontal azimuth of principal axis</span></li>
-		<li>
-			<span class="label">Unit of angles</span></li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Time sampling intervall in seconds</span></li>
+                <li>
+                        <span class="label">Correlation window length in seconds</span></li>
+                <li>
+                        <span class="label">Correlation window shape</span>
+                        <ul>
+                                <li>
+                                        Boxcar</li>
+                                <li>
+                                        Hanning</li>
+                                <li>
+                                        Bartlett</li>
+                                <li>
+                                        Welsh</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Base of output file name(s)</span></li>
+                <li>
+                        <span class="label">Rectilinearity</span>
+                        <ul>
+                                <li>
+                                        Rectilinearity evaluating 2 eigenvalues</li>
+                                <li>
+                                        Rectilinearity evaluating 3 eigenvalues</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Contrast parameter for rectilinearity</span></li>
+                <li class="group">
+                        <span class="grouplabel">Create SU Files of:</span><br />
+                        Evaluate to create a file with these attributes. Each option generates it's own file.
+                        <ul>
+                                <li>
+                                        <span class="label">3 components of polarization direction</span></li>
+                                <li>
+                                        <span class="label">Global polarization parameter</span></li>
+                                <li>
+                                        <span class="label">Principal, subprincipal, and transverse ellipticities</span></li>
+                                <li>
+                                        <span class="label">Planarity measure</span></li>
+                                <li>
+                                        <span class="label">Flatness or oblateness coefficient</span></li>
+                                <li>
+                                        <span class="label">Linearity coefficient</span></li>
+                                <li>
+                                        <span class="label">Amplitude parameters</span><br />
+                                        Instantaneous, quadratic, and eigenresultant ir, qr, and er.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Incidence angle of principal axis</span></li>
+                <li>
+                        <span class="label">Horizontal azimuth of principal axis</span></li>
+                <li>
+                        <span class="label">Unit of angles</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Three adjacent traces are considered as one three-component dataset.<br />
-	Correct calculation of angles theta and phi requires the first of these traces to be the vertical component, followed by the two horizontal components (e.g. Z, N, E, or Z, inline, crossline).<br />
-	Significant signal energy on Z is necessary to resolve the 180 deg ambiguity of phi (options <strong>Horizontal azimuth of principal axis </strong>= from <strong>-pi to pi</strong> and <strong>0 to 2pi</strong> only).</p>
+        Three adjacent traces are considered as one three-component dataset.<br />
+        Correct calculation of angles theta and phi requires the first of these traces to be the vertical component, followed by the two horizontal components (e.g. Z, N, E, or Z, inline, crossline).<br />
+        Significant signal energy on Z is necessary to resolve the 180 deg ambiguity of phi (options <strong>Horizontal azimuth of principal axis </strong>= from <strong>-pi to pi</strong> and <strong>0 to 2pi</strong> only).</p>
 <p>
-	Each calculated polarization attribute is written into its own SU file. These files get the same base name (set with <strong>Base of output file name(s)</strong>) and the parameter flag as an extension (e.g. polar.rl).</p>
+        Each calculated polarization attribute is written into its own SU file. These files get the same base name (set with <strong>Base of output file name(s)</strong>) and the parameter flag as an extension (e.g. polar.rl).</p>
 <p>
-	In case of a tapered correlation window, the window length (parameter <strong>correlation window length in seconds</strong>) may have to be increased compared to the boxcar case, because of their smaller effective widths (Bartlett, Hanning: 1/2, Welsh: 1/3).</p>
+        In case of a tapered correlation window, the window length (parameter <strong>correlation window length in seconds</strong>) may have to be increased compared to the boxcar case, because of their smaller effective widths (Bartlett, Hanning: 1/2, Welsh: 1/3).</p>
 <p>
-	This program access the following header keywords</p>
+        This program access the following header keywords</p>
 <ul>
-	<li>
-		Number of samples</li>
-<!-- ns -->	<li>
-		Sampling interval in microseconds</li>
+        <li>
+                Number of samples</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds</li>
 </ul>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <!-- List of references --><ul>
-	<li>
-		Jurkevics, A., 1988: Polarization analysis of three-component array data. Bulletin of the Seismological Society of America,<br />
-		vol. 78, no. 5</li>
-	<li>
-		Kanasewich, E. R., 1981: Time Sequence Analysis in Geophysics.<br />
-		The University of Alberta Press.</li>
-	<li>
-		Kanasewich, E. R., 1990: Seismic Noise Attenuation.<br />
-		Handbook of Geophysical Exploration, Pergamon Press, Oxford.</li>
-	<li>
-		Meyer, J. H. 1988: First Comparative Results of Integral and Instantaneous Polarization Attributes for Multicomponent Seismic Data. Institut Francais du Petrole.</li>
-	<li>
-		Press, W. H., Teukolsky, S. A., Vetterling, W. T., and Flannery, B. P.<br />
-		1996: Numerical Recipes in C - The Art of Scientific Computing.<br />
-		Cambridge University Press, Cambridge.</li>
-	<li>
-		Samson, J. C., 1973: Description of the Polarisation States of Vector<br />
-		Processes: Application to ULF Electromagnetic Fields.<br />
-		Geophysical Journal vol. 34, p. 403-419.</li>
-	<li>
-		Sheriff, R. E., 1991: Encyclopedic Dictionary of Exploration<br />
-		Geophysics. 3rd ed., Society of Exploration Geophysicists, Tulsa.</li>
+        <li>
+                Jurkevics, A., 1988: Polarization analysis of three-component array data. Bulletin of the Seismological Society of America,<br />
+                vol. 78, no. 5</li>
+        <li>
+                Kanasewich, E. R., 1981: Time Sequence Analysis in Geophysics.<br />
+                The University of Alberta Press.</li>
+        <li>
+                Kanasewich, E. R., 1990: Seismic Noise Attenuation.<br />
+                Handbook of Geophysical Exploration, Pergamon Press, Oxford.</li>
+        <li>
+                Meyer, J. H. 1988: First Comparative Results of Integral and Instantaneous Polarization Attributes for Multicomponent Seismic Data. Institut Francais du Petrole.</li>
+        <li>
+                Press, W. H., Teukolsky, S. A., Vetterling, W. T., and Flannery, B. P.<br />
+                1996: Numerical Recipes in C - The Art of Scientific Computing.<br />
+                Cambridge University Press, Cambridge.</li>
+        <li>
+                Samson, J. C., 1973: Description of the Polarisation States of Vector<br />
+                Processes: Application to ULF Electromagnetic Fields.<br />
+                Geophysical Journal vol. 34, p. 403-419.</li>
+        <li>
+                Sheriff, R. E., 1991: Encyclopedic Dictionary of Exploration<br />
+                Geophysics. 3rd ed., Society of Exploration Geophysicists, Tulsa.</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Nils Maercklin,<br />
-	GeoForschungsZentrum (GFZ) Potsdam, Germany, 1998-2001.<br />
-	E-mail: nils@gfz-potsdam.de</p>
+        Nils Maercklin,<br />
+        GeoForschungsZentrum (GFZ) Potsdam, Germany, 1998-2001.<br />
+        E-mail: nils@gfz-potsdam.de</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	References</a></li><li><a href="#header_4">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
@@ -254,19 +258,26 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Time sampling intervall in seconds</label>
-        
-      <float><property required="no"><keyword>dt=</keyword><value/><default/></property></float></parameter>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
       <parameter>
         <label>Correlation window length in seconds</label>
         <float>
           <property required="no">
             <keyword>wl=</keyword>
-            <value/>
+            <value />
             <default>0.1</default>
           </property>
         </float>
@@ -276,7 +287,7 @@
         <enum>
           <property required="no">
             <keyword>win=</keyword>
-            <value/>
+            <value />
             <default>boxcar</default>
           </property>
           <option>
@@ -302,7 +313,7 @@
         <string>
           <property required="no">
             <keyword>file=</keyword>
-            <value/>
+            <value></value>
             <default>polar</default>
           </property>
         </string>
@@ -312,7 +323,7 @@
         <enum>
           <property required="no">
             <keyword>rl=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
           <option>
@@ -323,153 +334,219 @@
             <label>Rectilinearity evaluating 3 eigenvalues (0 to 1)</label>
             <value>2</value>
           </option>
-        <option><label>Rectilinearity evaluating 3 eigenvalues (-1 to 1)</label><value>3</value></option></enum>
+          <option>
+            <label>Rectilinearity evaluating 3 eigenvalues (-1 to 1)</label>
+            <value>3</value>
+          </option>
+        </enum>
       </parameter>
       <parameter>
         <label>Contrast parameter for rectilinearity</label>
         <float>
           <property required="no">
             <keyword>rlq=</keyword>
-            <value/>
+            <value />
             <default>1.0</default>
           </property>
         </float>
       </parameter>
-      <parameter><label>Create SU Files of:</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>3 components of polarization direction</label>
-        
-      <flag><property required="no"><keyword>dir=1</keyword><value>off</value><default>on</default></property></flag></parameter><parameter>
-        <label>Global polarization parameter</label>
-        <flag>
-          <property required="no">
-            <keyword>tau=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Principal, subprincipal, and transverse ellipticities</label>
-        <flag>
-          <property required="no">
-            <keyword>ellip=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Planarity measure</label>
-        <flag>
-          <property required="no">
-            <keyword>pln=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Flatness or oblateness coefficient</label>
-        <flag>
-          <property required="no">
-            <keyword>f1=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Linearity coefficient</label>
-        <flag>
-          <property required="no">
-            <keyword>l1=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Amplitude parameters</label>
-        <flag>
-          <property required="no">
-            <keyword>amp=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter>
-        <label>3 components of polarization direction</label>
-        
-      <flag><property required="no"><keyword>dir=1</keyword><value>off</value><default>on</default></property></flag></parameter><parameter>
-        <label>Global polarization parameter</label>
-        <flag>
-          <property required="no">
-            <keyword>tau=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Principal, subprincipal, and transverse ellipticities</label>
-        <flag>
-          <property required="no">
-            <keyword>ellip=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Planarity measure</label>
-        <flag>
-          <property required="no">
-            <keyword>pln=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Flatness or oblateness coefficient</label>
-        <flag>
-          <property required="no">
-            <keyword>f1=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Linearity coefficient</label>
-        <flag>
-          <property required="no">
-            <keyword>l1=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter><parameter>
-        <label>Amplitude parameters</label>
-        <flag>
-          <property required="no">
-            <keyword>amp=1</keyword>
-            <value>off</value>
-            <default>off</default>
-          </property>
-        </flag>
-      </parameter></parameters></group></parameter>
-      
-      
-      
-      
-      
-      
+      <parameter>
+        <label>Create SU Files of:</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>3 components of polarization direction</label>
+                <flag>
+                  <property required="no">
+                    <keyword>dir=1</keyword>
+                    <value>off</value>
+                    <default>on</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Global polarization parameter</label>
+                <flag>
+                  <property required="no">
+                    <keyword>tau=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Principal, subprincipal, and transverse ellipticities</label>
+                <flag>
+                  <property required="no">
+                    <keyword>ellip=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Planarity measure</label>
+                <flag>
+                  <property required="no">
+                    <keyword>pln=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Flatness or oblateness coefficient</label>
+                <flag>
+                  <property required="no">
+                    <keyword>f1=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Linearity coefficient</label>
+                <flag>
+                  <property required="no">
+                    <keyword>l1=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Amplitude parameters</label>
+                <flag>
+                  <property required="no">
+                    <keyword>amp=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>on</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
       <parameter>
         <label>Incidence angle of principal axis</label>
-        
-      <enum><property required="no"><keyword>theta=</keyword><value/><default/></property><option><label>from -pi/2 to pi/2</label><value>1</value></option><option><label>from 0 to pi/2</label><value>2</value></option></enum></parameter>
+        <enum>
+          <property required="no">
+            <keyword>theta=</keyword>
+            <value />
+            <default />
+          </property>
+          <option>
+            <label>from -pi/2 to pi/2</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>from 0 to pi/2</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
       <parameter>
         <label>Horizontal azimuth of principal axis</label>
-        
-      <enum><property required="no"><keyword>phi=</keyword><value/><default/></property><option><label>from -pi/2 to pi/2</label><value>1</value></option><option><label>from -pi to pi</label><value>2</value></option><option><label>from 0 to 2 pi</label><value>3</value></option></enum></parameter>
+        <enum>
+          <property required="no">
+            <keyword>phi=</keyword>
+            <value />
+            <default />
+          </property>
+          <option>
+            <label>from -pi/2 to pi/2</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>from -pi to pi</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>from 0 to 2 pi</label>
+            <value>3</value>
+          </option>
+        </enum>
+      </parameter>
       <parameter>
         <label>Unit of angles</label>
         <enum>
           <property required="no">
             <keyword>angle=</keyword>
-            <value/>
+            <value />
             <default>rad</default>
           </property>
           <option>
@@ -486,7 +563,6 @@
           </option>
         </enum>
       </parameter>
-      
       <parameter>
         <label>Echoes extra information</label>
         <flag>

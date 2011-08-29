@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Azimuth</title>
   <description>Compute trace azimuth, offset, and midpoint coordinates</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Azimuth</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Compute trace azimuth, offset, and midpoint coordinates
             <!-- end des -->
           </div>
@@ -27,27 +28,27 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Compute trace azimuth, offset, and midpoint coordinates and set user-specified header fields to these values.</p>
+        Compute trace azimuth, offset, and midpoint coordinates and set user-specified header fields to these values.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Nov 17, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Nov 17, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <p>
-	Aug 15, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Aug 15, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -61,31 +62,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-11-17T12:46:49.419121Z</created>
     <modified>2010-08-16T00:52:43.592571Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Azimuth</title>
     <binary>suazimuth</binary>
     <description>Compute trace azimuth, offset, and midpoint coordinates</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -97,12 +101,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Azimuth</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Compute trace azimuth, offset, and midpoint coordinates
             <!-- end des -->
           </div>
@@ -110,99 +114,99 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Compute trace azimuth, offset, and midpoint coordinates and set user-specified header fields to these values.</p>
+        Compute trace azimuth, offset, and midpoint coordinates and set user-specified header fields to these values.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<ul>
-		<li>
-			<span class="label">Header field to store computed azimuths in<br />
-			For more information, see help of menu <strong>SU Set Header</strong></span></li>
-		<li>
-			<span class="label">Scale</span></li>
-		<li>
-			<span class="label">Azimuth convention</span>
-			<ul>
-				<li>
-					Reciprocity assumed</li>
-				<li>
-					Points from receiver to source</li>
-				<li>
-					Points from source to receiver</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Defines output in sectors of size</span><br />
-			If set, defines the output in sectors of given number size. The default mode is the full range of angles specified by Azimuth convention.</li>
-		<li>
-			<span class="label">Set offset header field</span></li>
-		<li>
-			<span class="label">Header field to store computed offsets in</span></li>
-		<li class="group">
-			<span class="grouplabel">Compute midpoint coordinates properties</span>
-			<ul>
-				<li>
-					<span class="label">Compute midpoint coordinates and set header fields for X and Y</span></li>
-				<li>
-					<span class="label">Header field to store computed midpoint X in</span></li>
-				<li>
-					<span class="label">Header field to store computed midpoint Y in</span></li>
-			</ul>
-		</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+        <ul>
+                <li>
+                        <span class="label">Header field to store computed azimuths in<br />
+                        For more information, see help of menu <strong>SU Set Header</strong></span></li>
+                <li>
+                        <span class="label">Scale</span></li>
+                <li>
+                        <span class="label">Azimuth convention</span>
+                        <ul>
+                                <li>
+                                        Reciprocity assumed</li>
+                                <li>
+                                        Points from receiver to source</li>
+                                <li>
+                                        Points from source to receiver</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Defines output in sectors of size</span><br />
+                        If set, defines the output in sectors of given number size. The default mode is the full range of angles specified by Azimuth convention.</li>
+                <li>
+                        <span class="label">Set offset header field</span></li>
+                <li>
+                        <span class="label">Header field to store computed offsets in</span></li>
+                <li class="group">
+                        <span class="grouplabel">Compute midpoint coordinates properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Compute midpoint coordinates and set header fields for X and Y</span></li>
+                                <li>
+                                        <span class="label">Header field to store computed midpoint X in</span></li>
+                                <li>
+                                        <span class="label">Header field to store computed midpoint Y in</span></li>
+                        </ul>
+                </li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	All values are computed from the values in the coordinate fields sx,sy (source) and gx,gy (receiver).<br />
-	The output field "Overtravel Trace Record" for the azimuth was chosen arbitrarily as an example of a little-used header field, however, the user may choose any field that is convenient for his or her application.</p>
+        All values are computed from the values in the coordinate fields sx,sy (source) and gx,gy (receiver).<br />
+        The output field "Overtravel Trace Record" for the azimuth was chosen arbitrarily as an example of a little-used header field, however, the user may choose any field that is convenient for his or her application.</p>
 <p>
-	Setting the <strong>Defines output in sectors of size</strong> parameter sets key field to sector number rather than an angle in degrees.</p>
+        Setting the <strong>Defines output in sectors of size</strong> parameter sets key field to sector number rather than an angle in degrees.</p>
 <p>
-	For <b>Azimuth convention</b> set on <strong>Reciprocity assumed</strong>, azimuths are measured from the North, however, reciprocity is assumed, so azimuths go from 0 to 179.9999 degrees. If sector option is set, then the range is from 0 to 180/sector.</p>
+        For <b>Azimuth convention</b> set on <strong>Reciprocity assumed</strong>, azimuths are measured from the North, however, reciprocity is assumed, so azimuths go from 0 to 179.9999 degrees. If sector option is set, then the range is from 0 to 180/sector.</p>
 <p>
-	For <b>Azimuth convention</b> set on <strong>Points from receiver to source</strong>, azimuths are measured from the North, with the assumption that the direction vector points from the receiver to the source.</p>
+        For <b>Azimuth convention</b> set on <strong>Points from receiver to source</strong>, azimuths are measured from the North, with the assumption that the direction vector points from the receiver to the source.</p>
 <p>
-	<span class="Apple-style-span" style="background-color: rgb(255, 255, 255); ">For <b>Azimuth convention</b> set on <strong>Points from source to receiver</strong></span>, the direction vector points from the source to the receiver. No reciprocity is assumed in these cases, so the angles go from 0 to 359.999 degrees.</p>
+        <span class="Apple-style-span" style="background-color: rgb(255, 255, 255); ">For <b>Azimuth convention</b> set on <strong>Points from source to receiver</strong></span>, the direction vector points from the source to the receiver. No reciprocity is assumed in these cases, so the angles go from 0 to 359.999 degrees.</p>
 <p>
-	If the <strong>Defines output in sectors of size</strong> parameter is set, then the range is from 0 to 360/sector.</p>
+        If the <strong>Defines output in sectors of size</strong> parameter is set, then the range is from 0 to 360/sector.</p>
 <p>
-	This program access the following header keywords:</p>
+        This program access the following header keywords:</p>
 <ul>
-	<li>
-		X source coordinate</li>
-	<li>
-		Y source coordinate</li>
-	<li>
-		X group coordinate</li>
-	<li>
-		Y group coordinate</li>
-	<li>
-		Scale factor for source/receiver coordinates</li>
+        <li>
+                X source coordinate</li>
+        <li>
+                Y source coordinate</li>
+        <li>
+                X group coordinate</li>
+        <li>
+                Y group coordinate</li>
+        <li>
+                Scale factor for source/receiver coordinates</li>
 </ul>
 <p>
-	 To plot midpoints, use the menu <strong>SU 3D Chart.</strong></p>
+         To plot midpoints, use the menu <strong>SU 3D Chart.</strong></p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: John Stockwell and UTulsa: Chris Liner, Oct. 1998<br />
-	UTulsa: Chris Liner added offset option, Feb. 2002<br />
-	cll: fixed offset option and added cmp option, May 2003<br />
-	RISSC: Nils Maercklin added key options for offset and midpoints, and added azimuth direction option, Sep. 2006</p>
+        CWP: John Stockwell and UTulsa: Chris Liner, Oct. 1998<br />
+        UTulsa: Chris Liner added offset option, Feb. 2002<br />
+        cll: fixed offset option and added cmp option, May 2003<br />
+        RISSC: Nils Maercklin added key options for offset and midpoints, and added azimuth direction option, Sep. 2006</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -216,99 +220,346 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Header field to store computed azimuths in</label>
-        <enum><property required="no"><keyword>key=</keyword><value>cdp</value><default>otrav</default></property>
-      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
-      <option><label>Alias filter slope</label><value>afils</value></option>
-      <option><label>Alignment padding</label><value>shortpad</value></option>
-      <option><label>CDP ensemble number</label><value>cdp</value></option>
-      <option><label>Coordinate units code</label><value>counit</value></option>
-      <option><label>Correlated flag</label><value>corr</value></option>
-      <option><label>Data use</label><value>duse</value></option>
-      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
-      <option><label>Datum elevation at source</label><value>sdel</value></option>
-      <option><label>Day of year</label><value>day</value></option>
-      <option><label>Delay recording time in ms</label><value>delrt</value></option>
-      <option><label>Energy source point number</label><value>ep</value></option>
-      <option><label>Field record number</label><value>fldr</value></option>
-      <option><label>Final mute time</label><value>mute</value></option>
-      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
-      <option><label>First trace location</label><value>f2</value></option>
-      <option><label>Gain type of field instruments code</label><value>gain</value></option>
-      <option><label>Gap size</label><value>gaps</value></option>
-      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
-      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
-      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
-      <option><label>Group static correction</label><value>gstat</value></option>
-      <option><label>High cut frequncy if used</label><value>hcf</value></option>
-      <option><label>High cut slope</label><value>hcs</value></option>
-      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
-      <option><label>Initial mute time</label><value>muts</value></option>
-      <option><label>Instrument early or initial gain</label><value>igi</value></option>
-      <option><label>Instrument gain constant</label><value>igc</value></option>
-      <option><label>Lag time A</label><value>laga</value></option>
-      <option><label>Lag time B</label><value>lagb</value></option>
-      <option><label>Low cut frequency if used</label><value>lcf</value></option>
-      <option><label>Low cut slope</label><value>lcs</value></option>
-      <option><label>Mark selected traces</label><value>mark</value></option>
-      <option><label>Minute of hour</label><value>minute</value></option>
-      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
-      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
-      <option><label>Notch filter slope</label><value>nofils</value></option>
-      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
-      <option><label>Number of samples</label><value>ns</value></option>
-      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
-      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      <option><label>Overtravel taper code</label><value>otrav</value></option>
-      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
-      <option><label>Sampling interval in microseconds</label><value>dt</value></option>
-      <option><label>Sample spacing between traces</label><value>d2</value></option>
-      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
-      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
-      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
-      <option><label>Second of minute</label><value>sec</value></option>
-      <option><label>Source depth (positive)</label><value>sdepth</value></option>
-      <option><label>Source elevation from sea level</label><value>selev</value></option>
-      <option><label>Source static correction</label><value>sstat</value></option>
-      <option><label>Subweathering velocity</label><value>swevel</value></option>
-      <option><label>Sweep frequency at end</label><value>sfe</value></option>
-      <option><label>Sweep frequency at start</label><value>sfs</value></option>
-      <option><label>Sweep length in ms</label><value>slen</value></option>
-      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
-      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
-      <option><label>Sweep type code</label><value>styp</value></option>
-      <option><label>Taper type</label><value>tatyp</value></option>
-      <option><label>Time basis code</label><value>timbas</value></option>
-      <option><label>Total static applied</label><value>tstat</value></option>
-      <option><label>Trace identification code</label><value>trid</value></option>
-      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
-      <option><label>Trace number sequence within line</label><value>tracl</value></option>
-      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
-      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      <option><label>Trace weighting factor</label><value>trwf</value></option>
-      <option><label>Uphole time at receiver group</label><value>gut</value></option>
-      <option><label>Uphole time at source</label><value>sut</value></option>
-      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
-      <option><label>Water depth at source</label><value>swdep</value></option>
-      <option><label>Weathering velocity</label><value>wevel</value></option>
-      <option><label>X group coordinate</label><value>gx</value></option>
-      <option><label>X source coordinate</label><value>sx</value></option>
-      <option><label>Y group coordinate</label><value>gy</value></option>
-      <option><label>Y source coordinate</label><value>sy</value></option>
-      <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
+        <enum>
+          <property required="no">
+            <keyword>key=</keyword>
+            <value>cdp</value>
+            <default>otrav</default>
+          </property>
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
       </parameter>
       <parameter>
         <label>Scale</label>
         <float>
           <property required="no">
             <keyword>scale=</keyword>
-            <value/>
+            <value />
             <default>1.0</default>
           </property>
         </float>
@@ -318,7 +569,7 @@
         <enum>
           <property required="no">
             <keyword>az=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
           <option>
@@ -340,7 +591,7 @@
         <float>
           <property required="no">
             <keyword>sector=</keyword>
-            <value/>
+            <value />
             <default>1.0</default>
           </property>
         </float>
@@ -357,275 +608,1045 @@
       </parameter>
       <parameter>
         <label>Header field to store computed offsets in</label>
-        <enum><property required="no"><keyword>offkey=</keyword><value>cdp</value><default>offset</default></property>
-      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
-      <option><label>Alias filter slope</label><value>afils</value></option>
-      <option><label>Alignment padding</label><value>shortpad</value></option>
-      <option><label>CDP ensemble number</label><value>cdp</value></option>
-      <option><label>Coordinate units code</label><value>counit</value></option>
-      <option><label>Correlated flag</label><value>corr</value></option>
-      <option><label>Data use</label><value>duse</value></option>
-      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
-      <option><label>Datum elevation at source</label><value>sdel</value></option>
-      <option><label>Day of year</label><value>day</value></option>
-      <option><label>Delay recording time in ms</label><value>delrt</value></option>
-      <option><label>Energy source point number</label><value>ep</value></option>
-      <option><label>Field record number</label><value>fldr</value></option>
-      <option><label>Final mute time</label><value>mute</value></option>
-      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
-      <option><label>First trace location</label><value>f2</value></option>
-      <option><label>Gain type of field instruments code</label><value>gain</value></option>
-      <option><label>Gap size</label><value>gaps</value></option>
-      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
-      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
-      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
-      <option><label>Group static correction</label><value>gstat</value></option>
-      <option><label>High cut frequncy if used</label><value>hcf</value></option>
-      <option><label>High cut slope</label><value>hcs</value></option>
-      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
-      <option><label>Initial mute time</label><value>muts</value></option>
-      <option><label>Instrument early or initial gain</label><value>igi</value></option>
-      <option><label>Instrument gain constant</label><value>igc</value></option>
-      <option><label>Lag time A</label><value>laga</value></option>
-      <option><label>Lag time B</label><value>lagb</value></option>
-      <option><label>Low cut frequency if used</label><value>lcf</value></option>
-      <option><label>Low cut slope</label><value>lcs</value></option>
-      <option><label>Mark selected traces</label><value>mark</value></option>
-      <option><label>Minute of hour</label><value>minute</value></option>
-      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
-      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
-      <option><label>Notch filter slope</label><value>nofils</value></option>
-      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
-      <option><label>Number of samples</label><value>ns</value></option>
-      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
-      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      <option><label>Overtravel taper code</label><value>otrav</value></option>
-      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
-      <option><label>Sampling interval in microseconds</label><value>dt</value></option>
-      <option><label>Sample spacing between traces</label><value>d2</value></option>
-      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
-      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
-      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
-      <option><label>Second of minute</label><value>sec</value></option>
-      <option><label>Source depth (positive)</label><value>sdepth</value></option>
-      <option><label>Source elevation from sea level</label><value>selev</value></option>
-      <option><label>Source static correction</label><value>sstat</value></option>
-      <option><label>Subweathering velocity</label><value>swevel</value></option>
-      <option><label>Sweep frequency at end</label><value>sfe</value></option>
-      <option><label>Sweep frequency at start</label><value>sfs</value></option>
-      <option><label>Sweep length in ms</label><value>slen</value></option>
-      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
-      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
-      <option><label>Sweep type code</label><value>styp</value></option>
-      <option><label>Taper type</label><value>tatyp</value></option>
-      <option><label>Time basis code</label><value>timbas</value></option>
-      <option><label>Total static applied</label><value>tstat</value></option>
-      <option><label>Trace identification code</label><value>trid</value></option>
-      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
-      <option><label>Trace number sequence within line</label><value>tracl</value></option>
-      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
-      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      <option><label>Trace weighting factor</label><value>trwf</value></option>
-      <option><label>Uphole time at receiver group</label><value>gut</value></option>
-      <option><label>Uphole time at source</label><value>sut</value></option>
-      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
-      <option><label>Water depth at source</label><value>swdep</value></option>
-      <option><label>Weathering velocity</label><value>wevel</value></option>
-      <option><label>X group coordinate</label><value>gx</value></option>
-      <option><label>X source coordinate</label><value>sx</value></option>
-      <option><label>Y group coordinate</label><value>gy</value></option>
-      <option><label>Y source coordinate</label><value>sy</value></option>
-      <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
-      </parameter>
-      <parameter><label>Compute midpoint coordinates properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
-        <label>Compute midpoint coordinates and set header fields for X and Y</label>
-        <flag>
+        <enum>
           <property required="no">
-            <keyword>cmp=1</keyword>
-            <value>off</value>
-            <default>off</default>
+            <keyword>offkey=</keyword>
+            <value>cdp</value>
+            <default>offset</default>
           </property>
-        </flag>
-      </parameter><parameter>
-        <label>Header field to store computed midpoint X in</label>
-        <enum><property required="no"><keyword>mxkey=</keyword><value>cdp</value><default>ep</default></property>
-      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
-      <option><label>Alias filter slope</label><value>afils</value></option>
-      <option><label>Alignment padding</label><value>shortpad</value></option>
-      <option><label>CDP ensemble number</label><value>cdp</value></option>
-      <option><label>Coordinate units code</label><value>counit</value></option>
-      <option><label>Correlated flag</label><value>corr</value></option>
-      <option><label>Data use</label><value>duse</value></option>
-      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
-      <option><label>Datum elevation at source</label><value>sdel</value></option>
-      <option><label>Day of year</label><value>day</value></option>
-      <option><label>Delay recording time in ms</label><value>delrt</value></option>
-      <option><label>Energy source point number</label><value>ep</value></option>
-      <option><label>Field record number</label><value>fldr</value></option>
-      <option><label>Final mute time</label><value>mute</value></option>
-      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
-      <option><label>First trace location</label><value>f2</value></option>
-      <option><label>Gain type of field instruments code</label><value>gain</value></option>
-      <option><label>Gap size</label><value>gaps</value></option>
-      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
-      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
-      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
-      <option><label>Group static correction</label><value>gstat</value></option>
-      <option><label>High cut frequncy if used</label><value>hcf</value></option>
-      <option><label>High cut slope</label><value>hcs</value></option>
-      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
-      <option><label>Initial mute time</label><value>muts</value></option>
-      <option><label>Instrument early or initial gain</label><value>igi</value></option>
-      <option><label>Instrument gain constant</label><value>igc</value></option>
-      <option><label>Lag time A</label><value>laga</value></option>
-      <option><label>Lag time B</label><value>lagb</value></option>
-      <option><label>Low cut frequency if used</label><value>lcf</value></option>
-      <option><label>Low cut slope</label><value>lcs</value></option>
-      <option><label>Mark selected traces</label><value>mark</value></option>
-      <option><label>Minute of hour</label><value>minute</value></option>
-      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
-      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
-      <option><label>Notch filter slope</label><value>nofils</value></option>
-      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
-      <option><label>Number of samples</label><value>ns</value></option>
-      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
-      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      <option><label>Overtravel taper code</label><value>otrav</value></option>
-      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
-      <option><label>Sampling interval in microseconds</label><value>dt</value></option>
-      <option><label>Sample spacing between traces</label><value>d2</value></option>
-      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
-      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
-      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
-      <option><label>Second of minute</label><value>sec</value></option>
-      <option><label>Source depth (positive)</label><value>sdepth</value></option>
-      <option><label>Source elevation from sea level</label><value>selev</value></option>
-      <option><label>Source static correction</label><value>sstat</value></option>
-      <option><label>Subweathering velocity</label><value>swevel</value></option>
-      <option><label>Sweep frequency at end</label><value>sfe</value></option>
-      <option><label>Sweep frequency at start</label><value>sfs</value></option>
-      <option><label>Sweep length in ms</label><value>slen</value></option>
-      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
-      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
-      <option><label>Sweep type code</label><value>styp</value></option>
-      <option><label>Taper type</label><value>tatyp</value></option>
-      <option><label>Time basis code</label><value>timbas</value></option>
-      <option><label>Total static applied</label><value>tstat</value></option>
-      <option><label>Trace identification code</label><value>trid</value></option>
-      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
-      <option><label>Trace number sequence within line</label><value>tracl</value></option>
-      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
-      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      <option><label>Trace weighting factor</label><value>trwf</value></option>
-      <option><label>Uphole time at receiver group</label><value>gut</value></option>
-      <option><label>Uphole time at source</label><value>sut</value></option>
-      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
-      <option><label>Water depth at source</label><value>swdep</value></option>
-      <option><label>Weathering velocity</label><value>wevel</value></option>
-      <option><label>X group coordinate</label><value>gx</value></option>
-      <option><label>X source coordinate</label><value>sx</value></option>
-      <option><label>Y group coordinate</label><value>gy</value></option>
-      <option><label>Y source coordinate</label><value>sy</value></option>
-      <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
-      </parameter><parameter>
-        <label>Header field to store computed midpoint Y in</label>
-        <enum><property required="no"><keyword>mykey=</keyword><value>cdp</value><default>cdp</default></property>
-      <option><label>Alias filter frequency if used</label><value>afilf</value></option>
-      <option><label>Alias filter slope</label><value>afils</value></option>
-      <option><label>Alignment padding</label><value>shortpad</value></option>
-      <option><label>CDP ensemble number</label><value>cdp</value></option>
-      <option><label>Coordinate units code</label><value>counit</value></option>
-      <option><label>Correlated flag</label><value>corr</value></option>
-      <option><label>Data use</label><value>duse</value></option>
-      <option><label>Datum elevation at receiver group</label><value>gdel</value></option>
-      <option><label>Datum elevation at source</label><value>sdel</value></option>
-      <option><label>Day of year</label><value>day</value></option>
-      <option><label>Delay recording time in ms</label><value>delrt</value></option>
-      <option><label>Energy source point number</label><value>ep</value></option>
-      <option><label>Field record number</label><value>fldr</value></option>
-      <option><label>Final mute time</label><value>mute</value></option>
-      <option><label>First sample location for non-seismic data</label><value>f1</value></option>
-      <option><label>First trace location</label><value>f2</value></option>
-      <option><label>Gain type of field instruments code</label><value>gain</value></option>
-      <option><label>Gap size</label><value>gaps</value></option>
-      <option><label>Geophone group number of last trace within original field record</label><value>grnlof</value></option>
-      <option><label>Geophone group number of roll switch position one</label><value>grnors</value></option>
-      <option><label>Geophone group number of trace one within original field record</label><value>grnofr</value></option>
-      <option><label>Group static correction</label><value>gstat</value></option>
-      <option><label>High cut frequncy if used</label><value>hcf</value></option>
-      <option><label>High cut slope</label><value>hcs</value></option>
-      <option><label>Hour of day (24 hour clock)</label><value>hour</value></option>
-      <option><label>Initial mute time</label><value>muts</value></option>
-      <option><label>Instrument early or initial gain</label><value>igi</value></option>
-      <option><label>Instrument gain constant</label><value>igc</value></option>
-      <option><label>Lag time A</label><value>laga</value></option>
-      <option><label>Lag time B</label><value>lagb</value></option>
-      <option><label>Low cut frequency if used</label><value>lcf</value></option>
-      <option><label>Low cut slope</label><value>lcs</value></option>
-      <option><label>Mark selected traces</label><value>mark</value></option>
-      <option><label>Minute of hour</label><value>minute</value></option>
-      <option><label>Negative of power used for dynamic range compression</label><value>ungpow</value></option>
-      <option><label>Notch filter frequency if used</label><value>nofilf</value></option>
-      <option><label>Notch filter slope</label><value>nofils</value></option>
-      <option><label>Number of horizontally summed traces</label><value>nhs</value></option>
-      <option><label>Number of samples</label><value>ns</value></option>
-      <option><label>Number of traces</label><value>ntr</value></option><option><label>Number of vertically summed traces</label><value>nvs</value></option>
-      <option><label>Offset (signed distance from source to receiver group)</label><value>offset</value></option>
-      <option><label>Overtravel taper code</label><value>otrav</value></option>
-      <option><label>Receiver group elevation from sea level</label><value>gelev</value></option>
-      <option><label>Reciprocal of scaling factor to normalize range</label><value>unscale</value></option>
-      <option><label>Sampling interval in microseconds</label><value>dt</value></option>
-      <option><label>Sample spacing between traces</label><value>d2</value></option>
-      <option><label>Sample spacing for non-seismic data</label><value>d1</value></option>
-      <option><label>Scale factor for source/receiver coordinates</label><value>scalco</value></option>
-      <option><label>Scale factor for source/receiver elevations, datum and water depth</label><value>scalel</value></option>
-      <option><label>Second of minute</label><value>sec</value></option>
-      <option><label>Source depth (positive)</label><value>sdepth</value></option>
-      <option><label>Source elevation from sea level</label><value>selev</value></option>
-      <option><label>Source static correction</label><value>sstat</value></option>
-      <option><label>Subweathering velocity</label><value>swevel</value></option>
-      <option><label>Sweep frequency at end</label><value>sfe</value></option>
-      <option><label>Sweep frequency at start</label><value>sfs</value></option>
-      <option><label>Sweep length in ms</label><value>slen</value></option>
-      <option><label>Sweep trace length at end in ms</label><value>stae</value></option>
-      <option><label>Sweep trace length at start in ms</label><value>stas</value></option>
-      <option><label>Sweep type code</label><value>styp</value></option>
-      <option><label>Taper type</label><value>tatyp</value></option>
-      <option><label>Time basis code</label><value>timbas</value></option>
-      <option><label>Total static applied</label><value>tstat</value></option>
-      <option><label>Trace identification code</label><value>trid</value></option>
-      <option><label>Trace number sequence within field record</label><value>tracf</value></option>
-      <option><label>Trace number sequence within line</label><value>tracl</value></option>
-      <option><label>Trace number sequence within reel</label><value>tracr</value></option>
-      <option><label>Trace number within CDP ensemble</label><value>cdpt</value></option>
-      <option><label>Trace weighting factor</label><value>trwf</value></option>
-      <option><label>Uphole time at receiver group</label><value>gut</value></option>
-      <option><label>Uphole time at source</label><value>sut</value></option>
-      <option><label>Water depth at receiver group</label><value>gwdep</value></option>
-      <option><label>Water depth at source</label><value>swdep</value></option>
-      <option><label>Weathering velocity</label><value>wevel</value></option>
-      <option><label>X group coordinate</label><value>gx</value></option>
-      <option><label>X source coordinate</label><value>sx</value></option>
-      <option><label>Y group coordinate</label><value>gy</value></option>
-      <option><label>Y source coordinate</label><value>sy</value></option>
-      <option><label>Year data recorded</label><value>year</value></option>
-      </enum>
-      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
-        <label>Header field to store computed midpoint X in</label>
-        
-      <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
-        <label>Compute midpoint coordinates and set header fields for (cmpx, cmpy)</label>
-        
-      <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter>
-        <label>Header field to store computed cmpy in</label>
-        
-      <reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter>
-      
-      
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Compute midpoint coordinates properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Compute midpoint coordinates and set header fields for X and Y</label>
+                <flag>
+                  <property required="no">
+                    <keyword>cmp=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Header field to store computed midpoint X in</label>
+                <enum>
+                  <property required="no">
+                    <keyword>mxkey=</keyword>
+                    <value>cdp</value>
+                    <default>ep</default>
+                  </property>
+                  <option>
+                    <label>Alias filter frequency if used</label>
+                    <value>afilf</value>
+                  </option>
+                  <option>
+                    <label>Alias filter slope</label>
+                    <value>afils</value>
+                  </option>
+                  <option>
+                    <label>Alignment padding</label>
+                    <value>shortpad</value>
+                  </option>
+                  <option>
+                    <label>CDP ensemble number</label>
+                    <value>cdp</value>
+                  </option>
+                  <option>
+                    <label>Coordinate units code</label>
+                    <value>counit</value>
+                  </option>
+                  <option>
+                    <label>Correlated flag</label>
+                    <value>corr</value>
+                  </option>
+                  <option>
+                    <label>Data use</label>
+                    <value>duse</value>
+                  </option>
+                  <option>
+                    <label>Datum elevation at receiver group</label>
+                    <value>gdel</value>
+                  </option>
+                  <option>
+                    <label>Datum elevation at source</label>
+                    <value>sdel</value>
+                  </option>
+                  <option>
+                    <label>Day of year</label>
+                    <value>day</value>
+                  </option>
+                  <option>
+                    <label>Delay recording time in ms</label>
+                    <value>delrt</value>
+                  </option>
+                  <option>
+                    <label>Energy source point number</label>
+                    <value>ep</value>
+                  </option>
+                  <option>
+                    <label>Field record number</label>
+                    <value>fldr</value>
+                  </option>
+                  <option>
+                    <label>Final mute time</label>
+                    <value>mute</value>
+                  </option>
+                  <option>
+                    <label>First sample location for non-seismic data</label>
+                    <value>f1</value>
+                  </option>
+                  <option>
+                    <label>First trace location</label>
+                    <value>f2</value>
+                  </option>
+                  <option>
+                    <label>Gain type of field instruments code</label>
+                    <value>gain</value>
+                  </option>
+                  <option>
+                    <label>Gap size</label>
+                    <value>gaps</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of last trace within original field record</label>
+                    <value>grnlof</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of roll switch position one</label>
+                    <value>grnors</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of trace one within original field record</label>
+                    <value>grnofr</value>
+                  </option>
+                  <option>
+                    <label>Group static correction</label>
+                    <value>gstat</value>
+                  </option>
+                  <option>
+                    <label>High cut frequncy if used</label>
+                    <value>hcf</value>
+                  </option>
+                  <option>
+                    <label>High cut slope</label>
+                    <value>hcs</value>
+                  </option>
+                  <option>
+                    <label>Hour of day (24 hour clock)</label>
+                    <value>hour</value>
+                  </option>
+                  <option>
+                    <label>Initial mute time</label>
+                    <value>muts</value>
+                  </option>
+                  <option>
+                    <label>Instrument early or initial gain</label>
+                    <value>igi</value>
+                  </option>
+                  <option>
+                    <label>Instrument gain constant</label>
+                    <value>igc</value>
+                  </option>
+                  <option>
+                    <label>Lag time A</label>
+                    <value>laga</value>
+                  </option>
+                  <option>
+                    <label>Lag time B</label>
+                    <value>lagb</value>
+                  </option>
+                  <option>
+                    <label>Low cut frequency if used</label>
+                    <value>lcf</value>
+                  </option>
+                  <option>
+                    <label>Low cut slope</label>
+                    <value>lcs</value>
+                  </option>
+                  <option>
+                    <label>Mark selected traces</label>
+                    <value>mark</value>
+                  </option>
+                  <option>
+                    <label>Minute of hour</label>
+                    <value>minute</value>
+                  </option>
+                  <option>
+                    <label>Negative of power used for dynamic range compression</label>
+                    <value>ungpow</value>
+                  </option>
+                  <option>
+                    <label>Notch filter frequency if used</label>
+                    <value>nofilf</value>
+                  </option>
+                  <option>
+                    <label>Notch filter slope</label>
+                    <value>nofils</value>
+                  </option>
+                  <option>
+                    <label>Number of horizontally summed traces</label>
+                    <value>nhs</value>
+                  </option>
+                  <option>
+                    <label>Number of samples</label>
+                    <value>ns</value>
+                  </option>
+                  <option>
+                    <label>Number of traces</label>
+                    <value>ntr</value>
+                  </option>
+                  <option>
+                    <label>Number of vertically summed traces</label>
+                    <value>nvs</value>
+                  </option>
+                  <option>
+                    <label>Offset (signed distance from source to receiver group)</label>
+                    <value>offset</value>
+                  </option>
+                  <option>
+                    <label>Overtravel taper code</label>
+                    <value>otrav</value>
+                  </option>
+                  <option>
+                    <label>Receiver group elevation from sea level</label>
+                    <value>gelev</value>
+                  </option>
+                  <option>
+                    <label>Reciprocal of scaling factor to normalize range</label>
+                    <value>unscale</value>
+                  </option>
+                  <option>
+                    <label>Sampling interval in microseconds</label>
+                    <value>dt</value>
+                  </option>
+                  <option>
+                    <label>Sample spacing between traces</label>
+                    <value>d2</value>
+                  </option>
+                  <option>
+                    <label>Sample spacing for non-seismic data</label>
+                    <value>d1</value>
+                  </option>
+                  <option>
+                    <label>Scale factor for source/receiver coordinates</label>
+                    <value>scalco</value>
+                  </option>
+                  <option>
+                    <label>Scale factor for source/receiver elevations, datum and water depth</label>
+                    <value>scalel</value>
+                  </option>
+                  <option>
+                    <label>Second of minute</label>
+                    <value>sec</value>
+                  </option>
+                  <option>
+                    <label>Source depth (positive)</label>
+                    <value>sdepth</value>
+                  </option>
+                  <option>
+                    <label>Source elevation from sea level</label>
+                    <value>selev</value>
+                  </option>
+                  <option>
+                    <label>Source static correction</label>
+                    <value>sstat</value>
+                  </option>
+                  <option>
+                    <label>Subweathering velocity</label>
+                    <value>swevel</value>
+                  </option>
+                  <option>
+                    <label>Sweep frequency at end</label>
+                    <value>sfe</value>
+                  </option>
+                  <option>
+                    <label>Sweep frequency at start</label>
+                    <value>sfs</value>
+                  </option>
+                  <option>
+                    <label>Sweep length in ms</label>
+                    <value>slen</value>
+                  </option>
+                  <option>
+                    <label>Sweep trace length at end in ms</label>
+                    <value>stae</value>
+                  </option>
+                  <option>
+                    <label>Sweep trace length at start in ms</label>
+                    <value>stas</value>
+                  </option>
+                  <option>
+                    <label>Sweep type code</label>
+                    <value>styp</value>
+                  </option>
+                  <option>
+                    <label>Taper type</label>
+                    <value>tatyp</value>
+                  </option>
+                  <option>
+                    <label>Time basis code</label>
+                    <value>timbas</value>
+                  </option>
+                  <option>
+                    <label>Total static applied</label>
+                    <value>tstat</value>
+                  </option>
+                  <option>
+                    <label>Trace identification code</label>
+                    <value>trid</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within field record</label>
+                    <value>tracf</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within line</label>
+                    <value>tracl</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within reel</label>
+                    <value>tracr</value>
+                  </option>
+                  <option>
+                    <label>Trace number within CDP ensemble</label>
+                    <value>cdpt</value>
+                  </option>
+                  <option>
+                    <label>Trace weighting factor</label>
+                    <value>trwf</value>
+                  </option>
+                  <option>
+                    <label>Uphole time at receiver group</label>
+                    <value>gut</value>
+                  </option>
+                  <option>
+                    <label>Uphole time at source</label>
+                    <value>sut</value>
+                  </option>
+                  <option>
+                    <label>Water depth at receiver group</label>
+                    <value>gwdep</value>
+                  </option>
+                  <option>
+                    <label>Water depth at source</label>
+                    <value>swdep</value>
+                  </option>
+                  <option>
+                    <label>Weathering velocity</label>
+                    <value>wevel</value>
+                  </option>
+                  <option>
+                    <label>X group coordinate</label>
+                    <value>gx</value>
+                  </option>
+                  <option>
+                    <label>X source coordinate</label>
+                    <value>sx</value>
+                  </option>
+                  <option>
+                    <label>Y group coordinate</label>
+                    <value>gy</value>
+                  </option>
+                  <option>
+                    <label>Y source coordinate</label>
+                    <value>sy</value>
+                  </option>
+                  <option>
+                    <label>Year data recorded</label>
+                    <value>year</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Header field to store computed midpoint Y in</label>
+                <enum>
+                  <property required="no">
+                    <keyword>mykey=</keyword>
+                    <value>cdp</value>
+                    <default>cdp</default>
+                  </property>
+                  <option>
+                    <label>Alias filter frequency if used</label>
+                    <value>afilf</value>
+                  </option>
+                  <option>
+                    <label>Alias filter slope</label>
+                    <value>afils</value>
+                  </option>
+                  <option>
+                    <label>Alignment padding</label>
+                    <value>shortpad</value>
+                  </option>
+                  <option>
+                    <label>CDP ensemble number</label>
+                    <value>cdp</value>
+                  </option>
+                  <option>
+                    <label>Coordinate units code</label>
+                    <value>counit</value>
+                  </option>
+                  <option>
+                    <label>Correlated flag</label>
+                    <value>corr</value>
+                  </option>
+                  <option>
+                    <label>Data use</label>
+                    <value>duse</value>
+                  </option>
+                  <option>
+                    <label>Datum elevation at receiver group</label>
+                    <value>gdel</value>
+                  </option>
+                  <option>
+                    <label>Datum elevation at source</label>
+                    <value>sdel</value>
+                  </option>
+                  <option>
+                    <label>Day of year</label>
+                    <value>day</value>
+                  </option>
+                  <option>
+                    <label>Delay recording time in ms</label>
+                    <value>delrt</value>
+                  </option>
+                  <option>
+                    <label>Energy source point number</label>
+                    <value>ep</value>
+                  </option>
+                  <option>
+                    <label>Field record number</label>
+                    <value>fldr</value>
+                  </option>
+                  <option>
+                    <label>Final mute time</label>
+                    <value>mute</value>
+                  </option>
+                  <option>
+                    <label>First sample location for non-seismic data</label>
+                    <value>f1</value>
+                  </option>
+                  <option>
+                    <label>First trace location</label>
+                    <value>f2</value>
+                  </option>
+                  <option>
+                    <label>Gain type of field instruments code</label>
+                    <value>gain</value>
+                  </option>
+                  <option>
+                    <label>Gap size</label>
+                    <value>gaps</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of last trace within original field record</label>
+                    <value>grnlof</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of roll switch position one</label>
+                    <value>grnors</value>
+                  </option>
+                  <option>
+                    <label>Geophone group number of trace one within original field record</label>
+                    <value>grnofr</value>
+                  </option>
+                  <option>
+                    <label>Group static correction</label>
+                    <value>gstat</value>
+                  </option>
+                  <option>
+                    <label>High cut frequncy if used</label>
+                    <value>hcf</value>
+                  </option>
+                  <option>
+                    <label>High cut slope</label>
+                    <value>hcs</value>
+                  </option>
+                  <option>
+                    <label>Hour of day (24 hour clock)</label>
+                    <value>hour</value>
+                  </option>
+                  <option>
+                    <label>Initial mute time</label>
+                    <value>muts</value>
+                  </option>
+                  <option>
+                    <label>Instrument early or initial gain</label>
+                    <value>igi</value>
+                  </option>
+                  <option>
+                    <label>Instrument gain constant</label>
+                    <value>igc</value>
+                  </option>
+                  <option>
+                    <label>Lag time A</label>
+                    <value>laga</value>
+                  </option>
+                  <option>
+                    <label>Lag time B</label>
+                    <value>lagb</value>
+                  </option>
+                  <option>
+                    <label>Low cut frequency if used</label>
+                    <value>lcf</value>
+                  </option>
+                  <option>
+                    <label>Low cut slope</label>
+                    <value>lcs</value>
+                  </option>
+                  <option>
+                    <label>Mark selected traces</label>
+                    <value>mark</value>
+                  </option>
+                  <option>
+                    <label>Minute of hour</label>
+                    <value>minute</value>
+                  </option>
+                  <option>
+                    <label>Negative of power used for dynamic range compression</label>
+                    <value>ungpow</value>
+                  </option>
+                  <option>
+                    <label>Notch filter frequency if used</label>
+                    <value>nofilf</value>
+                  </option>
+                  <option>
+                    <label>Notch filter slope</label>
+                    <value>nofils</value>
+                  </option>
+                  <option>
+                    <label>Number of horizontally summed traces</label>
+                    <value>nhs</value>
+                  </option>
+                  <option>
+                    <label>Number of samples</label>
+                    <value>ns</value>
+                  </option>
+                  <option>
+                    <label>Number of traces</label>
+                    <value>ntr</value>
+                  </option>
+                  <option>
+                    <label>Number of vertically summed traces</label>
+                    <value>nvs</value>
+                  </option>
+                  <option>
+                    <label>Offset (signed distance from source to receiver group)</label>
+                    <value>offset</value>
+                  </option>
+                  <option>
+                    <label>Overtravel taper code</label>
+                    <value>otrav</value>
+                  </option>
+                  <option>
+                    <label>Receiver group elevation from sea level</label>
+                    <value>gelev</value>
+                  </option>
+                  <option>
+                    <label>Reciprocal of scaling factor to normalize range</label>
+                    <value>unscale</value>
+                  </option>
+                  <option>
+                    <label>Sampling interval in microseconds</label>
+                    <value>dt</value>
+                  </option>
+                  <option>
+                    <label>Sample spacing between traces</label>
+                    <value>d2</value>
+                  </option>
+                  <option>
+                    <label>Sample spacing for non-seismic data</label>
+                    <value>d1</value>
+                  </option>
+                  <option>
+                    <label>Scale factor for source/receiver coordinates</label>
+                    <value>scalco</value>
+                  </option>
+                  <option>
+                    <label>Scale factor for source/receiver elevations, datum and water depth</label>
+                    <value>scalel</value>
+                  </option>
+                  <option>
+                    <label>Second of minute</label>
+                    <value>sec</value>
+                  </option>
+                  <option>
+                    <label>Source depth (positive)</label>
+                    <value>sdepth</value>
+                  </option>
+                  <option>
+                    <label>Source elevation from sea level</label>
+                    <value>selev</value>
+                  </option>
+                  <option>
+                    <label>Source static correction</label>
+                    <value>sstat</value>
+                  </option>
+                  <option>
+                    <label>Subweathering velocity</label>
+                    <value>swevel</value>
+                  </option>
+                  <option>
+                    <label>Sweep frequency at end</label>
+                    <value>sfe</value>
+                  </option>
+                  <option>
+                    <label>Sweep frequency at start</label>
+                    <value>sfs</value>
+                  </option>
+                  <option>
+                    <label>Sweep length in ms</label>
+                    <value>slen</value>
+                  </option>
+                  <option>
+                    <label>Sweep trace length at end in ms</label>
+                    <value>stae</value>
+                  </option>
+                  <option>
+                    <label>Sweep trace length at start in ms</label>
+                    <value>stas</value>
+                  </option>
+                  <option>
+                    <label>Sweep type code</label>
+                    <value>styp</value>
+                  </option>
+                  <option>
+                    <label>Taper type</label>
+                    <value>tatyp</value>
+                  </option>
+                  <option>
+                    <label>Time basis code</label>
+                    <value>timbas</value>
+                  </option>
+                  <option>
+                    <label>Total static applied</label>
+                    <value>tstat</value>
+                  </option>
+                  <option>
+                    <label>Trace identification code</label>
+                    <value>trid</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within field record</label>
+                    <value>tracf</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within line</label>
+                    <value>tracl</value>
+                  </option>
+                  <option>
+                    <label>Trace number sequence within reel</label>
+                    <value>tracr</value>
+                  </option>
+                  <option>
+                    <label>Trace number within CDP ensemble</label>
+                    <value>cdpt</value>
+                  </option>
+                  <option>
+                    <label>Trace weighting factor</label>
+                    <value>trwf</value>
+                  </option>
+                  <option>
+                    <label>Uphole time at receiver group</label>
+                    <value>gut</value>
+                  </option>
+                  <option>
+                    <label>Uphole time at source</label>
+                    <value>sut</value>
+                  </option>
+                  <option>
+                    <label>Water depth at receiver group</label>
+                    <value>gwdep</value>
+                  </option>
+                  <option>
+                    <label>Water depth at source</label>
+                    <value>swdep</value>
+                  </option>
+                  <option>
+                    <label>Weathering velocity</label>
+                    <value>wevel</value>
+                  </option>
+                  <option>
+                    <label>X group coordinate</label>
+                    <value>gx</value>
+                  </option>
+                  <option>
+                    <label>X source coordinate</label>
+                    <value>sx</value>
+                  </option>
+                  <option>
+                    <label>Y group coordinate</label>
+                    <value>gy</value>
+                  </option>
+                  <option>
+                    <label>Y source coordinate</label>
+                    <value>sy</value>
+                  </option>
+                  <option>
+                    <label>Year data recorded</label>
+                    <value>year</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
     </parameters>
   </program>
 </flow>

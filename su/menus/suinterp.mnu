@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Interpolate</title>
   <description>Interpolate traces using automatic event picking</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Interpolate</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Interpolate traces using automatic event picking
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -47,18 +48,18 @@
 
           <p>Interpolate traces using automatic event picking.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Nov 19, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 10, 2010: modified by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -67,7 +68,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -85,31 +86,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-11-19T17:18:39.106781Z</created>
     <modified>2010-08-10T19:29:45.604818Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Interpolate</title>
     <binary>suinterp</binary>
     <description>Interpolate traces using automatic event picking</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -128,12 +132,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Interpolate</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Interpolate traces using automatic event picking
             <!-- end des -->
           </div>
@@ -141,7 +145,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -154,56 +158,56 @@
 
           <p>Interpolate traces using automatic event picking.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li><span class="label">Number of traces to output between each pair of input traces</span><br/>
-		The default value for this parameter is 1</li>
+                The default value for this parameter is 1</li>
 
               <li><span class="label">Maximum number of input traces</span><br/>
-		The default value for this parameter is 500</li>
+                The default value for this parameter is 500</li>
 
               <li><span class="label">Starting corner frequency of unaliased range</span><br/>
-		The default value for this parameter is 4.0</li>
+                The default value for this parameter is 4.0</li>
 
               <li><span class="label">Ending corner frequency of unaliased range</span><br/>
-		The default value for this parameter is 20.0</li>
+                The default value for this parameter is 20.0</li>
 
               <li><span class="label">Take vertical derivative on pick section</span><br/>
-		This parameter is useful if interpolating velocities instead of seismic</li>
+                This parameter is useful if interpolating velocities instead of seismic</li>
 
               <li><span class="label">Method to compute temporal interpolation</span><br/>
-		<ul>
-	<li>8 point sinc</li>
-	<li>Linear<br/>(useful if interpolating velocities instead of seismic)</li>
-		</ul></li>
+                <ul>
+        <li>8 point sinc</li>
+        <li>Linear<br/>(useful if interpolating velocities instead of seismic)</li>
+                </ul></li>
 
               <li><span class="label">Number of time samples to smooth for dip estimate</span><br/>
-		The default value for this parameter is 5</li>
+                The default value for this parameter is 5</li>
 
               <li><span class="label">Number of traces to smooth for dip estimate</span><br/>
-		The default value for this parameter is 1</li>
+                The default value for this parameter is 1</li>
 
               <li><span class="label">Number of ms agc for dip estimate</span><br/>
-		The default value for this parameter is 400</li>
+                The default value for this parameter is 400</li>
 
               <li><span class="label">Method to compute spatial derivative</span><br/>
-		<ul>
-	<li>FFT<br/>(assumes input traces regularly spaced and relatively noise-free)</li>
-	<li>Differences<br/>(will work on irregulary spaced data)</li>
-		</ul></li>
+                <ul>
+        <li>FFT<br/>(assumes input traces regularly spaced and relatively noise-free)</li>
+        <li>Differences<br/>(will work on irregulary spaced data)</li>
+                </ul></li>
 
               <li><span class="label">Interpolation options</span><br/>
-		<ul>
-		  <li>Interpolate</li>
-		  <li>Output low-pass model<br/>(useful for QC if interpolator failing)</li>
-		  <li>Output dip picks in units of samples/trace</li>
-		</ul></li>
+                <ul>
+                  <li>Interpolate</li>
+                  <li>Output low-pass model<br/>(useful for QC if interpolator failing)</li>
+                  <li>Output dip picks in units of samples/trace</li>
+                </ul></li>
 
               <li><span class="label">Echoes information</span><br/></li>
 
@@ -213,33 +217,33 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>This program outputs <strong>Number of traces to output between each pair of input traces</strong> interpolated traces.  The values for <strong>Number of ms agc for dip estimate</strong>, <strong>Starting corner frequency of unaliased range</strong>, and <strong>Ending corner frequency of unaliased range</strong> are only used for
- 	event tracking. The output data will be full bandwidth with no agc.  The
-	default parameters typically will do a satisfactory job of interpolation
- 	for dips up to about 12 ms/trace.  Using a larger value for <strong>Ending corner frequency of unaliased range</strong> causes
- 	the algorithm to do a better job on the shallow dips, but to fail on the
- 	steep dips.  Only one dip is assumed at each time sample between each pair
- 	of input traces.</p>							
-	
- 	<p>The key assumption used here is that the low frequency data are unaliased
- 	and can be used for event tracking. Those dip picks are used to interpolate
- 	the original full-bandwidth data, giving some measure of interpolation
- 	at higher frequencies which otherwise would be aliased.  Using <strong>Interpolation options</strong> equal
- 	to <strong>Output low-pass model</strong> allows you to visually check whether the low-pass picking model is
- 	aliased.</p>								
+        event tracking. The output data will be full bandwidth with no agc.  The
+        default parameters typically will do a satisfactory job of interpolation
+        for dips up to about 12 ms/trace.  Using a larger value for <strong>Ending corner frequency of unaliased range</strong> causes
+        the algorithm to do a better job on the shallow dips, but to fail on the
+        steep dips.  Only one dip is assumed at each time sample between each pair
+        of input traces.</p>                                                    
+        
+        <p>The key assumption used here is that the low frequency data are unaliased
+        and can be used for event tracking. Those dip picks are used to interpolate
+        the original full-bandwidth data, giving some measure of interpolation
+        at higher frequencies which otherwise would be aliased.  Using <strong>Interpolation options</strong> equal
+        to <strong>Output low-pass model</strong> allows you to visually check whether the low-pass picking model is
+        aliased.</p>                                                            
 
- 	<p>Trace headers for interpolated traces are not updated correctly.	
- 	The output header for an interpolated traces equals that for the preceding
- 	trace in the original input data.  The original input traces are passed
- 	through this module without modification.</p>				
+        <p>Trace headers for interpolated traces are not updated correctly.     
+        The output header for an interpolated traces equals that for the preceding
+        trace in the original input data.  The original input traces are passed
+        through this module without modification.</p>                           
 
- 	<p>The place this code is most likely to fail is on the first breaks.</p>
+        <p>The place this code is most likely to fail is on the first breaks.</p>
 
           <p>This program accesses the following header keywords
           <ul>
@@ -249,14 +253,14 @@
           </p>  
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>John Anderson (visiting scholar from Mobil) July 1994</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -265,9 +269,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -287,7 +291,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -295,7 +300,7 @@
         <int>
           <property required="no">
             <keyword>ninterp=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -305,7 +310,7 @@
         <int>
           <property required="no">
             <keyword>nxmax=</keyword>
-            <value/>
+            <value />
             <default>500</default>
           </property>
         </int>
@@ -315,7 +320,7 @@
         <float>
           <property required="no">
             <keyword>freq1=</keyword>
-            <value/>
+            <value />
             <default>4.0</default>
           </property>
         </float>
@@ -325,7 +330,7 @@
         <float>
           <property required="no">
             <keyword>freq2=</keyword>
-            <value/>
+            <value />
             <default>20.0</default>
           </property>
         </float>
@@ -342,14 +347,28 @@
       </parameter>
       <parameter>
         <label>Method to compute temporal interpolation</label>
-        
-      <enum><property required="no"><keyword>linear=</keyword><value/><default>0</default></property><option><label>8 point sinc</label><value>0</value></option><option><label>Linear temporal interpolation</label><value>1</value></option></enum></parameter>
+        <enum>
+          <property required="no">
+            <keyword>linear=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+          <option>
+            <label>8 point sinc</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Linear temporal interpolation</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
       <parameter>
         <label>Number of time samples to smooth for dip estimate</label>
         <int>
           <property required="no">
             <keyword>lent=</keyword>
-            <value/>
+            <value />
             <default>5</default>
           </property>
         </int>
@@ -359,7 +378,7 @@
         <int>
           <property required="no">
             <keyword>lenx=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -369,21 +388,35 @@
         <int>
           <property required="no">
             <keyword>lagc=</keyword>
-            <value/>
+            <value />
             <default>400</default>
           </property>
         </int>
       </parameter>
       <parameter>
         <label>Method to compute spatial derivative</label>
-        
-      <enum><property required="no"><keyword>xopt=</keyword><value/><default>0</default></property><option><label>FFT</label><value>0</value></option><option><label>Differences</label><value>1</value></option></enum></parameter>
+        <enum>
+          <property required="no">
+            <keyword>xopt=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+          <option>
+            <label>FFT</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Differences</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
       <parameter>
         <label>Interpolation options</label>
         <enum>
           <property required="no">
             <keyword>iopt=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
           <option>
@@ -415,8 +448,8 @@
         <file directory="yes" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>tmpdir=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>

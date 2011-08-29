@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Imp 3D</title>
   <description>Generate inplane shot records for a point scatterer</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Imp 3D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generate inplane shot records for a point scatterer
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Generate inplane shot records for a point scatterer embedded in three dimensions using the Born integral equation.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Jun 08, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Jun 08, 2010<!-- end ver --></span>
+                <!-- begin ver -->Jun 08, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-06-08T12:20:55.016647Z</created>
     <modified>2010-08-06T00:43:05.448560Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Imp 3D</title>
     <binary>suimp3d</binary>
     <description>Generate inplane shot records for a point scatterer</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -118,12 +123,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Imp 3D</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generate inplane shot records for a point scatterer
             <!-- end des -->
           </div>
@@ -131,125 +136,125 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Generate inplane shot records for a point scatterer embedded in three dimensions using the Born integral equation.</p>
+        Generate inplane shot records for a point scatterer embedded in three dimensions using the Born integral equation.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Number of shots</span></li>
-		<li>
-			<span class="label">Number of receivers</span></li>
-		<li>
-			<span class="label">Speed</span></li>
-		<li>
-			<span class="label">Sampling rate</span></li>
-		<li>
-			<span class="label">Number of samples</span></li>
-		<li class="group">
-			<span class="grouplabel">X dimension properties</span>
-			<ul>
-				<li>
-					<span class="label">Point scatterer location</span></li>
-				<li>
-					<span class="label">First shot location</span></li>
-				<li>
-					<span class="label">First receiver location</span></li>
-				<li>
-					<span class="label">X-step in shot location</span></li>
-				<li>
-					<span class="label">X-step in receiver location</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Y dimension properties</span>
-			<ul>
-				<li>
-					<span class="label">Point scatterer location</span></li>
-				<li>
-					<span class="label">First shot location</span></li>
-				<li>
-					<span class="label">First receiver location</span></li>
-				<li>
-					<span class="label">Z-step in shot location</span></li>
-				<li>
-					<span class="label">Z-step in receiver location</span></li>
-			</ul>
-		</li>
-		<li class="group">
-			<span class="grouplabel">Z dimension properties</span>
-			<ul>
-				<li>
-					<span class="label">Point scatterer location</span></li>
-				<li>
-					<span class="label">First shot location</span></li>
-				<li>
-					<span class="label">First receiver location</span></li>
-				<li>
-					<span class="label">Z-step in shot location</span></li>
-				<li>
-					<span class="label">Z-step in receiver location</span></li>
-			</ul>
-		</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Number of shots</span></li>
+                <li>
+                        <span class="label">Number of receivers</span></li>
+                <li>
+                        <span class="label">Speed</span></li>
+                <li>
+                        <span class="label">Sampling rate</span></li>
+                <li>
+                        <span class="label">Number of samples</span></li>
+                <li class="group">
+                        <span class="grouplabel">X dimension properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Point scatterer location</span></li>
+                                <li>
+                                        <span class="label">First shot location</span></li>
+                                <li>
+                                        <span class="label">First receiver location</span></li>
+                                <li>
+                                        <span class="label">X-step in shot location</span></li>
+                                <li>
+                                        <span class="label">X-step in receiver location</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Y dimension properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Point scatterer location</span></li>
+                                <li>
+                                        <span class="label">First shot location</span></li>
+                                <li>
+                                        <span class="label">First receiver location</span></li>
+                                <li>
+                                        <span class="label">Z-step in shot location</span></li>
+                                <li>
+                                        <span class="label">Z-step in receiver location</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Z dimension properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Point scatterer location</span></li>
+                                <li>
+                                        <span class="label">First shot location</span></li>
+                                <li>
+                                        <span class="label">First receiver location</span></li>
+                                <li>
+                                        <span class="label">Z-step in shot location</span></li>
+                                <li>
+                                        <span class="label">Z-step in receiver location</span></li>
+                        </ul>
+                </li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	<b>Theory:</b><br />
-	Use the 3D Born integral equation (e.g., Geophysics, v51, n8, p1554(7)).<br />
-	Use 3-D delta function for alpha.</p>
+        <b>Theory:</b><br />
+        Use the 3D Born integral equation (e.g., Geophysics, v51, n8, p1554(7)).<br />
+        Use 3-D delta function for alpha.</p>
 <p>
-	This program sets the following header keywords:</p>
+        This program sets the following header keywords:</p>
 <ul>
-	<li>
-		Number of samples,</li>
-<!-- ns -->	<li>
-		Sampling interval in microseconds,</li>
-<!-- dt -->	<li>
-		Trace number sequence within line,</li>
-<!-- tracl -->	<li>
-		Trace number sequence within reel,</li>
-<!-- tracr -->	<li>
-		Field record number,</li>
-<!-- fldr -->	<li>
-		X source coordinate,</li>
-<!-- sx -->	<li>
-		Source elevation from sea level,</li>
-<!-- selev -->	<li>
-		X group coordinate,</li>
-<!-- gx -->	<li>
-		Receiver group elevation from sea level,</li>
-<!-- gelev -->	<li>
-		Offset (signed distance from source to receiver group).</li>
+        <li>
+                Number of samples,</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds,</li>
+<!-- dt -->     <li>
+                Trace number sequence within line,</li>
+<!-- tracl -->  <li>
+                Trace number sequence within reel,</li>
+<!-- tracr -->  <li>
+                Field record number,</li>
+<!-- fldr -->   <li>
+                X source coordinate,</li>
+<!-- sx -->     <li>
+                Source elevation from sea level,</li>
+<!-- selev -->  <li>
+                X group coordinate,</li>
+<!-- gx -->     <li>
+                Receiver group elevation from sea level,</li>
+<!-- gelev -->  <li>
+                Offset (signed distance from source to receiver group).</li>
 <!-- offset --></ul>
 <p>
-	 </p>
+         </p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Norm Bleistein, Jack K. Cohen.</p>
+        CWP: Norm Bleistein, Jack K. Cohen.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
-		Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
-	Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
-	Credits</h2></a></li></ul></div>
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        Credits</h2></a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -257,7 +262,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -265,7 +271,7 @@
         <int>
           <property required="no">
             <keyword>nshot=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -275,7 +281,7 @@
         <int>
           <property required="no">
             <keyword>nrec=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -285,7 +291,7 @@
         <float>
           <property required="no">
             <keyword>c=</keyword>
-            <value/>
+            <value />
             <default>5000</default>
           </property>
         </float>
@@ -295,7 +301,7 @@
         <float>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
+            <value />
             <default>0.004</default>
           </property>
         </float>
@@ -305,7 +311,7 @@
         <int>
           <property required="no">
             <keyword>nt=</keyword>
-            <value/>
+            <value />
             <default>256</default>
           </property>
         </int>
@@ -313,326 +319,335 @@
       <parameter>
         <label>X dimension properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Point scatterer location</label>
+                <float>
+                  <property required="no">
+                    <keyword>x0=</keyword>
+                    <value />
+                    <default>1000</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>sxmin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>gxmin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X-step in shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsx=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X-step in receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dgx=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Point scatterer location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>x0=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1000</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First shot location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>sxmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First receiver location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>gxmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-step in shot location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dsx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-step in receiver location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dgx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Point scatterer location</label>
-              <float>
-                <property required="no">
-                  <keyword>x0=</keyword>
-                  <value/>
-                  <default>1000</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First shot location</label>
-              <float>
-                <property required="no">
-                  <keyword>sxmin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First receiver location</label>
-              <float>
-                <property required="no">
-                  <keyword>gxmin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>X-step in shot location</label>
-              <float>
-                <property required="no">
-                  <keyword>dsx=</keyword>
-                  <value/>
-                  <default>100</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>X-step in receiver location</label>
-              <float>
-                <property required="no">
-                  <keyword>dgx=</keyword>
-                  <value/>
-                  <default>100</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Y dimension properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Point scatterer location</label>
+                <float>
+                  <property required="no">
+                    <keyword>y0=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>symin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>gymin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-step in shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsy=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-step in receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dgy=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Point scatterer location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>y0=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First shot location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>symin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First receiver location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>gymin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z-step in shot location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dsy=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z-step in receiver location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dgy=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Point scatterer location</label>
-              <float>
-                <property required="no">
-                  <keyword>y0=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First shot location</label>
-              <float>
-                <property required="no">
-                  <keyword>symin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First receiver location</label>
-              <float>
-                <property required="no">
-                  <keyword>gymin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z-step in shot location</label>
-              <float>
-                <property required="no">
-                  <keyword>dsy=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z-step in receiver location</label>
-              <float>
-                <property required="no">
-                  <keyword>dgy=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Z dimension properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Point scatterer location</label>
+                <float>
+                  <property required="no">
+                    <keyword>z0=</keyword>
+                    <value />
+                    <default>1000</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>szmin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>gzmin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-step in shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsz=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-step in receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dgz=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Point scatterer location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>z0=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1000</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First shot location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>szmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First receiver location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>gzmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z-step in shot location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dsz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z-step in receiver location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dgz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Point scatterer location</label>
-              <float>
-                <property required="no">
-                  <keyword>z0=</keyword>
-                  <value/>
-                  <default>1000</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First shot location</label>
-              <float>
-                <property required="no">
-                  <keyword>szmin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First receiver location</label>
-              <float>
-                <property required="no">
-                  <keyword>gzmin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z-step in shot location</label>
-              <float>
-                <property required="no">
-                  <keyword>dsz=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z-step in receiver location</label>
-              <float>
-                <property required="no">
-                  <keyword>dgz=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
     </parameters>
   </program>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>K Aperture</title>
   <description>Generate the K domain of a line scatterer for a seismic array</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">K Aperture</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generate the K domain of a line scatterer for a seismic array
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,16 +46,16 @@
 
           <p>Generate the K domain of a line scatterer for a seismic array.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
-	  <a name="credits" id="credits"></a>
+          <!-- begin par --><!-- end par -->
+            
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Mai 29, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -74,7 +75,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver --><!-- end ver --></span>
+                <!-- begin ver --><!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -82,30 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-30T02:02:19.461474Z</created>
     <modified>2010-08-06T00:43:02.770054Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>K Aperture</title>
     <binary>kaperture</binary>
     <description>Generate the K domain of a line scatterer for a seismic array</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -124,12 +129,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">K Aperture</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Generate the K domain of a line scatterer for a seismic array
             <!-- end des -->
           </div>
@@ -137,7 +142,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -148,13 +153,13 @@
 
           <p>Generate the K domain of a line scatterer for a seismic array.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="group"><span class="grouplabel">Axis X properties</span><br/>
 
               <ul>
@@ -214,23 +219,23 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	  
-	  <a name="notes" id="notes"></a>
+          <!-- end par -->
+          
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p><strong>Number of frequencies</strong> = 1, produces <strong>Minimum frequency.</strong></p>
 
-	  <p><strong>Points on Nyquist circle</strong> = 0, suppresses the Nyquist circle and npairs.</p>
+          <p><strong>Points on Nyquist circle</strong> = 0, suppresses the Nyquist circle and npairs.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Jack K. Cohen, Sebastien Geoltrain, Norm Bleistein.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -239,9 +244,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -254,7 +259,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -262,231 +267,238 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Axis X properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Point scatterer location in X</label>
+                <float>
+                  <property required="no">
+                    <keyword>x0=</keyword>
+                    <value />
+                    <default>1000</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shot location in X</label>
+                <float>
+                  <property required="no">
+                    <keyword>sxmin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X-steps in shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsx=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First receiver location in X</label>
+                <float>
+                  <property required="no">
+                    <keyword>gxmin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X-steps in receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dgx=</keyword>
+                    <value />
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Point scatterer location in X</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>x0=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1000</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First shot location in X</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>sxmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-steps in shot location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dsx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First receiver location in X</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>gxmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>X-steps in receiver location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dgx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>100</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Point scatterer location in X</label>
-              <float>
-                <property required="no">
-                  <keyword>x0=</keyword>
-                  <value/>
-                  <default>1000</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First shot location in X</label>
-              <float>
-                <property required="no">
-                  <keyword>sxmin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>X-steps in shot location</label>
-              <float>
-                <property required="no">
-                  <keyword>dsx=</keyword>
-                  <value/>
-                  <default>100</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First receiver location in X</label>
-              <float>
-                <property required="no">
-                  <keyword>gxmin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>X-steps in receiver location</label>
-              <float>
-                <property required="no">
-                  <keyword>dgx=</keyword>
-                  <value/>
-                  <default>100</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Axis Z properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Point scatterer location in Z</label>
+                <float>
+                  <property required="no">
+                    <keyword>z0=</keyword>
+                    <value />
+                    <default>1000</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shot location in Z</label>
+                <float>
+                  <property required="no">
+                    <keyword>szmin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-steps in shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsz=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First receiver location in Z</label>
+                <float>
+                  <property required="no">
+                    <keyword>gzmin=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-steps in receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dgz=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Point scatterer location in Z</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>z0=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1000</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First shot location in Z</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>szmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z-steps in shot location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dsz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First receiver location in Z</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>gzmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z-steps in receiver location</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dgz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Point scatterer location in Z</label>
-              <float>
-                <property required="no">
-                  <keyword>z0=</keyword>
-                  <value/>
-                  <default>1000</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First shot location in Z</label>
-              <float>
-                <property required="no">
-                  <keyword>szmin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z-steps in shot location</label>
-              <float>
-                <property required="no">
-                  <keyword>dsz=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First receiver location in Z</label>
-              <float>
-                <property required="no">
-                  <keyword>gzmin=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z-steps in receiver location</label>
-              <float>
-                <property required="no">
-                  <keyword>dgz=</keyword>
-                  <value/>
-                  <default>0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Number of shots</label>
         <int>
           <property required="no">
             <keyword>nshot=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -496,7 +508,7 @@
         <int>
           <property required="no">
             <keyword>ngeo=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -504,117 +516,120 @@
       <parameter>
         <label>Frequencies</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Nyquist frequency (Hz)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fnyq=</keyword>
+                    <value />
+                    <default>125</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximun frequency (Hz)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fmax=</keyword>
+                    <value />
+                    <default>125</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Minimum frequency (Hz)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fmin=</keyword>
+                    <value />
+                    <default>5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of frequencies</label>
+                <int>
+                  <property required="no">
+                    <keyword>nfreq=</keyword>
+                    <value />
+                    <default>2</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Gives negative freqs too</label>
+                <flag>
+                  <property required="no">
+                    <keyword>both=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Nyquist frequency (Hz)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fnyq=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>125</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Maximun frequency (Hz)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fmax=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>125</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Minimum frequency (Hz)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fmin=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>5</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of frequencies</label>
-              <int>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>nfreq=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>2</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Gives negative freqs too</label>
-              <flag>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>both=1</keyword>
+                  <keyword />
                   <value>off</value>
                   <default>off</default>
                 </property>
-              </flag>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Nyquist frequency (Hz)</label>
-              <float>
-                <property required="no">
-                  <keyword>fnyq=</keyword>
-                  <value/>
-                  <default>125</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Maximun frequency (Hz)</label>
-              <float>
-                <property required="no">
-                  <keyword>fmax=</keyword>
-                  <value/>
-                  <default>125</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Minimum frequency (Hz)</label>
-              <float>
-                <property required="no">
-                  <keyword>fmin=</keyword>
-                  <value/>
-                  <default>5</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Number of frequencies</label>
-              <int>
-                <property required="no">
-                  <keyword>nfreq=</keyword>
-                  <value/>
-                  <default>2</default>
-                </property>
-              </int>
-            </parameter>
-            <parameter>
-              <label>Gives negative freqs too</label>
-              <flag>
-                <property required="no">
-                  <keyword>both=1</keyword>
-                  <value>off</value>
-                  <default>off</default>
-                </property>
-              </flag>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Points on Nyquist circle</label>
         <int>
           <property required="no">
             <keyword>nstep=</keyword>
-            <value/>
+            <value />
             <default>60</default>
           </property>
         </int>
@@ -624,7 +639,7 @@
         <float>
           <property required="no">
             <keyword>c=</keyword>
-            <value/>
+            <value />
             <default>5000</default>
           </property>
         </float>
@@ -634,7 +649,7 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>outpar=</keyword>
-            <value/>
+            <value></value>
             <default>/dev/tty</default>
           </property>
         </file>

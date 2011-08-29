@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Taper</title>
   <description>Taper the edge traces of a data panel to zero</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -47,13 +48,13 @@
 
           <p>Taper the edge traces of a data panel to zero.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Sep 27, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>
-	  <p>Aug 06, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  <p>Aug 11, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 06, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 11, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
         </div>
 
@@ -79,31 +80,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-09-27T15:00:00Z</created>
     <modified>2010-08-11T15:13:56.626953Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Editing, Sorting and Manipulation</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Taper</title>
     <binary>sutaper</binary>
     <description>Taper the edge traces of a data panel to zero</description>
-     <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,7 +129,7 @@
           <!-- begin tt2 -->
           <span class="flowtitle">SU Taper</span>
           <!-- end tt2 -->
-	  <div class="description">
+          <div class="description">
            <!-- begin des -->Taper the edge traces of a data panel to zero <!-- end des -->
           </div>
         </div>
@@ -138,23 +142,23 @@
       </div>
 
       <div class="main">
-	<div class="content">
+        <div class="content">
 
-	  <a name="intro" id="intro"></a>
-	  <h2>Introduction</h2>
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
 
-	  <p>Taper the edge traces of a data panel to zero.</p>
+          <p>Taper the edge traces of a data panel to zero.</p>
 
-	<!-- begin par -->
+        <!-- begin par -->
           <div class="parameters">
 
-	  <a name="par"></a>
-	  <h2>Parameters</h2>
-	  
-	  <!-- begin lst -->
+          <a name="par"></a>
+          <h2>Parameters</h2>
+          
+          <!-- begin lst -->
             <ul>
-	  
-	  <li><span class="label">Number of traces</span><br /> If the number of traces is not set on header, then this parameter is mandatory.</li>
+          
+          <li><span class="label">Number of traces</span><br /> If the number of traces is not set on header, then this parameter is mandatory.</li>
 
           <li><span class="label">Number of traces to be tapered at begining</span></li>
 
@@ -167,37 +171,37 @@
           <li><span class="label">Length of taper at trace end</span><br />Taper in ms.</li>
 
           <li><span class="label">Type of taper</span>
-		<ul>
-		<li>Linear (Default)</li>
-		<li>Sine</li>
-		<li>Cosine</li>
-		<li>Gaussian (+/- 3.8)</li>
-		<li>Gaussian (+/- 2.0)</li>
-		<ul></li>
+                <ul>
+                <li>Linear (Default)</li>
+                <li>Sine</li>
+                <li>Cosine</li>
+                <li>Gaussian (+/- 3.8)</li>
+                <li>Gaussian (+/- 2.0)</li>
+                <ul></li>
      
-	     </ul>	
-	  <!-- end lst -->
+             </ul>      
+          <!-- end lst -->
 
           </div>
           <!-- end par -->
-	
-	  <a name="notes"></a>
+        
+          <a name="notes"></a>
           <h2>Notes</h2>
 
-	  <p>To eliminate the taper, set parameters <b>Length of taper at trace start</b>, <b>Length of taper at trace end</b> and 
-	  <b>Number of traces on the begining</b>, with value 0.</p>
+          <p>To eliminate the taper, set parameters <b>Length of taper at trace start</b>, <b>Length of taper at trace end</b> and 
+          <b>Number of traces on the begining</b>, with value 0.</p>
 
-	  <p>This program accesses the following header keywords:
-	    <ul>
-	       <li>Number of samples,</li>  <!-- ns -->
-	       <li>Number of traces.</li>  <!-- ntr -->
-	    </ul>
-	  </p>
+          <p>This program accesses the following header keywords:
+            <ul>
+               <li>Number of samples,</li>  <!-- ns -->
+               <li>Number of traces.</li>  <!-- ntr -->
+            </ul>
+          </p>
 
-	  <a name="credits"></a>
-	  <h2>Credits</h2>
+          <a name="credits"></a>
+          <h2>Credits</h2>
           <!-- begin cpy -->
-	  <p>CWP: Chris Liner, Jack K. Cohen.<br />
+          <p>CWP: Chris Liner, Jack K. Cohen.<br />
              Rewrite: Tagir Galikeev, October 2002.</p>
 
           <!-- end cpy -->
@@ -207,11 +211,11 @@
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#intro">Introduction</a></li>
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -233,48 +237,110 @@
 </body>
 </html>
     
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of traces</label><int><property required="no"><keyword>ntr=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Number of traces to be tapered at begining</label><int><property required="no"><keyword>tr1=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Number of traces to be tapered at end</label><int><property required="no"><keyword>tr2=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Minimum amplitude factor</label><float><property required="no"><keyword>min=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Length of taper at trace start</label><float><property required="no"><keyword>tbeg=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Length of taper at trace end</label><float><property required="no"><keyword>tend=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Type of taper</label><enum><property required="no"><keyword>taper=</keyword><value/><default>1</default></property><option><label>Linear</label><value>1</value></option><option><label>Sine</label><value>2</value></option><option><label>Cosine</label><value>3</value></option><option><label>Gaussian (+/- 3.8)</label><value>4</value></option><option><label>Gaussian (+/- 2.0)</label><value>5</value></option></enum></parameter>
-    <parameter>
-<label>Echoes extra information</label>
-<flag>
-<property required="no">
-<keyword>verbose=1</keyword>
-<value>off</value>
-<default>off</default>
-</property>
-</flag>
-</parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of traces</label>
+        <int>
+          <property required="no">
+            <keyword>ntr=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces to be tapered at begining</label>
+        <int>
+          <property required="no">
+            <keyword>tr1=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces to be tapered at end</label>
+        <int>
+          <property required="no">
+            <keyword>tr2=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Minimum amplitude factor</label>
+        <float>
+          <property required="no">
+            <keyword>min=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Length of taper at trace start</label>
+        <float>
+          <property required="no">
+            <keyword>tbeg=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Length of taper at trace end</label>
+        <float>
+          <property required="no">
+            <keyword>tend=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Type of taper</label>
+        <enum>
+          <property required="no">
+            <keyword>taper=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+          <option>
+            <label>Linear</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Sine</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Cosine</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Gaussian (+/- 3.8)</label>
+            <value>4</value>
+          </option>
+          <option>
+            <label>Gaussian (+/- 2.0)</label>
+            <value>5</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

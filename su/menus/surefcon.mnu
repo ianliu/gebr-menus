@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Ref Convolution</title>
   <description>Convolution of user-supplied refraction shots</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Ref Convolution</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Convolution of user-supplied refraction shots
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -43,19 +44,19 @@
           <a name="intro" id="intro"></a>
           <h2>Introduction</h2>
 
-          <p>Convolution of user-supplied forward and reverse		
-		refraction shots using XY trace offset in reverse shot.</p>
+          <p>Convolution of user-supplied forward and reverse           
+                refraction shots using XY trace offset in reverse shot.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Set 06, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Set 06, 2010<!-- end ver --></span>
+                <!-- begin ver -->Set 06, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-09-06T20:39:39.371018Z</created>
     <modified>2010-09-08T13:48:58.985433Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>SU Ref Convolution</title>
     <binary>surefcon</binary>
     <description>Convolution of user-supplied refraction shots</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -118,12 +123,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Ref Convolution</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Convolution of user-supplied refraction shots
             <!-- end des -->
           </div>
@@ -131,73 +136,73 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Convolution of user-supplied forward and reverse refraction shots using XY trace offset in reverse shot.</p>
+        Convolution of user-supplied forward and reverse refraction shots using XY trace offset in reverse shot.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">SU file containing traces to use as reverse shot</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of traces offseted from the 1st trace in SU file</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">SU file containing traces to use as reverse shot</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of traces offseted from the 1st trace in SU file</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	The time sampling interval on the output traces is half of that on the traces in the input files.</p>
+        The time sampling interval on the output traces is half of that on the traces in the input files.</p>
 <p>
-	<strong>Caveats:</strong> no space-variable or time-variable capacity.<br />
-	The more than one trace allowed in sufile is the beginning of a hook to handle the spatially variant case.</p>
+        <strong>Caveats:</strong> no space-variable or time-variable capacity.<br />
+        The more than one trace allowed in sufile is the beginning of a hook to handle the spatially variant case.</p>
 <p>
-	This program accesses and modifies the following header keywords:</p>
+        This program accesses and modifies the following header keywords:</p>
 <ul>
-	<li>
-		Number of samples.</li>
+        <li>
+                Number of samples.</li>
 </ul>
 <h2 id="header_3">
-	References</h2>
+        References</h2>
 <p>
-	This code implements the Refraction Convolution Section (RCS) method of generalized reciprocal refraction traveltime analysis developed by Derecke Palmer and Leoni Jones.</p>
+        This code implements the Refraction Convolution Section (RCS) method of generalized reciprocal refraction traveltime analysis developed by Derecke Palmer and Leoni Jones.</p>
 <!-- List of references --><ul>
-	<li>
-		Palmer, D, 2001a, Imaging refractors with the convolution section, Geophysics 66, 1582-1589.</li>
-	<li>
-		Palmer, D, 2001b, Resolving refractor ambiguities with amplitudes, Geophysics 66, 1590-1593.</li>
-	<li>
-		Exploration Geophysics (2005)</li>
-	<li>
-		Butsuri-Tansa (Vol. 58, No.1)</li>
-	<li>
-		Mulli-Tamsa (Vol. 8)</li>
+        <li>
+                Palmer, D, 2001a, Imaging refractors with the convolution section, Geophysics 66, 1582-1589.</li>
+        <li>
+                Palmer, D, 2001b, Resolving refractor ambiguities with amplitudes, Geophysics 66, 1590-1593.</li>
+        <li>
+                Exploration Geophysics (2005)</li>
+        <li>
+                Butsuri-Tansa (Vol. 58, No.1)</li>
+        <li>
+                Mulli-Tamsa (Vol. 8)</li>
 </ul>
 <h2 id="header_4">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Jack K. Cohen, Michel Dietrich<br />
-	UNSW: D. Palmer, K.T. LEE</p>
+        CWP: Jack K. Cohen, Michel Dietrich<br />
+        UNSW: D. Palmer, K.T. LEE</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	References</a></li><li><a href="#header_4">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -205,7 +210,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0">
       <parameter>
@@ -213,8 +219,8 @@
         <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
           <property required="yes">
             <keyword>sufile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -223,8 +229,8 @@
         <int>
           <property required="yes">
             <keyword>xy=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>

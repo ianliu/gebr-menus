@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Add Noise</title>
   <description>Add noise to traces</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -41,27 +42,27 @@
 
       <div class="main">
         <div class="content">
-	
-	  <a name="intro" id="intro"></a>
-	  <h2>Introduction</h2>
+        
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
 
-	  <p>Add noise to traces.</p>
+          <p>Add noise to traces.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Aug 26, 2007: written by Ricardo Biloti &lt;biloti@gebrproject.com&gt;</p>
           <p>Jun 09, 2008: revised by Daniela Amazonas, &lt;daniela.amazonas@gmail.com&gt;</p>
           <p>Mar 22, 2009: revised by Ricardo Biloti &lt;biloti@gebrproject.com&gt;</p>
-	  <p>Jul 31, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  <p>Aug 11, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Jul 31, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 11, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
         </div>
 
         <div class="navigation">
           <h2>Index</h2>
-	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#intro">Introduction</a></li>
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -79,31 +80,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-08-26T15:00:00Z</created>
     <modified>2010-08-18T13:49:54.712290Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Add Noise</title>
     <binary>suaddnoise</binary>
     <description>Add noise to traces</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -143,10 +147,10 @@
       <div class="main">
         <div class="content">
 
-	    <a name="intro" id="intro"></a>
-	    <h2>Introduction</h2>
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
 
-	    <p>Add noise to traces.</p>   
+            <p>Add noise to traces.</p>   
 
           <!-- begin par -->
           <div class="parameters">
@@ -154,22 +158,22 @@
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	    <!-- List of required parameters -->
+            <!-- List of required parameters -->
             <!-- begin lst -->
 
               <li><span class="label">Signal to noise ratio</span><br/>
-	    	The default value for this parameter is 20.</li>
+                The default value for this parameter is 20.</li>
 
               <li><span class="label">Flat noise probability distribution</span><br/>
-		Instead of Gaussian distribution.</li>
+                Instead of Gaussian distribution.</li>
 
               <li><span class="label">Random number seed</span></li>
 
               <li><span class="label">Filter frequencies</span><br/> 
-	        Specify a list of frequencies in the same way program <b>SU Filter</b> does.</li>
+                Specify a list of frequencies in the same way program <b>SU Filter</b> does.</li>
 
               <li><span class="label">Filter amplitudes</span><br/>
-		Specify a list of corresponding amplitudes in the same way program <b>SU Filter</b> does.</li>
+                Specify a list of corresponding amplitudes in the same way program <b>SU Filter</b> does.</li>
 
               <li><span class="label">Echoes extra information</span></li>
 
@@ -179,9 +183,9 @@
 
           </div>
           <!-- end par -->
-	    
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p> Output = Signal +  scale * Noise.</p>
@@ -192,17 +196,17 @@
              can be used, as in program <b>SU Filter</b>, to bandlimit the noise traces to match
              the signal band prior to computing the scale defined above.</p>
           
-	  <p>At parameter <b>Signal to noise ratio</b> equal a 2, the strongest reflector is well delineated, so to
+          <p>At parameter <b>Signal to noise ratio</b> equal a 2, the strongest reflector is well delineated, so to
              see something 1/nth as strong as this dominant reflector
              requires set parameter <b>Signal to noise ratio</b> equal a 2*n.</p>
 
-	  <p>This program accesses the following header keywords:
-	    <ul>
-	      <li>Number of samples.</li>  <!-- ns -->
-	    </ul>
-	  </p>
+          <p>This program accesses the following header keywords:
+            <ul>
+              <li>Number of samples.</li>  <!-- ns -->
+            </ul>
+          </p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
@@ -215,11 +219,11 @@
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>	
+            <li><a href="#intro">Introduction</a></li>  
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -239,36 +243,80 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      
-      <parameter><label>Signal to noise ratio</label><float min="0"><property required="no"><keyword>sn=</keyword><value/><default/></property>
-	
-	
-	
-      </float></parameter><parameter><label>Flat noise probability distribution</label><flag><property required="no"><keyword>noise=flat</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter>
-      <parameter><label>Random number seed</label><int><property required="no"><keyword>seed=</keyword><value/><default/></property>
-	
-	
-	
-      </int></parameter>
-      <parameter><label>Filter frequencies</label><float><property required="no" separator=","><keyword>f=</keyword><value/><default/></property></float></parameter>
-      <parameter><label>Filter amplitudes</label><float><property required="no" separator=","><keyword>amps=</keyword><value/><default/></property></float></parameter>
-      
-      <parameter><label>Echoes extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-	
-	
-	
-      </flag></parameter>
-      <parameter><label>Directory path to temporary files</label><file directory="yes"><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
-	
-	
-	
-      </file></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Signal to noise ratio</label>
+        <float min="0">
+          <property required="no">
+            <keyword>sn=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Flat noise probability distribution</label>
+        <flag>
+          <property required="no">
+            <keyword>noise=flat</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Random number seed</label>
+        <int>
+          <property required="no">
+            <keyword>seed=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Filter frequencies</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>f=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Filter amplitudes</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>amps=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory path to temporary files</label>
+        <file directory="yes">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
     </parameters>
   </program>
 </flow>

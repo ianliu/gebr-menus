@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Unpack Chars</title>
   <description>Unpack SEG-Y trace data from chars to floats</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Unpack Chars</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Unpack SEG-Y trace data from chars to floats
             <!-- end des -->
           </div>
@@ -27,31 +28,31 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Data Compression | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Data Compression | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Unpack SEG-Y trace data from chars to floats.<br />
-	It is the approximate inverse of  SU Pack Chars.</p>
+        Unpack SEG-Y trace data from chars to floats.<br />
+        It is the approximate inverse of  SU Pack Chars.</p>
 <!-- begin par --><!-- end par --><h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Mar 18, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Mar 18, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Mar 18, 2010<!-- end ver --></span>
+                <!-- begin ver -->Mar 18, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -61,30 +62,34 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
   <author>Davi Clemente</author>
   <email>davi.clemente@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-03-18T13:31:27.761170Z</created>
     <modified>2010-08-06T00:43:08.611927Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Data Compression</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Unpack Chars</title>
     <binary>suunpack1</binary>
     <description>Unpack SEG-Y trace data from chars to floats</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -96,12 +101,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Unpack Chars</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Unpack SEG-Y trace data from chars to floats
             <!-- end des -->
           </div>
@@ -109,60 +114,60 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Data Compression | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Data Compression | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Unpack SEG-Y trace data from chars to floats. It is the approximate inverse of <strong>SU Pack Chars</strong>.</p>
+        Unpack SEG-Y trace data from chars to floats. It is the approximate inverse of <strong>SU Pack Chars</strong>.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Notes</h2>
+        <h2 id="header_1">
+                Notes</h2>
 </div>
 <p style="margin-bottom: 0cm; ">
-	<strong>Caveats:<br />
-	<span class="Apple-style-span" style="font-weight: normal; ">This program is for single site use with <strong>SU Pack Chars</strong>. See the <strong>SU Pack Chars</strong> header comments.</span></strong></p>
+        <strong>Caveats:<br />
+        <span class="Apple-style-span" style="font-weight: normal; ">This program is for single site use with <strong>SU Pack Chars</strong>. See the <strong>SU Pack Chars</strong> header comments.</span></strong></p>
 <p>
-	This program accesses the following header keywords:</p>
+        This program accesses the following header keywords:</p>
 <ul>
-	<li>
-		Number of samples,</li>
-	<li>
-		Trace identification code,</li>
-	<li>
-		Negative of power used for dynamic range compression,</li>
-	<li>
-		Reciprocal of scaling factor to normalize range.</li>
+        <li>
+                Number of samples,</li>
+        <li>
+                Trace identification code,</li>
+        <li>
+                Negative of power used for dynamic range compression,</li>
+        <li>
+                Reciprocal of scaling factor to normalize range.</li>
 </ul>
 <p>
-	This program modifies the following header keywords:</p>
+        This program modifies the following header keywords:</p>
 <ul>
-	<li>
-		Trace identification code,</li>
-	<li>
-		Negative of power used for dynamic range compression,</li>
-	<li>
-		Reciprocal of scaling factor to normalize range.</li>
+        <li>
+                Trace identification code,</li>
+        <li>
+                Negative of power used for dynamic range compression,</li>
+        <li>
+                Reciprocal of scaling factor to normalize range.</li>
 </ul>
 <h2 id="header_2">
-	Credits</h2>
+        Credits</h2>
 <p style="margin-bottom: 0cm">
-	CWP: Jack K. Cohen, Shuki Ronen, Brian Sumner.</p>
+        CWP: Jack K. Cohen, Shuki Ronen, Brian Sumner.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Notes</a></li><li><a href="#header_2">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Notes</a></li><li><a href="#header_2">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.16 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -171,8 +176,9 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </program>
 </flow>

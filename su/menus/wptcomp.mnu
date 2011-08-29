@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>WP Compress</title>
   <description>Compression by Wavelet Packet Compression</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">WP Compress</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Compression by Wavelet Packet Compression
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Data Compression | Seismic Unix
        <!-- end cat -->
       </div>
@@ -47,19 +48,19 @@
 
           <p>Compression by Wavelet Packet Compression.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Oct 23, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 18, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -68,7 +69,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -86,31 +87,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-23T17:48:17.324432Z</created>
     <modified>2010-08-18T14:54:08.715738Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Data Compression</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>WP Compress</title>
     <binary>wptcomp</binary>
     <description>Compression by Wavelet Packet Compression</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -129,12 +133,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">WP Compress</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Compression by Wavelet Packet Compression
             <!-- end des -->
           </div>
@@ -142,7 +146,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Data Compression | Seismic Unix
        <!-- end cat -->
       </div>
@@ -155,14 +159,14 @@
 
           <p>Compression by Wavelet Packet Compression.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">Number of samples in the fast (first) dimension</span></li>
 
               <li class="req"><span class="reqlabel">Number of samples in the slow (second) dimension</span></li>
@@ -171,10 +175,10 @@
               <ul>
                 
                 <li><span class="label">Number of filters</span><br/>
-		        The default value for this parameter is 11 </li>
+                        The default value for this parameter is 11 </li>
 
                 <li><span class="label">filter stages</span><br/>
-		        Automatically set based on Number of samples in fast dimension </li>
+                        Automatically set based on Number of samples in fast dimension </li>
 
             </ul></li>
 
@@ -184,31 +188,31 @@
 
 
                 <li><span class="label">Number of filters</span><br/>
-		        The default value for this parameter is 11 </li>
+                        The default value for this parameter is 11 </li>
 
                 <li><span class="label">filter stages</span><br/> 
-		        Automatically set based on Number of samples in slow dimension </li>
+                        Automatically set based on Number of samples in slow dimension </li>
             </ul></li>
 
 
               <li><span class="label">Acceptable error</span><br/>
-		The default value for this parameter is 0.01 </li>
+                The default value for this parameter is 0.01 </li>
 
             </ul>
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	   
+          <!-- end par -->
+           
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Tong Chen, Dec 1995</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -217,9 +221,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -237,7 +241,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -245,8 +250,8 @@
         <int>
           <property required="yes">
             <keyword>n1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -255,70 +260,120 @@
         <int>
           <property required="yes">
             <keyword>n2=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
-      
-      <parameter><label>Filters properties on fast dimension</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
-        <label>Number of filters</label>
-        <int>
-          <property required="no">
-            <keyword>nfilter1=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Filter stages</label>
-        <int>
-          <property required="no">
-            <keyword>nstage1=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
-        <label>Filter stages</label>
-        
-      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
-        <label>Filter stages in fast dimension</label>
-        
-      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group></parameter><parameter><label>Filters properties on slow dimension</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter>
-        <label>Number of filters</label>
-        <int>
-          <property required="no">
-            <keyword>nfilter2=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter><parameter>
-        <label>Filter stages</label>
-        <int>
-          <property required="no">
-            <keyword>nstage2=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
-        <label>Filter stages</label>
-        
-      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter><parameter>
-        <label>Filter stages in slow dimension</label>
-        
-      <reference><property required="no"><keyword/><value/><default></default></property></reference></parameter></parameters></group></parameter>
-      
-      
+      <parameter>
+        <label>Filters properties on fast dimension</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Number of filters</label>
+                <int>
+                  <property required="no">
+                    <keyword>nfilter1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Filter stages</label>
+                <int>
+                  <property required="no">
+                    <keyword>nstage1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Filters properties on slow dimension</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Number of filters</label>
+                <int>
+                  <property required="no">
+                    <keyword>nfilter2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Filter stages</label>
+                <int>
+                  <property required="no">
+                    <keyword>nstage2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
       <parameter>
         <label>Acceptable error</label>
         <float>
           <property required="no">
             <keyword>error=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>

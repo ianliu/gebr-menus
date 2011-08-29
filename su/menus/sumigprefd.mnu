@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Mig Pre FD</title>
   <description>Prestack common-shot finite-difference migration</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -34,22 +35,22 @@
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	The 2-D prestack common-shot 45-90 degree finite-difference migration.</p>
+        The 2-D prestack common-shot 45-90 degree finite-difference migration.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	GêBR core team</p>
+        GêBR core team</p>
 <p>
-	Jul 21, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+        Jul 21, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
 <p>
-	May 23, 2010: Modified by Davi Costa Clemente, UNICAMP - davi.clemente@gebrproject.com</p>
+        May 23, 2010: Modified by Davi Costa Clemente, UNICAMP - davi.clemente@gebrproject.com</p>
 </div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -64,31 +65,34 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-05T15:00:00Z</created>
     <modified>2010-08-06T00:43:05.922995Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Mig Pre FD</title>
     <binary>sumigprefd</binary>
     <description>Prestack common-shot finite-difference migration</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
     <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -116,102 +120,102 @@
 
         <div class="main">
           <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	The 2-D prestack common-shot 45-90 degree finite-difference migration.</p>
+        The 2-D prestack common-shot 45-90 degree finite-difference migration.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<p>
-		 </p>
-	<!-- begin lst -->
+        <h2 id="header_1">
+                Parameters</h2>
+        <p>
+                 </p>
+        <!-- begin lst -->
             <ul>
-		<li class="req">
-			<span class="reqlabel">Number of total horizontal output samples</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of shot gathers to be migrated</span></li>
-		<li class="req">
-			<span class="reqlabel">Number of depth samples</span></li>
-		<li class="req">
-			<span class="reqlabel">Horizontal sampling interval</span></li>
-		<li class="req">
-			<span class="reqlabel">Depth sampling interval</span></li>
-		<li>
-			<span class="label">Time sampling interval</span></li>
-		<li class="req">
-			<span class="reqlabel">File with velocity profile</span><br />
-			It must be binary format.</li>
-		<li>
-			<span class="label">The maximum dip to migrate</span><br />
-			The computation cost is 45 = 65 = 79 &lt; 80 &lt; 87 &lt; 89 &lt; 90</li>
-		<li>
-			<span class="label">Peak frequency</span><br />
-			Ricker wavelet used as source wavelet.</li>
-		<li class="group">
-			<span class="grouplabel">Frequencies to build a Hamming window</span>
-			<ul>
-				<li>
-					<span class="label">Frequency 1</span></li>
-				<li>
-					<span class="label">Frequency 2</span></li>
-				<li>
-					<span class="label">Frequency 3</span></li>
-				<li>
-					<span class="label">Frequency 4</span></li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Number of zero traces padded on left side</span><br />
-			Determine the migration aperature, the default values are using the full aperature.</li>
-		<li>
-			<span class="label">Number of zero traces padded on rigth side</span><br />
-			determine the migration aperature, the default values are using the full aperature.</li>
-		<li>
-			<span class="label">Echoes information</span></li>
-	</ul>
+                <li class="req">
+                        <span class="reqlabel">Number of total horizontal output samples</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of shot gathers to be migrated</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of depth samples</span></li>
+                <li class="req">
+                        <span class="reqlabel">Horizontal sampling interval</span></li>
+                <li class="req">
+                        <span class="reqlabel">Depth sampling interval</span></li>
+                <li>
+                        <span class="label">Time sampling interval</span></li>
+                <li class="req">
+                        <span class="reqlabel">File with velocity profile</span><br />
+                        It must be binary format.</li>
+                <li>
+                        <span class="label">The maximum dip to migrate</span><br />
+                        The computation cost is 45 = 65 = 79 &lt; 80 &lt; 87 &lt; 89 &lt; 90</li>
+                <li>
+                        <span class="label">Peak frequency</span><br />
+                        Ricker wavelet used as source wavelet.</li>
+                <li class="group">
+                        <span class="grouplabel">Frequencies to build a Hamming window</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Frequency 1</span></li>
+                                <li>
+                                        <span class="label">Frequency 2</span></li>
+                                <li>
+                                        <span class="label">Frequency 3</span></li>
+                                <li>
+                                        <span class="label">Frequency 4</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of zero traces padded on left side</span><br />
+                        Determine the migration aperature, the default values are using the full aperature.</li>
+                <li>
+                        <span class="label">Number of zero traces padded on rigth side</span><br />
+                        determine the migration aperature, the default values are using the full aperature.</li>
+                <li>
+                        <span class="label">Echoes information</span></li>
+        </ul>
   <!-- end lst -->
 
           </div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	The <b>File with velocity profiles</b> consists of C-style binary floats. The structure of this file is <em>vfile[iz][ix]</em>. Note that this means that the x-direction is the fastest direction instead of z-direction. Such a structure is more convenient for the downward continuation type migration algorithm than using z as fastest dimension as in other SU programs.</p>
+        The <b>File with velocity profiles</b> consists of C-style binary floats. The structure of this file is <em>vfile[iz][ix]</em>. Note that this means that the x-direction is the fastest direction instead of z-direction. Such a structure is more convenient for the downward continuation type migration algorithm than using z as fastest dimension as in other SU programs.</p>
 <p>
-	Because most of the tools in the SU package (such as <b>Uniform 2D Velocity</b>, <b>Uniform 2D Sample</b>, and <b>Make Velocity</b>) produce output with the structure <em>vfile[ix][iz]</em>, you will need to transpose the velocity files created by these programs. You may use the SU program <b>Transpose</b> in SU to transpose such files into the required <em>vfile[iz][ix]</em> structure. (In C <em>v[iz][ix]</em> denotes a v(x,z) array, whereas <em>v[ix][iz]</em> denotes a v(z,x) array, the opposite of what Matlab and Fortran programmers may expect.)</p>
+        Because most of the tools in the SU package (such as <b>Uniform 2D Velocity</b>, <b>Uniform 2D Sample</b>, and <b>Make Velocity</b>) produce output with the structure <em>vfile[ix][iz]</em>, you will need to transpose the velocity files created by these programs. You may use the SU program <b>Transpose</b> in SU to transpose such files into the required <em>vfile[iz][ix]</em> structure. (In C <em>v[iz][ix]</em> denotes a v(x,z) array, whereas <em>v[ix][iz]</em> denotes a v(z,x) array, the opposite of what Matlab and Fortran programmers may expect.)</p>
 <p>
-	Also, from the header fields acessed, <b>X source coordinate</b> must be monotonically increasing throughout the dataset, and and <b>X group coordinate</b> must be monotonically increasing within a shot. You may resort your data with <b>SU Sort</b>, accordingly.</p>
+        Also, from the header fields acessed, <b>X source coordinate</b> must be monotonically increasing throughout the dataset, and and <b>X group coordinate</b> must be monotonically increasing within a shot. You may resort your data with <b>SU Sort</b>, accordingly.</p>
 <p>
-	The <b>Scale factor for source/receiver coordinates</b> header field is honored so this field must be set correctly. See selfdocs of <b>SU Sort</b>, <b>SU Change Header</b>.</p>
+        The <b>Scale factor for source/receiver coordinates</b> header field is honored so this field must be set correctly. See selfdocs of <b>SU Sort</b>, <b>SU Change Header</b>.</p>
 <p>
-	Trace header fields accessed:</p>
+        Trace header fields accessed:</p>
 <ul>
-	<li>
-		Number of samples</li>
-	<li>
-		Sampling interval in microseconds</li>
-	<li>
-		Delay recording time in ms</li>
-	<li>
-		Sample spacing between traces</li>
-	<li>
-		X source coordinate</li>
-	<li>
-		X group coordinate</li>
+        <li>
+                Number of samples</li>
+        <li>
+                Sampling interval in microseconds</li>
+        <li>
+                Delay recording time in ms</li>
+        <li>
+                Sample spacing between traces</li>
+        <li>
+                X source coordinate</li>
+        <li>
+                X group coordinate</li>
 </ul>
 <p>
-	Trace header fields modified:</p>
+        Trace header fields modified:</p>
 <ul>
-	<li>
-		Number of samples</li>
-	<li>
-		Sampling interval in microseconds</li>
-	<li>
-		Delay recording time in ms</li>
+        <li>
+                Number of samples</li>
+        <li>
+                Sampling interval in microseconds</li>
+        <li>
+                Delay recording time in ms</li>
 </ul>
 
 <h2 id="header_3">Credits</h2>
 <p>
-	CWP Baoniu Han, bhan@dix.mines.edu, April 19th, 1998</p>
+        CWP Baoniu Han, bhan@dix.mines.edu, April 19th, 1998</p>
 </div>
 
 <div class="navigation">
@@ -225,7 +229,7 @@
 </div>
 
 <div class="clearer"></div>
-	</div>
+        </div>
 
         <div class="footer">
           <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
@@ -237,99 +241,249 @@
   
 
 </body></html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of total horizontal output samples</label><int><property required="yes"><keyword>nxo=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Number of shot gathers to be migrated</label><int><property required="yes"><keyword>nxshot=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Number of depth samples</label><int><property required="yes"><keyword>nz=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Horizontal sampling interval</label><float><property required="yes"><keyword>dx=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Depth sampling interval</label><float><property required="yes"><keyword>dz=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Time sampling interval</label><float><property required="no"><keyword>dt=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter><parameter><label>File with velocity profile</label><file directory="no" filter-name="" filter-pattern=""><property required="yes"><keyword>vfile=</keyword><value/><default/></property>
-        
-        
-        
-      </file></parameter>
-      
-      <parameter><label>The maximum dip to migrate</label><enum><property required="no"><keyword>dip=</keyword><value/><default>79</default></property><option><label>45 degrees</label><value>45</value></option><option><label>65 degrees</label><value>65</value></option><option><label>79 degrees</label><value>79</value></option><option><label>80 degrees</label><value>80</value></option><option><label>87 degrees</label><value>87</value></option><option><label>89 degrees</label><value>89</value></option><option><label>90 degrees</label><value>90</value></option></enum></parameter><parameter><label>Peak frequency</label><float><property required="no"><keyword>fmax=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter><parameter><label>Frequencies to build a Hamming window</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Frequency 1</label><float><property required="no"><keyword>f1=</keyword><value/><default>5</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Frequency 2</label><float><property required="no"><keyword>f2=</keyword><value/><default>10</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Frequency 3</label><float><property required="no"><keyword>f3=</keyword><value/><default>40</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Frequency 4</label><float><property required="no"><keyword>f4=</keyword><value/><default>50</default></property>
-        
-        
-        
-      </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Frequency 1</label><float><property required="no"><keyword>f1=</keyword><value/><default>5</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Frequency 2</label><float><property required="no"><keyword>f2=</keyword><value/><default>10</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Frequency 3</label><float><property required="no"><keyword>f3=</keyword><value/><default>40</default></property>
-        
-        
-        
-      </float></parameter><parameter><label>Frequency 4</label><float><property required="no"><keyword>f4=</keyword><value/><default>50</default></property>
-        
-        
-        
-      </float></parameter></parameters></group></parameter>
-      
-      
-      
-      
-      <parameter><label>Number of zero traces padded on left side</label><int max="9999"><property required="no"><keyword>lpad=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Number of zero traces padded on rigth side</label><int max="9999"><property required="no"><keyword>rpad=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Echoes information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of total horizontal output samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nxo=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of shot gathers to be migrated</label>
+        <int>
+          <property required="yes">
+            <keyword>nxshot=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of depth samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Horizontal sampling interval</label>
+        <float>
+          <property required="yes">
+            <keyword>dx=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Depth sampling interval</label>
+        <float>
+          <property required="yes">
+            <keyword>dz=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>File with velocity profile</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="yes">
+            <keyword>vfile=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>The maximum dip to migrate</label>
+        <enum>
+          <property required="no">
+            <keyword>dip=</keyword>
+            <value />
+            <default>79</default>
+          </property>
+          <option>
+            <label>45 degrees</label>
+            <value>45</value>
+          </option>
+          <option>
+            <label>65 degrees</label>
+            <value>65</value>
+          </option>
+          <option>
+            <label>79 degrees</label>
+            <value>79</value>
+          </option>
+          <option>
+            <label>80 degrees</label>
+            <value>80</value>
+          </option>
+          <option>
+            <label>87 degrees</label>
+            <value>87</value>
+          </option>
+          <option>
+            <label>89 degrees</label>
+            <value>89</value>
+          </option>
+          <option>
+            <label>90 degrees</label>
+            <value>90</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Peak frequency</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Frequencies to build a Hamming window</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Frequency 1</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1=</keyword>
+                    <value />
+                    <default>5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 2</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2=</keyword>
+                    <value />
+                    <default>10</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 3</label>
+                <float>
+                  <property required="no">
+                    <keyword>f3=</keyword>
+                    <value />
+                    <default>40</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 4</label>
+                <float>
+                  <property required="no">
+                    <keyword>f4=</keyword>
+                    <value />
+                    <default>50</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>10</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>40</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Number of zero traces padded on left side</label>
+        <int max="9999">
+          <property required="no">
+            <keyword>lpad=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of zero traces padded on rigth side</label>
+        <int max="9999">
+          <property required="no">
+            <keyword>rpad=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
     </parameters>
   </program>
 </flow>

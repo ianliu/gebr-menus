@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU DMO FK</title>
   <description>DMO via F-K domain (log-stretch) method for common-offset gathers</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU DMO FK</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             DMO via F-K domain (log-stretch) method for common-offset gathers
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,16 +46,16 @@
 
           <p>DMO via F-K domain (log-stretch) method for common-offset gathers.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>May 30, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -74,7 +75,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->May 30, 2010<!-- end ver --></span>
+                <!-- begin ver -->May 30, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -82,30 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-31T00:20:45.435361Z</created>
     <modified>2010-08-06T00:43:04.641907Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU DMO FK</title>
     <binary>sudmofk</binary>
     <description>DMO via F-K domain (log-stretch) method for common-offset gathers</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -124,12 +129,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU DMO FK</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             DMO via F-K domain (log-stretch) method for common-offset gathers
             <!-- end des -->
           </div>
@@ -137,7 +142,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -148,13 +153,13 @@
 
           <p>DMO via F-K domain (log-stretch) method for common-offset gathers.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">Minimum cdp for which to apply DMO</span></li>
 
               <li class="req"><span class="reqlabel">Maximum cdp for which to apply DMO</span></li>
@@ -179,44 +184,44 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>Input traces should be sorted into common-offset gathers. One common offset gather ends and another begins when the offset field of the trace headers changes.</p>
 
-	  <p>The cdp field of the input trace headers must be the cdp bin NUMBER, NOT the cdp location expressed in units of meters or feet.</p>
+          <p>The cdp field of the input trace headers must be the cdp bin NUMBER, NOT the cdp location expressed in units of meters or feet.</p>
 
-	  <p>The <strong>Number of offsets to mix</strong> should typically no smaller than the ratio of the shotpoint spacing to the cdp spacing. This choice ensures that every cdp will be represented in each offset mix. Traces in each mix will contribute through DMO to other traces in adjacent cdps within that mix. (Values of <strong>Number of offsets to mix</strong> 2 or 3 times the ratio of shotpoint spacing to the cdp spacing often yield better results.)</p>
+          <p>The <strong>Number of offsets to mix</strong> should typically no smaller than the ratio of the shotpoint spacing to the cdp spacing. This choice ensures that every cdp will be represented in each offset mix. Traces in each mix will contribute through DMO to other traces in adjacent cdps within that mix. (Values of <strong>Number of offsets to mix</strong> 2 or 3 times the ratio of shotpoint spacing to the cdp spacing often yield better results.)</p>
 
-	  <p>The <strong>Times corresponding to RMS velocities</strong> and <strong>RMS velocities corresponding to times</strong> arrays specify a velocity function of time that is used to implement a first-order correction for depth-variable velocity. The times in <strong>Times corresponding to RMS velocities</strong> must be monotonically increasing.</p>
+          <p>The <strong>Times corresponding to RMS velocities</strong> and <strong>RMS velocities corresponding to times</strong> arrays specify a velocity function of time that is used to implement a first-order correction for depth-variable velocity. The times in <strong>Times corresponding to RMS velocities</strong> must be monotonically increasing.</p>
 
-	  <p>For each offset, the minimum time at which a non-zero sample exists is used to determine a mute time. Output samples for times earlier than this, mute time will be zeroed. Computation time may be significantly reduced if the input traces are zeroed (muted) for early times at large offsets.</p>
+          <p>For each offset, the minimum time at which a non-zero sample exists is used to determine a mute time. Output samples for times earlier than this, mute time will be zeroed. Computation time may be significantly reduced if the input traces are zeroed (muted) for early times at large offsets.</p>
 
-	<p>This program accesses the following header keywords:
-	  <ul>
-	    <li>Number of samples</li>  <!-- ns -->
-	    <li>Sample interval in ms</li>  <!-- dt -->
-	    <li>Delay recording time in ms</li>  <!-- delrt -->
-	    <li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
-	    <li>CDP ensemble number</li>  <!-- cdp -->
-	  </ul>
-	</p>
+        <p>This program accesses the following header keywords:
+          <ul>
+            <li>Number of samples</li>  <!-- ns -->
+            <li>Sample interval in ms</li>  <!-- dt -->
+            <li>Delay recording time in ms</li>  <!-- delrt -->
+            <li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
+            <li>CDP ensemble number</li>  <!-- cdp -->
+          </ul>
+        </p>
 
-	  <a name="ref" id="ref"></a>
+          <a name="ref" id="ref"></a>
           <h2>References</h2>
 
           <p>Dip-Moveout Processing - SEG Course Notes<br/>Dave Hale, 1988</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Dave Hale.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -225,9 +230,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -242,7 +247,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -250,7 +255,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -258,8 +264,8 @@
         <int>
           <property required="yes">
             <keyword>cdpmin=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -268,8 +274,8 @@
         <int>
           <property required="yes">
             <keyword>cdpmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -278,8 +284,8 @@
         <float>
           <property required="yes">
             <keyword>dxcdp=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -288,8 +294,8 @@
         <int>
           <property required="yes">
             <keyword>noffmix=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -298,7 +304,7 @@
         <float>
           <property required="no">
             <keyword>tdmo=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>
@@ -308,7 +314,7 @@
         <float>
           <property required="no">
             <keyword>vdmo=</keyword>
-            <value/>
+            <value />
             <default>1500.0</default>
           </property>
         </float>
@@ -318,7 +324,7 @@
         <float>
           <property required="no">
             <keyword>sdmo=</keyword>
-            <value/>
+            <value />
             <default>1.0</default>
           </property>
         </float>
@@ -328,8 +334,8 @@
         <float>
           <property required="no">
             <keyword>fmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -345,11 +351,13 @@
       </parameter>
       <parameter>
         <label>Directory path for storing temporary files</label>
-        <file directory="yes" filter-name="" filter-pattern=""><property required="no"><keyword>tmpdir=</keyword><value/><default/></property>
-        
-        
-        
-      </file>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </file>
       </parameter>
     </parameters>
   </program>

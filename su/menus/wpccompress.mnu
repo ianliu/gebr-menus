@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>WP 2D Compress</title>
   <description>Compress a 2D section using Wavelet Packets</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">WP 2D Compress</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Compress a 2D section using Wavelet Packets
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Data Compression | Seismic Unix
        <!-- end cat -->
       </div>
@@ -47,18 +48,18 @@
 
           <p>Compress a 2D section using Wavelet Packets.</p>
 
-	  <!-- begin par --><!-- end par -->
-	
+          <!-- begin par --><!-- end par -->
+        
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Oct 23, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 18, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -67,7 +68,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -85,31 +86,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-23T17:31:32.396419Z</created>
     <modified>2010-08-18T17:20:33.739042Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Data Compression</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>WP 2D Compress</title>
     <binary>wpccompress</binary>
     <description>Compress a 2D section using Wavelet Packets</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -128,12 +132,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">WP 2D Compress</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Compress a 2D section using Wavelet Packets
             <!-- end des -->
           </div>
@@ -141,7 +145,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Data Compression | Seismic Unix
        <!-- end cat -->
       </div>
@@ -154,57 +158,57 @@
 
           <p>Compress a 2D section using Wavelet Packets.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">Number of samples in first dimension</span></li>
 
               <li class="req"><span class="reqlabel">Number of samples in second dimenstion</span></li>
 
               <li><span class="label">Relative RMS allowed in compress</span><br/>
-		    The default value for this parameter is 0.01.</li>
+                    The default value for this parameter is 0.01.</li>
 
 
             </ul>
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>  This program is used to compress a 2D section. It compresses in both	
-  	directions, vertically and horizontally.</p>				
+          <p>  This program is used to compress a 2D section. It compresses in both     
+        directions, vertically and horizontally.</p>                            
                                                                        
-  	<p>The parameter error is used control the allowable compression error,	
-  	and thus the compression ratio. The larger the error, the more 
-    compression you can get. The amount of error depends on 	
-  	the type of data and the application of the compression.<br/> 
-    From my experience, value of parameter <b>Relative RMS allowed in compress</b> equal a 0.01, is a safe choice even when the compressed data 	
-  	are used for further processing. For some other applications, it 	
-  	may be set higher to achieve larger compression.</p>			
+        <p>The parameter error is used control the allowable compression error, 
+        and thus the compression ratio. The larger the error, the more 
+    compression you can get. The amount of error depends on     
+        the type of data and the application of the compression.<br/> 
+    From my experience, value of parameter <b>Relative RMS allowed in compress</b> equal a 0.01, is a safe choice even when the compressed data         
+        are used for further processing. For some other applications, it        
+        may be set higher to achieve larger compression.</p>                    
                                                                        
- 	<p><b>Caveats:</b><br />								
-  	For the current implementation, the compressed data themselves are	
-  	NOT portable, i.e., the data compressed on one platform might not be	
-  	recognizable on another.</p>
+        <p><b>Caveats:</b><br />                                                                
+        For the current implementation, the compressed data themselves are      
+        NOT portable, i.e., the data compressed on one platform might not be    
+        recognizable on another.</p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Tong Chen.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -213,9 +217,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -235,7 +239,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -243,8 +248,8 @@
         <int>
           <property required="yes">
             <keyword>n1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -253,8 +258,8 @@
         <int>
           <property required="yes">
             <keyword>n2=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -263,7 +268,7 @@
         <float>
           <property required="no">
             <keyword>error=</keyword>
-            <value/>
+            <value />
             <default>0.01</default>
           </property>
         </float>

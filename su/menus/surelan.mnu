@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Relan</title>
   <description>Compute residual-moveout semblance for CDP gathers</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -46,16 +47,16 @@
           <h2>Introduction</h2>
 
           <p>Compute residual-moveout semblance for CDP gathers based
-	      on z(h)*z(h) = z(0)*z(0) + r*h*h where z depth and h
-	      offset.</p>
+              on z(h)*z(h) = z(0)*z(0) + r*h*h where z depth and h
+              offset.</p>
 
-	  <a name="credits" id="credits"></a>
-	  <h2>Credits</h2>
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>GêBR core team</p>
-	  <p>Aug 04, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
-	  <p>Jul 19, 2010: reviewed by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>
+          <p>GêBR core team</p>
+          <p>Aug 04, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+          <p>Jul 19, 2010: reviewed by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>
 
           <!-- end cpy -->
         </div>
@@ -65,7 +66,7 @@
 
           <ul>
             <li><a href="#intro">Introduction</a></li>
-  	    <li><a href="#credits">Credits</a></li>
+            <li><a href="#credits">Credits</a></li>
           </ul>
         </div>
 
@@ -81,31 +82,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-08T15:00:00Z</created>
     <modified>2010-08-06T00:43:07.617500Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Relan</title>
     <binary>surelan</binary>
     <description>Compute residual-moveout semblance for CDP gathers</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -145,11 +149,11 @@
       <div class="main">
         <div class="content">
 
-	    <a name="intro" id="intro"></a>
-	    <h2>Introduction</h2>
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
 
-	    <p>Compute residual-moveout semblance for CDP gathers based
-	      on z(h)*z(h) = z(0)*z(0) + r*h*h where z depth and h offset.</p>
+            <p>Compute residual-moveout semblance for CDP gathers based
+              on z(h)*z(h) = z(0)*z(0) + r*h*h where z depth and h offset.</p>
 
           <!-- begin par -->
           <div class="parameters">
@@ -158,25 +162,25 @@
 
             <h2>Parameters</h2>
 
-	    <!-- List of optional parameters -->
+            <!-- List of optional parameters -->
             <!-- begin lst -->
             <ul>
               <li><span class="label">Number of r-parameter samples</span>
-		<p>The default value for this parameter is 51</p></li>
+                <p>The default value for this parameter is 51</p></li>
 
               <li><span class="label">r-parameter sampling interval</span>
-		<p>The default value for this parameter is 0.01</p></li>
+                <p>The default value for this parameter is 0.01</p></li>
 
               <li><span class="label">First value of b-parameter</span>
-		<p>The default value for this parameter is -0.025</p></li>
+                <p>The default value for this parameter is -0.025</p></li>
 
- 		<li><span class="label">RMO stretch mute value</span><br />
+                <li><span class="label">RMO stretch mute value</span><br />
                 Any sample with value of RMO stretch exceeding the value of this parameter will be zeroed.
                 The defaul value for this parameter is 1.5.
                 </li>
 
               <li><span class="label">Ratio of output to input depth sampling intervals</span>
-		<p>The default value for this parameter is 5</p></li>
+                <p>The default value for this parameter is 5</p></li>
 
               <li><span class="label">Length of semblance num and den smoothing window</span><br/>The defaul value for this parameter is twice the value of the 
               <strong>Ratio of output to input time sampling intervals</strong> plus one.</li>
@@ -188,20 +192,20 @@
 
           </div>
           <!-- end par -->
-	    
+            
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>1. This program is part of Zhenyue Liu's velocity analysis technique.</p>
-	  <p>2. Input migrated traces should be sorted by CDP - <strong>SU Relan</strong> outputs a 	
+          <p>2. Input migrated traces should be sorted by CDP - <strong>SU Relan</strong> outputs a     
     group of semblance traces every time CDP changes.  Therefore, the  
     output will be useful only if CDP gathers are input.</p>
-	  <p> 3. The parameter r may take negative values. The range of r can be 	
+          <p> 3. The parameter r may take negative values. The range of r can be        
      controlled by maximum of (z(h)*z(h)-z(0)*z(0))/(h*h)</p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
@@ -213,11 +217,11 @@
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#intro">Introduction</a></li>
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -237,43 +241,80 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of r-parameter samples</label><int><property required="no"><keyword>nr=</keyword><value/><default>51</default></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>R-parameter sampling interval</label><float><property required="no"><keyword>dr=</keyword><value/><default>0.01</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>First value of b-parameter</label><float><property required="no"><keyword>fr=</keyword><value/><default>-0.25</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>RMO stretch mute value</label><float><property required="no"><keyword>smute=</keyword><value/><default>1.5</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Ratio of output to input depth sampling intervals</label><int><property required="no"><keyword>dzratio=</keyword><value/><default>5</default></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Length of semblance num and den smoothing window</label><int><property required="no"><keyword>nsmooth=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Echos information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of r-parameter samples</label>
+        <int>
+          <property required="no">
+            <keyword>nr=</keyword>
+            <value />
+            <default>51</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>R-parameter sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dr=</keyword>
+            <value />
+            <default>0.01</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First value of b-parameter</label>
+        <float>
+          <property required="no">
+            <keyword>fr=</keyword>
+            <value />
+            <default>-0.25</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>RMO stretch mute value</label>
+        <float>
+          <property required="no">
+            <keyword>smute=</keyword>
+            <value />
+            <default>1.5</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Ratio of output to input depth sampling intervals</label>
+        <int>
+          <property required="no">
+            <keyword>dzratio=</keyword>
+            <value />
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Length of semblance num and den smoothing window</label>
+        <int>
+          <property required="no">
+            <keyword>nsmooth=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echos information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
     </parameters>
   </program>
 </flow>

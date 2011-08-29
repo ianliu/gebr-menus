@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.6">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU PS Contour</title>
   <description>Postscript contour plot of a SEG-Y data set</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU PS Contour</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Postscript contour plot of a SEG-Y data set
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Postscript contour plot of a SEG-Y data set.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Mar 31, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Mar 31, 2010<!-- end ver --></span>
+                <!-- begin ver -->Mar 31, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-03-31T17:27:13.771310Z</created>
     <modified>2010-11-13T20:43:40.875305Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Graphics</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU PS Contour</title>
     <binary>supscontour</binary>
     <description>Postscript contour plot of a SEG-Y data set</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -116,1192 +121,3217 @@
     </head><body>
     <div class="outer-container">
       <div class="inner-container">
-	<div class="header">
-	  <div class="title">
-	    <!-- begin tt2 -->
-	    <span class="flowtitle">SU PS Contour</span>
-	    <!-- end tt2 -->
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+            <span class="flowtitle">SU PS Contour</span>
+            <!-- end tt2 -->
 
-	    <div class="description">
-	      <!-- begin des -->
-	      Postscript contour plot of a SEG-Y data set
-	      <!-- end des -->
-	    </div>
-	  </div>
-	</div>
+            <div class="description">
+              <!-- begin des -->
+              Postscript contour plot of a SEG-Y data set
+              <!-- end des -->
+            </div>
+          </div>
+        </div>
 
-	<div class="category">
-	  <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
-	</div>
+        <div class="category">
+          <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
+        </div>
 
-	<div class="main">
-	  <div class="content"><h2 id="header_0">
-	      Introduction</h2>
-	    <p>
-	    Postscript contour plot of a SEG-Y data set.</p>
-	    <!-- begin par --><div class="parameters">
-	      <h2 id="header_1">
-		Parameters</h2>
-	      <!-- begin lst -->	<ul>
-		<li class="req">
-		<span class="reqlabel">Number of samples in fast dimension</span></li>
-		<li>
-		<span class="label">Title of the plot</span></li>
-		<li class="group">
-		<span class="grouplabel">Axis 1 properties (fast dimension)</span>
-		<ul>
-		  <li>
-		  <span class="label">Axis label</span></li>
-		  <li>
-		  <span class="label">First sample</span><br />
-		  The default value is set from keyword "First sample location for non-seismic data" 
-		  or from keyword "Delay recording times in ms", both values of header, or set as 0.0.</li>
-		  <li>
-		  <span class="label">Sampling interval</span><br />
-		  The default value is set from keyword "Sample spacing for non-seismic data"
-		  or from keyword "Sampling interval in microseconds", both values of header.<br />
-		  If these keywords are not set, the default number for seismic is 0.004
-		  and for non seismics, the value is 1.0.</li>
-		  <li>
-		  <span class="label">Monotonic sampled values</span></li>
-		  <li>
-		  <span class="label">Value where axis begins</span></li>
-		  <li>
-		  <span class="label">Value where axis ends</span></li>
-		  <li>
-		  <span class="label">Number of tics between consecutive numbered tics</span></li>
-		  <li>
-		  <span class="label">Numbered tic interval</span></li>
-		  <li>
-		  <span class="label">First numbered tic</span></li>
-		  <li>
-		  <span class="label">Grid line style</span>
-		  <ul>
-		    <li>
-		    No grid lines</li>
-		    <li>
-		    Dotted grid lines</li>
-		    <li>
-		    Dashed grid lines</li>
-		    <li>
-		    Solid grid lines</li>
-		  </ul>
-		  </li>
-		</ul>
-		</li>
-		<li class="group">
-		<span class="grouplabel">Axis 2 properties (slow dimension)</span>
-		<ul>
-		  <li>
-		  <span class="label">Number of traces</span></li>
-		  <li>
-		  <span class="label">Axis label</span></li>
-		  <li>
-		  <span class="label">First sample</span><br />
-		  The default value is set from keyword "First sample location for non-seismic data" or from keyword 
-		  "Delay recording times in ms", both values of header, or set as 0.0</li>
-		  <li>
-		  <span class="label">Sampling interval</span><br />
-		  The default value is set from keyword "Sample spacing between traces" in header.<br />
-		  If these keywords are not set, the value is 1.0.</li>
-		  <li>
-		  <span class="label">Monotonic sampled values</span></li>
-		  <li>
-		  <span class="label">Value where axis begins</span></li>
-		  <li>
-		  <span class="label">Value where axis ends</span></li>
-		  <li>
-		  <span class="label">Number of tics between consecutive numbered tics</span></li>
-		  <li>
-		  <span class="label">Numbered tic interval</span></li>
-		  <li>
-		  <span class="label">First numbered tic</span></li>
-		  <li>
-		  <span class="label">Grid line style</span>
-		  <ul>
-		    <li>
-		    No grid lines</li>
-		    <li>
-		    Dotted grid lines</li>
-		    <li>
-		    Dashed grid lines</li>
-		    <li>
-		    Solid grid lines</li>
-		  </ul>
-		  </li>
-		</ul>
-		</li>
-		<li class="group">
-		<span class="grouplabel">Contour properties</span>
-		<ul>
-		  <li>
-		  <span class="label">Number of values</span></li>
-		  <li>
-		  <span class="label">Contour interval</span></li>
-		  <li>
-		  <span class="label">First contour</span></li>
-		  <li>
-		  <span class="label">Contour values</span></li>
-		  <li>
-		  <span class="label">Line widths</span></li>
-		  <li>
-		  <span class="label">Gray levels</span><br />
-		  Set 0.0 for black and 1.0 for white, the values in interval are the levels of gray.</li>
-		  <li>
-		  <span class="label">Contour colors</span><br />
-		  Nothing set means used a parameter <b>Gray levels</b>.</li>
-		  <li>
-		  <span class="label">Dash spacings</span></li>
-		  <li>
-		  <span class="label">First labeled contour</span></li>
-		  <li>
-		  <span class="label">Number of contours between labeled contours</span></li>
-		  <li>
-		  <span class="label">Number of labeled contours</span></li>
-		  <li>
-		  <span class="label">Number of decimal places in contour label</span></li>
-		</ul>
-		</li>
-		<li class="group">
-		<span class="grouplabel">Appearance properties</span>
-		<ul>
-		  <li>
-		  <span class="label">Swap axes position</span>
-		  <ul>
-		    <li>
-		    Normal (axis 1 horizontal, axis 2 vertical)</li>
-		    <li>
-		    Seismic (axis 1 vertical, axis 2 horizontal)</li>
-		  </ul>
-		  </li>
-		  <li>
-		  <span class="label">Offset in inches of left side of axes box</span></li>
-		  <li>
-		  <span class="label">Offset in inches of bottom side of axes box</span></li>
-		  <li>
-		  <span class="label">Width in inches of axes box</span></li>
-		  <li>
-		  <span class="label">Height in inches of axes box</span></li>
-		  <li>
-		  <span class="label">Font name for axes labels</span></li>
-		  <li>
-		  <span class="label">Font size for axes labels</span></li>
-		  <li>
-		  <span class="label">Font name for title</span></li>
-		  <li>
-		  <span class="label">Font size for title</span></li>
-		  <li>
-		  <span class="label">Color of title</span></li>
-		  <li>
-		  <span class="label">Font name for contour labels</span></li>
-		  <li>
-		  <span class="label">Font size of contour labels</span></li>
-		  <li>
-		  <span class="label">Color of contour labels</span></li>
-		  <li>
-		  <span class="label">Color of axes</span></li>
-		  <li>
-		  <span class="label">Color of grid</span></li>
-		  <li>
-		  <span class="label">Width (in points) of axes</span></li>
-		  <li>
-		  <span class="label">Width (in points) of tic marks</span><br />
-		  The value is equal a parameter <b>Width (in points) of axes</b>.</li>
-		  <li>
-		  <span class="label">Width (in points) of grid lines</span><br />
-		  The value is equal a parameter <b>Width (in points) of axes</b>.</li>
-		</ul>
-		</li>
-		<li>
-		<span class="label">Echoes extra information</span><br />
-		To print some useful information</li>
-		<li>
-		<span class="label">Path prefix for temporary files</span></li>
-	      </ul>
-	      <!-- end lst --></div>
-	    <!-- end par -->
-	    
-	    <h2 id="header_2">
-	      Notes</h2>
-	    <p>
-	    Note that for seismic time domais data, the "fast dimension" is time 
-	    and the "slow dimension" is usually trace number or range.</p>
+        <div class="main">
+          <div class="content"><h2 id="header_0">
+              Introduction</h2>
+            <p>
+            Postscript contour plot of a SEG-Y data set.</p>
+            <!-- begin par --><div class="parameters">
+              <h2 id="header_1">
+                Parameters</h2>
+              <!-- begin lst -->        <ul>
+                <li class="req">
+                <span class="reqlabel">Number of samples in fast dimension</span></li>
+                <li>
+                <span class="label">Title of the plot</span></li>
+                <li class="group">
+                <span class="grouplabel">Axis 1 properties (fast dimension)</span>
+                <ul>
+                  <li>
+                  <span class="label">Axis label</span></li>
+                  <li>
+                  <span class="label">First sample</span><br />
+                  The default value is set from keyword "First sample location for non-seismic data" 
+                  or from keyword "Delay recording times in ms", both values of header, or set as 0.0.</li>
+                  <li>
+                  <span class="label">Sampling interval</span><br />
+                  The default value is set from keyword "Sample spacing for non-seismic data"
+                  or from keyword "Sampling interval in microseconds", both values of header.<br />
+                  If these keywords are not set, the default number for seismic is 0.004
+                  and for non seismics, the value is 1.0.</li>
+                  <li>
+                  <span class="label">Monotonic sampled values</span></li>
+                  <li>
+                  <span class="label">Value where axis begins</span></li>
+                  <li>
+                  <span class="label">Value where axis ends</span></li>
+                  <li>
+                  <span class="label">Number of tics between consecutive numbered tics</span></li>
+                  <li>
+                  <span class="label">Numbered tic interval</span></li>
+                  <li>
+                  <span class="label">First numbered tic</span></li>
+                  <li>
+                  <span class="label">Grid line style</span>
+                  <ul>
+                    <li>
+                    No grid lines</li>
+                    <li>
+                    Dotted grid lines</li>
+                    <li>
+                    Dashed grid lines</li>
+                    <li>
+                    Solid grid lines</li>
+                  </ul>
+                  </li>
+                </ul>
+                </li>
+                <li class="group">
+                <span class="grouplabel">Axis 2 properties (slow dimension)</span>
+                <ul>
+                  <li>
+                  <span class="label">Number of traces</span></li>
+                  <li>
+                  <span class="label">Axis label</span></li>
+                  <li>
+                  <span class="label">First sample</span><br />
+                  The default value is set from keyword "First sample location for non-seismic data" or from keyword 
+                  "Delay recording times in ms", both values of header, or set as 0.0</li>
+                  <li>
+                  <span class="label">Sampling interval</span><br />
+                  The default value is set from keyword "Sample spacing between traces" in header.<br />
+                  If these keywords are not set, the value is 1.0.</li>
+                  <li>
+                  <span class="label">Monotonic sampled values</span></li>
+                  <li>
+                  <span class="label">Value where axis begins</span></li>
+                  <li>
+                  <span class="label">Value where axis ends</span></li>
+                  <li>
+                  <span class="label">Number of tics between consecutive numbered tics</span></li>
+                  <li>
+                  <span class="label">Numbered tic interval</span></li>
+                  <li>
+                  <span class="label">First numbered tic</span></li>
+                  <li>
+                  <span class="label">Grid line style</span>
+                  <ul>
+                    <li>
+                    No grid lines</li>
+                    <li>
+                    Dotted grid lines</li>
+                    <li>
+                    Dashed grid lines</li>
+                    <li>
+                    Solid grid lines</li>
+                  </ul>
+                  </li>
+                </ul>
+                </li>
+                <li class="group">
+                <span class="grouplabel">Contour properties</span>
+                <ul>
+                  <li>
+                  <span class="label">Number of values</span></li>
+                  <li>
+                  <span class="label">Contour interval</span></li>
+                  <li>
+                  <span class="label">First contour</span></li>
+                  <li>
+                  <span class="label">Contour values</span></li>
+                  <li>
+                  <span class="label">Line widths</span></li>
+                  <li>
+                  <span class="label">Gray levels</span><br />
+                  Set 0.0 for black and 1.0 for white, the values in interval are the levels of gray.</li>
+                  <li>
+                  <span class="label">Contour colors</span><br />
+                  Nothing set means used a parameter <b>Gray levels</b>.</li>
+                  <li>
+                  <span class="label">Dash spacings</span></li>
+                  <li>
+                  <span class="label">First labeled contour</span></li>
+                  <li>
+                  <span class="label">Number of contours between labeled contours</span></li>
+                  <li>
+                  <span class="label">Number of labeled contours</span></li>
+                  <li>
+                  <span class="label">Number of decimal places in contour label</span></li>
+                </ul>
+                </li>
+                <li class="group">
+                <span class="grouplabel">Appearance properties</span>
+                <ul>
+                  <li>
+                  <span class="label">Swap axes position</span>
+                  <ul>
+                    <li>
+                    Normal (axis 1 horizontal, axis 2 vertical)</li>
+                    <li>
+                    Seismic (axis 1 vertical, axis 2 horizontal)</li>
+                  </ul>
+                  </li>
+                  <li>
+                  <span class="label">Offset in inches of left side of axes box</span></li>
+                  <li>
+                  <span class="label">Offset in inches of bottom side of axes box</span></li>
+                  <li>
+                  <span class="label">Width in inches of axes box</span></li>
+                  <li>
+                  <span class="label">Height in inches of axes box</span></li>
+                  <li>
+                  <span class="label">Font name for axes labels</span></li>
+                  <li>
+                  <span class="label">Font size for axes labels</span></li>
+                  <li>
+                  <span class="label">Font name for title</span></li>
+                  <li>
+                  <span class="label">Font size for title</span></li>
+                  <li>
+                  <span class="label">Color of title</span></li>
+                  <li>
+                  <span class="label">Font name for contour labels</span></li>
+                  <li>
+                  <span class="label">Font size of contour labels</span></li>
+                  <li>
+                  <span class="label">Color of contour labels</span></li>
+                  <li>
+                  <span class="label">Color of axes</span></li>
+                  <li>
+                  <span class="label">Color of grid</span></li>
+                  <li>
+                  <span class="label">Width (in points) of axes</span></li>
+                  <li>
+                  <span class="label">Width (in points) of tic marks</span><br />
+                  The value is equal a parameter <b>Width (in points) of axes</b>.</li>
+                  <li>
+                  <span class="label">Width (in points) of grid lines</span><br />
+                  The value is equal a parameter <b>Width (in points) of axes</b>.</li>
+                </ul>
+                </li>
+                <li>
+                <span class="label">Echoes extra information</span><br />
+                To print some useful information</li>
+                <li>
+                <span class="label">Path prefix for temporary files</span></li>
+              </ul>
+              <!-- end lst --></div>
+            <!-- end par -->
+            
+            <h2 id="header_2">
+              Notes</h2>
+            <p>
+            Note that for seismic time domais data, the "fast dimension" is time 
+            and the "slow dimension" is usually trace number or range.</p>
 
-	    <p>
-	    Also note that "foreign" data tapes may have something unexpected in
-	    <b>Sampling interval in slow dimension</b> and 
-	    <b>First sample in slow dimension</b> fields, 
-	    use <b>SU SEG-Y Clean</b> to clear these if you can afford the processing time
-	    or use the parameters <b>Sampling interval in slow dimension</b> 
-	    and <b>First sample in slow dimension</b> to override the header values if not.</p>
+            <p>
+            Also note that "foreign" data tapes may have something unexpected in
+            <b>Sampling interval in slow dimension</b> and 
+            <b>First sample in slow dimension</b> fields, 
+            use <b>SU SEG-Y Clean</b> to clear these if you can afford the processing time
+            or use the parameters <b>Sampling interval in slow dimension</b> 
+            and <b>First sample in slow dimension</b> to override the header values if not.</p>
 
-	    <p>
-	    When the number of traces isn't known, we need to count the traces for <b>X Graph</b>.
-	    You can make this value "known" either by providing the parameter
-	    <b>Sampling interval in slow dimension</b>
-	    or by having the "Number of traces" field set in the trace header. 
-	    The parameter value takes precedence over the value in the trace header.</p>
+            <p>
+            When the number of traces isn't known, we need to count the traces for <b>X Graph</b>.
+            You can make this value "known" either by providing the parameter
+            <b>Sampling interval in slow dimension</b>
+            or by having the "Number of traces" field set in the trace header. 
+            The parameter value takes precedence over the value in the trace header.</p>
 
-	    <p>
-	    When we do have to count the traces, we use a system temporary file because
-	    on many machines it is implemented as a memory area instead of a disk file.</p>
+            <p>
+            When we do have to count the traces, we use a system temporary file because
+            on many machines it is implemented as a memory area instead of a disk file.</p>
 
-	    <p>
-	    When we must compute parameter <b>Number of traces</b>, we don't allocate a 2D array,
-	    but just content ourselves with copying trace by trace from the data "file" 
-	    to the pipe into the plotting program.</p>
+            <p>
+            When we must compute parameter <b>Number of traces</b>, we don't allocate a 2D array,
+            but just content ourselves with copying trace by trace from the data "file" 
+            to the pipe into the plotting program.</p>
 
-	    <p>
-	    This program accesses the following header keywords</p>
-	    <ul>
-	      <li>
-	      Number of samples</li>
-	      <!-- ns -->	<li>
-	      Number of traces</li>
-	      <!-- ntr -->	<li>
-	      Trace number sequence within reel</li>
-	      <!-- tracr-->	<li>
-	      Trace number sequence within line</li>
-	      <!-- tracl -->	<li>
-	      Delay recording time in ms</li>
-	      <!-- delrt -->	<li>
-	      Trace identification code</li>
-	      <!-- trid -->	<li>
-	      Sampling interval in microseconds</li>
-	      <!-- dt -->	<li>
-	      Sample spacing for non-seismic data</li>
-	      <!-- d1 -->	<li>
-	      Sample spacing between traces</li>
-	      <!-- d2 -->	<li>
-	      First sample location for non-seismic data</li>
-	      <!-- f1 -->	<li>
-	      First trace location</li>
-	      <!-- f2 --></ul>
+            <p>
+            This program accesses the following header keywords</p>
+            <ul>
+              <li>
+              Number of samples</li>
+              <!-- ns -->       <li>
+              Number of traces</li>
+              <!-- ntr -->      <li>
+              Trace number sequence within reel</li>
+              <!-- tracr-->     <li>
+              Trace number sequence within line</li>
+              <!-- tracl -->    <li>
+              Delay recording time in ms</li>
+              <!-- delrt -->    <li>
+              Trace identification code</li>
+              <!-- trid -->     <li>
+              Sampling interval in microseconds</li>
+              <!-- dt -->       <li>
+              Sample spacing for non-seismic data</li>
+              <!-- d1 -->       <li>
+              Sample spacing between traces</li>
+              <!-- d2 -->       <li>
+              First sample location for non-seismic data</li>
+              <!-- f1 -->       <li>
+              First trace location</li>
+              <!-- f2 --></ul>
 
-	    <h2 id="header_3">Credits</h2>
+            <h2 id="header_3">Credits</h2>
 
-	    <p>
-	    CWP: Dave Hale and Zhiming Li, Jack Cohen and John Stockwell
-	    Delphi: Alexander Koek from Delphi and 
-	    Aarhus University: Morten W. Pedersen</p>
+            <p>
+            CWP: Dave Hale and Zhiming Li, Jack Cohen and John Stockwell
+            Delphi: Alexander Koek from Delphi and 
+            Aarhus University: Morten W. Pedersen</p>
 
-	    <!-- begin cpy --><!-- end cpy --></div>
+            <!-- begin cpy --><!-- end cpy --></div>
 
-	  <div class="navigation"><h2>Index</h2>
-	    <ul>
-	      <li><a href="#header_0"> Introduction</a></li>
-	      <li><a href="#header_1"> Parameters</a></li>
-	      <li><a href="#header_2"> Notes</a></li>
-	      <li><a href="#header_3"> Credits</a></li>
-	  </ul></div>
+          <div class="navigation"><h2>Index</h2>
+            <ul>
+              <li><a href="#header_0"> Introduction</a></li>
+              <li><a href="#header_1"> Parameters</a></li>
+              <li><a href="#header_2"> Notes</a></li>
+              <li><a href="#header_3"> Credits</a></li>
+          </ul></div>
 
-	  <div class="clearer"></div>
-	</div>
+          <div class="clearer"></div>
+        </div>
 
-	<div class="footer">
-	  <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-	    <!-- begin ver -->SU 42<!-- end ver --></span>
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+            <!-- begin ver -->SU 42<!-- end ver --></span>
 
-	  <div class="clearer"></div>
-	</div>
+          <div class="clearer"></div>
+        </div>
       </div>
     </div>
 
 </body></html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/ </url>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Number of samples in fast dimension</label>
         <int>
           <property required="no">
             <keyword>n1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
       <parameter>
-              <label>Title of the plot</label>
-              <string>
-                <property required="no">
-                  <keyword>title=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </string>
-            </parameter>
+        <label>Title of the plot</label>
+        <string>
+          <property required="no">
+            <keyword>title=</keyword>
+            <value></value>
+            <default />
+          </property>
+        </string>
+      </parameter>
       <parameter>
         <label>Axis 1 properties (fast dimension)</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Monotonic sampled values</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>x1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value where axis begins</label>
+                <float>
+                  <property required="no">
+                    <keyword>x1beg=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value where axis ends</label>
+                <float>
+                  <property required="no">
+                    <keyword>x1end=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>n1tic=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Numbered tic interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1num=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First numbered tic</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1num=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Grid line style</label>
+                <enum>
+                  <property required="no">
+                    <keyword>grid1=</keyword>
+                    <value />
+                    <default>none</default>
+                  </property>
+                  <option>
+                    <label>No grid lines</label>
+                    <value>none</value>
+                  </option>
+                  <option>
+                    <label>Dotted grid lines</label>
+                    <value>dot</value>
+                  </option>
+                  <option>
+                    <label>Dashed grid lines</label>
+                    <value>dash</value>
+                  </option>
+                  <option>
+                    <label>Solid grid lines</label>
+                    <value>solid</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Axis label</label>
-              <string><property required="no"><keyword>label1=</keyword><value/><default/></property>
-	
-	
-	
-      </string>
-            </parameter>
-            <parameter>
-              <label>Sampling interval</label>
-              <float><property required="no"><keyword>d1=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float>
-            </parameter><parameter>
-              <label>First sample</label>
-              <float><property required="no"><keyword>f1=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter>
-            
-            <parameter><label>Monotonic sampled values</label><float><property required="no" separator=","><keyword>x1=</keyword><value/><default/></property></float></parameter><parameter>
-              <label>Value where axis begins</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>x1beg=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default />
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Value where axis ends</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>x1end=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value />
+                  <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of tics between consecutive numbered tics</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>n1tic=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
                   <default>1</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-            <parameter><label>Numbered tic interval</label><float><property required="no"><keyword>d1num=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>First numbered tic</label><float><property required="no"><keyword>f1num=</keyword><value/><default/></property></float></parameter><parameter>
-              <label>Grid line style</label>
-              <enum>
+            <parameter>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>grid1=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
                   <default>none</default>
                 </property>
-                <option>
-                  <label>No grid lines</label>
-                  <value>none</value>
-                </option>
-                <option>
-                  <label>Dotted grid lines</label>
-                  <value>dot</value>
-                </option>
-                <option>
-                  <label>Dashed grid lines</label>
-                  <value>dash</value>
-                </option>
-                <option>
-                  <label>Solid grid lines</label>
-                  <value>solid</value>
-                </option>
-              </enum>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>1.0</default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            
-            <parameter><label></label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>1</default></property></reference></parameter>
-            <parameter><label></label><reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>none</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Axis 2 properties (slow dimension)</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
-            
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of traces</label>
+                <int>
+                  <property required="no">
+                    <keyword>n2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Monotonic sampled values</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>x2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value where axis begins</label>
+                <float>
+                  <property required="no">
+                    <keyword>x2beg=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value where axis ends</label>
+                <float>
+                  <property required="no">
+                    <keyword>x2end=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>n2tic=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Numbered tic interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2num=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First numbered tic</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2num=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Grid line style</label>
+                <enum>
+                  <property required="no">
+                    <keyword>grid2=</keyword>
+                    <value />
+                    <default>none</default>
+                  </property>
+                  <option>
+                    <label>No grid lines</label>
+                    <value>none</value>
+                  </option>
+                  <option>
+                    <label>Dotted grid lines</label>
+                    <value>dot</value>
+                  </option>
+                  <option>
+                    <label>Dashed grid lines</label>
+                    <value>dash</value>
+                  </option>
+                  <option>
+                    <label>Solid grid lines</label>
+                    <value>solid</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-        <label>Number of traces</label>
-        <int>
-          <property required="no">
-            <keyword>n2=</keyword>
-            <value/>
-            <default/>
-          </property>
-        </int>
-      </parameter><parameter>
-              <label>Axis label</label>
-              <string><property required="no"><keyword>label2=</keyword><value/><default/></property>
-	
-	
-	
-      </string>
-            </parameter><parameter>
-              <label>Sampling interval</label>
-              <float><property required="no"><keyword>d2=</keyword><value/><default>1.0</default></property>
-	
-	
-	
-      </float>
-            </parameter><parameter>
-              <label>First sample</label>
-              <float><property required="no"><keyword>f2=</keyword><value/><default/></property>
-	
-	
-	
-      </float>
-            </parameter>
-            
-            <parameter><label>Monotonic sampled values</label><float><property required="no" separator=","><keyword>x2=</keyword><value/><default/></property></float></parameter><parameter>
-              <label>Value where axis begins</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>x2beg=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value />
+                  <default />
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Value where axis ends</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>x2end=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default />
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of tics between consecutive numbered tics</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>n2tic=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
                   <default>1</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-            <parameter><label>Numbered tic interval</label><float><property required="no"><keyword>d2num=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>First numbered tic</label><float><property required="no"><keyword>f2num=</keyword><value/><default/></property></float></parameter><parameter>
-              <label>Grid line style</label>
-              <enum>
+            <parameter>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>grid2=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
                   <default>none</default>
                 </property>
-                <option>
-                  <label>No grid lines</label>
-                  <value>none</value>
-                </option>
-                <option>
-                  <label>Dotted grid lines</label>
-                  <value>dot</value>
-                </option>
-                <option>
-                  <label>Dashed grid lines</label>
-                  <value>dash</value>
-                </option>
-                <option>
-                  <label>Solid grid lines</label>
-                  <value>solid</value>
-                </option>
-              </enum>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            
-            <parameter>
-        <label></label>
-        
-      <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>1.0</default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            
-            <parameter><label></label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>1</default></property></reference></parameter>
-            <parameter><label></label><reference><property required="no"><keyword/><value></value><default>0.0</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter><parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>none</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Contour properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of values</label>
+                <int>
+                  <property required="no">
+                    <keyword>nc=</keyword>
+                    <value />
+                    <default>5</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Contour interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dc=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First contour</label>
+                <float>
+                  <property required="no">
+                    <keyword>fc=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Contour values</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>c=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Line widths</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>cwidth=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gray levels</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>cgray=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Contour colors</label>
+                <enum>
+                  <property required="no" separator=",">
+                    <keyword>ccolor=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                  <option>
+                    <label>Green yellow</label>
+                    <value>greenyellow</value>
+                  </option>
+                  <option>
+                    <label>Yellow</label>
+                    <value>yellow</value>
+                  </option>
+                  <option>
+                    <label>Golden rod</label>
+                    <value>goldenrod</value>
+                  </option>
+                  <option>
+                    <label>Dandelion</label>
+                    <value>dandelion</value>
+                  </option>
+                  <option>
+                    <label>Apricot</label>
+                    <value>apricot</value>
+                  </option>
+                  <option>
+                    <label>Peach</label>
+                    <value>peach</value>
+                  </option>
+                  <option>
+                    <label>Melon</label>
+                    <value>melon</value>
+                  </option>
+                  <option>
+                    <label>Yellow orange</label>
+                    <value>yelloworange</value>
+                  </option>
+                  <option>
+                    <label>Orange</label>
+                    <value>orange</value>
+                  </option>
+                  <option>
+                    <label>Burnt orange</label>
+                    <value>burntorange</value>
+                  </option>
+                  <option>
+                    <label>Bittersweet</label>
+                    <value>bittersweet</value>
+                  </option>
+                  <option>
+                    <label>Red orange</label>
+                    <value>redorange</value>
+                  </option>
+                  <option>
+                    <label>Mahogany</label>
+                    <value>mahogany</value>
+                  </option>
+                  <option>
+                    <label>Maroon</label>
+                    <value>maroon</value>
+                  </option>
+                  <option>
+                    <label>Brickred</label>
+                    <value>brickred</value>
+                  </option>
+                  <option>
+                    <label>Red</label>
+                    <value>red</value>
+                  </option>
+                  <option>
+                    <label>Orange red</label>
+                    <value>orangered</value>
+                  </option>
+                  <option>
+                    <label>Rubine red</label>
+                    <value>rubinered</value>
+                  </option>
+                  <option>
+                    <label>Wild strawberry</label>
+                    <value>wildstrawberry</value>
+                  </option>
+                  <option>
+                    <label>Salmon</label>
+                    <value>salmon</value>
+                  </option>
+                  <option>
+                    <label>Carnation pink</label>
+                    <value>carnationpink</value>
+                  </option>
+                  <option>
+                    <label>Magenta</label>
+                    <value>magenta</value>
+                  </option>
+                  <option>
+                    <label>Violetred</label>
+                    <value>violetred</value>
+                  </option>
+                  <option>
+                    <label>Rhodamine</label>
+                    <value>rhodamine</value>
+                  </option>
+                  <option>
+                    <label>Mulberry</label>
+                    <value>mulberry</value>
+                  </option>
+                  <option>
+                    <label>Red violet</label>
+                    <value>redviolet</value>
+                  </option>
+                  <option>
+                    <label>Fuchsia</label>
+                    <value>fuchsia</value>
+                  </option>
+                  <option>
+                    <label>Lavender</label>
+                    <value>lavender</value>
+                  </option>
+                  <option>
+                    <label>Thistle</label>
+                    <value>thistle</value>
+                  </option>
+                  <option>
+                    <label>Orchid</label>
+                    <value>orchid</value>
+                  </option>
+                  <option>
+                    <label>Darkorchid</label>
+                    <value>darkorchid</value>
+                  </option>
+                  <option>
+                    <label>Purple</label>
+                    <value>purple</value>
+                  </option>
+                  <option>
+                    <label>Plum</label>
+                    <value>plum</value>
+                  </option>
+                  <option>
+                    <label>Violet</label>
+                    <value>violet</value>
+                  </option>
+                  <option>
+                    <label>Royal purple</label>
+                    <value>royalpurple</value>
+                  </option>
+                  <option>
+                    <label>Blue violet</label>
+                    <value>blueviolet</value>
+                  </option>
+                  <option>
+                    <label>Periwinkle</label>
+                    <value>periwinkle</value>
+                  </option>
+                  <option>
+                    <label>Cadetblue</label>
+                    <value>cadetblue</value>
+                  </option>
+                  <option>
+                    <label>Corn flower blue</label>
+                    <value>cornflowerblue</value>
+                  </option>
+                  <option>
+                    <label>Mid night blue</label>
+                    <value>midnightblue</value>
+                  </option>
+                  <option>
+                    <label>Nave blue</label>
+                    <value>naveblue</value>
+                  </option>
+                  <option>
+                    <label>Royal blue</label>
+                    <value>royalblue</value>
+                  </option>
+                  <option>
+                    <label>Blue</label>
+                    <value>blue</value>
+                  </option>
+                  <option>
+                    <label>Cerulean</label>
+                    <value>cerulean</value>
+                  </option>
+                  <option>
+                    <label>Cyan</label>
+                    <value>cyan</value>
+                  </option>
+                  <option>
+                    <label>Process blue</label>
+                    <value>processblue</value>
+                  </option>
+                  <option>
+                    <label>Skyblue</label>
+                    <value>skyblue</value>
+                  </option>
+                  <option>
+                    <label>Turquoise</label>
+                    <value>turquoise</value>
+                  </option>
+                  <option>
+                    <label>Teal blue</label>
+                    <value>tealblue</value>
+                  </option>
+                  <option>
+                    <label>Aquamarine</label>
+                    <value>aquamarine</value>
+                  </option>
+                  <option>
+                    <label>Blue green</label>
+                    <value>bluegreen</value>
+                  </option>
+                  <option>
+                    <label>Emerald</label>
+                    <value>emerald</value>
+                  </option>
+                  <option>
+                    <label>Jungle green</label>
+                    <value>junglegreen</value>
+                  </option>
+                  <option>
+                    <label>Sea green</label>
+                    <value>seagreen</value>
+                  </option>
+                  <option>
+                    <label>Green</label>
+                    <value>green</value>
+                  </option>
+                  <option>
+                    <label>Forest green</label>
+                    <value>forestgreen</value>
+                  </option>
+                  <option>
+                    <label>Pine green</label>
+                    <value>pinegreen</value>
+                  </option>
+                  <option>
+                    <label>Lime green</label>
+                    <value>limegreen</value>
+                  </option>
+                  <option>
+                    <label>Yellow green</label>
+                    <value>yellowgreen</value>
+                  </option>
+                  <option>
+                    <label>Spring green</label>
+                    <value>springgreen</value>
+                  </option>
+                  <option>
+                    <label>Olive green</label>
+                    <value>olivegreen</value>
+                  </option>
+                  <option>
+                    <label>Raw sienna</label>
+                    <value>rawsienna</value>
+                  </option>
+                  <option>
+                    <label>Sepia</label>
+                    <value>sepia</value>
+                  </option>
+                  <option>
+                    <label>Brown</label>
+                    <value>brown</value>
+                  </option>
+                  <option>
+                    <label>Tan</label>
+                    <value>tan</value>
+                  </option>
+                  <option>
+                    <label>White</label>
+                    <value>white</value>
+                  </option>
+                  <option>
+                    <label>Black</label>
+                    <value>black</value>
+                  </option>
+                  <option>
+                    <label>Grayd</label>
+                    <value>grayd</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Dash spacings</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>cdash=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First labeled contour</label>
+                <int>
+                  <property required="no">
+                    <keyword>labelcf=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of contours between labeled contours</label>
+                <int>
+                  <property required="no">
+                    <keyword>labelcper=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of labeled contours</label>
+                <int>
+                  <property required="no">
+                    <keyword>nlabelc=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of decimal places in contour label</label>
+                <int>
+                  <property required="no">
+                    <keyword>nplaces=</keyword>
+                    <value />
+                    <default>6</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Number of values</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nc=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>5</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Contour interval</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>dc=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value />
+                  <default />
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First contour</label>
-              <float>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>fc=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value />
+                  <default />
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Contour values</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>c=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Line widths</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>cwidth=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Gray levels</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>cgray=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-        <label>Contour colors</label>
-        
-	<enum>
-	  <property required="no" separator=",">
-	    <keyword>ccolor=</keyword>
-	    <value/><default/></property>
-	<option><label>Green yellow</label><value>greenyellow</value></option>
-	<option><label>Yellow</label><value>yellow</value></option>
-	<option><label>Golden rod</label><value>goldenrod</value></option>
-	<option><label>Dandelion</label><value>dandelion</value></option>
-	<option><label>Apricot</label><value>apricot</value></option>
-	<option><label>Peach</label><value>peach</value></option>
-	<option><label>Melon</label><value>melon</value></option>
-	<option><label>Yellow orange</label><value>yelloworange</value></option>
-	<option><label>Orange</label><value>orange</value></option>
-	<option><label>Burnt orange</label><value>burntorange</value></option>
-	<option><label>Bittersweet</label><value>bittersweet</value></option>
-	<option><label>Red orange</label><value>redorange</value></option>
-	<option><label>Mahogany</label><value>mahogany</value></option>
-	<option><label>Maroon</label><value>maroon</value></option>
-	<option><label>Brickred</label><value>brickred</value></option>
-	<option><label>Red</label><value>red</value></option>
-	<option><label>Orange red</label><value>orangered</value></option>
-	<option><label>Rubine red</label><value>rubinered</value></option>
-	<option><label>Wild strawberry</label><value>wildstrawberry</value></option>
-	<option><label>Salmon</label><value>salmon</value></option>
-	<option><label>Carnation pink</label><value>carnationpink</value></option>
-	<option><label>Magenta</label><value>magenta</value></option>
-	<option><label>Violetred</label><value>violetred</value></option>
-	<option><label>Rhodamine</label><value>rhodamine</value></option>
-	<option><label>Mulberry</label><value>mulberry</value></option>
-	<option><label>Red violet</label><value>redviolet</value></option>
-	<option><label>Fuchsia</label><value>fuchsia</value></option>
-	<option><label>Lavender</label><value>lavender</value></option>
-	<option><label>Thistle</label><value>thistle</value></option>
-	<option><label>Orchid</label><value>orchid</value></option>
-	<option><label>Darkorchid</label><value>darkorchid</value></option>
-	<option><label>Purple</label><value>purple</value></option>
-	<option><label>Plum</label><value>plum</value></option>
-	<option><label>Violet</label><value>violet</value></option>
-	<option><label>Royal purple</label><value>royalpurple</value></option>
-	<option><label>Blue violet</label><value>blueviolet</value></option>
-	<option><label>Periwinkle</label><value>periwinkle</value></option>
-	<option><label>Cadetblue</label><value>cadetblue</value></option>
-	<option><label>Corn flower blue</label><value>cornflowerblue</value></option>
-	<option><label>Mid night blue</label><value>midnightblue</value></option>
-	<option><label>Nave blue</label><value>naveblue</value></option>
-	<option><label>Royal blue</label><value>royalblue</value></option>
-	<option><label>Blue</label><value>blue</value></option>
-	<option><label>Cerulean</label><value>cerulean</value></option>
-	<option><label>Cyan</label><value>cyan</value></option>
-	<option><label>Process blue</label><value>processblue</value></option>
-	<option><label>Skyblue</label><value>skyblue</value></option>
-	<option><label>Turquoise</label><value>turquoise</value></option>
-	<option><label>Teal blue</label><value>tealblue</value></option>
-	<option><label>Aquamarine</label><value>aquamarine</value></option>
-	<option><label>Blue green</label><value>bluegreen</value></option>
-	<option><label>Emerald</label><value>emerald</value></option>
-	<option><label>Jungle green</label><value>junglegreen</value></option>
-	<option><label>Sea green</label><value>seagreen</value></option>
-	<option><label>Green</label><value>green</value></option>
-	<option><label>Forest green</label><value>forestgreen</value></option>
-	<option><label>Pine green</label><value>pinegreen</value></option>
-	<option><label>Lime green</label><value>limegreen</value></option>
-	<option><label>Yellow green</label><value>yellowgreen</value></option>
-	<option><label>Spring green</label><value>springgreen</value></option>
-	<option><label>Olive green</label><value>olivegreen</value></option>
-	<option><label>Raw sienna</label><value>rawsienna</value></option>
-	<option><label>Sepia</label><value>sepia</value></option>
-	<option><label>Brown</label><value>brown</value></option>
-	<option><label>Tan</label><value>tan</value></option>
-	<option><label>White</label><value>white</value></option>
-	<option><label>Black</label><value>black</value></option>
-	<option><label>Grayd</label><value>grayd</value></option>
-      </enum></parameter>
-            <parameter>
-              <label>Dash spacings</label>
-              <float>
-                <property required="no" separator=",">
-                  <keyword>cdash=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First labeled contour</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>labelcf=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
                   <default>1</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of contours between labeled contours</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>labelcper=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>1</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of labeled contours</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nlabelc=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value />
+                  <default />
                 </property>
-              </int>
+              </reference>
             </parameter>
             <parameter>
-              <label>Number of decimal places in contour label</label>
-              <int>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>nplaces=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>6</default>
                 </property>
-              </int>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>5</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-            <parameter>
-        <label></label>
-        
-	<reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>1</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>1</default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter>
-            <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>6</default></property></reference></parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Appearance properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
-            
-            
-            
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Swap axes position</label>
+                <enum>
+                  <property required="no">
+                    <keyword>style=</keyword>
+                    <value />
+                    <default>normal</default>
+                  </property>
+                  <option>
+                    <label>Normal</label>
+                    <value>normal</value>
+                  </option>
+                  <option>
+                    <label>Seismic</label>
+                    <value>seismic</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Offset in inches of left side of axes box</label>
+                <float>
+                  <property required="no">
+                    <keyword>xbox=</keyword>
+                    <value />
+                    <default>1.5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Offset in inches of bottom side of axes box</label>
+                <float>
+                  <property required="no">
+                    <keyword>ybox=</keyword>
+                    <value />
+                    <default>1.5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Width in inches of axes box</label>
+                <float>
+                  <property required="no">
+                    <keyword>wbox=</keyword>
+                    <value />
+                    <default>6.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Height in inches of axes box</label>
+                <float>
+                  <property required="no">
+                    <keyword>hbox=</keyword>
+                    <value />
+                    <default>8.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Font name for axes labels</label>
+                <enum>
+                  <property required="no">
+                    <keyword>labelfont=</keyword>
+                    <value />
+                    <default>Helvetica</default>
+                  </property>
+                  <option>
+                    <label />
+                    <value>AvantGarde-Book</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-BookOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-Demi</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-DemiOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-Demi</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-DemiItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-Light</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-LightItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCentrySchlbk-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCenturySchlbk-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCenturySchlbk-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Italics</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Symbol</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Italic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>ZapfChancery-MediumItalic</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Font size for axes labels</label>
+                <float>
+                  <property required="no">
+                    <keyword>labelsize=</keyword>
+                    <value />
+                    <default>18</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Font name for title</label>
+                <enum>
+                  <property required="no">
+                    <keyword>titlefont=</keyword>
+                    <value />
+                    <default>Helvetica-Bold</default>
+                  </property>
+                  <option>
+                    <label />
+                    <value>AvantGarde-Book</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-BookOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-Demi</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-DemiOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-Demi</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-DemiItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-Light</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-LightItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCentrySchlbk-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCenturySchlbk-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCenturySchlbk-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Italics</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Symbol</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Italic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>ZapfChancery-MediumItalic</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Font size for title</label>
+                <float>
+                  <property required="no">
+                    <keyword>titlesize=</keyword>
+                    <value />
+                    <default>24</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Color of title</label>
+                <enum>
+                  <property required="no">
+                    <keyword>titlecolor=</keyword>
+                    <value />
+                    <default>black</default>
+                  </property>
+                  <option>
+                    <label>Green yellow</label>
+                    <value>greenyellow</value>
+                  </option>
+                  <option>
+                    <label>Yellow</label>
+                    <value>yellow</value>
+                  </option>
+                  <option>
+                    <label>Golden rod</label>
+                    <value>goldenrod</value>
+                  </option>
+                  <option>
+                    <label>Dandelion</label>
+                    <value>dandelion</value>
+                  </option>
+                  <option>
+                    <label>Apricot</label>
+                    <value>apricot</value>
+                  </option>
+                  <option>
+                    <label>Peach</label>
+                    <value>peach</value>
+                  </option>
+                  <option>
+                    <label>Melon</label>
+                    <value>melon</value>
+                  </option>
+                  <option>
+                    <label>Yellow orange</label>
+                    <value>yelloworange</value>
+                  </option>
+                  <option>
+                    <label>Orange</label>
+                    <value>orange</value>
+                  </option>
+                  <option>
+                    <label>Burnt orange</label>
+                    <value>burntorange</value>
+                  </option>
+                  <option>
+                    <label>Bittersweet</label>
+                    <value>bittersweet</value>
+                  </option>
+                  <option>
+                    <label>Red orange</label>
+                    <value>redorange</value>
+                  </option>
+                  <option>
+                    <label>Mahogany</label>
+                    <value>mahogany</value>
+                  </option>
+                  <option>
+                    <label>Maroon</label>
+                    <value>maroon</value>
+                  </option>
+                  <option>
+                    <label>Brickred</label>
+                    <value>brickred</value>
+                  </option>
+                  <option>
+                    <label>Red</label>
+                    <value>red</value>
+                  </option>
+                  <option>
+                    <label>Orange red</label>
+                    <value>orangered</value>
+                  </option>
+                  <option>
+                    <label>Rubine red</label>
+                    <value>rubinered</value>
+                  </option>
+                  <option>
+                    <label>Wild strawberry</label>
+                    <value>wildstrawberry</value>
+                  </option>
+                  <option>
+                    <label>Salmon</label>
+                    <value>salmon</value>
+                  </option>
+                  <option>
+                    <label>Carnation pink</label>
+                    <value>carnationpink</value>
+                  </option>
+                  <option>
+                    <label>Magenta</label>
+                    <value>magenta</value>
+                  </option>
+                  <option>
+                    <label>Violetred</label>
+                    <value>violetred</value>
+                  </option>
+                  <option>
+                    <label>Rhodamine</label>
+                    <value>rhodamine</value>
+                  </option>
+                  <option>
+                    <label>Mulberry</label>
+                    <value>mulberry</value>
+                  </option>
+                  <option>
+                    <label>Red violet</label>
+                    <value>redviolet</value>
+                  </option>
+                  <option>
+                    <label>Fuchsia</label>
+                    <value>fuchsia</value>
+                  </option>
+                  <option>
+                    <label>Lavender</label>
+                    <value>lavender</value>
+                  </option>
+                  <option>
+                    <label>Thistle</label>
+                    <value>thistle</value>
+                  </option>
+                  <option>
+                    <label>Orchid</label>
+                    <value>orchid</value>
+                  </option>
+                  <option>
+                    <label>Darkorchid</label>
+                    <value>darkorchid</value>
+                  </option>
+                  <option>
+                    <label>Purple</label>
+                    <value>purple</value>
+                  </option>
+                  <option>
+                    <label>Plum</label>
+                    <value>plum</value>
+                  </option>
+                  <option>
+                    <label>Violet</label>
+                    <value>violet</value>
+                  </option>
+                  <option>
+                    <label>Royal purple</label>
+                    <value>royalpurple</value>
+                  </option>
+                  <option>
+                    <label>Blue violet</label>
+                    <value>blueviolet</value>
+                  </option>
+                  <option>
+                    <label>Periwinkle</label>
+                    <value>periwinkle</value>
+                  </option>
+                  <option>
+                    <label>Cadetblue</label>
+                    <value>cadetblue</value>
+                  </option>
+                  <option>
+                    <label>Corn flower blue</label>
+                    <value>cornflowerblue</value>
+                  </option>
+                  <option>
+                    <label>Mid night blue</label>
+                    <value>midnightblue</value>
+                  </option>
+                  <option>
+                    <label>Nave blue</label>
+                    <value>naveblue</value>
+                  </option>
+                  <option>
+                    <label>Royal blue</label>
+                    <value>royalblue</value>
+                  </option>
+                  <option>
+                    <label>Blue</label>
+                    <value>blue</value>
+                  </option>
+                  <option>
+                    <label>Cerulean</label>
+                    <value>cerulean</value>
+                  </option>
+                  <option>
+                    <label>Cyan</label>
+                    <value>cyan</value>
+                  </option>
+                  <option>
+                    <label>Process blue</label>
+                    <value>processblue</value>
+                  </option>
+                  <option>
+                    <label>Skyblue</label>
+                    <value>skyblue</value>
+                  </option>
+                  <option>
+                    <label>Turquoise</label>
+                    <value>turquoise</value>
+                  </option>
+                  <option>
+                    <label>Teal blue</label>
+                    <value>tealblue</value>
+                  </option>
+                  <option>
+                    <label>Aquamarine</label>
+                    <value>aquamarine</value>
+                  </option>
+                  <option>
+                    <label>Blue green</label>
+                    <value>bluegreen</value>
+                  </option>
+                  <option>
+                    <label>Emerald</label>
+                    <value>emerald</value>
+                  </option>
+                  <option>
+                    <label>Jungle green</label>
+                    <value>junglegreen</value>
+                  </option>
+                  <option>
+                    <label>Sea green</label>
+                    <value>seagreen</value>
+                  </option>
+                  <option>
+                    <label>Green</label>
+                    <value>green</value>
+                  </option>
+                  <option>
+                    <label>Forest green</label>
+                    <value>forestgreen</value>
+                  </option>
+                  <option>
+                    <label>Pine green</label>
+                    <value>pinegreen</value>
+                  </option>
+                  <option>
+                    <label>Lime green</label>
+                    <value>limegreen</value>
+                  </option>
+                  <option>
+                    <label>Yellow green</label>
+                    <value>yellowgreen</value>
+                  </option>
+                  <option>
+                    <label>Spring green</label>
+                    <value>springgreen</value>
+                  </option>
+                  <option>
+                    <label>Olive green</label>
+                    <value>olivegreen</value>
+                  </option>
+                  <option>
+                    <label>Raw sienna</label>
+                    <value>rawsienna</value>
+                  </option>
+                  <option>
+                    <label>Sepia</label>
+                    <value>sepia</value>
+                  </option>
+                  <option>
+                    <label>Brown</label>
+                    <value>brown</value>
+                  </option>
+                  <option>
+                    <label>Tan</label>
+                    <value>tan</value>
+                  </option>
+                  <option>
+                    <label>White</label>
+                    <value>white</value>
+                  </option>
+                  <option>
+                    <label>Black</label>
+                    <value>black</value>
+                  </option>
+                  <option>
+                    <label>Grayd</label>
+                    <value>grayd</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Font name for contour labels</label>
+                <enum>
+                  <property required="no">
+                    <keyword>labelcfont=</keyword>
+                    <value />
+                    <default>Helvetica-Bold</default>
+                  </property>
+                  <option>
+                    <label />
+                    <value>AvantGarde-Book</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-BookOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-Demi</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>AvantGarde-DemiOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-Demi</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-DemiItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-Light</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Bookman-LightItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Courier-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-BoldOblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Helvetica-Narrow-Oblique</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCentrySchlbk-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCenturySchlbk-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>NewCenturySchlbk-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Italics</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Palatino-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>SanSerif-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Symbol</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Bold</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-BoldItalic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Roman</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>Times-Italic</value>
+                  </option>
+                  <option>
+                    <label />
+                    <value>ZapfChancery-MediumItalic</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Font size of contour labels</label>
+                <float>
+                  <property required="no">
+                    <keyword>labelcsize=</keyword>
+                    <value />
+                    <default>6</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Color of contour labels</label>
+                <enum>
+                  <property required="no">
+                    <keyword>labelccolor=</keyword>
+                    <value />
+                    <default>black</default>
+                  </property>
+                  <option>
+                    <label>Green yellow</label>
+                    <value>greenyellow</value>
+                  </option>
+                  <option>
+                    <label>Yellow</label>
+                    <value>yellow</value>
+                  </option>
+                  <option>
+                    <label>Golden rod</label>
+                    <value>goldenrod</value>
+                  </option>
+                  <option>
+                    <label>Dandelion</label>
+                    <value>dandelion</value>
+                  </option>
+                  <option>
+                    <label>Apricot</label>
+                    <value>apricot</value>
+                  </option>
+                  <option>
+                    <label>Peach</label>
+                    <value>peach</value>
+                  </option>
+                  <option>
+                    <label>Melon</label>
+                    <value>melon</value>
+                  </option>
+                  <option>
+                    <label>Yellow orange</label>
+                    <value>yelloworange</value>
+                  </option>
+                  <option>
+                    <label>Orange</label>
+                    <value>orange</value>
+                  </option>
+                  <option>
+                    <label>Burnt orange</label>
+                    <value>burntorange</value>
+                  </option>
+                  <option>
+                    <label>Bittersweet</label>
+                    <value>bittersweet</value>
+                  </option>
+                  <option>
+                    <label>Red orange</label>
+                    <value>redorange</value>
+                  </option>
+                  <option>
+                    <label>Mahogany</label>
+                    <value>mahogany</value>
+                  </option>
+                  <option>
+                    <label>Maroon</label>
+                    <value>maroon</value>
+                  </option>
+                  <option>
+                    <label>Brickred</label>
+                    <value>brickred</value>
+                  </option>
+                  <option>
+                    <label>Red</label>
+                    <value>red</value>
+                  </option>
+                  <option>
+                    <label>Orange red</label>
+                    <value>orangered</value>
+                  </option>
+                  <option>
+                    <label>Rubine red</label>
+                    <value>rubinered</value>
+                  </option>
+                  <option>
+                    <label>Wild strawberry</label>
+                    <value>wildstrawberry</value>
+                  </option>
+                  <option>
+                    <label>Salmon</label>
+                    <value>salmon</value>
+                  </option>
+                  <option>
+                    <label>Carnation pink</label>
+                    <value>carnationpink</value>
+                  </option>
+                  <option>
+                    <label>Magenta</label>
+                    <value>magenta</value>
+                  </option>
+                  <option>
+                    <label>Violetred</label>
+                    <value>violetred</value>
+                  </option>
+                  <option>
+                    <label>Rhodamine</label>
+                    <value>rhodamine</value>
+                  </option>
+                  <option>
+                    <label>Mulberry</label>
+                    <value>mulberry</value>
+                  </option>
+                  <option>
+                    <label>Red violet</label>
+                    <value>redviolet</value>
+                  </option>
+                  <option>
+                    <label>Fuchsia</label>
+                    <value>fuchsia</value>
+                  </option>
+                  <option>
+                    <label>Lavender</label>
+                    <value>lavender</value>
+                  </option>
+                  <option>
+                    <label>Thistle</label>
+                    <value>thistle</value>
+                  </option>
+                  <option>
+                    <label>Orchid</label>
+                    <value>orchid</value>
+                  </option>
+                  <option>
+                    <label>Darkorchid</label>
+                    <value>darkorchid</value>
+                  </option>
+                  <option>
+                    <label>Purple</label>
+                    <value>purple</value>
+                  </option>
+                  <option>
+                    <label>Plum</label>
+                    <value>plum</value>
+                  </option>
+                  <option>
+                    <label>Violet</label>
+                    <value>violet</value>
+                  </option>
+                  <option>
+                    <label>Royal purple</label>
+                    <value>royalpurple</value>
+                  </option>
+                  <option>
+                    <label>Blue violet</label>
+                    <value>blueviolet</value>
+                  </option>
+                  <option>
+                    <label>Periwinkle</label>
+                    <value>periwinkle</value>
+                  </option>
+                  <option>
+                    <label>Cadetblue</label>
+                    <value>cadetblue</value>
+                  </option>
+                  <option>
+                    <label>Corn flower blue</label>
+                    <value>cornflowerblue</value>
+                  </option>
+                  <option>
+                    <label>Mid night blue</label>
+                    <value>midnightblue</value>
+                  </option>
+                  <option>
+                    <label>Nave blue</label>
+                    <value>naveblue</value>
+                  </option>
+                  <option>
+                    <label>Royal blue</label>
+                    <value>royalblue</value>
+                  </option>
+                  <option>
+                    <label>Blue</label>
+                    <value>blue</value>
+                  </option>
+                  <option>
+                    <label>Cerulean</label>
+                    <value>cerulean</value>
+                  </option>
+                  <option>
+                    <label>Cyan</label>
+                    <value>cyan</value>
+                  </option>
+                  <option>
+                    <label>Process blue</label>
+                    <value>processblue</value>
+                  </option>
+                  <option>
+                    <label>Skyblue</label>
+                    <value>skyblue</value>
+                  </option>
+                  <option>
+                    <label>Turquoise</label>
+                    <value>turquoise</value>
+                  </option>
+                  <option>
+                    <label>Teal blue</label>
+                    <value>tealblue</value>
+                  </option>
+                  <option>
+                    <label>Aquamarine</label>
+                    <value>aquamarine</value>
+                  </option>
+                  <option>
+                    <label>Blue green</label>
+                    <value>bluegreen</value>
+                  </option>
+                  <option>
+                    <label>Emerald</label>
+                    <value>emerald</value>
+                  </option>
+                  <option>
+                    <label>Jungle green</label>
+                    <value>junglegreen</value>
+                  </option>
+                  <option>
+                    <label>Sea green</label>
+                    <value>seagreen</value>
+                  </option>
+                  <option>
+                    <label>Green</label>
+                    <value>green</value>
+                  </option>
+                  <option>
+                    <label>Forest green</label>
+                    <value>forestgreen</value>
+                  </option>
+                  <option>
+                    <label>Pine green</label>
+                    <value>pinegreen</value>
+                  </option>
+                  <option>
+                    <label>Lime green</label>
+                    <value>limegreen</value>
+                  </option>
+                  <option>
+                    <label>Yellow green</label>
+                    <value>yellowgreen</value>
+                  </option>
+                  <option>
+                    <label>Spring green</label>
+                    <value>springgreen</value>
+                  </option>
+                  <option>
+                    <label>Olive green</label>
+                    <value>olivegreen</value>
+                  </option>
+                  <option>
+                    <label>Raw sienna</label>
+                    <value>rawsienna</value>
+                  </option>
+                  <option>
+                    <label>Sepia</label>
+                    <value>sepia</value>
+                  </option>
+                  <option>
+                    <label>Brown</label>
+                    <value>brown</value>
+                  </option>
+                  <option>
+                    <label>Tan</label>
+                    <value>tan</value>
+                  </option>
+                  <option>
+                    <label>White</label>
+                    <value>white</value>
+                  </option>
+                  <option>
+                    <label>Black</label>
+                    <value>black</value>
+                  </option>
+                  <option>
+                    <label>Grayd</label>
+                    <value>grayd</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Color of axes</label>
+                <enum>
+                  <property required="no">
+                    <keyword>axescolor=</keyword>
+                    <value />
+                    <default>black</default>
+                  </property>
+                  <option>
+                    <label>Green yellow</label>
+                    <value>greenyellow</value>
+                  </option>
+                  <option>
+                    <label>Yellow</label>
+                    <value>yellow</value>
+                  </option>
+                  <option>
+                    <label>Golden rod</label>
+                    <value>goldenrod</value>
+                  </option>
+                  <option>
+                    <label>Dandelion</label>
+                    <value>dandelion</value>
+                  </option>
+                  <option>
+                    <label>Apricot</label>
+                    <value>apricot</value>
+                  </option>
+                  <option>
+                    <label>Peach</label>
+                    <value>peach</value>
+                  </option>
+                  <option>
+                    <label>Melon</label>
+                    <value>melon</value>
+                  </option>
+                  <option>
+                    <label>Yellow orange</label>
+                    <value>yelloworange</value>
+                  </option>
+                  <option>
+                    <label>Orange</label>
+                    <value>orange</value>
+                  </option>
+                  <option>
+                    <label>Burnt orange</label>
+                    <value>burntorange</value>
+                  </option>
+                  <option>
+                    <label>Bittersweet</label>
+                    <value>bittersweet</value>
+                  </option>
+                  <option>
+                    <label>Red orange</label>
+                    <value>redorange</value>
+                  </option>
+                  <option>
+                    <label>Mahogany</label>
+                    <value>mahogany</value>
+                  </option>
+                  <option>
+                    <label>Maroon</label>
+                    <value>maroon</value>
+                  </option>
+                  <option>
+                    <label>Brickred</label>
+                    <value>brickred</value>
+                  </option>
+                  <option>
+                    <label>Red</label>
+                    <value>red</value>
+                  </option>
+                  <option>
+                    <label>Orange red</label>
+                    <value>orangered</value>
+                  </option>
+                  <option>
+                    <label>Rubine red</label>
+                    <value>rubinered</value>
+                  </option>
+                  <option>
+                    <label>Wild strawberry</label>
+                    <value>wildstrawberry</value>
+                  </option>
+                  <option>
+                    <label>Salmon</label>
+                    <value>salmon</value>
+                  </option>
+                  <option>
+                    <label>Carnation pink</label>
+                    <value>carnationpink</value>
+                  </option>
+                  <option>
+                    <label>Magenta</label>
+                    <value>magenta</value>
+                  </option>
+                  <option>
+                    <label>Violetred</label>
+                    <value>violetred</value>
+                  </option>
+                  <option>
+                    <label>Rhodamine</label>
+                    <value>rhodamine</value>
+                  </option>
+                  <option>
+                    <label>Mulberry</label>
+                    <value>mulberry</value>
+                  </option>
+                  <option>
+                    <label>Red violet</label>
+                    <value>redviolet</value>
+                  </option>
+                  <option>
+                    <label>Fuchsia</label>
+                    <value>fuchsia</value>
+                  </option>
+                  <option>
+                    <label>Lavender</label>
+                    <value>lavender</value>
+                  </option>
+                  <option>
+                    <label>Thistle</label>
+                    <value>thistle</value>
+                  </option>
+                  <option>
+                    <label>Orchid</label>
+                    <value>orchid</value>
+                  </option>
+                  <option>
+                    <label>Darkorchid</label>
+                    <value>darkorchid</value>
+                  </option>
+                  <option>
+                    <label>Purple</label>
+                    <value>purple</value>
+                  </option>
+                  <option>
+                    <label>Plum</label>
+                    <value>plum</value>
+                  </option>
+                  <option>
+                    <label>Violet</label>
+                    <value>violet</value>
+                  </option>
+                  <option>
+                    <label>Royal purple</label>
+                    <value>royalpurple</value>
+                  </option>
+                  <option>
+                    <label>Blue violet</label>
+                    <value>blueviolet</value>
+                  </option>
+                  <option>
+                    <label>Periwinkle</label>
+                    <value>periwinkle</value>
+                  </option>
+                  <option>
+                    <label>Cadetblue</label>
+                    <value>cadetblue</value>
+                  </option>
+                  <option>
+                    <label>Corn flower blue</label>
+                    <value>cornflowerblue</value>
+                  </option>
+                  <option>
+                    <label>Mid night blue</label>
+                    <value>midnightblue</value>
+                  </option>
+                  <option>
+                    <label>Nave blue</label>
+                    <value>naveblue</value>
+                  </option>
+                  <option>
+                    <label>Royal blue</label>
+                    <value>royalblue</value>
+                  </option>
+                  <option>
+                    <label>Blue</label>
+                    <value>blue</value>
+                  </option>
+                  <option>
+                    <label>Cerulean</label>
+                    <value>cerulean</value>
+                  </option>
+                  <option>
+                    <label>Cyan</label>
+                    <value>cyan</value>
+                  </option>
+                  <option>
+                    <label>Process blue</label>
+                    <value>processblue</value>
+                  </option>
+                  <option>
+                    <label>Skyblue</label>
+                    <value>skyblue</value>
+                  </option>
+                  <option>
+                    <label>Turquoise</label>
+                    <value>turquoise</value>
+                  </option>
+                  <option>
+                    <label>Teal blue</label>
+                    <value>tealblue</value>
+                  </option>
+                  <option>
+                    <label>Aquamarine</label>
+                    <value>aquamarine</value>
+                  </option>
+                  <option>
+                    <label>Blue green</label>
+                    <value>bluegreen</value>
+                  </option>
+                  <option>
+                    <label>Emerald</label>
+                    <value>emerald</value>
+                  </option>
+                  <option>
+                    <label>Jungle green</label>
+                    <value>junglegreen</value>
+                  </option>
+                  <option>
+                    <label>Sea green</label>
+                    <value>seagreen</value>
+                  </option>
+                  <option>
+                    <label>Green</label>
+                    <value>green</value>
+                  </option>
+                  <option>
+                    <label>Forest green</label>
+                    <value>forestgreen</value>
+                  </option>
+                  <option>
+                    <label>Pine green</label>
+                    <value>pinegreen</value>
+                  </option>
+                  <option>
+                    <label>Lime green</label>
+                    <value>limegreen</value>
+                  </option>
+                  <option>
+                    <label>Yellow green</label>
+                    <value>yellowgreen</value>
+                  </option>
+                  <option>
+                    <label>Spring green</label>
+                    <value>springgreen</value>
+                  </option>
+                  <option>
+                    <label>Olive green</label>
+                    <value>olivegreen</value>
+                  </option>
+                  <option>
+                    <label>Raw sienna</label>
+                    <value>rawsienna</value>
+                  </option>
+                  <option>
+                    <label>Sepia</label>
+                    <value>sepia</value>
+                  </option>
+                  <option>
+                    <label>Brown</label>
+                    <value>brown</value>
+                  </option>
+                  <option>
+                    <label>Tan</label>
+                    <value>tan</value>
+                  </option>
+                  <option>
+                    <label>White</label>
+                    <value>white</value>
+                  </option>
+                  <option>
+                    <label>Black</label>
+                    <value>black</value>
+                  </option>
+                  <option>
+                    <label>Grayd</label>
+                    <value>grayd</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Color of grid</label>
+                <enum>
+                  <property required="no">
+                    <keyword>gridcolor=</keyword>
+                    <value />
+                    <default>black</default>
+                  </property>
+                  <option>
+                    <label>Green yellow</label>
+                    <value>greenyellow</value>
+                  </option>
+                  <option>
+                    <label>Yellow</label>
+                    <value>yellow</value>
+                  </option>
+                  <option>
+                    <label>Golden rod</label>
+                    <value>goldenrod</value>
+                  </option>
+                  <option>
+                    <label>Dandelion</label>
+                    <value>dandelion</value>
+                  </option>
+                  <option>
+                    <label>Apricot</label>
+                    <value>apricot</value>
+                  </option>
+                  <option>
+                    <label>Peach</label>
+                    <value>peach</value>
+                  </option>
+                  <option>
+                    <label>Melon</label>
+                    <value>melon</value>
+                  </option>
+                  <option>
+                    <label>Yellow orange</label>
+                    <value>yelloworange</value>
+                  </option>
+                  <option>
+                    <label>Orange</label>
+                    <value>orange</value>
+                  </option>
+                  <option>
+                    <label>Burnt orange</label>
+                    <value>burntorange</value>
+                  </option>
+                  <option>
+                    <label>Bittersweet</label>
+                    <value>bittersweet</value>
+                  </option>
+                  <option>
+                    <label>Red orange</label>
+                    <value>redorange</value>
+                  </option>
+                  <option>
+                    <label>Mahogany</label>
+                    <value>mahogany</value>
+                  </option>
+                  <option>
+                    <label>Maroon</label>
+                    <value>maroon</value>
+                  </option>
+                  <option>
+                    <label>Brickred</label>
+                    <value>brickred</value>
+                  </option>
+                  <option>
+                    <label>Red</label>
+                    <value>red</value>
+                  </option>
+                  <option>
+                    <label>Orange red</label>
+                    <value>orangered</value>
+                  </option>
+                  <option>
+                    <label>Rubine red</label>
+                    <value>rubinered</value>
+                  </option>
+                  <option>
+                    <label>Wild strawberry</label>
+                    <value>wildstrawberry</value>
+                  </option>
+                  <option>
+                    <label>Salmon</label>
+                    <value>salmon</value>
+                  </option>
+                  <option>
+                    <label>Carnation pink</label>
+                    <value>carnationpink</value>
+                  </option>
+                  <option>
+                    <label>Magenta</label>
+                    <value>magenta</value>
+                  </option>
+                  <option>
+                    <label>Violetred</label>
+                    <value>violetred</value>
+                  </option>
+                  <option>
+                    <label>Rhodamine</label>
+                    <value>rhodamine</value>
+                  </option>
+                  <option>
+                    <label>Mulberry</label>
+                    <value>mulberry</value>
+                  </option>
+                  <option>
+                    <label>Red violet</label>
+                    <value>redviolet</value>
+                  </option>
+                  <option>
+                    <label>Fuchsia</label>
+                    <value>fuchsia</value>
+                  </option>
+                  <option>
+                    <label>Lavender</label>
+                    <value>lavender</value>
+                  </option>
+                  <option>
+                    <label>Thistle</label>
+                    <value>thistle</value>
+                  </option>
+                  <option>
+                    <label>Orchid</label>
+                    <value>orchid</value>
+                  </option>
+                  <option>
+                    <label>Darkorchid</label>
+                    <value>darkorchid</value>
+                  </option>
+                  <option>
+                    <label>Purple</label>
+                    <value>purple</value>
+                  </option>
+                  <option>
+                    <label>Plum</label>
+                    <value>plum</value>
+                  </option>
+                  <option>
+                    <label>Violet</label>
+                    <value>violet</value>
+                  </option>
+                  <option>
+                    <label>Royal purple</label>
+                    <value>royalpurple</value>
+                  </option>
+                  <option>
+                    <label>Blue violet</label>
+                    <value>blueviolet</value>
+                  </option>
+                  <option>
+                    <label>Periwinkle</label>
+                    <value>periwinkle</value>
+                  </option>
+                  <option>
+                    <label>Cadetblue</label>
+                    <value>cadetblue</value>
+                  </option>
+                  <option>
+                    <label>Corn flower blue</label>
+                    <value>cornflowerblue</value>
+                  </option>
+                  <option>
+                    <label>Mid night blue</label>
+                    <value>midnightblue</value>
+                  </option>
+                  <option>
+                    <label>Nave blue</label>
+                    <value>naveblue</value>
+                  </option>
+                  <option>
+                    <label>Royal blue</label>
+                    <value>royalblue</value>
+                  </option>
+                  <option>
+                    <label>Blue</label>
+                    <value>blue</value>
+                  </option>
+                  <option>
+                    <label>Cerulean</label>
+                    <value>cerulean</value>
+                  </option>
+                  <option>
+                    <label>Cyan</label>
+                    <value>cyan</value>
+                  </option>
+                  <option>
+                    <label>Process blue</label>
+                    <value>processblue</value>
+                  </option>
+                  <option>
+                    <label>Skyblue</label>
+                    <value>skyblue</value>
+                  </option>
+                  <option>
+                    <label>Turquoise</label>
+                    <value>turquoise</value>
+                  </option>
+                  <option>
+                    <label>Teal blue</label>
+                    <value>tealblue</value>
+                  </option>
+                  <option>
+                    <label>Aquamarine</label>
+                    <value>aquamarine</value>
+                  </option>
+                  <option>
+                    <label>Blue green</label>
+                    <value>bluegreen</value>
+                  </option>
+                  <option>
+                    <label>Emerald</label>
+                    <value>emerald</value>
+                  </option>
+                  <option>
+                    <label>Jungle green</label>
+                    <value>junglegreen</value>
+                  </option>
+                  <option>
+                    <label>Sea green</label>
+                    <value>seagreen</value>
+                  </option>
+                  <option>
+                    <label>Green</label>
+                    <value>green</value>
+                  </option>
+                  <option>
+                    <label>Forest green</label>
+                    <value>forestgreen</value>
+                  </option>
+                  <option>
+                    <label>Pine green</label>
+                    <value>pinegreen</value>
+                  </option>
+                  <option>
+                    <label>Lime green</label>
+                    <value>limegreen</value>
+                  </option>
+                  <option>
+                    <label>Yellow green</label>
+                    <value>yellowgreen</value>
+                  </option>
+                  <option>
+                    <label>Spring green</label>
+                    <value>springgreen</value>
+                  </option>
+                  <option>
+                    <label>Olive green</label>
+                    <value>olivegreen</value>
+                  </option>
+                  <option>
+                    <label>Raw sienna</label>
+                    <value>rawsienna</value>
+                  </option>
+                  <option>
+                    <label>Sepia</label>
+                    <value>sepia</value>
+                  </option>
+                  <option>
+                    <label>Brown</label>
+                    <value>brown</value>
+                  </option>
+                  <option>
+                    <label>Tan</label>
+                    <value>tan</value>
+                  </option>
+                  <option>
+                    <label>White</label>
+                    <value>white</value>
+                  </option>
+                  <option>
+                    <label>Black</label>
+                    <value>black</value>
+                  </option>
+                  <option>
+                    <label>Grayd</label>
+                    <value>grayd</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Width (in points) of axes</label>
+                <float>
+                  <property required="no">
+                    <keyword>axeswidth=</keyword>
+                    <value />
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Width (in points) of tic marks</label>
+                <float>
+                  <property required="no">
+                    <keyword>ticwidth=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Width (in points) of grid lines</label>
+                <float>
+                  <property required="no">
+                    <keyword>gridwidth=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Swap axes position</label>
-              <enum>
+              <label />
+              <reference>
                 <property required="no">
-                  <keyword>style=</keyword>
-                  <value/>
+                  <keyword />
+                  <value />
                   <default>normal</default>
                 </property>
-                <option>
-                  <label>Normal</label>
-                  <value>normal</value>
-                </option>
-                <option>
-                  <label>Seismic</label>
-                  <value>seismic</value>
-                </option>
-              </enum>
+              </reference>
             </parameter>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-          <parameter><label>Offset in inches of left side of axes box</label><float><property required="no"><keyword>xbox=</keyword><value/><default>1.5</default></property></float></parameter><parameter><label>Offset in inches of bottom side of axes box</label><float><property required="no"><keyword>ybox=</keyword><value/><default>1.5</default></property></float></parameter><parameter><label>Width in inches of axes box</label><float><property required="no"><keyword>wbox=</keyword><value/><default>6.0</default></property></float></parameter><parameter><label>Height in inches of axes box</label><float><property required="no"><keyword>hbox=</keyword><value/><default>8.0</default></property></float></parameter><parameter>
-        <label>Font name for axes labels</label>
-        
-      <enum><property required="no"><keyword>labelfont=</keyword><value/><default>Helvetica</default></property><option><label/><value>AvantGarde-Book</value></option><option><label/><value>AvantGarde-BookOblique</value></option><option><label/><value>AvantGarde-Demi</value></option><option><label/><value>AvantGarde-DemiOblique</value></option><option><label/><value>Bookman-Demi</value></option><option><label/><value>Bookman-DemiItalic</value></option><option><label/><value>Bookman-Light</value></option><option><label/><value>Bookman-LightItalic</value></option><option><label/><value>Courier</value></option><option><label/><value>Courier-Bold</value></option><option><label/><value>Courier-BoldOblique</value></option><option><label/><value>Courier-Oblique</value></option><option><label/><value>Helvetica</value></option><option><label/><value>Helvetica-Bold</value></option><option><label/><value>Helvetica-BoldOblique</value></option><option><label/><value>Helvetica-Oblique</value></option><option><label/><value>Helvetica-Narrow</value></option><option><label/><value>Helvetica-Narrow-Bold</value></option><option><label/><value>Helvetica-Narrow-BoldOblique</value></option><option><label/><value>Helvetica-Narrow-Oblique</value></option><option><label/><value>NewCentrySchlbk-Bold</value></option><option><label/><value>NewCenturySchlbk-BoldItalic</value></option><option><label/><value>NewCenturySchlbk-Roman</value></option><option><label/><value>Palatino-Bold</value></option><option><label/><value>Palatino-BoldItalic</value></option><option><label/><value>Palatino-Italics</value></option><option><label/><value>Palatino-Roman</value></option><option><label/><value>SanSerif-Bold</value></option><option><label/><value>SanSerif-BoldItalic</value></option><option><label/><value>SanSerif-Roman</value></option><option><label/><value>Symbol</value></option><option><label/><value>Times-Bold</value></option><option><label/><value>Times-BoldItalic</value></option><option><label/><value>Times-Roman</value></option><option><label/><value>Times-Italic</value></option><option><label/><value>ZapfChancery-MediumItalic</value></option></enum></parameter><parameter><label>Font size for axes labels</label><float><property required="no"><keyword>labelsize=</keyword><value/><default>18</default></property></float></parameter><parameter>
-        <label>Font name for title</label>
-        
-      <enum><property required="no"><keyword>titlefont=</keyword><value/><default>Helvetica-Bold</default></property><option><label/><value>AvantGarde-Book</value></option><option><label/><value>AvantGarde-BookOblique</value></option><option><label/><value>AvantGarde-Demi</value></option><option><label/><value>AvantGarde-DemiOblique</value></option><option><label/><value>Bookman-Demi</value></option><option><label/><value>Bookman-DemiItalic</value></option><option><label/><value>Bookman-Light</value></option><option><label/><value>Bookman-LightItalic</value></option><option><label/><value>Courier</value></option><option><label/><value>Courier-Bold</value></option><option><label/><value>Courier-BoldOblique</value></option><option><label/><value>Courier-Oblique</value></option><option><label/><value>Helvetica</value></option><option><label/><value>Helvetica-Bold</value></option><option><label/><value>Helvetica-BoldOblique</value></option><option><label/><value>Helvetica-Oblique</value></option><option><label/><value>Helvetica-Narrow</value></option><option><label/><value>Helvetica-Narrow-Bold</value></option><option><label/><value>Helvetica-Narrow-BoldOblique</value></option><option><label/><value>Helvetica-Narrow-Oblique</value></option><option><label/><value>NewCentrySchlbk-Bold</value></option><option><label/><value>NewCenturySchlbk-BoldItalic</value></option><option><label/><value>NewCenturySchlbk-Roman</value></option><option><label/><value>Palatino-Bold</value></option><option><label/><value>Palatino-BoldItalic</value></option><option><label/><value>Palatino-Italics</value></option><option><label/><value>Palatino-Roman</value></option><option><label/><value>SanSerif-Bold</value></option><option><label/><value>SanSerif-BoldItalic</value></option><option><label/><value>SanSerif-Roman</value></option><option><label/><value>Symbol</value></option><option><label/><value>Times-Bold</value></option><option><label/><value>Times-BoldItalic</value></option><option><label/><value>Times-Roman</value></option><option><label/><value>Times-Italic</value></option><option><label/><value>ZapfChancery-MediumItalic</value></option></enum></parameter><parameter><label>Font size for title</label><float><property required="no"><keyword>titlesize=</keyword><value/><default>24</default></property></float></parameter><parameter>
-        <label>Color of title</label>
-        
-	<enum>
-	  <property required="no">
-	    <keyword>titlecolor=</keyword>
-	    <value/><default>black</default></property>
-	<option><label>Green yellow</label><value>greenyellow</value></option>
-	<option><label>Yellow</label><value>yellow</value></option>
-	<option><label>Golden rod</label><value>goldenrod</value></option>
-	<option><label>Dandelion</label><value>dandelion</value></option>
-	<option><label>Apricot</label><value>apricot</value></option>
-	<option><label>Peach</label><value>peach</value></option>
-	<option><label>Melon</label><value>melon</value></option>
-	<option><label>Yellow orange</label><value>yelloworange</value></option>
-	<option><label>Orange</label><value>orange</value></option>
-	<option><label>Burnt orange</label><value>burntorange</value></option>
-	<option><label>Bittersweet</label><value>bittersweet</value></option>
-	<option><label>Red orange</label><value>redorange</value></option>
-	<option><label>Mahogany</label><value>mahogany</value></option>
-	<option><label>Maroon</label><value>maroon</value></option>
-	<option><label>Brickred</label><value>brickred</value></option>
-	<option><label>Red</label><value>red</value></option>
-	<option><label>Orange red</label><value>orangered</value></option>
-	<option><label>Rubine red</label><value>rubinered</value></option>
-	<option><label>Wild strawberry</label><value>wildstrawberry</value></option>
-	<option><label>Salmon</label><value>salmon</value></option>
-	<option><label>Carnation pink</label><value>carnationpink</value></option>
-	<option><label>Magenta</label><value>magenta</value></option>
-	<option><label>Violetred</label><value>violetred</value></option>
-	<option><label>Rhodamine</label><value>rhodamine</value></option>
-	<option><label>Mulberry</label><value>mulberry</value></option>
-	<option><label>Red violet</label><value>redviolet</value></option>
-	<option><label>Fuchsia</label><value>fuchsia</value></option>
-	<option><label>Lavender</label><value>lavender</value></option>
-	<option><label>Thistle</label><value>thistle</value></option>
-	<option><label>Orchid</label><value>orchid</value></option>
-	<option><label>Darkorchid</label><value>darkorchid</value></option>
-	<option><label>Purple</label><value>purple</value></option>
-	<option><label>Plum</label><value>plum</value></option>
-	<option><label>Violet</label><value>violet</value></option>
-	<option><label>Royal purple</label><value>royalpurple</value></option>
-	<option><label>Blue violet</label><value>blueviolet</value></option>
-	<option><label>Periwinkle</label><value>periwinkle</value></option>
-	<option><label>Cadetblue</label><value>cadetblue</value></option>
-	<option><label>Corn flower blue</label><value>cornflowerblue</value></option>
-	<option><label>Mid night blue</label><value>midnightblue</value></option>
-	<option><label>Nave blue</label><value>naveblue</value></option>
-	<option><label>Royal blue</label><value>royalblue</value></option>
-	<option><label>Blue</label><value>blue</value></option>
-	<option><label>Cerulean</label><value>cerulean</value></option>
-	<option><label>Cyan</label><value>cyan</value></option>
-	<option><label>Process blue</label><value>processblue</value></option>
-	<option><label>Skyblue</label><value>skyblue</value></option>
-	<option><label>Turquoise</label><value>turquoise</value></option>
-	<option><label>Teal blue</label><value>tealblue</value></option>
-	<option><label>Aquamarine</label><value>aquamarine</value></option>
-	<option><label>Blue green</label><value>bluegreen</value></option>
-	<option><label>Emerald</label><value>emerald</value></option>
-	<option><label>Jungle green</label><value>junglegreen</value></option>
-	<option><label>Sea green</label><value>seagreen</value></option>
-	<option><label>Green</label><value>green</value></option>
-	<option><label>Forest green</label><value>forestgreen</value></option>
-	<option><label>Pine green</label><value>pinegreen</value></option>
-	<option><label>Lime green</label><value>limegreen</value></option>
-	<option><label>Yellow green</label><value>yellowgreen</value></option>
-	<option><label>Spring green</label><value>springgreen</value></option>
-	<option><label>Olive green</label><value>olivegreen</value></option>
-	<option><label>Raw sienna</label><value>rawsienna</value></option>
-	<option><label>Sepia</label><value>sepia</value></option>
-	<option><label>Brown</label><value>brown</value></option>
-	<option><label>Tan</label><value>tan</value></option>
-	<option><label>White</label><value>white</value></option>
-	<option><label>Black</label><value>black</value></option>
-	<option><label>Grayd</label><value>grayd</value></option>
-      </enum></parameter><parameter>
-        <label>Font name for contour labels</label>
-        
-      <enum><property required="no"><keyword>labelcfont=</keyword><value/><default>Helvetica-Bold</default></property><option><label/><value>AvantGarde-Book</value></option><option><label/><value>AvantGarde-BookOblique</value></option><option><label/><value>AvantGarde-Demi</value></option><option><label/><value>AvantGarde-DemiOblique</value></option><option><label/><value>Bookman-Demi</value></option><option><label/><value>Bookman-DemiItalic</value></option><option><label/><value>Bookman-Light</value></option><option><label/><value>Bookman-LightItalic</value></option><option><label/><value>Courier</value></option><option><label/><value>Courier-Bold</value></option><option><label/><value>Courier-BoldOblique</value></option><option><label/><value>Courier-Oblique</value></option><option><label/><value>Helvetica</value></option><option><label/><value>Helvetica-Bold</value></option><option><label/><value>Helvetica-BoldOblique</value></option><option><label/><value>Helvetica-Oblique</value></option><option><label/><value>Helvetica-Narrow</value></option><option><label/><value>Helvetica-Narrow-Bold</value></option><option><label/><value>Helvetica-Narrow-BoldOblique</value></option><option><label/><value>Helvetica-Narrow-Oblique</value></option><option><label/><value>NewCentrySchlbk-Bold</value></option><option><label/><value>NewCenturySchlbk-BoldItalic</value></option><option><label/><value>NewCenturySchlbk-Roman</value></option><option><label/><value>Palatino-Bold</value></option><option><label/><value>Palatino-BoldItalic</value></option><option><label/><value>Palatino-Italics</value></option><option><label/><value>Palatino-Roman</value></option><option><label/><value>SanSerif-Bold</value></option><option><label/><value>SanSerif-BoldItalic</value></option><option><label/><value>SanSerif-Roman</value></option><option><label/><value>Symbol</value></option><option><label/><value>Times-Bold</value></option><option><label/><value>Times-BoldItalic</value></option><option><label/><value>Times-Roman</value></option><option><label/><value>Times-Italic</value></option><option><label/><value>ZapfChancery-MediumItalic</value></option></enum></parameter><parameter><label>Font size of contour labels</label><float><property required="no"><keyword>labelcsize=</keyword><value/><default>6</default></property></float></parameter><parameter>
-        <label>Color of contour labels</label>
-        
-	<enum>
-	  <property required="no">
-	    <keyword>labelccolor=</keyword>
-	    <value/><default>black</default></property>
-	<option><label>Green yellow</label><value>greenyellow</value></option>
-	<option><label>Yellow</label><value>yellow</value></option>
-	<option><label>Golden rod</label><value>goldenrod</value></option>
-	<option><label>Dandelion</label><value>dandelion</value></option>
-	<option><label>Apricot</label><value>apricot</value></option>
-	<option><label>Peach</label><value>peach</value></option>
-	<option><label>Melon</label><value>melon</value></option>
-	<option><label>Yellow orange</label><value>yelloworange</value></option>
-	<option><label>Orange</label><value>orange</value></option>
-	<option><label>Burnt orange</label><value>burntorange</value></option>
-	<option><label>Bittersweet</label><value>bittersweet</value></option>
-	<option><label>Red orange</label><value>redorange</value></option>
-	<option><label>Mahogany</label><value>mahogany</value></option>
-	<option><label>Maroon</label><value>maroon</value></option>
-	<option><label>Brickred</label><value>brickred</value></option>
-	<option><label>Red</label><value>red</value></option>
-	<option><label>Orange red</label><value>orangered</value></option>
-	<option><label>Rubine red</label><value>rubinered</value></option>
-	<option><label>Wild strawberry</label><value>wildstrawberry</value></option>
-	<option><label>Salmon</label><value>salmon</value></option>
-	<option><label>Carnation pink</label><value>carnationpink</value></option>
-	<option><label>Magenta</label><value>magenta</value></option>
-	<option><label>Violetred</label><value>violetred</value></option>
-	<option><label>Rhodamine</label><value>rhodamine</value></option>
-	<option><label>Mulberry</label><value>mulberry</value></option>
-	<option><label>Red violet</label><value>redviolet</value></option>
-	<option><label>Fuchsia</label><value>fuchsia</value></option>
-	<option><label>Lavender</label><value>lavender</value></option>
-	<option><label>Thistle</label><value>thistle</value></option>
-	<option><label>Orchid</label><value>orchid</value></option>
-	<option><label>Darkorchid</label><value>darkorchid</value></option>
-	<option><label>Purple</label><value>purple</value></option>
-	<option><label>Plum</label><value>plum</value></option>
-	<option><label>Violet</label><value>violet</value></option>
-	<option><label>Royal purple</label><value>royalpurple</value></option>
-	<option><label>Blue violet</label><value>blueviolet</value></option>
-	<option><label>Periwinkle</label><value>periwinkle</value></option>
-	<option><label>Cadetblue</label><value>cadetblue</value></option>
-	<option><label>Corn flower blue</label><value>cornflowerblue</value></option>
-	<option><label>Mid night blue</label><value>midnightblue</value></option>
-	<option><label>Nave blue</label><value>naveblue</value></option>
-	<option><label>Royal blue</label><value>royalblue</value></option>
-	<option><label>Blue</label><value>blue</value></option>
-	<option><label>Cerulean</label><value>cerulean</value></option>
-	<option><label>Cyan</label><value>cyan</value></option>
-	<option><label>Process blue</label><value>processblue</value></option>
-	<option><label>Skyblue</label><value>skyblue</value></option>
-	<option><label>Turquoise</label><value>turquoise</value></option>
-	<option><label>Teal blue</label><value>tealblue</value></option>
-	<option><label>Aquamarine</label><value>aquamarine</value></option>
-	<option><label>Blue green</label><value>bluegreen</value></option>
-	<option><label>Emerald</label><value>emerald</value></option>
-	<option><label>Jungle green</label><value>junglegreen</value></option>
-	<option><label>Sea green</label><value>seagreen</value></option>
-	<option><label>Green</label><value>green</value></option>
-	<option><label>Forest green</label><value>forestgreen</value></option>
-	<option><label>Pine green</label><value>pinegreen</value></option>
-	<option><label>Lime green</label><value>limegreen</value></option>
-	<option><label>Yellow green</label><value>yellowgreen</value></option>
-	<option><label>Spring green</label><value>springgreen</value></option>
-	<option><label>Olive green</label><value>olivegreen</value></option>
-	<option><label>Raw sienna</label><value>rawsienna</value></option>
-	<option><label>Sepia</label><value>sepia</value></option>
-	<option><label>Brown</label><value>brown</value></option>
-	<option><label>Tan</label><value>tan</value></option>
-	<option><label>White</label><value>white</value></option>
-	<option><label>Black</label><value>black</value></option>
-	<option><label>Grayd</label><value>grayd</value></option>
-      </enum></parameter><parameter>
-        <label>Color of axes</label>
-        
-	<enum>
-	  <property required="no">
-	    <keyword>axescolor=</keyword>
-	    <value/><default>black</default></property>
-	<option><label>Green yellow</label><value>greenyellow</value></option>
-	<option><label>Yellow</label><value>yellow</value></option>
-	<option><label>Golden rod</label><value>goldenrod</value></option>
-	<option><label>Dandelion</label><value>dandelion</value></option>
-	<option><label>Apricot</label><value>apricot</value></option>
-	<option><label>Peach</label><value>peach</value></option>
-	<option><label>Melon</label><value>melon</value></option>
-	<option><label>Yellow orange</label><value>yelloworange</value></option>
-	<option><label>Orange</label><value>orange</value></option>
-	<option><label>Burnt orange</label><value>burntorange</value></option>
-	<option><label>Bittersweet</label><value>bittersweet</value></option>
-	<option><label>Red orange</label><value>redorange</value></option>
-	<option><label>Mahogany</label><value>mahogany</value></option>
-	<option><label>Maroon</label><value>maroon</value></option>
-	<option><label>Brickred</label><value>brickred</value></option>
-	<option><label>Red</label><value>red</value></option>
-	<option><label>Orange red</label><value>orangered</value></option>
-	<option><label>Rubine red</label><value>rubinered</value></option>
-	<option><label>Wild strawberry</label><value>wildstrawberry</value></option>
-	<option><label>Salmon</label><value>salmon</value></option>
-	<option><label>Carnation pink</label><value>carnationpink</value></option>
-	<option><label>Magenta</label><value>magenta</value></option>
-	<option><label>Violetred</label><value>violetred</value></option>
-	<option><label>Rhodamine</label><value>rhodamine</value></option>
-	<option><label>Mulberry</label><value>mulberry</value></option>
-	<option><label>Red violet</label><value>redviolet</value></option>
-	<option><label>Fuchsia</label><value>fuchsia</value></option>
-	<option><label>Lavender</label><value>lavender</value></option>
-	<option><label>Thistle</label><value>thistle</value></option>
-	<option><label>Orchid</label><value>orchid</value></option>
-	<option><label>Darkorchid</label><value>darkorchid</value></option>
-	<option><label>Purple</label><value>purple</value></option>
-	<option><label>Plum</label><value>plum</value></option>
-	<option><label>Violet</label><value>violet</value></option>
-	<option><label>Royal purple</label><value>royalpurple</value></option>
-	<option><label>Blue violet</label><value>blueviolet</value></option>
-	<option><label>Periwinkle</label><value>periwinkle</value></option>
-	<option><label>Cadetblue</label><value>cadetblue</value></option>
-	<option><label>Corn flower blue</label><value>cornflowerblue</value></option>
-	<option><label>Mid night blue</label><value>midnightblue</value></option>
-	<option><label>Nave blue</label><value>naveblue</value></option>
-	<option><label>Royal blue</label><value>royalblue</value></option>
-	<option><label>Blue</label><value>blue</value></option>
-	<option><label>Cerulean</label><value>cerulean</value></option>
-	<option><label>Cyan</label><value>cyan</value></option>
-	<option><label>Process blue</label><value>processblue</value></option>
-	<option><label>Skyblue</label><value>skyblue</value></option>
-	<option><label>Turquoise</label><value>turquoise</value></option>
-	<option><label>Teal blue</label><value>tealblue</value></option>
-	<option><label>Aquamarine</label><value>aquamarine</value></option>
-	<option><label>Blue green</label><value>bluegreen</value></option>
-	<option><label>Emerald</label><value>emerald</value></option>
-	<option><label>Jungle green</label><value>junglegreen</value></option>
-	<option><label>Sea green</label><value>seagreen</value></option>
-	<option><label>Green</label><value>green</value></option>
-	<option><label>Forest green</label><value>forestgreen</value></option>
-	<option><label>Pine green</label><value>pinegreen</value></option>
-	<option><label>Lime green</label><value>limegreen</value></option>
-	<option><label>Yellow green</label><value>yellowgreen</value></option>
-	<option><label>Spring green</label><value>springgreen</value></option>
-	<option><label>Olive green</label><value>olivegreen</value></option>
-	<option><label>Raw sienna</label><value>rawsienna</value></option>
-	<option><label>Sepia</label><value>sepia</value></option>
-	<option><label>Brown</label><value>brown</value></option>
-	<option><label>Tan</label><value>tan</value></option>
-	<option><label>White</label><value>white</value></option>
-	<option><label>Black</label><value>black</value></option>
-	<option><label>Grayd</label><value>grayd</value></option>
-      </enum></parameter><parameter>
-        <label>Color of grid</label>
-        
-	<enum>
-	  <property required="no">
-	    <keyword>gridcolor=</keyword>
-	    <value/><default>black</default></property>
-	<option><label>Green yellow</label><value>greenyellow</value></option>
-	<option><label>Yellow</label><value>yellow</value></option>
-	<option><label>Golden rod</label><value>goldenrod</value></option>
-	<option><label>Dandelion</label><value>dandelion</value></option>
-	<option><label>Apricot</label><value>apricot</value></option>
-	<option><label>Peach</label><value>peach</value></option>
-	<option><label>Melon</label><value>melon</value></option>
-	<option><label>Yellow orange</label><value>yelloworange</value></option>
-	<option><label>Orange</label><value>orange</value></option>
-	<option><label>Burnt orange</label><value>burntorange</value></option>
-	<option><label>Bittersweet</label><value>bittersweet</value></option>
-	<option><label>Red orange</label><value>redorange</value></option>
-	<option><label>Mahogany</label><value>mahogany</value></option>
-	<option><label>Maroon</label><value>maroon</value></option>
-	<option><label>Brickred</label><value>brickred</value></option>
-	<option><label>Red</label><value>red</value></option>
-	<option><label>Orange red</label><value>orangered</value></option>
-	<option><label>Rubine red</label><value>rubinered</value></option>
-	<option><label>Wild strawberry</label><value>wildstrawberry</value></option>
-	<option><label>Salmon</label><value>salmon</value></option>
-	<option><label>Carnation pink</label><value>carnationpink</value></option>
-	<option><label>Magenta</label><value>magenta</value></option>
-	<option><label>Violetred</label><value>violetred</value></option>
-	<option><label>Rhodamine</label><value>rhodamine</value></option>
-	<option><label>Mulberry</label><value>mulberry</value></option>
-	<option><label>Red violet</label><value>redviolet</value></option>
-	<option><label>Fuchsia</label><value>fuchsia</value></option>
-	<option><label>Lavender</label><value>lavender</value></option>
-	<option><label>Thistle</label><value>thistle</value></option>
-	<option><label>Orchid</label><value>orchid</value></option>
-	<option><label>Darkorchid</label><value>darkorchid</value></option>
-	<option><label>Purple</label><value>purple</value></option>
-	<option><label>Plum</label><value>plum</value></option>
-	<option><label>Violet</label><value>violet</value></option>
-	<option><label>Royal purple</label><value>royalpurple</value></option>
-	<option><label>Blue violet</label><value>blueviolet</value></option>
-	<option><label>Periwinkle</label><value>periwinkle</value></option>
-	<option><label>Cadetblue</label><value>cadetblue</value></option>
-	<option><label>Corn flower blue</label><value>cornflowerblue</value></option>
-	<option><label>Mid night blue</label><value>midnightblue</value></option>
-	<option><label>Nave blue</label><value>naveblue</value></option>
-	<option><label>Royal blue</label><value>royalblue</value></option>
-	<option><label>Blue</label><value>blue</value></option>
-	<option><label>Cerulean</label><value>cerulean</value></option>
-	<option><label>Cyan</label><value>cyan</value></option>
-	<option><label>Process blue</label><value>processblue</value></option>
-	<option><label>Skyblue</label><value>skyblue</value></option>
-	<option><label>Turquoise</label><value>turquoise</value></option>
-	<option><label>Teal blue</label><value>tealblue</value></option>
-	<option><label>Aquamarine</label><value>aquamarine</value></option>
-	<option><label>Blue green</label><value>bluegreen</value></option>
-	<option><label>Emerald</label><value>emerald</value></option>
-	<option><label>Jungle green</label><value>junglegreen</value></option>
-	<option><label>Sea green</label><value>seagreen</value></option>
-	<option><label>Green</label><value>green</value></option>
-	<option><label>Forest green</label><value>forestgreen</value></option>
-	<option><label>Pine green</label><value>pinegreen</value></option>
-	<option><label>Lime green</label><value>limegreen</value></option>
-	<option><label>Yellow green</label><value>yellowgreen</value></option>
-	<option><label>Spring green</label><value>springgreen</value></option>
-	<option><label>Olive green</label><value>olivegreen</value></option>
-	<option><label>Raw sienna</label><value>rawsienna</value></option>
-	<option><label>Sepia</label><value>sepia</value></option>
-	<option><label>Brown</label><value>brown</value></option>
-	<option><label>Tan</label><value>tan</value></option>
-	<option><label>White</label><value>white</value></option>
-	<option><label>Black</label><value>black</value></option>
-	<option><label>Grayd</label><value>grayd</value></option>
-      </enum></parameter><parameter><label>Width (in points) of axes</label><float><property required="no"><keyword>axeswidth=</keyword><value/><default>1</default></property></float></parameter><parameter><label>Width (in points) of tic marks</label><float><property required="no"><keyword>ticwidth=</keyword><value/><default/></property></float></parameter><parameter><label>Width (in points) of grid lines</label><float><property required="no"><keyword>gridwidth=</keyword><value/><default/></property></float></parameter></parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            
-            
-            
             <parameter>
-              <label></label>
-              
-            <reference><property required="no"><keyword/><value></value><default>normal</default></property></reference></parameter>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-          <parameter><label></label><reference><property required="no"><keyword/><value></value><default>1.5</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default>1.5</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default>6.0</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default>8.0</default></property></reference></parameter><parameter>
-        <label></label>
-        
-      <reference><property required="no"><keyword/><value></value><default>Helvetica</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default>18</default></property></reference></parameter><parameter>
-        <label></label>
-        
-      <reference><property required="no"><keyword/><value></value><default>Helvetica-Bold</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default>24</default></property></reference></parameter><parameter>
-        <label></label>
-        
-	<reference><property required="no"><keyword/><value></value><default>black</default></property></reference></parameter><parameter>
-        <label></label>
-        
-      <reference><property required="no"><keyword/><value></value><default>Helvetica-Bold</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default>6</default></property></reference></parameter><parameter>
-        <label></label>
-        
-	<reference><property required="no"><keyword/><value></value><default>black</default></property></reference></parameter><parameter>
-        <label></label>
-        
-	<reference><property required="no"><keyword/><value></value><default>black</default></property></reference></parameter><parameter>
-        <label></label>
-        
-	<reference><property required="no"><keyword/><value></value><default>black</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default>1</default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter><parameter><label></label><reference><property required="no"><keyword/><value></value><default></default></property></reference></parameter></parameters></group>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1.5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1.5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>6.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>8.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>Helvetica</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>18</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>Helvetica-Bold</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>24</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>black</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>Helvetica-Bold</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>6</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>black</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>black</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>black</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label />
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Echoes extra information</label>
@@ -1318,8 +3348,8 @@
         <file directory="yes" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>tmpdir=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>

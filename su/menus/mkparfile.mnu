@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>ASCII to PAR</title>
   <description>Convert ASCII to PAR file format</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">ASCII to PAR</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Convert ASCII to PAR file format
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Convert ASCII to PAR file format.</p>
 
-	  <!-- begin par --><!-- end par -->
-	   
+          <!-- begin par --><!-- end par -->
+           
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Jul 13, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Jul 13, 2010<!-- end ver --></span>
+                <!-- begin ver -->Jul 13, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-07-13T15:16:41.115080Z</created>
     <modified>2010-08-06T00:43:02.873439Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Utilities</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>ASCII to PAR</title>
     <binary>mkparfile</binary>
     <description>Convert ASCII to PAR file format</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +130,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">ASCII to PAR</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Convert ASCII to PAR file format
             <!-- end des -->
           </div>
@@ -138,7 +143,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,14 +154,14 @@
 
           <p>Convert ASCII to PAR file format.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li><span class="label">First parameter string</span></li>
 
               <li><span class="label">Second parameter string</span></li>
@@ -165,32 +170,32 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-          <p>This is a tool to convert values written line by line to parameter 	
- 	   vectors in the form expected.</p>
-	
-	<p>For example, file looks like:<br/>							
- 	t0 v0<br/>								
- 	t1 v1<br/>								
-	...<br/>								
- 	then, set parameter <b>First parameter string</b> like a "tnmo" and parameter <b>Second parameter string</b> like a "vnmo", 
-	the new file looks like:<br/>
-	tnmo=t0,t1,...<br/>						
-	vnmo=v0,v1,...</p>						
+          <p>This is a tool to convert values written line by line to parameter         
+           vectors in the form expected.</p>
+        
+        <p>For example, file looks like:<br/>                                                   
+        t0 v0<br/>                                                              
+        t1 v1<br/>                                                              
+        ...<br/>                                                                
+        then, set parameter <b>First parameter string</b> like a "tnmo" and parameter <b>Second parameter string</b> like a "vnmo", 
+        the new file looks like:<br/>
+        tnmo=t0,t1,...<br/>                                             
+        vnmo=v0,v1,...</p>                                              
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Jack K. Cohen.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -199,9 +204,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -214,7 +219,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -222,7 +227,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -230,8 +236,8 @@
         <string>
           <property required="no">
             <keyword>string1=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </string>
       </parameter>
@@ -240,8 +246,8 @@
         <string>
           <property required="no">
             <keyword>string2=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </string>
       </parameter>

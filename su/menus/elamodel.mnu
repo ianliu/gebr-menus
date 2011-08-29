@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.6">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>ELA Model</title>
   <description>Make piecewise homogeneous anisotropic model</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">ELA Model</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Make piecewise homogeneous anisotropic model
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,16 +46,16 @@
 
           <p>Make piecewise homogeneous anisotropic model.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Set 16, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -74,7 +75,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Set 16, 2010<!-- end ver --></span>
+                <!-- begin ver -->Set 16, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -82,30 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0"/>
+    <parameters default-selection="0" />
   </dict>
   <date>
     <created>2010-09-16T23:52:10.532037Z</created>
     <modified>2011-02-03T11:48:05.617717Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>ELA Model</title>
     <binary>elamodel</binary>
     <description>Make piecewise homogeneous anisotropic model</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -124,12 +129,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">ELA Model</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Make piecewise homogeneous anisotropic model
             <!-- end des -->
           </div>
@@ -137,7 +142,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -148,13 +153,13 @@
 
           <p>Make piecewise homogeneous anisotropic model.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	    <!-- begin lst --><ul>
+            <!-- begin lst --><ul>
 <li class="req"><span class="reqlabel">Regions to fill</span></li>
 <ul>
 <li>Isotropic blocks<br/>x,z,v_p,v_s,rho</li>
@@ -173,9 +178,9 @@
 <!-- end lst -->
             
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>More than one set of <strong>X coordinates of an edge</strong> 
@@ -198,25 +203,25 @@
           <strong>x, z</strong> - Coordinates of one point in a bounded region<br/>
           <strong>v_p, v_s</strong> - P, S-wave velocity along symmetry 
           axis<br/>
- 	    <strong>epsilon, delta, gamma</strong> - Thomsen's 
- 	    parameters<br/>
- 	    <strong>rho</strong> - Density<br/>		     
- 	    <strong>phi</strong> - Angle of symmetry axes with vertical<br/>
- 	    <strong>aijkl</strong> - Density normalized stiffness coefficients<br/>
-	    </p>
-	    
-	    <p>Each block can be defined by different input modes. The number 
-	    of input parameters defines the input type. Incorrect number of 
-	    input parameters result in an error message.</p>
+            <strong>epsilon, delta, gamma</strong> - Thomsen's 
+            parameters<br/>
+            <strong>rho</strong> - Density<br/>              
+            <strong>phi</strong> - Angle of symmetry axes with vertical<br/>
+            <strong>aijkl</strong> - Density normalized stiffness coefficients<br/>
+            </p>
+            
+            <p>Each block can be defined by different input modes. The number 
+            of input parameters defines the input type. Incorrect number of 
+            input parameters result in an error message.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Dave Hale, Colorado School of Mines, 02/12/91.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -225,9 +230,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -240,7 +245,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -248,8 +253,152 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0"><parameter><label>Regions to fill</label><group instanciable="yes" expand="yes"><template-instance><parameters default-selection="0"><parameter><label>Region</label><float><property required="yes" separator=","><keyword>fill=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Region</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Minimum horizontal coordinate (x)</label><float><property required="no"><keyword>xmin=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Maximum horizontal coordinate (x)</label><float><property required="no"><keyword>xmax=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Minimum vertical coordinate (z)</label><float><property required="no"><keyword>zmin=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Maximum vertical coordinate (z)</label><float><property required="no"><keyword>zmax=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Maximum angle between adjacent edge segments (degrees)</label><float><property required="no"><keyword>maxangle=</keyword><value/><default>5.0</default></property></float></parameter><parameter><label>Coordinates of an edge</label><group instanciable="yes" expand="yes"><template-instance><parameters default-selection="0"><parameter><label>X coordinates</label><float><property required="no" separator=","><keyword>xedge=</keyword><value/><default/></property></float></parameter><parameter><label>Z coordinates</label><float><property required="no" separator=","><keyword>zedge=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label>Z coordinates of an edge</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label>X coordinates of an edge</label><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Indices used to identify edges</label><float><property required="no" separator=","><keyword>kedge=</keyword><value/><default/></property></float></parameter></parameters>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Regions to fill</label>
+        <group instanciable="yes" expand="yes">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Region</label>
+                <float>
+                  <property required="yes" separator=",">
+                    <keyword>fill=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Region</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Minimum horizontal coordinate (x)</label>
+        <float>
+          <property required="no">
+            <keyword>xmin=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum horizontal coordinate (x)</label>
+        <float>
+          <property required="no">
+            <keyword>xmax=</keyword>
+            <value />
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Minimum vertical coordinate (z)</label>
+        <float>
+          <property required="no">
+            <keyword>zmin=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum vertical coordinate (z)</label>
+        <float>
+          <property required="no">
+            <keyword>zmax=</keyword>
+            <value />
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum angle between adjacent edge segments (degrees)</label>
+        <float>
+          <property required="no">
+            <keyword>maxangle=</keyword>
+            <value />
+            <default>5.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Coordinates of an edge</label>
+        <group instanciable="yes" expand="yes">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>X coordinates</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>xedge=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z coordinates</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>zedge=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Z coordinates of an edge</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label>X coordinates of an edge</label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value />
+                  <default />
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Indices used to identify edges</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>kedge=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Velan USel</title>
   <description>Compute stacking velocity panel for CDP gathers (UnNormalized Selective CrossCorrelation Sum)</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -48,13 +49,13 @@
           <p>Compute stacking velocity panel for CDP gathers using the UnNormalized Selective CrossCorrelation Sum.</p>
 
  
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>GêBR core team</p>
-	  <p>Aug 06, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
-	  <p>Jul 18, 2010: reviewed by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>
+          <p>Aug 06, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+          <p>Jul 18, 2010: reviewed by Gabriel S. Sobral, UNICAMP - sobral@gebrproject.com</p>
           <!-- end cpy -->
         </div>
 
@@ -80,31 +81,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-17T15:00:00Z</created>
     <modified>2010-08-06T00:43:08.817413Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Gain, NMO, Stack and Standard Processes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Velan USel</title>
     <binary>suvelan_usel</binary>
     <description>Compute stacking velocity panel for CDP gathers (UnNormalized Selective CrossCorrelation Sum)</description>
-    <help><![CDATA[
+    <help>
+      <![CDATA[
 <html>
 <head>
   <meta name="generator" content=
@@ -126,7 +130,7 @@
           <!-- begin tt2 -->
           <span class="flowtitle">SU Velan USel</span>
           <!-- end tt2 -->
-	  <div class="description">
+          <div class="description">
            <!-- begin des -->Compute stacking velocity panel for CDP gathers (UnNormalized Selective CrossCorrelation Sum) <!-- end des -->
           </div>
         </div>
@@ -139,108 +143,108 @@
       </div>
 
       <div class="main">
-	<div class="content">
+        <div class="content">
 
-	 <a name="intro" id="intro"></a>
-	 <h2>Introduction</h2>
+         <a name="intro" id="intro"></a>
+         <h2>Introduction</h2>
 
-	 <p>Compute stacking velocity panel for CDP gathers using the UnNormalized Selective CrossCorrelation Sum.</p>
+         <p>Compute stacking velocity panel for CDP gathers using the UnNormalized Selective CrossCorrelation Sum.</p>
 
-	<!-- begin par -->
+        <!-- begin par -->
           <div class="parameters">
 
-	  <a name="par" id="par"></a>
-	  <h2>Parameters</h2>
-	  
-	  <!-- begin lst -->
+          <a name="par" id="par"></a>
+          <h2>Parameters</h2>
+          
+          <!-- begin lst -->
             <ul>
-	  
-	  <li><span class="label">Number of traces in CDP</span></li>
-	  
-	  <li><span class="label">Offset increment</span></li>
+          
+          <li><span class="label">Number of traces in CDP</span></li>
+          
+          <li><span class="label">Offset increment</span></li>
 
-	  <li><span class="label">Number of velocities</span>
-	    <p>The default value for this parameter is 50</p></li>
+          <li><span class="label">Number of velocities</span>
+            <p>The default value for this parameter is 50</p></li>
 
-	  <li><span class="label">Velocity sampling interval</span>
-	    <p>The default value for this parameter is 50.0</p></li>
-	  
-	  <li><span class="label">First velocity</span>
-	    <p>The default value for this parameter is 1500.0</p></li>
+          <li><span class="label">Velocity sampling interval</span>
+            <p>The default value for this parameter is 50.0</p></li>
+          
+          <li><span class="label">First velocity</span>
+            <p>The default value for this parameter is 1500.0</p></li>
 
-	  <li><span class="label">Threshold for significance values</span>
-	    <p>The default value for this parameter is 0.5</p></li>
-	  
-	  <li><span class="label">NMO stretch mute value</span><br />
+          <li><span class="label">Threshold for significance values</span>
+            <p>The default value for this parameter is 0.5</p></li>
+          
+          <li><span class="label">NMO stretch mute value</span><br />
                 Any sample with value of NMO stretch exceeding the value of this parameter will be zeroed.
                 The defaul value for this parameter is 1.5.
-       	  </li>
-	  
-	  <li><span class="label">Ratio of output to input time sampling intervals</span>
-	    <p>The default value for this parameter is 5</p></li>
+          </li>
+          
+          <li><span class="label">Ratio of output to input time sampling intervals</span>
+            <p>The default value for this parameter is 5</p></li>
 
                 <li><span class="label">Length of smoothing window</span><br />
                 The defaul value for this parameter is twice the value of the 
                 <b>Ratio of output to input time sampling intervals</b> plus one.
                 </li>
-	  
-	  <li><span class="label">Semblance value to the power</span>
-	    <p>The default value for this parameter is 1.0</p></li>
+          
+          <li><span class="label">Semblance value to the power</span>
+            <p>The default value for this parameter is 1.0</p></li>
 
-	  <li><span class="label">Echos extra information</span><br/>Set this flag to display diagnostic print on standard error.</li>
-	  
+          <li><span class="label">Echos extra information</span><br/>Set this flag to display diagnostic print on standard error.</li>
+          
 
-	  </ul>
-	
-	  <!-- end lst -->
+          </ul>
+        
+          <!-- end lst -->
 
           </div>
           <!-- end par -->
-	
-	  <a name="notes"></a>
+        
+          <a name="notes"></a>
           <h2>Notes</h2>
 
-	 <p>Unnormalized selective crosscorrelation sum: is based on the coherence measure known as crosscorrelation sum. The difference is that the selective approach sum only crosscorrelation pairs with relatively large differential moveout, thus increasing the resolving power in the velocity spectra compared to that achieved by conventional methods. The selection is made using a parabolic approximation of the differential moveout and imposing a threshold for those differential moveout.</p>
+         <p>Unnormalized selective crosscorrelation sum: is based on the coherence measure known as crosscorrelation sum. The difference is that the selective approach sum only crosscorrelation pairs with relatively large differential moveout, thus increasing the resolving power in the velocity spectra compared to that achieved by conventional methods. The selection is made using a parabolic approximation of the differential moveout and imposing a threshold for those differential moveout.</p>
 
          <p>That threshold is the parameter <strong>Threshold for significance values</strong> in this program, which varies between 0 to 1. A value of <strong>Threshold for significance values</strong>=0, means conventional crosscorrelation sum is applied implying that all crosscorrelations are included in the sum. In contrast, a value of <strong>Threshold for significance values</strong>=1 (not recomended) means that only the crosscorrelation formed by the trace pair involving the shortest and longest offset is included in the sum. Intermediate values will produce percentages of the crosscorrelations included in the sum that will be shown in the screen before computing the velocity spectra. Typical values for <strong>Threshold for significance values</strong> are between 0.2 and 0.6, producing approximated percentages of crosscorrelations summed between 60% and 20%. The higher the value of tau the lower the percentage and higher the increase in the resolving power of veloci spectra.</p>
 
          <p>Keeping the percentage of crosscorrelations included in the sum between 20% and 60% will increase resolution and avoid the precense of artifacts in the results. In data contaminated by random noise or statics distortions is recomended to mantaing the percentage of crosscorrelations included in the sum above 25%. After computing the velocity spectra one might want to adjust the level  and number of contours before velocity picking.</p>
 
-	 <p>See menu <strong>SU Velan</strong> for more information.</p>
+         <p>See menu <strong>SU Velan</strong> for more information.</p>
 
-	<p>This program accesses the following header keywords:
-		<ul>
-    			<li>Number of samples</li>  <!-- ns -->
-    			<li>Sampling interval in microseconds</li>  <!-- dt -->
-    			<li>Delay recording time in microseconds</li>  <!-- delrt -->
-    			<li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
-    			<li>CDP ensemble number</li>  <!-- cdp -->
-  		</ul>
-	</p>	
+        <p>This program accesses the following header keywords:
+                <ul>
+                        <li>Number of samples</li>  <!-- ns -->
+                        <li>Sampling interval in microseconds</li>  <!-- dt -->
+                        <li>Delay recording time in microseconds</li>  <!-- delrt -->
+                        <li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
+                        <li>CDP ensemble number</li>  <!-- cdp -->
+                </ul>
+        </p>    
 
-	<p>This program modifies the following header keywords:
-		<ul>
-    			<li>Number of samples</li>  <!-- ns -->
-    			<li>Sampling interval in microseconds</li>  <!-- dt -->
-    			<li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
-    			<li>CDP ensemble number</li>  <!-- cdp -->
-  		</ul>
-	</p>
+        <p>This program modifies the following header keywords:
+                <ul>
+                        <li>Number of samples</li>  <!-- ns -->
+                        <li>Sampling interval in microseconds</li>  <!-- dt -->
+                        <li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
+                        <li>CDP ensemble number</li>  <!-- cdp -->
+                </ul>
+        </p>
 
-	  <a name="ref" id="ref"></a>
+          <a name="ref" id="ref"></a>
           <h2>References</h2>
 
-	  <!-- List of references -->
+          <!-- List of references -->
           <ul>
             <li>Neidell, N.S., and Taner, M.T., 1971, Semblance and other coherency
              measures for multichannel data: Geophysics, 36, 498-509.</li>
-	    <li>Celis, V. T., 2002, Selective-correlation velocity analysis: CSM thesis.</li>
+            <li>Celis, V. T., 2002, Selective-correlation velocity analysis: CSM thesis.</li>
           </ul>
 
-	  <a name="credits"></a>
-	  <h2>Credits</h2>
+          <a name="credits"></a>
+          <h2>Credits</h2>
           <!-- begin cpy -->
-	  <p>CWP:  Valmore Celis, Sept 2002</p>
+          <p>CWP:  Valmore Celis, Sept 2002</p>
 
           <p>Based on the original code: suvelan.c <br />
              Colorado School of Mines:  Dave Hale c. 1989</p>
@@ -251,15 +255,15 @@
           <h2>Index</h2>
 
           <ul>
-	    <li><a href="#intro">Introduction</a></li>
+            <li><a href="#intro">Introduction</a></li>
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
-	    <li><a href="#ref">References</a></li>
+            <li><a href="#ref">References</a></li>
 
             <li><a href="#credits">Credits</a></li>
 
@@ -279,55 +283,120 @@
 </body>
 </html>
 
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      <parameter><label>Number of traces in CDP</label><int><property required="no"><keyword>nx=</keyword><value/><default/></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Offset increment</label><float><property required="no"><keyword>dx=</keyword><value/><default/></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Number of velocities</label><int><property required="no"><keyword>nv=</keyword><value/><default>50</default></property>
-        
-        
-        
-      </int></parameter>
-      <parameter><label>Velocity sampling interval</label><float><property required="no"><keyword>dv=</keyword><value/><default>50.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>First velocity</label><float><property required="no"><keyword>fv=</keyword><value/><default>1500.0</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Threshold for significance values</label><float min="0" max="1"><property required="no"><keyword>tau=</keyword><value/><default>0.5</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>NMO stretch mute value</label><float><property required="no"><keyword>smute=</keyword><value/><default>1.5</default></property>
-        
-        
-        
-      </float></parameter>
-      <parameter><label>Ratio of output to input time sampling intervals</label><int><property required="no"><keyword>dtratio=</keyword><value/><default>5</default></property></int></parameter>
-      <parameter><label>Length of smoothing window</label><int><property required="no"><keyword>nsmooth=</keyword><value/><default/></property></int></parameter><parameter><label>Semblance value to the power</label><float><property required="no"><keyword>pwr=</keyword><value/><default>1.0</default></property>
-        
-        
-        
-      </float></parameter>
-      
-      
-    <parameter><label>Echos extra information</label><flag><property required="no"><keyword>verbose=1</keyword><value>off</value><default>off</default></property>
-        
-        
-        
-      </flag></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of traces in CDP</label>
+        <int>
+          <property required="no">
+            <keyword>nx=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Offset increment</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value />
+            <default />
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of velocities</label>
+        <int>
+          <property required="no">
+            <keyword>nv=</keyword>
+            <value />
+            <default>50</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Velocity sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dv=</keyword>
+            <value />
+            <default>50.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First velocity</label>
+        <float>
+          <property required="no">
+            <keyword>fv=</keyword>
+            <value />
+            <default>1500.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Threshold for significance values</label>
+        <float min="0" max="1">
+          <property required="no">
+            <keyword>tau=</keyword>
+            <value />
+            <default>0.5</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>NMO stretch mute value</label>
+        <float>
+          <property required="no">
+            <keyword>smute=</keyword>
+            <value />
+            <default>1.5</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Ratio of output to input time sampling intervals</label>
+        <int>
+          <property required="no">
+            <keyword>dtratio=</keyword>
+            <value />
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Length of smoothing window</label>
+        <int>
+          <property required="no">
+            <keyword>nsmooth=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Semblance value to the power</label>
+        <float>
+          <property required="no">
+            <keyword>pwr=</keyword>
+            <value />
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echos extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

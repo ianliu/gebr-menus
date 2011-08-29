@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Zero</title>
   <description>Zero-out (or set constant) data within a time window</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,13 +22,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Zero</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Zero-out (or set constant) data within a time window
+            Zero-out (or set constant) data within a time window
            <!-- end des -->
           </div>
         </div>
@@ -35,7 +36,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -48,13 +49,13 @@
           <p>Zero-out (or set constant) data within a time window.</p>
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
-	  <p>Out 08, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
-	  <p>Aug 15, 2010: modified by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
-	  
+          <p>Out 08, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 15, 2010: modified by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          
           <!-- end cpy -->
         </div>
 
@@ -80,31 +81,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-10-08T16:08:54.913324Z</created>
     <modified>2010-08-16T02:36:20.571102Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Zero</title>
     <binary>suzero</binary>
     <description>Zero-out (or set constant) data within a time window</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -123,13 +127,13 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
           <span class="flowtitle">SU Zero</span>
           <!-- end tt2 -->
 
           <div class="description">
            <!-- begin des -->
-	    Zero-out (or set constant) data within a time window
+            Zero-out (or set constant) data within a time window
            <!-- end des -->
           </div>
         </div>
@@ -137,7 +141,7 @@
 
       <div class="category">
         <!-- begin cat -->
-	Editing, Sorting and Manipulation | Seismic Unix
+        Editing, Sorting and Manipulation | Seismic Unix
         <!-- end cat -->
       </div>
 
@@ -149,14 +153,14 @@
 
           <p>Zero-out (or set constant) data within a time window.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst -->
+              
+            <!-- begin lst -->
             <ul>
               <li class="req"><span class="reqlabel">Last time sample to zero out</span><br/></li>
 
@@ -170,26 +174,26 @@
             <!-- end lst -->
 
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-	<p>This program accesses the following header keywords
-	  <ul>
-	    <li>Number of samples</li>  <!-- ns -->
-	  </ul>
-	</p>	    
+        <p>This program accesses the following header keywords
+          <ul>
+            <li>Number of samples</li>  <!-- ns -->
+          </ul>
+        </p>        
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>CWP: Chris<br />
-	     Geocon: Garry Perratt</p>
+             Geocon: Garry Perratt</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -198,14 +202,14 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
 
             <li><a href="#credits">Credits</a></li>
 
-	    <li><a href="#notes">Notes</a></li>
+            <li><a href="#notes">Notes</a></li>
           </ul>
         </div>
 
@@ -221,23 +225,36 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
         <label>Last time sample to zero out</label>
-        
-      <int><property required="yes"><keyword>itmax=</keyword><value/><default/></property></int></parameter>
+        <int>
+          <property required="yes">
+            <keyword>itmax=</keyword>
+            <value />
+            <default />
+          </property>
+        </int>
+      </parameter>
       <parameter>
         <label>First time sample to zero out</label>
-        
-      <int><property required="no"><keyword>itmin=</keyword><value/><default>0</default></property></int></parameter>
+        <int>
+          <property required="no">
+            <keyword>itmin=</keyword>
+            <value />
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
       <parameter>
         <label>Value to set</label>
         <float>
           <property required="no">
             <keyword>value=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
         </float>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Spike</title>
   <description>Make a small spike data set</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -48,12 +49,12 @@
           <p>Creates a common offset su data file with up to four spikes
              for impulse response studies.</p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
           <p>Oct 22, 2007: written by G&ecirc;BR core team &lt;port@gebrproject.com&gt;</p>
-	  <p>May 19, 2010: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>May 19, 2010: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
         </div>
 
@@ -79,31 +80,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-22T15:00:00Z</created>
     <modified>2010-08-06T00:43:07.922036Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
-    
     <title>SU Spike</title>
     <binary>suspike</binary>
     <description>Make a small spike data set</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -156,13 +160,13 @@
             <h2>Parameters</h2>
 
             
-	    <!-- List of optional parameters -->
+            <!-- List of optional parameters -->
             <!-- begin lst -->
             <ul>
 
-	      <li class="group"><span class="grouplabel">Sampling properties</span>
-		
-		<ul>		
+              <li class="group"><span class="grouplabel">Sampling properties</span>
+                
+                <ul>            
 
               <li><span class="label">Number of time samples</span> 
               </li>
@@ -173,7 +177,7 @@
               <li><span class="label">Time sample rate in seconds</span> 
               </li>
 
-		</ul></li>
+                </ul></li>
 
               <li><span class="label">Offset</span> 
               </li>
@@ -181,73 +185,73 @@
               <li><span class="label">Number of spikes</span> 
               </li>
 
-	      <li class="group"><span class="grouplabel">Spike 1 properties</span>
-		
-		<ul>	
+              <li class="group"><span class="grouplabel">Spike 1 properties</span>
+                
+                <ul>    
 
               <li><span class="label">Trace number (from left) for spike 1</span><br/>
-              	Default value is <b>Number of traces</b>/4.</li>
+                Default value is <b>Number of traces</b>/4.</li>
 
               <li><span class="label">Time sample to spike 1</span><br/>
-              	Default value is <b>Number of time samples</b>/4.</li>
+                Default value is <b>Number of time samples</b>/4.</li>
 
-		</ul></li>
+                </ul></li>
 
-	      <li class="group"><span class="grouplabel">Spike 2 properties</span>
-		
-		<ul>
+              <li class="group"><span class="grouplabel">Spike 2 properties</span>
+                
+                <ul>
 
               <li><span class="label">Trace for spike 2</span><br/>
-              	Default value is <b>Number of traces</b>/4.</li>
+                Default value is <b>Number of traces</b>/4.</li>
 
               <li><span class="label">Time for spike 2</span><br/>
-              	Default value is 3*<b>Number of time samples</b>/4.</li>
+                Default value is 3*<b>Number of time samples</b>/4.</li>
 
-		</ul></li>
+                </ul></li>
 
-	      <li class="group"><span class="grouplabel">Spike 3 properties</span>
-		
-		<ul>
+              <li class="group"><span class="grouplabel">Spike 3 properties</span>
+                
+                <ul>
 
               <li><span class="label">Trace for spike 3</span><br/>
-              	Default value is 3*<b>Number of traces</b>/4.</li>
+                Default value is 3*<b>Number of traces</b>/4.</li>
 
               <li><span class="label">Time for spike 3</span><br/>
-              	Default value is <b>Number of time samples</b>/4.</li>
+                Default value is <b>Number of time samples</b>/4.</li>
 
-		</ul></li>
+                </ul></li>
 
 
-	      <li class="group"><span class="grouplabel">Spike 4 properties</span>
-		
-		<ul>
+              <li class="group"><span class="grouplabel">Spike 4 properties</span>
+                
+                <ul>
 
               <li><span class="label">Trace for spike 4</span><br/>
-              	Default value is 3*<b>Number of traces</b>/4.</li>
+                Default value is 3*<b>Number of traces</b>/4.</li>
 
               <li><span class="label">Time for spike 4</span> <br/>
-              	Default value is 3*<b>Number of time samples</b>/4.</li>
+                Default value is 3*<b>Number of time samples</b>/4.</li>
 
-		</ul></li>
+                </ul></li>
 
             </ul>
             <!-- end lst -->
 
           </div>
           <!-- end par -->
-	    
-	  <a name="notes" id="notes"></a>
+            
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
-	<p>This program sets the following header keywords:
-  	   <ul>
-    		<li>Number of samples,</li>  <!-- ns -->
-    		<li>Sampling interval in microseconds,</li>  <!-- dt -->
-    		<li>Offset (signed distance from source to receiver group).</li>  <!-- offset -->
-  	   </ul>
-	</p>
+        <p>This program sets the following header keywords:
+           <ul>
+                <li>Number of samples,</li>  <!-- ns -->
+                <li>Sampling interval in microseconds,</li>  <!-- dt -->
+                <li>Offset (signed distance from source to receiver group).</li>  <!-- offset -->
+           </ul>
+        </p>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
           <!-- begin cpy -->
 
@@ -263,7 +267,7 @@
 
             <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
             <li><a href="#notes">Notes</a></li>
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -281,49 +285,305 @@
   </div>
 </body>
 </html>
-]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      
-      <parameter><label>Sampling properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Number of time samples</label><int><property required="no"><keyword>nt=</keyword><value/><default>64</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>Number of traces</label><int><property required="no"><keyword>ntr=</keyword><value/><default>32</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>Time sample rate in seconds</label><float><property required="no"><keyword>dt=</keyword><value/><default>0.004</default></property>
-        
-        
-        
-      </float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Number of time samples</label><int><property required="no"><keyword>nt=</keyword><value/><default>64</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>Number of traces</label><int><property required="no"><keyword>ntr=</keyword><value/><default>32</default></property>
-        
-        
-        
-      </int></parameter><parameter><label>Time sample rate in seconds</label><float><property required="no"><keyword>dt=</keyword><value/><default>0.004</default></property>
-        
-        
-        
-      </float></parameter></parameters></group></parameter>
-      
-      <parameter><label>Offset</label><float><property required="no"><keyword>offset=</keyword><value/><default>400</default></property></float></parameter>
-      <parameter><label>Number of spikes</label><int><property required="no"><keyword>nspk=</keyword><value/><default>4</default></property>
-        
-        
-        
-      </int></parameter>
-      
-      
-      
-      
-      
-      
-      
-      
-    <parameter><label>Spike 1 properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Trace number (from left) for spike 1</label><int><property required="no"><keyword>ix1=</keyword><value/><default/></property></int></parameter><parameter><label>Time sample to spike 1</label><int><property required="no"><keyword>it1=</keyword><value/><default/></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Trace number (from left) for spike 1</label><int><property required="no"><keyword>ix1=</keyword><value/><default/></property></int></parameter><parameter><label>Time sample to spike 1</label><int><property required="no"><keyword>it1=</keyword><value/><default/></property></int></parameter></parameters></group></parameter><parameter><label>Spike 2 properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Trace for spike 2</label><int><property required="no"><keyword>ix2=</keyword><value/><default/></property></int></parameter><parameter><label>Time for spike 2</label><int><property required="no"><keyword>it2=</keyword><value/><default/></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Trace for spike 2</label><int><property required="no"><keyword>ix2=</keyword><value/><default/></property></int></parameter><parameter><label>Time for spike 2</label><int><property required="no"><keyword>it2=</keyword><value/><default/></property></int></parameter></parameters></group></parameter><parameter><label>Spike 3 properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Trace for spike 3</label><int><property required="no"><keyword>ix3=</keyword><value/><default/></property></int></parameter><parameter><label>Time for spike 3</label><int><property required="no"><keyword>it3=</keyword><value/><default/></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Trace for spike 3</label><int><property required="no"><keyword>ix3=</keyword><value/><default/></property></int></parameter><parameter><label>Time for spike 3</label><int><property required="no"><keyword>it3=</keyword><value/><default/></property></int></parameter></parameters></group></parameter><parameter><label>Spike 4 properties</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Trace for spike 4</label><int><property required="no"><keyword>ix4=</keyword><value/><default/></property></int></parameter><parameter><label>Time for spike 4</label><int><property required="no"><keyword>it4=</keyword><value/><default/></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label>Trace for spike 4</label><int><property required="no"><keyword>ix4=</keyword><value/><default/></property></int></parameter><parameter><label>Time for spike 4</label><int><property required="no"><keyword>it4=</keyword><value/><default/></property></int></parameter></parameters></group></parameter></parameters>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Sampling properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value />
+                    <default>64</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of traces</label>
+                <int>
+                  <property required="no">
+                    <keyword>ntr=</keyword>
+                    <value />
+                    <default>32</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sample rate in seconds</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value />
+                    <default>0.004</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>64</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>32</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default>0.004</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Offset</label>
+        <float>
+          <property required="no">
+            <keyword>offset=</keyword>
+            <value />
+            <default>400</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of spikes</label>
+        <int>
+          <property required="no">
+            <keyword>nspk=</keyword>
+            <value />
+            <default>4</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Spike 1 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Trace number (from left) for spike 1</label>
+                <int>
+                  <property required="no">
+                    <keyword>ix1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sample to spike 1</label>
+                <int>
+                  <property required="no">
+                    <keyword>it1=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Spike 2 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Trace for spike 2</label>
+                <int>
+                  <property required="no">
+                    <keyword>ix2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time for spike 2</label>
+                <int>
+                  <property required="no">
+                    <keyword>it2=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Spike 3 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Trace for spike 3</label>
+                <int>
+                  <property required="no">
+                    <keyword>ix3=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time for spike 3</label>
+                <int>
+                  <property required="no">
+                    <keyword>it3=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Spike 4 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Trace for spike 4</label>
+                <int>
+                  <property required="no">
+                    <keyword>ix4=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time for spike 4</label>
+                <int>
+                  <property required="no">
+                    <keyword>it4=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
+                  <default></default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
   </program>
 </flow>

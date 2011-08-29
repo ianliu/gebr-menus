@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Goupillaud PO</title>
   <description>Calculate Primaries-Only impulse response of a lossless goupillaud medium</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Goupillaud PO</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Calculate Primaries-Only impulse response of a lossless goupillaud medium
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Calculate Primaries-Only impulse response of a lossless goupillaud medium for plane waves at normal incidence.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Jun 23, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Jun 23, 2010<!-- end ver --></span>
+                <!-- begin ver -->Jun 23, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-06-23T17:54:04.623825Z</created>
     <modified>2010-08-06T00:43:05.195914Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Goupillaud PO</title>
     <binary>sugoupillaudpo</binary>
     <description>Calculate Primaries-Only impulse response of a lossless goupillaud medium</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -118,12 +123,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Goupillaud PO</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Calculate Primaries-Only impulse response of a lossless goupillaud medium
             <!-- end des -->
           </div>
@@ -131,84 +136,84 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Calculate Primaries-Only impulse response of a lossless goupillaud medium for plane waves at normal incidence.</p>
+        Calculate Primaries-Only impulse response of a lossless goupillaud medium for plane waves at normal incidence.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Source layer number</span><br />
-			Value in interval: 1 &lt;= <b>Source layer number</b> &lt;= "Number of samples" on header.<br />
-			Source is located at the top of layer.</li>
-		<li>
-			<span class="label">Receiver layer number</span><br />
-			Value minimum accepted is &gt;= 1.<br />
-			Receiver is located at the top of layer.</li>
-		<li>
-			<span class="label">Number of output time-samples</span><br />
-			Default value is long enough to capture all primaries.</li>
-		<li>
-			<span class="label">Type of seismogram</span>
-			<ul>
-				<li>
-					Vector field seismogram (displacement, velocity, acceleration)</li>
-				<li>
-					Pressure seismogram</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Source layer number</span><br />
+                        Value in interval: 1 &lt;= <b>Source layer number</b> &lt;= "Number of samples" on header.<br />
+                        Source is located at the top of layer.</li>
+                <li>
+                        <span class="label">Receiver layer number</span><br />
+                        Value minimum accepted is &gt;= 1.<br />
+                        Receiver is located at the top of layer.</li>
+                <li>
+                        <span class="label">Number of output time-samples</span><br />
+                        Default value is long enough to capture all primaries.</li>
+                <li>
+                        <span class="label">Type of seismogram</span>
+                        <ul>
+                                <li>
+                                        Vector field seismogram (displacement, velocity, acceleration)</li>
+                                <li>
+                                        Pressure seismogram</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Input: Reflection coefficient series:</p>
+        Input: Reflection coefficient series:</p>
 <pre>impedance[i] - impedance[i+1]                   
 r[i] = -----------------------------                  
-	impedance[i] + impedance[i+1]                   
+        impedance[i] + impedance[i+1]                   
 </pre>
 <p>
-	 </p>
+         </p>
 <p>
-	r[0]= surface refl. coef. (as seen from above)<br />
-	r[n]= refl. coef. of the deepest interface</p>
+        r[0]= surface refl. coef. (as seen from above)<br />
+        r[n]= refl. coef. of the deepest interface</p>
 <p>
-	Input file is to be in SU format, i.e., binary floats with a SU header.</p>
+        Input file is to be in SU format, i.e., binary floats with a SU header.</p>
 <p>
-	<b>Remarks:</b></p>
+        <b>Remarks:</b></p>
 <p>
-	For vector fields, a buried source produces a spike of amplitude 1 propagating downwards and a spike of amplitude -1 propagating upwards.<br />
-	A buried pressure source produces spikes of amplitude 1 both in the up and downward directions.<br />
-	A surface source induces only a downgoing spike of amplitude 1 at the top of the first layer (both for vector and pressure fields).</p>
+        For vector fields, a buried source produces a spike of amplitude 1 propagating downwards and a spike of amplitude -1 propagating upwards.<br />
+        A buried pressure source produces spikes of amplitude 1 both in the up and downward directions.<br />
+        A surface source induces only a downgoing spike of amplitude 1 at the top of the first layer (both for vector and pressure fields).</p>
 <p>
-	The "Sampling interval in microseconds" in the header of the input reflectivity file is interpreted as a two-way traveltime thicknes of the layers.<br />
-	The sampling interval of the output seismogram is the same as that of the input file.</p>
+        The "Sampling interval in microseconds" in the header of the input reflectivity file is interpreted as a two-way traveltime thicknes of the layers.<br />
+        The sampling interval of the output seismogram is the same as that of the input file.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Albena Mateeva, April 2001.</p>
+        CWP: Albena Mateeva, April 2001.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
-	Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
-		Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
-	Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
-	Credits</h2></a></li></ul></div>
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        Credits</h2></a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -216,7 +221,8 @@ r[i] = -----------------------------
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -224,7 +230,7 @@ r[i] = -----------------------------
         <int min="1">
           <property required="no">
             <keyword>l=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -234,7 +240,7 @@ r[i] = -----------------------------
         <int min="1">
           <property required="no">
             <keyword>k=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
         </int>
@@ -244,8 +250,8 @@ r[i] = -----------------------------
         <int min="" max="">
           <property required="no">
             <keyword>tmax=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -254,7 +260,7 @@ r[i] = -----------------------------
         <enum>
           <property required="no">
             <keyword>pV=</keyword>
-            <value/>
+            <value />
             <default>1</default>
           </property>
           <option>

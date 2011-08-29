@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Datum FD</title>
   <description>2D zero-offset finite difference acoustic wave-equation datuming</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Datum FD</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             2D zero-offset finite difference acoustic wave-equation datuming
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,16 +46,16 @@
 
           <p>2D zero-offset finite difference acoustic wave-equation datuming.</p>
 
-	  <!-- begin par --><!-- end par -->
+          <!-- begin par --><!-- end par -->
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>May 30, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -63,7 +64,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -74,7 +75,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->May 30, 2010<!-- end ver --></span>
+                <!-- begin ver -->May 30, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -82,30 +83,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-30T23:31:56.804411Z</created>
     <modified>2010-08-06T00:43:04.410470Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU Datum FD</title>
     <binary>sudatumfd</binary>
     <description>2D zero-offset finite difference acoustic wave-equation datuming</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -124,12 +129,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Datum FD</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             2D zero-offset finite difference acoustic wave-equation datuming
             <!-- end des -->
           </div>
@@ -137,7 +142,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
@@ -148,13 +153,13 @@
 
           <p>2D zero-offset finite difference acoustic wave-equation datuming.</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	    <!-- begin lst --><ul>
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">Number of time samples on each trace</span></li>
 
               <li class="req"><span class="reqlabel">Number of receivers per shot gather</span></li>
@@ -187,33 +192,33 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
+          <!-- end par -->
 
-	  <a name="notes" id="notes"></a>
+          <a name="notes" id="notes"></a>
           <h2>Notes</h2>
 
           <p>The algorithm is a 45-degree implicit-finite-difference scheme based on the one-way wave equation. It works on poststack (zero-offset) data only. The two velocity files, <strong>Velocity file used for thin-lens term</strong> and <strong>Velocity file used for diffraction term</strong>, are binary files containing floats with the format v[ix][iz]. There are two potentially different velocity files for the thin-lens and diffraction terms to allow for the use of a zero-velocity layer which allows for datuming from an irregular surface.</p>
 
-	  <p>Source and receiver locations must be set in the header values in order for the datuming to work properly. The leftmost position of the velocity models given in <strong>Velocity file used for thin-lens term</strong> and <strong>Velocity file used for diffraction term</strong> must also be given.</p>
+          <p>Source and receiver locations must be set in the header values in order for the datuming to work properly. The leftmost position of the velocity models given in <strong>Velocity file used for thin-lens term</strong> and <strong>Velocity file used for diffraction term</strong> must also be given.</p>
 
-	  <a name="ref" id="ref"></a>
+          <a name="ref" id="ref"></a>
           <h2>References</h2>
 
-	  <!-- List of references -->
+          <!-- List of references -->
           <ul>
             <li>Beasley, C., and Lynn, W., 1992, The zero-velocity layer: migration from irregular surfaces: Geophysics, 57, 1435-1443.</li>
 
             <li>Claerbout, J. F., 1985, Imaging the earth's interior: Blackwell Scientific Publications.</li>
           </ul>
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Author: Chris Robinson, 10/16/00, CWP, Colorado School of Mines.</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -222,9 +227,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#notes">Notes</a></li>
 
@@ -239,7 +244,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -247,7 +252,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -255,8 +261,8 @@
         <int>
           <property required="yes">
             <keyword>nt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -265,8 +271,8 @@
         <int>
           <property required="yes">
             <keyword>nx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -275,8 +281,8 @@
         <int>
           <property required="yes">
             <keyword>nsx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -285,8 +291,8 @@
         <int>
           <property required="yes">
             <keyword>nz=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -295,8 +301,8 @@
         <float>
           <property required="yes">
             <keyword>dz=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -305,8 +311,8 @@
         <int>
           <property required="yes">
             <keyword>mx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -315,8 +321,8 @@
         <int>
           <property required="yes">
             <keyword>mz=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -325,8 +331,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>vfile1=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -335,8 +341,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>vfile2=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -345,8 +351,8 @@
         <float>
           <property required="yes">
             <keyword>dx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -355,7 +361,7 @@
         <float>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
+            <value />
             <default>0.004</default>
           </property>
         </float>
@@ -365,7 +371,7 @@
         <int>
           <property required="no">
             <keyword>buff=</keyword>
-            <value/>
+            <value />
             <default>5</default>
           </property>
         </int>
@@ -375,7 +381,7 @@
         <int>
           <property required="no">
             <keyword>tap_len=</keyword>
-            <value/>
+            <value />
             <default>5</default>
           </property>
         </int>
@@ -385,7 +391,7 @@
         <float>
           <property required="no">
             <keyword>x_0=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>

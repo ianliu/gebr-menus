@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Mig PS</title>
   <description>Migration by phase shift with turning rays</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Mig PS</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Migration by phase shift with turning rays
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat --><!-- end cat -->
+        <!-- begin cat --><!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Migration by phase shift with turning rays.</p>
+        Migration by phase shift with turning rays.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	May 12, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        May 12, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->May 12, 2010<!-- end ver --></span>
+                <!-- begin ver -->May 12, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -59,30 +60,34 @@
 
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Davi Clemente</author>
   <email>davi.clemente@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-13T00:53:02.420274Z</created>
     <modified>2010-08-06T01:39:33.645211Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Migration and Dip Moveout</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
     <title>SU Mig PS</title>
     <binary>sumigps</binary>
     <description>Migration by phase shift with turning rays</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -94,12 +99,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU Mig PS</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Migration by phase shift with turning rays
             <!-- end des -->
           </div>
@@ -107,100 +112,100 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Migration by phase shift with turning rays.</p>
+        Migration by phase shift with turning rays.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<ul>
-		<li>
-			<span class="label">Time sampling interval</span><br />
-			Default value is set from header or is 0.004.</li>
-		<li>
-			<span class="label">Distance between sucessive cdp's</span><br />
-			Devault value is set from header or is 1.0.</li>
-		<li>
-			<span class="label">Trapezoidal window of frequencies to migrate</span></li>
-		<li>
-			<span class="label">Times corresponding to interval velocities</span></li>
-		<li>
-			<span class="label">Time samples</span>
-			<ul>
-				<li>
-					Normal</li>
-				<li>
-					Turned</li>
-				<li>
-					Normal and turned</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Interval velocities corresponding to times</span></li>
-		<li>
-			<span class="label">Binary file containing velocities</span></li>
-		<li>
-			<span class="label">Number of slopes</span></li>
-		<li>
-			<span class="label">Number of cpds to pad with zeros before FFT</span></li>
-		<li>
-			<span class="label">Leght of linear taper for left and right edges</span></li>
-		<li>
-			<span class="label">Echoes extra information</span></li>
-		<li>
-			<span class="label">Directory path for storing temporary files</span><br />
-			If non-empty, use the value as a directory path prefix for storing temporary files; else, if the CWP_TMPDIR environment variable is set use its value for the path; else, use tmpfile().</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+        <ul>
+                <li>
+                        <span class="label">Time sampling interval</span><br />
+                        Default value is set from header or is 0.004.</li>
+                <li>
+                        <span class="label">Distance between sucessive cdp's</span><br />
+                        Devault value is set from header or is 1.0.</li>
+                <li>
+                        <span class="label">Trapezoidal window of frequencies to migrate</span></li>
+                <li>
+                        <span class="label">Times corresponding to interval velocities</span></li>
+                <li>
+                        <span class="label">Time samples</span>
+                        <ul>
+                                <li>
+                                        Normal</li>
+                                <li>
+                                        Turned</li>
+                                <li>
+                                        Normal and turned</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Interval velocities corresponding to times</span></li>
+                <li>
+                        <span class="label">Binary file containing velocities</span></li>
+                <li>
+                        <span class="label">Number of slopes</span></li>
+                <li>
+                        <span class="label">Number of cpds to pad with zeros before FFT</span></li>
+                <li>
+                        <span class="label">Leght of linear taper for left and right edges</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+                <li>
+                        <span class="label">Directory path for storing temporary files</span><br />
+                        If non-empty, use the value as a directory path prefix for storing temporary files; else, if the CWP_TMPDIR environment variable is set use its value for the path; else, use tmpfile().</li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Input traces must be sorted by either increasing or decreasing cdp.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
+        Input traces must be sorted by either increasing or decreasing cdp.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
 <div>
-	The <strong>Times corresponding to interval velocities</strong> and <strong>Interval velocities corresponding to times </strong>arrays specify an interval velocity function of time. Linear interpolation and constant extrapolation is used to determine interval velocities at times not specified.  Values specified in <strong>Times corresponding to interval velocities</strong> must increase monotonically.<span class="Apple-tab-span" style="white-space:pre"> </span></div>
+        The <strong>Times corresponding to interval velocities</strong> and <strong>Interval velocities corresponding to times </strong>arrays specify an interval velocity function of time. Linear interpolation and constant extrapolation is used to determine interval velocities at times not specified.  Values specified in <strong>Times corresponding to interval velocities</strong> must increase monotonically.<span class="Apple-tab-span" style="white-space:pre"> </span></div>
 <div>
-	 </div>
+         </div>
 <div>
-	Alternatively, interval velocities may be stored in a binary file containing one velocity for every time sample.  If <strong>Binary file containing velocities</strong> is specified, then the <strong>Times corresponding to interval velocities</strong> and <strong>Interval velocities corresponding to times </strong> arrays are ignored.</div>
+        Alternatively, interval velocities may be stored in a binary file containing one velocity for every time sample.  If <strong>Binary file containing velocities</strong> is specified, then the <strong>Times corresponding to interval velocities</strong> and <strong>Interval velocities corresponding to times </strong> arrays are ignored.</div>
 <div>
-	 </div>
+         </div>
 <div>
-	The time of first sample is assumed to be zero, regardless of the value of the trace header field delrt.</div>
+        The time of first sample is assumed to be zero, regardless of the value of the trace header field delrt.</div>
 <div>
-	 </div>
+         </div>
 <div>
-	This program access the following header keywords:</div>
+        This program access the following header keywords:</div>
 <ul>
-	<li>
-		Number of samples</li>
-	<li>
-		Sampling interval in microseconds</li>
-	<li>
-		Sample spacing between traces</li>
+        <li>
+                Number of samples</li>
+        <li>
+                Sampling interval in microseconds</li>
+        <li>
+                Sample spacing between traces</li>
 </ul>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	 CWP: Dave Hale</p>
+         CWP: Dave Hale</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div><div class="links"> </div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div><div class="links"> </div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">GêBR 0.9.16 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -209,7 +214,8 @@
 
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -217,8 +223,8 @@
         <float>
           <property required="no">
             <keyword>dt=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -227,8 +233,8 @@
         <float>
           <property required="no">
             <keyword>dx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -237,8 +243,8 @@
         <float>
           <property required="no" separator=",">
             <keyword>ffil=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>
@@ -247,8 +253,8 @@
         <enum>
           <property required="no">
             <keyword>ntflag=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
           <option>
             <label>Normal</label>
@@ -269,7 +275,7 @@
         <float>
           <property required="no" separator=",">
             <keyword>tmig=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>
@@ -279,7 +285,7 @@
         <float>
           <property required="no" separator=",">
             <keyword>vmig=</keyword>
-            <value/>
+            <value />
             <default>1500.0</default>
           </property>
         </float>
@@ -289,8 +295,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>vfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -299,8 +305,8 @@
         <int>
           <property required="no">
             <keyword>np=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -309,7 +315,7 @@
         <int min="" max="">
           <property required="no">
             <keyword>nxpad=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
         </int>
@@ -319,7 +325,7 @@
         <int>
           <property required="no">
             <keyword>ltaper=</keyword>
-            <value/>
+            <value />
             <default>0</default>
           </property>
         </int>
@@ -339,8 +345,8 @@
         <file directory="yes" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>tmpdir=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>

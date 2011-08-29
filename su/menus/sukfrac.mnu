@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU K Frac</title>
   <description>Apply fractional powers of i|k| to data, with phase shift</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,12 +15,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU K Frac</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Apply fractional powers of i|k| to data, with phase shift
             <!-- end des -->
           </div>
@@ -27,30 +28,30 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Apply fractional powers of i module of k to data, with phase shift.</p>
+        Apply fractional powers of i module of k to data, with phase shift.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Mar 15, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+        Mar 15, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->Mar 15, 2010<!-- end ver --></span>
+                <!-- begin ver -->Mar 15, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -59,30 +60,34 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
   <author>Gabriel S. Sobral</author>
   <email>sobral@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-03-15T14:59:59.178164Z</created>
     <modified>2010-08-06T00:43:05.686132Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Filtering, Transforms and Attributes</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>SU K Frac</title>
     <binary>sukfrac</binary>
     <description>Apply fractional powers of i|k| to data, with phase shift</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -94,12 +99,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU K Frac</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Apply fractional powers of i|k| to data, with phase shift
             <!-- end des -->
           </div>
@@ -107,31 +112,31 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Apply fractional powers of i module of k to data, with phase shift.</p>
+        Apply fractional powers of i module of k to data, with phase shift.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<!-- begin lst -->
+        <h2 id="header_1">
+                Parameters</h2>
+        <!-- begin lst -->
             <ul>
               <li class="group"><span class="grouplabel">Operation</span>
 
               <ul>
-		<li class="req"><span class="reqlabel">Comom operations</span>
-		<ul>
-		<li> Differentiation </li>
-		<li> Semi-differentiation </li>
-		<li> Phase shift only (default)</li>
-		<li> Semi-integration </li>
-		<li> Integration </li>
-		</ul>
-		</li>
+                <li class="req"><span class="reqlabel">Comom operations</span>
+                <ul>
+                <li> Differentiation </li>
+                <li> Semi-differentiation </li>
+                <li> Phase shift only (default)</li>
+                <li> Semi-integration </li>
+                <li> Integration </li>
+                </ul>
+                </li>
 
               <li class="req"><span class="reqlabel">Exponent of (i*sqrt(k1^2 + k2^2))</span></li>
 
@@ -139,64 +144,64 @@
 
 
 
-		<li>
-			<span class="label">Exponent of (i*sqrt(k1^2 + k2^2))</span>
-			<ul>
-				<li>
-					If the expoent is zero will be applied a phase shift only.</li>
-				<li>
-					If the expoent is larger than zero will be applied a differentiation.</li>
-				<li>
-					If the expoent is less than zero will be applied a integration.</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Sign on transform exponent</span></li>
-		<li>
-			<span class="label">Sampling interval in first dimension</span></li>
-		<li>
-			<span class="label">Sampling interval in second dimension</span></li>
-		<li>
-			<span class="label">Phase shift value</span><br />
-			The phase will be the value of this parameter multiplied by π.</li>
-		<li>
-			<span class="label">Quiet mode</span></li>
-	</ul>
+                <li>
+                        <span class="label">Exponent of (i*sqrt(k1^2 + k2^2))</span>
+                        <ul>
+                                <li>
+                                        If the expoent is zero will be applied a phase shift only.</li>
+                                <li>
+                                        If the expoent is larger than zero will be applied a differentiation.</li>
+                                <li>
+                                        If the expoent is less than zero will be applied a integration.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Sign on transform exponent</span></li>
+                <li>
+                        <span class="label">Sampling interval in first dimension</span></li>
+                <li>
+                        <span class="label">Sampling interval in second dimension</span></li>
+                <li>
+                        <span class="label">Phase shift value</span><br />
+                        The phase will be the value of this parameter multiplied by π.</li>
+                <li>
+                        <span class="label">Quiet mode</span></li>
+        </ul>
 <!-- end lst -->  <!-- end lst -->
 
           </div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	The relation: <em>W = 2 π F</em> is well known for frequency, but there doesn't seem to be a commonly used letter corresponding to F for the spatial conjugate transform variables. We use K1 and K2 for this.<br />
-	More specifically we assume a phase:</p>
+        The relation: <em>W = 2 π F</em> is well known for frequency, but there doesn't seem to be a commonly used letter corresponding to F for the spatial conjugate transform variables. We use K1 and K2 for this.<br />
+        More specifically we assume a phase:</p>
 <blockquote>
-	 -i(k1 x1 + k2 x2) = -2 π i(K1 x1 + K2 x2)</blockquote><br />
+         -i(k1 x1 + k2 x2) = -2 π i(K1 x1 + K2 x2)</blockquote><br />
 <p>
-	Algorithm:</p>
+        Algorithm:</p>
 <blockquote>
-	g(x1,x2) = Re[ 2DINVFFT{((sign)i|k|)^power2DFFT(f)} e^i(phase) ]</blockquote>
+        g(x1,x2) = Re[ 2DINVFFT{((sign)i|k|)^power2DFFT(f)} e^i(phase) ]</blockquote>
 </p>
 <p>
-	<strong>Caveat</strong>:<br /> Large amplitude errors will result of the data set has too few points.</p>
+        <strong>Caveat</strong>:<br /> Large amplitude errors will result of the data set has too few points.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	 CWP: John Stockwell, June 1997, based on sufrac.</p>
+         CWP: John Stockwell, June 1997, based on sufrac.</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -205,86 +210,139 @@
 
 
 </body></html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
-    <parameters default-selection="0" selection=""><parameter>
+    <parameters default-selection="0" selection="">
+      <parameter>
         <label>Operation</label>
         <group instanciable="no" expand="yes">
-          <template-instance><parameters default-selection="1" selection="1">
+          <template-instance>
+            <parameters default-selection="1" selection="1">
+              <parameter>
+                <label>Comom operations</label>
+                <enum>
+                  <property required="yes">
+                    <keyword>power=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                  <option>
+                    <label>Differentiation</label>
+                    <value>-1</value>
+                  </option>
+                  <option>
+                    <label>Semi-differentiation</label>
+                    <value>-0.5</value>
+                  </option>
+                  <option>
+                    <label>Phase shift only</label>
+                    <value>0</value>
+                  </option>
+                  <option>
+                    <label>Semi-integration</label>
+                    <value>0.5</value>
+                  </option>
+                  <option>
+                    <label>Integration</label>
+                    <value>1</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Exponent of (i*sqrt(k1^2 + k2^2))</label>
+                <float>
+                  <property required="yes">
+                    <keyword>power=</keyword>
+                    <value />
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="1" selection="1">
             <parameter>
-              <label>Comom operations</label>
-              <enum>
-                <property required="yes">
-                  <keyword>power=</keyword>
-                  <value/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-                <option>
-                  <label>Differentiation</label>
-                  <value>-1</value>
-                </option>
-                <option>
-                  <label>Semi-differentiation</label>
-                  <value>-0.5</value>
-                </option>
-                <option>
-                  <label>Phase shift only</label>
-                  <value>0</value>
-                </option>
-                <option>
-                  <label>Semi-integration</label>
-                  <value>0.5</value>
-                </option>
-                <option>
-                  <label>Integration</label>
-                  <value>1</value>
-                </option>
-              </enum>
+              </reference>
             </parameter>
-            <parameter><label>Exponent of (i*sqrt(k1^2 + k2^2))</label><float><property required="yes"><keyword>power=</keyword><value/><default>0</default></property></float></parameter>
-          </parameters></template-instance>
-        <parameters default-selection="1" selection="1">
             <parameter>
-              <label>Comom operations</label>
-              <enum>
-                <property required="yes">
-                  <keyword>power=</keyword>
-                  <value/>
+              <label></label>
+              <reference>
+                <property required="no">
+                  <keyword />
+                  <value></value>
                   <default>0</default>
                 </property>
-                <option>
-                  <label>Differentiation</label>
-                  <value>-1</value>
-                </option>
-                <option>
-                  <label>Semi-differentiation</label>
-                  <value>-0.5</value>
-                </option>
-                <option>
-                  <label>Phase shift only</label>
-                  <value>0</value>
-                </option>
-                <option>
-                  <label>Semi-integration</label>
-                  <value>0.5</value>
-                </option>
-                <option>
-                  <label>Integration</label>
-                  <value>1</value>
-                </option>
-              </enum>
+              </reference>
             </parameter>
-            <parameter><label>Exponent of (i*sqrt(k1^2 + k2^2))</label><float><property required="yes"><keyword>power=</keyword><value/><default>0</default></property></float></parameter>
-          </parameters></group>
-      </parameter><parameter><label>Sign on transform exponent</label><enum><property required="no"><keyword>sign=</keyword><value/><default>1</default></property><option><label>positive</label><value>1</value></option><option><label>negative</label><value>-1</value></option></enum></parameter><parameter><label>Sampling interval in first direction</label><float><property required="no"><keyword>d1=</keyword><value/><default>1</default></property></float></parameter><parameter><label>Sampling interval in second direction</label><float><property required="no"><keyword>d2=</keyword><value/><default>1</default></property></float></parameter><parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Sign on transform exponent</label>
+        <enum>
+          <property required="no">
+            <keyword>sign=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+          <option>
+            <label>positive</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>negative</label>
+            <value>-1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Sampling interval in first direction</label>
+        <float>
+          <property required="no">
+            <keyword>d1=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Sampling interval in second direction</label>
+        <float>
+          <property required="no">
+            <keyword>d2=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
         <label>Phase shift value</label>
         <float>
           <property required="no">
             <keyword>phasefac=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
-      </parameter><parameter><label>Quiet mode</label><flag><property required="no"><keyword>verbose=0</keyword><value>off</value><default>on</default></property></flag></parameter></parameters>
+      </parameter>
+      <parameter>
+        <label>Quiet mode</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=0</keyword>
+            <value>off</value>
+            <default>on</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>Make Velocity</title>
   <description>Make a Velocity function v(x,y,z)</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Make Velocity</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Make a Velocity function v(x,y,z)
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -45,17 +46,17 @@
 
           <p>Make a Velocity function v(x,y,z).</p>
 
-	  <!-- begin par --><!-- end par -->
-	   
+          <!-- begin par --><!-- end par -->
+           
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>May 06, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -64,7 +65,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -75,7 +76,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->May 06, 2010<!-- end ver --></span>
+                <!-- begin ver -->May 06, 2010<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -83,30 +84,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2010-05-06T14:39:17.292237Z</created>
     <modified>2010-08-06T00:43:02.841404Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
     <title>Make Velocity</title>
     <binary>makevel</binary>
     <description>Make a Velocity function v(x,y,z)</description>
-    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -125,12 +130,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">Make Velocity</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Make a Velocity function v(x,y,z)
             <!-- end des -->
           </div>
@@ -138,7 +143,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
       </div>
 
       <div class="main">
@@ -149,14 +154,14 @@
 
           <p>Make a Velocity function v(x,y,z).</p>
 
-	  <!-- begin par -->
+          <!-- begin par -->
           <div class="parameters">
 
             <a name="par" id="par"></a>
             <h2>Parameters</h2>
 
-	      
-	    <!-- begin lst --><ul>
+              
+            <!-- begin lst --><ul>
               <li class="req"><span class="reqlabel">Number of z samples (1st dimension)</span></li>
 
               <li><span class="label">Number of y samples (2nd dimension)</span></li>
@@ -232,16 +237,16 @@
               <li><span class="label">V(z) chirp amplitude</span></li>
 
               <li><span class="label">Z at which to begin chirp</span><br/>
-		Default value is equal a <b>First z sample</b>.</li>
+                Default value is equal a <b>First z sample</b>.</li>
 
               <li><span class="label">Z at which to end chirp</span><br/>
-		Default value is equal a <b>First z sample</b> + (<b>Number of z samples (1st dimension)</b> - 1) * <b>Z sampling interval</b>.</li>
+                Default value is equal a <b>First z sample</b> + (<b>Number of z samples (1st dimension)</b> - 1) * <b>Z sampling interval</b>.</li>
 
               <li><span class="label">Wavelength at beginning of chirp</span><br/>
-		Default value is equal a <b>Z sampling interval</b>.</li>
+                Default value is equal a <b>Z sampling interval</b>.</li>
 
               <li><span class="label">Wavelength at end of chirp</span><br/>
-		Default value is equal a <b>Z sampling interval</b>.</li>
+                Default value is equal a <b>Z sampling interval</b>.</li>
 
               <li><span class="label">Exponent of chirp</span></li>
 
@@ -251,17 +256,17 @@
             <!-- end lst -->
             
           </div>
-	  <!-- end par -->
-	    
+          <!-- end par -->
+            
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
           <p>Author: Dave Hale</p>
 
-	  <!-- begin cpy -->
-	  <!-- end cpy -->
-	  
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
         </div>
 
         <div class="navigation">
@@ -270,9 +275,9 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr -->
+            <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-	    <!-- end mpr -->
+            <!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -283,7 +288,7 @@
 
       <div class="footer">
         <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
-		<!-- begin ver -->SU 42<!-- end ver --></span>
+                <!-- begin ver -->SU 42<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -291,7 +296,8 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -299,398 +305,412 @@
         <int>
           <property required="yes">
             <keyword>nz=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
       <parameter>
-              <label>Number of y samples (2nd dimension)</label>
-              <int>
-                <property required="no">
-                  <keyword>ny=</keyword>
-                  <value/>
-                  <default>1</default>
-                </property>
-              </int>
-            </parameter><parameter>
+        <label>Number of y samples (2nd dimension)</label>
+        <int>
+          <property required="no">
+            <keyword>ny=</keyword>
+            <value />
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
         <label>Number of x samples (3rd dimension)</label>
         <int>
           <property required="yes">
             <keyword>nx=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
       <parameter>
         <label>1st dimension properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Z sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First z sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fz=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Z sampling interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First z sample</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Z sampling interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dz=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First z sample</label>
-              <float>
-                <property required="no">
-                  <keyword>fz=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>2nd dimension properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
-            
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Y sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dy=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First y sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fy=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Y sampling interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dy=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First y sample</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fy=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            
-            <parameter>
-              <label>Y sampling interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dy=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First y sample</label>
-              <float>
-                <property required="no">
-                  <keyword>fy=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>3rd dimension properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dx=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First x sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fx=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>X sampling interval</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>First x sample</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>fx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>X sampling interval</label>
-              <float>
-                <property required="no">
-                  <keyword>dx=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>First x sample</label>
-              <float>
-                <property required="no">
-                  <keyword>fx=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Velocity properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Velocity at origin (x=0,y=0,z=0)</label>
+                <float>
+                  <property required="no">
+                    <keyword>v000=</keyword>
+                    <value />
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Velocity gradient with respect to x</label>
+                <float>
+                  <property required="no">
+                    <keyword>dvdx=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Velocity gradient with respect to y</label>
+                <float>
+                  <property required="no">
+                    <keyword>dvdy=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Velocity gradient with respect to z</label>
+                <float>
+                  <property required="no">
+                    <keyword>dvdz=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Velocity at origin (x=0,y=0,z=0)</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>v000=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>2.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Velocity gradient with respect to x</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dvdx=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Velocity gradient with respect to y</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dvdy=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Velocity gradient with respect to z</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dvdz=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Velocity at origin (x=0,y=0,z=0)</label>
-              <float>
-                <property required="no">
-                  <keyword>v000=</keyword>
-                  <value/>
-                  <default>2.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Velocity gradient with respect to x</label>
-              <float>
-                <property required="no">
-                  <keyword>dvdx=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Velocity gradient with respect to y</label>
-              <float>
-                <property required="no">
-                  <keyword>dvdy=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Velocity gradient with respect to z</label>
-              <float>
-                <property required="no">
-                  <keyword>dvdz=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Parabolic lens properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Velocity perturbation in parabolic lens</label>
+                <float>
+                  <property required="no">
+                    <keyword>vlens=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Thickness of parabolic lens</label>
+                <float>
+                  <property required="no">
+                    <keyword>tlens=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Diameter of parabolic lens</label>
+                <float>
+                  <property required="no">
+                    <keyword>dlens=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X coordinate of center of parabolic lens</label>
+                <float>
+                  <property required="no">
+                    <keyword>xlens=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Y coordinate of center of parabolic lens</label>
+                <float>
+                  <property required="no">
+                    <keyword>ylens=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z coordinate of center of parabolic lens</label>
+                <float>
+                  <property required="no">
+                    <keyword>zlens=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>Velocity perturbation in parabolic lens</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>vlens=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Thickness of parabolic lens</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>tlens=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Diameter of parabolic lens</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>dlens=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>X coordinate of center of parabolic lens</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>xlens=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Y coordinate of center of parabolic lens</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>ylens=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z coordinate of center of parabolic lens</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>zlens=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>Velocity perturbation in parabolic lens</label>
-              <float>
-                <property required="no">
-                  <keyword>vlens=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Thickness of parabolic lens</label>
-              <float>
-                <property required="no">
-                  <keyword>tlens=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Diameter of parabolic lens</label>
-              <float>
-                <property required="no">
-                  <keyword>dlens=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>X coordinate of center of parabolic lens</label>
-              <float>
-                <property required="no">
-                  <keyword>xlens=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Y coordinate of center of parabolic lens</label>
-              <float>
-                <property required="no">
-                  <keyword>ylens=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z coordinate of center of parabolic lens</label>
-              <float>
-                <property required="no">
-                  <keyword>zlens=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
       <parameter>
         <label>Standard deviation of random perturbation</label>
         <float>
           <property required="no">
             <keyword>vran=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>
@@ -700,8 +720,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>vzfile=</keyword>
-            <value/>
-            <default/>
+            <value></value>
+            <default />
           </property>
         </file>
       </parameter>
@@ -710,7 +730,7 @@
         <float>
           <property required="no">
             <keyword>vzran=</keyword>
-            <value/>
+            <value />
             <default>0.0</default>
           </property>
         </float>
@@ -718,130 +738,133 @@
       <parameter>
         <label>Chirp properties</label>
         <group instanciable="no" expand="no">
-          <template-instance><parameters default-selection="0" selection="">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>V(z) chirp amplitude</label>
+                <float>
+                  <property required="no">
+                    <keyword>vzc=</keyword>
+                    <value />
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z at which to begin chirp</label>
+                <float>
+                  <property required="no">
+                    <keyword>z1c=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z at which to end chirp</label>
+                <float>
+                  <property required="no">
+                    <keyword>z2c=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Wavelength at beginning of chirp</label>
+                <float>
+                  <property required="no">
+                    <keyword>l1c=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Wavelength at end of chirp</label>
+                <float>
+                  <property required="no">
+                    <keyword>l2c=</keyword>
+                    <value />
+                    <default />
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Exponent of chirp</label>
+                <float>
+                  <property required="no">
+                    <keyword>exc=</keyword>
+                    <value />
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
             <parameter>
-              <label>V(z) chirp amplitude</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>vzc=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>0.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z at which to begin chirp</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>z1c=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Z at which to end chirp</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>z2c=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Wavelength at beginning of chirp</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>l1c=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Wavelength at end of chirp</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>l2c=</keyword>
-                  <value/>
-                  <default/>
+                  <keyword />
+                  <value></value>
+                  <default></default>
                 </property>
-              </float>
+              </reference>
             </parameter>
             <parameter>
-              <label>Exponent of chirp</label>
-              <float>
+              <label></label>
+              <reference>
                 <property required="no">
-                  <keyword>exc=</keyword>
-                  <value/>
+                  <keyword />
+                  <value></value>
                   <default>1.0</default>
                 </property>
-              </float>
+              </reference>
             </parameter>
-          </parameters></template-instance>
-        <parameters default-selection="0" selection="">
-            <parameter>
-              <label>V(z) chirp amplitude</label>
-              <float>
-                <property required="no">
-                  <keyword>vzc=</keyword>
-                  <value/>
-                  <default>0.0</default>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z at which to begin chirp</label>
-              <float>
-                <property required="no">
-                  <keyword>z1c=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Z at which to end chirp</label>
-              <float>
-                <property required="no">
-                  <keyword>z2c=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Wavelength at beginning of chirp</label>
-              <float>
-                <property required="no">
-                  <keyword>l1c=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Wavelength at end of chirp</label>
-              <float>
-                <property required="no">
-                  <keyword>l2c=</keyword>
-                  <value/>
-                  <default/>
-                </property>
-              </float>
-            </parameter>
-            <parameter>
-              <label>Exponent of chirp</label>
-              <float>
-                <property required="no">
-                  <keyword>exc=</keyword>
-                  <value/>
-                  <default>1.0</default>
-                </property>
-              </float>
-            </parameter>
-          </parameters></group>
+          </parameters>
+        </group>
       </parameter>
     </parameters>
   </program>

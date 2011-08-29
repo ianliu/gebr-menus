@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU WP 2D Compress</title>
   <description>Compress a 2D section using wavelet Packets</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -14,7 +15,7 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU WP 2D Compress</span>
          <!-- end tt2 -->
 
@@ -32,20 +33,20 @@
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Compress a 2D seismic section trace-by-trace using wavelet Packets.</p>
+        Compress a 2D seismic section trace-by-trace using wavelet Packets.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	Set 24, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Set 24, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <p>
-	Aug 18, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+        Aug 18, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -59,31 +60,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-09-24T19:39:40.763078Z</created>
     <modified>2010-09-13T00:01:22.657906Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Data Compression</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU WP 2D Compress</title>
     <binary>wpc1comp2</binary>
     <description>Compress a 2D section using wavelet Packets</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -95,7 +99,7 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU WP 2D Compress</span>
          <!-- end tt2 -->
 
@@ -113,45 +117,45 @@
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Compress a 2D seismic section trace-by-trace using wavelet Packets.</p>
+        Compress a 2D seismic section trace-by-trace using wavelet Packets.</p>
 <p>
-	This program is used to compress a 2D section using 1D method. But it is not a true 2D compression algorithm, since the later direction is not compressed at all.</p>
+        This program is used to compress a 2D section using 1D method. But it is not a true 2D compression algorithm, since the later direction is not compressed at all.</p>
 <p>
-	It can be used in situations where random accessing of each trace is desirable, or when there are very few traces and normal 2D compression algorithm will not compress.</p>
+        It can be used in situations where random accessing of each trace is desirable, or when there are very few traces and normal 2D compression algorithm will not compress.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li class="req">
-			<span class="reqlabel">Number of samples in each trace</span></li>
-		<li>
-			<span class="label">Relative RMS error allowed in compression</span><br />
-			The default value for this parameter is 0.01.</li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of samples in each trace</span></li>
+                <li>
+                        <span class="label">Relative RMS error allowed in compression</span><br />
+                        The default value for this parameter is 0.01.</li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	The parameter <b>Relative RMS error allowed in compression</b> is used control the allowable compression error, and thus the compression ratio. The larger the error, the more the more compression you can get.<br />
-	The amount of error depends on the type of data and the application of the compression. From author experience the value of 0.01 is a safe choice even when the compressed data are used for further processing.<br />
-	For some other applications, it may be set higher values to achieve larger compression.</p>
+        The parameter <b>Relative RMS error allowed in compression</b> is used control the allowable compression error, and thus the compression ratio. The larger the error, the more the more compression you can get.<br />
+        The amount of error depends on the type of data and the application of the compression. From author experience the value of 0.01 is a safe choice even when the compressed data are used for further processing.<br />
+        For some other applications, it may be set higher values to achieve larger compression.</p>
 <h3>
-	Caveat</h3>
+        Caveat</h3>
 <p>
-	For the current implementation, the compressed data are not portable, i.e., the data compressed on one platform might not be recognizable on another.</p>
+        For the current implementation, the compressed data are not portable, i.e., the data compressed on one platform might not be recognizable on another.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	CWP: Tong Chen</p>
+        CWP: Tong Chen</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -165,7 +169,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -173,8 +178,8 @@
         <int>
           <property required="yes">
             <keyword>n1=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </int>
       </parameter>
@@ -183,8 +188,8 @@
         <float>
           <property required="no">
             <keyword>error=</keyword>
-            <value/>
-            <default/>
+            <value />
+            <default />
           </property>
         </float>
       </parameter>

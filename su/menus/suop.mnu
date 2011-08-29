@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU Unary Operations</title>
   <description>Do unary arithmetic operation on segys</description>
-  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -34,22 +35,22 @@
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Do unary arithmetic operation on segys.</p>
+        Do unary arithmetic operation on segys.</p>
 <h2 id="header_1">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	GêBR core team</p>
+        GêBR core team</p>
 <p>
-	Jul 20, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+        Jul 20, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
 <p>
-	Aug 12, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+        Aug 12, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
 <!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -63,31 +64,34 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2007-10-08T15:00:00Z</created>
     <modified>2010-08-21T00:32:13.383493Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU Unary Operations</title>
     <binary>suop</binary>
     <description>Do unary arithmetic operation on segys</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
     <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -116,126 +120,126 @@
 
         <div class="main">
           <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Performs unary arithmetic operations to each trace of the data.</p>
+        Performs unary arithmetic operations to each trace of the data.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-	<ul>
-		<li>
-			<span class="label">Operation</span>
-			<ul>
-				<li>
-					Absolute Value</li>
-				<li>
-					Remove average value</li>
-				<li>
-					Signed square root</li>
-				<li>
-					Square</li>
-				<li>
-					Signed square</li>
-				<li>
-					Signum function</li>
-				<li>
-					Exponentiate</li>
-				<li>
-					Signed natural log</li>
-				<li>
-					Signed log base 2</li>
-				<li>
-					Signed common log</li>
-				<li>
-					Cosine</li>
-				<li>
-					Sine</li>
-				<li>
-					Tangent</li>
-				<li>
-					Hyperbolic cosine</li>
-				<li>
-					Hyperbolic sine</li>
-				<li>
-					Hyperbolic tangent</li>
-				<li>
-					Divide trace by Max. Value</li>
-				<li>
-					20 * Signed common log (data)</li>
-				<li>
-					Negate Value</li>
-				<li>
-					Pass only positive value</li>
-				<li>
-					Pass only negative values</li>
-				<li>
-					Running sum trace integration</li>
-				<li>
-					Running diff trace differentiation</li>
-				<li>
-					(v[i+1] - v[i]) / ((v[i+1] + v[i])</li>
-				<li>
-					Modulo 2 pi</li>
-				<li>
-					Inverse</li>
-				<li>
-					RMS amplitude</li>
-				<li>
-					Sonic to velocity (ft/s) conversion</li>
-				<li>
-					Sonic to velocity (m/s) conversion</li>
-				<li>
-					Density (g/cc) to metric (kg/m³) conversion</li>
-				<li>
-					2nd order vertical derivative</li>
-				<li>
-					4th power vertical derivative</li>
-				<li>
-					Top-down integration</li>
-				<li>
-					Local extrema to spikes</li>
-				<li>
-					Spike and fill to next spike</li>
-				<li>
-					Local Dominant frequency</li>
-				<li>
-					Preserve least non-zero amps</li>
-				<li>
-					No operation</li>
-				<br />
-				Window operations<br />
-				<li>
-					Arithmetic mean</li>
-				<li>
-					Standard deviation</li>
-				<li>
-					Variance</li>
-			</ul>
-		</li>
-		<li>
-			<span class="label">Number of time samples in window</span><br />
-			Only useful for Window operations options of <b>Operation</b></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+        <ul>
+                <li>
+                        <span class="label">Operation</span>
+                        <ul>
+                                <li>
+                                        Absolute Value</li>
+                                <li>
+                                        Remove average value</li>
+                                <li>
+                                        Signed square root</li>
+                                <li>
+                                        Square</li>
+                                <li>
+                                        Signed square</li>
+                                <li>
+                                        Signum function</li>
+                                <li>
+                                        Exponentiate</li>
+                                <li>
+                                        Signed natural log</li>
+                                <li>
+                                        Signed log base 2</li>
+                                <li>
+                                        Signed common log</li>
+                                <li>
+                                        Cosine</li>
+                                <li>
+                                        Sine</li>
+                                <li>
+                                        Tangent</li>
+                                <li>
+                                        Hyperbolic cosine</li>
+                                <li>
+                                        Hyperbolic sine</li>
+                                <li>
+                                        Hyperbolic tangent</li>
+                                <li>
+                                        Divide trace by Max. Value</li>
+                                <li>
+                                        20 * Signed common log (data)</li>
+                                <li>
+                                        Negate Value</li>
+                                <li>
+                                        Pass only positive value</li>
+                                <li>
+                                        Pass only negative values</li>
+                                <li>
+                                        Running sum trace integration</li>
+                                <li>
+                                        Running diff trace differentiation</li>
+                                <li>
+                                        (v[i+1] - v[i]) / ((v[i+1] + v[i])</li>
+                                <li>
+                                        Modulo 2 pi</li>
+                                <li>
+                                        Inverse</li>
+                                <li>
+                                        RMS amplitude</li>
+                                <li>
+                                        Sonic to velocity (ft/s) conversion</li>
+                                <li>
+                                        Sonic to velocity (m/s) conversion</li>
+                                <li>
+                                        Density (g/cc) to metric (kg/m³) conversion</li>
+                                <li>
+                                        2nd order vertical derivative</li>
+                                <li>
+                                        4th power vertical derivative</li>
+                                <li>
+                                        Top-down integration</li>
+                                <li>
+                                        Local extrema to spikes</li>
+                                <li>
+                                        Spike and fill to next spike</li>
+                                <li>
+                                        Local Dominant frequency</li>
+                                <li>
+                                        Preserve least non-zero amps</li>
+                                <li>
+                                        No operation</li>
+                                <br />
+                                Window operations<br />
+                                <li>
+                                        Arithmetic mean</li>
+                                <li>
+                                        Standard deviation</li>
+                                <li>
+                                        Variance</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of time samples in window</span><br />
+                        Only useful for Window operations options of <b>Operation</b></li>
+        </ul>
 </div>
 <h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	Binary ops are provided by <strong>SU Binary Operations</strong>. Operations <strong>Inverse</strong>, <strong>Signed natural log</strong> and <strong>Signed common log</strong> are "punctuated", meaning that if, the input contains 0 values, 0 values are returned.</p>
+        Binary ops are provided by <strong>SU Binary Operations</strong>. Operations <strong>Inverse</strong>, <strong>Signed natural log</strong> and <strong>Signed common log</strong> are "punctuated", meaning that if, the input contains 0 values, 0 values are returned.</p>
 <p>
-	For file operations on non-SU format binary files use: <strong>File Arithmetic</strong>.</p>
+        For file operations on non-SU format binary files use: <strong>File Arithmetic</strong>.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <!-- begin cpy --><p>
-	CWP Shuki Ronen, Jack K Cohen (c. 1987)<br />
-	Toralf Foerster: norm and db operations, 10/95.<br />
-	Additions by Reg Beardsley, Chris Liner, and others.</p>
+        CWP Shuki Ronen, Jack K Cohen (c. 1987)<br />
+        Toralf Foerster: norm and db operations, 10/95.<br />
+        Additions by Reg Beardsley, Chris Liner, and others.</p>
 <!-- end cpy --></div>
 
           <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
           <div class="clearer"></div>
         </div>
@@ -249,9 +253,194 @@
     </div>
   
 
-</body></html>]]></help>
-    <url>http://www.cwp.mines.edu/cwpcodes/</url><parameters default-selection="0" selection="">
-      
-    <parameter><label>Operation</label><enum><property required="no"><keyword>op=</keyword><value/><default>abs</default></property><option><label>Absolute Value</label><value>abs</value></option><option><label>Remove average value</label><value>avg</value></option><option><label>Signed square root</label><value>ssqrt</value></option><option><label>Square</label><value>sqr</value></option><option><label>Signed square</label><value>ssqr</value></option><option><label>Signum function</label><value>sgn</value></option><option><label>Exponentiate</label><value>exp</value></option><option><label>Signed natural log</label><value>slog</value></option><option><label>Signed log base 2</label><value>slog2</value></option><option><label>Signed common log</label><value>slog10</value></option><option><label>Cosine</label><value>cos</value></option><option><label>Sine</label><value>sin</value></option><option><label>Tangent</label><value>tan</value></option><option><label>Hyperbolic cosine</label><value>cosh</value></option><option><label>Hyperbolic sine</label><value>sinh</value></option><option><label>Hyperbolic tangent</label><value>tanh</value></option><option><label>Divide trace by Max. Value</label><value>norm</value></option><option><label>20 * Signed common log (data)</label><value>db</value></option><option><label>Negate Value</label><value>neg</value></option><option><label>Pass only positive value</label><value>posonly</value></option><option><label>Pass only negative values</label><value>negonly</value></option><option><label>Running sum trace integration</label><value>sum</value></option><option><label>Running diff trace differentiation</label><value>diff</value></option><option><label>(v[i+1] - v[i]) / ((v[i+1] + v[i])</label><value>refl</value></option><option><label>Modulo 2 pi</label><value>mod2pi</value></option><option><label>Inverse</label><value>inv</value></option><option><label>RMS amplitude</label><value>rmsamp</value></option><option><label>Sonic to velocity (ft/s) conversion</label><value>s2v</value></option><option><label>Sonic to velocity (m/s) conversion</label><value>s2vm</value></option><option><label>Density (g/cc) to metric (kg/m³) conversion</label><value>d2m</value></option><option><label>2nd order vertical derivative</label><value>drv2</value></option><option><label>4th power vertical derivative</label><value>drv4</value></option><option><label>Top-down integration</label><value>integ</value></option><option><label>Local extrema to spikes</label><value>spike</value></option><option><label>Spike and fill to next spike</label><value>saf</value></option><option><label>Local Dominant frequency</label><value>freq</value></option><option><label>Preserve least non-zero amps</label><value>lnza</value></option><option><label>Arithmetic mean</label><value>mean</value></option><option><label>Standard deviation</label><value>std</value></option><option><label>Variance</label><value>var</value></option><option><label>No operation</label><value>nop</value></option></enum></parameter><parameter><label>Number of time samples in window</label><int><property required="no"><keyword>nw=</keyword><value/><default>21</default></property></int></parameter></parameters>
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Operation</label>
+        <enum>
+          <property required="no">
+            <keyword>op=</keyword>
+            <value />
+            <default>abs</default>
+          </property>
+          <option>
+            <label>Absolute Value</label>
+            <value>abs</value>
+          </option>
+          <option>
+            <label>Remove average value</label>
+            <value>avg</value>
+          </option>
+          <option>
+            <label>Signed square root</label>
+            <value>ssqrt</value>
+          </option>
+          <option>
+            <label>Square</label>
+            <value>sqr</value>
+          </option>
+          <option>
+            <label>Signed square</label>
+            <value>ssqr</value>
+          </option>
+          <option>
+            <label>Signum function</label>
+            <value>sgn</value>
+          </option>
+          <option>
+            <label>Exponentiate</label>
+            <value>exp</value>
+          </option>
+          <option>
+            <label>Signed natural log</label>
+            <value>slog</value>
+          </option>
+          <option>
+            <label>Signed log base 2</label>
+            <value>slog2</value>
+          </option>
+          <option>
+            <label>Signed common log</label>
+            <value>slog10</value>
+          </option>
+          <option>
+            <label>Cosine</label>
+            <value>cos</value>
+          </option>
+          <option>
+            <label>Sine</label>
+            <value>sin</value>
+          </option>
+          <option>
+            <label>Tangent</label>
+            <value>tan</value>
+          </option>
+          <option>
+            <label>Hyperbolic cosine</label>
+            <value>cosh</value>
+          </option>
+          <option>
+            <label>Hyperbolic sine</label>
+            <value>sinh</value>
+          </option>
+          <option>
+            <label>Hyperbolic tangent</label>
+            <value>tanh</value>
+          </option>
+          <option>
+            <label>Divide trace by Max. Value</label>
+            <value>norm</value>
+          </option>
+          <option>
+            <label>20 * Signed common log (data)</label>
+            <value>db</value>
+          </option>
+          <option>
+            <label>Negate Value</label>
+            <value>neg</value>
+          </option>
+          <option>
+            <label>Pass only positive value</label>
+            <value>posonly</value>
+          </option>
+          <option>
+            <label>Pass only negative values</label>
+            <value>negonly</value>
+          </option>
+          <option>
+            <label>Running sum trace integration</label>
+            <value>sum</value>
+          </option>
+          <option>
+            <label>Running diff trace differentiation</label>
+            <value>diff</value>
+          </option>
+          <option>
+            <label>(v[i+1] - v[i]) / ((v[i+1] + v[i])</label>
+            <value>refl</value>
+          </option>
+          <option>
+            <label>Modulo 2 pi</label>
+            <value>mod2pi</value>
+          </option>
+          <option>
+            <label>Inverse</label>
+            <value>inv</value>
+          </option>
+          <option>
+            <label>RMS amplitude</label>
+            <value>rmsamp</value>
+          </option>
+          <option>
+            <label>Sonic to velocity (ft/s) conversion</label>
+            <value>s2v</value>
+          </option>
+          <option>
+            <label>Sonic to velocity (m/s) conversion</label>
+            <value>s2vm</value>
+          </option>
+          <option>
+            <label>Density (g/cc) to metric (kg/m³) conversion</label>
+            <value>d2m</value>
+          </option>
+          <option>
+            <label>2nd order vertical derivative</label>
+            <value>drv2</value>
+          </option>
+          <option>
+            <label>4th power vertical derivative</label>
+            <value>drv4</value>
+          </option>
+          <option>
+            <label>Top-down integration</label>
+            <value>integ</value>
+          </option>
+          <option>
+            <label>Local extrema to spikes</label>
+            <value>spike</value>
+          </option>
+          <option>
+            <label>Spike and fill to next spike</label>
+            <value>saf</value>
+          </option>
+          <option>
+            <label>Local Dominant frequency</label>
+            <value>freq</value>
+          </option>
+          <option>
+            <label>Preserve least non-zero amps</label>
+            <value>lnza</value>
+          </option>
+          <option>
+            <label>Arithmetic mean</label>
+            <value>mean</value>
+          </option>
+          <option>
+            <label>Standard deviation</label>
+            <value>std</value>
+          </option>
+          <option>
+            <label>Variance</label>
+            <value>var</value>
+          </option>
+          <option>
+            <label>No operation</label>
+            <value>nop</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Number of time samples in window</label>
+        <int>
+          <property required="no">
+            <keyword>nw=</keyword>
+            <value />
+            <default>21</default>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
   </program>
 </flow>

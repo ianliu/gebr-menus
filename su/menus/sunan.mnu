@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow version="0.3.5">
+<?xml version="1.0" encoding="utf-8"?>
+<flow version="0.3.7">
   <title>SU NaN</title>
   <description>Remove NaNs &amp; Infs from the input stream</description>
-  <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -21,12 +22,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU NaN</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Remove NaNs & Infs from the input stream
             <!-- end des -->
           </div>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
@@ -47,19 +48,19 @@
 
           <p>Remove NaNs & Infs from the input stream.</p>
 
-	  <!-- begin par --><!-- end par -->
-	    
+          <!-- begin par --><!-- end par -->
+            
 
 
-	  <a name="credits" id="credits"></a>
+          <a name="credits" id="credits"></a>
           <h2>Credits</h2>
 
-	  <!-- begin cpy -->
-	  
+          <!-- begin cpy -->
+          
           <p>Nov 19, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
           <p>Aug 15, 2010: modified by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
           <!-- end cpy -->
-	  
+          
         </div>
 
         <div class="navigation">
@@ -68,7 +69,7 @@
           <ul>
             <li><a href="#intro">Introduction</a></li>
 
-	    <!-- begin mpr --><!-- end mpr -->
+            <!-- begin mpr --><!-- end mpr -->
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -86,31 +87,34 @@
   </div>
 </body>
 </html>
-]]></help>
+]]>
+</help>
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection=""/>
+    <parameters default-selection="0" selection="" />
   </dict>
   <date>
     <created>2009-11-19T18:07:59.880689Z</created>
     <modified>2010-08-21T00:44:41.454445Z</modified>
-    <lastrun/>
+    <lastrun />
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <io>
-    <input/>
-    <output/>
-    <error/>
-  </io>
-  <servers/>
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
-    
     <title>SU NaN</title>
     <binary>sunan</binary>
     <description>Remove NaNs &amp; Infs from the input stream</description>
-    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <link rel="stylesheet" type="text/css" href="gebr.css" />
 
@@ -122,12 +126,12 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-	  <!-- begin tt2 -->
+          <!-- begin tt2 -->
          <span class="flowtitle">SU NaN</span>
          <!-- end tt2 -->
 
           <div class="description">
-	    <!-- begin des -->
+            <!-- begin des -->
             Remove NaNs &amp; Infs from the input stream
             <!-- end des -->
           </div>
@@ -135,47 +139,47 @@
       </div>
 
       <div class="category">
-	<!-- begin cat -->
+        <!-- begin cat -->
        Editing, Sorting and Manipulation | Seismic Unix
        <!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content"><h2 id="header_0">
-	Introduction</h2>
+        Introduction</h2>
 <p>
-	Remove NaNs &amp; Infs from the input stream.</p>
+        Remove NaNs &amp; Infs from the input stream.</p>
 <!-- begin par --><div class="parameters">
-	<h2 id="header_1">
-		Parameters</h2>
-<!-- begin lst -->	<ul>
-		<li>
-			<span class="label">Supress echo locations of NaNs or Infs</span></li>
-		<li>
-			<span class="label">NaNs and Inf replacement value</span></li>
-		<li>
-			<span class="label">Replace NaNs and Infs by interpolating neighboring finite values</span></li>
-	</ul>
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Supress echo locations of NaNs or Infs</span></li>
+                <li>
+                        <span class="label">NaNs and Inf replacement value</span></li>
+                <li>
+                        <span class="label">Replace NaNs and Infs by interpolating neighboring finite values</span></li>
+        </ul>
 <!-- end lst --></div>
 <!-- end par --><h2 id="header_2">
-	Notes</h2>
+        Notes</h2>
 <p>
-	A simple program to remove NaNs &amp; Infs from an input stream. They shouldn't be there, but it can be hard to find the cause and fix the problem if you can't look at the data.</p>
+        A simple program to remove NaNs &amp; Infs from an input stream. They shouldn't be there, but it can be hard to find the cause and fix the problem if you can't look at the data.</p>
 <p>
-	The program sets NaNs and Infs to <strong>NaNs and Inf replacement value</strong> if the flag <strong>Replace NaNs and Infs by interpolating neighboring finite values</strong> is disabled. When the flag <strong>Replace NaNs and Infs by interpolating neighboring finite values</strong> is enabled NaNs are replaced with the average of neighboring values provided that the neighboring values are finite.</p>
+        The program sets NaNs and Infs to <strong>NaNs and Inf replacement value</strong> if the flag <strong>Replace NaNs and Infs by interpolating neighboring finite values</strong> is disabled. When the flag <strong>Replace NaNs and Infs by interpolating neighboring finite values</strong> is enabled NaNs are replaced with the average of neighboring values provided that the neighboring values are finite.</p>
 <p>
-	Interpolation idea comes from a version of sunan modified by Balasz Nemeth while at Potash Corporation in Saskatchewan.</p>
+        Interpolation idea comes from a version of sunan modified by Balasz Nemeth while at Potash Corporation in Saskatchewan.</p>
 <h2 id="header_3">
-	Credits</h2>
+        Credits</h2>
 <p>
-	Reginald H. Beardsley 2003 rhb@acm.org</p>
+        Reginald H. Beardsley 2003 rhb@acm.org</p>
 <!-- begin cpy --><!-- end cpy --></div>
 
         <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
-	Introduction</a></li><li><a href="#header_1">
-		Parameters</a></li><li><a href="#header_2">
-	Notes</a></li><li><a href="#header_3">
-	Credits</a></li></ul></div>
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
 
         <div class="clearer"></div>
       </div>
@@ -189,7 +193,8 @@
   </div>
 
 
-</body></html>]]></help>
+</body></html>]]>
+</help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -202,6 +207,26 @@
           </property>
         </flag>
       </parameter>
-    <parameter><label>NaNs and Inf replacement value</label><float><property required="no"><keyword>value=</keyword><value/><default>0.0</default></property></float></parameter><parameter><label>Replace NaNs and Infs by interpolating neighboring finite values</label><flag><property required="no"><keyword>interp=1</keyword><value>off</value><default>off</default></property></flag></parameter></parameters>
+      <parameter>
+        <label>NaNs and Inf replacement value</label>
+        <float>
+          <property required="no">
+            <keyword>value=</keyword>
+            <value />
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Replace NaNs and Infs by interpolating neighboring finite values</label>
+        <flag>
+          <property required="no">
+            <keyword>interp=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
   </program>
 </flow>
