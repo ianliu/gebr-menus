@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.6">
+<flow version="0.3.7">
   <title>Append to file</title>
   <description>Append output to a file</description>
   <help>
@@ -73,12 +73,14 @@
   </date>
   <category>File tools</category>
   <category>Shell tools</category>
-  <io>
-    <input />
-    <output />
-    <error />
-  </io>
-  <servers />
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="yes" stdout="no" stderr="no" status="unconfigured" mpi="" version="GNU coreutils 7.4">
     <title>Append to file</title>
     <binary>tee -a</binary>
@@ -180,7 +182,7 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword />
-            <value />
+            <value></value>
             <default />
           </property>
         </file>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.6">
+<flow version="0.3.7">
   <title>GZIP</title>
   <description>GNU zip utility</description>
   <help>
@@ -73,12 +73,14 @@
   </date>
   <category>File tools</category>
   <category>Shell tools</category>
-  <io>
-    <input />
-    <output />
-    <error />
-  </io>
-  <servers />
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="gzip 1.3.12">
     <title>GZIP</title>
     <binary>gzip --stdout</binary>
@@ -199,7 +201,7 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="yes">
             <keyword>&lt;</keyword>
-            <value />
+            <value></value>
             <default />
           </property>
         </file>

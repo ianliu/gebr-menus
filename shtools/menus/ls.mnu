@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.6">
+<flow version="0.3.7">
   <title>LS</title>
   <description>List directory contents</description>
   <help>
@@ -100,12 +100,14 @@
     <lastrun />
   </date>
   <category>Shell tools</category>
-  <io>
-    <input />
-    <output />
-    <error />
-  </io>
-  <servers />
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="GNU ls 5.97">
     <title>LS</title>
     <binary>ls</binary>
@@ -538,7 +540,7 @@
         <string>
           <property required="no">
             <keyword>--ignore=</keyword>
-            <value />
+            <value></value>
             <default />
           </property>
         </string>
@@ -568,7 +570,7 @@
         <file directory="yes">
           <property required="no">
             <keyword />
-            <value />
+            <value></value>
             <default />
           </property>
         </file>

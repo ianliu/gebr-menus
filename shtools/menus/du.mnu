@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.6">
+<flow version="0.3.7">
   <title>File Space Usage</title>
   <description>Estimate file space usage</description>
   <help>
@@ -97,12 +97,14 @@
     <lastrun />
   </date>
   <category>Shell tools</category>
-  <io>
-    <input />
-    <output />
-    <error />
-  </io>
-  <servers />
+  <server address="127.0.0.1">
+    <io>
+      <input></input>
+      <output></output>
+      <error></error>
+    </io>
+    <lastrun></lastrun>
+  </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="GNU coreutils 7.4">
     <title>File Space Usage</title>
     <binary>du</binary>
@@ -363,7 +365,7 @@
         <file directory="no">
           <property required="no">
             <keyword>--exclude-from=</keyword>
-            <value />
+            <value></value>
             <default />
           </property>
         </file>
@@ -373,7 +375,7 @@
         <string>
           <property required="no">
             <keyword>--exclude=</keyword>
-            <value />
+            <value></value>
             <default />
           </property>
         </string>
@@ -393,7 +395,7 @@
         <file directory="yes">
           <property required="no" separator="&quot; &quot;">
             <keyword />
-            <value />
+            <value></value>
             <default />
           </property>
         </file>
@@ -403,7 +405,7 @@
         <file directory="no">
           <property required="no" separator="&quot; &quot;">
             <keyword />
-            <value />
+            <value></value>
             <default />
           </property>
         </file>
