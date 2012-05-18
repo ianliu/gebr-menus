@@ -117,8 +117,8 @@ EOF
 
 # Uninstall SU and exits
 if [ "$UNINSTALL" == 'TRUE' ]; then
-    cd /usr/local/stow
-    if [ -d su-$SU_VERSION ]; then
+    if [ -d "$CWPROOT" ]; then
+    	cd /usr/local/stow
 	echo "Uninstalling SU $SU_VERSION"
 	$SUDO stow -D su-$SU_VERSION
     else
