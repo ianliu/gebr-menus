@@ -395,7 +395,8 @@ gebrmenu_DATA = \
 		xrects.mnu             \
 		xwigb.mnu              \
 		xy2z.mnu               \
-		z2xyz.mnu
+		z2xyz.mnu	       \
+		gebr-su-install.mnu
 
 EXTRA_DIST = $(gebrmenu_DATA)
 
