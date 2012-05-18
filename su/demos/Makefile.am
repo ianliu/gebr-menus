@@ -17,23 +17,26 @@
 gebrdemosdir = $(datadir)/gebr/demos/Seismic_Unix
 
 gebrdemos_DATA = \
-		Amplitude_Correction.prjz     \
-		Deconvolution.prjz            \
-		Dip_Moveout.prjz              \
-		Filtering.prjz                \
-		Making_Data.prjz              \
-		Migration_Inversion.prjz      \
-		Muting.prjz                   \
-		NMO.prjz                      \
-		Noise.prjz                    \
-		Offset_Continuation.prjz      \
-		Plotting.prjz                 \
-		Ray_Tracing.prjz              \
-		Stacking_Traces.prjz          \
-		Synthetic.prjz                \
-		Time_Freq_Analysis.prjz       \
-		Trace_Headers_and_Values.prjz \
-		Velocity_Analysis.prjz        \
-		Velocity_Profiles.prjz
+		Amplitude_Correction.prjx     \
+		Block.prjx					  \
+		Deconvolution.prjx            \
+		Dip_Moveout.prjx              \
+		Filtering.prjx                \
+		Making_Data.prjx              \
+		Migration_Inversion.prjx      \
+		Muting.prjx                   \
+		NMO.prjx                      \
+		Noise.prjx                    \
+		Offset_Continuation.prjx      \
+		Plotting.prjx                 \
+		Ray_Tracing.prjx              \
+		Stacking_Traces.prjx          \
+		Synthetic.prjx                \
+		Time_Freq_Analysis.prjx       \
+		Trace_Headers_and_Values.prjx \
+		Velocity_Analysis.prjx        \
+		Velocity_Profiles.prjx		  \
+		Vibroseis_Sweeps.prjx
+
 
 EXTRA_DIST = $(gebrdemos_DATA)
