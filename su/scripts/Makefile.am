@@ -18,4 +18,4 @@ gebrscriptsdir = $(datadir)/gebr/scripts
 
 gebrscripts_SCRIPTS = gebr-su-install.sh
 
-EXTRA_DIST = $(gebrscripts_DATA)
+EXTRA_DIST = $(gebrscripts_SCRIPTS)
