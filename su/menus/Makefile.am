@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-gebrmenudir = $(datadir)/gebr/menus/Seismic_Unix
+gebrmenudir = $(DESTIDIR)$(datadir)/gebr/menus/Seismic_Unix
 
 gebrmenu_DATA = \
 		a2b.mnu                \
@@ -399,4 +399,7 @@ gebrmenu_DATA = \
 		gebr-su-install.mnu
 
 EXTRA_DIST = $(gebrmenu_DATA)
+
+install-data-hook:
+	gebr-geoxml-menu-indices $(gebrmenudir) $(gebrmenudir)/menus.idx2   $(gebrmenudir)/categories.idx2
 
