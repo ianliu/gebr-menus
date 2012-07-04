@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.7">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
   <title>CDP fold</title>
   <description>Computes and depicts the CDP fold of SU data</description>
   <help>
@@ -65,23 +66,24 @@
   <author>Ricardo Biloti</author>
   <email>biloti@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" />
+    <parameters default-selection="0"/>
   </dict>
+  <parent></parent>
   <date>
     <created>2010-08-06T14:11:46.127788Z</created>
     <modified>2010-08-06T14:27:05.779388Z</modified>
-    <lastrun />
+    <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Graphics</category>
   <category>Seismic Unix</category>
-  <server address="127.0.0.1">
+  <server group-type="group" group-name="">
     <io>
       <input>/home/biloti/AGU2010/data-sn20-decon-CDP.su</input>
-      <output />
-      <error />
+      <output/>
+      <error/>
     </io>
-    <lastrun />
+    <lastrun/>
   </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     <title>SU Key Count</title>
@@ -196,7 +198,7 @@
         <enum>
           <property required="yes">
             <keyword>key=</keyword>
-            <value />
+            <value/>
             <default>cdp</default>
           </property>
           <option>
@@ -615,7 +617,7 @@
 ]]>
 </help>
     <url>http://sed.sf.net/</url>
-    <parameters default-selection="0" />
+    <parameters default-selection="0"/>
   </program>
   <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" mpi="" version="Grace 5.1.22">
     <title>Grace</title>
@@ -786,8 +788,8 @@
         <file directory="no">
           <property required="no">
             <keyword>-param</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -796,8 +798,8 @@
         <file directory="no">
           <property required="no">
             <keyword>-hardcopy -printfile</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -806,19 +808,19 @@
         <enum>
           <property required="no">
             <keyword>-hdevice</keyword>
-            <value />
+            <value/>
             <default>PNG</default>
           </property>
           <option>
-            <label />
+            <label/>
             <value>PNG</value>
           </option>
           <option>
-            <label />
+            <label/>
             <value>EPS</value>
           </option>
           <option>
-            <label />
+            <label/>
             <value>JPEG</value>
           </option>
         </enum>

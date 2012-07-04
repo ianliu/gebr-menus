@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.7">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
   <title>Stiffness to Velocity</title>
   <description>Transforms 2D elastic stiffness to velocity</description>
   <help>
@@ -65,22 +66,23 @@
   <author>Davi Clemente</author>
   <email>davi.clemente@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" />
+    <parameters default-selection="0"/>
   </dict>
+  <parent></parent>
   <date>
     <created>2010-09-16T18:20:23.975535Z</created>
     <modified>2010-09-21T14:21:05.294009Z</modified>
-    <lastrun />
+    <lastrun/>
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <server address="127.0.0.1">
+  <server group-type="group" group-name="">
     <io>
-      <input></input>
-      <output></output>
-      <error></error>
+      <input/>
+      <output/>
+      <error/>
     </io>
-    <lastrun></lastrun>
+    <lastrun/>
   </server>
   <program stdin="no" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
     <title>Stiff to Velocity</title>
@@ -207,8 +209,8 @@
         <int>
           <property required="yes">
             <keyword>nx=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </int>
       </parameter>
@@ -217,8 +219,8 @@
         <int>
           <property required="yes">
             <keyword>nz=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </int>
       </parameter>
@@ -232,7 +234,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="yes">
                     <keyword>rho_file=</keyword>
-                    <value />
+                    <value/>
                     <default>rho.bin</default>
                   </property>
                 </file>
@@ -242,7 +244,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="yes">
                     <keyword>c11_file=</keyword>
-                    <value />
+                    <value/>
                     <default>c11.bin</default>
                   </property>
                 </file>
@@ -252,7 +254,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="yes">
                     <keyword>c13_file=</keyword>
-                    <value />
+                    <value/>
                     <default>c13.bin</default>
                   </property>
                 </file>
@@ -262,7 +264,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="yes">
                     <keyword>c44_file=</keyword>
-                    <value />
+                    <value/>
                     <default>c44.bin</default>
                   </property>
                 </file>
@@ -272,7 +274,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="yes">
                     <keyword>c33_file=</keyword>
-                    <value />
+                    <value/>
                     <default>c33.bin</default>
                   </property>
                 </file>
@@ -281,51 +283,51 @@
           </template-instance>
           <parameters default-selection="0">
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>c11.bin</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>rho.bin</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>c13.bin</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>c44.bin</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>c33.bin</default>
                 </property>
               </reference>
@@ -343,7 +345,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>vp_file=</keyword>
-                    <value />
+                    <value/>
                     <default>vp.bin</default>
                   </property>
                 </file>
@@ -353,7 +355,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>vs_file=</keyword>
-                    <value />
+                    <value/>
                     <default>vs.bin</default>
                   </property>
                 </file>
@@ -363,7 +365,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>rho_file=</keyword>
-                    <value />
+                    <value/>
                     <default>rho.bin</default>
                   </property>
                 </file>
@@ -373,7 +375,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>eps_file=</keyword>
-                    <value />
+                    <value/>
                     <default>eps.bin</default>
                   </property>
                 </file>
@@ -383,7 +385,7 @@
                 <file directory="no" filter-name="" filter-pattern="">
                   <property required="no">
                     <keyword>delta_file=</keyword>
-                    <value />
+                    <value/>
                     <default>delta.bin</default>
                   </property>
                 </file>
@@ -392,51 +394,51 @@
           </template-instance>
           <parameters default-selection="0">
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>vp.bin</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>vs.bin</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>rho.bin</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>eps.bin</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>delta.bin</default>
                 </property>
               </reference>

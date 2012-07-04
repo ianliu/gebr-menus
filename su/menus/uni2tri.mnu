@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.7">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
   <title>Uniform to Triangulated</title>
   <description>Convert uniformly sampled model to a triangulated model</description>
   <help>
@@ -85,22 +86,23 @@
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection="" />
+    <parameters default-selection="0" selection=""/>
   </dict>
+  <parent></parent>
   <date>
     <created>2007-10-17T15:00:00Z</created>
     <modified>2010-08-06T00:43:09.805803Z</modified>
-    <lastrun />
+    <lastrun/>
   </date>
   <category>Seismic Unix</category>
   <category>Simulation and Model Building</category>
-  <server address="127.0.0.1">
+  <server group-type="group" group-name="">
     <io>
-      <input></input>
-      <output></output>
-      <error></error>
+      <input/>
+      <output/>
+      <error/>
     </io>
-    <lastrun></lastrun>
+    <lastrun/>
   </server>
   <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
     <title>Uniform to Triangulated</title>
@@ -293,8 +295,8 @@
         <int>
           <property required="yes">
             <keyword>n1=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </int>
       </parameter>
@@ -303,8 +305,8 @@
         <int>
           <property required="yes">
             <keyword>n2=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </int>
       </parameter>
@@ -318,7 +320,7 @@
                 <float>
                   <property required="no">
                     <keyword>d1=</keyword>
-                    <value />
+                    <value/>
                     <default>1.0</default>
                   </property>
                 </float>
@@ -328,7 +330,7 @@
                 <float>
                   <property required="no">
                     <keyword>f1=</keyword>
-                    <value />
+                    <value/>
                     <default>0.0</default>
                   </property>
                 </float>
@@ -337,21 +339,21 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>1.0</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>0.0</default>
                 </property>
               </reference>
@@ -369,7 +371,7 @@
                 <float>
                   <property required="no">
                     <keyword>d2=</keyword>
-                    <value />
+                    <value/>
                     <default>1.0</default>
                   </property>
                 </float>
@@ -379,7 +381,7 @@
                 <float>
                   <property required="no">
                     <keyword>f2=</keyword>
-                    <value />
+                    <value/>
                     <default>0.0</default>
                   </property>
                 </float>
@@ -388,21 +390,21 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>1.0</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
+                  <keyword/>
+                  <value/>
                   <default>0.0</default>
                 </property>
               </reference>
@@ -415,8 +417,8 @@
         <file directory="no">
           <property required="no">
             <keyword>ifile=</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -425,8 +427,8 @@
         <float>
           <property required="no">
             <keyword>errmax=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </float>
       </parameter>
@@ -435,8 +437,8 @@
         <file directory="no">
           <property required="no">
             <keyword>efile=</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -445,8 +447,8 @@
         <enum>
           <property required="no">
             <keyword>verbose=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
           <option>
             <label>Quiet</label>
@@ -467,7 +469,7 @@
         <int>
           <property required="no">
             <keyword>mm=</keyword>
-            <value />
+            <value/>
             <default>0</default>
           </property>
         </int>
@@ -477,8 +479,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>mfile=</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -487,8 +489,8 @@
         <enum>
           <property required="no">
             <keyword>method=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
           <option>
             <label>Add 1 vertex at maximum error</label>
@@ -509,7 +511,7 @@
         <int>
           <property required="no">
             <keyword>tol=</keyword>
-            <value />
+            <value/>
             <default>10</default>
           </property>
         </int>
@@ -519,8 +521,8 @@
         <string>
           <property required="no">
             <keyword>sfill=</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </string>
       </parameter>

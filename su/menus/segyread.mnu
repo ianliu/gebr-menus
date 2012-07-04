@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.7">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
   <title>SU SEG-Y Read</title>
   <description>Read a SEG-Y tape</description>
   <help>
@@ -66,22 +67,23 @@
   <author>GêBR core team</author>
   <email>port@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection="" />
+    <parameters default-selection="0" selection=""/>
   </dict>
+  <parent></parent>
   <date>
     <created>2007-09-16T15:00:00Z</created>
     <modified>2010-08-06T00:43:03.790031Z</modified>
-    <lastrun />
+    <lastrun/>
   </date>
   <category>Import/Export</category>
   <category>Seismic Unix</category>
-  <server address="127.0.0.1">
+  <server group-type="group" group-name="">
     <io>
-      <input></input>
-      <output></output>
-      <error></error>
+      <input/>
+      <output/>
+      <error/>
     </io>
-    <lastrun></lastrun>
+    <lastrun/>
   </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
     <title>SU SEG-Y Read</title>
@@ -270,8 +272,8 @@
         <file directory="no">
           <property required="yes">
             <keyword>tape=</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -290,7 +292,7 @@
         <int>
           <property required="no">
             <keyword>vblock=</keyword>
-            <value />
+            <value/>
             <default>50</default>
           </property>
         </int>
@@ -300,8 +302,8 @@
         <file directory="no">
           <property required="no">
             <keyword>hfile=</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -310,8 +312,8 @@
         <file directory="no">
           <property required="no">
             <keyword>bfile=</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -320,8 +322,8 @@
         <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>xfile=</keyword>
-            <value></value>
-            <default />
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -330,8 +332,8 @@
         <int>
           <property required="no">
             <keyword>ns=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </int>
       </parameter>
@@ -340,7 +342,7 @@
         <int>
           <property required="no">
             <keyword>trmin=</keyword>
-            <value />
+            <value/>
             <default>1</default>
           </property>
         </int>
@@ -350,8 +352,8 @@
         <int>
           <property required="no">
             <keyword>trmax=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </int>
       </parameter>
@@ -360,8 +362,8 @@
         <int>
           <property required="no">
             <keyword>errmax=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </int>
       </parameter>
@@ -370,8 +372,8 @@
         <enum>
           <property required="no">
             <keyword>format=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
           <option>
             <label>IBM floating point, 4 bytes</label>
@@ -455,8 +457,8 @@
                 <enum>
                   <property required="no">
                     <keyword>endian=</keyword>
-                    <value />
-                    <default />
+                    <value/>
+                    <default/>
                   </property>
                   <option>
                     <label>Little endian</label>
@@ -472,22 +474,22 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
+                  <keyword/>
                   <value>off</value>
                   <default>off</default>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
-                  <default></default>
+                  <keyword/>
+                  <value/>
+                  <default/>
                 </property>
               </reference>
             </parameter>
@@ -505,7 +507,7 @@
                   <property required="no" separator=",">
                     <keyword>remap=</keyword>
                     <value>cdp</value>
-                    <default />
+                    <default/>
                   </property>
                   <option>
                     <label>Alias filter frequency if used</label>
@@ -834,8 +836,8 @@
                 <string>
                   <property required="no" separator=",">
                     <keyword>byte=</keyword>
-                    <value />
-                    <default />
+                    <value/>
+                    <default/>
                   </property>
                 </string>
               </parameter>
@@ -843,22 +845,22 @@
           </template-instance>
           <parameters default-selection="0" selection="">
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
+                  <keyword/>
                   <value>cdp</value>
-                  <default />
+                  <default/>
                 </property>
               </reference>
             </parameter>
             <parameter>
-              <label></label>
+              <label/>
               <reference>
                 <property required="no">
-                  <keyword />
-                  <value></value>
-                  <default />
+                  <keyword/>
+                  <value/>
+                  <default/>
                 </property>
               </reference>
             </parameter>

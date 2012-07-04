@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<flow version="0.3.7">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
   <title>SU VCAT</title>
   <description>Append one data set to another, with or without an overlapping region</description>
   <help>
@@ -88,22 +89,23 @@
   <author>Jorge Pizzolatto Filho</author>
   <email>jorge.pzt@gebrproject.com</email>
   <dict>
-    <parameters default-selection="0" selection="" />
+    <parameters default-selection="0" selection=""/>
   </dict>
+  <parent></parent>
   <date>
     <created>2009-10-08T15:47:56.545170Z</created>
     <modified>2010-08-06T00:43:08.658431Z</modified>
-    <lastrun />
+    <lastrun/>
   </date>
   <category>Editing, Sorting and Manipulation</category>
   <category>Seismic Unix</category>
-  <server address="127.0.0.1">
+  <server group-type="group" group-name="">
     <io>
-      <input></input>
-      <output></output>
-      <error></error>
+      <input/>
+      <output/>
+      <error/>
     </io>
-    <lastrun></lastrun>
+    <lastrun/>
   </server>
   <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
     <title>SU VCAT</title>
@@ -266,9 +268,9 @@
         <label>SU data 1</label>
         <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
           <property required="yes">
-            <keyword></keyword>
-            <value></value>
-            <default />
+            <keyword/>
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -276,9 +278,9 @@
         <label>SU data 2</label>
         <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
           <property required="yes">
-            <keyword></keyword>
-            <value></value>
-            <default />
+            <keyword/>
+            <value/>
+            <default/>
           </property>
         </file>
       </parameter>
@@ -287,8 +289,8 @@
         <int min="0">
           <property required="no">
             <keyword>taplen=</keyword>
-            <value />
-            <default />
+            <value/>
+            <default/>
           </property>
         </int>
       </parameter>
@@ -297,7 +299,7 @@
         <enum>
           <property required="yes">
             <keyword>taptype=</keyword>
-            <value />
+            <value/>
             <default>0</default>
           </property>
           <option>
