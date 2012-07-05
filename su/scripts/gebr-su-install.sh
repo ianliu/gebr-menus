@@ -63,6 +63,7 @@ function check_distro {
 
 function check_sudo {
 
+    export SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"}
     [ -x /usr/bin/sudo ] && sudo date > /dev/null
     if [ $? -ne 0 ]; then
         echo "User is not in sudoers"
@@ -104,6 +105,7 @@ function check_pkg {
         echo "present"
     fi
 }
+
 function download_rpm_not_found {
 
     for pkg in $* ;do
@@ -162,7 +164,9 @@ PERMISSION=0
 ROOT=0
 
 check_root
-check_sudo
+if [ $ROOT -eq 0 ];then
+    check_sudo
+fi
 
 if [ $PERMISSION -eq 0 ] && [ $ROOT -eq 0 ] ;then
     echo "User does not have permission to complete the installation" 
@@ -171,9 +175,8 @@ else
     echo "User have permission to complete the installation"
 fi
 
-if [ $PERMISSION -eq 1 ];then
+if [ $ROOT -eq 0 ];then
     # Setup SUDO mode (text/graphic)
-    export SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"}
     if [ "$TEXT_MODE" == "FALSE" ]; then
         if [ ! -f $SUDO_ASKPASS ]; then
             echo "You do not have a graphical client to ask for passwords."
@@ -255,12 +258,12 @@ elif [ $DISTRO = "CentOS" -o $DISTRO = "Fedora" ];then
 
     if [ $DISTRO = "Fedora" ];then
         echo -n "lesstif.................... "
-        LT="lesstif"
-        check_rpm $LT
+        LT="lesstif-devel"
     else
         echo -n "openmotif-devel............ "
-        check_rpm $LT
     fi
+
+    check_rpm $LT
 
     echo -n "GLUT....................... "
     check_rpm freeglut-devel
@@ -282,8 +285,6 @@ if [ "$PKGS_TO_INSTALL"'x' != 'x' ]; then
     echo "Installing missing packages"
     $SUDO $PKG_MANAGER install $PKGS_TO_INSTALL
 fi
-
-exit 0
 
 if [ ! -d "$DOWNLOAD_PATH" ]; then
     mkdir -p "$DOWNLOAD_PATH"
@@ -357,12 +358,19 @@ $SUDO mv /tmp/chkroot.sh .
 
 echo "Compiling SU package"
 
-export CWPROOT
-for target in install xtinstall finstall \
-    mglinstall utils xminstall sfinstall; do
-    $SUDO make $target
-done
-
+if [ $ROOT -eq 1 ];then
+    export CWPROOT
+    for target in install xtinstall finstall \
+        mglinstall utils xminstall sfinstall; do
+        make $target
+    done
+else
+    for target in install xtinstall finstall \
+        mglinstall utils xminstall sfinstall; do
+        $SUDO CWPROOT="$CWPROOT" make $target
+    done
+fi
+    
 echo -e "\nCompilation done."
 
 cd /usr/local/stow
