@@ -15,11 +15,17 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# Try to become root before start
+if [ `id -u` != 0 ]; then
+    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo -A $0 || echo "Please, try run $0 as root."
+    exit
+fi
+
 function usage ()
 {
 CWPROOT=/usr/local/stow/su-"$SU_VERSION"
 
-echo "SU install made easy - A cortesy of GeBR Project
+echo "SU install made easy (3rd ed) - A cortesy of GeBR Project
 Syntax: $0 [options]
 
 Options:
@@ -51,87 +57,21 @@ http://www.gebrproject.com/
 "
 }
 
-function check_distro {
-    for DISTRO in CentOS Fedora Ubuntu Debian
-        do
-        ans=`cat /etc/issue | grep $DISTRO | wc -l`
-        if [ $ans -ne 0 ]; then
-            break
-        fi
-    done
-}
-
-function check_sudo {
-
-    export SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"}
-    [ -x /usr/bin/sudo ] && sudo date > /dev/null
-    if [ $? -ne 0 ]; then
-        echo "User is not in sudoers"
-        PERMISSION=0
-    else
-        PERMISSION=1
-    fi
-}
-function check_root {
-
-    iam=`whoami`
-    if [ $iam = "root" ];then
-        ROOT=1
-    else
-        echo "User is not root."
-        ROOT=0
-    fi
-}
-
-function check_rpm {
-    yum list $1 | grep Installed > /dev/null 2>&1
-    if [ $? -eq 1 ]; then
-
-        echo "missing. Scheduling it for installing"
-        PKGS_TO_INSTALL="$PKGS_TO_INSTALL $1"
-
-    else
-        echo "present"
-    fi
-}
-   
 function check_pkg {
 
     dpkg -l $1 | grep ^ii > /dev/null 2>&1
     if [ $? -eq 1 ]; then
-        echo "missing. Scheduling it for installing"
-        PKGS_TO_INSTALL="$PKGS_TO_INSTALL $1"
+	echo "missing. Scheduling it for installing"
+	PKGS_TO_INSTALL="$PKGS_TO_INSTALL $1"
     else
-        echo "present"
+	echo "present"
     fi
 }
-
-function download_rpm_not_found {
-
-    for pkg in $* ;do
-        yum list $pkg > /dev/null 2>&1
-        if [ $? -ne 0 ]; then
-             if [ $pkg = "stow" ] && [ $DISTRO = CentOS ] ;then
-                 echo "Downloading epel"
-                 wget -qc "http://centos.plnet.rs/mrepo/plc-centos6-i386/RPMS.epel/epel-release-6-7.noarch.rpm"
-                 if [ $? -eq 0 ];then
-                     rpm -Uvh epel-release*
-                 else
-                     echo "Could not install stow"
-                     echo "This script will be terminated"
-                     exit 1
-                 fi
-             fi
-        fi 
-    done
-}     
-     
-        
 
 # Default values
 #------------------------------------------------------------------------------#
 
-SU_VERSION="43R2"
+SU_VERSION="43R3"
 SU_VERSION_PREFIX="43"
 SU_ARCHIVE="cwp_su_all_$SU_VERSION.tgz"
 DOWNLOAD_PATH="$HOME/Downloads"
@@ -159,39 +99,6 @@ while getopts "V:p:a:o:d:uUth" OPT; do
 done
 
 CWPROOT=/usr/local/stow/su-"$SU_VERSION"
-# Checking permissions
-PERMISSION=0
-ROOT=0
-
-check_root
-if [ $ROOT -eq 0 ];then
-    check_sudo
-fi
-
-if [ $PERMISSION -eq 0 ] && [ $ROOT -eq 0 ] ;then
-    echo "User does not have permission to complete the installation" 
-    exit 1
-else 
-    echo "User have permission to complete the installation"
-fi
-
-if [ $ROOT -eq 0 ];then
-    # Setup SUDO mode (text/graphic)
-    if [ "$TEXT_MODE" == "FALSE" ]; then
-        if [ ! -f $SUDO_ASKPASS ]; then
-            echo "You do not have a graphical client to ask for passwords."
-            echo "Sorry, but this is not going to work through GêBR."
-            echo "You still have the option to run this script through"
-            echo "a shell terminal. Use the option -t."
-            exit 1;
-        fi
-        SUDO="sudo -A"
-    else
-        SUDO="sudo"
-    fi
-else
-    SUDO=""
-fi
 
 cat <<EOF
 SU install made easy - A cortesy of GeBR Project
@@ -201,89 +108,14 @@ EOF
 
 # Uninstall SU and exits
 if [ "$UNINSTALL" == 'TRUE' ]; then
-    if [ -d "$CWPROOT" ]; then
-        cd /usr/local/stow
-        echo "Uninstalling SU $SU_VERSION"
-        $SUDO stow -D su-$SU_VERSION
+    cd /usr/local/stow
+    if [ -d su-$SU_VERSION ]; then
+	echo "Uninstalling SU $SU_VERSION"
+	stow -D su-$SU_VERSION
     else
-        echo "Nothing to uninstall"
+	echo "Nothing to uninstall"
     fi
     exit 0;
-fi
-
-echo "Testing for required packages"
-
-DISTRO=""
-check_distro
-
-PKGS_TO_INSTALL=""
-PKG_MANAGER=""
-LT="openmotif-devel"
-if [ $DISTRO = "Ubuntu" -o $DISTRO = "Debian" ];then
-    echo -n "wget....................... "
-    check_pkg wget
-
-    echo -n "gcc........................ "
-    check_pkg gcc
-
-    echo -n "gfortran................... "
-    check_pkg gfortran
-
-    echo -n "stow....................... "
-    check_pkg stow
-
-    echo -n "lesstif.................... "
-    check_pkg lesstif2-dev
-
-    echo -n "GLUT....................... "
-    check_pkg freeglut3-dev
-
-    echo -n "Xmu........................ "
-    check_pkg libxmu-dev
-
-    PKG_MANAGER="apt-get"
-
-elif [ $DISTRO = "CentOS" -o $DISTRO = "Fedora" ];then
-    echo -n "wget....................... "
-    check_rpm wget
-
-    echo -n "gcc........................ "
-    check_rpm gcc
-
-    echo -n "gfortran................... "
-    check_rpm gcc-gfortran
-
-    echo -n "stow....................... "
-    check_rpm stow
-
-    if [ $DISTRO = "Fedora" ];then
-        echo -n "lesstif.................... "
-        LT="lesstif-devel"
-    else
-        echo -n "openmotif-devel............ "
-    fi
-
-    check_rpm $LT
-
-    echo -n "GLUT....................... "
-    check_rpm freeglut-devel
-
-    echo -n "Xmu........................ "    
-    check_rpm libXmu-devel
-
-    echo "Checking missing packages for $DISTRO"
-    download_rpm_not_found stow
-   
-    PKG_MANAGER="yum"
-
-else
-    echo "Not compatible Distro"
-    exit 0
-fi
-
-if [ "$PKGS_TO_INSTALL"'x' != 'x' ]; then
-    echo "Installing missing packages"
-    $SUDO $PKG_MANAGER install $PKGS_TO_INSTALL
 fi
 
 if [ ! -d "$DOWNLOAD_PATH" ]; then
@@ -294,13 +126,41 @@ cd "$DOWNLOAD_PATH"
 echo "SU $SU_VERSION archive.............. Downloading it now"
 wget -qc "$CWP_SRC_URL/$SU_ARCHIVE"
 
-if [ ! -d "$CWPROOT" ]; then 
-    $SUDO mkdir -p "$CWPROOT"
+echo "Testing for required packages"
+
+PKGS_TO_INSTALL=""
+
+echo -n "gcc........................ "
+check_pkg gcc
+
+echo -n "gfortran................... "
+check_pkg gfortran
+
+echo -n "stow....................... "
+check_pkg stow
+
+echo -n "lesstif.................... "
+check_pkg lesstif2-dev
+
+echo -n "GLUT....................... "
+check_pkg freeglut3-dev
+
+echo -n "Xmu........................ "
+check_pkg libxmu-dev
+
+if [ "$PKGS_TO_INSTALL"'x' != 'x' ]; then
+    echo "Installing missing packages"
+    apt-get -y install $PKGS_TO_INSTALL
 fi
+
+if [ ! -d "$CWPROOT" ]; then 
+    mkdir -p "$CWPROOT"
+fi
+chmod 755 "$CWPROOT" /usr/local/stow
 
 cd "$CWPROOT"
 echo "Extracting SU source files..."
-$SUDO tar zxf "$DOWNLOAD_PATH/$SU_ARCHIVE"
+tar zxf "$DOWNLOAD_PATH/$SU_ARCHIVE"
 
 cat > /tmp/Makefile.config <<EOF
 CWPROOT = $CWPROOT
@@ -340,71 +200,71 @@ EOF
 
 cd src
 if [ ! -e Makefile.config-original ]; then
-    $SUDO mv Makefile.config Makefile.config-original
+    mv Makefile.config Makefile.config-original
 fi
-$SUDO mv /tmp/Makefile.config .
+mv /tmp/Makefile.config .
 
-$SUDO touch LICENSE_"$SU_VERSION_PREFIX"_ACCEPTED
-$SUDO touch LICENSE_"$SU_VERSION"_ACCEPTED
-$SUDO touch MAILHOME_"$SU_VERSION_PREFIX"
-$SUDO touch MAILHOME_"$SU_VERSION"
+touch LICENSE_"$SU_VERSION_PREFIX"_ACCEPTED
+touch LICENSE_"$SU_VERSION"_ACCEPTED
+touch MAILHOME_"$SU_VERSION_PREFIX"
+touch MAILHOME_"$SU_VERSION"
 
 if [ ! -e chkroot.sh-original ]; then
-   $SUDO cp chkroot.sh chkroot.sh-original
+   cp chkroot.sh chkroot.sh-original
+fi
+if [ ! -e license.sh-original ]; then
+   cp license.sh license.sh-original
 fi
 cat chkroot.sh-original | sed 's/read RESP/RESP="y"/' > /tmp/chkroot.sh
-chmod 755 /tmp/chkroot.sh
-$SUDO mv /tmp/chkroot.sh .
+cat license.sh-original | sed 's/read RESP/RESP="y"/;s/more/cat/' > /tmp/license.sh
+chmod 755 /tmp/chkroot.sh /tmp/license.sh
+mv /tmp/chkroot.sh /tmp/license.sh .
 
 echo "Compiling SU package"
 
-if [ $ROOT -eq 1 ];then
-    export CWPROOT
-    for target in install xtinstall finstall \
-        mglinstall utils xminstall sfinstall; do
-        make $target
-    done
-else
-    for target in install xtinstall finstall \
-        mglinstall utils xminstall sfinstall; do
-        $SUDO CWPROOT="$CWPROOT" make $target
-    done
-fi
-    
+for target in install xtinstall finstall \
+    mglinstall utils xminstall sfinstall; do
+    #$SUDOCWPROOT="$CWPROOT" make $target
+    CWPROOT="$CWPROOT" make $target
+done
+
 echo -e "\nCompilation done."
 
 cd /usr/local/stow
 # Seach for installed older versions of SU
 OLDER_SUS=`find . -name su-\* | grep -v "$SU_VERSION" | sed 's/^\..//' `
-if [ `echo $OLDER_SUS | wc -l` -gt 0 ]; then
+if [ `echo $OLDER_SUS | wc -l` -gt 1 ]; then
     echo it seems that this versions of SU are installed:
     echo -e $OLDER_SUS "\n"
     if [ "$KEEP_OLDER_SUS" == 'FALSE' ]; then
-        echo "$OLDER_SUS" | while read oldsu; do
-            echo -n "Removing $oldsu from system path (it will "
-            echo not be purged from the system however\).
-            $SUDO stow -D $oldsu
-        done
+	echo "$OLDER_SUS" | while read oldsu; do
+	    echo -n "Removing $oldsu from system path (it will "
+	    echo not be purged from the system however\).
+	    stow -D $oldsu
+	done
     else
-        echo Unless you remove older versions of SU from path,
-        echo they may conflict with the newer version your are trying
-        echo to install.
-        echo -e "\nIt is safe to set -U\n"
-        echo This will only remove such older versions from path,
-        echo without purging their files.
-        exit -1
+	echo Unless you remove older versions of SU from path,
+	echo they may conflict with the newer version your are trying
+	echo to install.
+	echo -e "\nIt is safe to set -U\n"
+	echo This will only remove such older versions from path,
+	echo without purging their files.
+	exit -1
     fi
 fi
 
-$SUDO stow -D su-$SU_VERSION
-$SUDO stow -v su-$SU_VERSION
+stow -D su-$SU_VERSION
+stow -v su-$SU_VERSION
 
 cp /etc/profile /tmp
 echo "export CWPROOT=$CWPROOT" >> /tmp/profile
-$SUDO cp /tmp/profile /etc
+cp /tmp/profile /etc
+
+echo "export CWPROOT=$CWPROOT" >> /tmp/bash.bashrc
+cat /etc/bash.bashrc >> /tmp/bash.bashrc
+cp /tmp/bash.bashrc /etc
 
 echo "Installation done."
 echo -e "SU will be available next time you log in.\n"
 echo "Any problem with this script, please report to"
 echo "Ricardo Biloti <biloti@gebrproject.com>"
-
