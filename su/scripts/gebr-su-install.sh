@@ -17,7 +17,7 @@
 
 # Try to become root before start
 if [ `id -u` != 0 ]; then
-    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo -A $0 || echo "Please, try run $0 as root."
+    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo -A $0 $@ || echo "Please, try run $0 as root."
     exit
 fi
 
@@ -82,7 +82,6 @@ TEXT_MODE="FALSE"
 
 # Parsing command line parameters
 #------------------------------------------------------------------------------#
-
 while getopts "V:p:a:o:d:uUth" OPT; do
   case $OPT in
       "h") usage; exit 0               ;;
@@ -101,7 +100,7 @@ done
 CWPROOT=/usr/local/stow/su-"$SU_VERSION"
 
 cat <<EOF
-SU install made easy - A cortesy of GeBR Project
+SU install made easy - A cortesy of the GeBR Project
 
 Try "$0 -h" to see the usage guide.
 EOF
@@ -123,8 +122,8 @@ if [ ! -d "$DOWNLOAD_PATH" ]; then
 fi
 
 cd "$DOWNLOAD_PATH"
-echo "SU $SU_VERSION archive.............. Downloading it now"
-wget -qc "$CWP_SRC_URL/$SU_ARCHIVE"
+echo "SU $SU_VERSION archive.............. Downloading it now to $DOWNLOAD_PATH"
+wget -c "$CWP_SRC_URL/$SU_ARCHIVE"
 
 echo "Testing for required packages"
 
@@ -224,7 +223,6 @@ echo "Compiling SU package"
 
 for target in install xtinstall finstall \
     mglinstall utils xminstall sfinstall; do
-    #$SUDOCWPROOT="$CWPROOT" make $target
     CWPROOT="$CWPROOT" make $target
 done
 
@@ -256,15 +254,15 @@ fi
 stow -D su-$SU_VERSION
 stow -v su-$SU_VERSION
 
-cp /etc/profile /tmp
+sed '/^export CWPROOT=.*$/d' /etc/profile > /tmp/profile
 echo "export CWPROOT=$CWPROOT" >> /tmp/profile
 cp /tmp/profile /etc
 
-echo "export CWPROOT=$CWPROOT" >> /tmp/bash.bashrc
-cat /etc/bash.bashrc >> /tmp/bash.bashrc
+echo "export CWPROOT=$CWPROOT" > /tmp/bash.bashrc
+sed '/^export CWPROOT=.*$/d' /etc/bash.bashrc >> /tmp/bash.bashrc
 cp /tmp/bash.bashrc /etc
 
 echo "Installation done."
 echo -e "SU will be available next time you log in.\n"
 echo "Any problem with this script, please report to"
-echo "Ricardo Biloti <biloti@gebrproject.com>"
+echo "Ricardo Biloti <biloti@gebrproject.com>."
