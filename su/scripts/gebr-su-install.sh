@@ -254,12 +254,12 @@ fi
 stow -D su-$SU_VERSION
 stow -v su-$SU_VERSION
 
-sed '/^export CWPROOT=.*$/d' /etc/profile > /tmp/profile
+sed '/CWPROOT=/d' /etc/profile > /tmp/profile
 echo "export CWPROOT=$CWPROOT" >> /tmp/profile
 cp /tmp/profile /etc
 
 echo "export CWPROOT=$CWPROOT" > /tmp/bash.bashrc
-sed '/^export CWPROOT=.*$/d' /etc/bash.bashrc >> /tmp/bash.bashrc
+sed '/CWPROOT=/d' /etc/bash.bashrc >> /tmp/bash.bashrc
 cp /tmp/bash.bashrc /etc
 
 echo "Installation done."
