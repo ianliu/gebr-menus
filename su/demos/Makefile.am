@@ -17,8 +17,9 @@
 gebrdemosdir = $(datadir)/gebr/demos/Seismic_Unix
 
 gebrdemos_DATA = \
+		_Setup.prjx		      \
 		Amplitude_Correction.prjx     \
-		Block.prjx					  \
+		Block.prjx		      \
 		Deconvolution.prjx            \
 		Dip_Moveout.prjx              \
 		Filtering.prjx                \
@@ -35,7 +36,7 @@ gebrdemos_DATA = \
 		Time_Freq_Analysis.prjx       \
 		Trace_Headers_and_Values.prjx \
 		Velocity_Analysis.prjx        \
-		Velocity_Profiles.prjx		  \
+		Velocity_Profiles.prjx	      \
 		Vibroseis_Sweeps.prjx
 
 
