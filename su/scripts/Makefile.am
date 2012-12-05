@@ -14,8 +14,4 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-gebrscriptsdir = $(datadir)/gebr/scripts
-
-gebrscripts_SCRIPTS = gebr-su-install.sh
-
-EXTRA_DIST = $(gebrscripts_SCRIPTS)
+dist_bin_SCRIPTS = gebr-su-install.sh
