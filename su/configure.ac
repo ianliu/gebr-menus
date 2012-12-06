@@ -28,16 +28,8 @@ PACKAGE_VERSION=$VERSION
 AC_PROG_INSTALL
 AC_PROG_CC
 
-dnl ============================================================================
-dnl Need for creating the gebr-su-install.mnu file
-dnl ============================================================================
-PACKAGE_PREFIX_DIR=`echo ${prefix}`
-AC_SUBST(PACKAGE_PREFIX_DIR)
-
-
 AC_OUTPUT( Makefile
            menus/Makefile
-           menus/gebr-su-install.mnu
            demos/Makefile
            scripts/Makefile
            packages/Makefile

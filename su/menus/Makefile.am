@@ -16,7 +16,7 @@
 
 gebrmenudir = $(DESTIDIR)$(datadir)/gebr/menus/Seismic_Unix
 
-gebrmenu_list = \
+gebrmenu_DATA = \
 		a2b.mnu                \
 		a2i.mnu                \
 		b2a.mnu                \
@@ -395,12 +395,10 @@ gebrmenu_list = \
 		xrects.mnu             \
 		xwigb.mnu              \
 		xy2z.mnu               \
-		z2xyz.mnu
+		z2xyz.mnu	       \
+		gebr-su-install.mnu
 
-gebrmenu_DATA = $(gebrmenu_list) gebr-su-install.mnu
-
-EXTRA_DIST = $(gebrmenu_list) gebr-su-install.mnu.in
-
+EXTRA_DIST = $(gebrmenu_DATA)
 
 install-data-hook:
 	gebr-geoxml-menu-indices $(gebrmenudir) $(gebrmenudir)/menus.idx2   $(gebrmenudir)/categories.idx2
