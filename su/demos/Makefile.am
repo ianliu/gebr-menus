@@ -17,7 +17,7 @@
 gebrdemosdir = $(datadir)/gebr/demos/Seismic_Unix
 
 gebrdemos_DATA = \
-		_Setup.prjx		      \
+		_Install_SU.prjx	      \
 		Amplitude_Correction.prjx     \
 		Block.prjx		      \
 		Deconvolution.prjx            \
