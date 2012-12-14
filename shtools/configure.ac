@@ -17,7 +17,7 @@
 AC_INIT(configure.ac)
 
 PACKAGE=gebr-menus-shtools
-VERSION=0.2.2
+VERSION=0.3.0
 AC_SUBST(PACKAGE)
 AC_SUBST(VERSION)
 
