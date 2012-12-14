@@ -14,8 +14,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-gebrmenudir = $(DESTDIR)$(datadir)/gebr/menus/shtools
-gebrmenu_DATA = \
+gebrmenudir = $(datadir)/gebr/menus/shtools
+menus = \
 		append.mnu \
 		cal.mnu \
 		catdoc.mnu \
@@ -43,7 +43,12 @@ gebrmenu_DATA = \
 		xmessage.mnu \
 		zenity.mnu
 
-EXTRA_DIST = $(gebrmenu_DATA)
+gebrmenu_DATA = \
+		$(menus)	\
+		menus.idx2	\
+		categories.idx2
 
-install-data-hook:
-	gebr-geoxml-menu-indices $(gebrmenudir) $(gebrmenudir)/menus.idx2   $(gebrmenudir)/categories.idx2
+EXTRA_DIST = $(menus)
+
+menus.idx2 categories.idx2:
+	gebr-geoxml-menu-indices . menus.idx2 categories.idx2
