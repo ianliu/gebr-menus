@@ -17,7 +17,7 @@
 SUBDIRS =
 
 EXTRA_DIST = \
-	     rpm/gebr-menus.spec.in             \
+	     rpm/gebr-menus.spec.in \
              debian/changelog       \
              debian/compat          \
              debian/control         \
@@ -25,8 +25,8 @@ EXTRA_DIST = \
              debian/dirs            \
              debian/docs            \
              debian/install         \
-             debian/postinst.ex     \
-             debian/postrm.ex       \
+             debian/postinst	    \
+             debian/postrm	    \
              debian/preinst.ex      \
              debian/prerm.ex        \
              debian/rules
