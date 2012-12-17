@@ -12,6 +12,7 @@ Packager: Ricardo Biloti <biloti@gebrproject.com>
 Source: %{name}-%{version}.tar.gz
 BuildArch: noarch
 BuildRoot: /tmp/%{name}-%{version}
+Requires: libgebr >= 0.19.14
 Summary: Seismic Unix menus for GeBR
 %description
 GeBR is an environment for seismic processing based on open-source
@@ -47,6 +48,9 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_datadir}/gebr/menus/*
 %{_datadir}/gebr/demos/*
-%{_datadir}/gebr/scripts/*
+%{_bindir}/*
+
+%post
+cd %{_datadir}/gebr/menus/Seismic_Unix && gebr-geoxml-menu-indices . menus.idx2 categories.idx2
 
 %changelog
