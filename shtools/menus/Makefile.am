@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 gebrmenudir = $(datadir)/gebr/menus/shtools
-menus = \
+gebrmenu_DATA = \
 		append.mnu \
 		cal.mnu \
 		catdoc.mnu \
@@ -43,12 +43,5 @@ menus = \
 		xmessage.mnu \
 		zenity.mnu
 
-gebrmenu_DATA = \
-		$(menus)	\
-		menus.idx2	\
-		categories.idx2
+EXTRA_DIST = $(gebrmenu_DATA)
 
-EXTRA_DIST = $(menus)
-
-menus.idx2 categories.idx2:
-	gebr-geoxml-menu-indices . menus.idx2 categories.idx2

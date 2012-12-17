@@ -45,4 +45,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_datadir}/gebr/menus/*
 
+%post
+cd %{_datadir}/gebr/menus/shtools && gebr-geoxml-menu-indices . menus.idx2 categories.idx2
+
 %changelog
