@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Jitter</title>
+  <description>Add random time shifts to seismic traces</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Jitter</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Jitter</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Add random time shifts to seismic traces
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Add random time shifts to seismic traces.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 13, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 21, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Davi Clemente</author>
+  <email>davi.clemente@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-13T16:57:06.355287Z</created>
+    <modified>2011-04-01T19:27:09.376047Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Jitter</title>
+    <binary>sujitter</binary>
+    <description>Add random time shifts to seismic traces</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <title>
+    <!-- begin ttl -->SU Jitter<!-- end ttl -->
+  </title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">
+            <!-- begin tt2 -->SU Jitter<!-- end tt2 -->
+          </span>
+          <div class="description">
+            <!-- begin des -->Add random time shifts to seismic traces<!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+          <!-- begin cnt --><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Add random time shifts to seismic traces.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Random number seed</span></li>
+                <li>
+                        <span class="label">Minimum random time shift (samples)</span></li>
+                <li>
+                        <span class="label">Maximum random time shift (samples)</span></li>
+                <li>
+                        <span class="label">Shift is positive only</span></li>
+                <li>
+                        <span class="label">New shift when 'Field record number' header field changes</span></li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        Useful for simulating random statics. See also the program <strong>SU Add Statics</strong>.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        U of Houston: Chris Liner.<br />
+        UH:  Chris added <strong>New shift when 'Field record number' header field changes</strong>, <strong>Minimum random time shift (samples)</strong> and <strong>Shift is positive only</strong> parameters, 12/10/08.</p>
+<!-- begin cpy --><!-- end cpy --><!-- end cnt -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Random number seed</label>
+        <int>
+          <property required="no">
+            <keyword>seed=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Minimum random time shift (samples)</label>
+        <int>
+          <property required="no">
+            <keyword>min=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum random time shift (samples)</label>
+        <int>
+          <property required="no">
+            <keyword>max=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Shift is positive only</label>
+        <flag>
+          <property required="no">
+            <keyword>pon=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>New shift when 'Field record number' header field changes</label>
+        <flag>
+          <property required="no">
+            <keyword>fldr=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

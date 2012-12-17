@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU FCT Anis Mod</title>
+  <description>FCT correction applied to the 2D elastic wave equation</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU FCT Anis Mod</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU FCT Anis Mod</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            FCT correction applied to the 2D elastic wave equation
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Flux-Corrected Transport correction applied to the 2D
+          elastic wave equation for finite difference modeling in       
+          anisotropic media.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jul 15, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver --><!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-07-15T18:52:32.862165Z</created>
+    <modified>2010-08-06T00:43:04.840058Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU FCT Anis Mod</title>
+    <binary>sufctanismod</binary>
+    <description>FCT correction applied to the 2D elastic wave equation</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU FCT Anis Mod</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU FCT Anis Mod</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            FCT correction applied to the 2D elastic wave equation
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Flux-Corrected Transport correction applied to the 2D elastic wave equation for finite difference modeling in anisotropic media.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">Output files</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Reflection seismogram file name for x-component</span><br />
+                                        No output produced if no name specified.</li>
+                                <li>
+                                        <span class="label">Reflection seismogram file name for y-component</span><br />
+                                        No output produced if no name specified.</li>
+                                <li>
+                                        <span class="label">Reflection seismogram file name for z-component</span><br />
+                                        No output produced if no name specified.</li>
+                                <li>
+                                        <span class="label">VSP seismogram file name for x-component</span><br />
+                                        No output produced if no name specified.</li>
+                                <li>
+                                        <span class="label">VSP seismogram file name for y-component</span><br />
+                                        No output produced if no name specified.</li>
+                                <li>
+                                        <span class="label">VSP seismogram file name for z-component</span><br />
+                                        No output produced if no name specified.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Do not get SU-header output seismograms</span><br />
+                        If disabled, get SU-header output seismograms.</li>
+                <li>
+                        <span class="label">Depth of horizontal receivers (in gridpoints)</span></li>
+                <li>
+                        <span class="label">Do not do the FCT correction</span><br />
+                        If disabled, do the FCT correction.</li>
+                <li class="group">
+                        <span class="grouplabel">FCT related parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Diffusion coefficient</span><br />
+                                        Typical values ranging from 0.008 to 0.06.<br />
+                                        About 0.03 for the second-order method.<br />
+                                        About 0.012 for the fourth-order method.</li>
+                                <li>
+                                        <span class="label">Anti-diffusion coefficient</span><br />
+                                        Typical values ranging from 0.008 to 0.06.<br />
+                                        About 0.04 for the second-order method.<br />
+                                        About 0.015 for the fourth-order method.</li>
+                                <li>
+                                        <span class="label">X coordinate to begin the FCT correction</span></li>
+                                <li>
+                                        <span class="label">Z coordinate to begin the FCT correction</span></li>
+                                <li>
+                                        <span class="label">X coordinate to stop the FCT correction</span><br />
+                                        Default value is "Number of grid points in x-direction".</li>
+                                <li>
+                                        <span class="label">Z coordinate to stop the FCT correction</span><br />
+                                        Default value is "Number of grid points in z-direction".</li>
+                                <li>
+                                        <span class="label">Gradient of diffusion coefficient in x-direction</span></li>
+                                <li>
+                                        <span class="label">Gradient of diffusion coefficient in z-direction</span></li>
+                                <li>
+                                        <span class="label">Gradient of anti-diffusion coefficient in x-direction</span></li>
+                                <li>
+                                        <span class="label">Gradient of anti-diffusion coefficient in z-direction</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Finite difference order</span>
+                        <ul>
+                                <li>
+                                        Second order</li>
+                                <li>
+                                        Fourth order</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of time steps</span></li>
+                <li>
+                        <span class="label">Time step</span></li>
+                <li>
+                        <span class="label">Number of grid points in x-direction</span></li>
+                <li>
+                        <span class="label">Number of grid points in z-direction</span></li>
+                <li>
+                        <span class="label">Spatial step in x-direction</span></li>
+                <li>
+                        <span class="label">Spatial step in z-direction</span></li>
+                <li>
+                        <span class="label">Source x-coordinate (in gridpoints)</span><br />
+                        Default value is "Number of grid points in x-direction" divided by 2.</li>
+                <li>
+                        <span class="label">Source z-coordinate (in gridpoints)</span><br />
+                        Default value is "Number of grid points in z-direction" divided by 2.</li>
+                <li>
+                        <span class="label">Peak frequency of the wavelet</span></li>
+                <li>
+                        <span class="label">Wavelet type</span>
+                        <ul>
+                                <li>
+                                        AKB wavelet</li>
+                                <li>
+                                        Ricker wavelet</li>
+                                <li>
+                                        Impulse</li>
+                                <li>
+                                        Unity</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Surface condition</span>
+                        <ul>
+                                <li>
+                                        Absorbing surface</li>
+                                <li>
+                                        Free surface</li>
+                                <li>
+                                        Zero surface</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Source location</span>
+                        <ul>
+                                <li>
+                                        Point source</li>
+                                <li>
+                                        Sources are located on a given refelector<br />
+                                        (two horizontal and one dipping reflectors)</li>
+                                <li>
+                                        Sources are located on a given dipping refelector</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Input source file</span><br />
+                        If no name specified then use default source location.</li>
+                <li class="group">
+                        <span class="grouplabel">Density parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Input density file</span><br />
+                                        If no name is specified, then assume a linear density profile with parameters below.</li>
+                                <li>
+                                        <span class="label">Density at (0, 0)</span></li>
+                                <li>
+                                        <span class="label">Density gradient in x-direction</span></li>
+                                <li>
+                                        <span class="label">Density gradient in z-direction</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Elastic parameters (c11)</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Input elastic parameter (c11) aa file</span><br />
+                                        If no name is specified, then assume a linear profile with parameters below.</li>
+                                <li>
+                                        <span class="label">Elastic parameter at (0, 0)</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in x-direction</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in z-direction</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Elastic parameters (c33)</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Input elastic parameter (c33) cc file</span><br />
+                                        If no name is specified, then assume a linear profile with parameters below.</li>
+                                <li>
+                                        <span class="label">Elastic parameter at (0, 0)</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in x-direction</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in z-direction</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Elastic parameters (c13)</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Input elastic parameter (c13) ff file</span><br />
+                                        If no name is specified, then assume a linear profile with parameters below.</li>
+                                <li>
+                                        <span class="label">Elastic parameter at (0, 0)</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in x-direction</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in z-direction</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Elastic parameters (c44)</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Input elastic parameter (c44) ll file</span><br />
+                                        If no name is specified, then assume a linear profile with parameters below.</li>
+                                <li>
+                                        <span class="label">Elastic parameter at (0, 0)</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in x-direction</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in z-direction</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Elastic parameters (c66)</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Input elastic parameter (c66) nn file</span><br />
+                                        If no name is specified, then assume a linear profile with parameters below.</li>
+                                <li>
+                                        <span class="label">Elastic parameter at (0, 0)</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in x-direction</span></li>
+                                <li>
+                                        <span class="label">Elastic parameter gradient in z-direction</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Moving boundary options</span><br />
+                        <p>
+                                The moving boundary option permits the user to restrict the computations of the wavefield to be confined to a specific range of spatial coordinates.<br />
+                                The boundary of this restricted area moves with the wavefield.</p>
+                        <ul>
+                                <li>
+                                        <span class="label">Use moving boundary optimization</span><br />
+                                        If disabled, do not use moving boundary optimization.</li>
+                                <li>
+                                        <span class="label">Initial left side of moving boundary</span></li>
+                                <li>
+                                        <span class="label">Initial top of moving boundary</span></li>
+                                <li>
+                                        <span class="label">Initial right side of moving boundary</span></li>
+                                <li>
+                                        <span class="label">Initial bottom of moving boundary</span></li>
+                        </ul>
+                </li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        This program performs seismic modeling for elastic anisotropic media with vertical axis of symmetry.<br />
+        The finite-difference method with the FCT correction is used.</p>
+<p>
+        Stability condition:<br />
+        vmax*(<strong>Time step</strong>) /(sqrt(2)*min(<strong>Spatial step in x-direction</strong>, <strong>Spatial step in z-direction</strong>)) &lt; 1</p>
+<p>
+        Two major stages are used in the algorithm:<br />
+        (1) conventional finite-difference wave extrapolation<br />
+        (2) followed by an FCT correction</p>
+<h2 id="header_3">
+        References</h2>
+<!-- List of references --><ul>
+        <li>
+                The detailed algorithm description is given in the article "Elimination of dispersion in finite-difference modeling and migration" in CWP-137, project review, page 155-174.</li>
+        <li>
+                Original reference to the FCT method:<br />
+                Boris, J., and Book, D., 1973, Flux-corrected transport. I. SHASTA, a fluid transport algorithm that works: Journal of Computational Physics, vol. 11, p. 38-69.</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        Author: Tong Fei, Center for Wave Phenomena, Colorado School of Mines, Dec 1993.</p>
+<p>
+        Some additional features by: Stig-Kyrre Foss, CWP Colorado School of Mines, Oct 2001.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
+        Credits</h2></a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Output files</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Reflection seismogram file name for x-component</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>reflxfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Reflection seismogram file name for y-component</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>reflyfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Reflection seismogram file name for z-component</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>reflzfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>VSP seismogram file name for x-component</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>vspxfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>VSP seismogram file name for y-component</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>vspyfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>VSP seismogram file name for z-component</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>vspzfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Do not get SU-header output seismograms</label>
+        <flag>
+          <property required="no">
+            <keyword>suhead=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Depth of horizontal receivers (in gridpoints)</label>
+        <int>
+          <property required="no">
+            <keyword>receiverdepth=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Do not do the FCT correction</label>
+        <flag>
+          <property required="no">
+            <keyword>dofct=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>FCT related parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Diffusion coefficient</label>
+                <float>
+                  <property required="no">
+                    <keyword>eta0=</keyword>
+                    <value/>
+                    <default>0.03</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Anti-diffusion coefficient</label>
+                <float>
+                  <property required="no">
+                    <keyword>eta=</keyword>
+                    <value/>
+                    <default>0.04</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X coordinate to begin the FCT correction</label>
+                <int>
+                  <property required="no">
+                    <keyword>fctxbeg=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Z coordinate to begin the FCT correction</label>
+                <int>
+                  <property required="no">
+                    <keyword>fctzbeg=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X coordinate to stop the FCT correction</label>
+                <int>
+                  <property required="no">
+                    <keyword>fctxend=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Z coordinate to stop the FCT correction</label>
+                <int>
+                  <property required="no">
+                    <keyword>fctzend=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Gradient of diffusion coefficient in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>deta0dx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gradient of diffusion coefficient in z-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>deta0dz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gradient of anti-diffusion coefficient in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>detadx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gradient of anti-diffusion coefficient in z-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>detadz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.03</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.04</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Finite difference order</label>
+        <enum>
+          <property required="no">
+            <keyword>order=</keyword>
+            <value/>
+            <default>2</default>
+          </property>
+          <option>
+            <label>Second order</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Fourth order</label>
+            <value>4</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Number of time steps</label>
+        <int>
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default>200</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Time step</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default>0.004</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of grid points in x-direction</label>
+        <int>
+          <property required="no">
+            <keyword>nx=</keyword>
+            <value/>
+            <default>100</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of grid points in z-direction</label>
+        <int>
+          <property required="no">
+            <keyword>nz=</keyword>
+            <value/>
+            <default>100</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Spatial step in x-direction</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default>0.02</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Spatial step in z-direction</label>
+        <float>
+          <property required="no">
+            <keyword>dz=</keyword>
+            <value/>
+            <default>0.02</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Source x-coordinate (in gridpoints)</label>
+        <int>
+          <property required="no">
+            <keyword>sx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Source z-coordinate (in gridpoints)</label>
+        <int>
+          <property required="no">
+            <keyword>sz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Peak frequency of the wavelet</label>
+        <float>
+          <property required="no">
+            <keyword>fpeak=</keyword>
+            <value/>
+            <default>20</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Wavelet type</label>
+        <enum>
+          <property required="no">
+            <keyword>wavelet=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>AKB wavelet</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Ricker wavelet</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Impulse</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Unity</label>
+            <value>4</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Surface condition</label>
+        <enum>
+          <property required="no">
+            <keyword>isurf=</keyword>
+            <value/>
+            <default>2</default>
+          </property>
+          <option>
+            <label>Absorbing surface</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Free surface</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Zero surface condition</label>
+            <value>3</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Source location</label>
+        <enum>
+          <property required="no">
+            <keyword>source=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>Point source</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Sources are located on a given refelector</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Sources are located on a given dipping refelector</label>
+            <value>3</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Input source file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>sfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Density parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Input density file</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>dfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Density at (0, 0)</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho00=</keyword>
+                    <value/>
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density gradient in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>drhodx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density gradient in z-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>drhodz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Elastic parameters (c11)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Input elastic parameter (c11) aa file</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>afile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter at (0, 0)</label>
+                <float>
+                  <property required="no">
+                    <keyword>aa00=</keyword>
+                    <value/>
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>daadx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in z-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>daadz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Elastic parameters (c33)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Input elastic parameter (c33) cc file</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>cfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter at (0, 0)</label>
+                <float>
+                  <property required="no">
+                    <keyword>cc00=</keyword>
+                    <value/>
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>dccdx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in z-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>dccdz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Elastic parameters (c13)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Input elastic parameter (c13) ff file</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>ffile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter at (0, 0)</label>
+                <float>
+                  <property required="no">
+                    <keyword>ff00=</keyword>
+                    <value/>
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>dffdx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in z-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>dffdz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Elastic parameters (c44)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Input elastic parameter (c44) ll file</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>lfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter at (0, 0)</label>
+                <float>
+                  <property required="no">
+                    <keyword>ll00=</keyword>
+                    <value/>
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>dlldx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in z-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>dlldz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Elastic parameters (c66)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Input elastic parameter (c66) nn file</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>nfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter at (0, 0)</label>
+                <float>
+                  <property required="no">
+                    <keyword>nn00=</keyword>
+                    <value/>
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in x-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>dnndx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Elastic parameter gradient in z-direction</label>
+                <float>
+                  <property required="no">
+                    <keyword>dnndz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Moving boundary options</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Use moving boundary optimization</label>
+                <flag>
+                  <property required="no">
+                    <keyword>movebc=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Initial left side of moving boundary</label>
+                <int>
+                  <property required="no">
+                    <keyword>mbx1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Initial top of moving boundary</label>
+                <int>
+                  <property required="no">
+                    <keyword>mbz1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Initial right side of moving boundary</label>
+                <int>
+                  <property required="no">
+                    <keyword>mbx2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Initial bottom of moving boundary</label>
+                <int>
+                  <property required="no">
+                    <keyword>mbz2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

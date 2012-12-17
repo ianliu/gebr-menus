@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Cepstrum</title>
+  <description>Compute the cepstrum of a seismic trace</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Cepstrum</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Cepstrum</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Compute the cepstrum of a seismic trace
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Compute the cepstrum of a seismic trace or compute the     
+                minimum phase reconstruction of a trace.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Aug 25, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Aug 25, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-08-25T17:58:03.271972Z</created>
+    <modified>2010-08-26T16:52:31.429867Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Cepstrum</title>
+    <binary>sucepstrum</binary>
+    <description>Compute the cepstrum of a seismic trace</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Cepstrum</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Cepstrum</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Compute the cepstrum of a seismic trace
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Compute the cepstrum of a seismic trace or compute the minimum phase reconstruction of a trace.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Minimum phase reconstructed version of original signal</span></li>
+                <li>
+                        <span class="label">Symmetrical output</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        The cepstrum is defined as the fourier transform of the the decibel spectrum, as though it were a time domain signal.</p>
+<p>
+        C(t) = IFFT(ln(|T(w)|)<br />
+        |T(w)| = amplitude spectrum of the trace</p>
+<p>
+        If parameter <b>Minimum phase reconstructed version of original signal</b> set on, the input traces are converted to the minimum phase form.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Balazs Nemeth of Potash Corporation of Saskatchewan Inc. given to CWP in 2008.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Minimum phase reconstructed version of original signal</label>
+        <flag>
+          <property required="no">
+            <keyword>mpr=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Symmetrical output</label>
+        <flag>
+          <property required="no">
+            <keyword>centered=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

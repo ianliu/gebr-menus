@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Ref Real Azi HTI</title>
+  <description>Real azimuthal refl/transm coeff for HTI media</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Ref Real Azi HTI</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Ref Real Azi HTI</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Real azimuthal refl/transm coeff for HTI media
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Real azimuthal reflection/transmission coefficient for HTI media.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 21, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 21, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-21T12:50:18.356074Z</created>
+    <modified>2010-09-21T13:45:24.159391Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>Ref Real Azi HTI</title>
+    <binary>refRealAziHTI</binary>
+    <description>Real azimuthal refl/transm coeff for HTI media</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Ref Real Azi HTI</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Ref Real Azi HTI</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Real azimuthal refl/transm coeff for HTI media
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Real azimuthal reflection/transmission coefficient for HTI media.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">Medium 1 properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">P-wave velocity</span><br />
+                                        With respect to symm.axes.</li>
+                                <li>
+                                        <span class="label">S-wave velocity</span><br />
+                                        With respect to symm.axes.</li>
+                                <li>
+                                        <span class="label">Epsilon</span></li>
+                                <li>
+                                        <span class="label">Delta</span></li>
+                                <li>
+                                        <span class="label">Gamma</span></li>
+                                <li>
+                                        <span class="label">Density</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Medium 2 properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">P-wave velocity</span><br />
+                                        With respect to symm.axes.</li>
+                                <li>
+                                        <span class="label">S-wave velocity</span><br />
+                                        With respect to symm.axes.</li>
+                                <li>
+                                        <span class="label">Epsilon</span></li>
+                                <li>
+                                        <span class="label">Delta</span></li>
+                                <li>
+                                        <span class="label">Gamma</span></li>
+                                <li>
+                                        <span class="label">Density</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Incident wave mode</span>
+                        <ul>
+                                <li>
+                                        Incident mode is qP</li>
+                                <li>
+                                        Incident mode is qSV</li>
+                                <li>
+                                        Incident mode is SP</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Scattered wave mode</span>
+                        <ul>
+                                <li>
+                                        Scattered mode is qP</li>
+                                <li>
+                                        Scattered mode is qSV</li>
+                                <li>
+                                        Scattered mode is SP</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Reflection or transmission</span>
+                        <ul>
+                                <li>
+                                        Reflection</li>
+                                <li>
+                                        Transmission</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Azimuth with respect to x1-axis</span></li>
+                <li class="group">
+                        <span class="grouplabel">Angles properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">First incidence angle</span></li>
+                                <li>
+                                        <span class="label">Last incidence angle</span></li>
+                                <li>
+                                        <span class="label">Angle increment</span></li>
+                                <li>
+                                        <span class="label">Scale of angles</span>
+                                        <ul>
+                                                <li>
+                                                        Angle in degrees</li>
+                                                <li>
+                                                        Angle-axis in rad</li>
+                                                <li>
+                                                        Axis horizontal slowness</li>
+                                                <li>
+                                                        Sin^2 of incidence angle</li>
+                                        </ul>
+                                </li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Output type</span>
+                        <ul>
+                                <li>
+                                        ASCII output</li>
+                                <li>
+                                        Binary output</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Parameter file for plotting</span></li>
+                <li>
+                        <span class="label">Coefficient-output file</span></li>
+                <li>
+                        <span class="label">Desactivate testing routines in code</span></li>
+                <li>
+                        <span class="label">Output intermediate results</span></li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        Axes of symmetry have to coincide in both media.<br />
+        This code computes all 6 real reflection/transmissions coefficients on the fly.<br />
+        However, the set-up is such real reflection/transmission coefficients in HTI-media with coinciding symmetry axes.<br />
+        However, the set-up is such that currently only one coefficient is dumped into the output.<br />
+        This is easily changed. The solution of the scattering problem is obtained numerically and involves the Gaussian elimination of a 6X6 matrix.</p>
+<h2 id="header_3">
+        References</h2>
+<!-- List of references --><ul>
+        <li>
+                Sebastian Geoltrain: Asymptotic solutions to direct and inverse scattering in anisotropic elastic media; <br />
+                CWP 082.</li>
+        <li>
+                Graebner, M.; Geophysics, Vol 57, No 11:<br />
+                Plane-wave reflection and transmission coefficients for a transversely isotropic solid.</li>
+        <li>
+                Cerveny, V., 1972, Seismic rays and ray intensities in inhomogeneous anisotropic media:<br />
+                Geophys. J. R. astr. Soc., 29, 1-13.</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+         Author: Andreas Rueger, Colorado School of Mines, 02/10/95.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Medium 1 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>P-wave velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp1=</keyword>
+                    <value/>
+                    <default>2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>S-wave velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs1=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Epsilon</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Delta</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gamma</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho1=</keyword>
+                    <value/>
+                    <default>2.7</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.7</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Medium 2 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>P-wave velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp2=</keyword>
+                    <value/>
+                    <default>2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>S-wave velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs2=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Epsilon</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Delta</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gamma</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho2=</keyword>
+                    <value/>
+                    <default>2.7</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.7</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Incident wave mode</label>
+        <enum>
+          <property required="no">
+            <keyword>modei=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>Incident mode is qP</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Incident mode is qSV</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Incident mode is SP</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Scattered wave mode</label>
+        <enum>
+          <property required="no">
+            <keyword>modet=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>Scattered mode is qP</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Scattered mode is qSV</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Scattered mode is SP</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Reflection or transmission</label>
+        <enum>
+          <property required="no">
+            <keyword>rort=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>Reflection</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Transmission</label>
+            <value>0</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Azimuth with respect to x1-axis</label>
+        <float>
+          <property required="no">
+            <keyword>azimuth=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Angles properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>First incidence angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>fangle=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Last incidence angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>langle=</keyword>
+                    <value/>
+                    <default>45</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Angle increment</label>
+                <float>
+                  <property required="no">
+                    <keyword>dangle=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Scale of angles</label>
+                <enum>
+                  <property required="no">
+                    <keyword>iscale=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                  <option>
+                    <label>Angle in degrees</label>
+                    <value>0</value>
+                  </option>
+                  <option>
+                    <label>Angle-axis in rad</label>
+                    <value>1</value>
+                  </option>
+                  <option>
+                    <label>Axis horizontal slowness</label>
+                    <value>2</value>
+                  </option>
+                  <option>
+                    <label>Sin^2 of incidence angle</label>
+                    <value>3</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>45</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>45</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output type</label>
+        <enum>
+          <property required="no">
+            <keyword>ibin=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>ASCII output</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Binary output</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Parameter file for plotting</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>outparfile=</keyword>
+            <value/>
+            <default>outpar</default>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Coefficient-output file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>coeffile=</keyword>
+            <value/>
+            <default>coeff.data</default>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Desactivate testing routines in code</label>
+        <flag>
+          <property required="no">
+            <keyword>test=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Output intermediate results</label>
+        <int>
+          <property required="no">
+            <keyword>info=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

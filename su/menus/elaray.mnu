@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>ELA Ray</title>
+  <description>Ray tracing for elastic anisotropic models</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>ELA Ray</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">ELA Ray</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Ray tracing for elastic anisotropic models
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Ray tracing for elastic anisotropic models.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 15, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 15, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-15T17:05:30.679338Z</created>
+    <modified>2011-02-03T13:01:20.743166Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>ELA Ray</title>
+    <binary>elaray</binary>
+    <description>Ray tracing for elastic anisotropic models</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>ELA Ray</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">ELA Ray</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Ray tracing for elastic anisotropic models
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Ray tracing for elastic anisotropic models.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">X coordinate of source</span><br />
+                        Default value is halfway across model.</li>
+                <li>
+                        <span class="label">Z coordinate of sourc</span><br />
+                        Default value is at top of model.</li>
+                <li class="group">
+                        <span class="grouplabel">Takeoff angle properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of takeoff angles</span></li>
+                                <li>
+                                        <span class="label">First takeoff angle (in degrees)</span></li>
+                                <li>
+                                        <span class="label">Last takeoff angle (in degrees)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">File of ray x,z coordinates of ray-edge intersections</span></li>
+                <li>
+                        <span class="label">Number of (x,z) in file of ray-edge intersections coordinates</span></li>
+                <li>
+                <li>
+                        <span class="label">File of ray x,z coordinates uniformly sampled in time</span></li>
+                <li>
+                        <span class="label">Number of (x,z) in file of uniformly sampled in time coordinates</span></li>
+                        <span class="label">Mode of shoot</span>
+                        <ul>
+                                <li>
+                                        Shoot P-rays</li>
+                                <li>
+                                        Shoot SV-rays</li>
+                                <li>
+                                        Shoot SH-rays</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Rays to display</span>
+                        <ul>
+                                <li>
+                                        Only single-reflected rays</li>
+                                <li>
+                                        Only direct hits</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Index of reflector</span><br />
+                        Followed by sequence of: <br />
+                        transmission(0), <br />
+                        reflection (1),<br />
+                        transmission with mode conversion (2),  <br />
+                        reflection with mode conversion (3) <br />
+                        or ray stops(-1).</li>
+                <li>
+                        <span class="label">Display and store only rays incident at interface with this index value</span></li>
+                <li>
+                        <span class="label">Force impact strenght</span></li>
+                <li>
+                        <span class="label">Force dip with respect to vertical</span></li>
+                <li>
+                        <span class="label">Force azimuth with respect to positive x-axis</span></li>
+                <li>
+                        <span class="label">Include reflec/transm coeff (currently only for P)</span></li>
+                <li>
+                        <span class="label">Traveltime associated with wavefront</span></li>
+                <li>
+                        <span class="label">ASCII-file to store useful information</span></li>
+                <li>
+                        <span class="label">File containing parameters for the plotting software</span><br /></li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        The file generated by this program (rayends), contains ray parameters for the locations at which the rays terminate.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
+<div>
+        The <strong>File of ray x,z coordinates of ray-edge intersections </strong>is useful for making plots of ray paths. The parameter <strong>Number of (x,z) in file of ray-edge intersections coordinates</strong> should be larger than twice the number of triangles intersected by the rays.<span class="Apple-tab-span" style="white-space:pre"> </span></div>
+<div>
+        The <strong>File of ray x,z coordinates uniformly sampled in time </strong>is useful for making plots of wavefronts. The time sampling interval in the <strong>File of ray x,z coordinates uniformly sampled in time </strong>is tmax/(<strong>Number of (x,z) in file of uniformly sampled in time coordinates </strong>- 1), where tmax is the maximum time for all rays.</div>
+<div>
+        Alternatively, one wavefront at time <strong>Traveltime associated with wavefront</strong> is plotted.<span class="Apple-tab-span" style="white-space:pre"> </span></div>
+<div>
+         </div>
+<div>
+        The parameter <strong>ASCII-file to store useful information</strong> is useful for collecting information along the individual rays.<span class="Apple-tab-span" style="white-space:pre"> </span></div>
+<div>
+        The <strong>File containing parameters for the plotting software</strong> stores information used for the plotting software.</div>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Andreas Rueger, Colorado School of Mines, 01/02/95.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>X coordinate of source</label>
+        <float>
+          <property required="no">
+            <keyword>xs=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Z coordinate of source</label>
+        <float>
+          <property required="no">
+            <keyword>zs=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Takeoff angle properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of takeoff angles</label>
+                <int>
+                  <property required="no">
+                    <keyword>nangle=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First takeoff angle (in degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fangle=</keyword>
+                    <value/>
+                    <default>-45</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Last takeoff angle (in degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>langle=</keyword>
+                    <value/>
+                    <default>45</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>-45</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>45</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>File of ray x,z coordinates of ray-edge intersections</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>rayfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of (x,z) in file of ray-edge intersections coordinates</label>
+        <int min="0">
+          <property required="no">
+            <keyword>nxz=</keyword>
+            <value/>
+            <default>101</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>File of ray x,z coordinates uniformly sampled in time</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>wavefile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of (x,z) in file of uniformly sampled in time coordinates</label>
+        <int min="0">
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Mode of shoot</label>
+        <enum>
+          <property required="no">
+            <keyword>mode=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>Shoot P-rays</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Shoot SV-rays</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Shoot SH-rays</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Rays to display</label>
+        <enum>
+          <property required="no">
+            <keyword>prim=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Only single-reflected rays</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Only direct hits</label>
+            <value>0</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Index of reflectors</label>
+        <group instanciable="yes" expand="yes">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Index of reflector</label>
+                <int>
+                  <property required="no" separator=",">
+                    <keyword>refseq=</keyword>
+                    <value/>
+                    <default>1</default>
+                    <default>0</default>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Index of reflector</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                  <default>0</default>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Display and store only rays incident at interface with this index value</label>
+        <int>
+          <property required="no">
+            <keyword>krecord=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Force impact strenght</label>
+        <float>
+          <property required="no">
+            <keyword>f0=</keyword>
+            <value/>
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Force dip with respect to vertical</label>
+        <float>
+          <property required="no">
+            <keyword>fdip=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Force azimuth with respect to positive x-axis</label>
+        <float>
+          <property required="no">
+            <keyword>fazi=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Include reflec/transm coeff (currently only for P)</label>
+        <flag>
+          <property required="no">
+            <keyword>reftrans=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Traveltime associated with wavefront</label>
+        <float>
+          <property required="no">
+            <keyword>tw=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>ASCII-file to store useful information</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>infofile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>File containing parameters for the plotting software</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>outparfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

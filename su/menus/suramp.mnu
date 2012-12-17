@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Ramp</title>
+  <description>Linearly taper the start and/or end of traces to zero</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Ramp</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Ramp</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Linearly taper the start and/or end of traces to zero
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Editing, Sorting and Manipulation | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Linearly taper the start and/or end of traces to zero.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Oct 09, 2007: written by G&ecirc;BR core team &lt;port@gebrproject.com&gt;</p>
+          <p>Aug 04, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Aug 11, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+
+            <li><a href="#intro">Introduction</a></li>
+            
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 11, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-10-09T15:00:00Z</created>
+    <modified>2010-08-11T15:38:30.786669Z</modified>
+    <lastrun/>
+  </date>
+  <category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
+    <title>SU Ramp</title>
+    <binary>suramp</binary>
+    <description>Linearly taper the start and/or end of traces to zero</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Ramp</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Ramp</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Linearly taper the start and/or end of traces to zero
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Editing, Sorting and Manipulation | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+        
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
+
+            <p>Linearly taper the start and/or end of traces to zero.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <!-- List of optional parameters -->
+            <!-- begin lst -->
+            <ul>
+              <li><span class="label">Sampling interval (sec)</span><br/>
+                This parameters is optional if defined in the header. Otherwise, it is required.</li>
+
+              <li><span class="label">End of starting ramp (sec)</span><br/>
+                By default it is set to "Delay recording time in ms" (from header)/1000.</li>
+
+              <li><span class="label">Beginning of ending ramp (sec)</span><br/>
+                By default it is set to (nt-1)*<b>Sampling interval (sec)</b>.</li>
+            </ul>
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The taper is a linear ramp from 0 to value of parameter <b>End of starting ramp</b> and/or <b>Beginning of ending ramp</b> 
+             to the end of the trace.</p>
+
+          <p>This program accesses the following header keywords
+            <ul>
+              <li>Number of samples</li>  <!-- ns -->
+              <li>Sampling interval in microseconds</li>  <!-- dt -->
+              <li>Delay recording time in ms</li>  <!-- delrt -->
+            </ul>
+          </p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>CWP: Jack K. Cohen, Ken Larner</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Sampling interval (sec)</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>End of starting ramp (sec)</label>
+        <float>
+          <property required="no">
+            <keyword>tmin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Beginning of ending ramp (sec)</label>
+        <float>
+          <property required="no">
+            <keyword>tmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

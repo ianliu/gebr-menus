@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Smooth 2D</title>
+  <description>Smooth an uniformly sampled 2d array of data</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Smooth 2D</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Smooth 2D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Smooth an uniformly sampled 2d array of data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Seismic Unix | Simulation and Model Building
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Smooth an uniformly sampled 2D array of data, within an user-defined window, via a damped least squares technique.</p>
+<h2 id="header_1">
+        Credits</h2>
+<p>
+        Jun 8, 2009: writen by Denilson Stefanelli, UNICAMP, &lt;denistefanelli@gmail.com&gt;<br />
+        Mar 5, 2010: updated by Luis A. D'Afonseca, UNICAMP, &lt;luis.dafonseca@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Mar 5, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+  <author>Denilson Stefanelli</author>
+  <email>denistefanelli@gmail.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-05-29T20:35:20Z</created>
+    <modified>2010-08-06T00:43:03.851927Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>Smooth 2D</title>
+    <binary>smooth2</binary>
+    <description>Smooth an uniformly sampled 2d array of data</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Smooth 2D</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Smooth 2D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Smooth an uniformly sampled 2d array of data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Seismic Unix | Simulation and Model Building
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Smooth an uniformly sampled 2D array of data, within an user-defined window, via a damped least squares technique.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+        <!-- begin lst -->
+            <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of samples in the 1st (fast) dimension</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of samples in the 2nd (slow) dimension</span></li>
+                <li>
+                        <span class="label">Smoothing parameter in the 1st direction</span></li>
+                <li>
+                        <span class="label">Smoothing parameter in the 2nd direction</span></li>
+                <li>
+                        <span class="label">Window to be smoothed, using format: n1min,n1max,n2min,n2max</span><br />
+                        The first two values set the range for the first dimension, in number of samples, and the folowing two values set the range for the second dimension.</li>
+                <li>
+                        <span class="label">Smoothing of window borders</span><br />
+                        Setting a nonzero value for this parameter smoothes the window function, i.e., blur the edges of the window. If this parameter is zero the edges of the window will be sharp.</li>
+                <li>
+                        <span class="label">File to write the relative error</span></li>
+        </ul>
+<!-- end lst -->  <!-- end lst -->
+
+          </div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Larger values for the smoothing parameters in first or second dimension result in a smoother data. The recommended ranges for these parameters are from 1 to 20.      </p>
+<p>
+        The relative error file gives the relative error between the original velocity and the smoothed one, as a function of depth. If the error is  between 0.01 and 0.1, the smoothing parameters are suitable, otherwise, consider increasing or decreasing the smoothing parameter values.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        CWP: Zhen-yue Liu, adapted by John Stockwell on 1 Oct 92 and windowing feature added by Zliu on 16 Nov 1992</p>
+</div>
+
+<div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of samples in the 1st (fast) dimension</label>
+        <int min="1">
+          <property required="yes">
+            <keyword>n1=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of samples in the 2nd (slow) dimension</label>
+        <int min="1">
+          <property required="yes">
+            <keyword>n2=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Smoothing parameter in the 1st direction</label>
+        <float>
+          <property required="no">
+            <keyword>r1=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Smoothing parameter in the 2nd direction</label>
+        <float>
+          <property required="no">
+            <keyword>r2=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Window to be smoothed, using format: n1min,n1max,n2min,n2max</label>
+        <float>
+          <property required="no">
+            <keyword>win=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Smoothing of window borders</label>
+        <float min="">
+          <property required="no">
+            <keyword>rw=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>File to write the relative error</label>
+        <string>
+          <property required="no">
+            <keyword>efile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </string>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

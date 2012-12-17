@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Gassmann</title>
+  <description>Model reflectivity change with rock/fluid properties</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Gassmann</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Gassmann</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Model reflectivity change with rock/fluid properties
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Model reflectivity change with rock/fluid properties.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 21, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 21, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-21T16:12:53.717660Z</created>
+    <modified>2010-09-24T14:11:22.625460Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Gassmann</title>
+    <binary>sugassmann</binary>
+    <description>Model reflectivity change with rock/fluid properties</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Gassmann</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Gassmann</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Model reflectivity change with rock/fluid properties
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Model reflectivity change with rock/fluid properties.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Number of time samples</span></li>
+                <li>
+                        <span class="label">Number of traces</span></li>
+                <li>
+                        <span class="label">Time sampling interval in seconds</span></li>
+                <li>
+                        <span class="label">Operation mode</span>
+                        <ul>
+                                <li>
+                                        Model isolated gassmann refl coefficient</li>
+                                <li>
+                                        Embed gassmann RC in random RC series</li>
+                                <li>
+                                        R0 parameter sensitivity output</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Parameter sensitivity test range</span><br/>Only for <strong>Operation mode</strong> = <strong>R0 parameter sensitivity output</strong>.</li>
+                <li class="group">
+                        <span class="grouplabel">Environment parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Temperature in degrees C</span></li>
+                                <li>
+                                        <span class="label">Pressure in megaPascals</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Caprock parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Caprock P-wave speed (m/s)</span></li>
+                                <li>
+                                        <span class="label">Caprock mass density (g/cc)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Reservoir fluid parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Gas specific gravity 0.56 (methane)-1.8 (condensate)</span></li>
+                                <li>
+                                        <span class="label">Gas specific gravity 10 (heavy)-50 (ultra light)</span></li>
+                                <li>
+                                        <span class="label">Brine salinity in ppm/(1000 000)</span></li>
+                                <li>
+                                        <span class="label">Oil saturation</span><br/>Should be in the range [0, 1].</li>
+                                <li>
+                                        <span class="label">Gas saturation</span><br/>Should be in the range [0, 1].</li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Reservoir rock frame parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Bulk modulus (MPa) of rock frame mineral(s)</span><br/>Default is for quartz.</li>
+                                <li>
+                                        <span class="label">Shear modulus (MPa) of rock frame mineral(s)</span><br/>Default is for quartz.</li>
+                                <li>
+                                        <span class="label">Mass density (g/cc) of rock frame mineral(s)</span><br/>Default is for quartz.</li>
+                                <li>
+                                        <span class="label">Rock frame porosity</span><br/>Should be in the range [0, 1].</li>
+                                <li>
+                                        <span class="label">Reservoir thickness (m)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Fitting parameters (see help for more information)</span><br />
+                        Mdry/Mmineral ~ 1/(a + b * <strong>Rock frame porosity</strong>^c),
+                        <div>
+                                where M is P-wave modulus and defaults are for Glenn sandstone<br />
+                                [see Liner (2nd ed, table 26.2).</div>
+                        <ul>
+                                <li>
+                                        <span class="label">Parameter a</span></li>
+                                <li>
+                                        <span class="label">Parameter b</span></li>
+                                <li>
+                                        <span class="label">Parameter c</span></li>
+                        </ul>
+                </li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Creates a reflection coefficient series based on Gassmann theory of velocity and density for porous elastic media.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+         UHouston: Chris Liner, 9/23/2009.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of time samples</label>
+        <int>
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default>500</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces</label>
+        <int>
+          <property required="no">
+            <keyword>ntr=</keyword>
+            <value/>
+            <default>200</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval in seconds</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default>0.004</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Operation mode</label>
+        <enum>
+          <property required="no">
+            <keyword>mode=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>Model isolated gassmann refl coefficient</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Embed gassmann RC in random RC series</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>R0 parameter sensitivity output</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Parameter sensitivity test range</label>
+        <float>
+          <property required="no">
+            <keyword>p=</keyword>
+            <value/>
+            <default>0.15</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Environment parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Temperature in degrees C</label>
+                <float>
+                  <property required="no">
+                    <keyword>temp=</keyword>
+                    <value/>
+                    <default>140</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Pressure in megaPascals</label>
+                <float>
+                  <property required="no">
+                    <keyword>pres=</keyword>
+                    <value/>
+                    <default>20</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>140</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>20</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Caprock parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Caprock P-wave speed (m/s)</label>
+                <float>
+                  <property required="no">
+                    <keyword>v1=</keyword>
+                    <value/>
+                    <default>37900</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Caprock mass density (g/cc)</label>
+                <float>
+                  <property required="no">
+                    <keyword>r1=</keyword>
+                    <value/>
+                    <default>44300</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>37900</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>44300</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Reservoir fluid parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Gas specific gravity 0.56 (methane)-1.8 (condensate)</label>
+                <float>
+                  <property required="no">
+                    <keyword>g=</keyword>
+                    <value/>
+                    <default>0.56</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gas specific gravity 10 (heavy)-50 (ultra light)</label>
+                <float>
+                  <property required="no">
+                    <keyword>api=</keyword>
+                    <value/>
+                    <default>50</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Brine salinity in ppm/(1000 000)</label>
+                <float>
+                  <property required="no">
+                    <keyword>s=</keyword>
+                    <value/>
+                    <default>35</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Oil saturation</label>
+                <float min="0" max="1">
+                  <property required="no">
+                    <keyword>so=</keyword>
+                    <value/>
+                    <default>0.7</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Gas saturation</label>
+                <float min="0" max="1">
+                  <property required="no">
+                    <keyword>sg=</keyword>
+                    <value/>
+                    <default>0.2</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.56</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>35</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.7</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.2</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Reservoir rock frame parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Bulk modulus (MPa) of rock frame mineral(s)</label>
+                <float>
+                  <property required="no">
+                    <keyword>kmin=</keyword>
+                    <value/>
+                    <default>37900</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Shear modulus (MPa) of rock frame mineral(s)</label>
+                <float>
+                  <property required="no">
+                    <keyword>mumin=</keyword>
+                    <value/>
+                    <default>44300</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Mass density (g/cc) of rock frame mineral(s)</label>
+                <float>
+                  <property required="no">
+                    <keyword>rmin=</keyword>
+                    <value/>
+                    <default>2.67</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Rock frame porosity</label>
+                <float min="0" max="1">
+                  <property required="no">
+                    <keyword>phi=</keyword>
+                    <value/>
+                    <default>0.24</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Reservoir thickness (m)</label>
+                <float>
+                  <property required="no">
+                    <keyword>h=</keyword>
+                    <value/>
+                    <default>20</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>37900</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>44300</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.67</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.24</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>20</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Fitting parameters (see help for more information)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Parameter a</label>
+                <float>
+                  <property required="no">
+                    <keyword>a=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Parameter b</label>
+                <float>
+                  <property required="no">
+                    <keyword>b=</keyword>
+                    <value/>
+                    <default>15</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Parameter c</label>
+                <float>
+                  <property required="no">
+                    <keyword>c=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>15</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

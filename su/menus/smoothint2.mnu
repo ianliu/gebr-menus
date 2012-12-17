@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Smooth Interfaces</title>
+  <description>Smooth non-uniformly sampled interfaces</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Smooth Interfaces</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Smooth Interfaces</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Smooth non-uniformly sampled interfaces
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Smooth non-uniformly sampled interfaces, via the damped least-squares technique.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<p>
+        May 16, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 16, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+  <author>Davi Clemente</author>
+  <email>davi.clemente@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-17T00:53:30.923244Z</created>
+    <modified>2010-08-06T00:43:03.894817Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>Smooth Interfaces</title>
+    <binary>smoothint2</binary>
+    <description>Smooth non-uniformly sampled interfaces</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Smooth Interfaces</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Smooth Interfaces</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Smooth non-uniformly sampled interfaces
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+
+        <p>Smooth non-uniformly sampled interfaces, via the damped least-squares technique.</p>
+
+        <p>This program receive a file containing original interfaces and creates a file containing smoothed interfaces.</p>
+
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+        <!-- begin lst -->
+            <ul>
+                <li>
+                        <span class="label">Number of interfaces</span></li>
+                <li>
+                        <span class="label">Smoothing parameter</span></li>
+                <li>
+                        <span class="label">Maximum number of points in interfaces</span></li>
+        </ul>
+<!-- end lst -->  <!-- end lst -->
+
+          </div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        The input file is an ASCII file. Each interface is represented by pairs (non-uniform sampling) of x and z values, with one pair of values on each line, separated by spaces or tabs. Each interface is separated with an entry with a large negative z value for example: 1.0 -9999.<span class="Apple-tab-span" style="white-space:pre"> </span></p>
+<div>
+        There is no entry for the surface. The surface is assumed to be flat with z = 0. This is similar to a CSHOT model file without a surface entry and without comments.</div>
+<div>
+         </div>
+<div>
+        The smoothing method is analogous to a moving window averaging process (but not the same) with the <strong>Smoothing Parameter</strong> being analogous to the width of the window. Thus, it's size must be chosen to by compatible with the scale (wavelengths) of the variations of the interfaces in the model being smoothed.</div>
+<div>
+         </div>
+<h2 id="header_3">
+        References</h2>
+
+        <ul>
+        <li>Liu, Zhenyue, 1994, Velocity smoothing: theory and implementation,<br/>
+        Project Review, 1994, Consortium Project on Seismic Inverse Methods for Complex Stuctures (in review).</li>
+        </ul>
+
+
+
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        CWP: Zhenyue Liu, Jan 1994</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2>
+        <ul><li><a href="#header_0">Introduction</a></li>
+        <li><a href="#header_1">Parameters</h2></a></li>
+        <li><a href="#header_2">Notes</a></li>
+        <li><a href="#header_3">References</a></li>
+        <li><a href="#header_4">Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of interfaces</label>
+        <int min="1">
+          <property required="no">
+            <keyword>ninf=</keyword>
+            <value/>
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Smoothing parameter</label>
+        <float>
+          <property required="no">
+            <keyword>r=</keyword>
+            <value/>
+            <default>100.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum number of points in interfaces</label>
+        <int>
+          <property required="no">
+            <keyword>npmax=</keyword>
+            <value/>
+            <default>101</default>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

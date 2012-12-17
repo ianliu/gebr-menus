@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Transpose 3D</title>
+  <description>Transpose an n1 by n2 by n3 element matrix</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Transpose 3D</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Transpose 3D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Transpose an n1 by n2 by n3 element matrix
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Transpose an n1 by n2 by n3 element matrix.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 04, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Set 04, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-04T21:54:41.812442Z</created>
+    <modified>2010-09-07T16:41:16.128315Z</modified>
+    <lastrun/>
+  </date>
+  <category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>Transpose 3D</title>
+    <binary>transp3d</binary>
+    <description>Transpose an n1 by n2 by n3 element matrix</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Transpose 3D</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Transpose 3D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Transpose an n1 by n2 by n3 element matrix
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Transpose an n1 by n2 by n3 element matrix.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+              
+            <!-- begin lst --><ul>
+<li class="req"><span class="reqlabel">Number of elements in 1st (fast) dimension of matrix</span></li>
+<li class="req"><span class="reqlabel">Number of elements in 2nd (middle) dimension of matrix</span></li>
+<li><span class="label">Number of elements in 3rd (slow) dimension of matrix</span></li>
+<li><span class="label">Desired output axis ordering</span></li>
+<li><span class="label">Number of bytes per matrix element</span></li>
+<li><span class="label">Directory for scratch files</span></li>
+<li><span class="label">Stem prefix for scratch file names</span></li>
+<li><span class="label">Echoes extra information</span></li>
+</ul>
+<!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+         
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>AUTHOR:  Stewart A. Levin, Landmark Graphics, 01/20/10.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of elements in 1st (fast) dimension of matrix</label>
+        <int>
+          <property required="yes">
+            <keyword>n1=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of elements in 2nd (middle) dimension of matrix</label>
+        <int>
+          <property required="yes">
+            <keyword>n2=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of elements in 3rd (slow) dimension of matrix</label>
+        <int>
+          <property required="no">
+            <keyword>n3=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Desired output axis ordering</label>
+        <int>
+          <property required="no">
+            <keyword>perm=</keyword>
+            <value/>
+            <default>231</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of bytes per matrix element</label>
+        <int>
+          <property required="no">
+            <keyword>nbpe=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Directory for scratch files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>scratchdir=</keyword>
+            <value/>
+            <default>/tmp</default>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Stem prefix for scratch file names</label>
+        <string>
+          <property required="no">
+            <keyword>scratchstem=</keyword>
+            <value/>
+            <default>foo</default>
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>X Rects</title>
+  <description>Plot rectangles on a two-dimensional grid</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>X Rects</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">X Rects</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Plot rectangles on a two-dimensional grid
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Plot rectangles on a two-dimensional grid.</p>
+
+          <!-- begin par --><!-- end par -->
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Abr 14, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Abr 14, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-04-14T16:12:28.171113Z</created>
+    <modified>2010-08-06T00:43:10.504643Z</modified>
+    <lastrun/>
+  </date>
+  <category>Graphics</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" version="SU 42">
+    <title>X Rects</title>
+    <binary>xrects</binary>
+    <description>Plot rectangles on a two-dimensional grid</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>X Rects</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">X Rects</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Plot rectangles on a two-dimensional grid
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Plot rectangles on a two-dimensional grid.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li class="group"><span class="grouplabel">X1 properties</span>
+
+              <ul>
+              <li class="req"><span class="reqlabel">Minimum coordinate</span></li>
+
+              <li class="req"><span class="reqlabel">Maximum coordinate</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">X2 properties</span>
+
+              <ul>
+              <li class="req"><span class="reqlabel">Minimum coordinate</span></li>
+
+              <li class="req"><span class="reqlabel">Maximum coordinate</span></li>
+
+              </ul></li>
+
+              <li><span class="label">Title of the plot</span></li>
+
+              <li><span class="label">Color used for rectangules</span></li>
+
+              <li class="group"><span class="grouplabel">Axis 1 properties</span>
+
+              <ul>
+              <li><span class="label">Axis label</span></li>
+
+              <li><span class="label">Number of tics between consecutive numbered tics</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Axis 2 properties</span>
+
+              <ul>
+              <li><span class="label">Axis label</span></li>
+
+              <li><span class="label">Number of tics between consecutive numbered tics</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Apperances properties</span>
+
+              <ul>
+              <li><span class="label">Swap axes position</span>
+                <ul>
+                        <li>
+                                Normal (axis 1 horizontal, axis 2 vertical)</li>
+                        <li>
+                                Seismic (axis 1 vertical, axis 2 horizontal)</li>
+                </ul>
+
+              <li><span class="label">Width in pixels of window</span></li>
+
+              <li><span class="label">Height in pixels of window</span></li>
+
+              <li><span class="label">Font name for title</span></li>
+
+              <li><span class="label">Color of title</span></li>
+
+              <li><span class="label">Font name for axes labels</span></li>
+
+              <li><span class="label">Color of axes</span></li>
+
+              </ul></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Author: Dave Hale, Colorado School of Mines, 06/21/91.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>X1 properties</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Minimum coordinate</label>
+                <float>
+                  <property required="yes">
+                    <keyword>x1min=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum coordinate</label>
+                <float>
+                  <property required="yes">
+                    <keyword>x1max=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>X2 properties</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Minimum coordinate</label>
+                <float>
+                  <property required="yes">
+                    <keyword>x2min=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum coordinate</label>
+                <float>
+                  <property required="yes">
+                    <keyword>x2max=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Title of the plot</label>
+        <string>
+          <property required="no">
+            <keyword>title=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Color used for rectangules</label>
+        <string>
+          <property required="no">
+            <keyword>color=</keyword>
+            <value/>
+            <default>red</default>
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Axis 1 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>nTic1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Axis 2 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>nTic2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Apperances properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Swap axes position</label>
+                <enum>
+                  <property required="no">
+                    <keyword>style=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                  <option>
+                    <label>Normal</label>
+                    <value>normal</value>
+                  </option>
+                  <option>
+                    <label>Seismic</label>
+                    <value>seismic</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Width in pixels of window</label>
+                <int>
+                  <property required="no">
+                    <keyword>width=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Height in pixels of window</label>
+                <int>
+                  <property required="no">
+                    <keyword>height=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Font name for title</label>
+                <string>
+                  <property required="no">
+                    <keyword>titleFont=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Color of title</label>
+                <string>
+                  <property required="no">
+                    <keyword>titleColor=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Font name for axes labels</label>
+                <string>
+                  <property required="no">
+                    <keyword>labelFont=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Color of axes</label>
+                <string>
+                  <property required="no">
+                    <keyword>axesColor=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

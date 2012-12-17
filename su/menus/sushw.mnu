@@ -1,0 +1,1611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Set Header</title>
+  <description>Set one or more header words</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Set Header</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Set Header</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Set one or more header words
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Editing, Sorting and Manipulation | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This menu is used to set one or more header key words. Its may purpose is to
+             set acquisition geometry to datasets.</p>
+          <p>The values of each header key word for each trace can be read from
+          an input file or evaluated by its trace number.</p>
+
+            <!-- _______ LIST OFF KEY WORDS _______ -->
+
+            <a name="keys" id="keys"></a>
+            <h2>List of keywords for Seismic Un*x trace header</h2>
+            <p>From SEG-Y Standart:</p>
+            <blockquote>The SEG-Y trace headers contains trace attributes, which
+              are defined as two-byte or four-byte, two's complement
+              integers. The values in bytes 1-180 were defined in the
+              1975 standard and these entries remain unchanged,
+              although clarification and extensions may be supplied
+              where appropriate. Bytes 181-240 were for optional
+              information in the 1975 standard and this has been the
+              main area of conflict between different flavors of SEG
+              Y. This revision defines standard locations in bytes
+              181-240 for certain values that are needed in modern
+              data processing. In particular, standard locations for a
+              shotpoint number and ensemble coordinates are defined.
+              Bytes 203 to 210 allow the measurement units for the
+              Data Trace samples to be defined and transduction
+              constants to be defined. These entries allow the Data
+              Trace values to be converted to engineering
+              units.<br/><br/> The values included in the Trace
+              Header are limited and intended to provide information
+              that may change on a trace-by-trace basis and the basic
+              information needed to process and identify the trace.
+              The trace headers are not intended to be a repository
+              for significant amounts of ancillary data. If
+              significant amounts of ancillary data need to be
+              exchanged, it is recommended that SEG Ancillary Data
+              Standard data set(s) be used.</blockquote>
+
+            <p>Below, we list all information in stored in SEG-Y
+            standard trace header, and also SU specific choices for
+            those gaps allowed by the standard.</p>
+
+            <ul>
+              <!-- tracl -->
+              <li><i>Trace number sequence within line</i> (bytes 1-4)<br/>
+                Numbers continue to increase if the same line
+                continues across multiple SEG Y files. Highly
+                recommended for all types of data.</li>
+
+              <!-- tracr -->
+              <li><i>Trace number sequence within reel</i> (bytes 5-8)<br/>
+                Each file starts with trace sequence
+                one.</li>
+
+              <!-- fldr  -->
+              <li><i>Field record number</i> (bytes 9-12)<br/>
+              Original field record number. Highly
+                recommended for all types of data.</li>
+
+              <!-- tracf -->
+              <li><i>Trace number sequence within field record</i> (bytes 13-16)</li>
+
+              <!-- ep     -->
+              <li><i>Energy source point number</i> (bytes 17-20)<br/>
+                Used when more than one record occurs at the same
+                effective surface location. It is recommended that the
+                new entry defined in Trace Header bytes 197-202 be
+                used for shotpoint number.</li>
+
+              <!-- cdp   -->
+              <li><i>Ensemble number</i> (bytes 21-24)<br/>
+              Ensemble number (i.e. CDP, CMP, CRP,...)</li>
+
+              
+              <!-- cdpt -->
+              <li><i>Trace number within ensemble</i> (bytes 25-28)<br/>
+              Each ensemble starts with trace number one.</li>
+
+              <!-- trid  -->
+              <li><i>Trace identification code</i> (bytes 29-30)<br/>
+                <table>
+                  <col width="40" />
+                  <col width="*"  />
+                  <tr><td> -1</td><td>Other</td></tr>
+                  <tr><td>  0</td><td>Unknown</td></tr>
+                  <tr><td>  1</td><td>Seismic data</td></tr>
+                  <tr><td>  2</td><td>Dead</td></tr>
+                  <tr><td>  3</td><td>Dummy</td></tr>
+                  <tr><td>  4</td><td>Time break</td></tr>
+                  <tr><td>  5</td><td>Uphole</td></tr>
+                  <tr><td>  6</td><td>Sweep</td></tr>
+                  <tr><td>  7</td><td>Timing</td></tr>
+                  <tr><td>  8</td><td>Water break</td></tr>
+                  <tr><td>  9</td><td>Near-field gun signature</td></tr>
+                  <tr><td> 10</td><td>Far-field gun signature</td></tr>
+                  <tr><td> 11</td><td>Seismic pressure sensor</td></tr>
+                  <tr><td> 12</td><td>Multicomponent seismic sensor - Vertical component</td></tr>
+                  <tr><td> 13</td><td>Multicomponent seismic sensor - Cross-line component</td></tr>
+                  <tr><td> 14</td><td>Multicomponent seismic sensor - in-line component </td></tr>
+                  <tr><td> 15</td><td>Rotated multicomponent seismic sensor - Vertical component</td></tr>
+                  <tr><td> 16</td><td>Rotated multicomponent seismic sensor - Transverse component</td></tr>
+                  <tr><td> 17</td><td>Rotated multicomponent seismic sensor - Radial component</td></tr>
+                  <tr><td> 18</td><td>Vibrator reaction mass</td></tr>
+                  <tr><td> 19</td><td>Vibrator baseplate</td></tr>
+                  <tr><td> 20</td><td>Vibrator estimated ground force</td></tr>
+                  <tr><td> 21</td><td>Vibrator reference</td></tr>
+                  <tr><td> 22</td><td>Time-velocity pairs</td></tr>
+                  <tr><td>  N</td><td>Optional use (23,...,32767)</td></tr>
+                  <tr></tr>
+                  <tr><td colspan="2">Following are CWP id flags:</td></tr>
+                  <tr><td>109</td><td>Autocorrelation</td></tr>
+                  <tr><td>110</td><td>Fourier transformed - no packing</td></tr>
+                  <tr><td></td>   <td>xr[0],xi[0], ..., xr[N-1],xi[N-1]</td></tr>
+                  <tr><td>111</td><td>Fourier transformed - unpacked Nyquist</td></tr>
+                  <tr><td></td>   <td>xr[0],xi[0],...,xr[N/2],xi[N/2]</td></tr>
+                  <tr><td>112</td><td>Fourier transformed - packed Nyquist</td></tr>
+                  <tr><td></td><td>even N:</td></tr>
+                  <tr><td></td><td>xr[0], xr[N/2], xr[1], xi[1], ..., xr[N/2 -1], xi[N/2 -1]</td></tr>
+                  <tr><td></td><td>(note the exceptional second entry)</td></tr>
+                  <tr><td></td><td>odd N:</td></tr>
+                  <tr><td></td><td>xr[0], xr[(N-1)/2], xr[1], xi[1], ..., </td></tr>
+                  <tr><td></td><td>&nbsp; &nbsp;xr[(N-1)/2 -1], xi[(N-1)/2 -1], xi[(N-1)/2]</td></tr>
+                  <tr><td></td><td>(note the exceptional second & last entries)</td></tr>
+                  <tr><td>113</td><td>Complex signal in the time domain</td></tr>
+                  <tr><td></td><td>xr[0], xi[0], ..., xr[N-1], xi[N-1]</td></tr>
+                  <tr><td>114</td><td>Fourier transformed - amplitude/phase</td></tr>
+                  <tr><td></td><td>a[0], p[0], ..., a[N-1], p[N-1]</td></tr>
+                  <tr><td>115</td><td>Complex time signal - amplitude/phase</td></tr>
+                  <tr><td></td><td>a[0], p[0], ..., a[N-1], p[N-1]</td></tr>
+                  <tr><td>116</td><td>Real part of complex trace from 0 to Nyquist</td></tr>
+                  <tr><td>117</td><td>Imag part of complex trace from 0 to Nyquist</td></tr>
+                  <tr><td>118</td><td>Amplitude of complex trace from 0 to Nyquist</td></tr>
+                  <tr><td>119</td><td>Phase of complex trace from 0 to Nyquist</td></tr>
+                  <tr><td>121</td><td>Wavenumber time domain (k-t)</td></tr>
+                  <tr><td>122</td><td>Wavenumber frequency (k-omega)</td></tr>
+                  <tr><td>123</td><td>Envelope of the complex time trace</td></tr>
+                  <tr><td>124</td><td>Phase of the complex time trace</td></tr>
+                  <tr><td>125</td><td>Frequency of the complex time trace</td></tr>
+                  <tr><td>130</td><td>Depth-Range (z-x) traces</td></tr>
+                  <tr><td>201</td><td>Seismic data packed to bytes (by supack1)</td></tr>
+                  <tr><td>202</td><td>Seismic data packed to 2 bytes (by supack2)</td></tr>
+                </table>
+              </li>
+
+              <!-- nvs -->
+              <li><i>Number of horizontally summed traces</i> (bytes 31-32)<br />
+              1 is one trace, 2 is two summed traces, etc.</li>
+              
+              <!-- nvs   -->
+              <li><i>Number of vertically summed traces</i> (bytes 33-34)<br />
+              1 is one trace, 2 is two summed traces, etc.</li>
+
+              <!-- duse     -->
+              <li><i>Data use</i> (bytes 35-36)<br />
+              1 for Production and 2 for Test.</li>
+
+              <!-- offset -->
+              <li><i>Offset (signed distance from source to receiver group)</i> (bytes 37-40)<br />
+              Distance from center of the source point to the center
+              of the receiver group (negative if opposite to direction
+              in which line is shot).</li>
+
+              <!-- gelev  -->
+              <li><i>Receiver group elevation from sea level</i> (bytes 41-44)<br/>
+              All elevations above the vertical datum are positive and below are negative.</li>
+
+              <!-- selev  -->
+              <li><i>Source elevation from sea level</i> (bytes 45-48)<br />
+              Surface elevation at source.</li>
+                                                          
+              <!-- sdepth -->
+              <li><i>Source depth (positive)</i> (bytes 49-52)</li>
+
+              <!-- gdel   -->
+              <li><i>Datum elevation at receiver group</i> (bytes 53-56)</li>
+
+              <!-- sdel   -->
+              <li><i>Datum elevation at source</i> (bytes 57-60)</li>
+
+              <!-- swdep  -->
+              <li><i>Water depth at source</i> (bytes 61-64)</li>
+
+              <!-- gwdep  -->
+              <li><i>Water depth at receiver group</i> (bytes 65-68)</li>
+
+              <!-- scalel -->
+              <li><i>Scale factor for source/receiver elevations,
+              datum and water depth</i> (bytes 69-70)<br/>
+              Scalar to be applied to all elevations and depths
+              specified in Trace Header bytes 41-68 (7 previous
+              entries) to give the real value. Scalar = 1, &plusmn;10,
+              &plusmn;100, &plusmn;1000, or &plusmn;10000. If
+              positive, scalar is used as a multiplier; if negative,
+              scalar is used as a divisor.</li>
+
+              <!-- scalco -->
+              <li><i>Scale factor for source/receiver X and Y coordinates</i> (bytes 71-72)<br/>
+              Scalar to be applied to all coordinates specified in
+              Trace Header bytes 73-88 (next 4 entries) and to bytes Trace Header
+              181-188 to give the real value. Scalar = 1, &plusmn;10,
+              &plusmn;100, &plusmn;1000, or &plusmn;10000. If
+              positive, scalar is used as a multiplier; if negative,
+              scalar is used as divisor.</li>
+
+              <!-- sx     -->
+              <li><i>X source coordinate</i> (bytes 73-76)</li>
+
+              <!-- sy     -->
+              <li><i>Y source coordinate</i> (bytes 77-80)</li>
+
+              <!-- gx     -->
+              <li><i>X group coordinate</i> (bytes 81-84)</li>
+
+              <!-- gy     -->
+              <li><i>Y group coordinate</i> (bytes 85-88)</li>
+
+              <!-- counit -->
+              <li><i>Coordinate units code</i> (bytes 89-90)<br />
+              Coordinate units for previous 4 entries: 1 for length
+              (meters or feets), 2 for senconds of arc, 3 for decimal
+              degrees, and 4 for degrees, minutes, seconds
+              (DMS).</li>
+
+              <!-- wevel  -->
+              <li><i>Weathering velocity</i> (bytes 91-92)<br/>
+              ft/s or m/s as specified in Binary File Header (of
+              SEG-Y) bytes 3255-3256.</li>
+
+              <!-- swevel -->
+              <li><i>Subweathering velocity</i> (bytes 93-94)<br/>
+              ft/s or m/s as specified in Binary File Header (of
+              SEG-Y) bytes 3255-3256.</li>
+
+              <!-- sut    -->
+              <li><i>Uphole time at source</i> (bytes 95-96)<br />
+              Time in milliseconds.</li>
+
+              <!-- gut    -->
+              <li><i>Uphole time at receiver group</i> (bytes 97-98)<br />
+              Time in milliseconds.</li>
+
+              <!-- sstat  -->
+              <li><i>Source static correction</i> (bytes 99-100)<br />
+              Time in milliseconds.</li>
+
+              <!-- gstat  -->
+              <li><i>Group static correction</i> (bytes 101-102)<br />
+              Time in milliseconds.</li>
+
+              <!-- tstat    -->
+              <li><i>Total static applied</i> (bytes 103-104)<br />
+              Time in milliseconds, or zero if no static has been applied.</li>
+
+              <!-- laga     -->
+              <li><i>Lag time A</i> (bytes 105-106)<br/>
+              Time in milliseconds between end of 240-byte
+              trace identification header and time break. The value is
+              positive if time break occurs after end of header. Time
+              break is defined as the initiation pulse which may be
+              recorded on an auxiliary trace or as otherwise specified
+              by the recording system.</li>
+
+              <!-- lagb     -->
+              <li><i>Lag time B</i> (bytes 107-108)<br/>
+              Time in milliseconds between time break and the
+              initiation time of the energy source. May be positive or
+              negative.</li>
+
+              <!-- delrt  -->
+              <li><i>Delay recording time in ms</i> (bytes
+              109-110)<br /> Time in milliseconds between initiation
+              time of energy source and time when recording of data
+              samples begins (for deep water work if recording does
+              not start at zero time).</li>
+
+              <!-- muts     -->
+              <li><i>Initial mute time</i> (bytes 111-112)<br/>
+              Start time in milliseconds.</li>
+
+              <!-- mute   -->
+              <li><i>Final mute time</i> (bytes 113-114)<br/>
+              End time in millseconds.</li>
+
+              <!-- ns       -->
+              <li><i>Number of samples</i> (bytes 115-116)<br/> Number
+              of samples in this trace. Highly recommended for all
+              types of data.</li>
+
+              <!-- dt -->
+              <li><i>Sampling interval in microseconds (&micro;s)</i> (bytes 117-118)<br/>
+              The number of bytes in a trace record must be consistent
+              with the number of samples written in the trace
+              header. This is important for all recording media; but
+              it is particularly crucial for the correct processing of
+              SEG Y data in disk files. Highly recommended for all
+              types of data.</li>
+
+              <!-- gain     -->
+              <li><i>Gain type of field instruments code</i> (bytes 119-120)<br/>
+              1 for fixed, 2 for binary, 3 for floating point, and 4 or greater for
+              optional use.</li>
+
+              <!-- igc    -->
+              <li><i>Instrument gain constant</i> (bytes 121-122)<br/>
+              Recorded in dB.</li>
+
+              <!-- igi    -->
+              <li><i>Instrument early or initial gain</i> (bytes 123-124)<br/>
+              Recorded in dB.</li>
+
+              <!-- corr     -->
+              <li><i>Correlated flag</i> (bytes 125-126)<br/>
+              1 for uncorrelated, and 2 for correlated.</li>
+
+              <!-- sfs  -->
+              <li><i>Sweep frequency at start</i> (bytes 127-128)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- sfe  -->
+              <li><i>Sweep frequency at end</i> (bytes 129-130)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- slen -->
+              <li><i>Sweep length in ms</i> (bytes 131-132)</li>
+
+              <!-- styp -->
+              <li><i>Sweep type code</i> (bytes 133-134)<br/>
+              1 for linear, 2 for parabolic, 3 for
+              exponential and 4 for other.</li>
+
+              <!-- stas -->
+              <li><i>Sweep trace length at start in ms</i> (bytes 135-136)</li>
+
+              <!-- stae -->
+              <li><i>Sweep trace length at end in ms</i> (bytes 137-138)</li>
+
+              <!-- tatyp    -->
+              <li><i>Taper type</i> (bytes 139-140)<br/>
+              1 for linear, 2 for cos-squared, and 3 for other.</li>
+
+              <!-- afilf  -->
+              <li><i>Alias filter frequency if used</i> (bytes 141-142)<br />
+              Recorded in Hertz.</li>
+
+              <!-- afils  -->
+              <li><i>Alias filter slope</i> (bytes 143-144)<br/>
+              Recorded in dB/octave.</li>
+
+              <!-- nofilf -->
+              <li><i>Notch filter frequency if used</i> (bytes 145-146)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- nofils -->
+              <li><i>Notch filter slope</i> (bytes 147-148)<br/>
+              Recorded in dB/octave.</li>
+
+              <!-- lcf    -->
+              <li><i>Low cut frequency if used</i> (bytes 149-150)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- hcf    -->
+              <li><i>High cut frequncy if used</i> (bytes 151-152)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- lcs    -->
+              <li><i>Low cut slope</i> (bytes 153-154)<br/>
+              Recorded in dB/octave.</li>
+
+              <!-- hcs    -->
+              <li><i>High cut slope</i> (bytes 155-156)<br/>
+              Recorded in dB/octave.</li>
+ 
+              <!-- year   -->
+              <li><i>Year data recorded</i> (bytes 157-158)<br/>
+              The 1975 standard is unclear as to whether this should
+              be recorded as a 2-digit or a 4-digit year and both have
+              been used. For SEG Y revisions beyond rev 0, the year
+              should be recorded as the complete 4-digit Gregorian
+              calendar year.</li>
+
+              <!-- day    -->
+              <li><i>Day of year</i> (bytes 159-160)<br/>
+              Julian day for GMT and UTC time basis.</li>
+
+              <!-- hour   -->
+              <li><i>Hour of day (24 hour clock)</i> (bytes 161-162)</li>
+
+              <!-- minute -->
+              <li><i>Minute of hour</i> (bytes 163-164)</li>
+
+              <!-- sec    -->
+              <li><i>Second of minute</i> (bytes 165-166)</li>
+
+              <!-- timbas -->
+              <li><i>Time basis code</i> (bytes 167-168)<br/>
+              1 for local, 2 for GMT, 3 for other, and 4 for UTC.</li>
+
+
+              <!-- trwf  -->
+              <li><i>Trace weighting factor</i> (bytes 169-170)<br/>
+              Defined as 2<sup>-n</sup> volts for the least
+              significant bit. (n = 0, 1, ..., 32767).</li>
+
+              <!-- grnors -->
+              <li><i>Geophone group number of roll switch position one</i> (bytes 171-172)</li>
+
+              <!-- grnofr -->
+              <li><i>Geophone group number of trace one within original field record</i> (bytes 173-174)</li>
+
+              <!-- grnlof -->
+              <li><i>Geophone group number of last trace within original field record</i> (bytes 175-176)</li>
+
+              <!-- gaps     -->
+              <li><i>Gap size</i> (bytes 177-178)<br/>
+              Total number of groups dropped.</li>
+
+              <!-- otrav    -->
+              <li><i>Overtravel taper code</i> (bytes 179-180)<br/>
+              1 for down (or behind) and 2 for up (or ahead).</li>
+
+            </ul>
+
+            <p>Following keywords are CWP specific. They do not follow SEG Y standard.</p>
+
+            <ul>                 
+
+              <!-- d1 -->
+              <li><i>Sample spacing for non-seismic data</i> (bytes 180-184)</li>
+
+              <!-- f1       -->
+              <li><i>First sample location for non-seismic data</i> (bytes 185-188)</li>
+
+              <!-- d2 -->
+              <li><i>Sample spacing between traces</i> (bytes 189-192)</li>
+
+              <!-- f2       -->
+              <li><i>First trace location</i> (bytes 193-196)</li>
+
+              <!-- ungpow -->
+              <li><i>Negative of power used for dynamic range compression</i> (bytes 197-200)</li>
+
+              <!-- unscale  -->
+              <li><i>Reciprocal of scaling factor to normalize range</i> (bytes 201-204)</li>
+
+              <!-- ntr  -->
+              <li><i>Number of traces</i> (bytes 205-208)</li>
+
+              <!-- mark     -->
+              <li><i>Mark selected traces</i> (bytes 209-210)</li>
+
+              <!-- shortpad -->
+              <li><i>Alignment padding</i> (bytes 211-212)</li>
+
+            </ul>
+            <!-- _______ END OF THE LIST OFF KEY WORDS _______ -->
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Feb 20, 2008: created by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
+          <p>May 28, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
+          <p>Jul 31, 2009: modified by Luis A. D'Afonseca, UNICAMP, luis.dafonseca@gmail.com</p>
+          <p>Aug 06, 2010: fixed by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
+
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#keys">Header keywords</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->Aug 06, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2008-02-25T15:00:00Z</created>
+    <modified>2010-08-06T13:30:11.788712Z</modified>
+    <lastrun/>
+  </date>
+  <category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
+    <title>SU Set Header</title>
+    <binary>sushw</binary>
+    <description>Set one or more header words</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Set Header</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Set Header</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Set one or more header words
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Editing, Sorting and Manipulation | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Set one or more Header Key Words. The main purpose of this program is to set acquisition geometry into
+          a data set or redefine header fields values.</p>
+          <p>Note that to add acquisition geometry information to a data set, it must have SU header already, which is
+             added by <strong>SU Add Header</strong> menu.</p>
+          <p>The values of each header key word for each trace can be read from
+          an input file or evaluated by its trace number.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <p>There is two ways of set header keywords, one from a binary header file, and
+            another from specifying header key words values by a formula.</p>
+
+            <p> To use the first option set the parameters: 
+            <!-- begin lst -->
+            <ul>
+              <li><span class="label">List of header key words</span>
+              <p>In this case this parameter must list the header key words as
+              they appear int the input file.</p>
+              </li>
+
+              <li><span class="label">Binary file of values for key words</span>
+              <p> A binary file with the values for the key words specified by
+              the parameter <b>List of header key words</b>.</p>
+              </li>
+            </ul>
+
+            To use the second option choose all key words you want to set with the parameter:
+            <ul>
+              <li><span class="label">List of header key words</span></li>
+            </ul>
+            and set the values for the following optional parameters as needed:
+            <ul>
+              <li><span class="label">Value(s) on first trace</span><br/>
+                These are the values of the keyword fields selected by <strong>List of header fields</strong>
+                for the first trace of the data.</li>
+              <li><span class="label">Increment(s) within group</span><br/>
+                This parameter describes the increment of each keyword field from trace
+                to trace within the same group.</li>
+              <li><span class="label">Group increment(s)</span><br/>
+                This parameter describes the increment of each keyword field from first trace of a group to the first trace of the next group. Usually the group is the set of trace of a common-shot section.</li>
+              <li><span class="label">Trace number shift(s)</span></li>
+              <li><span class="label">Number of elements in group</span></li>
+            </ul>
+            The defult values of these parameters are zero for the first
+            four and the <em>maximum unsigned long int value (ULONG_MAX)</em>
+            for the last one.
+            </p>
+
+            <p>These parameters are used to evaluate the value of the header key word 
+            of each trace using the formula:
+            <blockquote>
+              i = itr + d                              <br />
+              val(key) = a + b * (i % j) + c * (i / j)
+            </blockquote>
+            where:
+            <ul>
+              <li> <dfn>itr</dfn> is the trace number starting to count from 0</li>
+              <li> <dfn>a  </dfn> is the Value on first trace </li>
+              <li> <dfn>b  </dfn> is the Increment within group</li>
+              <li> <dfn>c  </dfn> is the Group increment</li>
+              <li> <dfn>d  </dfn> is the Trace number shift</li>
+              <li> <dfn>j  </dfn> is the Number of elements in group</li>
+            </ul>
+
+            <a name="example" id="example"></a>
+            <h2>Usage example</h2>
+
+            <p>In this section we describe a simple acquistion geometry over a 2D line, just to
+               exemplify how the acquisiont parameters would be used to define the parameters
+               of this program.</p>
+
+             <p>Consider a 2D acquisition line, over which 241 shots were performed. Each shot
+             is recorded by 69 channels. This first station is 100 meters ahead the shot position, and further
+             stations are regularly placed at each 50 meters. From one shot to the next one,
+             the shot position is displaced by 50 meters in the positive direction of the acquisition line.
+             The data is recorded for 6 seconds
+             at a sampling rate of 4ms (4000 micro-seconds). Below one shot is represented.</p>
+
+<pre>
+      shot                         stations    
+        *             v       v       v  ...  v       v
+      ----------------------------------------------------->
+        |<-- 100 m -->|<-50m->|<-50m->|  ...  |<-50m->|
+</pre>
+             <p><br/></p>
+
+             <p>The parameters to reflect such geometry must be set as:</p>
+        
+            <ul>
+              <li>List of header fields:
+                <ul>
+                <li>Sampling rate</li>
+                <li>X source coordinate</li>
+                <li>X group coordinate</li>
+                <li>Offset</li>
+                <li>CDP ensemble number</li>
+                </ul></li>
+            </ul>
+
+            <ul>
+              <li>Value(s) on first trace: 4000,0, 100,100,1</li>
+              <li>Increment(s) within group: 0,0,50,50,1</li>
+              <li>Group increment(s): 0,50,50,0,2</li>
+              <li>Trace number shift(s): (leave blank)</li>
+              <li>Number of elements in group: 69,69,69,69,69</li>
+            </ul>
+
+            <p>Note that each group (of traces) metioned above refers to one shot. Also note that the
+               only information not extract directly from the description above is the CDP ensemble number, which
+               must be computed from the acquisition parameters.</p>
+ 
+                        
+            <!-- _______ LIST OFF KEY WORDS _______ -->
+
+            <a name="keys" id="keys"></a>
+            <h2>List of keywords for Seismic Un*x trace header</h2>
+            <p>From SEG-Y Standart:</p>
+            <blockquote>
+              The SEG-Y trace headers contains trace attributes, which
+              are defined as two-byte or four-byte, two's complement
+              integers. The values in bytes 1-180 were defined in the
+              1975 standard and these entries remain unchanged,
+              although clarification and extensions may be supplied
+              where appropriate. Bytes 181-240 were for optional
+              information in the 1975 standard and this has been the
+              main area of conflict between different flavors of SEG
+              Y. This revision defines standard locations in bytes
+              181-240 for certain values that are needed in modern
+              data processing. In particular, standard locations for a
+              shotpoint number and ensemble coordinates are defined.
+              Bytes 203 to 210 allow the measurement units for the
+              Data Trace samples to be defined and transduction
+              constants to be defined. These entries allow the Data
+              Trace values to be converted to engineering
+              units.<br/><br/> The values included in the Trace
+              Header are limited and intended to provide information
+              that may change on a trace-by-trace basis and the basic
+              information needed to process and identify the trace.
+              The trace headers are not intended to be a repository
+              for significant amounts of ancillary data. If
+              significant amounts of ancillary data need to be
+              exchanged, it is recommended that SEG Ancillary Data
+              Standard data set(s) be used.</blockquote>
+
+            <p>Below, we list all information in stored in SEG-Y
+            standard trace header, and also SU specific choices for
+            those gaps allowed by the standard.</p>
+
+            <ul>
+              <!-- tracl -->
+              <li><i>Trace number sequence within line</i> (bytes 1-4)<br/>
+                Numbers continue to increase if the same line
+                continues across multiple SEG Y files. Highly
+                recommended for all types of data.</li>
+
+              <!-- tracr -->
+              <li><i>Trace number sequence within reel</i> (bytes 5-8)<br/>
+                Each file starts with trace sequence
+                one.</li>
+
+              <!-- fldr  -->
+              <li><i>Field record number</i> (bytes 9-12)<br/>
+              Original field record number. Highly
+                recommended for all types of data.</li>
+
+              <!-- tracf -->
+              <li><i>Trace number sequence within field record</i> (bytes 13-16)</li>
+
+              <!-- ep     -->
+              <li><i>Energy source point number</i> (bytes 17-20)<br/>
+                Used when more than one record occurs at the same
+                effective surface location. It is recommended that the
+                new entry defined in Trace Header bytes 197-202 be
+                used for shotpoint number.</li>
+
+              <!-- cdp   -->
+              <li><i>Ensemble number</i> (bytes 21-24)<br/>
+              Ensemble number (i.e. CDP, CMP, CRP,...)</li>
+
+              
+              <!-- cdpt -->
+              <li><i>Trace number within ensemble</i> (bytes 25-28)<br/>
+              Each ensemble starts with trace number one.</li>
+
+              <!-- trid  -->
+              <li><i>Trace identification code</i> (bytes 29-30)<br/>
+                <table>
+                  <col width="40" />
+                  <col width="*"  />
+                  <tr><td> -1</td><td>Other</td></tr>
+                  <tr><td>  0</td><td>Unknown</td></tr>
+                  <tr><td>  1</td><td>Seismic data</td></tr>
+                  <tr><td>  2</td><td>Dead</td></tr>
+                  <tr><td>  3</td><td>Dummy</td></tr>
+                  <tr><td>  4</td><td>Time break</td></tr>
+                  <tr><td>  5</td><td>Uphole</td></tr>
+                  <tr><td>  6</td><td>Sweep</td></tr>
+                  <tr><td>  7</td><td>Timing</td></tr>
+                  <tr><td>  8</td><td>Water break</td></tr>
+                  <tr><td>  9</td><td>Near-field gun signature</td></tr>
+                  <tr><td> 10</td><td>Far-field gun signature</td></tr>
+                  <tr><td> 11</td><td>Seismic pressure sensor</td></tr>
+                  <tr><td> 12</td><td>Multicomponent seismic sensor - Vertical component</td></tr>
+                  <tr><td> 13</td><td>Multicomponent seismic sensor - Cross-line component</td></tr>
+                  <tr><td> 14</td><td>Multicomponent seismic sensor - in-line component </td></tr>
+                  <tr><td> 15</td><td>Rotated multicomponent seismic sensor - Vertical component</td></tr>
+                  <tr><td> 16</td><td>Rotated multicomponent seismic sensor - Transverse component</td></tr>
+                  <tr><td> 17</td><td>Rotated multicomponent seismic sensor - Radial component</td></tr>
+                  <tr><td> 18</td><td>Vibrator reaction mass</td></tr>
+                  <tr><td> 19</td><td>Vibrator baseplate</td></tr>
+                  <tr><td> 20</td><td>Vibrator estimated ground force</td></tr>
+                  <tr><td> 21</td><td>Vibrator reference</td></tr>
+                  <tr><td> 22</td><td>Time-velocity pairs</td></tr>
+                  <tr><td>  N</td><td>Optional use (23,...,32767)</td></tr>
+                  <tr></tr>
+                  <tr><td colspan="2">Following are CWP id flags:</td></tr>
+                  <tr><td>109</td><td>Autocorrelation</td></tr>
+                  <tr><td>110</td><td>Fourier transformed - no packing</td></tr>
+                  <tr><td></td>   <td>xr[0],xi[0], ..., xr[N-1],xi[N-1]</td></tr>
+                  <tr><td>111</td><td>Fourier transformed - unpacked Nyquist</td></tr>
+                  <tr><td></td>   <td>xr[0],xi[0],...,xr[N/2],xi[N/2]</td></tr>
+                  <tr><td>112</td><td>Fourier transformed - packed Nyquist</td></tr>
+                  <tr><td></td><td>even N:</td></tr>
+                  <tr><td></td><td>xr[0], xr[N/2], xr[1], xi[1], ..., xr[N/2 -1], xi[N/2 -1]</td></tr>
+                  <tr><td></td><td>(note the exceptional second entry)</td></tr>
+                  <tr><td></td><td>odd N:</td></tr>
+                  <tr><td></td><td>xr[0], xr[(N-1)/2], xr[1], xi[1], ..., </td></tr>
+                  <tr><td></td><td>&nbsp; &nbsp;xr[(N-1)/2 -1], xi[(N-1)/2 -1], xi[(N-1)/2]</td></tr>
+                  <tr><td></td><td>(note the exceptional second & last entries)</td></tr>
+                  <tr><td>113</td><td>Complex signal in the time domain</td></tr>
+                  <tr><td></td><td>xr[0], xi[0], ..., xr[N-1], xi[N-1]</td></tr>
+                  <tr><td>114</td><td>Fourier transformed - amplitude/phase</td></tr>
+                  <tr><td></td><td>a[0], p[0], ..., a[N-1], p[N-1]</td></tr>
+                  <tr><td>115</td><td>Complex time signal - amplitude/phase</td></tr>
+                  <tr><td></td><td>a[0], p[0], ..., a[N-1], p[N-1]</td></tr>
+                  <tr><td>116</td><td>Real part of complex trace from 0 to Nyquist</td></tr>
+                  <tr><td>117</td><td>Imag part of complex trace from 0 to Nyquist</td></tr>
+                  <tr><td>118</td><td>Amplitude of complex trace from 0 to Nyquist</td></tr>
+                  <tr><td>119</td><td>Phase of complex trace from 0 to Nyquist</td></tr>
+                  <tr><td>121</td><td>Wavenumber time domain (k-t)</td></tr>
+                  <tr><td>122</td><td>Wavenumber frequency (k-omega)</td></tr>
+                  <tr><td>123</td><td>Envelope of the complex time trace</td></tr>
+                  <tr><td>124</td><td>Phase of the complex time trace</td></tr>
+                  <tr><td>125</td><td>Frequency of the complex time trace</td></tr>
+                  <tr><td>130</td><td>Depth-Range (z-x) traces</td></tr>
+                  <tr><td>201</td><td>Seismic data packed to bytes (by supack1)</td></tr>
+                  <tr><td>202</td><td>Seismic data packed to 2 bytes (by supack2)</td></tr>
+                </table>
+              </li>
+
+              <!-- nvs -->
+              <li><i>Number of horizontally summed traces</i> (bytes 31-32)<br />
+              1 is one trace, 2 is two summed traces, etc.</li>
+              
+              <!-- nvs   -->
+              <li><i>Number of vertically summed traces</i> (bytes 33-34)<br />
+              1 is one trace, 2 is two summed traces, etc.</li>
+
+              <!-- duse     -->
+              <li><i>Data use</i> (bytes 35-36)<br />
+              1 for Production and 2 for Test.</li>
+
+              <!-- offset -->
+              <li><i>Offset (signed distance from source to receiver group)</i> (bytes 37-40)<br />
+              Distance from center of the source point to the center
+              of the receiver group (negative if opposite to direction
+              in which line is shot).</li>
+
+              <!-- gelev  -->
+              <li><i>Receiver group elevation from sea level</i> (bytes 41-44)<br/>
+              All elevations above the vertical datum are positive and below are negative.</li>
+
+              <!-- selev  -->
+              <li><i>Source elevation from sea level</i> (bytes 45-48)<br />
+              Surface elevation at source.</li>
+                                                          
+              <!-- sdepth -->
+              <li><i>Source depth (positive)</i> (bytes 49-52)</li>
+
+              <!-- gdel   -->
+              <li><i>Datum elevation at receiver group</i> (bytes 53-56)</li>
+
+              <!-- sdel   -->
+              <li><i>Datum elevation at source</i> (bytes 57-60)</li>
+
+              <!-- swdep  -->
+              <li><i>Water depth at source</i> (bytes 61-64)</li>
+
+              <!-- gwdep  -->
+              <li><i>Water depth at receiver group</i> (bytes 65-68)</li>
+
+              <!-- scalel -->
+              <li><i>Scale factor for source/receiver elevations,
+              datum and water depth</i> (bytes 69-70)<br/>
+              Scalar to be applied to all elevations and depths
+              specified in Trace Header bytes 41-68 (7 previous
+              entries) to give the real value. Scalar = 1, &plusmn;10,
+              &plusmn;100, &plusmn;1000, or &plusmn;10000. If
+              positive, scalar is used as a multiplier; if negative,
+              scalar is used as a divisor.</li>
+
+              <!-- scalco -->
+              <li><i>Scale factor for source/receiver X and Y coordinates</i> (bytes 71-72)<br/>
+              Scalar to be applied to all coordinates specified in
+              Trace Header bytes 73-88 (next 4 entries) and to bytes Trace Header
+              181-188 to give the real value. Scalar = 1, &plusmn;10,
+              &plusmn;100, &plusmn;1000, or &plusmn;10000. If
+              positive, scalar is used as a multiplier; if negative,
+              scalar is used as divisor.</li>
+
+              <!-- sx     -->
+              <li><i>X source coordinate</i> (bytes 73-76)</li>
+
+              <!-- sy     -->
+              <li><i>Y source coordinate</i> (bytes 77-80)</li>
+
+              <!-- gx     -->
+              <li><i>X group coordinate</i> (bytes 81-84)</li>
+
+              <!-- gy     -->
+              <li><i>Y group coordinate</i> (bytes 85-88)</li>
+
+              <!-- counit -->
+              <li><i>Coordinate units code</i> (bytes 89-90)<br />
+              Coordinate units for previous 4 entries: 1 for length
+              (meters or feets), 2 for senconds of arc, 3 for decimal
+              degrees, and 4 for degrees, minutes, seconds
+              (DMS).</li>
+
+              <!-- wevel  -->
+              <li><i>Weathering velocity</i> (bytes 91-92)<br/>
+              ft/s or m/s as specified in Binary File Header (of
+              SEG-Y) bytes 3255-3256.</li>
+
+              <!-- swevel -->
+              <li><i>Subweathering velocity</i> (bytes 93-94)<br/>
+              ft/s or m/s as specified in Binary File Header (of
+              SEG-Y) bytes 3255-3256.</li>
+
+              <!-- sut    -->
+              <li><i>Uphole time at source</i> (bytes 95-96)<br />
+              Time in milliseconds.</li>
+
+              <!-- gut    -->
+              <li><i>Uphole time at receiver group</i> (bytes 97-98)<br />
+              Time in milliseconds.</li>
+
+              <!-- sstat  -->
+              <li><i>Source static correction</i> (bytes 99-100)<br />
+              Time in milliseconds.</li>
+
+              <!-- gstat  -->
+              <li><i>Group static correction</i> (bytes 101-102)<br />
+              Time in milliseconds.</li>
+
+              <!-- tstat    -->
+              <li><i>Total static applied</i> (bytes 103-104)<br />
+              Time in milliseconds, or zero if no static has been applied.</li>
+
+              <!-- laga     -->
+              <li><i>Lag time A</i> (bytes 105-106)<br/>
+              Time in milliseconds between end of 240-byte
+              trace identification header and time break. The value is
+              positive if time break occurs after end of header. Time
+              break is defined as the initiation pulse which may be
+              recorded on an auxiliary trace or as otherwise specified
+              by the recording system.</li>
+
+              <!-- lagb     -->
+              <li><i>Lag time B</i> (bytes 107-108)<br/>
+              Time in milliseconds between time break and the
+              initiation time of the energy source. May be positive or
+              negative.</li>
+
+              <!-- delrt  -->
+              <li><i>Delay recording time in ms</i> (bytes
+              109-110)<br /> Time in milliseconds between initiation
+              time of energy source and time when recording of data
+              samples begins (for deep water work if recording does
+              not start at zero time).</li>
+
+              <!-- muts     -->
+              <li><i>Initial mute time</i> (bytes 111-112)<br/>
+              Start time in milliseconds.</li>
+
+              <!-- mute   -->
+              <li><i>Final mute time</i> (bytes 113-114)<br/>
+              End time in millseconds.</li>
+
+              <!-- ns       -->
+              <li><i>Number of samples</i> (bytes 115-116)<br/> Number
+              of samples in this trace. Highly recommended for all
+              types of data.</li>
+
+              <!-- dt -->
+              <li><i>Sampling interval in microseconds (&micro;s)</i> (bytes 117-118)<br/>
+              The number of bytes in a trace record must be consistent
+              with the number of samples written in the trace
+              header. This is important for all recording media; but
+              it is particularly crucial for the correct processing of
+              SEG Y data in disk files. Highly recommended for all
+              types of data.</li>
+
+              <!-- gain     -->
+              <li><i>Gain type of field instruments code</i> (bytes 119-120)<br/>
+              1 for fixed, 2 for binary, 3 for floating point, and 4 or greater for
+              optional use.</li>
+
+              <!-- igc    -->
+              <li><i>Instrument gain constant</i> (bytes 121-122)<br/>
+              Recorded in dB.</li>
+
+              <!-- igi    -->
+              <li><i>Instrument early or initial gain</i> (bytes 123-124)<br/>
+              Recorded in dB.</li>
+
+              <!-- corr     -->
+              <li><i>Correlated flag</i> (bytes 125-126)<br/>
+              1 for uncorrelated, and 2 for correlated.</li>
+
+              <!-- sfs  -->
+              <li><i>Sweep frequency at start</i> (bytes 127-128)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- sfe  -->
+              <li><i>Sweep frequency at end</i> (bytes 129-130)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- slen -->
+              <li><i>Sweep length in ms</i> (bytes 131-132)</li>
+
+              <!-- styp -->
+              <li><i>Sweep type code</i> (bytes 133-134)<br/>
+              1 for linear, 2 for parabolic, 3 for
+              exponential and 4 for other.</li>
+
+              <!-- stas -->
+              <li><i>Sweep trace length at start in ms</i> (bytes 135-136)</li>
+
+              <!-- stae -->
+              <li><i>Sweep trace length at end in ms</i> (bytes 137-138)</li>
+
+              <!-- tatyp    -->
+              <li><i>Taper type</i> (bytes 139-140)<br/>
+              1 for linear, 2 for cos-squared, and 3 for other.</li>
+
+              <!-- afilf  -->
+              <li><i>Alias filter frequency if used</i> (bytes 141-142)<br />
+              Recorded in Hertz.</li>
+
+              <!-- afils  -->
+              <li><i>Alias filter slope</i> (bytes 143-144)<br/>
+              Recorded in dB/octave.</li>
+
+              <!-- nofilf -->
+              <li><i>Notch filter frequency if used</i> (bytes 145-146)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- nofils -->
+              <li><i>Notch filter slope</i> (bytes 147-148)<br/>
+              Recorded in dB/octave.</li>
+
+              <!-- lcf    -->
+              <li><i>Low cut frequency if used</i> (bytes 149-150)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- hcf    -->
+              <li><i>High cut frequncy if used</i> (bytes 151-152)<br/>
+              Recorded in Hertz.</li>
+
+              <!-- lcs    -->
+              <li><i>Low cut slope</i> (bytes 153-154)<br/>
+              Recorded in dB/octave.</li>
+
+              <!-- hcs    -->
+              <li><i>High cut slope</i> (bytes 155-156)<br/>
+              Recorded in dB/octave.</li>
+ 
+              <!-- year   -->
+              <li><i>Year data recorded</i> (bytes 157-158)<br/>
+              The 1975 standard is unclear as to whether this should
+              be recorded as a 2-digit or a 4-digit year and both have
+              been used. For SEG Y revisions beyond rev 0, the year
+              should be recorded as the complete 4-digit Gregorian
+              calendar year.</li>
+
+              <!-- day    -->
+              <li><i>Day of year</i> (bytes 159-160)<br/>
+              Julian day for GMT and UTC time basis.</li>
+
+              <!-- hour   -->
+              <li><i>Hour of day (24 hour clock)</i> (bytes 161-162)</li>
+
+              <!-- minute -->
+              <li><i>Minute of hour</i> (bytes 163-164)</li>
+
+              <!-- sec    -->
+              <li><i>Second of minute</i> (bytes 165-166)</li>
+
+              <!-- timbas -->
+              <li><i>Time basis code</i> (bytes 167-168)<br/>
+              1 for local, 2 for GMT, 3 for other, and 4 for UTC.</li>
+
+
+              <!-- trwf  -->
+              <li><i>Trace weighting factor</i> (bytes 169-170)<br/>
+              Defined as 2<sup>-n</sup> volts for the least
+              significant bit. (n = 0, 1, ..., 32767).</li>
+
+              <!-- grnors -->
+              <li><i>Geophone group number of roll switch position one</i> (bytes 171-172)</li>
+
+              <!-- grnofr -->
+              <li><i>Geophone group number of trace one within original field record</i> (bytes 173-174)</li>
+
+              <!-- grnlof -->
+              <li><i>Geophone group number of last trace within original field record</i> (bytes 175-176)</li>
+
+              <!-- gaps     -->
+              <li><i>Gap size</i> (bytes 177-178)<br/>
+              Total number of groups dropped.</li>
+
+              <!-- otrav    -->
+              <li><i>Overtravel taper code</i> (bytes 179-180)<br/>
+              1 for down (or behind) and 2 for up (or ahead).</li>
+
+            </ul>
+
+            <p>Following keywords are CWP specific. They do not follow SEG Y standard.</p>
+
+            <ul>                 
+
+              <!-- d1 -->
+              <li><i>Sample spacing for non-seismic data</i> (bytes 180-184)</li>
+
+              <!-- f1       -->
+              <li><i>First sample location for non-seismic data</i> (bytes 185-188)</li>
+
+              <!-- d2 -->
+              <li><i>Sample spacing between traces</i> (bytes 189-192)</li>
+
+              <!-- f2       -->
+              <li><i>First trace location</i> (bytes 193-196)</li>
+
+              <!-- ungpow -->
+              <li><i>Negative of power used for dynamic range compression</i> (bytes 197-200)</li>
+
+              <!-- unscale  -->
+              <li><i>Reciprocal of scaling factor to normalize range</i> (bytes 201-204)</li>
+
+              <!-- ntr  -->
+              <li><i>Number of traces</i> (bytes 205-208)</li>
+
+              <!-- mark     -->
+              <li><i>Mark selected traces</i> (bytes 209-210)</li>
+
+              <!-- shortpad -->
+              <li><i>Alignment padding</i> (bytes 211-212)</li>
+
+            </ul>
+            <!-- _______ END OF THE LIST OFF KEY WORDS _______ -->
+
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>This program is part of Seismic Un*x package, from CWP.</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+            <li><a href="#keys">Keywords</a></li>
+            <li><a href="#example">Example</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>List of header key words</label>
+        <enum>
+          <property required="yes" separator=",">
+            <keyword>key=</keyword>
+            <value>cdp</value>
+            <default/>
+          </property>
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Binary file of values for key words</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>infile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Value(s) on first trace</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>a=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Increment(s) within group</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>b=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Group increment(s)</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>c=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Trace number shift(s)</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>d=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of elements in group</label>
+        <int>
+          <property required="no" separator=",">
+            <keyword>j=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

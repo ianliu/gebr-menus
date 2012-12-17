@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Imp 2D</title>
+  <description>Generate shot records for a line scatterer</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Imp 2D</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Imp 2D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Generate shot records for a line scatterer
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Generate shot records for a line scatterer embedded in three dimensions using the Born integral equation.</p>
+
+          <!-- begin par --><!-- end par -->
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jun 08, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jun 08, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-08T11:56:08.848354Z</created>
+    <modified>2010-08-06T00:43:05.413972Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Imp 2D</title>
+    <binary>suimp2d</binary>
+    <description>Generate shot records for a line scatterer</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Imp 2D</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Imp 2D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Generate shot records for a line scatterer
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Generate shot records for a line scatterer embedded in three dimensions using the Born integral equation.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li><span class="label">Number of shots</span></li>
+
+              <li><span class="label">Number of receivers</span></li>
+
+              <li><span class="label">Speed</span></li>
+
+              <li><span class="label">Sampling rate</span></li>
+
+              <li><span class="label">Number of samples</span></li>
+
+              <li class="group"><span class="grouplabel">X dimension properties</span>
+
+              <ul>
+              <li><span class="label">Point scatterer location</span></li>
+
+              <li><span class="label">First shot location</span></li>
+
+              <li><span class="label">First receiver location</span></li>
+
+              <li><span class="label">X-step in shot location</span></li>
+
+              <li><span class="label">X-step in receiver location</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Z dimension properties</span>
+
+              <ul>
+              <li><span class="label">Point scatterer location</span></li>
+
+              <li><span class="label">First shot location</span></li>
+
+              <li><span class="label">First receiver location</span></li>
+
+              <li><span class="label">Z-step in shot location</span></li>
+
+              <li><span class="label">Z-step in receiver location</span></li>
+
+              </ul></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p><b>Theory:</b><br/>
+        Use the 3D Born integral equation (e.g., Geophysics,
+        v51, n8, p1554(7)).<br/>
+        Use 2-D delta function for alpha and do remaining y-integral by stationary phase.</p>
+
+        <p>This program sets the following header keywords:
+          <ul>
+            <li>Number of samples,</li>  <!-- ns -->
+            <li>Sampling interval in microseconds,</li> <!-- dt -->
+            <li>Trace number sequence within line,</li> <!-- tracl -->
+            <li>Trace number sequence within reel,</li> <!-- tracr -->
+            <li>Field record number,</li> <!-- fldr -->
+            <li>X source coordinate,</li> <!-- sx -->
+            <li>Source elevation from sea level,</li> <!-- selev -->
+            <li>X group coordinate,</li> <!-- gx -->
+            <li>Receiver group elevation from sea level,</li> <!-- gelev -->
+            <li>Offset (signed distance from source to receiver group).</li> <!-- offset -->
+          </ul>
+        </p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Norm Bleistein, Jack K. Cohen.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of shots</label>
+        <int>
+          <property required="no">
+            <keyword>nshot=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of receivers</label>
+        <int>
+          <property required="no">
+            <keyword>nrec=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Speed</label>
+        <float>
+          <property required="no">
+            <keyword>c=</keyword>
+            <value/>
+            <default>5000</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Sampling rate</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default>0.004</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of samples</label>
+        <int>
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default>256</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>X dimension properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Point scatterer location</label>
+                <float>
+                  <property required="no">
+                    <keyword>x0=</keyword>
+                    <value/>
+                    <default>1000</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>sxmin=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>gxmin=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X-step in shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsx=</keyword>
+                    <value/>
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X-step in receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dgx=</keyword>
+                    <value/>
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1000</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Z dimension properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Point scatterer location</label>
+                <float>
+                  <property required="no">
+                    <keyword>z0=</keyword>
+                    <value/>
+                    <default>1000</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>szmin=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>gzmin=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-step in shot location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsz=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z-step in receiver location</label>
+                <float>
+                  <property required="no">
+                    <keyword>dgz=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1000</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

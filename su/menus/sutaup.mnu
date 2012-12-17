@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Tau-P</title>
+  <description>Forwared and inverse T-X and F-K global slant stacks</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Tau-P</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Tau-P</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Forwared and inverse T-X and F-K global slant stacks
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Filtering, Transforms and Attributes | Seismic Unix 
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+        
+          <p>Forwared and inverse T-X and F-K global slant stacks.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Sep 27, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>
+          <p>Jul 28, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Jul 27, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intri">Introduction</a></li>  
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Jul 27, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-09-27T15:00:00Z</created>
+    <modified>2010-08-06T00:43:08.424819Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Filtering, Transforms and Attributes</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Tau-P</title>
+    <binary>sutaup</binary>
+    <description>Forwared and inverse T-X and F-K global slant stacks</description>
+    <help>
+      <![CDATA[
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+    <meta name="generator" content=
+    "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+    <meta http-equiv="content-type" content=
+    "text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="file:///usr/share/debr/gebr.css" media=
+    "screen" />
+
+    <!-- begin ttl -->
+  <title>SU Tau-P</title>
+  <!-- end ttl -->
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+          <span class="flowtitle">SU Tau-P</span>
+          <!-- end tt2 -->
+            <div class="description">
+           <!-- begin des -->Forwared and inverse T-X and F-K global slant stacks <!-- end des -->
+          </div>
+          </div>
+        </div><!-- header -->
+
+        <div class="category">
+        <!-- begin cat -->
+          Filtering, Transforms and Attributes | Seismic Unix
+          <!-- end cat -->
+      </div>
+
+        <div class="main">
+          <div class="content">
+
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
+
+            <p>Forwared and inverse T-X and F-K global slant stacks.</p>
+
+            <!-- begin par -->
+          <div class="parameters">
+              <a name="par" id="par"></a>
+
+              <a name="par"></a>
+
+              <h2>Parameters</h2>
+
+              <!-- begin lst -->
+            <ul>
+
+                <li class="req"><span class="reqlabel">Computation selection</span>
+                <ul>
+                  <li>Forward F-K domain</li>
+                  <li>Forward T-X domain</li>
+                  <li>Inverse F-K domain</li>
+                  <li>Inverse T-X domain</li>
+                </ul>
+                </li>
+
+                <li><span class="label">Time sampling interval (in secs)</span><br/>
+                The default value is set from header.</li>
+
+                <li><span class="label">Number of horizontal samples</span></li>
+
+                <li><span class="label">Horizontal sampling interval (in m)</span><br />
+                The default value for this parameter is 1.</li>
+
+                <li><span class="label">Number of points for rho filter</span><br />
+                The default value for this parameter is 71.</li>
+
+                <li class="group"><span class="grouplabel">Tau-P tranform</span>
+                <ul>
+                  <li><span class="label">Minimum slope for Tau-P transform (s/m)</span><br />
+                  The default value for this parameter is 0.0.</li>
+
+                  <li><span class="label">Maximum slope for Tau-P transform (s/m)</span><br />
+                  The default value for this parameter is 1/500.</li>
+
+                  <li><span class="label">Number of slopes for Tau-P transform</span><br/>
+                    The default value is the same of parameter <b>Number of horizontal samples</b>.</li>
+                </ul></li>
+
+                <li><span class="label">Minimum frequency of interest</span><br />
+                The default value for this parameter is 3.</li>
+
+                <li><span class="label">Echoes extra information</span></li>
+
+                <li><span class="label">Directory to store temporary file</span>
+                Use the value as a directory path prefix for storing temporary files.</li>
+
+                <li><span class="label">Offset on first trace</span></li>
+
+              </ul>
+
+              <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+
+            <a name="notes"></a>
+            <h2>Notes</h2>
+
+            <p>The cascade of a forward and inverse Tau-P transform preserves the
+            relative amplitudes in a data panel, but not the absolute amplitudes
+            meaning that a scale factor must be applied to data output by such a
+            a cascade before the output may be compared to the original data.
+            This is a characteristic of the algorithm employed in this program.</p>
+
+           <p>This program accesses the following header keywords:
+            <ul>
+              <li>Number of samples,</li>  <!-- ns -->
+              <li>Sampling interval in microseconds.</li> <!-- dt -->
+           </ul>
+          </p>
+
+           <p>This program modifies the following header keywords:
+            <ul>
+              <li>Sampling interval in microseconds,</li> <!-- dt -->
+              <li>Sample spacing between traces,</li> <!-- d2 -->
+              <li>First trace location.</li> <!-- f2 -->
+           </ul>
+          </p>
+
+            <a name="ref"></a>
+            <h2>References</h2>
+
+           <ul>
+            <li>Levin, F., editor, 1991, Slant-Stack Processing, Geophysics Reprint
+            Series #14, SEG Press, Tulsa.</li>
+           </ul>
+
+
+            <a name="credits"></a>
+            <h2>Credits</h2>
+          <!-- begin cpy -->
+            <p>CWP: Gabriel Alvarez, 1995.</p>
+
+
+            <!-- end cpy -->
+        </div>
+
+          <div class="navigation">
+            <h2>Index</h2>
+
+            <ul>
+              <li><a href="#intro">Introduction</a></li>        
+
+              <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+              <li><a href="#notes">Notes</a></li>
+
+              <li><a href="#ref">References</a></li>
+
+              <li><a href="#credits">Credits</a></li>
+
+            </ul>
+          </div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Computation selection</label>
+        <enum>
+          <property required="yes">
+            <keyword>option=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>Forward F-K domain</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Forward T-X domain</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Inverse F-K domain</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Inverse T-X domain</label>
+            <value>4</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval (in secs)</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of horizontal samples</label>
+        <int>
+          <property required="no">
+            <keyword>nx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Horizontal sampling interval (in m)</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of points for rho filter</label>
+        <int>
+          <property required="no">
+            <keyword>npoints=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Tau-P transform</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Minimum slope for Tau-P transform (s/m)</label>
+                <float>
+                  <property required="no">
+                    <keyword>pmin=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum slope for Tau-P transform (s/m)</label>
+                <float>
+                  <property required="no">
+                    <keyword>pmax=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of slopes for Tau-P transform</label>
+                <int>
+                  <property required="no">
+                    <keyword>np=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Minimum frequency of interest</label>
+        <float>
+          <property required="no">
+            <keyword>fmin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory to store temporary file</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Offset on first trace</label>
+        <float>
+          <property required="no">
+            <keyword>xmin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

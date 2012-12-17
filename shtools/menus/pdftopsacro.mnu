@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>FC PDF to PS</title>
+  <description>Convert PDF to PostScript through Adobe Acrobat Reader</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>G&ecirc;BR - FC PDF to PS</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">FC PDF to PS</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Convert PDF to PostScript through Adobe Acrobat Reader
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        File tools | Shell tools
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This utility converts a PDF file to a PostScript file through Adobe Acrobat Reader&reg;.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Jan 23, 2009: created by Ricardo Biloti &lt;biloti@gmail&middot;com&gt;<br/>
+             Mar 05, 2009: revised by Ricardo Biloti &lt;biloti@gmail&middot;com&gt;</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.9 (<!-- begin dtd -->0.3.0<!-- end dtd -->) | Mar 05, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-01-23T15:00:00Z</created>
+    <modified>2011-04-01T19:20:05.930397Z</modified>
+    <lastrun/>
+  </date>
+  <category>File tools</category>
+  <category>Shell tools</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="Acrobat Reader 8.1.2">
+    <title>FC PDF to PS</title>
+    <binary>acroread -toPostScript</binary>
+    <description>Convert PDF to PS through Adobe Acrobat Reader</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <title>
+    <!-- begin ttl -->FC PDF to PS<!-- end ttl -->
+  </title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">
+            <!-- begin tt2 -->FC PDF to PS<!-- end tt2 -->
+          </span>
+          <div class="description">
+            <!-- begin des -->Convert PDF to PS through Adobe Acrobat Reader<!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->File tools | Shell tools<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+          <!-- begin cnt -->
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This utility convert a PDF file to a PostScript file through Adobe
+             Acrobat Reader&reg;.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <!-- begin lst -->
+            <ul>
+              <li><span class="label">PostScript level</span> selects the PostScript level of the output file. Only
+             levels 2 and 3 are accepted.</li>
+
+              <li><span class="label">Start page</span> defines the first page to be considered.</li>
+
+              <li><span class="label">End page</span> defines the last page to be considered.</li>
+
+              <li><span class="label">Page subset</span> can be employed to subset the pages between
+              start and end pages. Possible choices as: continuous range (all pages between first and last),
+              even pages only or odd pages only.</li>
+
+              <li><span class="label">Paper size</span> of the output.</li>
+
+              <li><span class="label">Scale factor</span> applied to each page.</li>
+
+              <li><span class="label">Rotate to landscape</span></li>
+
+              <li><span class="label">Shrink pages to fit page size</span></li>
+
+              <li><span class="label">Expand pages to fit page size</span></li>
+
+              <li><span class="label">Reverse page order of the output</span></li>
+
+              <li><span class="label">Optimized for speed</span>emit PostScript such that all fonts are emitted once at
+            the beginning of the document. This results in faster
+            transmission times and smaller PostScript documents but
+            requires more PostScript printer virtual memory.</li>
+
+              <li><span class="label">Do not print comments</span></li>
+
+              <li><span class="label">Do not print annots</span></li>
+
+              <li><span class="label">Do not print stamps</span></li>
+              <li><span class="label">Print markups</span></li>
+          </ul>
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+            
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Acrobat Reader is a registred product of Adobe. It is freely-available at
+             <a href="http://get.adobe.com/br/reader/" target=_empty>Adobe's page</a>.</p>
+          <!-- end cpy -->
+        <!-- end cnt -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->Acrobat Reader 8.1.2<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.adobe.com/products/acrobat/readermain.html</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>PostScript level</label>
+        <enum>
+          <property required="yes">
+            <keyword/>
+            <value/>
+            <default>-level2</default>
+          </property>
+          <option>
+            <label>Level 2</label>
+            <value>-level2</value>
+          </option>
+          <option>
+            <label>Level 3</label>
+            <value>-level3</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Page selection</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Start page</label>
+                <int>
+                  <property required="no">
+                    <keyword>-start</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>End page</label>
+                <int>
+                  <property required="no">
+                    <keyword>-end</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Page subset</label>
+                <enum>
+                  <property required="no">
+                    <keyword/>
+                    <value/>
+                    <default/>
+                  </property>
+                  <option>
+                    <label>odd pages only</label>
+                    <value>-odd</value>
+                  </option>
+                  <option>
+                    <label>even pages only</label>
+                    <value>-even</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Geometry</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Paper size</label>
+                <enum>
+                  <property required="no">
+                    <keyword>-size</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                  <option>
+                    <label/>
+                    <value>letter</value>
+                  </option>
+                  <option>
+                    <label/>
+                    <value>tabloid</value>
+                  </option>
+                  <option>
+                    <label/>
+                    <value>ledger</value>
+                  </option>
+                  <option>
+                    <label/>
+                    <value>legal</value>
+                  </option>
+                  <option>
+                    <label/>
+                    <value>executive</value>
+                  </option>
+                  <option>
+                    <label>A3</label>
+                    <value>a3</value>
+                  </option>
+                  <option>
+                    <label>A4</label>
+                    <value>a4</value>
+                  </option>
+                  <option>
+                    <label>A5</label>
+                    <value>a5</value>
+                  </option>
+                  <option>
+                    <label>B4</label>
+                    <value>b4</value>
+                  </option>
+                  <option>
+                    <label>B5</label>
+                    <value>b5</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Scale factor</label>
+                <range min="0" max="100" inc="1" digits="0">
+                  <property required="no">
+                    <keyword>-scale</keyword>
+                    <value/>
+                    <default>100</default>
+                  </property>
+                </range>
+              </parameter>
+              <parameter>
+                <label>Rotate to landscape</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-landscape</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Shrink pages to fit page size</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-shrink</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Expand pages to fit page size</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-expand</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Control flags</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Reverse the page order of the output</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-reverse</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Optimized for speed</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-optimizeForSpeed</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Do not print comments</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-commentOff</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Do not print annots</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-annotsOff</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Do not print stamps</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-stampsOff</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Print markups</label>
+                <flag>
+                  <property required="no">
+                    <keyword>-markupsOn</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

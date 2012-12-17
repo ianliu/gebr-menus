@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Vel 2DF</title>
+  <description>Compute stacking velocity semblance for a single time in over Vnmo and eta in 2-D</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Vel 2DF</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Vel 2DF</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Compute stacking velocity semblance for a single time in over Vnmo and eta in 2-D
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Gain, NMO, Stack and Standard Processes | Seismic Unix
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Compute stacking velocity semblance for a single time in over Vnmo and eta in 2-D.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Nov 11, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<p>
+        Jul 21, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Nov 11, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-11-11T17:20:00.675670Z</created>
+    <modified>2010-08-06T16:30:30.900632Z</modified>
+    <lastrun/>
+  </date>
+  <category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Vel 2DF</title>
+    <binary>suvel2df</binary>
+    <description>Compute stacking velocity semblance for a single time in over Vnmo and eta in 2-D</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Vel 2DF</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Vel 2DF</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Compute stacking velocity semblance for a single time in over Vnmo and eta in 2-D
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Gain, NMO, Stack and Standard Processes | Seismic Unix
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Compute stacking velocity semblance for a single time in over Vnmo and eta in 2-D.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Zero-offset time of reflection</span></li>
+                <li class="req">
+                        <span class="reqlabel">Maximum offset considerd</span></li>
+                <li class="group">
+                        <span class="grouplabel">Parameters of velocity</span>
+                        <ul>
+                                <li>
+                                        <span class="label">First velocity</span></li>
+                                <li>
+                                        <span class="label">Velocity sampling interval</span></li>
+                                <li>
+                                        <span class="label">Number of velocities</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Parameters of horizontal velocity</span>
+                        <ul>
+                                <li>
+                                        <span class="label">irst horizontal velocity</span></li>
+                                <li>
+                                        <span class="label">Horizontal velocity sampling interval</span></li>
+                                <li>
+                                        <span class="label">Number of horizotal velocities</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Maximum offset-to-depth ratio to resolve</span></li>
+                <li>
+                        <span class="label">Ratio of output to input time sampling intervals</span></li>
+                <li>
+                        <span class="label">Length of semblance numerator and denominator smoothing window</span><br />
+                        The default value for this parameter is <strong>Ratio of output to input time sampling intervals</strong>*2 + 1.</li>
+                <li>
+                        <span class="label">Average velocity used in the search</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span><br />
+                        The default value for this parameter is <strong>First Velocity</strong> + 0.5*(<strong>Number of velocities</strong>-1)*<strong>Velocity sampling interval.</strong></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Semblance is defined by the following quotient:</p>
+<pre>n-1                                                        
+                [ sum q(t,j) ]^2                                        
+                 j=0                                                    
+        s(t) = ------------------                                       
+                 n-1                                                    
+                n sum [q(t,j)]^2                                        
+                 j=0                                                    
+</pre>
+<p>
+         </p>
+<p>
+        Where n is the number of non-zero samples after muting. <strong>Length of semblance numerator and denominator smoothing window</strong> is applied separately to the numerator and denominator before computing this semblance quotient.</p>
+<p>
+        Input traces should be sorted by cdp: <strong>SU Vel 2DF</strong> outputs a group of semblance traces every time cdp changes. Therefore, the output will be useful only if cdp gathers are input.</p>
+<p>
+        This program access the following header keywords:</p>
+<ul>
+        <li>
+                Number of samples</li>
+<!-- ns   -->   <li>
+                Sampling interval in microseconds</li>
+<!-- dt -->     <li>
+                Delay recording time in ms</li>
+<!-- delrt -->  <li>
+                Offset (signed distance from source to receiver group)</li>
+<!-- offset --> <li>
+                CDP ensemble number</li>
+</ul>
+<p>
+        This program modifies the following header keywords:</p>
+<ul>
+        <li>
+                Number of samples</li>
+<!-- ns   -->   <li>
+                Sampling interval in microseconds</li>
+<!-- dt -->     <li>
+                Offset (signed distance from source to receiver group)</li>
+</ul>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        CWP: Tariq Alkhalifah, February 1997</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        Credits</h2></a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Zero-offset time of reflection</label>
+        <float>
+          <property required="yes">
+            <keyword>tn=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum offset considerd</label>
+        <int>
+          <property required="yes">
+            <keyword>offsetm=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Velocity properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>fv=</keyword>
+                    <value/>
+                    <default>1500.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of velocities</label>
+                <int>
+                  <property required="no">
+                    <keyword>nv=</keyword>
+                    <value/>
+                    <default>50</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Velocity sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dv=</keyword>
+                    <value/>
+                    <default>50.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1500.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Horizontal velocity properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First horizontal velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>fvh=</keyword>
+                    <value/>
+                    <default>1500.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of horizotal velocities</label>
+                <int>
+                  <property required="no">
+                    <keyword>nvh=</keyword>
+                    <value/>
+                    <default>50</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Horizontal velocity sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dvh=</keyword>
+                    <value/>
+                    <default>50.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1500.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Maximum offset-to-depth ratio to resolve</label>
+        <float>
+          <property required="no">
+            <keyword>xod=</keyword>
+            <value/>
+            <default>1.5</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Ratio of output to input time sampling intervals</label>
+        <int>
+          <property required="no">
+            <keyword>dtratio=</keyword>
+            <value/>
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Length of semblance numerator and denominator smoothing window</label>
+        <int>
+          <property required="no">
+            <keyword>nsmooth=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Average velocity used in the search</label>
+        <float>
+          <property required="no">
+            <keyword>vavg=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

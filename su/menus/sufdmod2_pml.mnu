@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU FD Modeling 2D PML</title>
+  <description>Finite difference modeling for acoustic wave equation with PML</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU FD Modeling 2D PML</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU FD Modeling 2D PML</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Finite difference modeling for acoustic wave equation with PML
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Finite difference modeling (2nd order) for acoustic wave equation with PML absorbing boundary conditions.</p>
+
+          <!-- begin par --><!-- end par -->
+           
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>May 04, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 04, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-04T15:18:55.783634Z</created>
+    <modified>2011-01-27T16:14:05.049952Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU FD Modeling 2D PML</title>
+    <binary>sufdmod2_pml</binary>
+    <description>Finite difference modeling for acoustic wave equation with PML</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU FD Modeling 2D PML</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU FD Modeling 2D PML</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Finite difference modeling for acoustic wave equation with PML
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Finite difference modeling (2nd order) for acoustic wave equation with PML absorbing boundary conditions.</p>
+
+                <p>This program receive a file containing velocity in function of parameters <b>Number of x samples (2nd dimension)</b> and 
+                <b>Number of z samples (1st dimension)</b> and creates a file containing waves in function of parameters
+                <b>Number of x samples (2nd dimension)</b> and <b>Number of z samples (1st dimension)</b> for time steps.</p>
+
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+              
+            <!-- begin lst --><ul>
+              <li class="req"><span class="reqlabel">Number of x samples (2nd dimension)</span></li>
+
+              <li class="req"><span class="reqlabel">Number of z samples (1st dimension)</span></li>
+
+              <li class="group"><span class="grouplabel">Sources</span>
+
+              <ul>
+              <li class="req"><span class="reqlabel">X coordinates of source</span></li>
+
+              <li class="req"><span class="reqlabel">Z coordinates of source</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Time discretization</span>
+
+              <ul>
+              <li class="req"><span class="reqlabel">Maximum time</span></li>
+
+              <li><span class="label">Number of time samples</span><br/>
+                Default value is (1 + <strong>Maximum propagation time</strong>)/<strong>Time sampling interval.</strong></li>
+
+              <li><span class="label">Number of time steps per output time step</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Spacial grid</span>
+
+              <ul>
+              <li><span class="label">X sampling interval</span></li>
+
+              <li><span class="label">First x sample</span></li>
+
+              <li><span class="label">Z sampling interval</span></li>
+
+              <li><span class="label">First z sample</span></li>
+
+              </ul></li>
+
+              <li><span class="label">Maximum frequency in source wavelet</span></li>
+
+              <li><span class="label">Peak frequency in ricker wavelet</span><br/>
+                Default value is 0.5*<strong>Maximum frequency in source wavelet</strong>.</li>
+
+              <li><span class="label">Input file containing density</span></li>
+
+              <li class="group"><span class="grouplabel">Seismograms properties</span>
+
+              <ul>
+              <li><span class="label">X coordinate of vertical line</span></li>
+
+              <li><span class="label">Z coordinate of horizontal line</span></li>
+
+              <li><span class="label">Output file for vertical line</span></li>
+
+              <li><span class="label">Output file for horizontal line</span></li>
+
+              <li><span class="label">Output file for source point seismograms</span></li>
+
+              </ul></li>
+
+              <li><span class="label">Absorbing boundary conditions</span><br/>
+                Conditions on top, left, bottom, right sides of the model.<br/>Use 0,1,1,1 for free surface condition on the top.</li>
+
+              <li><span class="label">Verbose mode</span>
+
+                <ul>
+
+                <li>Quiet</li>
+                <li>Diagnostic messages</li>
+                <li>More complete diagnostic messages</li>
+
+                </ul></li>
+                
+
+              <li class="group"><span class="grouplabel">PML Parameters</span>
+
+              <ul>
+              <li><span class="label">PML absorption parameter</span></li>
+
+              <li><span class="label">Half-thickness of pml layer</span><br/>
+                If equal a 0, do not use PML.</li>
+
+              </ul></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>This program uses the traditional explicit second order differencing method.</p>
+
+          <p>Two different absorbing boundary condition schemes are available. The first is a traditional absorbing boundary condition scheme created by Hale, 1990. The second is based on the perfectly matched layer (PML) method of Berenger, 1995.</p>
+
+          <p><strong>Caveat:</strong> experimental PML absorbing boundary condition version, may be buggy!</p>
+          
+          <p>This program sets the following header keywords:
+            <ul>
+                <li>Number of samples</li>  <!-- ns -->
+                <li>Delay recording time in ms</li>  <!-- delrt -->
+                <li>Trace number sequence within line</li>  <!-- tracl -->
+                <li>Trace number sequence within reel</li>  <!-- tracr -->
+                <li>Offset (signed distance from source to receiver group)</li>  <!-- offset -->
+                <li>Sample spacing for non-seismic data</li>  <!-- d1 -->
+                <li>Sample spacing between traces</li>  <!-- d2 -->
+                <li>Source depth (positive)</li>  <!-- sdepth -->
+                <li>Trace identification code</li>  <!-- trid -->
+            </ul>
+          </p>
+        
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+          <!-- List of references -->
+          <ul>
+          <li>(Hale's absobing boundary conditions)
+          <ul>
+            <li>Clayton, R. W., and Engquist, B., 1977, Absorbing boundary conditions for acoustic and elastic wave equations, Bull. Seism. Soc. Am., 6, 1529-1540.</li>
+
+            <li>Clayton, R. W., and Engquist, B., 1980, Absorbing boundary conditions
+ for wave equation migration, Geophysics, 45, 895-904.</li>
+
+            <li>Hale, D., 1990, Adaptive absorbing boundaries for finite-difference
+ modeling of the wave equation migration, unpublished report from the Center for Wave Phenomena, Colorado School of Mines.</li>
+
+            <li>Richtmyer, R. D., and Morton, K. W., 1967, Difference methods for initial-value problems, John Wiley & Sons, Inc, New York.</li>
+
+            <li>Thomee, V., 1962, A stable difference scheme for the mixed boundary problem for a hyperbolic, first-order system in two dimensions, J. Soc. Indust. Appl. Math., 10, 229-245.</li>
+
+            <li>Toldi, J. L., and Hale, D., 1982, Data-dependent absorbing side boundaries, Stanford Exploration Project Report SEP-30, 111-121.</li>
+          </ul></li>
+
+          <li>(PML boundary conditions)
+          <ul>
+
+            <li>Jean-Pierre Berenger, ``A Perfectly Matched Layer for the Absorption of Electromagnetic Waves,''  Journal of Computational Physics, vol. 114, pp. 185-200.</li>
+
+            <li>Hastings, Schneider, and Broschat, "Application of the perfectly matched layer (PML) absorbing boundary condition to elastic wave propogation," Journal of the Accoustical Society of America, November, 1996.</li>
+
+            <li>Allen Taflove, "Electromagnetic Modeling: Finite Difference Time Domain Methods", Baltimore, Maryland: Johns Hopkins University Press, 1995, chap. 7, pp. 181-195.</li>
+          </ul></li>
+          </ul>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP:Dave Hale
+          <br/>CWP:modified for SU by John Stockwell, 1993.
+          <br/>CWP:added frequency specification of wavelet: Craig Artley, 1993
+          <br/>TAMU:added PML absorbing boundary condition:Michael Holzrichter, 1998
+          <br/>CWP/WesternGeco:corrected PML code to handle density variations: Greg Wimpey, 2006</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of x samples (2nd dimension)</label>
+        <int>
+          <property required="yes">
+            <keyword>nx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of z samples (1st dimension)</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Sources</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X coordinates of source</label>
+                <float>
+                  <property required="yes" separator=",">
+                    <keyword>xs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z coordinates of source</label>
+                <float>
+                  <property required="yes" separator=",">
+                    <keyword>zs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Time discretization</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Maximum time</label>
+                <float>
+                  <property required="yes">
+                    <keyword>tmax=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of time steps per output time step</label>
+                <int>
+                  <property required="no">
+                    <keyword>mt=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Spacial grid</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dx=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First x sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First z sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Maximum frequency in source wavelet</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Peak frequency in ricker wavelet</label>
+        <float>
+          <property required="no">
+            <keyword>fpeak=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Input file containing density</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>dfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Seismograms properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X coordinate of vertical line</label>
+                <float>
+                  <property required="no">
+                    <keyword>vsx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z coordinate of horizontal line</label>
+                <float min="" max="">
+                  <property required="no">
+                    <keyword>hsz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Output file for vertical line</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>vsfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file for horizontal line</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>hsfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file for source point seismograms</label>
+                <file directory="no">
+                  <property required="no">
+                    <keyword>ssfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Absorbing boundary conditions</label>
+        <int min="0" max="1">
+          <property required="no" separator=",">
+            <keyword>abs=</keyword>
+            <value/>
+            <default>1</default>
+            <default>1</default>
+            <default>1</default>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Verbose mode</label>
+        <enum>
+          <property required="no">
+            <keyword>verbose=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>Quiet</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Diagnostic messages</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>More complete diagnostic messages</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>PML Parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>PML absorption parameter</label>
+                <float>
+                  <property required="no">
+                    <keyword>pml_max=</keyword>
+                    <value/>
+                    <default>1000.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Half-thickness of pml layer</label>
+                <int>
+                  <property required="no">
+                    <keyword>pml_thick=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1000.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

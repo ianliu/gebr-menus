@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>File Space Usage</title>
+  <description>Estimate file space usage</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>File Space Usage</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">File Space Usage</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Estimate file space usage
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Shell tools<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Summarize disk usage of each file, recursively for directories.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jan 23, 2009: written by Ricardo Biloti &lt;biloti@gmail.com&gt;</p>
+          <p>Oct 06, 2010: revised by Gabriel Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jan 23, 2009<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-01-23T15:00:00Z</created>
+    <modified>2011-04-01T19:15:41.045636Z</modified>
+    <lastrun/>
+  </date>
+  <category>Shell tools</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="GNU coreutils 7.4">
+    <title>File Space Usage</title>
+    <binary>du</binary>
+    <description>Estimate file space usage</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <title>
+    <!-- begin ttl -->File Space Usage<!-- end ttl -->
+  </title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">
+            <!-- begin tt2 -->File Space Usage<!-- end tt2 -->
+          </span>
+          <div class="description">
+            <!-- begin des -->Estimate file space usage<!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Shell tools<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+          <!-- begin cnt -->
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Summarize disk usage of each file, recursively for 
+          directories.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <!-- begin lst --><ul>
+<li><span class="label">Write counts for all files, not just directories</span><br/></li>
+<li><span class="label">Print apparent size instead of disk usage</span><br/>Although the apparent size is usually smaller, it may be larger due to holes in ('sparse') files, internal fragmentation, indirect blocks, and the like.</li>
+<li><span class="label">Block size (in bytes)</span><br/></li>
+<li><span class="label">Print total usage</span><br/>Produce a grand total.</li>
+<li><span class="label">Print sizes in human readable format</span><br/></li>
+<li><span class="label">Print sizes in human readable format (as powers of 1000 not 1024)</span><br/></li>
+<li><span class="label">Count sizes many times if hard linked</span><br/></li>
+<li><span class="label">Dereference</span><br/>
+        <ul>
+        <li>files that are symbolic links</li>
+        <li>all symbolic links</li>
+        <li>do not follow symbolic links</li>
+        </ul></li>
+<li><span class="label">Do not include size of subdirectories</span><br/></li>
+<li><span class="label">Display only a total for each argument</span><br/></li>
+<li><span class="label">Skip directories on different file systems</span><br/></li>
+<li><span class="label">Exclude files that match any pattern specified in file</span><br/></li>
+<li><span class="label">Exclude files that match pattern</span><br/></li>
+<li><span class="label">Show time of last modification</span><br/>Of any file in the directory, or any of its subdirectories.</li>
+<li><span class="label">Directories to scan</span><br/></li>
+<li><span class="label">Files to scan</span><br/></li>
+</ul>
+<!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>PATTERN is a shell pattern (not a regular expression). The pattern <strong>?</strong> matches any one character, whereas <strong>*</strong> matches any string (composed of zero, one or multiple characters). For example, <strong>*.o</strong> will match any files whose names end in <strong>.o</strong>.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>This program employs the du utility, written by Torbjorn  Granlund, David MacKenzie, Paul Eggert, and Jim Meyering, as part of the GNU core utils.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        <!-- end cnt -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->GNU coreutils 7.4<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.gnu.org/software/coreutils/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Write counts for all files, not just directories</label>
+        <flag>
+          <property required="no">
+            <keyword>--all</keyword>
+            <value>off</value>
+            <default>on</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Print apparent size instead of disk usage</label>
+        <flag>
+          <property required="no">
+            <keyword>--apparent-size</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Block size (in bytes)</label>
+        <int min="1">
+          <property required="no">
+            <keyword>--block-size=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Print total usage</label>
+        <flag>
+          <property required="no">
+            <keyword>--total</keyword>
+            <value>off</value>
+            <default>on</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Print sizes in human readable format</label>
+        <flag>
+          <property required="no">
+            <keyword>-h</keyword>
+            <value>off</value>
+            <default>on</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Print sizes in human readable format (as powers of 1000 not 1024)</label>
+        <flag>
+          <property required="no">
+            <keyword>--si</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Count sizes many times if hard linked</label>
+        <flag>
+          <property required="no">
+            <keyword>-l</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Dereference</label>
+        <enum>
+          <property required="no">
+            <keyword/>
+            <value/>
+            <default>-P</default>
+          </property>
+          <option>
+            <label>files that are symbolic links</label>
+            <value>-D</value>
+          </option>
+          <option>
+            <label>all symbolic links</label>
+            <value>-L</value>
+          </option>
+          <option>
+            <label>do not follow symbolic links</label>
+            <value>-P</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Do not include size of subdirectories</label>
+        <flag>
+          <property required="no">
+            <keyword>-S</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Display only a total for each argument</label>
+        <flag>
+          <property required="no">
+            <keyword>--summarize</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Skip directories on different file systems</label>
+        <flag>
+          <property required="no">
+            <keyword>-x</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Exclude files that match any pattern specified in file</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>--exclude-from=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Exclude files that match pattern</label>
+        <string>
+          <property required="no">
+            <keyword>--exclude=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Show time of last modification</label>
+        <flag>
+          <property required="no">
+            <keyword>--time</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directories to scan</label>
+        <file directory="yes">
+          <property required="no" separator="&quot; &quot;">
+            <keyword/>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Files to scan</label>
+        <file directory="no">
+          <property required="no" separator="&quot; &quot;">
+            <keyword/>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

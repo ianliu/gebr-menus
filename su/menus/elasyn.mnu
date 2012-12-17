@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>ELA Synthetic</title>
+  <description>Synthetic seismograms for triangulated elastic media</description>
+  <help>
+    <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
+
+  <!-- begin ttl -->
+  <title>ELA Synthetic</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">ELA Synthetic</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Synthetic seismograms for triangulated elastic media
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Synthetic seismograms for triangulated elastic media.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Feb 03, 2011: written by Gabriel dos Santos Sobral &lt;sobral@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.10.0 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->Feb 03, 2011<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Gabriel dos Santos Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2011-02-03T15:42:03.867799Z</created>
+    <modified>2011-02-03T16:21:19.421450Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>ELA Synthetic</title>
+    <binary>elasyn</binary>
+    <description>Synthetic seismograms for triangulated elastic media</description>
+    <help>
+      <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
+
+  <!-- begin ttl -->
+  <title>ELA Synthetic</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">ELA Synthetic</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Synthetic seismograms for triangulated elastic media
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        SYNthetic seismograms for triangulated elastic media.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="reqlabel">X coordinates of receiver surface</span></li>
+                <li>
+                        <span class="reqlabel">Z coordinates of receiver surface</span></li>
+                <li>
+                        <span class="label">Seismogram components</span>
+                        <ul>
+                                <li>
+                                        horizontal and vertical</li>
+                                <li>
+                                        horizontal</li>
+                                <li>
+                                        vertical (positive downwards)</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of receivers</span><br />
+                         Uniform distributed along surface.</li>
+                <li>
+                        <span class="label">Index of receiver surface</span></li>
+                <li>
+                        <span class="label">Number of time samples</span></li>
+                <li>
+                        <span class="label">Time sampling interval</span></li>
+                <li>
+                        <span class="label">First time sample</span></li>
+                <li>
+                        <span class="label">Interpolation mode</span>
+                        <ul>
+                                <li>
+                                        linear</li>
+                                <li>
+                                        cross parabolic</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Consider complex refl/transm coefficients</span></li>
+                <li>
+                        <span class="label">Rays to consider</span><br />
+                        =-1,  all rays recorded at interface are considered<br />
+                        =0,  only direct hits are considered<br />
+                        &gt;0,  only rays reflected from interface are considered</li>
+                <li>
+                        <span class="label">Restricts range of extrapolation</span></li>
+                <li>
+                        <span class="label">Peak frequency of ricker wavelet</span></li>
+                <li>
+                        <span class="label">ASCII-file to store useful information</span></li>
+                <li>
+                        <span class="label">Bin-file to store x_component traces</span></li>
+                <li>
+                        <span class="label">Bin-file to store z_component traces</span></li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        Only rays that terminate with index<strong> Index of receiver surface</strong> will contribute to the synthetic seismograms at the receiver (xg,zg) locations. The receiver locations are determined by cubic spline interpolation of the specified (xg,zg) coordinates.</p>
+<p>
+        <strong>Warning!! </strong>- This version is not quite complete. There is a bug in the interpolation routines that causes a segmentation violation on the last couple of traces.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Andreas Rueger, Colorado School of Mines, 02/02/94<br />
+        Tariq Alkalifah, Colorado School of Mines, 02/02/94 (interpolation routines)</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.10.0 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>X coordinates of receiver surface</label>
+        <float>
+          <property required="yes" separator=",">
+            <keyword>xg=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Z coordinates of receiver surface</label>
+        <float>
+          <property required="yes" separator=",">
+            <keyword>zg=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Seismogram components</label>
+        <enum>
+          <property required="no">
+            <keyword>compon</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>horizontal and vertical</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>horizontal</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>vertical</label>
+            <value>3</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Number of receivers</label>
+        <int>
+          <property required="no">
+            <keyword>ng=</keyword>
+            <value/>
+            <default>101</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Index of receiver surface</label>
+        <int>
+          <property required="no">
+            <keyword>krecord=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of time samples</label>
+        <int>
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default>251</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default>0.004</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First time sample</label>
+        <float>
+          <property required="no">
+            <keyword>ft=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Interpolation mode</label>
+        <enum>
+          <property required="no">
+            <keyword>inter=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>linear</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>cross parabolic</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Consider complex refl/transm coefficients</label>
+        <flag>
+          <property required="no">
+            <keyword>reftrans=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Rays to consider</label>
+        <int>
+          <property required="no">
+            <keyword>nameref=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Restricts range of extrapolation</label>
+        <float>
+          <property required="no">
+            <keyword>lscale=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Peak frequency of ricker wavelet</label>
+        <float>
+          <property required="no">
+            <keyword>fpeak=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>ASCII-file to store useful information</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>infofile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Bin-file to store x__component traces</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>xfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Bin-file to store z__component traces</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>zfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

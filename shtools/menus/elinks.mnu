@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>FC HTML/URL to TXT</title>
+  <description>Extract text content from HTML documents or URL's</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>FC HTML to TXT</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">Dump HTML</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Extract text content from HTML documents or URL's
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Shell tools
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Extract text content from HTML documents or URL's.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Mar 04, 2008: created by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
+             Jan 23, 2009: revised by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
+             Mar 05, 2009: revised by Ricardo Biloti &lt;biloti@gmail·com&gt;<br/>
+             Oct 06, 2010: revised by Gabriel Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.9 (<!-- begin dtd -->0.3.0<!-- end dtd -->) | Mar 05, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gmail.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-01-23T15:00:00Z</created>
+    <modified>2011-04-01T19:16:02.479867Z</modified>
+    <lastrun/>
+  </date>
+  <category>File tools</category>
+  <category>Shell tools</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="Elinks 0.11.1">
+    <title>FC HTML/URL to TXT</title>
+    <binary>elinks -dump-charset utf-8 -dump 1</binary>
+    <description>Extract text content from HTML documents or URL's</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <title>
+    <!-- begin ttl -->FC HTML/URL to TXT<!-- end ttl -->
+  </title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">
+            <!-- begin tt2 -->FC HTML/URL to TXT<!-- end tt2 -->
+          </span>
+          <div class="description">
+            <!-- begin des -->Extract text content from HTML documents or URL&apos;s<!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->File tools | Shell tools<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+          <!-- begin cnt -->
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Extract text content from HTML documents or URL's.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <!-- List of required parameters -->
+            <!-- begin lst -->
+            <ul>
+              <li><span class="label">Prevents printing of references (URIs) of document links</span></li>
+              <li class="req"><span class="reqlabel">HTML file or URL</span><br/>Specifies a local HTML file or a full qualified web address (like "http://www.google.com").</li>
+            </ul>
+            
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+            
+          <a name="details" id="details"></a>
+          <h2>Description</h2>
+
+          <p>This program employs <a href="http://elinks.or.cz/">Elinks</a>, an advanced and well-established feature-rich text mode web (HTTP/FTP/..) browser.</p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Elinks was created and is maintained by Petr Baudis and contributors.</p>
+          <!-- end cpy -->
+        <!-- end cnt -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.11.9 (<!-- begin dtd -->0.3.6<!-- end dtd -->) |
+                <!-- begin ver -->Elinks 0.11.1<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://elinks.or.cz/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Prevents printing of references (URIs) of document links</label>
+        <flag>
+          <property required="no">
+            <keyword>-no-references</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>HTML file or URL</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="yes">
+            <keyword/>
+            <value/>
+            <default>http://sites.google.com/site/gebrproject</default>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

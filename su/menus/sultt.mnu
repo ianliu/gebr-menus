@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU LTT</title>
+  <description>Rotation of volumes using the Linear Transform Technique</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU LTT</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU LTT</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Rotation of volumes using the Linear Transform Technique
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Trace by trace, sample by sample, rotation of shear wave data 
+          volumes using the Linear Transform Technique of Li & Crampin  
+          (1993).</p>
+
+          <!-- begin par --><!-- end par -->
+         
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Set 03, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Set 03, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-03T17:02:22.465821Z</created>
+    <modified>2010-09-03T22:40:24.434003Z</modified>
+    <lastrun/>
+  </date>
+  <category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU LTT</title>
+    <binary>sultt</binary>
+    <description>Rotation of volumes using the Linear Transform Technique</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU LTT</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU LTT</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Rotation of volumes using the Linear Transform Technique
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Trace by trace, sample by sample, rotation of shear wave data 
+          volumes using the Linear Transform Technique of Li & Crampin  
+          (1993).</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <!-- begin lst --><ul>
+<li class="group"><span class="grouplabel">Input seismic data files</span>
+
+<ul>
+<li class="req"><span class="reqlabel">Input file S11</span><br/></li>
+<li class="req"><span class="reqlabel">Input file S12</span><br/></li>
+<li class="req"><span class="reqlabel">Input file S21</span><br/></li>
+<li class="req"><span class="reqlabel">Input file S22</span><br/></li>
+</ul></li>
+
+<li><span class="label">Linear transform will compute</span>
+<ul>
+<li>Asymmetry indexes</li>
+<li>Polarization and main reflectivity series</li>
+<li>Polarization and main reflectivity series, but using eigenvalues</li>
+</ul></li>
+
+<li class="group"><span class="grouplabel">Output seismic data files</span>
+
+<ul>
+<li><span class="label">Output file S11</span></li>
+<li><span class="label">Output file S12</span></li>
+<li><span class="label">Output file S21</span></li>
+<li><span class="label">Output file S22</span></li>
+</ul></li>
+
+<li><span class="label">File for output polarization angle (Alpha)</span></li>
+<li><span class="label">File for output asymmetry index (Gamma)</span></li>
+<li><span class="label">File for output angle misalignment between source and receiver (Theta)</span></li>
+<li><span class="label">Running window length in samples</span></li>
+<li><span class="label">Number of traces to be average for each location</span></li>
+<li><span class="label">Total number of traces to be processed</span></li>
+</ul>
+<!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>Mode <strong>Polarization and main reflectivity series, but using eigenvalues</strong> is more robust estimation for Polarization angle 
+                than mode <strong>Polarization and main reflectivity series</strong>. In both cases the reflectivity series is   
+                computed in the same way. Mode <strong>Asymmetry indexes</strong> outputs two other data 
+                volumes, each containing the asymmetry parameters theta,
+                and gamma. The other two modes only output an extra da- 
+                ta volume, the instant polarization alpha.</p>
+                
+                <p>Caveat:<br/>Naming convention for off-diagonal volumes:<br/>                         
+ S12 - Inline source, Xline receiver<br/>                               
+ S21 - Xline source, Inline receiver</p>
+ 
+                <p>The running will always have an odd number of samples, despite the    
+ input length.</p>
+
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>   
+          
+          <ul>
+           <li>Li & Crampin (1993) and Li & MacBeth (1997)</li>
+                <li>Li, X.Y., and Crampin, S., 1993, Linear-transform techniques for 
+                processing shear-wave anisotropy in four-component
+                seismic data, Geophysics, 58, 240-256.</li>
+                <li>Li, X.Y., and MacBeth, C., 1997, Data-Matrix asymmetry and polar-
+                ization changes from multicomponent surface seismics 
+                </li></ul>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP/RCP: Rodrigo Felicio Fuck</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+            
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Input seismic data files</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Input file S11</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>inS11=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Input file S12</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>inS12=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Input file S21</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>inS21=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Input file S22</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>inS22=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Linear transform will compute</label>
+        <enum>
+          <property required="no">
+            <keyword>mode=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Asymmetry indexes</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Polarization and main reflectivity series</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Polarization and main reflectivity series, but using eigenvalues</label>
+            <value>3</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Output seismic data files</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Output file S11</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>outS11=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file S12</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>outS12=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file S21</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>outS21=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Output file S22</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>outS22=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>File for output polarization angle (Alpha)</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>alpha=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>File for output asymmetry index (Gamma)</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>gamma=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>File for output angle misalignment between source and receiver (Theta)</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>theta=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Running window length in samples</label>
+        <int>
+          <property required="no">
+            <keyword>wl=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces to be average for each location</label>
+        <int>
+          <property required="no">
+            <keyword>ntraces=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Total number of traces to be processed</label>
+        <int>
+          <property required="no">
+            <keyword>Total=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

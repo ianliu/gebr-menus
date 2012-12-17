@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU LPrime</title>
+  <description>Find appropriate Backus average length</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU LPrime</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU LPrime</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Find appropriate Backus average length
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+         Find appropriate Backus average length for a given log suite, frequency, and purpose.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 13, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 13, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-13T14:11:52.465555Z</created>
+    <modified>2010-10-01T21:07:39.454808Z</modified>
+    <lastrun/>
+  </date>
+  <category>Import/Export</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU LPrime</title>
+    <binary>sulprime</binary>
+    <description>Find appropriate Backus average length</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU LPrime</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU LPrime</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Find appropriate Backus average length
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Find appropriate Backus average length for a given log suite, frequency, and purpose.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Target value of Backus number</span><br />
+                        Parameter equal a 2.0,  is transmission limit (ok for proc, mig, etc.),<br />
+                        and equal a 0.3,  is scattering limit (ok for modeling).</li>
+                <li>
+                        <span class="label">Input depth sample interval (ft)</span></li>
+                <li>
+                        <span class="label">Frequency (Hz)</span><br />
+                         Dominant or max (to be safe).</li>
+                <li>
+                        <span class="label">Maximum averaging length (samples)</span></li>
+                <li>
+                        <span class="label">Print informations</span>
+                        <ul>
+                                <li>
+                                        Intermediate results</li>
+                                <li>
+                                        Final result only</li>
+                        </ul>
+                </li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+         Input is in sync with menu <strong>SU Backus</strong>, but "P-wave velocity model" and "Gamma ray log" not used.</p>
+<h2 id="header_3">
+        References</h2>
+<!-- List of references --><ul>
+        <li>
+                 The Backus Number (Liner and Fei, 2007, TLE).</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+         UHouston: Chris Liner September 2008.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Target value of Backus number</label>
+        <float>
+          <property required="no">
+            <keyword>b=</keyword>
+            <value/>
+            <default>2.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Input depth sample interval (ft)</label>
+        <float>
+          <property required="no">
+            <keyword>dz=</keyword>
+            <value/>
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Frequency (Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>f=</keyword>
+            <value/>
+            <default>60.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum averaging length (samples)</label>
+        <int>
+          <property required="no">
+            <keyword>nmax=</keyword>
+            <value/>
+            <default>301</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Print informations</label>
+        <enum>
+          <property required="no">
+            <keyword>verbose=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Intermediate results</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Final result only</label>
+            <value>0</value>
+          </option>
+        </enum>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

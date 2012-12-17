@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU SVD Polarization Filter</title>
+  <description>Eigenimage (SVD) based polarization filter</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU SVD Polarization Filter</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU SVD Polarization Filter</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Eigenimage (SVD) based polarization filter
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Eigenimage (SVD) based polarization filter for three-component data.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Nov 25, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<p>
+        Mar 18, 2010: edited by Luis D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Nov 25, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-11-25T17:59:25.704579Z</created>
+    <modified>2010-08-06T00:43:04.802515Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU SVD Polarization Filter</title>
+    <binary>sueipofi</binary>
+    <description>Eigenimage (SVD) based polarization filter</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU SVD Polarization Filter</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU SVD Polarization Filter</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Eigenimage (SVD) based polarization filter
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Eigenimage (SVD) based polarization filter for three-component data.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Time sampling intervall in seconds</span><br />
+                        The default value for this parameter is set from header.</li>
+                <li>
+                        <span class="label">SVD time window length in seconds</span><br />
+                        The default value for this parameter is 0.1.</li>
+                <li>
+                        <span class="label">Exponent of filter weights</span><br />
+                        The default value for this parameter is 1.0.</li>
+                <li>
+                        <span class="label">Interpolation between initially calculated weights</span></li>
+                <li>
+                        <span class="label">Base name for additional output file(s) of filter weights</span></li>
+                <li>
+                        <span class="label">Assume rectilinearity along first principal axis </span></li>
+                <li>
+                        <span class="label">Assume rectilinearity along second principal axis </span></li>
+                <li>
+                        <span class="label">Assume planarity</span></li>
+                <li>
+                        <span class="label">Echoes information</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Each three adjacent traces are considered as one three-component dataset.</p>
+<p>
+        The filter is the sum of the first two eigenimages of the singular value decomposition (SVD) of the signal matrix (time window).<br />
+        Weighting functions depending on linearity and planarity of the signal are applied, additionally. To avoid edge effects, these are interpolated linearily or via cubic splines between initially calculated values of non-overlapping time windows.<br />
+        The algorithm is based on the assumption that the particle motion trajectory is essentially 2D (elliptical polarization).</p>
+<p>
+        Caveat:<br />
+        Cubic spline interpolation may result in filter weights exceeding the set of values of initial weights. Weights outside the valid interval [0.0, 1.0] are clipped.</p>
+<p>
+        This program access the following header keywords</p>
+<ul>
+        <li>
+                Number of samples</li>
+<!-- ns   -->   <li>
+                Sampling interval in microseconds</li>
+<!-- dt --></ul>
+<h2 id="header_3">
+        References</h2>
+<!-- List of references --><ul>
+        <li>
+                Franco, R. de, and Musacchio, G., 2000: Polarization Filter with Singular Value Decomposition, submitted to Geophysics and published electronically in Geophysics online (www.geo-online.org).</li>
+        <li>
+                Jurkevics, A., 1988: Polarization analysis of three-comomponent array data, Bulletin of the Seismological Society of America, vol. 78, no. 5.</li>
+        <li>
+                Press, W. H., Teukolsky, S. A., Vetterling, W. T., and Flannery, B. P.<br />
+                1996: Numerical Recipes in C - The Art of Scientific Computing,<br />
+                Cambridge University Press, Cambridge.</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        Nils Maercklin,<br />
+        GeoForschungsZentrum (GFZ) Potsdam, Germany, 2001.<br />
+        E-mail: nils@gfz-potsdam.de</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+              Introduction</a></li><li><a href="#header_1">
+              Parameters</a></li><li><a href="#header_2">
+              Notes</a></li><li><a href="#header_3">
+              References</a></li><li><a href="#header_4">
+              Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.14 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Time sampling intervall in seconds</label>
+        <int>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>SVD time window length in seconds</label>
+        <float>
+          <property required="no">
+            <keyword>wl=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Exponent of filter weights</label>
+        <float>
+          <property required="no">
+            <keyword>pwr=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Interpolation between initially calculated weights</label>
+        <enum>
+          <property required="no">
+            <keyword>interp=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Linear</label>
+            <value>linear</value>
+          </option>
+          <option>
+            <label>Cubic</label>
+            <value>cubic</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Base name for additional output file(s) of filter weights</label>
+        <string>
+          <property required="no">
+            <keyword>file=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Assume rectilinearity along first principal axis</label>
+        <flag>
+          <property required="no">
+            <keyword>rl1=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Assume rectilinearity along second principal axis</label>
+        <flag>
+          <property required="no">
+            <keyword>rl2=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Assume planarity</label>
+        <flag>
+          <property required="no">
+            <keyword>pln=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoes information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

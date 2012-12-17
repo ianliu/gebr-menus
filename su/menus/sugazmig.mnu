@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Gazdag Mig</title>
+  <description>Jeno GAZDAG's phase-shift migration for zero-offset data</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Gazdag Mig</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Gazdag Mig</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Jeno GAZDAG&apos;s phase-shift migration for zero-offset data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>SU version of Jeno GAZDAG's phase-shift migration for zero-offset data, with attenuation Q.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Mat 13, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 13, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-13T15:29:20.700666Z</created>
+    <modified>2010-08-06T00:43:05.104198Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Gazdag Mig</title>
+    <binary>sugazmig</binary>
+    <description>Jeno GAZDAG's phase-shift migration for zero-offset data</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Gazdag Mig</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Gazdag Mig</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Jeno GAZDAG's phase-shift migration for zero-offset data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        SU version of Jeno GAZDAG's phase-shift migration for zero-offset data, with attenuation Q.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">Time properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">First time sample</span></li>
+                                <li>
+                                        <span class="label">Time sampling interval</span><br />
+                                        Default value is set from header or is 0.004.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Midpoint sampling interval</span><br />
+                        Default value is set from header or is 1.0.</li>
+                <li class="group">
+                        <span class="grouplabel">Migrated time properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">First migrated time sample</span><br />
+                                        Default value is the same of parameter <b>First time sample</b>.</li>
+                                <li>
+                                        <span class="label">Number of migrated time samples</span><br />
+                                        Default value is set from data.</li>
+                                <li>
+                                        <span class="label">Migrated time sampling interval</span><br />
+                                        Default value is set from header.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Times corresponding to interval velocities</span></li>
+                <li>
+                        <span class="label">Interval velocities corresponding to times</span></li>
+                <li>
+                        <span class="label">Name of file containing velocities</span></li>
+                <li>
+                        <span class="label">Quality factor</span></li>
+                <li>
+                        <span class="label">Gain ceiling beyond which migration ceases</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+                <li>
+                        <span class="label">Directory path for storing temporary files</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Ray bending effects not accounted for in this version.</p>
+<p>
+        The parameters <b>Times corresponding to interval velocities</b> and <b>Interval velocities corresponding to times</b> arrays specify an interval velocity function of time.<br />
+        Linear interpolation and constant extrapolation is used to determine interval velocities at times not specified.<br />
+        Values specified in parameter <b>Times corresponding to interval velocities</b> must increase monotonically.</p>
+<p>
+        Alternatively, interval velocities may be stored in a binary file containing one velocity for every time sample in the data that is to be migrated.<br />
+        If <b>Name of file containing velocities</b> is specified, then the <b>Times corresponding to interval velocities</b> and <b>Interval velocities corresponding to times</b> arrays are ignored.</p>
+<p>
+        <b>Caveat:</b><br />
+        Adding <strong>Quality Factor</strong> is a first attempt to address GPR issues.</p>
+<p>
+        This program access the following header keywords</p>
+<ul>
+        <li>
+                Number of samples</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds</li>
+<!-- dt -->     <li>
+                Delay recording time in ms</li>
+<!-- delrt -->  <li>
+                Sample spacing between traces</li>
+<!-- d2 --></ul>
+<p>
+        This program modify the following header keywords</p>
+<ul>
+        <li>
+                Number of samples</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds</li>
+<!-- dt -->     <li>
+                Delay recording time in ms</li>
+<!-- delrt --></ul>
+<p>
+        <span class="Apple-style-span" style="font-size: 18px; font-weight: bold; ">Credits</span></p>
+<p>
+        Constant <span class="Apple-style-span" style="background-color: rgb(255, 255, 255); "><strong>Quality Factor<span class="Apple-style-span" style="font-weight: normal; "> attenuation correction by Chuck Oden 5 May 2004.</span></strong></span></p>
+<p>
+        CWP John Stockwell 12 Oct 1992.<br />
+        Based on a constant v version by Dave Hale.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Time properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First time sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Midpoint sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Migrated time properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First migrated time sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>ftau=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of migrated time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>ntau=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Migrated time sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dtau=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Times corresponding to interval velocities</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>tmig=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Interval velocities corresponding to times</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>vmig=</keyword>
+            <value/>
+            <default>1500.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Name of file containing velocities</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Quality factor</label>
+        <float>
+          <property required="no">
+            <keyword>Q=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Gain ceiling beyond which migration ceases</label>
+        <float>
+          <property required="no">
+            <keyword>ceil=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory path for storing temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

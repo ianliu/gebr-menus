@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU NHMO Spike</title>
+  <description>Generates spike test data set with a choice of several Non-Hyperbolic Moveout</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU NHMO Spike</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU NHMO Spike</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Generates spike test data set with a choice of several Non-Hyperbolic Moveout
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Generates spike test data set with a choice of several Non-Hyperbolic Moveout.</p>
+
+          <!-- begin par --><!-- end par -->
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jun 11, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jun 11, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-11T19:30:30.886563Z</created>
+    <modified>2010-08-06T00:43:06.296155Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU NHMO Spike</title>
+    <binary>sunhmospike</binary>
+    <description>Generates spike test data set with a choice of several Non-Hyperbolic Moveout</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU NHMO Spike</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU NHMO Spike</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Generates spike test data set with a choice of several Non-Hyperbolic Moveout
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Generates spike test data set with a choice of several Non-Hyperbolic Moveout.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Number of time samples</span></li>
+                <li>
+                        <span class="label">Number of traces</span></li>
+                <li>
+                        <span class="label">Time sample rate in seconds</span></li>
+                <li>
+                        <span class="label">Reference offset</span></li>
+                <li>
+                        <span class="label">Model Style</span>
+                        <ul>
+                                <li>
+                                        Parabolic transform model</li>
+                                <li>
+                                        Foster/Mosher pseudo hyperbolic option model</li>
+                                <li>
+                                        Linear tau-p model</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Reference depth (Only when "Model style" is hyperbolic)</span></li>
+                <li>
+                        <span class="label">Offset increment</span></li>
+                <li>
+                        <span class="label">Number of events</span></li>
+                <li class="group">
+                        <span class="grouplabel">Event #1 properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Event moveout in ms on reference offset</span></li>
+                                <li>
+                                        <span class="label">Intercept time ms</span></li>
+                                <li>
+                                        <span class="label">Amplitude</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Event #2 properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Event moveout in ms on reference offset</span></li>
+                                <li>
+                                        <span class="label">Intercept time ms for spike #2</span></li>
+                                <li>
+                                        <span class="label">Amplitude</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Event #3 properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Event moveout in ms on reference offset</span></li>
+                                <li>
+                                        <span class="label">Intercept time ms for spike #3</span></li>
+                                <li>
+                                        <span class="label">Amplitude</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Event #4 properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Event moveout in ms on reference offset</span></li>
+                                <li>
+                                        <span class="label">Intercept time ms for spike #4</span></li>
+                                <li>
+                                        <span class="label">Amplitude</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Output CDP number</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Creates a common CDP SU data file with up to four spike events for impulse response studies for program <b>SU Radon</b>.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        CWP: Shuki Ronen, Chris Liner,<br />
+        Modified: CWP by John Anderson, April, 1994, to have appropriate trace header words and default values.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        Credits</h2></a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of time samples</label>
+        <int>
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default>300</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces</label>
+        <int>
+          <property required="no">
+            <keyword>ntr=</keyword>
+            <value/>
+            <default>20</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Time sample rate in seconds</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default>0.001</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Reference offset</label>
+        <float>
+          <property required="no">
+            <keyword>offref=</keyword>
+            <value/>
+            <default>2000</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Model style</label>
+        <enum>
+          <property required="no">
+            <keyword>gopt=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Parabolic transform model</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Foster/Mosher pseudo hyperbolic option model</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Linear tau-p model</label>
+            <value>3</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Reference depth (Only when "Model style" is hyperbolic)</label>
+        <float>
+          <property required="no">
+            <keyword>depthref=</keyword>
+            <value/>
+            <default>400</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Offset increment</label>
+        <float>
+          <property required="no">
+            <keyword>offinc=</keyword>
+            <value/>
+            <default>100</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of events</label>
+        <int>
+          <property required="no">
+            <keyword>nspk=</keyword>
+            <value/>
+            <default>4</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Event #1 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Event moveout in ms on reference offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>p1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Intercept time ms</label>
+                <float>
+                  <property required="no">
+                    <keyword>t1=</keyword>
+                    <value/>
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Amplitude</label>
+                <float>
+                  <property required="no">
+                    <keyword>a1=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Event #2 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Event moveout in ms on reference offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>p2=</keyword>
+                    <value/>
+                    <default>200</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Intercept time ms for spike #2</label>
+                <float>
+                  <property required="no">
+                    <keyword>t2=</keyword>
+                    <value/>
+                    <default>100</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Amplitude</label>
+                <float>
+                  <property required="no">
+                    <keyword>a2=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>200</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Event #3 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Event moveout in ms on reference offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>p3=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Intercept time ms for spike #3</label>
+                <float>
+                  <property required="no">
+                    <keyword>t3=</keyword>
+                    <value/>
+                    <default>200</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Amplitude</label>
+                <float>
+                  <property required="no">
+                    <keyword>a3=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>200</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Event #4 properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Event moveout in ms on reference offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>p4=</keyword>
+                    <value/>
+                    <default>120</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Intercept time ms for spike #4</label>
+                <float>
+                  <property required="no">
+                    <keyword>t4=</keyword>
+                    <value/>
+                    <default>200</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Amplitude</label>
+                <float>
+                  <property required="no">
+                    <keyword>a4=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>120</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>200</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output CDP number</label>
+        <int>
+          <property required="no">
+            <keyword>cdp=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Mig Pre Split-Step</title>
+  <description>The 2-D prestack common-shot split-step Fourier migration</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mig Pre Split-Step</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Mig Pre Split-Step</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+             The 2-D prestack common-shot split-step Fourier migration
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Migration and Dip Moveout | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+            
+          <a name="details" id="details"></a>
+          <h2>Introduction</h2>
+
+          <p>The 2-D prestack common-shot split-step Fourier migration.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Oct 05, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>   
+          <p>May 28, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>May 24, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+
+            <li><a href="#details">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | May 24, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-10-05T15:00:00Z</created>
+    <modified>2010-08-06T00:43:06.004273Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Mig Pre Split-Step</title>
+    <binary>sumigpresp</binary>
+    <description>The 2-D prestack common-shot split-step Fourier migration</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mig Pre Split-Step</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Mig Pre Split-Step</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            The 2-D prestack common-shot split-step Fourier migration
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Migration and Dip Moveout | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>The 2-D prestack common-shot split-step Fourier migration.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <!-- List of required parameters -->
+            <!-- begin lst -->
+            <ul>
+              <li class="req"><span class="reqlabel">Number of total horizontal output samples</span> 
+              </li>
+
+               <li class="req"><span class="reqlabel">Number of shot gathers to be migrated</span> 
+              </li>
+
+              <li class="group"><span class="grouplabel">Samples properties</span>
+              <ul>
+
+                 <li class="req"><span class="reqlabel">Number of depth sapmles</span> 
+                 </li>
+
+                 <li class="req"><span class="reqlabel">Horizontal sampling interval</span> 
+                 </li>
+
+                 <li class="req"><span class="reqlabel">Depth sampling interval</span> 
+                 </li>
+
+                 <li><span class="label">Time sampling interval</span> 
+                 </li>
+
+              </ul></li>
+
+              <li class="req"><span class="reqlabel">Velocity profile</span><br/>
+                It must be binary format.
+              </li>
+
+
+              <li><span class="label">Peak frequency</span><br/>
+                The peak frequency of Ricker wavelet used as source wavelet.
+              </li>
+
+              <li class="group"><span class="grouplabel">Frequencies to build a Hamming window</span>
+              <ul>
+
+                 <li><span class="label">Frequency 1</span>
+                 </li>
+
+                 <li><span class="label">Frequency 2</span>
+                 </li>
+
+                 <li><span class="label">Frequency 3</span>
+                 </li>
+
+                 <li><span class="label">Frequency 4</span>
+                 </li>
+
+             </ul></li>
+
+              <li><span class="label">Number of zero traces padded on left side</span> 
+              </li>
+
+              <li><span class="label">Number of zero traces padded on right side</span> 
+              </li>
+
+              <li><span class="label">Echoes extra information</span> 
+              </li>
+            </ul>
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p> The input velocity file consists of C-style binary floats.         
+              The structure of this file is [iz][ix]. Note that this means that
+              the x-direction is the fastest direction instead of z-direction! Such a
+              structure is more convenient for the downward continuation type
+              migration algorithm than using z as fastest dimension as in other SU  
+              programs.</p>
+
+          <p> Because most of the tools in the SU package (such as  <b>Uniform 2D Velocity</b>, <b>Uniform Sample 2D</b> 
+              and <b>Make Velocity</b>) produce output with the structure [ix][iz], you will
+              need to transpose the velocity files created by these programs.<br/> You may
+              use the SU program \'transp\' in SU to transpose such files into the  
+              required [iz][ix] structure.</p>
+
+          <p>In C [iz][ix] denotes a v(x,z) array, whereas [ix][iz]  
+             denotes a v(z,x) array, the opposite of what Matlab and Fortran
+             programmers may expect.</p>
+
+          <p>Also, sx must be monotonically increasing throughout the dataset, and 
+             and gx must be monotonically increasing within a shot. You may resort 
+             your data with <b>SU Sort</b>, accordingly.</p>
+
+          <p> The scalco header field is honored so this field must be set correctly.
+              See selfdocs of menus <b>SU Sort</b> and <b>SU Change Header</b>. Also:   sukeyword scalco</p>
+
+          <p>This program accesses the following header keywords:
+            <ul>
+                <li>Number of samples</li> <!-- ns -->
+                <li>Sampling interval in microseconds</li> <!-- dt -->
+                <li>Delay recording time in ms</li> <!-- delrt -->
+                <li>Sample spacing between traces</li> <!-- d2 -->
+                <li>X source coordinate</li> <!-- sx -->
+                <li>X group coordinate</li> <!-- gx -->
+                <li>Scale factor for source/receiver coordinates</li> <!-- scalco -->
+            </ul>
+          <p>
+
+          <p>This program modifies the following header keywords:
+            <ul>
+                <li>Number of samples</li> <!-- ns -->
+                <li>Sampling interval in microseconds</li> <!-- dt -->
+                <li>Delay recording time in ms</li> <!-- delrt -->
+            </ul>
+          <p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>CWP, Baoniu Han, bhan@dix.mines.edu, April 19th, 1998</p>
+
+          <p>Modified: Chris Stolk, 11 Dec 2005, - changed data input
+             to remove erroneous time delay.<p>
+
+          <p> Modified: CWP, John Stockwell 26 Sept 2006 - replaced Han's
+          "goto-loop" in two places with "do { }while loops".
+          Fixed it so that source point, receiver point, and scalco are honored.<p>
+
+
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of total horizontal output samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nxo=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of shot gathers to be migrated</label>
+        <int>
+          <property required="yes">
+            <keyword>nxshot=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Samples properties</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of depth samples</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Horizontal sampling interval</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Depth sampling interval</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Velocity profile</label>
+        <file directory="no">
+          <property required="yes">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Peak frequency</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value/>
+            <default>25</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Frequencies to build a Hamming window</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Frequency 1</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1=</keyword>
+                    <value/>
+                    <default>5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 2</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2=</keyword>
+                    <value/>
+                    <default>10</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 3</label>
+                <float>
+                  <property required="no">
+                    <keyword>f3=</keyword>
+                    <value/>
+                    <default>40</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Frequency 4</label>
+                <float>
+                  <property required="no">
+                    <keyword>f4=</keyword>
+                    <value/>
+                    <default>50</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>10</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>40</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Number of zero traces padded on left side</label>
+        <int>
+          <property required="no">
+            <keyword>lpad=</keyword>
+            <value/>
+            <default>9999</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of zero traces padded on right side</label>
+        <int>
+          <property required="no">
+            <keyword>rpad=</keyword>
+            <value/>
+            <default>9999</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

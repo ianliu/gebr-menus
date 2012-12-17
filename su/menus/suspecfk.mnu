@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Spec FK</title>
+  <description>F-K Fourier spectrum of data set</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Spec FK</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Spec FK</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            F-K Fourier spectrum of data set
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Filtering, Transforms and Attributes | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>F-K Fourier spectrum of data set.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Out 13, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Out 13, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-10-13T18:52:27.581339Z</created>
+    <modified>2010-08-06T00:43:07.847191Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Spec FK</title>
+    <binary>suspecfk</binary>
+    <description>F-K Fourier spectrum of data set</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Spec FK</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Spec FK</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            F-K Fourier spectrum of data set
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Filtering, Transforms and Attributes | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>F-K Fourier spectrum of data set.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst -->
+            <ul>
+              <li><span class="label">Time sampling interval</span><br/>
+                The default value for this parameter is set from header</li>
+
+              <li><span class="label">Spatial sampling interval</span><br/>
+                The default value for this parameter is set from header or is 1.0</li>
+
+              <li><span class="label">Echoes information</span></li>
+
+              <li><span class="label">Directory for temporary files</span><br/>
+              A directory to store temporary files. If not set the program uses
+              the SU defaults.</li>
+
+            </ul>
+            
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>To facilitate further processing, the sampling intervals in frequency 
+          and wavenumber as well as the first frequency (0) and the first wavenumber
+          are set in the output header (respectively as: 
+          "Sample spacing for non-seismic data",
+          "First sample location for non-seismic data",
+          "Sample spacing between traces",
+          "First trace location" ) </p>
+
+          <p>The relation: <i>w = 2 pi F</i> is well known, but these doesn't seem to be a 
+          commonly used letter corresponding to F for the spatial conjugate transform
+          variable. We use K for this. More specifically we assume a phase:<br/>
+          <i>i(w t - k x) = 2 &pi; i(F t - K x)</i>.<br/>
+          and F, K define our notion of frequency, wavenumber.</p>
+
+          <p> This program accesses the header keyword
+          <ul>
+            <li> Number of samples               </li> <!-- ns -->
+            <li> Sampling interval in microseconds </li> <!-- dt -->
+            <li> Sample spacing between traces   </li> <!-- d2 -->
+          </ul>
+          and modifies the keywords
+          <ul>
+            <li> Trace number sequence within line          </li> <!-- tracl -->
+            <li> Number of samples                          </li> <!-- ns    -->
+            <li> Sampling interval in microseconds            </li> <!-- dt    -->
+            <li> Trace identification code                  </li> <!-- trid  -->
+            <li> Sample spacing for non-seismic data        </li> <!-- d1    -->
+            <li> First sample location for non-seismic data </li> <!-- f1    -->
+            <li> Sample spacing between traces              </li> <!-- d2    -->
+            <li> First trace location                       </li> <!-- f2    -->
+          </ul>
+          </p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Dave (algorithm), Jack (reformatting for SU)</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Time sampling interval</label>
+        <float min="0">
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Spatial sampling interval</label>
+        <float min="0">
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory for temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Synth Linear CW</title>
+  <description>Synthetic seismograms for linear velocity</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Synth Linear CW</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Synth Linear CW</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Synthetic seismograms for linear velocity
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Synthetic seismograms for linear velocity function for mode converted waves.</p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Apr 29, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Apr 29, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-04-29T13:19:14.935034Z</created>
+    <modified>2010-11-19T18:51:29.184022Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Synth Linear CW</title>
+    <binary>susynlvcw</binary>
+    <description>Synthetic seismograms for linear velocity</description>
+    <help>
+      <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Synth Linear CW</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Synth Linear CW</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Synthetic seismograms for linear velocity
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Synthetic seismograms for linear velocity function for mode converted waves.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">Time properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of time samples</span></li>
+                                <li>
+                                        <span class="label">Time sampling interval (sec)</span></li>
+                                <li>
+                                        <span class="label">First time (sec)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Offset properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Array of offsets</span><br />
+                                        If this parameter are set, the other parameters of the group should not be specify.<br />
+                                        Use only for non-uniform offsets.</li>
+                                <li>
+                                        <span class="label">Number of source-receiver offsets</span></li>
+                                <li>
+                                        <span class="label">Offset sampling interval (km)</span></li>
+                                <li>
+                                        <span class="label">First offset (km)</span><br />
+                                        See notes below</li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Midpoint properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of midpoints</span><br />
+                                        See notes below</li>
+                                <li>
+                                        <span class="label">Midpoint sampling interval (km)</span></li>
+                                <li>
+                                        <span class="label">First midpoint (km)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Shotpoint properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of shotpoints</span></li>
+                                <li>
+                                        <span class="label">Shotpoint sampling interval (km)</span></li>
+                                <li>
+                                        <span class="label">First shotpoint (km)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Velocity properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Velocity at x0, z0 (km/sec)</span></li>
+                                <li>
+                                        <span class="label">Distance x at which velocity is specified</span></li>
+                                <li>
+                                        <span class="label">Depth z at which velocity is specified</span></li>
+                                <li>
+                                        <span class="label">Velocity ratio</span><br />
+                                        Upgoing / Downgoing.</li>
+                                <li>
+                                        <span class="label">Derivative of velocity with distance x (dv/dx)</span></li>
+                                <li>
+                                        <span class="label">Derivative of velocity with depth z (dv/dz)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Peak frequency of symmetric Ricker wavelet (Hz)</span></li>
+                <li>
+                        <span class="label">Reflector(s)</span><br />
+                        Format: "amplitude:x1,z1;x2,z2;x3,z3;..."</li>
+                <li>
+                        <span class="label">Smooth reflectors</span><br />
+                        Piecewise cubic spline.</li>
+                <li>
+                        <span class="label">Exploding reflector amplitudes</span></li>
+                <li>
+                        <span class="label">Line source (disable for line source)</span></li>
+                <li>
+                        <span class="label">Remove obliquity factors</span></li>
+                <li>
+                        <span class="label">Constant amplitudes throught out</span></li>
+                <li>
+                        <span class="label">Minimum time of interest (sec)</span></li>
+                <li>
+                        <span class="label">Number of diffractors per Fresnel zone</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Offsets are signed - may be positive or negative.<br />
+        Receiver locations are computed by adding the signed offset to the source location.</p>
+<p>
+        Specify either midpoint sampling or shotpoint sampling, but not both.<br />
+        If neither is specified, the default is the midpoint sampling above.</p>
+<p>
+        More than one reflector may be specified. When obliquity factors are included, then only the left side of each reflector (as the x,z reflector coordinates are traversed) is reflecting.<br />
+        For example, if x coordinates increase, then the top side of a reflector is reflecting.<br />
+        Note that reflectors are encoded as quoted strings, with an optional reflector amplitude: preceding the x,z coordinates of each reflector.<br />
+        Default amplitude is 1.0 if amplitude: part of the string is omitted.</p>
+<p>
+        Note that <b>Velocity ratio</b> &lt; 1 implies P-SV mode conversion, <b>Velocity ratio</b> &gt; 1 implies SV-P, and <b>Velocity ratio</b> equal a 1 implies no mode conversion.</p>
+<p>
+        This program set the following header keywords</p>
+<ul>
+        <li>
+                Trace identification code</li>
+<!-- trid -->   <li>
+                Coordinate units code</li>
+<!-- counit --> <li>
+                Number of samples</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds</li>
+<!-- dt -->     <li>
+                Delay recording time in ms</li>
+<!-- delrt -->  <li>
+                Trace number sequence within line</li>
+<!-- tracl -->  <li>
+                Trace number sequence within reel</li>
+<!-- tracr -->  <li>
+                Field record number</li>
+<!-- fldr -->   <li>
+                Trace number sequence within field record</li>
+<!-- tracf -->  <li>
+                CDP ensemble number</li>
+<!-- cdp -->    <li>
+                Trace number within CDP ensemble</li>
+<!-- cdpt -->   <li>
+                Sample spacing between traces</li>
+<!-- d2 -->     <li>
+                First trace location</li>
+<!-- f2 -->     <li>
+                Offset (signed distance from source to receiver group)</li>
+<!-- offset --> <li>
+                X source coordinate</li>
+<!-- sx -->     <li>
+                X group coordinate</li>
+<!-- gx --></ul>
+<p>
+         </p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Author: Dave Hale.</p>
+<p>
+        Modified: Mohammed Alfaraj to handle mode conversion<br />
+        Date of modification: 01/07/92.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Time properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval (sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value/>
+                    <default>0.04</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First time (sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.04</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Offset properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Array of offsets</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>xo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of source-receiver offsets</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxo=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Offset sampling interval (km)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxo=</keyword>
+                    <value/>
+                    <default>0.05</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxo=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.05</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Midpoint properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of midpoints</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxm=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Midpoint sampling interval (km)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxm=</keyword>
+                    <value/>
+                    <default>0.05</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First midpoint (km)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxm=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.05</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Shotpoint properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of shotpoints</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Shotpoint sampling interval (km)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shotpoint (km)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.05</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Velocity properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Velocity at x0, z0 (km/sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>v00=</keyword>
+                    <value/>
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Distance x at which velocity is specified</label>
+                <float>
+                  <property required="no">
+                    <keyword>x0=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Depth z at which velocity is specified</label>
+                <float>
+                  <property required="no">
+                    <keyword>z0=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Velocity ratio</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Derivative of velocity with distance x (dv/dx)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dvdx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Derivative of velocity with depth z (dv/dz)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dvdz=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Peak frequency of symmetric Ricker wavelet (Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>fpeak=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Reflectors</label>
+        <group instanciable="yes" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Reflector</label>
+                <string>
+                  <property required="no">
+                    <keyword>ref=</keyword>
+                    <value/>
+                    <default>1:1,2;4,2</default>
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Reflector(s)</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1:1,2;4,2</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Smooth reflectors</label>
+        <flag>
+          <property required="no">
+            <keyword>smooth=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Exploding reflector amplitudes</label>
+        <flag>
+          <property required="no">
+            <keyword>er=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Line source (disable for point source)</label>
+        <flag>
+          <property required="no">
+            <keyword>ls=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Remove obliquity factors</label>
+        <flag>
+          <property required="no">
+            <keyword>ob=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Constant amplitudes throught out</label>
+        <flag>
+          <property required="no">
+            <keyword>sp=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Minimum time of interest (sec)</label>
+        <float>
+          <property required="no">
+            <keyword>tmin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of diffractors per Fresnel zone</label>
+        <int>
+          <property required="no">
+            <keyword>ndpfz=</keyword>
+            <value/>
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

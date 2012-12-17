@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Wave Form</title>
+  <description>Seismic wavelet generation</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Wave Form</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Wave Form</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Seismic wavelet generation
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Seismic Unix | Simulation and Model Building | Utilities
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This menu generates a seismic wavelet
+          using a list of defined parameters.</p>
+
+            
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Mar 24, 2009: written by Alex F. Antunes, DG/PPGG - UFRN, alex@geologia.ufrn.br.</p>
+          <p>Aug 11, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+          <p>May 17, 2010: revised by Jorge Pizzolatto Filho, jorge.pzt@gebrproject.com</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | May 17, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Alex Antunes</author>
+  <email>alex@geologia.ufrn.br</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-03-24T17:19:38.463278Z</created>
+    <modified>2010-08-06T00:43:08.894844Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <category>Utilities</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Wave Form</title>
+    <binary>suwaveform</binary>
+    <description>Seismic wavelet generation</description>
+    <help>
+      <![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Wave Form</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Wave Form</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Seismic wavelet generation
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Seismic Unix | Simulation and Model Building | Utilities
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This program generates a seismic wavelet from a list of defined parameters.</p>
+
+          <p>Both Ricker¹ and
+             Gaussian wavelet are zero-phase. For these two wavelets, the trace header word "Delay recording
+             time" (delrt) is set such that peak amplitude is at zero time. If this is not acceptable,
+             edit delrt key header word with SU Set Header.</p>
+
+          <p>The Berlage wavelet is defined by the peak frequency, a time 
+             exponent describing the wavelet shape at its beginning,    
+             and an exponential decay factor describing the amplitude decay     
+             towards later times. The time exponent and decay are non-negative, 
+             real numbers; time exponent is typically a small integer number and decay a   
+             multiple of the dominant signal period 1/(peak frequency). Additionally, an   
+             initial phase angle can be given; use -90 or 90 degrees for        
+             zero-amplitude at the beginning.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+              
+            <!-- begin lst -->
+            <ul>
+              <li class="req"><span class="reqlabel">Wavelet type</span>
+                <ul>
+                  <li>AKB wavelet (defined by max frequency fpeak</li>
+                  <li>Berlage wavelet</li>
+                  <li>Gaussian wavelet (defined by frequency fpeak)</li>
+                  <li>Gaussian first derivative wavelet</li>
+                  <li>Ricker wavelet defined by frequency fpeak</li>
+                  <li>Ricker wavelet defined by half and period</li>
+                  <li>Spike wavelet (shifted by time tspike</li>
+                  <li>Unit wavelet (i.e. amplitude = 1 = const.)</li>
+                </ul></li>
+                
+
+              <li><span class="label">Time sampling interval (in seconds)</span><br/>
+                The default value for this parameter is 0.004</li>
+
+              <li><span class="label">Number of samples in output trace</span><br/>
+                Is not mandatory, the program determines the trace length depending on the dominant signal period.</li>
+
+              <li><span class="label">Peak/maximum frequency (in Hz)</span><br/>
+                The default value for this parameter is 20</li>
+
+              <li class="group"><span class="grouplabel">Ricker²'s parameters</span><br/>
+
+              <ul><br />
+              <li><span class="label">Half-length</span><br/>
+                Is defined by default as one over peak frequency.</li>
+
+              <li><span class="label">Period</span><br/>
+                Is set by default to half-period * &#8730;6/&#960;</li>
+
+              <li><span class="label">Distortion factor</span><br/></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Berlage's parameter</span><br/>
+
+              <ul><br />
+              <li><span class="label">Exponential decay factor in 1/sec</span><br/>
+                Is set by default to four times peak frequency</li>
+
+              <li><span class="label">Time exponent</span><br/>
+                The default value for this parameter is 2</li>
+
+              <li><span class="label">Initial phase angle (in degrees)</span><br/>
+                The default value for this parameter is -90</li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Spikes' parameters</span><br/>
+
+              <ul><br />
+              <li><span class="label">Time at spike (in seconds)</span><br/>
+                The default value for this parameter is 0.0</li>
+
+              </ul></li>
+
+              <li><span class="label">Echoes extra information</span><br/></li>
+
+              <li><span class="label">Amplitude scale for Berlage or Ricker defined by period</span></li>
+
+            </ul>
+
+            
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+        <p>In the parameter <b>Wavelet type</b>, some words are defined by parameters:
+                <ul>
+                  <li>fpeak = <b>Peak/maximum frequency (in Hz)</b></li>
+                  <li>half = <b>Half-length</b></li>
+                  <li>period = <b>Period</b></li>
+                  <li>tspike = <b>Time at spike (in seconds)</b></li>
+                </p>
+
+        <p>If <b>Number of samples in output trace</b> is not defined, the program determines the trace length      
+    depending on the dominant signal period.</p>                           
+                                                                       
+    <p>The Ricker wavelet "Ricker wavelet defined by frequency fpeak" and the Gaussian wavelet "Gaussian wavelet defined by frequency fpeak"  
+    are zero-phase. For these two wavelets, the trace header word "Delay recording time in ms" is set such that the peak amplitude is at t=0 seconds.<br/>       
+    If this is not acceptable, use menu <b>SU Set Header</b>.</p>            
+                                                                       
+    <p>The Ricker wavelets can be defined either by the parameter <b>Peak/maximum frequency (in Hz)</b>
+    ("Ricker wavelet defined by frequency fpeak") or by its half-length, the period, and a       
+    distortion factor ("Ricker wavelet defined by half and period"). "ricker" is an acceptable       
+    alias for "Ricker wavelet defined by frequency fpeak".</p>                                             
+                                                                       
+    <p>The Berlage wavelet is defined by parameter <b>Peak/maximum frequency (in Hz)</b>, a time 
+    time exponent tn describing the wavelet shape at its beginning,    
+    and an exponential decay factor describing the amplitude decay     
+    towards later times.<br/> The parameters <b>Time exponent</b> and decay are non-negative, 
+    real numbers; tn is typically a small integer number and <b>Exponential decay factor in 1/sec</b> a   
+    multiple of the dominant signal period 1/fpeak. Additionally, an   
+    initial phase angle can be given; use -90 or 90 degrees for        
+    zero-amplitude at the beginning. </p>                                  
+                                                                       
+    <p>For an AKB wavelet, parameter <b>Peak/maximum frequency (in Hz)</b> is the maximum frequency; the peak       
+    frequency is about 1/3 of the parameter <b>Peak/maximum frequency (in Hz)</b> value.</p>                         
+                                                                       
+    <p>The output wavelet can be normalized or scaled with menu <b>SU Gain</b>.    
+    Use menu <b>SU Vibro</b> to generate a Vibroseis sweep.</p>             
+
+
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+          <ul>
+            <li>Aldridge, D. F. (1990). The Berlage wavelet. 
+       Geophysics, vol. 55(11), p. 1508-1511.</li>
+
+            <li>Alford, R., Kelly, K., and Boore, D. (1947). Accuracy
+       of finite-difference modeling of the acoustic wave
+       equation. Geophysics, vol. 39, p. 834-842. (AKB wavelet).</li>
+
+            <li>Sheriff, R. E. (2002). Encyclopedic dictionary of 
+       applied geophysics. Society of Exploration Geophysicists,
+       Tulsa. (Ricker wavelet, page 301).</li>
+
+          <ul>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Nils Maercklin, RISSC, University of Napoli, Italy, 2006.</p>
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Wavelet type</label>
+        <enum>
+          <property required="yes">
+            <keyword>type=</keyword>
+            <value/>
+            <default>akb</default>
+          </property>
+          <option>
+            <label>AKB wavelet</label>
+            <value>akb</value>
+          </option>
+          <option>
+            <label>Berlage wavelet</label>
+            <value>berlage</value>
+          </option>
+          <option>
+            <label>Gaussian wavelet</label>
+            <value>gauss</value>
+          </option>
+          <option>
+            <label>Gaussian first derivative wavelet</label>
+            <value>gaussd</value>
+          </option>
+          <option>
+            <label>Ricker wavelet defined by frequency fpeak</label>
+            <value>ricker1</value>
+          </option>
+          <option>
+            <label>Ricker wavelet defined by half and period</label>
+            <value>ricker2</value>
+          </option>
+          <option>
+            <label>Spike wavelet</label>
+            <value>spike</value>
+          </option>
+          <option>
+            <label>Unit wavelet</label>
+            <value>unit</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval (in seconds)</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default>0.004</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of samples in output trace</label>
+        <int>
+          <property required="no">
+            <keyword>ns=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Peak/maximum frequency (in Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>fpeak=</keyword>
+            <value/>
+            <default>20.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Ricker²'s parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Half-length</label>
+                <float>
+                  <property required="no">
+                    <keyword>half=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Period</label>
+                <float>
+                  <property required="no">
+                    <keyword>period=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Distortion factor</label>
+                <float>
+                  <property required="no">
+                    <keyword>distort=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Berlage's parameter</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Exponential decay factor in 1/sec</label>
+                <float>
+                  <property required="no">
+                    <keyword>decay=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Time exponent</label>
+                <int>
+                  <property required="no">
+                    <keyword>tn=</keyword>
+                    <value/>
+                    <default>2</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Initial phase angle (in degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>ipa=</keyword>
+                    <value/>
+                    <default>-90</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>-90</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Spikes' parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Time at spike (in seconds)</label>
+                <float>
+                  <property required="no">
+                    <keyword>tspike=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Amplitude scale for Berlage or Ricker defined by period</label>
+        <float>
+          <property required="no">
+            <keyword>ampl=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

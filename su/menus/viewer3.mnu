@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Viewer 3D</title>
+  <description>Viewer for 3-dimensional model</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Viewer 3D</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Viewer 3D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Viewer for 3-dimensional model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat --><!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Viewer for 3-dimensional model.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Jun 23, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+                Introduction</a></li><li><a href="#header_1">
+                Credits</a></li></ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+          <!-- begin ver --><!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+</body></html>]]>
+</help>
+  <author>Davi Clemente</author>
+  <email>davi.clemente@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-24T01:59:43.408138Z</created>
+    <modified>2010-08-06T01:29:39.258374Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" version="SU 42" mpi="">
+    <title>Viewer 3D</title>
+    <binary>viewer3</binary>
+    <description>Viewer for 3-dimensional model</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Viewer 3D</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Viewer 3D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Viewer for 3-dimensional model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Viewer for 3-dimensional model.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Black and White mode</span><br />
+                        If disable, use Hue colors.</li>
+                <li>
+                        <span class="label">Quaternion definition</span></li>
+                <li>
+                        <span class="label">Trackball size</span></li>
+                <li>
+                        <span class="label">Ray path file</span></li>
+                <li>
+                        <span class="label">Wavefront file</span></li>
+                <li>
+                        <span class="label">Surface traveltime file</span></li>
+                <li>
+                        <span class="label">Echoes information</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        The rightmost mouse button, with cursor placed on the graphics window activates the following menu:</p>
+<p>
+        <u>Quit:</u> Quits the application</p>
+<p>
+        <u>Full Screen:</u> Expands graphics window to full screen</p>
+<p>
+        <u>White/Color Rays:</u> Selects colored (default) or white rays</p>
+<p>
+        <u>Plot Rays:</u> Show the rays (default: off)</p>
+<p>
+        <u>Surface Traveltimes:</u> Show surface traveltimes (default: off)</p>
+<p>
+         </p>
+<p>
+        <u>Wired or Solid Wavefronts:</u> Style of wavefront display wireframe (default)</p>
+<p>
+         </p>
+<p>
+        <u>Plot Wavefronts:</u> Turn on wavefronts (default: off)</p>
+<p>
+         </p>
+<p>
+        <u>TRI or TETRA or LAYER or HORZ:</u> Toggles display from wireframe triangulated horizons, to wireframe tetrahedra, to solid layers, to solid horizons.</p>
+<p>
+         </p>
+<p>
+        <u>Layer1:</u> Toggle layer on or off (default: on)</p>
+<p>
+         </p>
+<p>
+        In general, the tetrahedra model should be generated by <strong>Tetra Model,</strong> which outputs a file called "hzfile", so that this program can read input from standard input.</p>
+<p>
+         </p>
+<p>
+        If, in addition, you have 3D raypath information (<strong>Ray path file</strong>), wavefronts (<strong>Wavefront file</strong>), and surface traveltimes (<strong>Surface traveltime file</strong>), typically generated by <strong>SU Tetra Ray</strong>, then rays, wavefronts and surface traveltimes can be displayed as well, as the model.</p>
+<p>
+         </p>
+<p>
+        The plot may be rotated by depressing the leftmost mouse button and dragging the cursor in the desired direction of rotation. The speed, of rotation is controlled by the speed of the cursor.</p>
+<p>
+         </p>
+<p>
+        The plot may be rescaled by depressing the shift key, while also depressing and dragging the cursor up or down on the display window.</p>
+<p>
+         </p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+         CWP: Zhaobo Meng, 1996</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Black and White mode</label>
+        <flag>
+          <property required="no">
+            <keyword>hue=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Quaternion definition</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>q=</keyword>
+            <value/>
+            <default>-0.6</default>
+            <default>0.06</default>
+            <default>-0.06</default>
+            <default>0.8</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Trackball size</label>
+        <float>
+          <property required="no">
+            <keyword>tbs=</keyword>
+            <value/>
+            <default>0.8</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Ray path file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>rayfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Wavefront file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>wffile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Surface traveltime file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>sttfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

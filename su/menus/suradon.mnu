@@ -1,0 +1,1465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Radon</title>
+  <description>Compute forward or reverse Radon transform</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Radon</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Radon</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Compute forward or reverse Radon transform
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Filtering, Transforms and Attributes | Seismic Unix
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Compute forward or reverse Radon transform or remove multiples
+           by using the parabolic Radon transform to estimate multiples
+           and subtract.</p>
+
+          <!-- begin par --><!-- end par -->
+           
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+
+          <!-- begin cpy -->
+          
+          <p>Oct 22, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Jul 29, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Jul 29, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-10-22T14:33:54.122106Z</created>
+    <modified>2010-08-06T00:43:07.475987Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Radon</title>
+    <binary>suradon</binary>
+    <description>Compute forward or reverse Radon transform</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Radon</title>
+  <!-- end ttl -->
+</head> 
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Radon</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Compute forward or reverse Radon transform
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Filtering, Transforms and Attributes | Seismic Unix
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Compute forward or reverse Radon transform or remove multiples
+           by using the parabolic Radon transform to estimate multiples
+           and subtract.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+
+            <!-- begin lst --><ul>
+              <li><span class="label">Compute transform</span>
+                <ul>
+                <li>Forward Radon transform</li>
+                <li>Compute data minus multiples</li>
+                <li>Compute estimate of multiples</li>
+                <li>Compute forward and reverse transform</li>
+                <li>Compute inverse Radon transform</li>
+                </ul></li>
+
+              <li><span class="label">Transform and Tau-P options</span>
+                <ul>
+                <li>Parabolic transform</li>
+                <li>Foster/Mosher psuedo hyperbolic transform</li>
+                <li>Linear Tau-P</li>
+                <li>Abs linear Tau-P</li>
+                </ul></li>
+
+              <li class="group"><span class="grouplabel">Offset properties</span>
+                <ul>
+
+                  <li><span class="label">Reference maximum offset</span></li>
+
+                  <li><span class="label">Intercept offset to which tau-p times are associated</span><br/>
+                  The default value for this parameter is 0.</li>
+
+                  <li><span class="label">Minimum moveout in ms on reference offset</span><br/>
+                  The default value for this parameter is -200.</li>
+
+                  <li><span class="label">Maximum moveout in ms on reference offset</span><br/>
+                  The default value for this parameter is 400.</li>
+
+                  <li><span class="label">Moveout increment in ms on reference offset</span><br/>
+                  The default value for this parameter is 16.</li>
+
+                  <li><span class="label">Moveout in ms on reference offset where multiples begin at maximum time</span><br/>
+                  The default value for this parameter is 80.</li>
+
+                  <li><span class="label">Moveout in ms on reference offset where multiples begin at zero time</span><br/>
+                  The default value for this parameter is 200.</li>
+
+                </ul></li>
+
+              <li><span class="label">Reference depth for Foster/Mosher hyperbolic transform</span><br/>
+                The default value for this parameter is 500.</li>
+
+              <li><span class="label">Number of windows to use through the mute zone</span><br/>
+                The default value for this parameter is 1.</li>
+
+              <li><span class="label">High-end frequency before taper off</span><br/>
+                The default value for this parameter is 60.</li>
+
+              <li><span class="label">High-end frequency</span><br/>
+                The default value for this parameter is 80.</li>
+
+              <li><span class="label">Prewhitening factor in percent</span><br/>
+                The default value for this parameter is 0.1.</li>
+
+              <li><span class="label">Name of header word for defining ensemble</span><br/>
+                For more information, see help of menu <b>SU Set Header</b>.</li>
+
+              <li><span class="label">Name of header word with spatial information</span><br/>
+                For more information, see help of menu <b>SU Set Header</b>.</li>
+
+              <li><span class="label">Maximum number of input traces per ensemble</span><br/>
+                The default value for this parameter is 120.</li>
+
+              <li><span class="label">Taper (integer) for mute tapering function</span><br/>
+                The default value for this parameter is 7.</li>
+
+              <li class="group"><span class="grouplabel">Optimizing Parameters</span><br/>
+              <p>The following parameters are occasionally used to avoid spatial aliasing
+                problems on the linear Tau-P transform. <br/> 
+                Not recommended for other transforms.</p>       
+
+              <ul>
+              <li><span class="label">Number of traces to interpolate between each input trace</span><br/>
+                The default value for this parameter is 0.</li>
+
+              <li><span class="label">Low-end frequency in Hz for picking</span><br/>
+                The default value for this parameter is 3.0.</li>
+
+              <li><span class="label">High-end frequency in Hz for picking</span><br/>
+                The default value for this parameter is 20.0.</li>
+
+              <li><span class="label">Length of AGC operator for picking</span><br/>
+                The default value for this parameter is 400.</li>
+
+              <li><span class="label">Length of time smoother in samples for picker</span><br/>
+                The default value for this parameter is 5.</li>
+
+              <li><span class="label">Length of space smoother in samples for picker</span><br/>
+                The default value for this parameter is 1.</li>              
+
+              </ul></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>Usually the input data are NMO corrected CMP gathers. The
+        first pass is to compute a parabolic Radon transform and
+        identify the multiples in the transform domain.<br/> Then, the
+        module is run on all the data using option <b>Compute data minus multiples</b> of parameter <b>Compute transform</b> to estimate
+        and subtract the multiples.<br/>See the May, 1993 CWP Project
+        Review for more extensive documentation.</p>
+
+        <p>The parabolic transform runs with higher resolution if the
+        mute zone is honored.  When parameter <b>Number of windows to use through the mute zone</b> is specified larger than
+        one (say 6), then multiple windows are used through the mute
+        zone.<br/>  It is assumed in this case that the input data are
+        sorted by the offkey header item from small offset to large
+        offset.  This causes the code to run 6 times longer.<br/>  
+        The mute time is taken from the header word "Initial mute time".<br/>
+      You may have to manually set this header field yourself, if
+      it is not already set.</p>
+
+          <p>This program accesses the following header keywords:
+          <ul>
+            <li>Number of samples,</li> <!-- ns   -->
+            <li>Sampling interval in microseconds,</li> <!-- dt -->
+            <li>CDP ensemble number,</li> <!-- cdpkey -->
+            <li>Offset (signed distance from source to receiver group),</li> <!-- offkey -->
+            <li>Initial mute time.</li> <!-- muts -->
+          </ul>
+          </p>
+
+
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+
+          <!-- List of references -->
+          <ul>
+            <li>Anderson, J. E., 1993, Parabolic and linear 2-D, tau-p transforms
+       using the generalized radon tranform, in May 11-14, 1993.<br/>
+       Project Review, Consortium Project on Seismic Inverse methods
+       for Complex Structures, CWP-137, Center for Wave Phenomena
+       internal report.</li>
+
+ <li>Beylkin, G,.1987, The discrete Radon transform: IEEE Transactions
+       of Acoustics, Speech, and Signal Processing, 35, 162-712.</li>
+
+<li> Chapman, C.H.,1981, Generalized Radon transforms and slant stacks:<br/>
+       Geophysical Journal of the Royal Astronomical Society, 66,
+       445-453.</li>
+
+ <li>Foster, D. J. and Mosher, C. C., 1990, Multiple supression;<br/>
+       using curvilinear Radon transforms: SEG Expanded Abstracts 1990,
+       1647-1650.</li>
+
+<li> Foster, D. J. and Mosher, C. C., 1992, Suppression of multiples;<br/>
+       using the Radon transform: Geophysics, 57, No. 3, 386-395.</li>
+
+ <li>Gulunay, N., 1990, F-X domain least-squares Tau-P and Tau-Q: SEG
+       Expanded Abstracts 1990, 1607-1610.</li>
+
+ <li>Hampson, D., 1986, Inverse velocity stacking for multiple elimination:<br/>
+       J. Can. Soc. Expl. Geophs., 22, 44-55.</li>
+
+ <li>Hampson, D., 1987, The discrete Radon transform: a new tool for image
+       enhancement and noise suppression: SEG Expanded Abstracts 1978,
+       141-143.</li>
+
+ <li>Johnston, D.E., 1990, Which multiple suppression method should I use?<br/>
+       SEG Expanded Abstracts 1990, 1750-1752.</li>
+
+          </ul>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: John Anderson (visitor to CSM from Mobil) Spring 1993</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Compute transform</label>
+        <enum>
+          <property required="no">
+            <keyword>choose=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Forward Radon transform</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Compute data minus multiples</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Compute estimate of multiples</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Compute forward and reverse transform</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Compute inverse Radon transform</label>
+            <value>4</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Transform and Tau-P options</label>
+        <enum>
+          <property required="no">
+            <keyword>igopt=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Parabolic transform</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Foster/Mosher psuedo hyperbolic transform</label>
+            <value>2</value>
+          </option>
+          <option>
+            <label>Linear tau-p</label>
+            <value>3</value>
+          </option>
+          <option>
+            <label>Abs linear tau-p</label>
+            <value>4</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Offset properties</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Reference maximum offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>offref=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Intercept offset to which tau-p times are associated</label>
+                <float>
+                  <property required="no">
+                    <keyword>interoff=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Minimum moveout in ms on reference offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>pmin=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum moveout in ms on reference offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>pmax=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Moveout increment in ms on reference offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>dp=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Moveout in ms on reference offset where multiples begin at maximum time</label>
+                <float>
+                  <property required="no">
+                    <keyword>pmula=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Moveout in ms on reference offset where multiples begin at zero time</label>
+                <float>
+                  <property required="no">
+                    <keyword>pmulb=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Reference depth for Foster/Mosher hyperbolic transform</label>
+        <float>
+          <property required="no">
+            <keyword>depthref=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of windows to use through the mute zone</label>
+        <int>
+          <property required="no">
+            <keyword>nwin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>High-end frequency before taper off</label>
+        <float>
+          <property required="no">
+            <keyword>f1=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>High-end frequency</label>
+        <float>
+          <property required="no">
+            <keyword>f2=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Prewhitening factor in percent</label>
+        <float>
+          <property required="no">
+            <keyword>prewhite=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Name of header word for defining ensemble</label>
+        <enum>
+          <property required="no">
+            <keyword>cdpkey=</keyword>
+            <value>cdp</value>
+            <default>cdp</default>
+          </property>
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Name of header word with spatial information</label>
+        <enum>
+          <property required="no">
+            <keyword>offkey=</keyword>
+            <value>cdp</value>
+            <default>offset</default>
+          </property>
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Maximum number of input traces per ensemble</label>
+        <int>
+          <property required="no">
+            <keyword>nxmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Taper (integer) for mute tapering function</label>
+        <int>
+          <property required="no">
+            <keyword>ltaper=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Optimizing Parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of traces to interpolate between each input trace</label>
+                <int>
+                  <property required="no">
+                    <keyword>ninterp=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Low-end frequency in Hz for picking</label>
+                <float>
+                  <property required="no">
+                    <keyword>freq1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>High-end frequency in Hz for picking</label>
+                <float>
+                  <property required="no">
+                    <keyword>freq2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Length of AGC operator for picking</label>
+                <int>
+                  <property required="no">
+                    <keyword>lagc=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Length of time smoother in samples for picker</label>
+                <int>
+                  <property required="no">
+                    <keyword>lent=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Length of space smoother in samples for picker</label>
+                <int>
+                  <property required="no">
+                    <keyword>lenx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

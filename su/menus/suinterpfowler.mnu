@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Interp Fowler</title>
+  <description>Interpolate output image from constant velocity panels</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Interp Fowler</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Interp Fowler</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Interpolate output image from constant velocity panels
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Interpolate output image from constant velocity panels built by menu <strong>SU TI Fowler</strong> or CVS.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 27, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 27, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-27T16:36:53.477144Z</created>
+    <modified>2010-09-29T18:41:32.830062Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Interp Fowler</title>
+    <binary>suinterpfowler</binary>
+    <description>Interpolate output image from constant velocity panels</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Interp Fowler</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Interp Fowler</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Interpolate output image from constant velocity panels
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Interpolate output image from constant velocity panels built by menu <strong>SU TI Fowler</strong> or CVS.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">Velocity panel properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Minimum velocity</span></li>
+                                <li>
+                                        <span class="label">Maximum velocity</span>.</li>
+                                <li>
+                                        <span class="label">Number of velocity panels</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">ETA values properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Minimum ETA value</span></li>
+                                <li>
+                                        <span class="label">Maximum ETA value</span></li>
+                                <li>
+                                        <span class="label">Number of ETA values to image</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Number of CDP points</span></li>
+                <li class="group">
+                        <span class="grouplabel">Input data from CVS</span><br />
+                        If these parameters are specified so that, parameter <strong>Number of constant velocity stack panels output by CVS</strong> &gt; 5, then the input <span class="Apple-tab-span" style="white-space:pre"> </span>
+                        <div>
+                                data are assumed to come from CVS and the parameters of menu <strong>SU TI Fowler</strong> are ignored.</div>
+                        <ul>
+                                <li>
+                                        <span class="label">Minimum velocity specified for CVS</span></li>
+                                <li>
+                                        <span class="label">Number of constant velocity stack panels output by CVS</span></li>
+                                <li>
+                                        <span class="label">Scale factor for velocity functions</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Parameter to specify the desired output</span><br />
+                        These parameters specify the desired output (time,velocity,eta) model at each CDP location.<br />
+                        The sequential CDP numbers should be specified in increasing order from 0 to '<strong>Number of CDP points</strong>-1' at from 1 to <strong>Number of CDP points</strong> control point locations. (Time values are in seconds).
+                        <ul>
+                                <li>
+                                        <span class="label">CDP number for (t,v,eta) triplets</span></li>
+                                <li>
+                                        <span class="label">Array of times for (t,v,eta) triplets</span></li>
+                                <li>
+                                        <span class="label">Array of velocities for (t,v,eta) triplets</span></li>
+                                <li>
+                                        <span class="label">Array of ETAs for (t,v,eta) triplets</span></li>
+                        </ul>
+                </li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        This is a simple research code based on linear interpolation.<br />
+        There are no protections against aliasing built into the code beyond suggesting that this program have a knowledgable user. A final version should do a better job taking care of endpoint conditions.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+         Author: (Visitor from Mobil) John E. Anderson, Spring, 1994.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Velocity panel properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Minimum velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vmin=</keyword>
+                    <value/>
+                    <default>1500.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vmax=</keyword>
+                    <value/>
+                    <default>2500.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of velocity panels</label>
+                <int>
+                  <property required="no">
+                    <keyword>nv=</keyword>
+                    <value/>
+                    <default>21</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1500.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2500.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>21</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>ETA values properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Minimum ETA value</label>
+                <float>
+                  <property required="no">
+                    <keyword>etamin=</keyword>
+                    <value/>
+                    <default>0.10</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum ETA value</label>
+                <float>
+                  <property required="no">
+                    <keyword>etamax=</keyword>
+                    <value/>
+                    <default>0.25</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of ETA values to image</label>
+                <int>
+                  <property required="no">
+                    <keyword>neta=</keyword>
+                    <value/>
+                    <default>11</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.10</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.25</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>11</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Number of CDP points</label>
+        <int>
+          <property required="no">
+            <keyword>ncdps=</keyword>
+            <value/>
+            <default>1130</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Input data from CVS</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Minimum velocity specified for CVS</label>
+                <float>
+                  <property required="no">
+                    <keyword>vminstack=</keyword>
+                    <value/>
+                    <default>1450</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of constant velocity stack panels output by CVS</label>
+                <int>
+                  <property required="no">
+                    <keyword>nvstack=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Scale factor for velocity functions</label>
+                <float>
+                  <property required="no">
+                    <keyword>vscale=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1450</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Parameter to specify the desired output</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>CDP number for (t,v,eta) triplets</label>
+                <int>
+                  <property required="no" separator=",">
+                    <keyword>cdp=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Array of times for (t,v,eta) triplets</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>t=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Array of velocities for (t,v,eta) triplets</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>v=</keyword>
+                    <value/>
+                    <default>1500.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Array of ETAs for (t,v,eta) triplets</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>eta=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1500.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

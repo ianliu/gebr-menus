@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Mix Gathers</title>
+  <description>Mix two gathers, replacing traces</description>
+  <help>
+    <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head xmlns="http://www.w3.org/1999/xhtml">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mix Gathers</title>
+  <!-- end ttl -->
+</head><body xmlns="http://www.w3.org/1999/xhtml">
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Mix Gathers</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Mix two gathers, replacing traces
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Mix two gathers. replacing only traces non existing in <b>First file</b> by traces interpolated store in <b>Second file</b>.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Nov 19, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<p>
+        Aug 13, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<p>
+        Dec 15, 2010: revised by Davi Costa Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.6<!-- end dtd -->) | Aug 13, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-11-19T17:46:20.952519Z</created>
+    <modified>2010-12-15T19:01:03.084238Z</modified>
+    <lastrun/>
+  </date>
+  <category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
+    <title>SU Mix Gathers</title>
+    <binary>sumixgathers</binary>
+    <description>Mix two gathers</description>
+    <help>
+      <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mix Gathers</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Mix Gathers</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Mix two gathers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Editing, Sorting and Manipulation | Seismic Unix
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Mix two gathers, replacing only traces non existing in <b>First file</b> by traces interpolated stored in <b>Second file</b>.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">First file</span></li>
+                <li class="req">
+                        <span class="reqlabel">Second file</span></li>
+                <li>
+                        <span class="label">Number of traces</span><br />
+                        If this parameter is not set in header field, then is mandatory.</li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Both files have to be sorted by offset Mixes two gathers keeping only the traces of the first file if the offset is the same.</p>
+<p>
+        Example. If <b>First file</b> is original data file and <b>Second file</b> is obtained by resampling with Radon transform, then the output contains original traces with gaps fille</p>
+<p>
+        This program access the following header keywords:</p>
+<ul>
+        <li>
+                Number of samples,</li>
+<!-- ns   -->   <li>
+                Sampling interval in microseconds,</li>
+<!-- dt -->     <li>
+                Number of traces.</li>
+</ul>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Daniel Trad. UBC<br />
+        Copyright (c) University of British Columbia, 1999. All rights reserved.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>First file</label>
+        <file directory="no" filter-name="SU File" filter-pattern="*.su *.SU">
+          <property required="yes">
+            <keyword/>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Second file</label>
+        <file directory="no" filter-name="SU File" filter-pattern="*.su *.SU">
+          <property required="yes">
+            <keyword/>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of traces</label>
+        <int>
+          <property required="no">
+            <keyword>ntr=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Stack Vel</title>
+  <description>Convert constant velocity model to the stacking velocity model</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Stack Vel</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Stack Vel</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Convert constant velocity model to the stacking velocity model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Convert constant dip layer interval velocity model to the stacking velocity model required by sunmo.</p>
+
+          <!-- begin par --><!-- end par -->
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>May 17, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 17, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-17T15:21:38.916416Z</created>
+    <modified>2010-08-06T00:43:08.152013Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Stack Vel</title>
+    <binary>sustkvel</binary>
+    <description>Convert constant velocity model to the stacking velocity model</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Stack Vel</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Stack Vel</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Convert constant velocity model to the stacking velocity model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Convert constant dip layer interval velocity model to the stacking velocity model required by sunmo.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li class="req"><span class="reqlabel">Interval velocities</span></li>
+
+              <li class="req"><span class="reqlabel">Layer thicknesses at the CMP</span></li>
+
+              <li><span class="label">Dip of the layers (degrees)</span></li>
+
+              <li><span class="label">Output parameter file</span><br/>
+                In the form required by sunmo:
+                <ul>
+                    <li>tv = Zero incidence time pick vector</li>
+                    <li>v = Stacking velocities vector</li>
+                </ul></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p><b>SU Stack Vel</b> does not have standard SU syntax since it does not     
+      operate on seismic data.<br/>
+        Hence stdin and stdout are not used.</p>        
+
+        <p><b>Caveat:</b><br/>
+        Does not accept a series of interval velocity models to produce a variable velocity file for sunmo.</p>
+
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+          <!-- List of references -->
+          <ul>
+            <li>The Common Depth Point Stack<br/>
+        William A. Schneider<br/>
+        Proc. IEEE, v. 72, n. 10, p. 1238-1254<br/>
+        1984.</li>
+
+          </ul>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Jack.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Interval velocities</label>
+        <float>
+          <property required="yes">
+            <keyword>v=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Layer thicknesses at the CMP</label>
+        <float>
+          <property required="yes">
+            <keyword>h=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Dip of the layers (degrees)</label>
+        <float>
+          <property required="no">
+            <keyword>dip=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Output parameter file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>outpar=</keyword>
+            <value/>
+            <default>/dev/tty</default>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

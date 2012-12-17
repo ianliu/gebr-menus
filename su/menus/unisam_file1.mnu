@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Uniform Sample 1D by File 1</title>
+  <description>Uniformly sample a function y(x) specified as a file of x,y pairs</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Uniform Sample 1D by File 1</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Uniform Sample 1D by File 1</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Uniformly sample a function y(x) specified as a file of x,y pairs
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Uniformly sample a function y(x) specified as a file of x,y pairs.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>May 19, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 19, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-08T19:54:46.106174Z</created>
+    <modified>2010-08-06T00:43:09.889136Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>Uniform Sample 1D by File 1</title>
+    <binary>unisam</binary>
+    <description>Uniformly sample a function y(x) specified as a file of x,y pairs</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Uniform Sample 1D by File 1</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Uniform Sample 1D by File 1</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Uniformly sample a function y(x) specified as a file of x,y pairs
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Uniformly sample a function y(x) specified as a file of x,y pairs.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li class="group"><span class="grouplabel">Input data</span>
+
+              <ul>
+              <li class="req"><span class="reqlabel">Binary file of x,y pairs</span></li>
+
+              <li class="req"><span class="reqlabel">Number of pairs input</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Output sampling</span>
+
+              <ul>
+              <li class="req"><span class="reqlabel">Number of y values output to binary file</span></li>
+
+              <li><span class="label">Output x sampling interval</span></li>
+
+              <li><span class="label">Output first x</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Interpolation method</span>
+
+              <ul>
+              <li><span class="label">Method of interpolation</span>
+                <ul>
+                    <li>Linear interpolation<br/>Continuous in y.</li>
+                    <li>Monotonic cubic interpolation<br/>Continuous in y'.</li>
+                    <li>Akima's cubic interpolation<br/>Continuous in y'.</li>
+                    <li>Cubic spline interpolation<br/>Continuous in y".</li>
+                </ul></li>
+
+              <li><span class="label">Where to apply sin interpolation</span></li>
+
+              <li><span class="label">Amplitude of sine interpolations</span></li>
+
+              <li><span class="label">Starting phase</span><br/>
+                Default value is 0,0,0,...,0.</li>
+
+              <li><span class="label">Total phase</span><br/>
+                Default value is pi,pi,pi,...,pi.</li>
+
+              <li><span class="label">Apply window smoothing</span></li>
+
+              </ul></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>In interpolation, suppose you need 2 pieces of 
+            sine interpolation before index 3 to 4, and index 20 to 21
+            then set parameter <b>Where to apply sin interpolation</b> equal a 3,20.<br/> 
+            The sine interpolations use a sine
+            function with starting phase being parameter <b>Starting phase</b>, total phase 
+            being parameter <b>Total phase</b>,<br/>
+            (i.e. ending phase being parameters <b>Starting phase</b> + <b>Total phase</b> for each interpolation).</p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Dave Hale, Colorado School of Mines, 07/07/89<br/>
+          Zhaobo Meng, Colorado School of Mines,<br/>
+            added sine interpolation and window smoothing, 09/16/96<br/> 
+          CWP: John Stockwell,  added file input options, 24 Nov 1997</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Input data</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Binary file of x,y pairs</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="yes">
+                    <keyword>xyfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Number of pairs input</label>
+                <int>
+                  <property required="yes">
+                    <keyword>npairs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output sampling</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of y values output to binary file</label>
+                <int>
+                  <property required="yes">
+                    <keyword>nout=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Output x sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxout=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Output first x</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxout=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Interpolation method</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Method of interpolation</label>
+                <enum>
+                  <property required="no">
+                    <keyword>method=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                  <option>
+                    <label>Linear interpolation</label>
+                    <value>linear</value>
+                  </option>
+                  <option>
+                    <label>Monotonic bicubic interpolation</label>
+                    <value>mono</value>
+                  </option>
+                  <option>
+                    <label>Akima bicubic interpolation</label>
+                    <value>akima</value>
+                  </option>
+                  <option>
+                    <label>Bicubic spline interpolation</label>
+                    <value>spline</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Where to apply sin interpolation</label>
+                <int>
+                  <property required="no" separator=",">
+                    <keyword>isint=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Amplitude of sine interpolations</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>amp=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Starting phase</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>phase0=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Total phase</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>totalphase=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Apply window smoothing</label>
+                <flag>
+                  <property required="no">
+                    <keyword>nwidth=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

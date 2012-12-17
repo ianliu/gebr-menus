@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Depth to Time</title>
+  <description>Resample data from depth to time</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Depth to Time</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Depth to Time</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Resample data from depth to time
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Resample data from depth to time.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Jul 6, 2009: Luis D'Afonseca, UNICAMP - luis.dafonseca@gebrproject.com.</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+<!--
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+-->
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Jul 6, 2009 </span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Luis D'Afonseca</author>
+  <email>luis.dafonseca@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-07-07T02:29:36.895070Z</created>
+    <modified>2010-08-06T00:43:09.469176Z</modified>
+    <lastrun/>
+  </date>
+  <category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Depth to Time</title>
+    <binary>suztot</binary>
+    <description>Resample data from depth to time</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Depth to Time</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Depth to Time</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Resample data from depth to time
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Resample data from depth to time.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+
+            <h2>Optional parameters</h2>
+
+            <!-- List of optional parameters -->
+            <!-- begin lst -->
+            <ul>
+              <li><span class="label">Number of time samples in output (nt)</span>
+              <p>The default value nt = 1+(nz-1)*2*dz/(max(v)*dt) is set to avoid aliasing.</p>
+              </li>
+
+              <li><span class="label">Time sampling interval (dt)</span>
+              <p>The default value of dt = 2*dz/min(v) is set to avoid aliasing.</p>
+              </li>
+
+              <li><span class="label">First time sample (ft)</span>
+              <p>The default value of ft is 2*fz/v(fz).</p>
+              </li>
+
+              <li><span class="label">Depths corresponding to interval velocities (z)</span></li>
+
+              <li><span class="label">Interval velocities corresponding to depths (v)</span>
+              <p>The parameters z and v specify an interval velocity function of dept.
+              They are given as arrays of floats with the number of z values equaling
+              the number of v values. The velocities are linearly interpolated to make
+              a continuous, piecewise linear v(z) profile. 
+              Values specified in z must increase monotonically.</p>
+              </li>
+
+              <li><span class="label">Binary file containing velocities</span>
+              <p>This parameter is an alternative to parameters z and v. 
+              If it is specified the z and v arrays are ignored and 
+              the interval velocities are read from a binary file containing
+              one velocity for every depth sample.</p>
+              </li>
+
+              <li><span class="label">Print depth sampling information</span></li>
+
+          </ul>
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>This program accesses the following header fields:
+             <ul>
+             <li>number of samples in this trace (nz),</li> <!-- In fact the key is ns! -->
+             <li>sample interval (dt),</li>
+             <li>delay recording time.</li> <!--(delrt) -->
+             </ul>
+             It also modifies the following header fields:
+             <ul>
+             <li>trace identification code,</li>                  <!-- (trid) -->
+             <li>number of samples in this trace,</li>            <!-- (ns) -->
+             <li>sample spacing for non-seismic data,</li>        <!-- (d1) -->
+             <li>first sample location for non-seismic data.</li> <!-- (f1) -->
+             </ul>
+          </p>
+
+          <p>See help message for <b>SU Time to Depth</b> menu and for the program on it.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>CWP/SU: Seismic Un*x Team</p>
+
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+<!--
+            <li><a href="#details">Description</a></li>
+-->
+            <li><a href="#notes">Notes</a></li>
+<!--
+            <li><a href="#ref">References</a></li>
+-->
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | SU 41 </span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of time samples in output</label>
+        <int>
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Depth sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First time sample</label>
+        <int>
+          <property required="no">
+            <keyword>ft=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Depths corresponding to interval velocities</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>z=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Interval velocities corresponding to depths</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>v=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Binary file containing velocities</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Print depth sampling information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

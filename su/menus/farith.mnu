@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>File Arithmetic</title>
+  <description>Simple arithmetic with binary files</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>File Arithmetic</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">File Arithmetic</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Simple arithmetic with binary files
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Perform simple arithmetic with binary files.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Apr 25, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Apr 25, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-04-25T13:11:55.215142Z</created>
+    <modified>2010-12-09T16:24:29.696109Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Utilities</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
+    <title>File Arithmetic</title>
+    <binary>farith</binary>
+    <description>Simple arithmetic with binary files</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>File Arithmetic</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">File Arithmetic</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Simple arithmetic with binary files
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Perform simple arithmetic with binary files.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Input File</span></li>
+                <li>
+                        <span class="label">Output File</span></li>
+                <li>
+                        <span class="label">Second input file (required for binary operations)</span><br />
+                        If it can't be opened as a file, it might be a scalar.</li>
+                <li>
+                        <span class="label">Fastest dimension (only for operation=Cartesian product)</span></li>
+                <li>
+                        <span class="label">Index which signum function acts (only for operation=Signum)</span></li>
+                <li>
+                        <span class="label">Value to scale input by (only for operation=Scale)</span></li>
+                <li>
+                        <span class="label">Value to bias input by (only for operation=Bias)</span></li>
+                <li>
+                        <span class="label">Operations</span>
+                        <p>
+                                Seismic operations:</p>
+                        <ul>
+                                <li>
+                                        No operation (output = input)</li>
+                                <li>
+                                        Negative (output = (-1* input))</li>
+                                <li>
+                                        Absolute value (output = abs(input))</li>
+                                <li>
+                                        Scale (output = input*scale)</li>
+                                <li>
+                                        Bias (output = input + bias)</li>
+                                <li>
+                                        Exponencial (output = exp(input))</li>
+                                <li>
+                                        Sin (output = sin(input))</li>
+                                <li>
+                                        Cos (output = cos(input))</li>
+                                <li>
+                                        Log (output = log(input))</li>
+                                <li>
+                                        Square root (output = sqrt(input))</li>
+                                <li>
+                                        Square (output = input*input)</li>
+                                <li>
+                                        Convert degrees to radians</li>
+                                <li>
+                                        Convert radians to degrees</li>
+                                <li>
+                                        Punctuated inverse (output = (puntuated) 1/input)</li>
+                                <li>
+                                        Punctuated square inverse (output = (punctuated) 1/(input*input))</li>
+                                <li>
+                                        Punctuated square root inverse (output = (punctuated) 1/sqrt(input))</li>
+                                <li>
+                                        Addiction (output = input + second input)</li>
+                                <li>
+                                        Subtraction (output = input - second input)</li>
+                                <li>
+                                        Multiplication (output = input * second input)</li>
+                                <li>
+                                        Division (output = input / second input)</li>
+                                <li>
+                                        Cartesian product (output = input x second input)</li>
+                                <li>
+                                        Signum<br />
+                                        output[i] = input[i] for i&lt;index and<br />
+                                                       = (-1)*input[i] for i&gt;=index</li>
+                                <li>
+                                        Slowness perturbation (output = 1/input - 1/second input)</li>
+                                <li>
+                                        Sloth perturbation (output = 1/input^2 - 1/second input^2)</li>
+                        </ul>
+                </li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        The seismic operations assume that <strong>Input</strong> and <strong>Second input</strong> are wavespeed profiles. "Slowness" is 1/wavespeed and "Sloth" is 1/wavespeed^2.</p>
+<p>
+        Use <strong>SU Unary Operations</strong> and <strong>SU Binary Operations</strong> to perform unary and binary operations on data in the SU (SEGY trace) format.</p>
+<p>
+        The options <strong>Punctuated square inverse</strong> and <strong>Punctuated square root inverse</strong> are also useful for seismic computations involving converting velocity to sloth and vice versa.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Author: Dave Hale, Colorado School of Mines, 07/07/89<br />
+        Zhaobo Meng added scale and cartprod, 10/01/96<br />
+        Zhaobo Meng added signum, 9 May 1997<br />
+        Tony Kocurko added scalar operations, August 1997<br />
+        John Stockwell added bias option 4 August 2004</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Input File</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>in=</keyword>
+            <value/>
+            <default>/dev/stdin</default>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Output File</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>out=</keyword>
+            <value/>
+            <default>/dev/stdout</default>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Second input file (required for binary operations)</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>in2=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Fastest dimension (only for operation=Cartesian product)</label>
+        <int>
+          <property required="no">
+            <keyword>n=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Index which signum function acts (only for operation=Signum)</label>
+        <int>
+          <property required="no">
+            <keyword>isig=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Value to scale input by (only for operation=Scale)</label>
+        <int>
+          <property required="no">
+            <keyword>scale=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Value to bias input by (only for operation=Bias)</label>
+        <float>
+          <property required="no">
+            <keyword>bias=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Arithmetic operations</label>
+        <enum>
+          <property required="no">
+            <keyword>op=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>No operation (output = input)</label>
+            <value>noop</value>
+          </option>
+          <option>
+            <label>Negative (output = (-1* input))</label>
+            <value>neg</value>
+          </option>
+          <option>
+            <label>Absolute value (output = abs(input))</label>
+            <value>abs</value>
+          </option>
+          <option>
+            <label>Scale (output = input*scale)</label>
+            <value>scale</value>
+          </option>
+          <option>
+            <label>Bias (output = input + bias)</label>
+            <value>bias</value>
+          </option>
+          <option>
+            <label>Exponencial (output = exp(input))</label>
+            <value>exp</value>
+          </option>
+          <option>
+            <label>Sin (output = sin(input))</label>
+            <value>sin</value>
+          </option>
+          <option>
+            <label>Cos (output = cos(input))</label>
+            <value>cos</value>
+          </option>
+          <option>
+            <label>Log (output = log(input))</label>
+            <value>log</value>
+          </option>
+          <option>
+            <label>Square root (output = sqrt(input))</label>
+            <value>sqrt</value>
+          </option>
+          <option>
+            <label>Square (output = input*input)</label>
+            <value>sqr</value>
+          </option>
+          <option>
+            <label>Convert degrees to radians</label>
+            <value>degrad</value>
+          </option>
+          <option>
+            <label>Convert radians to degrees</label>
+            <value>raddeg</value>
+          </option>
+          <option>
+            <label>Punctuated inverse (output = (puntuated) 1/input)</label>
+            <value>pinv</value>
+          </option>
+          <option>
+            <label>Punctuated square inverse (output = (punctuated) 1/(input*input))</label>
+            <value>pinvsqr</value>
+          </option>
+          <option>
+            <label>Punctuated square root inverse (output = (punctuated) 1/sqrt(input))</label>
+            <value>pinvsqrt</value>
+          </option>
+          <option>
+            <label>Addiction (output = input + second input)</label>
+            <value>add</value>
+          </option>
+          <option>
+            <label>Subtraction (output = input - second input)</label>
+            <value>sub</value>
+          </option>
+          <option>
+            <label>Multiplication (output = input * second input)</label>
+            <value>mul</value>
+          </option>
+          <option>
+            <label>Division (output = input / second input)</label>
+            <value>div</value>
+          </option>
+          <option>
+            <label>Cartesian product (output = input x second input)</label>
+            <value>cartprod</value>
+          </option>
+          <option>
+            <label>Slowness perturbation (output = 1/input - 1/second input)</label>
+            <value>slowp</value>
+          </option>
+          <option>
+            <label>Sloth perturbation (output = 1/input^2 - 1/second input^2)</label>
+            <value>slothp</value>
+          </option>
+        </enum>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

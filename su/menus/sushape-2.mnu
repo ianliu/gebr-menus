@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Shape 2</title>
+  <description>Wiener shaping filter from input wavelet</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Shape 2</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Shape 2</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Wiener shaping filter from input wavelet
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Filtering, Transforms and Attributes | Seismic Unix
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>This program computes the Wiener shaping filter defined from the
+          input wavelet in a SU file. In program <b>SU Shape 1</b> the filter
+          is defined from an array and in program <b>SU Shape 3</b> from
+          the output wavelet in a SU file.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Written by GêBR core team &lt;port@gebrproject.com&gt;</p>
+          <p>May 29, 2010: edited by Luis A. D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;</p>
+          <p>Aug 10, 2010: revised by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!--end dtd -->) |
+        May 29, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-09-16T15:00:00Z</created>
+    <modified>2010-08-10T03:24:04.980402Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
+    <title>SU Shape 2</title>
+    <binary>sushape</binary>
+    <description>Wiener shaping filter from input wavelet</description>
+    <help>
+      <![CDATA[<html>
+  <head>
+    <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <title >SU Shape 2</title>
+    </head><body >
+    <div  class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+          <span class="flowtitle">SU Shape 2</span>
+          <!-- end tt2 -->
+            <div class="description">
+           <!-- begin des -->Wiener shaping filter from input wavelet <!-- end des -->
+          </div>
+          </div>
+        </div><!-- header -->
+
+        <div class="category">
+        <!-- begin cat -->
+          Filtering, Transforms and Attributes | Seismic Unix
+          <!-- end cat -->
+      </div>
+
+        <div class="main">
+          <div class="content"><!-- begin par -->
+          <div class="parameters">
+              <h2 id="header_0">Introduction</h2>
+
+              <p>This program computes the Wiener shaping filter defined from the
+              input wavelet in a SU file. In program <b>SU Shape 1</b> the filter
+              is defined from an array and in program <b>SU Shape 3</b> from
+              the output wavelet in a SU file.</p>
+
+              <h2 id="header_1">
+                Parameters</h2>
+              <!-- begin lst -->
+            <ul>
+                <li class="req"><span class="reqlabel">File containing input wavelet in SU format</span><br/>
+                Filename containing the input wavelet in SU format.</li>
+                
+                <li class="req"><span class="reqlabel">Vector of desired output wavelet</span><br/>
+                Array with desired output wavelet.</li>
+
+                <li><span class="label">Length of shaping filter</span><br/>
+                The default is the number of samples from trace header.</li>
+
+                <li><span class="label">Relative additive noise level</span><br/>
+                If not specified, the default value is 0.001.</li>
+
+                <li><span class="label">Show shaping filter</span></li>
+
+              </ul>
+              <!-- end lst -->
+
+            <h2 id="header_2">
+              Notes</h2>
+
+<p>This program accesses the following header keywords
+  <ul>
+    <li>Number of samples</li>  <!-- ns -->
+    <li>Sampling interval in microseconds</li>  <!-- dt -->
+  </ul>
+</p>
+
+          </div>
+          <!-- end par -->
+            <h2 id="header_3">
+              Credits</h2>
+            <p>
+            CWP: Jack K. Cohen, Dave Hale<br />
+            CWP: John Stockwell, added wfile and dfile options</p>
+          </div>
+
+          <div class="navigation"><h2>Index</h2>
+            <ul>
+              <li><a href="#header_0"> Introduction </a></li>
+              <li><a href="#header_1"> Parameters   </a></li>
+              <li><a href="#header_2"> Notes   </a></li>
+              <li><a href="#header_3"> Credits      </a></li></ul></div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>File containing input wavelet in SU format</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="yes">
+            <keyword>wfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Vector of desired output wavelet</label>
+        <float>
+          <property required="yes" separator=",">
+            <keyword>d=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Length of shaping filter</label>
+        <int>
+          <property required="no">
+            <keyword>nshape=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Relative additive noise level</label>
+        <float>
+          <property required="no">
+            <keyword>pnoise=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Show shaping filter</label>
+        <flag>
+          <property required="no">
+            <keyword>showshaper=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

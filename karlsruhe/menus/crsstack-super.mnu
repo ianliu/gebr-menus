@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow version="0.3.6">
+  <title>CRS Stack Super</title>
+  <description>Perform CRS stacking and Supergather</description>
+  <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>CRS Stack</title>
+  <!-- end ttl -->
+<link rel="stylesheet" type="text/css" href="file:///usr/local/stow/gebr-0.9.16-pre/share/libgebr/ckeditor//skins/kama/editor.css?t=A06B" /></head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">CRS Stack</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            CRS stack and supergathers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->
+       WIT | Gain, NMO, Stack and Standard Processes
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content" style=""><h2 id="header_0">
+	Description</h2>
+<p>
+	Macro-velocity model independent simulation of 2D zero-offset (ZO) sections from multi-coverage 2D or quasi 2D data sets</p>
+<h2 id="header_1">
+	Credits</h2>
+<p>
+	Sep 01, 2010: written by Fernando S. M. Nunes &lt;fsmn_ufpa@yahoo.com.br&gt; 
+</p>
+<p>and Luis A. D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;
+</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+	Description</a></li><li><a href="#header_1">
+	Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+	<span class="left">GêBR 0.9.15  (<!-- begin dtd -->0.3.0<!--end dtd -->) |
+        Aug 31, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]></help>
+  <author>Luis A. D'Afonseca</author>
+  <email>luis.dafonseca@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <date>
+    <created>2010-01-27T16:52:48.735209Z</created>
+    <modified>2010-09-17T18:53:57.857551Z</modified>
+    <lastrun/>
+  </date>
+  <category>WIT - TESTES</category>
+  <io>
+    <input/>
+    <output/>
+    <error/>
+  </io>
+  <servers/>
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured" mpi="" version="5.1.3 25.04.2005">
+    
+    <title>CRS Stack Super</title>
+    <binary>crsstack_supergathers</binary>
+    <description>Perform CRS stacking and Supergather</description>
+    <help><![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>CRS Stack</title>
+  <!-- end ttl -->
+<link rel="stylesheet" type="text/css" href="file:///usr/local/stow/gebr-0.9.16-pre/share/libgebr/ckeditor//skins/kama/editor.css?t=A06B" /></head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+	  <!-- begin tt2 -->
+         <span class="flowtitle">CRS Stack</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+	    <!-- begin des -->
+            Perform CRS stacking and supergathers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+	<!-- begin cat -->WIT | Gain, NMO, Stack and Standard Processes<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content" style="">
+        <h2 id="header_0">Introduction</h2>
+
+        <p>Macro-velocity model independent simulation of 2D zero-offset (ZO) sections from multi-coverage 2D or quasi 2D data sets.</p>
+
+        <p>All section files manipulated by this programa are in Seismic Un*x (SU) format.</p>
+
+        <p>The input pre-stack data must be a 2D or quasi 2D multi-coverage data set. 
+           A regular grid is not required, and the straight profile is determined automatically.
+           All traces must have the same number of samples, sampling rate, and time delays.
+           Along the profile the CDP numbers must increase or decrease strictly monotonously.
+        </p>
+
+        <p>See the notes below for the list of output file names.</p>
+
+
+<!-- begin par --><div class="parameters">
+	<h2 id="header_1">
+		Parameters</h2>
+	<ul>
+		<li class="group">
+			<span class="grouplabel">Mode selection parameters</span><br/>
+                        Each option of this group selects one step on the CRS processing
+			<ul>
+				<li><span class="label">Perform automatic CMP stack</span></li>
+				<li><span class="label">Perform ZO search/stack</span></li>
+				<li><span class="label">Perform CRS stack with initial attributes</span></li>
+				<li><span class="label">Perform CRS-partial stack to generate the supergathres</span></li>
+				<li><span class="label">Perform attribute optimization and stack</span></li>
+
+				<li><span class="label">Generate migration map</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">General Parameters</span><br/>
+			<ul>
+				<li class="req"><span class="reqlabel">Pre-stack data file</span></li>
+				<li class="req"><span class="reqlabel">Pathname for I/O data files</span></li>
+				<li class="req"><span class="reqlabel">Basename for all I/O datafiles except pre-stack data</span></li>
+				<li class="req"><span class="reqlabel">Near surface velocity</span></li>
+				<li>            <span class="label"   >Filename for process log</span></li>
+				<li>            <span class="label"   >Show additional information</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Reference model for stacking velocity</span><br/>
+                         The stacking velocity is a required parameter for the CRS processing. 
+                         You have two options to set this information. 
+                         One of them is to provide a section file with reference stacking velocities. 
+                         Another way is to set the minimum and the maximum values to stack.
+			<ul>
+				<li><span class="label">Section with reference stacking velocities</span></li>
+				<li><span class="label">Minimum stacking velocity (alternative to reference section)</span></li>
+				<li><span class="label">Maximum stacking velocity used if percentile variation is zero</span></li>
+				<li><span class="label">Percentile variation of stacking velocit</span>
+				<br/>The default value of this parameter is zero.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Trace discrimination parameters</span>
+			<ul>
+				<li><span class="label">Maximum allowed angle between any shot/receiver line and the profile line</span>
+				<br/>The default value of this parameter is 90.0 degrees.</li>
+				<li><span class="label">Maximum allowed distance between any CMP and the profile line</span>
+                                <br/>The default value of this parameter is infinity.</li>
+				<li><span class="label">Smallest offset to be considered</span>
+				<br/>The default value of this parameter is the smallest offset in input data.</li>
+				<li><span class="label">Largest offset to be considered</span>
+				<br/>The default value of this parameter is the largest offset in input data.</li>
+				<li><span class="label">Largest product of angle between shot/receiver and profile and the respective offset</span>
+				<br/>The default value of this parameter is infinity.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Muting of target zone</span>
+                        <br/>The default behavior is to not apply any muting.
+			<ul>
+				<li><span class="label">List of picked minimum times to be simulated</span></li>
+				<li><span class="label">List of associated picked CDP numbers</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Transformation of input data</span>
+			<ul>
+				<li><span class="label">Data for coherence analysis</span>
+				<br/>The default of this parameter is the original data.</li>
+					<ul>
+						<li>Original data</li>
+						<li>Trace envelopes</li>
+						<li>Normalized traces</li>
+						<li>Normalized analytic signal</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Target zone parameters</span>
+			<ul>
+				<li><span class="label">Smallest CDP to simulated</span><br/>
+                                The default value of this parameter is the minimum CDP number.</li>
+				<li><span class="label">Largest CDP to simulated</span><br/>
+                                The default value of this parameter is the maximum CDP number.</li>
+				<li><span class="label">Number of CDPs to skip between simulated traces</span></li>
+				<li><span class="label">Time sampling interval for the target zone in seconds</span></li>
+				<li><span class="label">Time offset for the target zone in seconds</span></li>
+				<li><span class="label">Number of samples per output trace</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Parameters for conflicting dip handling</span>
+			<ul>
+				<li><span class="label">Maximum number of conflicting dips</span><br/>
+                                The default value of this parameter is one dip.</li>
+				<li><span class="label">Smallest global maximum coherence to allow for conflicting dips</span></li>
+				<li><span class="label">Smallest local maximum coherence relative to global maximum to allow for conflicting dips</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Parameters for coherence criteria</span>
+			<ul>
+				<li><span class="label">Coherence criterion</span>
+				<br/>The default of this parameter is the semblance.</li>
+					<ul>
+						<li>Semblance</li>
+						<li>Mean semblance values</li>
+						<li>Sum of samples</li>
+					</ul>
+				</li>
+				<li><span class="label">Halfwidth of coherence analysis area in samples</span></li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Parameters for automatic CMP search/stack</span>
+			<ul>
+				<li><span class="label">Factor for sampling rate in q search related to input</span><br/>
+                                The default value of this parameter is 1.0.</li>
+				<li><span class="label">Number of iterations in q search</span><br/>
+                                The default value of this parameter is 3.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Parameters for angle and Rn search</span>
+			<ul>
+				<li><span class="label">Maximum angle to be searched for</span><br/>
+                                The default value of this parameter is 60.0 degrees.</li>
+				<li><span class="label">Minimum angle to be searched for</span><br/>
+                                The default value of this parameter is the negative of the maximum angle value.</li>
+				<li><span class="label">Increment for first iteration of angle search</span><br/>
+                                The default value of this parameter is 1.0.</li>
+				<li><span class="label">Number of iterations in angle search</span><br/>
+                                The default value of this parameter is 3.</li>
+				<li><span class="label">Factor for sampling rate in Rn search related to input</span><br/>
+                                The default value of this parameter is 1.0.</li>
+				<li><span class="label">Number of iterations in Rn search</span><br/>
+                                The default value of this parameter is 3.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Parameters for intial stack</span>
+			<ul>
+				<li><span class="label">Factor for sampling rate in Rnip search related to input</span><br/>
+                                The default value of this parameter is 1.0.</li>
+				<li><span class="label">Number of iterations in Rnip search</span><br/>
+                                The default value of this parameter is 3.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Parameters for optimization</span>
+			<ul>
+				<li><span class="label">Coherence threshold for smallest traveltime</span></li>
+				<li><span class="label">Coherence threshold for largest traveltime</span></li>
+				<li><span class="label">Maximum number of optimization iterations</span><br/>
+                                The default value of this parameter is 100.</li>
+				<li><span class="label">Maximum mean geometrical deviation to terminate</span><br/>
+                                The default value of this parameter is 0.0001.</li>
+				<li><span class="label">Radius for Rn transformation</span><br/>
+                                The default value of this parameter is 100.0.</li>
+				<li><span class="label">Variation of emergence angle in degrees</span><br/>
+                                The default value of this parameter is 6.0.</li>
+				<li><span class="label">Percentile variation of Rnip</span><br/>
+                                The default value of this parameter is 5.0.</li>
+				<li><span class="label">Variation of transformed Rn in degrees</span><br/>
+                                The default value of this parameter is 6.0.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Aperture parameters</span>
+			<ul>
+				<li><span class="label">Minimum offset aperture for traveltime</span></li>
+				<li><span class="label">Traveltime at which minimum offset aperture applies</span><br/>
+                                The default value of this parameter is the smallest traveltime in input.</li>
+				<li><span class="label">Maximum offset aperture for traveltime</span><br/>
+                                The default value of this parameter is the maximum offset in input.</li>
+				<li><span class="label">Traveltime at which maximum offset aperture applies</span></li>
+				<li><span class="label">Minimum aperture halfwidth in ZO section for traveltime 0</span></li>
+				<li><span class="label">Maximum aperture in ZO section</span></li>
+				<li><span class="label">Average shot interval (for initial stack only)</span></li>
+				<li><span class="label">Average model velocity</span></li>
+				<li><span class="label">Mean frequency of signal wavelet</span></li>
+				<li><span class="label">Relative size of cosine tapered aperture</span><br/>
+                                The default value of this parameter is 0.3.</li>
+				<li><span class="label">Relative size of aperture for plane wave search</span><br/>
+                                The default value of this parameter is 0.3.</li>
+			</ul>
+		</li>
+		<li class="group">
+			<span class="grouplabel">Supergathers parameters</span>
+			<ul>
+				<li><span class="label">Use positive or negative offsets in supergathers</span><br/>
+                                The default value of this parameter is the positive offsets.</li>
+				<li><span class="label">Average receiver interval in generated supergathers</span><br/>
+				<li><span class="label">Use offset bins derived from the data or regular offsets bins with interval defined by average receiver interval </span><br/>
+                                The default value of this parameter is the regular offsets bins.</li>
+				<li><span class="label">Offset aperture used in partial stacking</span><br/>
+                                The default value of this parameter is Average receiver interval.</li>
+			</ul>
+		</li>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><!--
+	  <a name="details" id="details"></a>
+          <h2>Description</h2>
+
+          <p>Feel free to describe each detail of the program or
+          flow.</p>
+
+-->
+	  <a name="notes" id="header_2"></a>
+          <h2>Notes</h2>
+
+          <p>Most parameters are handled as absolute values.</p>
+
+          <p>All offsets refer to the FULL (not half) offset.</p>
+
+          <p>Files produced by automatic CMP stack
+          <br/>
+          <table>
+          <tr><th> Suffix file name </th><th> Description                                           </th></tr>
+          <tr><td> <i>CMPq     </i> </td><td> q section determined by automatic CMP stack           </td></tr>
+          <tr><td> <i>CMPcoher </i> </td><td> Coherency section associated with <i>CMPq</i>         </td></tr>
+          <tr><td> <i>CMPvnmo2 </i> </td><td> Squared stacking velocity computed from <i>CMPq</i>   </td></tr>
+          <tr><td> <i>CMPtraces</i> </td><td> Number of traces contributing to automatic CMP stack  </td></tr>
+          <tr><td> <i>CMPstack </i> </td><td> Result of automatic CMP stack                         </td></tr>
+          </table>
+          </p>
+
+          <p>Files produced by plane wave and hyperbolic ZO search approach.
+             The n refers to the nth detected event contributing to a particular sample.
+          <br/>
+          <table>
+          <tr><th> Suffix file name  </th><th> Description                                               </th></tr>
+          <tr><td> <i>PWcoher_n </i> </td><td> Coherency section associated with plane wave ZO search    </th></tr>
+          <tr><td> <i>PWstack   </i> </td><td> Result of plane wave ZO stack                             </td></tr>
+          <tr><td> <i>PWtraces  </i> </td><td> Number of traces contributing to plane wave ZO stack      </td></tr>
+          <tr><td> <i>HYcoher_n </i> </td><td> Coherency section associated with hyperbolic ZO search    </td></tr>
+          <tr><td> <i>HYstack   </i> </td><td> Result of hyperbolic ZO stack                             </td></tr>
+          <tr><td> <i>HYtraces  </i> </td><td> Number of traces contributing to hyperbolic ZO stack      </td></tr>
+          </table>
+          </p>
+
+          <p>Attributes resulting from 3x1 parametric search approach
+          <br/>
+          <table>
+          <tr><th> Suffix file name   </th><th> Description                                     </th></tr>
+          <tr><td> <i>Condips    </i> </td><td> Number of detected dips                         </td></tr>
+          <tr><td> <i>Iniangle_n </i> </td><td> Section with initial values of emergence angle  </td></tr>
+          <tr><td> <i>IniRnip    </i> </td><td> Section with intermediate values of Rnip        </td></tr>
+          <tr><td> <i>IniRnip_n  </i> </td><td> Section with initial values of Rnip             </td></tr>
+          <tr><td> <i>IniRn_n    </i> </td><td> Section with initial values of Rn               </td></tr>
+          </table>
+          </p>
+
+          <p>Files produced by initial (not optimized) CRS stack
+          <br/>
+          <table>
+          <tr><th> Suffix file name   </th><th> Description                                           </th></tr>
+          <tr><td> <i>Inistack   </i> </td><td> Result of initial CRS stack                           </th></tr>
+          <tr><td> <i>IniFstack  </i> </td><td> Result of initial CRS stack in projected Fresnel zone </td></tr>
+          <tr><td> <i>Initraces  </i> </td><td> Number of traces contributing to initial CRS stack    </td></tr>
+          <tr><td> <i>Inicoher_n </i> </td><td> Coherency section associated with initial CRS stack   </td></tr>
+          <tr><td> <i>IniPTM     </i> </td><td> Pseudo time-migrated section of intial CRS stack      </td></tr>
+          <tr><td> <i>IniFPTM    </i> </td><td> dto., in projected Fresnel zone                       </td></tr>
+          </table>
+          </p>
+
+          <p>Files produced by optimized CRS stack
+          <br/>
+          <table>
+          <tr><th> Suffix file name     </th><th> Description                                              </th></tr>
+          <tr><td> <i>Optangle_n   </i> </td><td> Section with optimized values of emergence angle         </th></tr>
+          <tr><td> <i>OptRnip_n    </i> </td><td> Section with optimized values of Rnip                    </td></tr>
+          <tr><td> <i>OptRn_n      </i> </td><td> Section with optimized values of Rn                      </td></tr>
+          <tr><td> <i>Optstack     </i> </td><td> Result of optimized CRS stack                            </td></tr>
+          <tr><td> <i>OptFstack    </i> </td><td> Result of optimized CRS stack in projected Fresnel zone  </td></tr>
+          <tr><td> <i>OptPTM       </i> </td><td> Pseudo time-migrated section of optimized CRS stack      </td></tr>
+          <tr><td> <i>OptFPTM      </i> </td><td> dto., in projected Fresnel zone                          </th></tr>
+          <tr><td> <i>Opttraces    </i> </td><td> Number of traces contributing to restricted CRS stack    </td></tr>
+          <tr><td> <i>Optcoher_n   </i> </td><td> Coherency section associated with optimized CRS stack    </td></tr>
+          <tr><td> <i>Optsuccess_n </i> </td><td> Difference of initial and optimized coherency            </td></tr>
+          <tr><td> <i>Optiter_n    </i> </td><td> Number of optimziation iterations                        </td></tr>
+          <tr><td> <i>Opteps_n     </i> </td><td> Mean geometrical deviation of final vertices             </td></tr>
+          </table>
+          </p>               
+
+	  <a name="ref" id="header_3"></a>
+          <h2>References</h2>
+
+          <ul>
+            <li>Mann, J., Jaeger, R., Mueller, Th., Hoecht, G., and Hubral, P.:
+                Common-reflection-surface stack - a real data example.
+                Journal of Applied Geophysics, 42, pp. 301-318, 1999.
+            </li>
+          </ul>
+
+        <h2 id="header_4">Credits</h2>
+        <p>
+        Jürgen Mann, Geophysical Institute University of Karlsruhe, &lt;jurgen.mann@gpi.uni-karlsruhe.de&gt; <br/>
+        Baerbel Traub, and <br/>
+        Alexander Gerst</p> 
+
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation">
+       <h2>Index</h2>
+       <ul>
+         <li><a href="#header_0">Introduction</a></li>
+         <li><a href="#header_1">Parameters</a></li>
+         <li><a href="#header_2">Notes</a></li>
+         <li><a href="#header_3">References</a></li>
+         <li><a href="#header_4">Credits</a></li>
+       </ul>
+      </div>
+
+      <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.15  (<!-- begin dtd -->0.3.0<!--end dtd -->) | 4.6 </span>
+
+        <div class="clearer"></div>
+      </div>
+ </div></div></body></html>]]></help>
+    <url>http://wit.zmaw.de</url>
+    <parameters default-selection="0" selection="">
+      
+      <parameter>
+        <label>Mode selection parameters</label>
+        <group instanciable="no" expand="yes">
+          <template-instance><parameters default-selection="0" selection="">
+            
+            
+            
+            
+            
+          <parameter><label>Automatic CMP stack</label><flag><property required="no"><keyword>autoCMPstack=1 ZOsearch=0 Inistack=0 Optimize=0 Supergathers=0 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Zero-offset search/stack</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=1 Inistack=0 Optimize=0 Supergathers=0 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Initial CRS stack</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=0 Inistack=1 Optimize=0 Supergathers=0 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Attribute optimization and stack</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=0 Inistack=0 Optimize=1 Supergathers=0 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Generate CRS supergathers</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=0 Inistack=0 Optimize=0 Supergathers=1 migmap=0</keyword><value>off</value><default>on</default></property></flag></parameter><parameter><label>Generate migration map</label><flag><property required="no"><keyword>autoCMPstack=0 ZOsearch=0 Inistack=0 Optimize=0 Supergathers=0 migmap=1</keyword><value>off</value><default>on</default></property></flag></parameter></parameters></template-instance>
+        <parameters default-selection="1" selection="1">
+            
+            
+            
+            
+            
+          <parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group>
+      </parameter><parameter><label>General Parameters</label><group instanciable="no" expand="yes"><template-instance><parameters default-selection="0"><parameter>
+              <label>Pre-stack data file</label>
+              <file directory="no" filter-name="SU" filter-pattern="*.su *.SU">
+                <property required="yes">
+                  <keyword>input=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </file>
+            </parameter><parameter>
+              <label>Pathname for I/O data files</label>
+              <file directory="yes" filter-name="" filter-pattern="">
+                <property required="yes">
+                  <keyword>datapath=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </file>
+            </parameter><parameter>
+              <label>Basename for all I/O datafiles except pre-stack data</label>
+              <string>
+                <property required="yes">
+                  <keyword>basename=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </string>
+            </parameter><parameter>
+        <label>Near surface velocity</label>
+        <float min="0">
+          <property required="yes">
+            <keyword>survel=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter><parameter>
+              <label>Filename for process log</label>
+              <file directory="no" filter-name="" filter-pattern="">
+                <property required="yes">
+                  <keyword>logfile=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </file>
+            </parameter><parameter>
+        <label>Show additional information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter></parameters></template-instance><parameters default-selection="0"><parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+        <label/>
+        
+      <reference><property required="no"><keyword/><value/><default>off</default></property></reference></parameter></parameters></group></parameter>
+      
+      <parameter>
+        <label>Reference model for stacking velocity</label>
+        <group instanciable="no" expand="no">
+          <template-instance><parameters default-selection="0" selection="">
+            <parameter>
+              <label>Reference stacking velocities (or minimum and/or maximum velocities)</label>
+              
+            <file directory="no" filter-name="" filter-pattern=""><property required="no"><keyword>vnmoref=</keyword><value/><default/></property></file></parameter>
+            
+            <parameter>
+              <label>Minimum stacking velocity</label>
+              <float min="0">
+                <property required="no">
+                  <keyword>vnmomin=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>Maximum stacking velocity (if percentile variation is zero)</label>
+              <float min="0">
+                <property required="no">
+                  <keyword>vnmomax=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+          <parameter>
+              <label>Percentile variation of stacking velocit</label>
+              <float min="0" max="">
+                <property required="no">
+                  <keyword>vnmovar=</keyword>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </float>
+            </parameter></parameters></template-instance>
+        <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+          </parameters></group>
+      </parameter>
+      
+      <parameter>
+        <label>Trace discrimination parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance><parameters default-selection="0" selection="">
+            <parameter>
+              <label>Maximum allowed angle between any shot/receiver line and the profile line in degrees</label>
+              <float>
+                <property required="no">
+                  <keyword>maxangdev=</keyword>
+                  <value/>
+                  <default>90.0</default>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>Maximum allowed distance between any CMP and the profile line</label>
+              <float>
+                <property required="no">
+                  <keyword>maxshift=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>Smallest offset to be considered</label>
+              <float>
+                <property required="no">
+                  <keyword>minoffset=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>Largest offset to be considered</label>
+              <float>
+                <property required="no">
+                  <keyword>maxoffset=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>Largest product of angle between shot/receiver and profile and the respective offset</label>
+              <float>
+                <property required="no">
+                  <keyword>maxaop=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+          </parameters></template-instance>
+        <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+          </parameters></group>
+      </parameter>
+      <parameter>
+        <label>Muting of target zone</label>
+        <group instanciable="no" expand="no">
+          <template-instance><parameters default-selection="0" selection="">
+            <parameter>
+              <label>List of picked minimum times to be simulated</label>
+              <float>
+                <property required="no" separator=",">
+                  <keyword>mutetime=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>List of associated picked CDP numbers</label>
+              
+            <int><property required="no" separator=","><keyword>mutecdp=</keyword><value/><default/></property></int></parameter>
+          </parameters></template-instance>
+        <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+          </parameters></group>
+      </parameter>
+      <parameter>
+        <label>Transformation of input data</label>
+        <group instanciable="no" expand="no">
+          <template-instance><parameters default-selection="0" selection="">
+            <parameter>
+              <label>Data to use for coherence analysis</label>
+              <enum>
+                <property required="no">
+                  <keyword>convop=</keyword>
+                  <value/>
+                  <default>0</default>
+                </property>
+                <option>
+                  <label>Original data</label>
+                  <value>0</value>
+                </option>
+                <option>
+                  <label>Trace envelopes</label>
+                  <value>1</value>
+                </option>
+                <option>
+                  <label>Normalized traces</label>
+                  <value>2</value>
+                </option>
+                <option>
+                  <label>Normalized analytic signal</label>
+                  <value>3</value>
+                </option>
+              </enum>
+            </parameter>
+          </parameters></template-instance>
+        <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter>
+          </parameters></group>
+      </parameter>
+      <parameter>
+        <label>Target zone parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance><parameters default-selection="0" selection="">
+            <parameter>
+              <label>Smallest CDP to simulated</label>
+              <int>
+                <property required="no">
+                  <keyword>fcpd=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </int>
+            </parameter>
+            <parameter>
+              <label>Largest CDP to simulated</label>
+              <int>
+                <property required="no">
+                  <keyword>lcdp=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </int>
+            </parameter>
+            <parameter>
+              <label>Number of CDPs to skip between simulated traces</label>
+              <int>
+                <property required="no">
+                  <keyword>jcdp=</keyword>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </int>
+            </parameter>
+            <parameter>
+              <label>Time sampling interval for the target zone in seconds</label>
+              <float min="0">
+                <property required="no">
+                  <keyword>dt=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>Time offset for the target zone in seconds</label>
+              <float min="0">
+                <property required="no">
+                  <keyword>t0=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>Number of samples per output trace</label>
+              <int min="0">
+                <property required="no">
+                  <keyword>ns=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </int>
+            </parameter>
+          </parameters></template-instance>
+        <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+          </parameters></group>
+      </parameter>
+      <parameter>
+        <label>Parameters for conflicting dip handling</label>
+        <group instanciable="no" expand="no">
+          <template-instance><parameters default-selection="0" selection="">
+            <parameter>
+              <label>Maximum number of conflicting dips</label>
+              
+            <int min="1" max="5"><property required="no"><keyword>ndips=</keyword><value/><default>1</default></property></int></parameter>
+            <parameter>
+              <label>Smallest global maximum coherence to allow for conflicting dips</label>
+              <float>
+                <property required="no">
+                  <keyword>globcohthresh=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+            <parameter>
+              <label>Smallest local maximum coherence relative to global maximum to allow for conflicting dips</label>
+              <float>
+                <property required="no">
+                  <keyword>relcohthresh=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </float>
+            </parameter>
+          </parameters></template-instance>
+        <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>1</default></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+          </parameters></group>
+      </parameter>
+      <parameter>
+        <label>Parameters for coherence criteria</label>
+        <group instanciable="no" expand="no">
+          <template-instance><parameters default-selection="0" selection="">
+            <parameter>
+              <label>Coherence criterion</label>
+              <enum>
+                <property required="no">
+                  <keyword>coherence=</keyword>
+                  <value/>
+                  <default>0</default>
+                </property>
+                <option>
+                  <label>Semblance</label>
+                  <value>0</value>
+                </option>
+                <option>
+                  <label>Mean semblance values</label>
+                  <value>1</value>
+                </option>
+                <option>
+                  <label>Sum of samples</label>
+                  <value>2</value>
+                </option>
+              </enum>
+            </parameter>
+            <parameter>
+              <label>Halfwidth of coherence analysis area in samples</label>
+              <int>
+                <property required="no">
+                  <keyword>cohband=</keyword>
+                  <value/>
+                  <default/>
+                </property>
+              </int>
+            </parameter>
+          </parameters></template-instance>
+        <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default>0</default></property></reference></parameter>
+            <parameter>
+              <label/>
+              
+            <reference><property required="no"><keyword/><value/><default/></property></reference></parameter>
+          </parameters></group>
+      </parameter>
+      <parameter>
+        <label>Parameters for automatic CMP search/stack</label>
+        <group instanciable="no" expand="no">
+          <template-instance><parameters default-selection="0" selection=""><parameter><label>Factor for sampling rate in q search related to input</label><float><property required="no"><keyword>qdtfac=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in q search</label><int><property required="no"><keyword>qiter=</keyword><value/><default>3</default></property></int></parameter></parameters></template-instance>
+        <parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group>
+      </parameter>
+    <parameter><label>Parameters for angle and Rn search</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Maximum angle in degrees to be searched for</label><float><property required="no"><keyword>maxangle=</keyword><value/><default>60.0</default></property></float></parameter><parameter><label>Minimum angle to be searched for</label><float><property required="no"><keyword>minangle=</keyword><value/><default/></property></float></parameter><parameter><label>Increment for first iteration of angle search</label><float><property required="no"><keyword>dangle=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in angle search</label><int><property required="no"><keyword>angleiter=</keyword><value/><default>3</default></property></int></parameter><parameter><label>Factor for sampling rate in Rn search related to input</label><float><property required="no"><keyword>Rndtfac=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in Rn search</label><int><property required="no"><keyword>Rniter=</keyword><value/><default>3</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Parameters for intial stack</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Factor for sampling rate in Rnip search related to input</label><float><property required="no"><keyword>Rnipdtfac=</keyword><value/><default>1.0</default></property></float></parameter><parameter><label>Number of iterations in Rnip search</label><int><property required="no"><keyword>Rnipiter=</keyword><value/><default>3</default></property></int></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Parameters for optimization</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Coherence threshold for smallest traveltime</label><float><property required="no"><keyword>mincohthresh=</keyword><value/><default/></property></float></parameter><parameter><label>Coherence threshold for largest traveltime</label><float><property required="no"><keyword>maxcohthresh=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum number of optimization iterations</label><int min="10"><property required="no"><keyword>optiter=</keyword><value/><default>100</default></property></int></parameter><parameter><label>Maximum mean geometrical deviation to terminate</label><float><property required="no"><keyword>opteps=</keyword><value/><default>0.0001</default></property></float></parameter><parameter><label>Radius for Rn transformation</label><float><property required="no"><keyword>transrad=</keyword><value/><default>100.0</default></property></float></parameter><parameter><label>Variation of emergence angle in degrees</label><float><property required="no"><keyword>varangle=</keyword><value/><default>6.0</default></property></float></parameter><parameter><label>Percentile variation of Rnip</label><float><property required="no"><keyword>varRnip=</keyword><value/><default>5.0</default></property></float></parameter><parameter><label>Variation of transformed Rn in degrees</label><float><property required="no"><keyword>varRn=</keyword><value/><default>6.0</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Aperture parameters</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0" selection=""><parameter><label>Minimum offset aperture for traveltime</label><float><property required="no"><keyword>minoffsetap=</keyword><value/><default/></property></float></parameter><parameter><label>Traveltime at which minimum offset aperture applies</label><float><property required="no"><keyword>minofftime=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum offset aperture for traveltime</label><float><property required="no"><keyword>maxoffsetap=</keyword><value/><default/></property></float></parameter><parameter><label>Traveltime at which maximum offset aperture applies</label><float><property required="no"><keyword>maxofftime=</keyword><value/><default/></property></float></parameter><parameter><label>Minimum aperture halfwidth in ZO section for traveltime zero</label><float><property required="no"><keyword>minxap=</keyword><value/><default/></property></float></parameter><parameter><label>Maximum aperture in ZO section</label><float><property required="no"><keyword>maxxap=</keyword><value/><default/></property></float></parameter><parameter><label>Average shot interval</label><float><property required="no"><keyword>shotint=</keyword><value/><default/></property></float></parameter><parameter><label>Average model velocity</label><float><property required="no"><keyword>avgvel=</keyword><value/><default/></property></float></parameter><parameter><label>Mean frequency of signal wavelet</label><float><property required="no"><keyword>wavefr=</keyword><value/><default/></property></float></parameter><parameter><label>Relative size of cosine tapered aperture</label><float min="0" max="1"><property required="no"><keyword>tapratio=</keyword><value/><default>0.3</default></property></float></parameter><parameter><label>Relative size of aperture for plane wave search</label><float min="0.1" max="0.9"><property required="no"><keyword>pwaperfac=</keyword><value/><default>0.3</default></property></float></parameter></parameters></template-instance><parameters default-selection="0" selection=""><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter><parameter><label>Supergather parameters</label><group instanciable="no" expand="no"><template-instance><parameters default-selection="0"><parameter><label>Offsets to use in supergather</label><enum><property required="no"><keyword>offsign=</keyword><value/><default>1</default></property><option><label>positive offsets</label><value>1</value></option><option><label>negative offsets</label><value>0</value></option></enum></parameter><parameter><label>Average receiver interval in generated supergathers</label><float><property required="yes"><keyword>recint=</keyword><value/><default></default></property></float></parameter><parameter><label>Use offset bins</label><enum><property required="no"><keyword>offreg=</keyword><value/><default>1</default></property><option><label>regularly defined by average receiver interval </label><value>1</value></option><option><label>derived from data</label><value>0</value></option></enum></parameter><parameter><label>Offset aperture used in partial stacking</label><float><property required="no"><keyword>offap=</keyword><value/><default/></property></float></parameter></parameters></template-instance><parameters default-selection="0"><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter><parameter><label/><reference><property required="no"><keyword/><value/><default/></property></reference></parameter></parameters></group></parameter></parameters>
+  </program>
+</flow>
+ 

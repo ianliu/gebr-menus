@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Offset Extrapolation</title>
+  <description>Smaller Offset extrapolation via Offset Continuation method</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Offset Extrapolation</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Offset Extrapolation</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Smaller Offset extrapolation via Offset Continuation method
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Smaller Offset extrapolation via Offset Continuation method for common-offset gathers.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jun 22, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jun 22, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-22T13:05:36.708344Z</created>
+    <modified>2010-08-06T00:43:06.362614Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Offset Extrapolation</title>
+    <binary>suocext</binary>
+    <description>Smaller Offset extrapolation via Offset Continuation method</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Offset Extrapolation</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Offset Extrapolation</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Smaller Offset extrapolation via Offset Continuation method
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Smaller Offset extrapolation via Offset Continuation method for common-offset gathers.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">CDP properties</span>
+                        <ul>
+                                <li class="req">
+                                        <span class="reqlabel">Minimum CDP for which to apply DMO</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Maximum CDP for which to apply DMO</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Distance between adjacent CDP bins (m)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Offset properties</span>
+                        <ul>
+                                <li class="req">
+                                        <span class="reqlabel">Number of offsets to mix</span></li>
+                                <li class="req">
+                                        <span class="reqlabel">Offset to extrapolate</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">DMO properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Times corresponding to RMS velocities</span></li>
+                                <li>
+                                        <span class="label">RMS velocities corresponding to times</span></li>
+                                <li>
+                                        <span class="label">DMO stretch factor</span><br />
+                                        Try the value 0.6 for typical v(z).</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Maximum frequency in input traces (Hz)</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+                <li>
+                        <span class="label">Directory path prefix for storing temporary files</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Input traces should be sorted into common-offset gathers. One common-offset gather ends and another begins when the offset field of the trace headers changes. One common-offset gather usually is enough.</p>
+<p>
+        The CDP field of the input trace headers must be the CDP bin number, <u>not</u> the CDP location expressed in units of meters or feet.</p>
+<p>
+        The parameter <b>Number of offsets to mix</b> should typically be equal the ratio of the shotpoint spacing to the CDP spacing.<br />
+        This choice ensures that every CDP will be represented in each offset mix.<br />
+        Traces in each mix will contribute through DMO to other traces in adjacent CDPs within that mix.</p>
+<p>
+        The parameters <b>Times corresponding to RMS velocities</b> and <b>RMS velocities corresponding to times</b> arrays specify a velocity function of time that is used to implement a first-order correction for depth-variable velocity.<br />
+        The times in parameter <b>Times corresponding to RMS velocities</b> must be monotonically increasing.</p>
+<p>
+        For each offset, the minimum time at which a non-zero sample exists is used to determine a mute time.<br />
+        Output samples for times earlier than this, mute time will be zeroed.<br />
+        Computation time may be significantly reduced if the input traces are zeroed (muted) for early times at large offsets.</p>
+<p>
+        A term for better amplitude reconstruction was added to Hale's formulation.</p>
+<p>
+        This program accesses the following header keywords:</p>
+<ul>
+        <li>
+                Number of samples,</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds,</li>
+<!-- dt -->     <li>
+                Delay recording time in ms,</li>
+<!-- delrt -->  <li>
+                Offset (signed distance from source to receiver group),</li>
+<!-- offset --> <li>
+                CDP ensemble number.</li>
+<!-- cdp --></ul>
+<p>
+        This program modifies the following header keywords:</p>
+<ul>
+        <li>
+                Offset (signed distance from source to receiver group).</li>
+</ul>
+<h2 id="header_3">
+        References</h2>
+<!-- List of references --><ul>
+        <li>
+                C. Theodoro &amp; K. Larner, 1998<br />
+                Extrapolation of seismic data to small offsets (CWP-276).</li>
+        <li>
+                Dip-Moveout Processing - SEG Course Notes<br />
+                Dave Hale, 1988</li>
+        <li>
+                Bleistein, Cohen &amp; Jaramillo, 1997<br />
+                True amplitude transformation to zero offset of data from curved reflectors (CWP-262).</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        Carlos E. Theodoro (modification of Hale's <b>SU DMO FK</b> program)</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
+        Credits</h2></a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>CDP properties</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Minimum CDP for which to apply DMO</label>
+                <int>
+                  <property required="yes">
+                    <keyword>cdpmin=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Maximum CDP for which to apply DMO</label>
+                <int>
+                  <property required="yes">
+                    <keyword>cdpmax=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Distance between adjacent CDP bins (m)</label>
+                <float>
+                  <property required="yes">
+                    <keyword>dxcdp=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Offset properties</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of offsets to mix</label>
+                <int>
+                  <property required="yes">
+                    <keyword>noffmix=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Offset to extrapolate</label>
+                <float>
+                  <property required="yes">
+                    <keyword>offextr=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>DMO properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Times corresponding to RMS velocities</label>
+                <float>
+                  <property required="no">
+                    <keyword>tdmo=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>RMS velocities corresponding to times</label>
+                <float>
+                  <property required="no">
+                    <keyword>vdmo=</keyword>
+                    <value/>
+                    <default>1500.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>DMO stretch factor</label>
+                <float>
+                  <property required="no">
+                    <keyword>sdmo=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1500.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Maximum frequency in input traces (Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory path prefix for storing temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU DMO VZ</title>
+  <description>DMO for V(Z) media for common-offset gathers</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU DMO VZ</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU DMO VZ</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            DMO for V(Z) media for common-offset gathers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>DMO for V(Z) media for common-offset gathers.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jun 01, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jun 01, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-01T15:05:12.512237Z</created>
+    <modified>2010-08-06T00:43:04.722419Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU DMO VZ</title>
+    <binary>sudmovz</binary>
+    <description>DMO for V(Z) media for common-offset gathers</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU DMO VZ</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU DMO VZ</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            DMO for V(Z) media for common-offset gathers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>DMO for V(Z) media for common-offset gathers.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li class="req"><span class="reqlabel">Minimum CDP for wich to aply DMO</span></li>
+
+              <li class="req"><span class="reqlabel">Maximum CDP for wich to aply DMO</span></li>
+
+              <li class="req"><span class="reqlabel">Distance between adjacend CDP bins (meters)</span></li>
+
+              <li class="req"><span class="reqlabel">Number of offsets to mix</span></li>
+
+              <li><span class="label">Binary file containing interval velocities (m/s)</span><br/>
+                File non-ascII.</li>
+
+              <li><span class="label">Times corresponding to interval velocities (s)</span></li>
+
+              <li><span class="label">Interval velocities corresponding to times (m/s)</span></li>
+
+              <li><span class="label">Maximum frequency in input traces (Hz)</span></li>
+
+              <li><span class="label">Stretch mute used for NMO correction</span></li>
+
+              <li><span class="label">Twist this knob for speed (and aliasing)</span></li>
+
+              <li><span class="label">Echoes extra information</span></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p> 
+Input traces should be sorted into common-offset gathers.  One common-
+offset gather ends and another begins when the offset field of the trace
+headers changes.</p>                                            
+
+<p>The CDP field of the input trace headers must be the cdp bin NUMBER, NOT
+the CDP location expressed in units of meters or feet.</p>              
+
+<p>The parameter <b>Number of offsets to mix</b> should typically equal the ratio of
+the shotpoint spacing to the CDP spacing.  This choice ensures that every
+CDP will be represented in each offset mix.<br/>  Traces in each mix will       
+contribute through DMO to other traces in adjacent CDPs within that mix.</p>
+
+<p><b>Binary file containing interval velocities (m/s)</b> should contain the regularly sampled interval velocities as a        
+ function of time.  If <b>Binary file containing interval velocities (m/s)</b> is not supplied, the interval velocity   
+ function is defined by linear interpolation of the values in the <b>Times corresponding to interval velocities (s)</b> and 
+<b>Interval velocities corresponding to times (m/s)</b> arrays.<br/>The times parameter <b>Times corresponding to interval velocities (s)</b>
+ must be monotonically increasing.</p>
+
+<p>For each offset, the minimum time to process is determined using the parameter <b>Stretch mute used for NMO correction</b>.<br/>     
+The DMO correction is not computed for samples that have experienced greater stretch during NMO.</p>
+
+<p>This program accesses the following header keywords:
+<ul>
+<li>Number of traces</li>  <!-- nt -->
+<li>Sampling interval in microseconds</li> <!-- dt -->
+<li>Delay recording time in ms</li> <!-- delrt -->
+<li>Offset (signed distance from source to receiver group)</li> <!-- offset -->
+<li>CDP ensemble number</li> <!-- cdp -->
+</ul>
+</p>
+
+
+
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+
+          <!-- List of references -->
+          <ul>
+
+            <li>Artley, C., 1992,<br/>
+      Dip-moveout processing for depth-variable velocity,<br/>
+      M.S. Thesis, Colorado School of Mines;<br/>
+      also published at Center for Wave Phenomena report CWP-115.</li>
+
+          </ul>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Craig Artley.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Minimum CDP for wich to aply DMO</label>
+        <int>
+          <property required="yes">
+            <keyword>cdpmin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum CDP for wich to aply DMO</label>
+        <int>
+          <property required="yes">
+            <keyword>cdpmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Distance between adjacend CDP bins (meters)</label>
+        <float min="0">
+          <property required="yes">
+            <keyword>dxcdp=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of offsets to mix</label>
+        <int>
+          <property required="yes">
+            <keyword>noffmix=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Binary file containing interval velocities (m/s)</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Times corresponding to interval velocities (s)</label>
+        <float>
+          <property required="no">
+            <keyword>tdmo=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Interval velocities corresponding to times (m/s)</label>
+        <float>
+          <property required="no">
+            <keyword>vdmo=</keyword>
+            <value/>
+            <default>1500.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum frequency in input traces (Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Stretch mute used for NMO correction</label>
+        <float>
+          <property required="no">
+            <keyword>smute=</keyword>
+            <value/>
+            <default>1.5</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Twist this knob for speed (and aliasing)</label>
+        <float>
+          <property required="no">
+            <keyword>speed=</keyword>
+            <value/>
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

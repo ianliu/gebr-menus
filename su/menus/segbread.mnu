@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SEG-B Read</title>
+  <description>Read an SEG-B tape</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SEG-B Read</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SEG-B Read</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Read an SEG-B tape
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Read an SEG-B tape.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 07, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Set 07, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-07T14:54:19.106808Z</created>
+    <modified>2010-09-08T14:16:05.135932Z</modified>
+    <lastrun/>
+  </date>
+  <category>Import/Export</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SEG-B Read</title>
+    <binary>segbread</binary>
+    <description>Read an SEG-B tape</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SEG-B Read</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SEG-B Read</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Read an SEG-B tape
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Read an SEG-B tape.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Input tape file</span></li>
+                <li>
+                        <span class="label">Number of samples</span><br />
+                        If specified, this overrides the number that is obtained from the file header.<br />
+                        Usefull for variable trace length.</li>
+                <li>
+                        <span class="label">Number of traces per record</span><br />
+                        If specified, this overrides the computed value.<br />
+                        Usefull for some DFS-V instruments.</li>
+                <li>
+                        <span class="label">Output auxiliary channels</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        <strong>Only reads disk SEG-B files!</strong></p>
+<p>
+        Tested on files created by TransMedia Technologies Calgary Alberta, Canada.<br />
+        In their format each data block is preceded by an eight byte header 2 unsigned 32 bit IBM format integer.<br />
+        First number is the block number, second is the length of block given in bytes.</p>
+<p>
+        <u>(This program is largely untested. Testing reports on SEG-B data and improvements to the code).</u></p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Balasz Nemeth, Potash Corporation Saskatechwan given to CWP in 2008.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Input tape file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="yes">
+            <keyword>tape=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of samples</label>
+        <int>
+          <property required="no">
+            <keyword>ns=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces per record</label>
+        <int>
+          <property required="no">
+            <keyword>ntro=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Output auxiliary channels</label>
+        <flag>
+          <property required="no">
+            <keyword>auxf=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

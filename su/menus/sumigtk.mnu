@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Mig TK</title>
+  <description>Migration via T-K domain method</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mig TK</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Mig TK</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Migration via T-K domain method for common-midpoint stacked data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Migration via T-K domain method for common-midpoint stacked data.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jun 09, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jun 09, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-09T15:43:20.620835Z</created>
+    <modified>2010-08-06T00:43:06.136757Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Mig TK</title>
+    <binary>sumigtk</binary>
+    <description>Migration via T-K domain method for common-midpoint stacked data</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mig TK</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Mig TK</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Migration via T-K domain method for common-midpoint stacked data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Migration via T-K domain method for common-midpoint stacked data.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li class="req"><span class="reqlabel">Distance between successive CDP's</span></li>
+
+              <li><span class="label">Maximum frequency</span></li>
+
+              <li><span class="label">Times corresponding to interval velocities</span></li>
+
+              <li><span class="label">Interval velocities corresponding to times</span></li>
+
+              <li><span class="label">Binary file containing velocities v(t)</span><br/>
+                Non-ascII.</li>
+
+              <li><span class="label">Number of CDP's to pad with zeros before FFT</span></li>
+
+              <li><span class="label">Length of linear taper for left and right edges</span></li>
+
+              <li><span class="label">Echoes extra information</span></li>
+
+              <li><span class="label">Directory path prefix for storing temporary files</span></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+          
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>
+        Input traces must be sorted by either increasing or decreasing CDP.</p> 
+
+        <p>The <b>Times corresponding to interval velocities</b> and <b>Interval velocities corresponding to times</b> arrays specify an 
+        interval velocity function of time.<br/>
+        Linear interpolation and constant extrapolation is used to determine    
+        interval velocities at times not specified.<br/>  Values specified in <b>Times corresponding to interval velocities</b> 
+        must increase monotonically.</p>
+
+        <p>Alternatively, interval velocities may be stored in a binary file    
+        containing one velocity for every time sample.<br.> If <b>Binary file containing velocities v(t)</b> is specified,
+        then the <b>Times corresponding to interval velocities</b> and <b>Interval velocities corresponding to times</b> arrays are ignored.</p>                
+
+        <p>The time of first sample is assumed to be zero, regardless of the value
+        of the trace header field "Delay recording time in ms".</p>                                     
+
+        <p>The migration is a reverse time migration in the (t,k) domain. In the        
+        first step, the data g(t,x) are Fourier transformed x->k into the       
+        the time-wavenumber domain g(t,k).</p>          
+
+        <p>Then looping over wavenumbers, the data are then reverse-time                
+        finite-difference migrated, wavenumber by wavenumber.<br/> The resulting        
+        migrated data m(tau,k), now in the tau (migrated time) and k domain,    
+        are inverse fourier transformed back into m(tau,xout) and written out.</p>
+
+        <p>This program accesses the following header keywords:
+          <ul>
+            <li>Number of samples,</li>  <!-- ns -->
+            <li>Sampling interval in microseconds.</li> <!-- dt -->
+          </ul>
+        </p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Dave Hale.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Distance between successive CDP's</label>
+        <float>
+          <property required="yes">
+            <keyword>dxcdp=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum frequency</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Times corresponding to interval velocities</label>
+        <float>
+          <property required="no">
+            <keyword>tmig=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Interval velocities corresponding to times</label>
+        <float>
+          <property required="no">
+            <keyword>vmig=</keyword>
+            <value/>
+            <default>1500.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Binary file containing velocities v(t)</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of CDP's to pad with zeros before FFT</label>
+        <int>
+          <property required="no">
+            <keyword>nxpad=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Length of linear taper for left and right edges</label>
+        <int>
+          <property required="no">
+            <keyword>ltaper=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory path prefix for storing temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Normalize</title>
+  <description>Trace balancing by RMS, maximum, or median</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Normalize</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Normalize</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Trace balancing by RMS, maximum, or median
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Trace balancing by RMS, maximum, or median.</p>
+<h2 id="header_1">
+        Credits</h2>
+<p>
+        Abr 25, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Abr 25, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-04-25T15:25:45.690464Z</created>
+    <modified>2010-08-06T01:38:26.866185Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Utilities</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
+    <title>SU Normalize</title>
+    <binary>sunormalize</binary>
+    <description>Trace balancing by RMS, maximum, or median</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Normalize</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Normalize</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Trace balancing by RMS, maximum, or median
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Utilities<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Trace balancing by RMS, maximum, or median.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Time sampling interval</span><br />
+                        If not set in header, this value is mandatory</li>
+                <li class="req">
+                        <span class="reqlabel">Number of samples</span><br />
+                        If not set in header, this value is mandatory</li>
+                <li>
+                        <span class="label">Norm to balancing trace</span>
+                        <ul>
+                                <li>
+                                        RMS</li>
+                                <li>
+                                        Maximum</li>
+                                <li>
+                                        Median</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Starting time for window</span></li>
+                <li>
+                        <span class="label">Ending time for window</span></li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        This program accesses the following header keywords</p>
+<ul>
+        <li>
+                Number of samples</li>
+<!-- ns -->     <li>
+                Time sampling interval</li>
+</ul>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Author: Ramone Carbonell, Inst. Earth Sciences-CSIC Barcelona, Spain, April 1998.</p>
+<p>
+        Modifications: Nils Maercklin, RISSC, University of Naples, Italy, September 2006</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="yes">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of samples</label>
+        <int>
+          <property required="yes">
+            <keyword>ns=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Norm to balancing trace</label>
+        <enum>
+          <property required="no">
+            <keyword>norm=</keyword>
+            <value/>
+            <default>rms</default>
+          </property>
+          <option>
+            <label>RMS</label>
+            <value>rms</value>
+          </option>
+          <option>
+            <label>Maximum</label>
+            <value>max</value>
+          </option>
+          <option>
+            <label>Median</label>
+            <value>med</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Starting time for window</label>
+        <float>
+          <property required="no">
+            <keyword>t0=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Ending time for window</label>
+        <float>
+          <property required="no">
+            <keyword>t1=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

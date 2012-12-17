@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Rand Spikes</title>
+  <description>Make a small data set of random spikes</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Rand Spikes</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Rand Spikes</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Make a small data set of random spikes
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Creates a common offset SU data file with random spikes.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 21, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 21, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-21T17:54:09.222407Z</created>
+    <modified>2010-09-24T14:23:10.601024Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Rand Spikes</title>
+    <binary>surandspike</binary>
+    <description>Make a small data set of random spikes</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Rand Spikes</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Rand Spikes</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Make a small data set of random spikes 
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Creates a common offset SU data file with random spikes.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Number of time samples</span></li>
+                <li>
+                        <span class="label">Number of traces</span></li>
+                <li>
+                        <span class="label">Time sample rate in seconds</span></li>
+                <li>
+                        <span class="label">Number of spikes per trace</span></li>
+                <li>
+                        <span class="label">Absolute (max) spike value</span></li>
+                <li>
+                        <span class="label">Spikes mode</span>
+                        <ul>
+                                <li>
+                                        Different spikes on each trace</li>
+                                <li>
+                                        Same spikes on each trace</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Random number seed</span><br />
+                        Default value is set from clock.</li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+         This program sets the following header keywords:</p>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<ul>
+        <li>
+                 Number of samples,</li>
+        <li>
+                Sampling interval in microseconds,</li>
+        <li>
+                 Offset (signed distance from source to receiver group).</li>
+</ul>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+         ARAMCO: Chris Liner.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of time samples</label>
+        <int>
+          <property required="no">
+            <keyword>n1=</keyword>
+            <value/>
+            <default>500</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces</label>
+        <int>
+          <property required="no">
+            <keyword>n2=</keyword>
+            <value/>
+            <default>200</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Time sample rate in seconds</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default>0.002</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of spikes per trace</label>
+        <int>
+          <property required="no">
+            <keyword>nspk=</keyword>
+            <value/>
+            <default>20</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Absolute (max) spike value</label>
+        <float>
+          <property required="no">
+            <keyword>amax=</keyword>
+            <value/>
+            <default>0.2</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Spikes mode</label>
+        <enum>
+          <property required="no">
+            <keyword>mode=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>Different spikes on each trace</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Same spikes on each trace</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Random number seed</label>
+        <int>
+          <property required="no">
+            <keyword>seed=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

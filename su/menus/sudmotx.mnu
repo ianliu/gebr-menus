@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU DMO TX</title>
+  <description>DMO via T-X domain (Kirchhoff) method for common-offset gathers</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU DMO TX</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU DMO TX</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            DMO via T-X domain (Kirchhoff) method for common-offset gathers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>DMO via T-X domain (Kirchhoff) method for common-offset gathers.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jun 01, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jun 01, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-01T14:24:42.087998Z</created>
+    <modified>2010-08-06T00:43:04.695845Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU DMO TX</title>
+    <binary>sudmotx</binary>
+    <description>DMO via T-X domain (Kirchhoff) method for common-offset gathers</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU DMO TX</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU DMO TX</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            DMO via T-X domain (Kirchhoff) method for common-offset gathers
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>DMO via T-X domain (Kirchhoff) method for common-offset gathers.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li class="req"><span class="reqlabel">Minimum CDP for wich to aply DMO</span></li>
+
+              <li class="req"><span class="reqlabel">Maximum CDP for wich to aply DMO</span></li>
+
+              <li class="req"><span class="reqlabel">Distance between adjacend CDP bins (meters)</span></li>
+
+              <li class="req"><span class="reqlabel">Number of offsets to mix</span></li>
+
+              <li><span class="label">Maximum offset</span></li>
+
+              <li><span class="label">Mute time at maximum offset</span></li>
+
+              <li><span class="label">RMS velocity at mute time</span></li>
+
+              <li><span class="label">Echoes extra information</span></li>
+
+              <li><span class="label">Directory path for storing temporary files</span></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+  <p>Input traces should be sorted into common-offset gathers.  One common-
+ offset gather ends and another begins when the offset field of the trace
+ headers changes.</p>                                                   
+
+ <p>The CDP field of the input trace headers must be the CDP bin NUMBER, NOT
+ the CDP location expressed in units of meters or feet.</p>             
+
+ <p>The parameter <b>Number of offsets to mix</b> should typically equal the ratio of
+ the shotpoint spacing to the CDP spacing.<br/> This choice ensures that every
+ CDP will be represented in each offset mix.  Traces in each mix will   
+ contribute through DMO to other traces in adjacent CDPs within that mix.</p>
+
+ <p>The defaults for parameters <b>Maximum offset</b> and <b>RMS velocity at mute time</b> are appropriate only for metric units.
+ If distances are measured in feet, then these parameters should be     
+ specified explicitly.</p>                                                      
+
+<p>The parameters <b>Maximum offset</b>, <b>Mute time at maximum offset</b> ,and <b>RMS velocity at mute time</b>, need not be specified precisely.<br/>
+ If these values are unknown, then one should overestimate <b>Maximum offset</b> and underestimate 
+  <b>Mute time at maximum offset</b> and <b>RMS velocity at mute time</b>.</p>                                  
+
+ <p>No muting is actually performed.  The parameter <b>Mute time at maximum offset</b> is used only to  
+ determine parameters required to perform DMO.</p>
+
+<p>This program accesses the following header keywords
+  <ul>
+    <li>Number of samples</li>  <!-- ns -->
+    <li>Sampling interval in microseconds</li> <!-- dt -->
+    <li>Delay recording time in ms</li> <!-- delrt -->
+    <li>Offset (signed distance from source to receiver group)</li> <!-- offset -->
+    <li>CDP ensemble number</li> <!-- cdp -->
+  </ul>
+</p>
+
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+
+          <!-- List of references -->
+          <ul>
+
+            <li>A non-aliased integral method for dip-moveout.<br/>
+                Dave Hale,<br/>
+                submitted to Geophysics, June, 1990.</li>
+
+          </ul>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Dave Hale.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Minimum CDP for wich to aply DMO</label>
+        <int>
+          <property required="yes">
+            <keyword>cdpmin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum CDP for wich to aply DMO</label>
+        <int>
+          <property required="yes">
+            <keyword>cdpmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Distance between adjacend CDP bins (meters)</label>
+        <float min="0">
+          <property required="yes">
+            <keyword>dxcdp=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of offsets to mix</label>
+        <int>
+          <property required="yes">
+            <keyword>noffmix=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum offset</label>
+        <float>
+          <property required="no">
+            <keyword>offmax=</keyword>
+            <value/>
+            <default>3000.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Mute time at maximum offset</label>
+        <float>
+          <property required="no">
+            <keyword>tmute=</keyword>
+            <value/>
+            <default>2.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>RMS velocity at mute time</label>
+        <float>
+          <property required="no">
+            <keyword>vrms=</keyword>
+            <value/>
+            <default>1500.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Directory path for storing temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

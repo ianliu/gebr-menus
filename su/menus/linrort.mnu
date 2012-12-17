@@ -1,0 +1,1883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Lin Reflection Coef</title>
+  <description>Linearized P-P, P-S1 and P-S2 reflection coefficients</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Lin Reflection Coef</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Lin Reflection Coef</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Linearized P-P, P-S1 and P-S2 reflection coefficients
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Linearized P-P, P-S1 and P-S2 reflection coefficients      
+          for a horizontal interface separating two of any of the       
+          following halfspaces: Isotropic, VTI anisotropy, HTI anisotropy and ORTHORHOMBIC anisotropy.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jul 06, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jul 06, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-07-06T15:46:02.829272Z</created>
+    <modified>2010-08-06T00:43:02.812499Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured" version="SU 42">
+    <title>Lin Reflection Coef</title>
+    <binary>linrort</binary>
+    <description>Linearized P-P, P-S1 and P-S2 reflection coefficients</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Lin Reflection Coef</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Lin Reflection Coef</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Linearized P-P, P-S1 and P-S2 reflection coefficients
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Linearized P-P, P-S1 and P-S2 reflection coefficients      
+                for a horizontal interface separating two of any of the 
+                following halfspaces: Isotropic, VTI anisotropy, HTI anisotropy and ORTHORHOMBIC anisotropy.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li><span class="label">Medium type of the incidence halfspace</span>
+                <ul>
+                    <li>Isotropic</li>
+                    <li>VTI anisotropy</li>
+                    <li>HTI anisotropy</li>
+                    <li>ORTHORHOMBIC anisotropy</li>
+                </ul></li>
+
+              <li class="group"><span class="grouplabel">Parameters for Isotropic in incidence halfspace</span>
+
+              <ul>
+              <li><span class="label">P-wave velocity</span></li>
+
+              <li><span class="label">S-wave velocity</span></li>
+
+              <li><span class="label">Density</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Parameters for VTI anisotropy in incidence halfspace</span>
+
+              <ul>
+              <li><span class="label">P-wave vertical velocity (V33)</span></li>
+
+              <li><span class="label">S-wave vertical velocity (V44=V55)</span></li>
+
+              <li><span class="label">Density</span></li>
+
+              <li><span class="label">Thomsen's generic epsilon</span></li>
+
+              <li><span class="label">Thomsen's generic delta</span></li>
+
+              <li><span class="label">Thomsen's generic gamma</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Parameters for HTI anisotropy in incidence halfspace</span>
+
+              <ul>
+              <li><span class="label">P-wave vertical velocity (V33)</span></li>
+
+              <li><span class="label">"Fast" S-wave vertical velocity (V44)</span></li>
+
+              <li><span class="label">Density</span></li>
+
+              <li><span class="label">Tsvankin's "vertical" epsilon</span></li>
+
+              <li><span class="label">Tsvankin's "vertical" delta</span></li>
+
+              <li><span class="label">Tsvankin's "vertical" gamma</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Parameters for ORTHORHOMBIC anisotropy in incidence halfspace</span>
+
+              <ul>
+              <li><span class="label">P-wave vertical velocity (V33)</span></li>
+
+              <li><span class="label">X2-polarized S-wave vertical velocity (V44)</span></li>
+
+              <li><span class="label">Density</span></li>
+
+              <li><span class="label">Tsvankin's epsilon in [x2,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's delta in [x2,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's gamma in [x2,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's epsilon in [x1,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's delta in [x1,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's gamma in [x1,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's delta in [x1,x2] plane</span></li>
+
+              </ul></li>
+
+              <li><span class="label">Medium type of the reflecting halfspace</span>
+                <ul>
+                    <li>Isotropic</li>
+                    <li>VTI anisotropy</li>
+                    <li>HTI anisotropy</li>
+                    <li>ORTHORHOMBIC anisotropy</li>
+                </ul></li>
+
+              <li class="group"><span class="grouplabel">Parameters for Isotropic in reflecting halfspace</span>
+
+              <ul>
+              <li><span class="label">P-wave velocity</span></li>
+
+              <li><span class="label">S-wave velocity</span></li>
+
+              <li><span class="label">Density</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Parameters for VTI anisotropy in reflecting halfspace</span>
+
+              <ul>
+              <li><span class="label">P-wave vertical velocity (V33)</span></li>
+
+              <li><span class="label">S-wave vertical velocity (V44=V55)</span></li>
+
+              <li><span class="label">Density</span></li>
+
+              <li><span class="label">Thomsen's generic epsilon</span></li>
+
+              <li><span class="label">Thomsen's generic delta</span></li>
+
+              </ul></li>
+
+                <p>Note you do not need "Thomsen's generic gamma" parameter for evaluation of weak-anisotropy reflection coefficients.</p>
+
+              <li class="group"><span class="grouplabel">Parameters for HTI anisotropy in reflecting halfspace</span>
+
+              <ul>
+              <li><span class="label">P-wave vertical velocity (V33)</span></li>
+
+              <li><span class="label">"Fast" S-wave vertical velocity (V44)</span></li>
+
+              <li><span class="label">Density</span></li>
+
+              <li><span class="label">Tsvankin's "vertical" epsilon</span></li>
+
+              <li><span class="label">Tsvankin's "vertical" delta</span></li>
+
+              <li><span class="label">Tsvankin's "vertical" gamma</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Parameters for ORTHORHOMBIC anisotropy in reflecting halfspace</span>
+
+              <ul>
+              <li><span class="label">P-wave vertical velocity (V33)</span></li>
+
+              <li><span class="label">X2-polarized S-wave vertical velocity (V44)</span></li>
+
+              <li><span class="label">Density</span></li>
+
+              <li><span class="label">Tsvankin's epsilon in [x2,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's delta in [x2,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's gamma in [x2,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's epsilon in [x1,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's delta in [x1,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's gamma in [x1,x3] plane</span></li>
+
+              <li><span class="label">Tsvankin's delta in [x1,x2] plane</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Incidence and azimuth angles properties</span>
+
+              <ul>
+              <li><span class="label">Generated automatically using the setup values below</span></li>
+
+              <li><span class="label">Read from a file of two columns (inc. angle, azimuth)</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Parameters to generate incidence and azimuth angles</span>
+
+              <ul>
+              <li><span class="label">First incidence phase angle</span></li>
+
+              <li><span class="label">Last incidence angle</span></li>
+
+              <li><span class="label">Incidence angle increment</span></li>
+
+              <li><span class="label">First azimuth (in deg)</span></li>
+
+              <li><span class="label">Last azimuth (in deg)</span></li>
+
+              <li><span class="label">Azimuth increment (in deg)</span></li>
+
+              <li><span class="label">Azimuthal rotation of the lower reflecting halfspace</span><br/> A symmetry axis plane for HTI, or a symmetry plane for ORTHORHOMBIC, with respect to the x1-axis.</li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Output files</span>
+
+              <ul>
+              <li><span class="label">Information output file</span></li>
+
+              <li><span class="label">File with Rpp reflection coefficients</span><br/>
+                 Inc. phase angle, azimuth, reflection coefficient;<br/>
+                 for <b>Generated automatically using the setup values below</b>, the inc. angle is the fast dimension.</li>
+
+              <li><span class="label">File with Rps reflection coefficients</span><br/>
+                Inc. phase angle, azimuth, Rps1, Rps2, cos(PHI), sin(PHI);<br/>
+                for <b>Generated automatically using the setup values below</b>, the inc. angle is the fast dimension.</li>
+
+              <li><span class="label">File with SV and SH projections of reflection coefficients</span><br/>
+                Inc. phase angle, azimuth, Rsv, Rsh, cos(PHI), sin(PHI);<br/> 
+                for  <b>Generated automatically using the setup values below</b>, the inc. angle is the fast dimension.</li>
+
+              <li><span class="label">File containing error estimates evaluated</span><br/>
+                Error estimates of Rpp, Rpsv and Rpsh approximations; global error is analysed as well as partial contributions to the error due to the isotropic velocity contrasts, and due to anisotropic  upper and lower halfspaces.<br/>
+                The error file is self-explanatory, see also descriptions of subroutines P_err_2nd_order, SV_err_2nd_order and SH_err_2nd_order.</li>
+
+              </ul></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+           
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The right-hand Cartesian coordinate system with the x3-axis pointing  
+        upward has been chosen. The upper halfspace (<strong>Incidence halfspace</strong>) contains the incident P-wave. Incidence angles can vary from &lt;0,PI/2), azimuths are unlimited, +azimuth sense counted from x1->x2 axes (azimuth=0 corresponds to the direction of x1-axis).
+        <br/>In the current version, the coordinate system is attached to the <strong>Incidence halfspace</strong> (e.t. the symmetry axis plane of <strong>HTI Incidence halfspace</strong>, or one of symmetry planes of <strong>ORTHORHOMBIC Incidence halfspace</strong>, is aligned with the x1-axis), however, the <strong>Reflecting halfspace</strong> can be arbitrarily rotated along the x3-axis with respect to the <strong>Incidence halfspace</strong>.
+        <br/>The positive weak-anisotropy polarization of the reflected P-P wave (e.t. positive P-P reflection coefficient) is close to the direction of isotropic slowness vector of the wave (pointing outward the interface).
+        <br/> Similarly, weak-anisotropy S-wave reflection coefficients are described in terms of "SV" and "SH" isotropic polarizations, "SV" and "SH" being unit vectors in the plane perpendicular to the isotropic slowness vector.
+        <br/> Then, the positive "SV" polarization vector lies in the incidence plane and points towards the interface, and positive "SH" polarization vector is perpendicular to the incidence plane, aligned with the positive        x2-axis, if azimuth=0.
+        <br/> Rotation angle "PHI", characterizing a rotation of "the best projection" of the S1-wave polarization vector in the isotropic SV-SH plane in the <strong>Incidence halfspace</strong>, is counted in the positive sense from "SV" axis (PHI=0) towards the "SH" axis (PHI=PI/2).
+        <br/> Of course, S2 is perpendicular to S1, and the projection of S1 and S2 polarizations onto the SV-SH plane coincides with SV and SH directions, respectively, for PHI=0.</p>                
+
+        <p>The units for velocities are km/s, angles I/O are in degrees.</p>    
+        
+        <p>The coefficients are computed as functions of phase incidence angle and azimuth (determined by the incidence slowness vector).
+        <br/>Vertical symmetry planes of the HTI and ORTHORHOMBIC halfspaces can be arbitrarily rotated along the x3-axis.
+        <br/> The linearization is based on the assumption of weak contrast in elastic medium parameters across the interface,  and the assumption of weak anisotropy in both halfspaces.</p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Petr Jilek, CSM-CWP, December 1999.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Medium type of the incidence halfspace</label>
+        <enum>
+          <property required="no">
+            <keyword>hspace1=</keyword>
+            <value/>
+            <default>ISO</default>
+          </property>
+          <option>
+            <label>Isotropic</label>
+            <value>ISO</value>
+          </option>
+          <option>
+            <label>VTI anisotropy</label>
+            <value>VTI</value>
+          </option>
+          <option>
+            <label>HTI anisotropy</label>
+            <value>HTI</value>
+          </option>
+          <option>
+            <label>ORTHORHOMBIC anisotropy</label>
+            <value>ORT</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Parameters for Isotropic in incidence halfspace</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>P-wave velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp1=</keyword>
+                    <value/>
+                    <default>2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>S-wave velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs1=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho1=</keyword>
+                    <value/>
+                    <default>2.7</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.7</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Parameters for VTI anisotropy in incidence halfspace</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>P-wave vertical velocity (V33)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp1=</keyword>
+                    <value/>
+                    <default>2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>S-wave vertical velocity (V44=V55)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs1=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho1=</keyword>
+                    <value/>
+                    <default>2.7</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Thomsen's generic epsilon</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Thomsen's generic delta</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Thomsen's generic gamma</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.7</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Parameters for HTI anisotropy in incidence halfspace</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>P-wave vertical velocity (V33)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp1=</keyword>
+                    <value/>
+                    <default>2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>"Fast" S-wave vertical velocity (V44)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs1=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho1=</keyword>
+                    <value/>
+                    <default>2.7</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's "vertical" epsilon</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps1_v=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's "vertical" delta</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta1_v=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's "vertical" gamma</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma1_v=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.7</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Parameters for ORTHORHOMBIC anisotropy in incidence halfspace</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>P-wave vertical velocity (V33)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp1=</keyword>
+                    <value/>
+                    <default>2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X2-polarized S-wave vertical velocity (V44)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs1=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho1=</keyword>
+                    <value/>
+                    <default>2.7</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's epsilon in [x2,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps1_1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's delta in [x2,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta1_1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's gamma in [x2,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma1_1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's epsilon in [x1,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps1_2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's delta in [x1,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta1_2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's gamma in [x1,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma1_2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's delta in [x1,x2] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta1_3=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.7</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Medium type of the reflecting halfspace</label>
+        <enum>
+          <property required="no">
+            <keyword>hspace2=</keyword>
+            <value/>
+            <default>ISO</default>
+          </property>
+          <option>
+            <label>Isotropic</label>
+            <value>ISO</value>
+          </option>
+          <option>
+            <label>VTI anisotropy</label>
+            <value>VTI</value>
+          </option>
+          <option>
+            <label>HTI anisotropy</label>
+            <value>HTI</value>
+          </option>
+          <option>
+            <label>ORTHORHOMBIC anisotropy</label>
+            <value>ORT</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Parameters for Isotropic in reflecting halfspace</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>P-wave velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp2=</keyword>
+                    <value/>
+                    <default>2.5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>S-wave velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs2=</keyword>
+                    <value/>
+                    <default>1.2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho2=</keyword>
+                    <value/>
+                    <default>3.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>3.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Parameters for VTI anisotropy in reflecting halfspace</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>P-wave vertical velocity (V33)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp2=</keyword>
+                    <value/>
+                    <default>2.5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>S-wave vertical velocity (V44=V55)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs2=</keyword>
+                    <value/>
+                    <default>1.2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho2=</keyword>
+                    <value/>
+                    <default>3.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Thomsen's generic epsilon</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Thomsen's generic delta</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>3.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Parameters for HTI anisotropy in reflecting halfspace</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>P-wave vertical velocity (V33)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp2=</keyword>
+                    <value/>
+                    <default>2.5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>"Fast" S-wave vertical velocity (V44)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs2=</keyword>
+                    <value/>
+                    <default>1.2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho2=</keyword>
+                    <value/>
+                    <default>3.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's "vertical" epsilon</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps2_v=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's "vertical" delta</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta2_v=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's "vertical" gamma</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma2_v=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>3.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Parameters for ORTHORHOMBIC anisotropy in reflecting halfspace</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>P-wave vertical velocity (V33)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vp2=</keyword>
+                    <value/>
+                    <default>2.5</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X2-polarized S-wave vertical velocity (V44)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vs2=</keyword>
+                    <value/>
+                    <default>1.2</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Density</label>
+                <float>
+                  <property required="no">
+                    <keyword>rho2=</keyword>
+                    <value/>
+                    <default>3.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's epsilon in [x2,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps2_1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's delta in [x2,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta2_1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's gamma in [x2,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma2_1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's epsilon in [x1,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>eps2_2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's delta in [x1,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta2_2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's gamma in [x1,x3] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma2_2=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Tsvankin's delta in [x1,x2] plane</label>
+                <float>
+                  <property required="no">
+                    <keyword>delta2_3=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.2</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>3.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Incidence and azimuth angles properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="1" selection="1">
+              <parameter>
+                <label>Generated automatically using the setup values below</label>
+                <flag>
+                  <property required="no">
+                    <keyword>a_file=-1</keyword>
+                    <value>off</value>
+                    <default>on</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Read from a file of two columns (inc. angle, azimuth)</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>a_file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="1" selection="1">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>on</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Parameters to generated incidence and azimuth angles</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First incidence phase angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>fangle=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Last incidence angle</label>
+                <float>
+                  <property required="no">
+                    <keyword>langle=</keyword>
+                    <value/>
+                    <default>30</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Incidence angle increment</label>
+                <float>
+                  <property required="no">
+                    <keyword>dangle=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First azimuth (in deg)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fazim=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Last azimuth (in deg)</label>
+                <float>
+                  <property required="no">
+                    <keyword>lazim=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Azimuth increment (in deg)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dazim=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Azimuthal rotation of the lower reflecting halfspace</label>
+                <float>
+                  <property required="no">
+                    <keyword>kappa=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>30</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output files</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Information output file</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>out_inf=</keyword>
+                    <value/>
+                    <default>info.out</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with Rpp reflection coefficients</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>out_P=</keyword>
+                    <value/>
+                    <default>Rpp.out</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with Rps reflection coefficients</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>out_S=</keyword>
+                    <value/>
+                    <default>Rps.out</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with SV and SH projections of reflection coefficients</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>out_SVSH=</keyword>
+                    <value/>
+                    <default>Rsvsh.out</default>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File containing error estimates evaluated</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>out_Error=</keyword>
+                    <value/>
+                    <default>error.out</default>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>info.out</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>Rpp.out</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>Rps.out</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>Rsvsh.out</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>error.out</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

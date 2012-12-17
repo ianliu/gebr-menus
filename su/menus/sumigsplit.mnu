@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Mig Split-Step</title>
+  <description>Split-step depth migration for zero-offset data</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mig Split-Step</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Mig Split-Step</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+             Split-step depth migration for zero-offset data
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Migration and Dip Moveout | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Split-step depth migration for zero-offset data.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        GêBR core team</p>
+<p>
+        May 28, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+<p>
+        Jul 17, 2010: reviewed by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | May 28, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-10-05T15:00:00Z</created>
+    <modified>2010-08-06T16:30:29.692808Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Mig Split-Step</title>
+    <binary>sumigsplit</binary>
+    <description>Split-step depth migration for zero-offset data</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>SU Mig Split-Step</title>
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">SU Mig Split-Step</span>
+          <div class="description">Split-step depth migration for zero-offset data</div>
+        </div>
+      </div><!-- header -->
+
+      <div class="category">
+        Migration and Dip Moveout | Seismic Unix
+      </div>
+
+      <div class="main">
+        <div class="content"><div class="parameters">
+        <h2 id="header_0">
+                Introduction</h2>
+        <p>
+                Split-step depht migration for zero-offset data.</p>
+        <h2 id="header_1">
+                Parameters</h2>
+        <ul>
+                <li>
+                        <span class="label">Number of depth samples</span></li>
+                <li>
+                        <span class="label">Depth sampling interval</span></li>
+                <li>
+                        <span class="label">Name of file containing velocities</span></li>
+                <li>
+                        <span class="label">Time sampling interval</span></li>
+                <li>
+                        <span class="label">Midpoint sampling interval</span></li>
+                <li>
+                        <span class="label">First time sample</span></li>
+                <li>
+                        <span class="label">First depth sample</span></li>
+                <li>
+                        <span class="label">Directory path prefix for storing temporary files</span><br />
+                If non-empty, use the value as a directory path prefix for storing temporary files; else, if the CWP_TMPDIR environment variable is set use its value for the path; else, use tmpfile().</li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        The <b>File with velocity profiles</b> consists of C-style binary floats. The structure of this file is <em>vfile[iz][ix]</em>. Note that this means that the x-direction is the fastest direction instead of z-direction.</p>
+<p>
+        Such a structure is more convenient for the downward continuation type migration algorithm than using z as fastest dimension as in other SU programs.</p>
+<p>
+        Because most of the tools in the SU package (such as <b>Uniform 2D Velocity</b>, <b>Uniform 2D Sample</b>, and <b>Make Velocity</b>) produce output with the structure <em>vfile[ix][iz]</em>, you will need to transpose the velocity files created by these programs. You may use the SU program <b>Transpose</b> in SU to transpose such files into the required <em>vfile[iz][ix]</em> structure.</p>
+<p>
+        (In C <em>v[iz][ix]</em> denotes a v(x,z) array, whereas <em>v[ix][iz]</em> denotes a v(z,x) array, the opposite of what Matlab and Fortran programmers may expect.)</p>
+<p>
+        This program accesses the following header keywords:</p>
+<ul>
+        <li>
+                Number of depth samples</li>
+        <li>
+                Time sampling interval</li>
+        <li>
+                Delay recording time</li>
+        <li>
+                Midpoint sampling interval</li>
+</ul>
+<p>
+        This program modifies the following header keywords:</p>
+<ul>
+        <li>
+                Number of depth samples</li>
+        <li>
+                Time sampling interval</li>
+        <li>
+                Delay recording time</li>
+</ul>
+<h2 id="header_3">
+        References</h2>
+<ul>
+        <li>
+                Stoffa, P. L. and Fokkema, J. T. and Freire, R. M. and Kessinger, W. P., 1990, Split-step Fourier migration, Geophysics, 55, 410-421.</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        CWP Baoniu Han, July 21th, 1997</p>
+</div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
+                Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2 id="header_2">
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_3">
+        References</h2></a></li><li><a href="#header_4"><h2 id="header_4">
+        Credits</h2></a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.12 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+    
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of depth samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Depth sampling interval</label>
+        <float>
+          <property required="yes">
+            <keyword>dz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Name of file containing velocities</label>
+        <file directory="no">
+          <property required="yes">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Midpoint sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First time sample</label>
+        <float>
+          <property required="no">
+            <keyword>ft=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First depth sample</label>
+        <float>
+          <property required="no">
+            <keyword>fz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Directory path prefix for storing temporary files</label>
+        <file directory="yes">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Echos information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

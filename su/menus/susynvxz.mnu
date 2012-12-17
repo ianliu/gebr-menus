@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Synth V(X,Z)</title>
+  <description>Kirchhoff modeling of common offset gather</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Synth V(X,Z)</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Synth V(X,Z)</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Kirchhoff modeling of common offset gather
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Synthetic seismograms of common offset V(X,Z) media via Kirchhoff-style modeling.</p>
+
+          <!-- begin par --><!-- end par -->
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>May 05, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 05, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-05T18:25:27.481503Z</created>
+    <modified>2011-02-07T13:13:41.225151Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
+    <title>SU Synth V(X,Z)</title>
+    <binary>susynvxz</binary>
+    <description>Kirchhoff modeling of common offset gather</description>
+    <help>
+      <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Synth V(X,Z)</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Synth V(X,Z)</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Kirchhoff modeling of common offset gather
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Synthetic seismograms of common offset V(X,Z) media via Kirchhoff-style modeling.</p>
+<p>
+        This program need to receive a file containing velocities in function of parameters <b>Number of x samples (2nd dimension)</b> and <b>Number of z samples (1st dimension)</b>.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of x samples (2nd dimension)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of z samples (1st dimension)</span></li>
+                <li>
+                        <span class="label">Band centered at midpoint</span></li>
+                <li>
+                        <span class="label">Skipped number of midponits</span></li>
+                <li>
+                        <span class="label">X sampling interval (m)</span></li>
+                <li>
+                        <span class="label">First x sample</span></li>
+                <li>
+                        <span class="label">Z sampling interval (m)</span></li>
+                <li class="group">
+                        <span class="grouplabel">Time properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of time samples</span></li>
+                                <li>
+                                        <span class="label">Time sampling interval (sec)</span></li>
+                                <li>
+                                        <span class="label">First time (sec)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Offset properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of source-receiver offsets</span></li>
+                                <li>
+                                        <span class="label">Offset sampling interval</span></li>
+                                <li>
+                                        <span class="label">First offset</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Midpoint properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of midpoints</span></li>
+                                <li>
+                                        <span class="label">Midpoint sampling interval</span></li>
+                                <li>
+                                        <span class="label">First midpoint</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Peak frequency of symmetric Ricker Wavelet (Hz)</span></li>
+                <li>
+                        <span class="label">Reflector(s)</span><br />
+                        Format: "amplitude:x1,z1;x2,z2;x3,z3;..."</li>
+                <li>
+                        <span class="label">Smooth reflectors</span></li>
+                <li>
+                        <span class="label">Line source (disable is point source)</span></li>
+                <li>
+                        <span class="label">Minimum time of interest (sec)</span></li>
+                <li>
+                        <span class="label">Number of diffractors per Fresnel zone</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        Offsets are signed - may be positive or negative.</p>
+<p>
+        Traveltime and amplitude are calculated by finite differences which is done only in part of midpoints; in the skiped midpoint, interpolation is used to calculate traveltime and amplitude.</p>
+<p>
+        This program sets the following header keywords:</p>
+<ul>
+        <li>
+                Trace identification code,</li>
+<!-- trid -->   <li>
+                Coordinate units code,</li>
+<!-- counit --> <li>
+                Number of samples,</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds,</li>
+<!-- dt -->     <li>
+                Delay recording time in ms,</li>
+<!-- delrt -->  <li>
+                Trace number sequence within line,</li>
+<!-- tracl -->  <li>
+                Trace number sequence within reel,</li>
+<!-- tracr -->  <li>
+                CDP ensemble number,</li>
+<!-- cdp -->    <li>
+                Trace number within CDP ensemble,</li>
+<!-- cdpt -->   <li>
+                Sample spacing between traces,</li>
+<!-- d2 -->     <li>
+                First trace location,</li>
+<!-- f2 -->     <li>
+                Offset (signed distance from source to receiver group),</li>
+<!-- offset --> <li>
+                X source coordinate,</li>
+<!-- sx -->     <li>
+                X group coordinate.</li>
+<!-- gx --></ul>
+<p>
+         </p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        CWP: Zhenyue Liu, 07/20/92<br />
+        Many subroutines borrowed from Dave Hale's program: <b>SU Synth Linear</b>.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>File containing velocities</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>&lt;</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of x samples (2nd dimension)</label>
+        <int>
+          <property required="yes">
+            <keyword>nx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of z samples (1st dimension)</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Band centered at midpoint</label>
+        <int max="">
+          <property required="no">
+            <keyword>nxb=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Skipped number of midponits</label>
+        <int max="">
+          <property required="no">
+            <keyword>nxd=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>X sampling interval (m)</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default>100</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First x sample</label>
+        <float>
+          <property required="no">
+            <keyword>fx=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Z sampling interval (m)</label>
+        <float>
+          <property required="no">
+            <keyword>dz=</keyword>
+            <value/>
+            <default>100</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Time properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval (sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value/>
+                    <default>0.04</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First time (sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.04</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Offset properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of source-receiver offsets</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxo=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Offset sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxo=</keyword>
+                    <value/>
+                    <default>50</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First offset</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxo=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Midpoint properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of midpoints</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxm=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Midpoint sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxm=</keyword>
+                    <value/>
+                    <default>0.05</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First midpoint</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxm=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.05</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Peak frequency of symmetric Ricker Wavelet (Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>fpeak=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Reflectors</label>
+        <group instanciable="yes" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Reflector</label>
+                <string>
+                  <property required="no">
+                    <keyword>ref=</keyword>
+                    <value/>
+                    <default>1:1,2;4,2</default>
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Reflector(s)</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1:1,2;4,2</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Smooth reflectors</label>
+        <flag>
+          <property required="no">
+            <keyword>smooth=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Line source (disable is point source)</label>
+        <flag>
+          <property required="no">
+            <keyword>ls=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Minimum time of interest (sec)</label>
+        <float>
+          <property required="no">
+            <keyword>tmin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of diffractors per Fresnel zone</label>
+        <int>
+          <property required="no">
+            <keyword>ndpfz=</keyword>
+            <value/>
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>File containing velocity profile</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>vpfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Binary Header to PAR</title>
+  <description>Convert a Binary tape header file to PAR file format</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content=
+    "text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <!-- begin ttl -->
+    <title>Binary Header to PAR</title>
+    <!-- end ttl -->
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+            <span class="flowtitle">Binary Header to PAR</span>
+            <!-- end tt2 -->
+
+            <div class="description">
+              <!-- begin des -->
+              Convert a Binary tape header file to PAR file format
+              <!-- end des -->
+            </div>
+          </div>
+        </div>
+
+        <div class="category">
+          <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+        </div>
+
+        <div class="main">
+          <div class="content">
+
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
+
+            <p>Convert a Binary tape header file to PAR file format.</p>
+
+            <!-- begin par --><!-- end par -->
+
+
+            <a name="credits" id="credits"></a>
+            <h2>Credits</h2>
+
+            <!-- begin cpy -->
+
+            <p>Mar 22, 2010: written by Jorge Pizzolatto &lt;jorge.pzt@gebrproject.com&gt;</p>
+            <!-- end cpy -->
+
+          </div>
+
+          <div class="navigation">
+            <h2>Index</h2>
+
+            <ul>
+              <li><a href="#intro">Introduction</a></li>
+
+              <!-- begin mpr --><!-- end mpr -->
+
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+            <!-- begin ver -->Mar 22, 2010<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-03-22T16:44:20.955030Z</created>
+    <modified>2010-08-06T00:43:02.480382Z</modified>
+    <lastrun/>
+  </date>
+  <category>Import/Export</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" version="SU 42">
+    <title>Binary Header to PAR</title>
+    <binary>bhedtopar</binary>
+    <description>Convert a Binary tape header file to PAR file format</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content=
+    "text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <!-- begin ttl -->
+    <title>Binary Header to PAR</title>
+    <!-- end ttl -->
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+            <span class="flowtitle">Binary Header to PAR</span>
+            <!-- end tt2 -->
+
+            <div class="description">
+              <!-- begin des -->
+              Convert a Binary tape header file to PAR file format
+              <!-- end des -->
+            </div>
+          </div>
+        </div>
+
+        <div class="category">
+          <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
+        </div>
+
+        <div class="main">
+          <div class="content">
+
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
+
+            <p>Convert a Binary tape header file to PAR file format.</p>
+
+            <!-- begin par -->
+            <div class="parameters">
+
+              <a name="par" id="par"></a>
+              <h2>Parameters</h2>
+
+              <!-- begin lst --><ul>
+                <li><span class="label">Swap bytes</span><br/></li>
+
+                <li><span class="label">Parfile name of output parameter file</span><br/></li>
+
+              </ul>
+              <!-- end lst -->
+
+            </div>
+            <!-- end par -->
+
+
+            <a name="notes" id="notes"></a>
+            <h2>Notes</h2>
+
+            <p>This program dumps the contents of a SEG-Y binary tape header file, as 
+            would be produced by menu <b>SU SEG-Y Read</b> and <b>SU SEG-Y Headers</b> to a file in "parfile" format.<br />
+            A "parfile" is an ASCII file containing entries of the form parameter=value.<br />
+            Here "parameter" is the keyword for the binary tape header field and        
+            "value" is the value of that field.<br /> The parfile may be edited as      
+            any ASCII file. The edited parfile may then be made into a new binary tape 
+            header file via the program <b>SU SEG-Y Set Header</b>.</p>                         
+
+            <p>See help of menu <b>SU SEG-Y Set Header</b> for examples.</p>
+
+
+            <a name="credits" id="credits"></a>
+            <h2>Credits</h2>
+
+            <p>CWP: John Stockwell  11 Nov 1994.</p>
+
+            <!-- begin cpy -->
+            <!-- end cpy -->
+
+          </div>
+
+          <div class="navigation">
+            <h2>Index</h2>
+
+            <ul>
+              <li><a href="#intro">Introduction</a></li>
+
+              <!-- begin mpr -->
+              <li><a href="#par">Parameters</a></li>
+              <!-- end mpr -->
+
+              <li><a href="#notes">Notes</a></li>
+
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+            <!-- begin ver -->SU 42<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Swap bytes</label>
+        <flag>
+          <property required="no">
+            <keyword>swap=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Parfile name of output parameter file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>outpar=</keyword>
+            <value/>
+            <default>/dev/stdout</default>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

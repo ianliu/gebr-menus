@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Uniform 2D Velocity</title>
+  <description>Generate a 2-D uniformly sampled velocity profile from a layered model</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Uniform 2D Velocity</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">Uniform 2D Velocity</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Generate a 2-D uniformly sampled velocity profile from a layered model
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Seismic Unix | Simulation and Model Building
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Generate a 2-D UNIFormly sampled velocity profile from a layered model. In each layer, velocity is a linear function of position.</p>
+<h2 id="header_1">
+        Credits</h2>
+<p>
+        Out 17, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>
+<p>
+        Jul 27, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<p>
+        May 04, 2010: revised by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+</div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | May 04, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-10-17T15:00:00Z</created>
+    <modified>2010-08-06T00:43:09.834417Z</modified>
+    <lastrun/>
+  </date>
+  <category>Simulation and Model Building</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>Uniform 2D Velocity</title>
+    <binary>unif2</binary>
+    <description>Generate a 2-D uniformly sampled velocity profile from a layered model</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <title>Uniform 2D Velocity</title>
+  </head><body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+          <span class="flowtitle">Uniform 2D Velocity</span>
+          <!-- end tt2 -->
+
+            <div class="description">
+           <!-- begin des -->
+              Generate a 2-D uniformly sampled velocity profile from a layered model
+             <!-- end des -->
+          </div>
+          </div>
+        </div>
+
+        <div class="category">
+        <!-- begin cat -->
+          Seismic Unix | Simulation and Model Building
+          <!-- end cat -->
+      </div>
+
+        <div class="main">
+          <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Generate a 2-D UNIFormly sampled velocity profile from a layered model. In each layer, velocity is a linear function of position.</p>
+<!-- begin par -->
+          <div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+        <!-- begin lst -->
+            <ul>
+                <li>
+                        <span class="label">Number of interfaces</span></li>
+                <li class="group">
+                        <span class="grouplabel">1st dimension (z) properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of samples</span></li>
+                                <li>
+                                        <span class="label">First sample</span></li>
+                                <li>
+                                        <span class="label">Sampling interval</span></li>
+                                <li>
+                                        <span class="label">Depth z at which velocity is specified</span></li>
+                                <li>
+                                        <span class="label">Derivative of velocity with depth z (dv/dz)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">2nd dimension (x) properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of samples</span></li>
+                                <li>
+                                        <span class="label">First sample</span></li>
+                                <li>
+                                        <span class="label">Sampling interval</span></li>
+                                <li>
+                                        <span class="label">Distance x at which velocity is specified</span></li>
+                                <li>
+                                        <span class="label">Derivative of velocity with distance x (dv/dx)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Maximum number of points on interfaces</span></li>
+                <li>
+                        <span class="label">Velocity on each point (m/sec)</span></li>
+                <li>
+                        <span class="label">Interface interpolation method</span></li>
+                <li>
+                        <span class="label">Filename to output a sample of input dataset</span></li>
+        </ul>
+  <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        The input file is an ASCII file containing x z values representing a piecewise continuous velocity model with a flat surface on top. The surface and each successive boundary between media are represented by a list of selected x z pairs written column form.</p>
+<p>
+        The first and last x values must be the same for all boundaries. Use the entry 1.0 -99999 to separate entries for successive boundaries. No boundary may cross another. Note that the choice of the method of interpolation may cause boundaries to cross that do not appear to cross in the input data file. The number of interfaces is specified by the parameter <strong>Number of interfaces</strong>. This number does not include the top surface of the model.</p>
+<p>
+        The input data format is the same as a CSHOT model file with all comments removed.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        CWP: Zhenyue Liu, 1994<br />
+        CWP: John Stockwell, 1994, added demonstration model stuff.</p>
+</div>
+
+          <div class="navigation"><h2>Index</h2><ul>
+        <li><a href="#header_0">Introduction</a></li>
+        <li><a href="#header_1">Parameters</a></li>
+        <li><a href="#header_2">Notes</a></li>
+        <li><a href="#header_3">Credits</a></li>
+        </ul></div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of interfaces</label>
+        <int min="0">
+          <property required="no">
+            <keyword>ninf=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>1st dimension (z) properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Depth z at which velocity is specified</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>z0=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Derivative of velocity with depth z (dv/dz)</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dvdz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>2nd dimension (x) properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Distance x at which velocity is specified</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>x0=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Derivative of velocity with distance x (dv/dx)</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>dvdx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Maximum number of points on interfaces</label>
+        <int>
+          <property required="no">
+            <keyword>npmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Velocity on each point (m/sec)</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>v00=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Interface interpolation method</label>
+        <enum>
+          <property required="no">
+            <keyword>method=</keyword>
+            <value/>
+            <default>linear</default>
+          </property>
+          <option>
+            <label>Linear interpolation</label>
+            <value>linear</value>
+          </option>
+          <option>
+            <label>Monotonic cubic interpolation</label>
+            <value>mono</value>
+          </option>
+          <option>
+            <label>Akima's cubic interpolation</label>
+            <value>akima</value>
+          </option>
+          <option>
+            <label>Cubic spline interpolation</label>
+            <value>spline</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Filename to output a sample of input dataset</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

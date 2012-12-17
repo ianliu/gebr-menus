@@ -1,0 +1,43 @@
+%define name @PACKAGE@
+%define version @VERSION@
+%define release 1%{dist}
+
+Name:    %{name}
+Version: %{version}
+Release: %{release}
+License: GPL
+Group: Application/Misc
+URL: http://www.gebrproject.com
+Packager: Luis A. D Afonseca <luis.dafonseca@gebrproject.com> 
+Source: %{name}-%{version}.tar.gz
+BuildRoot: /tmp/%{name}-%{version}
+Summary: GeBR menus for programs developed on the university of Karlsruhe
+%description
+GeBR is an environment for seismic processing based on open-source
+technologies, but extensible and applicable to several different areas.
+
+This package provides access to programs developed on the university of Karlsruhe.
+
+%prep
+%setup -q
+aclocal;automake --add-missing;autoconf
+
+%configure
+
+%build
+make
+
+%install
+rm -rf %{buildroot}
+mkdir -p %{buildroot}
+
+%makeinstall
+
+%clean
+rm -rf %{buildroot}
+
+%files
+%defattr(-,root,root)
+%{_datadir}/gebr/menus/*
+
+%changelog

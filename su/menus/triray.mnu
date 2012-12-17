@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Tri Ray</title>
+  <description>Dynamic ray tracing for a triangulated sloth model</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Tri Ray</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Tri Ray</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Dynamic ray tracing for a triangulated sloth model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Dynamic ray tracing for a triangulated sloth model.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jun 11, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jun 11, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-10T18:05:36.169112Z</created>
+    <modified>2011-02-07T12:21:23.131090Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>Tri Ray</title>
+    <binary>triray</binary>
+    <description>Dynamic ray tracing for a triangulated sloth model</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Tri Ray</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Tri Ray</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Dynamic ray tracing for a triangulated sloth model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Dynamic ray tracing for a triangulated sloth model.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li><span class="label">X coordinate of source</span><br/>
+                Default value is halfway across model.</li>
+
+              <li><span class="label">Z coordinate of source</span><br/>
+                Default value is at top of model.</li>
+
+              <li class="group"><span class="grouplabel">Takeoff angle properties</span>
+
+              <ul>
+              <li><span class="label">Number of takeoff angles</span></li>
+
+              <li><span class="label">First takeoff angle (in degrees)</span></li>
+
+              <li><span class="label">Last takeoff angle (in degrees)</span></li>
+
+              </ul></li>
+
+              <li><span class="label">File of ray x,z coordinates of ray-edge intersections</span></li>
+
+              <li><span class="label">Number of (x,z) in file of ray-edge intersections coordinates</span></li>
+
+              <li><span class="label">File of ray x,z coordinates uniformly sampled in time</span></li>
+
+              <li><span class="label">Number of (x,z) in file of uniformly sampled in time coordinates</span></li>
+
+              <li><span class="label">ASCII-file to store useful information</span></li>
+
+              <li><span class="label">Used if you want to plot the fresnel volumes</span><br/>
+                Default value is &lt;fresnelfile.bin&gt;.</li>
+
+              <li><span class="label">File containing parameters for the plotting software</span><br/>
+                Default value is &lt;outpar&gt;.</li>
+
+              <li><span class="label">Display and store only rays incident at interface with this index value</span></li>
+
+              <li><span class="label">Rays to display</span><br/>
+                <ul>
+                   <li>Only single-reflected rays</li>
+                   <li>Only direct hits</li>
+                </ul></li>
+
+              <li><span class="label">Fresnel volume frequency</span></li>
+
+              <li><span class="label">Index of reflector</span><br/>
+                Followed by sequence of reflection (1), transmission(0) or ray stops(-1).<br/>
+                The default rayend is at the model boundary.</li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+           
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>The output file contains ray parameters for the locations at which 
+        the rays terminate.</p>                                                         
+
+        <p>The parameter <b>File of ray x,z coordinates of ray-edge intersections</b> is useful for making plots of ray paths.<br/>                     
+        Parameter <b>Number of (x,z) in file of ray-edge intersections coordinates</b> should be larger than twice the number of triangles intersected  
+        by the rays.</p>                                                                
+
+        <p>The parameter <b>File of ray x,z coordinates uniformly sampled in time</b> is useful for making plots of wavefronts.<br/>            
+        The time sampling interval in the wavefile is<br/>tmax/(<b>Number of (x,z) in file of uniformly sampled in time coordinates</b>-1),<br/>                
+        where tmax is the maximum time for all rays.</p>                                
+
+        <p>The parameter <b>ASCII-file to store useful information</b> is useful for collecting information along the           
+        individual rays.<br/> 
+        The parameter <b>Used if you want to plot the fresnel volumes</b> contains data used to plot the Fresnel volumes.<br/>
+        The parameter <b>File containing parameters for the plotting software</b> stores information used for the plotting software.</p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Author: Dave Hale, Colorado School of Mines, 02/16/91.</p>
+          <p>Modified: Andreas Rueger, Colorado School of Mines, 08/12/93.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>X coordinate of source</label>
+        <float>
+          <property required="no">
+            <keyword>xs=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Z coordinate of source</label>
+        <float>
+          <property required="no">
+            <keyword>zs=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Takeoff angle properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of takeoff angles</label>
+                <int>
+                  <property required="no">
+                    <keyword>nangle=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First takeoff angle (in degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fangle=</keyword>
+                    <value/>
+                    <default>-45</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Last takeoff angle (in degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>langle=</keyword>
+                    <value/>
+                    <default>45</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>-45</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>45</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>File of ray x,z coordinates of ray-edge intersections</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>rayfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of (x,z) in file of ray-edge intersections coordinates</label>
+        <int min="0">
+          <property required="no">
+            <keyword>nxz=</keyword>
+            <value/>
+            <default>101</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>File of ray x,z coordinates uniformly sampled in time</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>wavefile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of (x,z) in file of uniformly sampled in time coordinates</label>
+        <int min="0">
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default>101</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>ASCII-file to store useful information</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>infofile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Used if you want to plot the fresnel volumes</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>fresnelfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>File containing parameters for the plotting software</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>outparfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Display and store only rays incident at interface with this index value</label>
+        <int>
+          <property required="no">
+            <keyword>krecord=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Rays to display</label>
+        <enum>
+          <property required="no">
+            <keyword>prim=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Only single-reflected rays</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Only direct hits</label>
+            <value>0</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Fresnel volume frequency</label>
+        <float>
+          <property required="no">
+            <keyword>ffreq=</keyword>
+            <value/>
+            <default>-1</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Index of reflectors</label>
+        <group instanciable="yes" expand="yes">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Index of reflector</label>
+                <int>
+                  <property required="no" separator=",">
+                    <keyword>refseq=</keyword>
+                    <value/>
+                    <default>1</default>
+                    <default>0</default>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Index of reflector</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                  <default>0</default>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

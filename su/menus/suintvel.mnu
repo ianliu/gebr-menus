@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Int Vel</title>
+  <description>Convert stacking velocity model to interval velocity model</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Int Vel</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Int Vel</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Convert stacking velocity model to interval velocity model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Convert stacking velocity model to interval velocity model.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>May 17, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 17, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-17T14:34:29.724062Z</created>
+    <modified>2010-08-06T01:44:38.349578Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured" version="SU 42" mpi="">
+    <title>SU Int Vel</title>
+    <binary>suintvel</binary>
+    <description>Convert stacking velocity model to interval velocity model</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Int Vel</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Int Vel</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Convert stacking velocity model to interval velocity model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Convert stacking velocity model to interval velocity model.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Stacking velocities</span></li>
+                <li class="req">
+                        <span class="reqlabel">Normal incidence times</span></li>
+                <li>
+                        <span class="label">Output form</span>
+                        <ul>
+                                <li>
+                                        Output is "Layer thicknesses" and "Interval velocities"</li>
+                                <li>
+                                        Output is "Interval velocities" and "Times (from parameter <b>Normal Incidence Times)</b>"</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Output parameter file</span><br />
+                        Files in the form:
+                        <ul>
+                                <li>
+                                        h = Layer thicknesses vector</li>
+                                <li>
+                                        v = Interval velocities vector</li>
+                                <li>
+                                        t = Vector of times from parameter <b>Normal incidence times</b></li>
+                                <li>
+                                        v = Interval velocities vector</li>
+                        </ul>
+                </li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        <b>SU Int Vel</b> does not have standard SU syntax since it does not operate on seismic data.<br />
+        Hence stdin and stdout are not used.</p>
+<p>
+        May go away in favor of par program, <b>Velocity Conversion</b>, by Dave.</p>
+<h2 id="header_3">
+        References</h2>
+<!-- List of references --><ul>
+        <li>
+                The Common Depth Point Stack<br />
+                William A. Schneider<br />
+                Proc. IEEE, v. 72, n. 10, p. 1238-1254<br />
+                1984</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        CWP: Jack CWP: Jack.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Stacking velocities</label>
+        <float>
+          <property required="yes" separator=",">
+            <keyword>vs=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Normal incidence times</label>
+        <float>
+          <property required="yes" separator=",">
+            <keyword>t0=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Output form</label>
+        <enum>
+          <property required="no">
+            <keyword>mode=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>Output "Layer thicknesses vector" and "Interval velocities"</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Output "Interval velocities" and "Times (from parameter Normal Incident Times)"</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Output parameter file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>outpar=</keyword>
+            <value/>
+            <default>/dev/tty</default>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

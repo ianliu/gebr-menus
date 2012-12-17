@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Synth V(X,Z) CS</title>
+  <description>Kirchhoff modeling of common shot gather</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Synth V(X,Z) CS</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Synth V(X,Z) CS</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Kirchhoff modeling of common shot gather
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Synthetic seismograms of common shot in V(X,Z) media via Kirchhoff-style modeling.</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>May 08, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 08, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-06T13:03:46.591648Z</created>
+    <modified>2010-11-19T18:51:32.542833Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Synth V(X,Z) CS</title>
+    <binary>susynvxzcs</binary>
+    <description>Kirchhoff modeling of common shot gather</description>
+    <help>
+      <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Synth V(X,Z) CS</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Synth V(X,Z) CS</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Kirchhoff modeling of common shot gather
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Synthetic seismograms of common shot in V(X,Z) media via Kirchhoff-style modeling.</p>
+<p>
+        This program need to receive a file containing velocities in function of parameters <b>Number of x samples (2nd dimension)</b> and <b>Number of z samples (1st dimension)</b> and creates a file containing seismograms of common offset.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of x samples (2nd dimension)</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of z samples (1st dimension)</span></li>
+                <li class="group">
+                        <span class="grouplabel">Time properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of time samples</span></li>
+                                <li>
+                                        <span class="label">Time sampling interval (sec)</span></li>
+                                <li>
+                                        <span class="label">First time (sec)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Peak frequency of symmetric Ricker Wavelet (Hz)</span><br />
+                        Default value for this parameter is 0.2/<b>Time sampling interval (sec)</b>.</li>
+                <li>
+                        <span class="label">Reflector(s)</span><br />
+                        Format: "amplitude:x1,z1;x2,z2;x3,z3;..."</li>
+                <li class="group">
+                        <span class="grouplabel">Receiver properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of receivers of input traces</span></li>
+                                <li>
+                                        <span class="label">Receiver sampling interval (m)</span></li>
+                                <li>
+                                        <span class="label">First receiver (m)</span></li>
+                                <li>
+                                        <span class="label">Skipped number of receivers</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Shots properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of offsets</span></li>
+                                <li>
+                                        <span class="label">Shot sampling interval (m)</span></li>
+                                <li>
+                                        <span class="label">First shot (m)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">X sampling interval (m)</span></li>
+                <li>
+                        <span class="label">First x sample</span></li>
+                <li>
+                        <span class="label">Z sampling interval (m)</span></li>
+                <li>
+                        <span class="label">Band width centered at midpoint</span><br />
+                        Default value for this parameter is <b>Number of x samples (2nd dimension)</b>/2.</li>
+                <li>
+                        <span class="label">Horizontal range in which velocity is changed</span></li>
+                <li>
+                        <span class="label">Vertical range in which velocity is changed</span></li>
+                <li>
+                        <span class="label">Calculate time correction</span></li>
+                <li>
+                        <span class="label">File containing slowness perturbation array</span></li>
+                <li>
+                        <span class="label">Smooth reflectors</span></li>
+                <li>
+                        <span class="label">Line source (disable is point source)</span></li>
+                <li>
+                        <span class="label">Minimum time of interest (sec)</span><br />
+                        Default value for this parameter is 10.0 * <b>Time sampling interval (sec)</b>.</li>
+                <li>
+                        <span class="label">Number of diffractors per Fresnel zone</span></li>
+                <li>
+                        <span class="label">Static reciever spread</span><br />
+                        If not set, the default are roll reciever spread with shot.</li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        This algorithm is based on formula (58) in Geo. Pros. 34, 686-703, by N. Bleistein.</p>
+<p>
+        Traveltime and amplitude are calculated by finite difference which is done only in one of every NXD receivers; in skipped receivers, interpolation is used to calculate traveltime and amplitude.<br />
+        For each receiver, traveltime and amplitude are calculated in the horizontal range of.<br />
+        Velocity is changed by constant extropolation in two upper trianglar corners whose width is <b>Hozizontal range in which velocity is changed</b> * <b>X sampling interval</b> and height is <b>Vertical range in which velocity is changed</b> * <b>Z sampling interval</b>.</p>
+<p>
+        Eikonal equation will fail to solve if there is a polar turned ray. In this case, the program shows the related geometric information.<br />
+        There are three ways to remove the turned rays: smoothing velocity, reducing <b>Band width centered at midpoint</b>, and increaing <b>Hozizontal range in which velocity is changed</b> and <b>Vertical range in which velocity is changed</b> (if the turned ray occurs in shallow areas).<br />
+        To prevent traveltime distortion from an over-smoothed velocity, traveltime is corrected based on the slowness perturbation.</p>
+<p>
+        This program sets the following header keywords:</p>
+<ul>
+        <li>
+                Trace identification code,</li>
+<!-- trid -->   <li>
+                Coordinate units code,</li>
+<!-- counit --> <li>
+                Number of samples,</li>
+<!-- ns -->     <li>
+                Sampling interval in microseconds,</li>
+<!-- dt -->     <li>
+                Delay recording time in ms,</li>
+<!-- delrt -->  <li>
+                Trace number sequence within line,</li>
+<!-- tracl -->  <li>
+                Trace number sequence within reel,</li>
+<!-- tracr -->  <li>
+                Field record number,</li>
+<!-- fldr -->   <li>
+                X source coordinate,</li>
+<!-- sx -->     <li>
+                X group coordinate.</li>
+<!-- gx --></ul>
+<p>
+         </p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        Author: Zhenyue Liu, 07/20/92, Center for Wave Phenomena<br />
+        Many subroutines borrowed from Dave Hale's program: <b>SU Synth Linear</b>.</p>
+<p>
+        Trino Salinas, 07/30/96, fixed a bug in the geometry setting to allow the spread move with the shots.</p>
+<p>
+        Chris Liner 12/10/08 added cable option, set fldr header word</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of x samples (2nd dimension)</label>
+        <int>
+          <property required="yes">
+            <keyword>nx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of z samples (1st dimension)</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Time properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of time samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value/>
+                    <default>501</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval (sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value/>
+                    <default>0.004</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First time (sec)</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>501</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.004</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Peak frequency of symmetric Ricker Wavelet (Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>fpeak=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Reflectors</label>
+        <group instanciable="yes" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Reflector</label>
+                <string>
+                  <property required="no">
+                    <keyword>ref=</keyword>
+                    <value/>
+                    <default>1:1,2;4,2</default>
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label>Reflector(s)</label>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1:1,2;4,2</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Receiver properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of receivers of input traces</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxg=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Receiver sampling interval (m)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxg=</keyword>
+                    <value/>
+                    <default>15</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First receiver (m)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxg=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Skipped number of receivers</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxd=</keyword>
+                    <value/>
+                    <default>5</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>15</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>5</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Shots properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of offsets</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Shot sampling interval (m)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First shot (m)</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>X sampling interval (m)</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default>50</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First x sample</label>
+        <float>
+          <property required="no">
+            <keyword>fx=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Z sampling interval (m)</label>
+        <float>
+          <property required="no">
+            <keyword>dz=</keyword>
+            <value/>
+            <default>50</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Band width centered at midpoint</label>
+        <int>
+          <property required="no">
+            <keyword>nxb=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Horizontal range in which velocity is changed</label>
+        <int>
+          <property required="no">
+            <keyword>nxc=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Vertical range in which velocity is changed</label>
+        <int>
+          <property required="no">
+            <keyword>nzc=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Calculate time correction</label>
+        <flag>
+          <property required="no">
+            <keyword>pert=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>File containing slowness perturbation array</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>vpfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Smooth reflectors</label>
+        <flag>
+          <property required="no">
+            <keyword>smooth=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Line source (disable is point source)</label>
+        <flag>
+          <property required="no">
+            <keyword>ls=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Minimum time of interest (sec)</label>
+        <float>
+          <property required="no">
+            <keyword>tmin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of diffractors per Fresnel zone</label>
+        <int>
+          <property required="no">
+            <keyword>ndpfz=</keyword>
+            <value/>
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Static reciever spread</label>
+        <flag>
+          <property required="no">
+            <keyword>cable=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

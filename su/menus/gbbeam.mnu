@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>GBeams Modeling</title>
+  <description>Gaussian beam synthetic seismograms for a sloth model</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>GBeams Modeling</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">GBeams Modeling</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Gaussian beam synthetic seismograms for a sloth model
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Seismic Unix | Simulation and Model Building
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Modeling tool to yield synthetic seismograms using Gaussian Beams.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Oct 09, 2007: written by Ricardo Biloti, UNICAMP - biloti@gmail.com</p>
+          <p>Mar 17, 2007: revised by Daniela Rego Amazonas, UFPA - daniela.amazonas@gmail.com</p>
+          <p>Aug 10, 2009: revised by Jorge Pizzolatto Filho and Luis A. D'Afonseca, UNICAMP - jorge.pzt@gebrproject.com luis.dafonseca@gebrproject.com </p>
+          <p>May 17, 2010: revised by Jorge Pizzolatto Filho - jorge.pzt@gebrproject.com</p>
+        
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | May 17, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-10-09T15:00:00Z</created>
+    <modified>2010-08-06T00:43:02.716316Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>GBeams Modeling</title>
+    <binary>gbbeam</binary>
+    <description>Gaussian beam synthetic seismograms for a sloth model</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>GBeams Modeling</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">GBeams Modeling</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Gaussian beam synthetic seismograms for a sloth model
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Seismic Unix | Simulation and Model Building
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Gaussian beam synthetic seismograms for a sloth model.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst -->
+            <ul>
+              <li class="group"><span class="grouplabel">Receiver parameters</span><br/>
+
+              <ul> <br />
+              <li class="req"><span class="reqlabel">Z coordinates of receiver surface</span><br/></li>
+
+              <li class="req"><span class="reqlabel">X coordinates of receiver surface</span><br/></li>
+
+              <li><span class="label">Number of receivers</span><br/>
+              Uniformly distributed along the surface.</li>
+
+              <li><span class="label">Integer index of receiver surface</span><br/></li>
+
+              <li><span class="label">Maximum angle of receiver aperture</span><br/></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Sampling parameters</span><br/>
+
+              <ul> <br />
+              <li><span class="label">First time sample</span><br/></li>
+
+              <li><span class="label">Time sampling interval</span><br/></li>
+
+              <li><span class="label">Number of time samples</span><br/></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Reflection parameters</span><br/>
+
+              <ul> <br />
+              <li><span class="label">Consider complex reflection and transmission coefficients</span><br/></li>
+
+              <li><span class="label">Only single-reflected rays are considered</span><br/></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Wavelet parameters</span><br/>
+
+              <ul> <br />
+              <li><span class="label">Peak frequency of ricker wavelet</span><br/>
+                Default value is the 0.1/<b>Time sampling interval</b>.</li>
+
+              <li><span class="label">Beamwidth at peak frequency</span><br/></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Amplitude parameters</span><br/>
+
+              <ul>
+              <li><span class="label">Attenuation type</span><br/>
+              <ul>
+                <li>No attenuation</li>
+                <li>Add noncausal attenuation</li>
+                <li>Add causal attenuation</li>
+              </ul>
+              </li>
+
+              <li><span class="label">Array of amplitudes corresponding to angles above</span><br/></li>
+
+              <li><span class="label">Array of angles corresponding to amplitudes below</span><br/></li>
+
+              </ul></li>
+
+              <li><span class="label">Restriction on range of extrapolation</span><br/></li>
+
+              <li><span class="label">ASCII-file to store useful information</span><br/></li>
+
+            </ul>
+
+            
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p> Only rays that terminate with index krecord will contribute to the
+          synthetic seismograms at the receiver locations. The
+          receiver locations are determined by cubic spline interpolation
+          of the specified coordinates.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Dave Hale, Colorado School of Mines, 02/09/91<br />
+             Andreas Rueger, Colorado School of Mines, 08/18/9
+          </p>
+          
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Receiver parameters</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Z coordinates of receiver surface</label>
+                <float>
+                  <property required="yes" separator=",">
+                    <keyword>zg=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X coordinates of receiver surface</label>
+                <float>
+                  <property required="yes" separator=",">
+                    <keyword>xg=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of receivers</label>
+                <int min="1">
+                  <property required="no">
+                    <keyword>ng=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Integer index of receiver surface</label>
+                <int>
+                  <property required="no">
+                    <keyword>krecord=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Maximum angle of receiver aperture</label>
+                <float>
+                  <property required="no">
+                    <keyword>aperture=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Sampling parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First time sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Time sampling interval</label>
+                <float min="0">
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value/>
+                    <default>0.004</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of time samples</label>
+                <int min="1">
+                  <property required="no">
+                    <keyword>nt=</keyword>
+                    <value/>
+                    <default>251</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.004</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>251</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Reflection parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Consider complex reflection and transmission coefficients</label>
+                <flag>
+                  <property required="no">
+                    <keyword>reftrans=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Only single-reflected rays are considered</label>
+                <flag>
+                  <property required="no">
+                    <keyword>prim=1</keyword>
+                    <value>off</value>
+                    <default>on</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>on</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Wavelet parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Peak frequency of ricker wavelet</label>
+                <float>
+                  <property required="no">
+                    <keyword>fpeak=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Beamwidth at peak frequency</label>
+                <int>
+                  <property required="no">
+                    <keyword>bw=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Amplitude parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Attenuation type</label>
+                <enum>
+                  <property required="no">
+                    <keyword>atten=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                  <option>
+                    <label>No attenuation</label>
+                    <value>0</value>
+                  </option>
+                  <option>
+                    <label>Add noncausal attenuation</label>
+                    <value>1</value>
+                  </option>
+                  <option>
+                    <label>Add causal attenuation</label>
+                    <value>2</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Array of amplitudes corresponding to angles above</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>amp=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Array of angles corresponding to amplitudes below</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>ang=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Restriction on range of extrapolation</label>
+        <float>
+          <property required="no">
+            <keyword>lscale=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>ASCII-file to store useful information</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>infofile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

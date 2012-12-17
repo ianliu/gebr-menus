@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Mute</title>
+  <description>Mute above (or below) a user-defined polygonal curve</description>
+  <help>
+    <![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mute</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Mute</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Mute above (or below) a user-defined polygonal curve
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Mute above (or below) a user-defined polygonal curve.</p>
+
+          
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Created by Ricardo Biloti, UNICAMP, biloti@gebrproject.com</p>
+          <p>Aug 06, 2009: modified by Jorge Pizzolatto Filho, UNICAMP, jorge.pzt@gmail.com</p>
+          <p>Sep 22, 2009: modified by Luis A. D'Afonseca, luis.dafonseca@gebrproject.com</p>
+          
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Sep 22, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-09-16T15:00:00Z</created>
+    <modified>2010-11-30T17:42:32.207025Z</modified>
+    <lastrun/>
+  </date>
+  <category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
+    <title>SU Mute</title>
+    <binary>sumute</binary>
+    <description>Mute above (or below) a user-defined polygonal curve</description>
+    <help>
+      <![CDATA[<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="file:///usr/share//libgebr/gebr.css" />
+
+    <!-- begin ttl -->
+  <title>SU Mute</title>
+  <!-- end ttl -->
+  </head><body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+          <span class="flowtitle">SU Mute</span>
+          <!-- end tt2 -->
+
+            <div class="description">
+           <!-- begin des -->
+              Mute above (or below) a user-defined polygonal curve
+             <!-- end des -->
+          </div>
+          </div>
+        </div>
+
+        <div class="category">
+        <!-- begin cat -->
+          Gain, NMO, Stack and Standard Processes | Seismic Unix
+          <!-- end cat -->
+      </div>
+
+        <div class="main">
+          <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Mute above (or below) a user-defined polygonal curve.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="label">Array of positions specified by keyword values</span></li>
+                <li class="req">
+                        <span class="label"><span class="reqlabel">Array of corresponding time values (sec)</span></span><br />
+                        These values are extrapolated to the left by the smallest time sample on the trace and to the right by the last value given in the array.</li>
+                <li class="req">
+                        <span class="label">Parameters file</span></li>
+                <li>
+                        <span class="label">Keyword specifying traces</span><br />
+                        For a list of keywords, and their descriptions, see the help of menu SU Set Header.</li>
+                <li>
+                        <span class="label">Number of points to taper before hard mute</span><br />
+                        It uses sine squared taper.</li>
+                <li>
+                        <span class="label">Mute mode</span><br />
+                        In this context "above" means earlier time and "below" means later time. That is, above and below as seen on a seismic section.
+                        <ul>
+                                <li>
+                                        Mute above the polygonal curve</li>
+                                <li>
+                                        Mute below the polygonal curve</li>
+                                <li>
+                                        Mute below and above a straight line</li>
+                        </ul>
+                        The mode "Mute below and above a straight line" is intended for removing air waves. The mute is over a narrow window above and below the polygonal line specified.</li>
+                <li>
+                        <span class="label">Linear velocity</span></li>
+                <li>
+                        <span class="label">Time shift of linear mute</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        <strong>ATTENTION: </strong>Necessary define parameters <strong>Array of positions specified by keyword values</strong> and <strong>Array of corresponding time values (sec)</strong>, <u>or</u> <strong>Parameters file. </strong><br />
+        <br />
+        If data are spatial, such as the (z-x) output of a migration, then depth values are used in place of times. The value of the depth sampling interval is given by the "Sample spacing for non-seismic data" header field.<br />
+        <br />
+        Caveat: if data are seismic time sections, the keyword "Sample interval in microseconds" must be set. If data are seismic depth sections, the keyword "Trace identification code" must be set to 30, and "Sample spacing for non-seismic data" header field must be set.<br />
+        <br />
+        Besides keyword selected on parameter <b>Keyword specifying traces</b> this program also accesses the following trace keywords:</p>
+<ul>
+        <li>
+                Number of samples</li>
+<!-- ns    -->  <li>
+                Sampling interval in microseconds</li>
+<!-- dt    -->  <li>
+                Delay recording time in ms</li>
+<!-- delrt -->  <li>
+                Trace identification code</li>
+<!-- trid  -->  <li>
+                Sample spacing for non-seismic data</li>
+<!-- d1    --></ul>
+<p>
+        It modifies one of the following keywords:</p>
+<ul>
+        <li>
+                Initial mute time</li>
+<!-- muts -->   <li>
+                Final mute time</li>
+</ul>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        SEP: Shuki Ronen<br />
+        CWP: Jack K. Cohen, Dave Hale, John Stockwell<br />
+        DELPHI: Alexander Koek</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+          <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Array of positions specified by keyword values</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>xmute=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Array of corresponding time values (sec)</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>tmute=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Parameters file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>par=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Key header word specifying trace offset</label>
+        <enum>
+          <property required="no">
+            <keyword>key=</keyword>
+            <value>cdp</value>
+            <default/>
+          </property>
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Number of points to taper before hard mute</label>
+        <int>
+          <property required="no">
+            <keyword>ntaper=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Mute mode</label>
+        <enum>
+          <property required="no">
+            <keyword>mode=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Mute above polygonal curve</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Mute below polygonal curve</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Mute above and below a straight line</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Linear velocity</label>
+        <float>
+          <property required="no">
+            <keyword>linvel=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Time shift of linear mute</label>
+        <float>
+          <property required="no">
+            <keyword>tm0=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Do not take absolute value of key</label>
+        <flag>
+          <property required="no">
+            <keyword>absolute=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

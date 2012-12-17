@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>ELA Triuni</title>
+  <description>Convert triangulated elastic to uniformly sampled</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>ELA Triuni</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">ELA Triuni</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Convert triangulated elastic to uniformly sampled
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Convert triangulated elastic  models to uniformly sampled models.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 14, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 14, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-14T16:03:07.365710Z</created>
+    <modified>2010-10-01T21:08:40.575618Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="no" stderr="no" status="unconfigured" mpi="" version="SU 42">
+    <title>ELA Triuni</title>
+    <binary>elatriuni</binary>
+    <description>Convert triangulated elastic to uniformly sampled</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>ELA Triuni</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">ELA Triuni</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Convert triangulated elastic to uniformly sampled
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Convert triangulated elastic  models to uniformly sampled models.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of x samples</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of z samples</span></li>
+                <li>
+                        <span class="label">X sampling interval</span></li>
+                <li>
+                        <span class="label">Z sampling interval</span></li>
+                <li>
+                        <span class="label">First x sampled</span></li>
+                <li>
+                        <span class="label">First z sampled</span></li>
+                <li class="group">
+                        <span class="grouplabel">Bin-files to store</span>
+                        <ul>
+                                <li>
+                                        <span class="label">File with a1111 components</span></li>
+                                <li>
+                                        <span class="label">File with a3333 components</span></li>
+                                <li>
+                                        <span class="label">File with a1133 components</span></li>
+                                <li>
+                                        <span class="label">File with a1313 components</span></li>
+                                <li>
+                                        <span class="label">File with a1113 components</span></li>
+                                <li>
+                                        <span class="label">File with a3313 components</span></li>
+                                <li>
+                                        <span class="label">File with a1212 components</span></li>
+                                <li>
+                                        <span class="label">File with a1223 components</span></li>
+                                <li>
+                                        <span class="label">File with a2323 components</span></li>
+                                <li>
+                                        <span class="label">Rho components</span></li>
+                        </ul>
+                </li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Credits</h2>
+<p>
+        Andreas Rueger, Colorado School of Mines, 01/02/95.<br />
+        Dave Hale, Colorado School of Mines, 04/23/91.</p>
+<div>
+         </div>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of x samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of z samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>X sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dx=</keyword>
+            <value/>
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Z sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dz=</keyword>
+            <value/>
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First x sampled</label>
+        <float>
+          <property required="no">
+            <keyword>fx=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First z sampled</label>
+        <float>
+          <property required="no">
+            <keyword>fz=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Binary files to store</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>File with a1111 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a1111file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with a3333 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a3333file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with a1133 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a1133file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with a1313 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a1313file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with a1113 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a1113file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with a3313 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a3313file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with a1212 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a1212file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with a1223 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a1223file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>File with a2323 components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>a2323file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Rho components</label>
+                <file directory="no" filter-name="Bin file" filter-pattern=".bin">
+                  <property required="no">
+                    <keyword>rhofile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

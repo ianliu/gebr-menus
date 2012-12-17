@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>X Picker</title>
+  <description>X wiggle-trace plot for picking</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content=
+    "text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <!-- begin ttl -->
+  <title>X Picker</title>
+  <!-- end ttl -->
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+          <span class="flowtitle">X Picker</span>
+          <!-- end tt2 -->
+
+            <div class="description">
+           <!-- begin des -->
+              X wiggle-trace plot for picking
+             <!-- end des -->
+          </div>
+          </div>
+        </div>
+
+        <div class="category">
+        <!-- begin cat -->
+          Graphics | Seismic Unix
+          <!-- end cat -->
+      </div>
+
+        <div class="main">
+          <div class="content">
+
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
+
+            <p>Plot wiggle graphic of a binary data set for mouse picking.</p>
+
+            <a name="credits" id="credits"></a>
+            <h2>Credits</h2>
+          <!-- begin cpy -->
+
+            <p>Set 08, 2009: written by Luis A. D'Afonseca &lt;luis.dafonseca@gebrproject.com&gt;</p>
+
+            <!-- end cpy -->
+        </div>
+
+          <div class="navigation">
+            <h2>Index</h2>
+
+            <ul>
+              <li><a href="#intro">Introduction</a></li>
+
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Sep 08, 2009 </span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+]]>
+</help>
+  <author>Luis A. D'Afonseca</author>
+  <email>luis.dafonseca@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-09-08T15:00:00Z</created>
+    <modified>2010-08-06T00:43:10.482849Z</modified>
+    <lastrun/>
+  </date>
+  <category>Graphics</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" version="SU 41">
+    <title>X Picker</title>
+    <binary>xpicker</binary>
+    <description>X wiggle-trace plot for picking</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content=
+    "text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <!-- begin ttl -->
+  <title>X Picker</title>
+  <!-- end ttl -->
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+          <span class="flowtitle">X Picker</span>
+          <!-- end tt2 -->
+
+            <div class="description">
+           <!-- begin des -->
+              X wiggle-trace plot for picking
+             <!-- end des -->
+          </div>
+          </div>
+        </div>
+
+        <div class="category">
+        <!-- begin cat -->
+          Graphics | Seismic Unix
+          <!-- end cat -->
+      </div>
+
+        <div class="main">
+          <div class="content">
+
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
+
+            <p>Plot wiggle graphic of a binary data set for mouse picking.</p>
+
+            <h4> Menu functionalities:</h4>
+
+            <p>
+            <table>
+              <tr><td>Pick Filename Entry </td>
+                <td> Default is pick_file </td></tr>
+              <tr><td>Load </td>
+                <td> Load an existing Pick Filename</td></tr>
+              <tr><td>Save </td>
+                <td> Save to Pick Filename</td></tr>
+              <tr><td>View only/Pick </td>
+                <td> Default is View, click to enable Picking </td></tr>
+              <tr><td>Add/Delete </td>
+                <td> Default is Add, click to delete picks</td></tr>
+              <tr><td>Cross off/on </td>
+                <td> Default is Cross off, click to enable Crosshairs </td></tr>
+            </table>
+            </p>            
+
+            <h4> Window functionalities:</h4>
+
+            <p>
+            <table>
+              <tr>
+                <td>Button 1 </td>
+                <td>Zoom with rubberband box </td></tr>
+              <tr>
+                <td>Button 2 </td>
+                <td>Show mouse (x1,x2) coordinates while pressed </td></tr>
+              <tr>
+                <td>q or Q key </td>
+                <td>Quit window </td></tr>
+              <tr>
+                <td>a or page up keys </td>
+                <td>Enhance clipping by 10% </td></tr>
+              <tr>
+                <td>c or page down keys </td>
+                <td>Reduce clipping by 10% </td></tr>
+              <tr>
+                <td>up,down,left,right keys </td>
+                <td>Move zoom window by half width/height </td></tr>
+              <tr>
+                <td>i or +(keypad) </td>
+                <td>Zoom in by factor 2 </td></tr>
+              <tr>
+                <td>o or -(keypad) </td>
+                <td>Zoom out by factor 2 </td></tr>
+              <tr>
+                <td>l</td>
+                <td>Lock the zoom while moving the coursor</td></tr>
+              <tr>
+                <td>u</td>
+                <td>Unlock the zoom</td></tr>
+            </table>
+            </p>            
+
+            <p>Reaching the window limits while moving within changes the zoom  
+            factor in this direction. The use of zoom locking(l) disables it.</p>
+             
+            <p>Menu selections and toggles ("clicks") are made with button 1.</p>
+
+            <p>Pick selections are made with button 3.</p>
+
+            <p>Edit a pick selection by dragging it with button 3 down or 
+            by making a new pick on that trace.</p>
+
+            <!-- begin par -->
+            <div class="parameters">
+
+              <a name="par" id="par"></a>
+              <h2>Parameters</h2>
+
+              <!-- begin lst -->
+            <ul>
+                <li class="req"><span class="reqlabel">Number of samples in fast dimension</span><br/>
+                The number of samples per trace.</li>
+
+                <li><span class="label">Title of the plot</span></li>
+
+                <li class="group"><span class="grouplabel">Picking options</span>
+                <ul>
+                  <li><span class="label">File to save mouse picks</span><br/>
+                  The default file is <i>pick_file</i>.</li>
+                  <li><span class="label">Saved picks as (x2,x1) instead of (x1,x2)</span></li>
+                  <li><span class="label">File of "acceptable" x2 values</span>
+                  <br/>
+                  If this option is set, the values from the specified file
+                  will define the set of "acceptable" values of x2 for <b>X Picker</b>
+                  to output.
+                  The format is a single column of ASCII values.
+                  The number of specified values is arbitrary.
+                  Such a file can be built from an SU data set using the menu
+                  <b>SU Get Header</b>.
+                  If this file is not set, <b>X Picker</b> will use the values specified
+                  via <b>Array of sampled values</b> or those that are 
+                  computed from the values of <b>First sample</b> and
+                  <b>Sampling interval</b> as being the "acceptible" values.
+                  </li>
+                </ul></li>
+
+                <li class="group"><span class="grouplabel">Axis 1 properties (fast dimension)</span><br/>
+                Usually, fast dimension is time or depth.<br/>
+                <ul>
+                  <li><span class="label">Axis label</span></li>
+                  <li><span class="label">First sample</span></li>
+                  <li><span class="label">Sampling interval</span></li>
+                  <li><span class="label">Value at which axis begins</span></li>
+                  <li><span class="label">Value at which axis ends</span></li>
+                  <li><span class="label">Interval between numbered tics</span><br/> 
+                  Zero for automatic selection.</li>
+                  <li><span class="label">First numbered tic</span><br/> 
+                  Used if <b>Interval between numbered tics</b> is not zero.</li>
+                  <li><span class="label">Number of tics between consecutive numbered tics</span></li>
+                  <li><span class="label">Grid line style</span>
+                  <ul>
+                    <li> No grid lines     </li>
+                    <li> Dotted grid lines </li>
+                    <li> Dashed grid lines </li>
+                    <li> Solid grid lines  </li>
+                  </ul></li>
+                </ul></li>
+
+                <li class="group"><span class="grouplabel">Axis 2 properties (slow dimension)</span>
+                <ul>
+                  <li><span class="label">Axis label</span></li>
+                  <li><span class="label">First sample</span></li>
+                  <li><span class="label">Sampling interval</span></li>
+                  <li><span class="label">Number of traces to be plotted</span></li>
+                  <li><span class="label">Value at which axis begins</span></li>
+                  <li><span class="label">Value at which axis ends</span></li>
+                  <li><span class="label">Array of sampled values</span><br/>
+                  By default the samples are defined by the values of 
+                  <b>First sample</b> and
+                  <b>Sampling interval</b>.</li>
+                  <li><span class="label">Interval between numbered tics</span><br/> 
+                  Zero for automatic selection.</li>
+                  <li><span class="label">First numbered tic</span><br/> 
+                  Used if <b>Interval between numbered tics</b> is not zero.</li>
+                  <li><span class="label">Number of tics between consecutive numbered tics</span></li>
+                  <li><span class="label">Grid line style</span>
+                  <ul>
+                    <li> No grid lines     </li>
+                    <li> Dotted grid lines </li>
+                    <li> Dashed grid lines </li>
+                    <li> Solid grid lines  </li>
+                  </ul></li>
+                </ul></li>
+
+                <li class="group"><span class="grouplabel">Wiggle properties</span>
+                <ul>
+                  <li><span class="label">Do not draw wiggle trace</span></li>
+                  <li><span class="label">Variable area fill</span>
+                  <ul>
+                    <li> No area fill                       </li>
+                    <li> Positive area fill                 </li>
+                    <li> Negative area fill with light grey </li>
+                    <li> Negative area fill with grey       </li>
+                    <li> Negative area fill with dark grey  </li>
+                    <li> Negative area fill with black      </li>
+                  </ul></li>
+                  <li><span class="label">Wiggle excursion in traces corresponding to clip</span></li>
+                </ul></li>
+
+                <li class="group"><span class="grouplabel">Clipping properties</span>
+                <ul>
+                  <li><span class="label">Percentile used to determine clip value</span></li>
+                  <li><span class="label">Clip value</span></li>
+                  <li><span class="label">Bias value corresponding to location along axis 2</span></li>
+                </ul></li>
+
+                <li class="group"><span class="grouplabel">Appearance properties</span>
+                <ul>
+                  <li><span class="label">Upper left corner x coordinate in pixels</span></li>
+                  <li><span class="label">Upper left corner y coordinate in pixels</span></li>
+                  <li><span class="label">Window width in pixels</span></li>
+                  <li><span class="label">Window height in pixels</span></li>
+                  <li><span class="label">Use 8 point sinc interpolation</span><br/>
+                  This flag is useful for making better quality wiggle trace for        
+                  making plots from screen dumps. However, this flag assumes that the   
+                  data are purely oscillatory. This option may not be appropriate for all
+                  data sets.</li>
+                  <li><span class="label">Plot title font</span></li>
+                  <li><span class="label">Plot title color</span></li>
+                  <li><span class="label">Axes labels font</span></li>
+                  <li><span class="label">Axes labels color</span></li>
+                  <li><span class="label">Grid color</span></li>
+                </ul></li>
+
+                <li><span class="label">Quiet mode</span></li>
+
+                <li><span class="label">Machine endian</span>
+                <ul>
+                  <li><span class="label"> Little endian </span></li>
+                  <li><span class="label"> Big endian    </span></li>
+                </ul>
+                The program will try to detect the endian value of the X-display and will       
+                set it to the right value. If it gets obviously wrong information the 
+                endian value will be set to the endian value of the machine that is     
+                given at compile time as the value of CWPENDIAN defined in cwp.h        
+                and set via the compile time flag ENDIANFLAG in Makefile.config.
+                <br/><br/>
+                The only time that you might want to change the value of the endian     
+                variable is if you are viewing traces on a machine with a different     
+                byte order than the machine you are creating the traces on AND if for 
+                some reason the automaic detection of the display byte order fails.     
+                Set endian to that of the machine you are viewing the traces on.
+                </li>
+
+              </ul>
+
+
+              <!-- end lst -->
+
+          </div>
+            <!-- end par -->
+
+            <a name="credits" id="credits"></a>
+            <h2>Credits</h2>
+
+            <p> Created by: Dave Hale, Colorado School of Mines, 08/09/1990<br/>
+            with picking by Wenying Cai of University of Utah
+            <p>
+
+            <p> Modified by: <br/>
+            Morten Pedersen and John Stockwell of CWP              <br/>
+            Tony Kocurko, Memorial University of Newfoundland      <br/>
+            Bill Lutter, University of Wisconsin 10/96             <br/>
+            P. Michaels, Boise State Univeristy, 29 December 2000  <br/>
+            G.Klein, IFG Kiel University, 2003-09-29
+            </p>
+
+            <!-- begin cpy -->
+            <!-- end cpy -->
+
+          </div>
+
+          <div class="navigation">
+            <h2>Index</h2>
+
+            <ul>
+              <li><a href="#intro">Introduction</a></li>
+
+              <!-- begin mpr -->
+              <li><a href="#par">Parameters</a></li>
+              <!-- end mpr -->
+
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | SU 41 </span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of samples in fast dimension</label>
+        <int>
+          <property required="yes">
+            <keyword>n1=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Title of the plot</label>
+        <string>
+          <property required="no">
+            <keyword>title=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Picking options</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>File to save mouse picks</label>
+                <file directory="no">
+                  <property required="no">
+                    <keyword>mpicks=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Saved picks as (x2,x1) instead of (x1,x2)</label>
+                <flag>
+                  <property required="no">
+                    <keyword>x1x2=0</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>File of "acceptable" x2 values</label>
+                <file directory="no">
+                  <property required="no">
+                    <keyword>x2file=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Axis 1 properties (fast dimension)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis begins</label>
+                <float>
+                  <property required="no">
+                    <keyword>x1beg=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis ends</label>
+                <float>
+                  <property required="no">
+                    <keyword>x1end=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Interval between numbered tics</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1num=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First numbered tic</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1num=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>n1tic=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Grid line style</label>
+                <enum>
+                  <property required="no">
+                    <keyword>grid1=</keyword>
+                    <value/>
+                    <default>none</default>
+                  </property>
+                  <option>
+                    <label>No grid lines</label>
+                    <value>none</value>
+                  </option>
+                  <option>
+                    <label>Dotted grid lines</label>
+                    <value>dot</value>
+                  </option>
+                  <option>
+                    <label>Dashed grid lines</label>
+                    <value>dash</value>
+                  </option>
+                  <option>
+                    <label>Solid grid lines</label>
+                    <value>solid</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>none</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Axis 2 properties (slow dimension)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of traces to be plotted</label>
+                <int>
+                  <property required="no">
+                    <keyword>n2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Value at which axis begins</label>
+                <float>
+                  <property required="no">
+                    <keyword>x2beg=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis ends</label>
+                <float>
+                  <property required="no">
+                    <keyword>x2end=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Array of sampled values</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>x2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Interval between numbered tics</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2num=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First numbered tic</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2num=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>n2tic=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Grid line style</label>
+                <enum>
+                  <property required="no">
+                    <keyword>grid2=</keyword>
+                    <value/>
+                    <default>none</default>
+                  </property>
+                  <option>
+                    <label>No grid lines</label>
+                    <value>none</value>
+                  </option>
+                  <option>
+                    <label>Dotted grid lines</label>
+                    <value>dot</value>
+                  </option>
+                  <option>
+                    <label>Dashed grid lines</label>
+                    <value>dash</value>
+                  </option>
+                  <option>
+                    <label>Solid grid lines</label>
+                    <value>solid</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>none</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Wiggle properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Do not draw wiggle trace</label>
+                <flag>
+                  <property required="no">
+                    <keyword>wt=0</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Variable area fill</label>
+                <enum>
+                  <property required="no">
+                    <keyword>va=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                  <option>
+                    <label>No area fill</label>
+                    <value>0</value>
+                  </option>
+                  <option>
+                    <label>Positive area fill</label>
+                    <value>1</value>
+                  </option>
+                  <option>
+                    <label>Negative area fill with light grey</label>
+                    <value>2</value>
+                  </option>
+                  <option>
+                    <label>Negative area fill with grey</label>
+                    <value>3</value>
+                  </option>
+                  <option>
+                    <label>Negative area fill with dark grey</label>
+                    <value>4</value>
+                  </option>
+                  <option>
+                    <label>Negative area fill with black</label>
+                    <value>5</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Wiggle excursion in traces corresponding to clip</label>
+                <float>
+                  <property required="no">
+                    <keyword>xcur=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Clipping properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Percentile used to determine clip value</label>
+                <range min="0" max="100" inc="0.1" digits="1">
+                  <property required="no">
+                    <keyword>perc=</keyword>
+                    <value/>
+                    <default>100.0</default>
+                  </property>
+                </range>
+              </parameter>
+              <parameter>
+                <label>Clip value</label>
+                <float>
+                  <property required="no">
+                    <keyword>clip=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Bias value corresponding to location along axis 2</label>
+                <float>
+                  <property required="no">
+                    <keyword>bias=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Appearance properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Upper left corner x coordinate in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>xbox=</keyword>
+                    <value/>
+                    <default>50</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Upper left corner y coordinate in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>ybox=</keyword>
+                    <value/>
+                    <default>50</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Window width in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>wbox=</keyword>
+                    <value/>
+                    <default>550</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Window height in pixels</label>
+                <int>
+                  <property required="no">
+                    <keyword>hbox=</keyword>
+                    <value/>
+                    <default>700</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Swap axes</label>
+                <flag>
+                  <property required="no">
+                    <keyword>style=normal</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Use 8 point sinc interpolation</label>
+                <flag>
+                  <property required="no">
+                    <keyword>interp=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+              <parameter>
+                <label>Plot title font</label>
+                <string>
+                  <property required="no">
+                    <keyword>titlefont=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Plot title color</label>
+                <string>
+                  <property required="no">
+                    <keyword>titlecolor=</keyword>
+                    <value/>
+                    <default>red</default>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Axes labels font</label>
+                <string>
+                  <property required="no">
+                    <keyword>labelfont=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Axes labels color</label>
+                <string>
+                  <property required="no">
+                    <keyword>labelcolor=</keyword>
+                    <value/>
+                    <default>blue</default>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Grid color</label>
+                <string>
+                  <property required="no">
+                    <keyword>gridcolor=</keyword>
+                    <value/>
+                    <default>blue</default>
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>550</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>700</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>red</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>blue</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>blue</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Quiet mode</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=0</keyword>
+            <value>off</value>
+            <default>on</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Machine endian</label>
+        <enum>
+          <property required="no">
+            <keyword>endian=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Little endian</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Big endian</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

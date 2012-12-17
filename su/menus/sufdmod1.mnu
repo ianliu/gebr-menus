@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU FD Modeling 1D</title>
+  <description>Finite difference modeling (1st order) for the acoustic wave equation</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU FD Modeling 1D</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU FD Modeling 1D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Finite difference modeling (1st order) for the acoustic wave equation
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Finite difference modeling (1st order) for the acoustic wave equation.</p>
+
+          <!-- begin par --><!-- end par -->
+          
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>May 03, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 03, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-03T18:37:24.246244Z</created>
+    <modified>2010-08-06T00:43:04.861190Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU FD Modeling 1D</title>
+    <binary>sufdmod1</binary>
+    <description>Finite difference modeling (1st order) for the acoustic wave equation</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU FD Modeling 1D</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU FD Modeling 1D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Finite difference modeling (1st order) for the acoustic wave equation
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Finite difference modeling (1st order) for the acoustic wave equation.</p>
+           
+          <p>This program need to receive a Binary file containing velocities and creates a SU file containing seismogram.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <!-- begin lst --><ul>
+
+              <li class="req"><span class="reqlabel">Number of z samples</span></li>
+
+              <li class="req"><span class="reqlabel">Maximum propagation time</span></li>
+
+              <li class="req"><span class="reqlabel">Z coordinate of source</span></li>
+
+              <li><span class="label">Z sampling interval</span></li>
+
+              <li><span class="label">First depht sample</span></li>
+
+              <li><span class="label">Coordinate of receiver</span></li>
+
+              <li><span class="label">Binary input file containing density</span></li>
+
+              <li><span class="label">Output file for wave field</span><br/>Snapshots in a SU trace panel.</li>
+
+              <li><span class="label">Absorbing boundary conditions</span></li>
+
+              <li><span class="label">Source type</span>
+
+                <ul>
+                <li>Gauss</li>
+                <li>Ricker 1</li>
+                <li>Ricker 2</li>
+                </ul></li>
+
+              <li><span class="label">Approximate source center frequency (Hz)</span></li>
+
+              <li><span class="label">Number of time samples</span><br/>Default value is (1 + <strong>Maximum propagation time</strong>)/<strong>Time sampling interval.</strong></li>
+
+              <li><span class="label">Trace undersampling factor for trace and snapshots</span></li>
+
+              <li><span class="label">Depth undersampling factor for snapshots</span></li>
+
+              <li><span class="label">Records the particle</span><br/>If disable, record the pressure field.</li>
+
+              <li><span class="label">Echoes extra information</span><br/>Print diagnostic messages.</li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>This program uses a first order explicit velocity/pressure finite  
+  difference equation.</p>
+
+          <p>The source function is applied on the pressure component.</p>
+
+          <p>If no density file is given, constant density is assumed.</p>
+
+          <p>Wavefield can be easily viewed with <strong>SU X Image</strong>, user must provide <b>First sample in slow dimension</b> equal a 0 to the <strong>X Image</strong> program in order to  get correct time labelling.</p>
+
+          <p>Seismic trace is shifted in order to get a zero phase source.</p>
+
+          <p>Source begins and stop when it's amplitude is 10^-4, it's maximum.</p>
+
+          <p>Time and depth undersampling only modify the output trace and snapshots.</p>
+
+          <p>These parameters are useful for keeping snapshot file small and the number of samples under SU_NFLTS.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Colorado School of Mines</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of z samples</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum propagation time</label>
+        <float>
+          <property required="yes">
+            <keyword>tmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Z coordinate of source</label>
+        <float>
+          <property required="yes">
+            <keyword>sz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Z sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dz=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First depht sample</label>
+        <float>
+          <property required="no">
+            <keyword>fz=</keyword>
+            <value/>
+            <default>0.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Coordinate of receiver</label>
+        <float>
+          <property required="no">
+            <keyword>rz=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Binary input file containing density</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>dfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Output file for wave field</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>wfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Absorbing boundary conditions</label>
+        <int min="0" max="1">
+          <property required="no" separator=",">
+            <keyword>abs=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Source type</label>
+        <enum>
+          <property required="no">
+            <keyword>styp=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>Gauss</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Ricker 1</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Ricker 2</label>
+            <value>2</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Approximate source center frequency (Hz)</label>
+        <float>
+          <property required="no">
+            <keyword>freq=</keyword>
+            <value/>
+            <default>15.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of time samples</label>
+        <int>
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Trace undersampling factor for trace and snapshots</label>
+        <int>
+          <property required="no">
+            <keyword>td=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Depth undersampling factor for snapshots</label>
+        <int>
+          <property required="no">
+            <keyword>zd=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Records the particle</label>
+        <flag>
+          <property required="no">
+            <keyword>press=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

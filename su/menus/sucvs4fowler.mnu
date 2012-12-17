@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU CVS Fowler</title>
+  <description>Compute constant velocity stacks for input to Fowler codes</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU CVS Fowler</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU CVS Fowler</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Compute constant velocity stacks for input to Fowler codes
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Compute constant velocity stacks for input to Fowler codes.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<p>
+        Sep 20, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 20, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+  <author>Davi Clemente</author>
+  <email>davi.clemente@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-20T17:38:58.002000Z</created>
+    <modified>2010-09-21T17:01:35.647409Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU CVS Fowler</title>
+    <binary>sucvs4fowler</binary>
+    <description>Compute constant velocity stacks for input to Fowler codes</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU CVS Fowler</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU CVS Fowler</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Compute constant velocity stacks for input to Fowler codes
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Compute constant velocity stacks for input to Fowler codes.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">Number of input cdp gathers</span></li>
+                <li class="group">
+                        <span class="grouplabel">Velocity panels properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Number of stacking velocity panels to compute</span><br />
+                                        Let offmax be the maximum offset, fmax be the maximum freq to preserve, and tmute be the starting mute time in sec on offmax, then the recommended value for this parameter would be: <em>4+(offmax*offmax*fmax)/(0.6*vmin*vmin*tmute).</em></li>
+                                <li>
+                                        <span class="label">Minimum velocity panel to output (m/s)</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Tapers properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Lenght of mute taper (ms)</span></li>
+                                <li>
+                                        <span class="label">Lenght of bottom taper (ms)</span></li>
+                                <li>
+                                        <span class="label">Lenght of side taper (traces)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Do not mute to avoid non-hyperbolic moveout</span></li>
+                <li>
+                        <span class="label">Velocity to use for non-hyperbolic mouveout mute</span></li>
+                <li>
+                        <span class="label">Output sample rate (s)</span></li>
+                <li>
+                        <span class="label">Maximum number of offsets/input cmp</span></li>
+                <li>
+                        <span class="label">Fraction of frequencies to force sloth antialias limit</span><br />
+                        Fraction of output frequencies to force within sloth antialias limit.  This controls muting by offset of the input data prior to computing the constant velocity stacks.</li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        This program requires the following header key words on input:</p>
+<ul>
+        <li>
+                Number of Samples,</li>
+        <li>
+                Sampling interval in microseconds,</li>
+        <li>
+                CDP ensemble number,</li>
+        <li>
+                Offset.</li>
+</ul>
+<h2 id="header_3">
+        References</h2>
+<ul>
+        <li>
+                Fowler, P., 1988, Ph.D. Thesis, Stanford University.</li>
+        <li>
+                Anderson, J.E., Alkhalifah, T., and Tsvankin, I., 1994, Fowler| DMO and time migration for transversely isotropic media, 1994 CWP project review.</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        (Visitor to CSM from Mobil): John E. Anderson, Spring 1994.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Number of input CDP gathers</label>
+        <int>
+          <property required="yes">
+            <keyword>ncdps=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Velocity panels properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Number of stacking velocity panels to compute</label>
+                <int>
+                  <property required="no">
+                    <keyword>nvstack=</keyword>
+                    <value/>
+                    <default>180</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Minimum velocity panel to output (m/s)</label>
+                <float>
+                  <property required="no">
+                    <keyword>vminstack=</keyword>
+                    <value/>
+                    <default>1500.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>180</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1500.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Tapers properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Lenght of mute taper (ms)</label>
+                <int>
+                  <property required="no">
+                    <keyword>lmute=</keyword>
+                    <value/>
+                    <default>24</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Lenght of bottom taper (ms)</label>
+                <int>
+                  <property required="no">
+                    <keyword>lbtaper=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Lenght of side taper (traces)</label>
+                <int>
+                  <property required="no">
+                    <keyword>lstaper=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>24</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Do not mute to avoid non-hyperbolic moveout</label>
+        <flag>
+          <property required="no">
+            <keyword>nonhyp=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Velocity to use for non-hyperbolic mouveout mute</label>
+        <float>
+          <property required="no">
+            <keyword>vhyp=</keyword>
+            <value/>
+            <default>2500.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Output sample rate (s)</label>
+        <float>
+          <property required="no">
+            <keyword>dtout=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum number of offsets/input cmp</label>
+        <int>
+          <property required="no">
+            <keyword>mxfold=</keyword>
+            <value/>
+            <default>120</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Fraction of frequencies to force sloth antialias limit</label>
+        <float>
+          <property required="no">
+            <keyword>salias=</keyword>
+            <value/>
+            <default>0.8</default>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

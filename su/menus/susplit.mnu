@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Split Files</title>
+  <description>Split traces into different output files by keyword value</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Split Files</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Split Files</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Split traces into different output files by keyword value
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Split traces into different output files by keyword value.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 01, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 01, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-01T14:44:26.666434Z</created>
+    <modified>2010-09-01T15:06:11.773109Z</modified>
+    <lastrun/>
+  </date>
+  <category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Split Files</title>
+    <binary>susplit</binary>
+    <description>Split traces into different output files by keyword value</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Split Files</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Split Files</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Split traces into different output files by keyword value
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Split traces into different output files by keyword value.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li>
+                        <span class="label">Key header word to split on</span><br />
+                        For more information, see help of menu <strong>SU Set header</strong>.</li>
+                <li class="group">
+                        <span class="grouplabel">Output files properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Name for output files</span></li>
+                                <li>
+                                        <span class="label">Middle of name of output files</span></li>
+                                <li>
+                                        <span class="label">Suffix for output files</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Length of numeric part of filename</span></li>
+                <li>
+                        <span class="label">Echoes extra information</span></li>
+                <li>
+                        <span class="label">Close files before opening new ones</span></li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        The most efficient way to use this program is to pre-sort the input data into common keyword gathers, prior to using <strong>SU Split Files</strong>.<br />
+        <br />
+        Use menu <strong>SU Split Flow</strong> to put SU data into SU data directory format.</p>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+         Geocon: Garry Perratt hacked together from various other codes.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Key header word to split on</label>
+        <enum>
+          <property required="no">
+            <keyword>key=</keyword>
+            <value>cdp</value>
+            <default>cdp</default>
+          </property>
+          <option>
+            <label>Alias filter frequency if used</label>
+            <value>afilf</value>
+          </option>
+          <option>
+            <label>Alias filter slope</label>
+            <value>afils</value>
+          </option>
+          <option>
+            <label>Alignment padding</label>
+            <value>shortpad</value>
+          </option>
+          <option>
+            <label>CDP ensemble number</label>
+            <value>cdp</value>
+          </option>
+          <option>
+            <label>Coordinate units code</label>
+            <value>counit</value>
+          </option>
+          <option>
+            <label>Correlated flag</label>
+            <value>corr</value>
+          </option>
+          <option>
+            <label>Data use</label>
+            <value>duse</value>
+          </option>
+          <option>
+            <label>Datum elevation at receiver group</label>
+            <value>gdel</value>
+          </option>
+          <option>
+            <label>Datum elevation at source</label>
+            <value>sdel</value>
+          </option>
+          <option>
+            <label>Day of year</label>
+            <value>day</value>
+          </option>
+          <option>
+            <label>Delay recording time in ms</label>
+            <value>delrt</value>
+          </option>
+          <option>
+            <label>Energy source point number</label>
+            <value>ep</value>
+          </option>
+          <option>
+            <label>Field record number</label>
+            <value>fldr</value>
+          </option>
+          <option>
+            <label>Final mute time</label>
+            <value>mute</value>
+          </option>
+          <option>
+            <label>First sample location for non-seismic data</label>
+            <value>f1</value>
+          </option>
+          <option>
+            <label>First trace location</label>
+            <value>f2</value>
+          </option>
+          <option>
+            <label>Gain type of field instruments code</label>
+            <value>gain</value>
+          </option>
+          <option>
+            <label>Gap size</label>
+            <value>gaps</value>
+          </option>
+          <option>
+            <label>Geophone group number of last trace within original field record</label>
+            <value>grnlof</value>
+          </option>
+          <option>
+            <label>Geophone group number of roll switch position one</label>
+            <value>grnors</value>
+          </option>
+          <option>
+            <label>Geophone group number of trace one within original field record</label>
+            <value>grnofr</value>
+          </option>
+          <option>
+            <label>Group static correction</label>
+            <value>gstat</value>
+          </option>
+          <option>
+            <label>High cut frequncy if used</label>
+            <value>hcf</value>
+          </option>
+          <option>
+            <label>High cut slope</label>
+            <value>hcs</value>
+          </option>
+          <option>
+            <label>Hour of day (24 hour clock)</label>
+            <value>hour</value>
+          </option>
+          <option>
+            <label>Initial mute time</label>
+            <value>muts</value>
+          </option>
+          <option>
+            <label>Instrument early or initial gain</label>
+            <value>igi</value>
+          </option>
+          <option>
+            <label>Instrument gain constant</label>
+            <value>igc</value>
+          </option>
+          <option>
+            <label>Lag time A</label>
+            <value>laga</value>
+          </option>
+          <option>
+            <label>Lag time B</label>
+            <value>lagb</value>
+          </option>
+          <option>
+            <label>Low cut frequency if used</label>
+            <value>lcf</value>
+          </option>
+          <option>
+            <label>Low cut slope</label>
+            <value>lcs</value>
+          </option>
+          <option>
+            <label>Mark selected traces</label>
+            <value>mark</value>
+          </option>
+          <option>
+            <label>Minute of hour</label>
+            <value>minute</value>
+          </option>
+          <option>
+            <label>Negative of power used for dynamic range compression</label>
+            <value>ungpow</value>
+          </option>
+          <option>
+            <label>Notch filter frequency if used</label>
+            <value>nofilf</value>
+          </option>
+          <option>
+            <label>Notch filter slope</label>
+            <value>nofils</value>
+          </option>
+          <option>
+            <label>Number of horizontally summed traces</label>
+            <value>nhs</value>
+          </option>
+          <option>
+            <label>Number of samples</label>
+            <value>ns</value>
+          </option>
+          <option>
+            <label>Number of traces</label>
+            <value>ntr</value>
+          </option>
+          <option>
+            <label>Number of vertically summed traces</label>
+            <value>nvs</value>
+          </option>
+          <option>
+            <label>Offset (signed distance from source to receiver group)</label>
+            <value>offset</value>
+          </option>
+          <option>
+            <label>Overtravel taper code</label>
+            <value>otrav</value>
+          </option>
+          <option>
+            <label>Receiver group elevation from sea level</label>
+            <value>gelev</value>
+          </option>
+          <option>
+            <label>Reciprocal of scaling factor to normalize range</label>
+            <value>unscale</value>
+          </option>
+          <option>
+            <label>Sampling interval in microseconds</label>
+            <value>dt</value>
+          </option>
+          <option>
+            <label>Sample spacing between traces</label>
+            <value>d2</value>
+          </option>
+          <option>
+            <label>Sample spacing for non-seismic data</label>
+            <value>d1</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver coordinates</label>
+            <value>scalco</value>
+          </option>
+          <option>
+            <label>Scale factor for source/receiver elevations, datum and water depth</label>
+            <value>scalel</value>
+          </option>
+          <option>
+            <label>Second of minute</label>
+            <value>sec</value>
+          </option>
+          <option>
+            <label>Source depth (positive)</label>
+            <value>sdepth</value>
+          </option>
+          <option>
+            <label>Source elevation from sea level</label>
+            <value>selev</value>
+          </option>
+          <option>
+            <label>Source static correction</label>
+            <value>sstat</value>
+          </option>
+          <option>
+            <label>Subweathering velocity</label>
+            <value>swevel</value>
+          </option>
+          <option>
+            <label>Sweep frequency at end</label>
+            <value>sfe</value>
+          </option>
+          <option>
+            <label>Sweep frequency at start</label>
+            <value>sfs</value>
+          </option>
+          <option>
+            <label>Sweep length in ms</label>
+            <value>slen</value>
+          </option>
+          <option>
+            <label>Sweep trace length at end in ms</label>
+            <value>stae</value>
+          </option>
+          <option>
+            <label>Sweep trace length at start in ms</label>
+            <value>stas</value>
+          </option>
+          <option>
+            <label>Sweep type code</label>
+            <value>styp</value>
+          </option>
+          <option>
+            <label>Taper type</label>
+            <value>tatyp</value>
+          </option>
+          <option>
+            <label>Time basis code</label>
+            <value>timbas</value>
+          </option>
+          <option>
+            <label>Total static applied</label>
+            <value>tstat</value>
+          </option>
+          <option>
+            <label>Trace identification code</label>
+            <value>trid</value>
+          </option>
+          <option>
+            <label>Trace number sequence within field record</label>
+            <value>tracf</value>
+          </option>
+          <option>
+            <label>Trace number sequence within line</label>
+            <value>tracl</value>
+          </option>
+          <option>
+            <label>Trace number sequence within reel</label>
+            <value>tracr</value>
+          </option>
+          <option>
+            <label>Trace number within CDP ensemble</label>
+            <value>cdpt</value>
+          </option>
+          <option>
+            <label>Trace weighting factor</label>
+            <value>trwf</value>
+          </option>
+          <option>
+            <label>Uphole time at receiver group</label>
+            <value>gut</value>
+          </option>
+          <option>
+            <label>Uphole time at source</label>
+            <value>sut</value>
+          </option>
+          <option>
+            <label>Water depth at receiver group</label>
+            <value>gwdep</value>
+          </option>
+          <option>
+            <label>Water depth at source</label>
+            <value>swdep</value>
+          </option>
+          <option>
+            <label>Weathering velocity</label>
+            <value>wevel</value>
+          </option>
+          <option>
+            <label>X group coordinate</label>
+            <value>gx</value>
+          </option>
+          <option>
+            <label>X source coordinate</label>
+            <value>sx</value>
+          </option>
+          <option>
+            <label>Y group coordinate</label>
+            <value>gy</value>
+          </option>
+          <option>
+            <label>Y source coordinate</label>
+            <value>sy</value>
+          </option>
+          <option>
+            <label>Year data recorded</label>
+            <value>year</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Output files properties</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Name for output files</label>
+                <string>
+                  <property required="no">
+                    <keyword>stem=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Middle of name of output files</label>
+                <string>
+                  <property required="no">
+                    <keyword>middle=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Suffix for output files</label>
+                <string>
+                  <property required="no">
+                    <keyword>suffix=</keyword>
+                    <value/>
+                    <default>.su</default>
+                  </property>
+                </string>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>split_stem</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>.su</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Length of numeric part of filename</label>
+        <int>
+          <property required="no">
+            <keyword>numlength=</keyword>
+            <value/>
+            <default>7</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Close files before opening new ones</label>
+        <flag>
+          <property required="no">
+            <keyword>close=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

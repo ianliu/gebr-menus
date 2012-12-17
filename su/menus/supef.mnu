@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU PEF</title>
+  <description>Wiener predictive error filtering</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU PEF</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU PEF</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Wiener prediction error filtering
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Filtering, Transforms and Attributes | Multiple Supression | Seismic Unix 
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Wiener prediction error filtering.</p>
+
+          
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Sep 16, 2007: written by GêBR core team &lt;port@gebrproject.com&gt;</p>
+          <p>Jul 23, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Jul 29, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Jul 29, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-09-16T15:00:00Z</created>
+    <modified>2010-08-06T00:43:06.528423Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Multiple Supression</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU PEF</title>
+    <binary>supef</binary>
+    <description>Wiener prediction error filtering</description>
+    <help>
+      <![CDATA[
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+    <meta name="generator" content=
+    "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+    <meta http-equiv="content-type" content=
+    "text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="file:///usr/share/debr/gebr.css" media=
+    "screen" />
+
+    <!-- begin ttl -->
+  <title>SU PEF</title>
+  <!-- end ttl -->
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+          <span class="flowtitle">SU PEF</span>
+          <!-- end tt2 -->
+            <div class="description">
+           <!-- begin des -->Wiener prediction error filtering <!-- end des -->
+          </div>
+          </div>
+        </div><!-- header -->
+
+        <div class="category">
+        <!-- begin cat -->
+          Filtering, Transforms and Attributes | Multiple Supression | Seismic Unix
+          <!-- end cat -->
+      </div>
+
+        <div class="main">
+          <div class="content">
+
+        
+             <a name="intro"></a>
+             <h2>Introduction</h2>
+        
+             <p>Wiener prediction error filtering.</p>
+                        
+                
+            <!-- begin par -->
+          <div class="parameters">
+
+              <a name="par"></a>
+              <h2>Parameters</h2>
+
+              <!-- begin lst -->
+            <ul>
+
+                <li class="req"><span class="reqlabel">Time sampling interval</span><br/>
+                If not set in trace header, specifications of its value in seconds is mandatory.</li>
+
+                <li><span class="label">List of CDPs for which optional parameters are set</span>
+                </li>
+
+                <li><span class="label">First lag of prediction filter</span><br/>
+                List of first lag of prediction filter to be applied to the selected CDPs.
+                </li>
+
+                <li><span class="label">Maximum lag of prediction filter</span><br/>
+                List of maximum lag of prediction filter to be applied to the selected CDPs.
+                </li>
+
+                <li><span class="label">Relative additive noise level</span><br/>
+                If not specified, the default value is 0.001.
+                </li>
+
+                <li><span class="label">Start of autocorrelation window</span><br/>
+                List of first lag of prediction filter to be applied to the selected CDPs.
+                </li>
+
+                <li><span class="label">End of autocorrelation window</span><br/>
+                List of maximum lag of prediction filter to be applied on the selected CDPs.
+                </li>
+
+                <li><span class="label">Show Wiener filter on each trace</span></li>
+
+                <li><span class="label">Array of weights for moving average of autocorrelation</span><br/>
+                List of floating point values.
+                </li>
+
+                <li><span class="label">Filename to write wiener filter</span><br/>
+                Output parameter file, contains the Wiener filter if <b>Show Wiener filter on each trace</b> is set on.
+                </li>
+
+                <li><span class="label">CDP interpolation method</span><br />
+                <ul>            
+                  <li>Linear Interpolation  of CDP values</li>
+                  <li>Monotonic cubic interpolation of CDPs</li>
+                  <li>Akima's cubic interpolation of CDPs</li>
+                  <li>Cubic spline interpolation of CDPs</li>
+                </ul></li>
+              </ul>
+              <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+
+            <a name="notes"></a>
+            <h2>Notes</h2>
+
+        <p>
+           To apply spiking decon (Wiener filtering with no gap):<br/>          
+        
+           Use the programs <b>SU Auto Correlation</b> and <b>SU X Image</b> with parameter <b>Percentile used to determine clip value</b> equal a 95.</p>
+
+        <p>You will see horizontal strip running across the center of your plot.<br/>   
+        This is the auto correlation wavelet for each trace. The idea of spiking
+        decon is to apply a Wiener filter with no gap to the data to collapse   
+        the waveform into a spike.<br/> The idea is to pick the width of the    
+        autocorrelation waveform, from beginning to end,
+        and use this time for value of parameter <b>Maximum lag of prediction filter</b> in program <b>SU PEF</b>.</p>
+
+        <p>Prediction Error Filter (i.e. gapped Wiener filtering).<br/>         
+        The purpose of gapped decon is to suppress repetitions in the data      
+        such as those caused by water bottom multiples.</p>
+
+
+        <p>It may be effective to sort your data into CDP gathers with program <b>SU Sort</b>,
+        and perform NMO correction to the water speed with program <b>SU NMO</b>, prior to      
+        attempts to suppress water bottom multiples.<br/> After applying <b>SU PEF</b>, the
+        user should apply inverse NMO to undo the NMO to water speed prior to   
+        further processing. Or, do the predictive decon on fully nmo-corrected
+        gathers.</p>                            
+
+
+            <p>This program accesses the following header keywords:
+              <ul>
+                 <li>Number of samples,</li>  <!-- ns -->
+                 <li>Sampling interval in microseconds.</li>  <!-- dt -->
+             </ul>
+            </p>
+
+
+
+            <a name="ref"></a>
+            <h2>References</h2>
+             <ul>
+                <li>A. Ziolkowski, "Deconvolution", for value of maxlag default: <br />
+            page 91: imaxlag &lt; nt/10.</li>   
+
+
+            <a name="credits"></a>
+            <h2>Credits</h2>
+          <!-- begin cpy -->
+
+            <p> CWP: Shuki Ronen, Jack K. Cohen, Ken Larner.<br />
+            CWP: John Stockwell, added mixing feature (April 1998).<br />
+            CSM: Tanya Slota (September 2005) added cdp feature.
+            </p>
+
+            <!-- end cpy -->
+        </div>
+
+          <div class="navigation">
+            <h2>Index</h2>
+
+            <ul>
+              <li><a href="#intro">Introduction</a></li>
+
+              <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+              <li><a href="#notes">Notes</a></li>
+
+              <li><a href="#ref">References</a></li>
+
+              <li><a href="#credits">Credits</a></li>
+
+            </ul>
+          </div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Time sampling interval</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>CDPs for which optional parameters are set</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>cdp=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>First lag of prediction filter</label>
+        <float>
+          <property required="no">
+            <keyword>minlag=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum lag of prediction filter</label>
+        <float>
+          <property required="no">
+            <keyword>maxlag=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Relative additive noise level</label>
+        <float>
+          <property required="no">
+            <keyword>pnoise=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Start of autocorrelation window</label>
+        <float>
+          <property required="no">
+            <keyword>mincorr=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>End of autocorrelation window</label>
+        <float>
+          <property required="no">
+            <keyword>maxcorr=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Show Wiener filter on each trace</label>
+        <flag>
+          <property required="no">
+            <keyword>showwiener=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Array of weights for moving average of autocorrelation</label>
+        <float>
+          <property required="no" separator=",">
+            <keyword>mix=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Filename to write wiener filter</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>outpar=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>CDP interpolation method</label>
+        <enum>
+          <property required="no">
+            <keyword>method=</keyword>
+            <value/>
+            <default>linear</default>
+          </property>
+          <option>
+            <label>Linear interpolation of CDP values</label>
+            <value>linear</value>
+          </option>
+          <option>
+            <label>Monotonic cubic interpolation of CDPs</label>
+            <value>mono</value>
+          </option>
+          <option>
+            <label>Akima's cubic interpolation of CDPs</label>
+            <value>akima</value>
+          </option>
+          <option>
+            <label>Cubic spline interpolation of CDPs</label>
+            <value>spline</value>
+          </option>
+        </enum>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

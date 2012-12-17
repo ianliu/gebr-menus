@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Mig Kirchhoff 3D</title>
+  <description>Kirchhoff Depth Migration of 3D poststack or prestack data</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mig Kirchhoff 3D</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Mig Kirchhoff 3D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Kirchhoff Depth Migration of 3D poststack or prestack data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Kirchhoff Depth Migration of 3D poststack or prestack data.</p>
+
+          <!-- begin par --><!-- end par -->
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>May 29, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->May 29, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-05-29T22:41:47.193494Z</created>
+    <modified>2010-08-06T00:43:05.606025Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Mig Kirchhoff 3D</title>
+    <binary>sukdmig3d</binary>
+    <description>Kirchhoff Depth Migration of 3D poststack or prestack data</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Mig Kirchhoff 3D</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Mig Kirchhoff 3D</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Kirchhoff Depth Migration of 3D poststack or prestack data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Kirchhoff Depth Migration of 3D poststack or prestack data.</p>
+
+          <p>This program receive a file for input seismic traces and creates a file for common offset migration output.</p>
+
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+            <!-- begin lst --><ul>
+              <li class="group"><span class="grouplabel">Description of traveltime tables</span><br/>
+
+              <ul>
+              <li class="req"><span class="reqlabel">File for input traveltime tables</span><br/>This value can be set by "First sample location for non-seismic data" from traveltime file header</li>
+
+              <li><span class="label">First X sample in traveltime table</span><br/>This value can be set by "Number of samples" from traveltime file header </li>
+
+              <li><span class="label">Number of X samples in traveltime table</span><br/>This value can be set by "Number of samples" from traveltime file header </li>
+
+              <li><span class="label">X interval in traveltime table</span><br/>This value can be set by "Sample spacing for non-seismic data" from traveltime file header </li>
+
+              <li><span class="label">First Y sample in traveltime table</span><br/>This value can be set by "First trace location" from traveltime file header </li>
+
+              <li><span class="label">Number of Y samples in traveltime table</span><br/>This value can be set by "Number of traces" from traveltime file header </li>
+
+              <li><span class="label">Y interval in traveltime table</span><br/>This value can be set by "Sample spacing between traces" from traveltime file header </li>
+
+              <li><span class="label">X in X interval of first source</span><br/>This value can be set by "Datum elevation at source" from traveltime file header </li>
+
+              <li><span class="label">Number of sources in X</span><br/>This value can be set by "Number of horizontally summed traces" from traveltime file header </li>
+
+              <li><span class="label">Ratio of source and grid spacing in X</span><br/>This value can be set by "Water depth at source" from traveltime file header </li>
+
+              <li><span class="label">Y in Y interval of first source</span><br/>This value can be set by "Datum elevation at receiver group" from traveltime file header </li>
+
+              <li><span class="label">Number of sources in Y</span><br/>This value can be set by "Number of vertically summed traces" from traveltime file header </li>
+
+              <li><span class="label">Ratio of source and grid spacing in Y</span><br/>This value can be set by "Water depth at receiver group" from traveltime file header </li>
+
+              <li><span class="label">First depht sample in traveltime table</span><br/>This value can be set by "Source depth"/1000 from traveltime file header </li>
+
+              <li><span class="label">Number of depht samples in traveltime table</span><br/>This value can be set by "Data use" from traveltime file header </li>
+
+              <li><span class="label">Depht interval in traveltime table</span><br/>This value can be set by "Energy source point number"/1000 from traveltime file header </li>
+
+              <li><span class="label">X size of the traveltime region</span><br/>This value can be set by "Source elevation from sea level" from traveltime file header </li>
+
+              <li><span class="label">Y size of the traveltime region</span><br/>This value can be set by "Receiver group elevation from sea level" from traveltime file header</li>
+
+              <li><span class="label">Number of multivalued traveltime</span><br/>This value can be set by "Scale factor for source/receiver elevations, datum and water depth" from traveltime file header </li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Input data parameters</span><br/> 
+
+              <ul>
+              <li><span class="label">Time sampling interval of input data</span><br/>This value can be set by "Sampling interval in microseconds" from traveltime file header </li>
+
+              <li><span class="label">First time sample of input data</span><br/></li>
+
+              <li><span class="label">Sampling interval of midpoints</span><br/>This value can be set by "Sample spacing between traces" from traveltime file header </li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Output trace parameters</span><br/> 
+
+              <ul>
+              <li><span class="label">Z-coordinate of first point in output trace</span><br/> </li>
+
+              <li><span class="label">Vertical spacing of output trace</span><br/> </li>
+
+              <li><span class="label">Number of points in output trace</span><br/> </li>
+
+              <li><span class="label">X-coordinate of first output trace</span><br/> </li>
+
+              <li><span class="label">Horizontal spacing of output trace in X</span><br/> </li>
+
+              <li><span class="label">Number of output traces in X</span><br/> </li>
+
+              <li><span class="label">Y-coordinate of first output trace</span><br/> </li>
+
+              <li><span class="label">Horizontal spacing of output trace in Y</span><br/> </li>
+
+              <li><span class="label">Number of output traces in Y</span><br/> </li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Migration parameters</span><br/> 
+
+              <ul>
+              <li><span class="label">Input file of cosine theta and ray paths </span><br/> </li>
+
+              <li><span class="label">First offest in output in X</span><br/> </li>
+
+              <li><span class="label">First offest in output in Y</span><br/> </li>
+
+              <li><span class="label">Offset increment in output in X</span><br/> </li>
+
+              <li><span class="label">Offset increment in output in Y</span><br/> </li>
+
+              <li><span class="label">Number of offsets in output in X</span><br/> </li>
+
+              <li><span class="label">Number of offsets in output in Y</span><br/> </li>
+
+              <li><span class="label">X maximum absolute offset allowed in migration</span><br/> </li>
+
+              <li><span class="label">Y maximum absolute offset allowed in migration</span><br/> </li>
+
+              <li><span class="label">Migration lateral aperature in X</span><br/> </li>
+
+              <li><span class="label">Migration lateral aperature in Y</span><br/> </li>
+
+              <li><span class="label">Max angle to handle</span><br/> </li>
+
+              <li><span class="label">Max frequency in the data</span><br/> </li>
+
+              <li><span class="label">Job print file</span><br/> </li>
+
+              <li><span class="label">Traces interval at which will be printed verbal information</span><br/> </li>
+
+              <li><span class="label">Maximum number of input traces to be migrated</span><br/> </li>
+
+              <li><span class="label">Is line source</span><br/>If disable, is point source</li>
+
+              </ul></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+          
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>Traveltime tables were generated by program <strong>SU Tetra Ray</strong> (or other ones) on very sparse tetrahedral model, with dimension <strong>Number of sources in Y</strong> * <strong>Number of sources in X</strong> * <strong>Number of depth samples in traveltime table</strong> * <strong>Number of Y samples in traveltime table</strong> * <strong>Number of X samples in traveltime table</strong>.</p>
+
+                <p>Input seismic traces must be SU format and can be any type of gathers (common shot, common offset, common CDP, and so on).</p>
+
+                <p>Migrated traces are output in CDP gathers if velocity analysis is required, with dimension <strong>Number of offsets in output in X</strong> * <strong>Number of offsets in output in Y</strong> * <strong>Number of output traces in X</strong> * <strong>Number of output traces in Y</strong> * <strong>Number of points in output trace</strong>.</p>
+
+                <p>If the offset value of an input trace is not in the offset array of output, the nearest one in the array is chosen.</p>
+
+                <p>Memory requirement for this program is about [<strong>Number of sources in Y</strong> * <strong>Number of sources in X</strong> * <strong>Number of depth samples in traveltime table</strong> * <strong>Number of Y samples in traveltime table</strong> * <strong>Number of X samples in traveltime table</strong> + <strong>Number of offsets in output in X</strong> * <strong>Number of offsets in output in Y</strong> * <strong>Number of output traces in X</strong> * <strong>Number of output traces in Y</strong> * <strong>Number of points in output trace</strong> + <strong>Number of sources in Y</strong> * <strong>Number of output traces in X</strong> * <strong>Number of points in output trace</strong> * <strong>Number of Y samples in traveltime table</strong> * <strong>Number of X samples in traveltime table</strong>]</p>
+
+                <p>Input traces must specify source and receiver positions via header fields <strong>X source coordinate</strong> and <strong>X group coordinate</strong>, as well as <strong>Y source coordinate</strong> and <strong>Y group coordinate</strong>. Offset is computed automatically.</p>
+
+          <p>Disclaimer:<br/> This is a research code that will take considerable work to get into the form of a a production level 3D migration code. The code is offered as is, along with <strong>Tetra Model</strong> and <strong>SU Tetra Ray</strong>, to provide a starting point for researchers who wish to write their own 3D migration codes.</p>
+
+        <p>This program accesses the following header keywords:
+          <ul>
+            <li>Number of samples</li>  <!-- ns -->
+            <li>Sample interval in ms</li>  <!-- dt -->
+            <li>Delay recording time in ms</li>  <!-- delrt -->
+            <li>Sample spacing between traces</li>  <!-- d2 -->
+          </ul>
+        </p>
+
+        <p>This program modifies the following header keywords:
+          <ul>
+            <li>X source coordinate</li>  <!-- sx-->
+            <li>X group coordinate</li>  <!-- gx -->
+          </ul>
+        </p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Author: Zhaobo Meng, 01/10/97, Colorado School of Mines.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Description of traveltime tables</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>File for input traveltime tables</label>
+                <file directory="no">
+                  <property required="yes">
+                    <keyword>ttfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>First X sample in traveltime table</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxgd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of X samples in traveltime table</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxt=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X interval in traveltime table</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxgd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First Y sample in traveltime table</label>
+                <float>
+                  <property required="no">
+                    <keyword>fygd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of Y samples in traveltime table</label>
+                <int>
+                  <property required="no">
+                    <keyword>nyt=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Y interval in traveltime table</label>
+                <float>
+                  <property required="no">
+                    <keyword>dygd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X in X interval of first source</label>
+                <int>
+                  <property required="no">
+                    <keyword>ixsf=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of sources in X</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Ratio of source and grid spacing in X</label>
+                <int>
+                  <property required="no">
+                    <keyword>ixsr=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Y in Y interval of first source</label>
+                <int>
+                  <property required="no">
+                    <keyword>iysf=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of sources in Y</label>
+                <int>
+                  <property required="no">
+                    <keyword>nys=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Ratio of source and grid spacing in Y</label>
+                <int>
+                  <property required="no">
+                    <keyword>iysr=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First depht sample in traveltime table</label>
+                <float>
+                  <property required="no">
+                    <keyword>fzs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of depht samples in traveltime table</label>
+                <int>
+                  <property required="no">
+                    <keyword>nzs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Depht interval in traveltime table</label>
+                <float>
+                  <property required="no">
+                    <keyword>dzs=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X size of the traveltime region</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxgd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Y size of the traveltime region</label>
+                <int>
+                  <property required="no">
+                    <keyword>nygd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of multivalued traveltime</label>
+                <int>
+                  <property required="no">
+                    <keyword>multit=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Input data parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Time sampling interval of input data</label>
+                <float>
+                  <property required="no">
+                    <keyword>dt=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First time sample of input data</label>
+                <float>
+                  <property required="no">
+                    <keyword>ft=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sampling interval of midpoints</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxm=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output trace parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Z-coordinate of first point in output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>fzo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Vertical spacing of output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>dzo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of points in output trace</label>
+                <int>
+                  <property required="no">
+                    <keyword>nzo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X-coordinate of first output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal spacing of output trace in X</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of output traces in X</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Y-coordinate of first output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>fyo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal spacing of output trace in Y</label>
+                <float>
+                  <property required="no">
+                    <keyword>dyo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of output traces in Y</label>
+                <int>
+                  <property required="no">
+                    <keyword>nyo=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Migration parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Input file of cosine theta and ray paths</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>crfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>First offest in output in X</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxoffset=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First offest in output in Y</label>
+                <float>
+                  <property required="no">
+                    <keyword>fyoffset=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Offset increment in output in X</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxoffset=</keyword>
+                    <value/>
+                    <default>99999</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Offset increment in output in Y</label>
+                <float>
+                  <property required="no">
+                    <keyword>dyoffset=</keyword>
+                    <value/>
+                    <default>99999</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of offsets in output in X</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxoffset=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Number of offsets in output in Y</label>
+                <int>
+                  <property required="no">
+                    <keyword>nyoffset=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>X maximum absolute offset allowed in migration</label>
+                <float>
+                  <property required="no">
+                    <keyword>xoffsetmax=</keyword>
+                    <value/>
+                    <default>99999</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Y maximum absolute offset allowed in migration</label>
+                <float>
+                  <property required="no">
+                    <keyword>yoffsetmax=</keyword>
+                    <value/>
+                    <default>99999</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Migration lateral aperature in X</label>
+                <float>
+                  <property required="no">
+                    <keyword>xaper=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Migration lateral aperature in Y</label>
+                <float>
+                  <property required="no">
+                    <keyword>yaper=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Max angle to handle</label>
+                <float>
+                  <property required="no">
+                    <keyword>angmax=</keyword>
+                    <value/>
+                    <default>60</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Max frequency in the data</label>
+                <float>
+                  <property required="no">
+                    <keyword>fmax=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Job print file</label>
+                <file directory="no" filter-name="" filter-pattern="">
+                  <property required="no">
+                    <keyword>jpfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Traces interval at which will be printed verbal information</label>
+                <int>
+                  <property required="no">
+                    <keyword>pptr=</keyword>
+                    <value/>
+                    <default>100</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Maximum number of input traces to be migrated</label>
+                <int>
+                  <property required="no">
+                    <keyword>ntrmax=</keyword>
+                    <value/>
+                    <default>100000</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Is line source</label>
+                <flag>
+                  <property required="no">
+                    <keyword>ls=1</keyword>
+                    <value>off</value>
+                    <default>off</default>
+                  </property>
+                </flag>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>99999</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>99999</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>99999</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>99999</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>60</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>100000</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value>off</value>
+                  <default>off</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

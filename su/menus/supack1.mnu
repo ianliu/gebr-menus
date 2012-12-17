@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Pack Chars</title>
+  <description>Pack segy trace data into chars</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Pack Chars</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Pack Chars</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Pack segy trace data into chars
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Data Compression | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Pack segy trace data into chars.</p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Set 24, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Set 24, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-09-24T17:59:17.602382Z</created>
+    <modified>2010-08-06T00:43:06.455814Z</modified>
+    <lastrun/>
+  </date>
+  <category>Data Compression</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Pack Chars</title>
+    <binary>supack1</binary>
+    <description>Pack segy trace data into chars</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Pack Chars</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Pack Chars</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Pack segy trace data into chars
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Data Compression | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Pack segy trace data into chars.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+              
+            <!-- begin lst -->
+            <ul>
+              <li><span class="label">Exponent to compress the dynamic range of traces</span><br/>
+              The default value is 0.5.</li>
+            </ul>
+            
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>This program is for single site use. Use <b>SU SEG-Y Write</b>
+          to make a portable tape.</p>
+
+          <p>This program store the local header words 
+          <ul>
+            <li> Negative of power used for dynamic range compression </li> <!-- ungpow  -->
+            <li> Reciprocal of scaling factor to normalize range      </li> <!-- unscale -->
+          </ul>
+          required by <b>SU Unpack Chars</b> as floats.
+          Although not essential (compare the handling of such fields as 
+          "Sampling interval in microseconds"), it allows to demonstrate the 
+          convenience of using the natural data type. In any case, the data 
+          itself is non-portable floats in general, so it is not giving up 
+          any intrinsic portability.</p>
+
+          <p> This program accesses the header keyword
+          <ul>
+            <li> Number of samples </li> <!-- ns -->
+          </ul>
+          and modifies the keywords
+          <ul>
+            <li> Negative of power used for dynamic range compression </li> <!-- ungpow  -->
+            <li> Reciprocal of scaling factor to normalize range      </li> <!-- unscale -->
+            <li> Trace identification code                            </li> <!-- trid    -->
+          </ul>
+          </p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>CWP: Jack K. Cohen, Shuki Ronen, Brian Sumner</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Exponent to compress the dynamic range of traces</label>
+        <float>
+          <property required="no">
+            <keyword>gpow=</keyword>
+            <value/>
+            <default>0.5</default>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Inv VXZ CO</title>
+  <description>Seismic Inversion of Common Offset data</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Inv VXZ CO</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Inv VXZ CO</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Seismic Inversion of Common Offset data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat --><!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Seismic Inversion of Common Offset data for a smooth velocity function V(X,Z) plus a slowness perturbation vp(x,z).</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Jun 21, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver --><!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>]]>
+</help>
+  <author>Davi Clemente</author>
+  <email>davi.clemente@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-21T21:46:25.032381Z</created>
+    <modified>2010-12-09T17:35:18.425964Z</modified>
+    <lastrun/>
+  </date>
+  <category>Migration and Dip Moveout</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42" mpi="">
+    <title>SU Inv VXZ CO</title>
+    <binary>suinvvxzco</binary>
+    <description>Seismic Inversion of Common Offset data</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Inv VXZ CO</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Inv VXZ CO</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Seismic Inversion of Common Offset data
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Migration and Dip Moveout | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Seismic inversion of common offset data for a smooth velocity function V(X,Z) plus a slowness perturbation vp(x,z).</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="req">
+                        <span class="reqlabel">File containing velocity array</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of X samples (2nd dimension) in velocity</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of Z samples (1st dimension) in velocity</span></li>
+                <li class="req">
+                        <span class="reqlabel">Number of midpoints of input traces</span></li>
+                <li>
+                        <span class="label">Time sampling interval of input data</span><br />
+                        Could be set by header.</li>
+                <li>
+                        <span class="label">Source-receiver offset</span><br />
+                        Could be set by header.</li>
+                <li class="group">
+                        <span class="grouplabel">Velocity properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">First X sample of velocity</span></li>
+                                <li>
+                                        <span class="label">X sampling interval of velocity</span></li>
+                                <li>
+                                        <span class="label">Z sampling interval of velocity</span></li>
+                                <li>
+                                        <span class="label">Horizontal range in wich velocity is changed</span></li>
+                                <li>
+                                        <span class="label">Vertical range in wich velocity is changed</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Midpoint properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Sampling interval in midpoints</span><br />
+                                        Could be set by header.</li>
+                                <li>
+                                        <span class="label">First midpoint in input trace</span></li>
+                                <li>
+                                        <span class="label">Skipped number of midpoints</span><br />
+                                        See notes.</li>
+                                <li>
+                                        <span class="label">Band centered at midpoint</span><br />
+                                        See notes.</li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Output properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">X coordinate of first output trace</span></li>
+                                <li>
+                                        <span class="label">Horizontal spacing of output trace</span></li>
+                                <li>
+                                        <span class="label">Number of output traces</span></li>
+                                <li>
+                                        <span class="label">Z coordinate of first point in output trace</span></li>
+                                <li>
+                                        <span class="label">Vertical spacing of output trace</span></li>
+                                <li>
+                                        <span class="label">Number of points in output trace</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Maximum frequency set for operator antialiasing</span></li>
+                <li>
+                        <span class="label">Maximum dip angle allowed in the image</span></li>
+                <li>
+                        <span class="label">Source type</span>
+                        <ul>
+                                <li>
+                                        Poist source</li>
+                                <li>
+                                        Line source</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">File containing slowness perturbation array</span></li>
+                <li>
+                        <span class="label">Calculate time correction of slowness perturbation array</span></li>
+                <li>
+                        <span class="label">Quiet mode</span></li>
+        </ul>
+<!-- end lst --></div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        Traveltime and amplitude are calculated by finite difference which is done only in one of every NXD midpoints; in the skipped midpoint, interpolation is used to calculate traveltime and amplitude.</p>
+<p>
+        For each midpoint, traveltime and amplitude are calculated in the horizontal range of (xm-<b>Band centered at midpoints</b>*<b>x sampling interval of velocity</b>, xm+<b>Band centered at midpoints</b>*<b>x sampling interval of velocity</b>). Velocity is changed by constant extrapolation in two upper trianglar corners whose width is <b>Hozizontal range in which velocity is changed</b>*<b>X sampling interval of velocity</b> and height is <b>Vertical range in which velocity is changed</b>*<b>Z sampling interval of velocity</b>.</p>
+<p>
+        Eikonal equation will fail to solve if there is a polar turned ray. In this case, the program shows the related geometric information. There are three ways to remove the turned ray: smoothing velocity, reducing <b>Band centered at midpoints</b>, and increasing <b>Hozizontal range in which velocity is changed</b> and <b>Vertical range in which velocity is changed</b> (if the turned ray occurs in the shallow areas). To prevent traveltime distortion from a over smoothed velocity, traveltime is corrected based on the slowness perturbation.</p>
+<p>
+        Offsets are signed - may be positive or negative.</p>
+<h2 id="header_3">
+        References</h2>
+<ul>
+        <li>
+                Bleistein, N., Cohen, J. K., and Hagin, F., 1987, Two-and-one-half dimensional Born inversion with an arbitrary reference, Geophysics Vol. 52, no.1, 26-36.</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        Author:  Zhenyue Liu, 08/28/93,  Colorado School of Mines</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div><div class="links"> </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>File containing velocity array</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="yes">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of X samples (2nd dimension) in velocity</label>
+        <int>
+          <property required="yes">
+            <keyword>nx=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of Z samples (1st dimension) in velocity</label>
+        <int>
+          <property required="yes">
+            <keyword>nz=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of midpoints of input traces</label>
+        <int>
+          <property required="yes">
+            <keyword>nxm=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Time sampling interval of input data</label>
+        <float min="" max="">
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Source-receiver offset</label>
+        <float min="" max="">
+          <property required="no">
+            <keyword>offs=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Velocity properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First X sample of velocity</label>
+                <float min="" max="">
+                  <property required="no">
+                    <keyword>fx=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X sampling interval of velocity</label>
+                <float>
+                  <property required="no">
+                    <keyword>dx=</keyword>
+                    <value/>
+                    <default>50.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z sampling interval of velocity</label>
+                <float min="" max="">
+                  <property required="no">
+                    <keyword>dz=</keyword>
+                    <value/>
+                    <default>50.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal range in wich velocity is changed</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxc=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Vertical range in wich velocity is changed</label>
+                <int>
+                  <property required="no">
+                    <keyword>nzc=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>50.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Midpoint properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Sampling interval in midpoints</label>
+                <float min="" max="">
+                  <property required="no">
+                    <keyword>dxm=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First midpoint in input trace</label>
+                <float min="" max="">
+                  <property required="no">
+                    <keyword>fxm=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Skipped number of midpoints</label>
+                <int min="" max="">
+                  <property required="no">
+                    <keyword>nxd=</keyword>
+                    <value/>
+                    <default>5</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Band centered at midpoints</label>
+                <int min="" max="">
+                  <property required="no">
+                    <keyword>nxb=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>5</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X coordinate of first output trace</label>
+                <float min="" max="">
+                  <property required="no">
+                    <keyword>fxo=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal spacing of output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxo=</keyword>
+                    <value/>
+                    <default>15.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of output traces</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxo=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Z coordinate of first output trace</label>
+                <float>
+                  <property required="no">
+                    <keyword>fzo=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Vertical spacing of output trace</label>
+                <float min="" max="">
+                  <property required="no">
+                    <keyword>dzo=</keyword>
+                    <value/>
+                    <default>15.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of points in output trace</label>
+                <int>
+                  <property required="no">
+                    <keyword>nzo=</keyword>
+                    <value/>
+                    <default>101</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>15.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>15.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>101</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Maximum frequency set for operator antialiasing</label>
+        <float>
+          <property required="no">
+            <keyword>fmax=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum dip angle allowed in the image</label>
+        <float min="" max="">
+          <property required="no">
+            <keyword>ang=</keyword>
+            <value/>
+            <default>180</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Source type</label>
+        <enum>
+          <property required="no">
+            <keyword>ls=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+          <option>
+            <label>Point source</label>
+            <value>0</value>
+          </option>
+          <option>
+            <label>Line source</label>
+            <value>1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>File containing slowness perturbation array</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>vpfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Calculate time correction from slowness perturbation array</label>
+        <flag>
+          <property required="no">
+            <keyword>pert=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Quiet mode</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=0</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

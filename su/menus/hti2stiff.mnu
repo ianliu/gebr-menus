@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>HTI to Stiff</title>
+  <description>Convert HTI parameters into stiffness tensor</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>HTI to Stiff</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">HTI to Stiff</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Convert HTI parameters into stiffness tensor
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Convert HTI parameters alpha, beta, d(V), e(V), gamma into stiffness tensor.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 14, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 14, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-14T16:24:00.007076Z</created>
+    <modified>2010-09-14T16:43:28.423507Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="no" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>HTI to Stiff</title>
+    <binary>hti2stiff</binary>
+    <description>Convert HTI parameters into stiffness tensor</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>HTI to Stiff</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">HTI to Stiff</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Convert HTI parameters into stiffness tensor
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Convert HTI parameters alpha, beta, d(V), e(V), gamma into stiffness tensor.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">HTI Parameters</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Isotropy-plane p-wave velocity (alpha)</span></li>
+                                <li>
+                                        <span class="label">Fast isotropy-plan s-wave velocity (beta)</span></li>
+                                <li>
+                                        <span class="label">Parameter e(V)</span></li>
+                                <li>
+                                        <span class="label">Parameter d(V)</span></li>
+                                <li>
+                                        <span class="label">Shear-wave splitting parameter (gamma)</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Density</span></li>
+                <li>
+                        <span class="label">Sign of c13+c55</span>
+                        <ul>
+                                <li>
+                                        Positive</li>
+                                <li>
+                                        Negative</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Output parameter file</span><br />
+                          Output is a stiffness components for x1 = symmetry axis and x3 = vertical</li>
+        </ul>
+</div>
+<h2 id="header_2">
+        References</h2>
+<!-- List of references --><ul>
+        <li>
+                Andreas Rueger, P-wave reflection coefficients for transverse isotropy with vertical and horizontal axis of symmetry,  GEOPHYSICS</li>
+</ul>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+         Andreas Rueger, CWP Aug 01, 1996.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        References</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>HTI Parameters</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Isotropy-plane p-wave velocity (alpha)</label>
+                <float>
+                  <property required="no">
+                    <keyword>alpha=</keyword>
+                    <value/>
+                    <default>2.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Fast isotropy-plan s-wave velocity (beta)</label>
+                <float>
+                  <property required="no">
+                    <keyword>beta=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Parameter e(V)</label>
+                <float>
+                  <property required="no">
+                    <keyword>ev=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Parameter d(V)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dv=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Shear-wave splitting parameter (gamma)</label>
+                <float>
+                  <property required="no">
+                    <keyword>gamma=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>2.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Density</label>
+        <float>
+          <property required="no">
+            <keyword>rho=</keyword>
+            <value/>
+            <default>1.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Sign of c13+c55</label>
+        <enum>
+          <property required="no">
+            <keyword>sign=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>Positive</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Negative</label>
+            <value>-1</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Output parameter file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>outpar=</keyword>
+            <value/>
+            <default>/dev/stdout</default>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

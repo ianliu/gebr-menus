@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Vel Pert</title>
+  <description>Estimate velocity parameter perturbation</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Vel Pert</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Vel Pert</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Estimate velocity parameter perturbation
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Gain, NMO, Stack and Standard Processes | Seismic Unix
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Estimate velocity parameter perturbation from covariance of imaged depths in common image gathers (CIGs).</p>
+
+          <!-- begin par --><!-- end par -->
+            
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Nov 11, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Jul 27, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Jul 27, 2010</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-11-11T17:07:23.595627Z</created>
+    <modified>2010-08-06T00:43:10.010349Z</modified>
+    <lastrun/>
+  </date>
+  <category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>Vel Pert</title>
+    <binary>velpert</binary>
+    <description>Estimate velocity parameter perturbation</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Vel Pert</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Vel Pert</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Estimate velocity parameter perturbation
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+       Gain, NMO, Stack and Standard Processes | Seismic Unix
+       <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Estimate velocity parameter perturbation from covariance of imaged depths in common image gathers (CIGs).<br/>
+            This program receive a file of imaged depths in CIGs and creates a file of the estimated parameter.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li class="req"><span class="reqlabel">Input of dz/dv at the imaged depths in CIGs</span></li>
+
+              <li class="req"><span class="reqlabel">Number of offsets</span></li>
+
+              <li class="req"><span class="reqlabel">Number of common image gathers</span></li>
+
+              <li><span class="label">Number of first offsets used in velocity estimation</span></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+            
+
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>
+        1. This program is part of Zhenyue Liu's velocity analysis technique.<br/>      
+                The input dzdv values are computed using the program dzdv.</p>
+        <p>
+        2. For given depths, using value of parameter <b>Number of first offsets used in velocity estimation</b> smaller than value of 
+           parameter <b>Number of offsets</b> may avoid poor    
+                values of dz/dv at far offsets.<br/> However, a too small value of <b>Number of first offsets used in velocity estimation</b> used      
+                will the sensitivity of velocity error to the imaged depth.</p>
+        <p>
+        3. Outfile contains three parts:
+        <ul>                    
+        <li><b>dlambda:</b> Correction of the velocity paramter. dlambda plus   
+                        the initial parameter (used in migration) will  be      
+                        the updated one.</li>                           
+        <li><b>deviation:</b> To measure how close imaged depths are to each other      
+                        in CIGs. Old deviation corresponds to the initial       
+                        parameter; new deviation corresponds to the updated one.</li>
+        <li><b>sensitivity:</b> To predict how sensitive the error in the estimated     
+                        parameter is to an error in the measurement of imaged   
+                        depths.</li></p>
+
+          <a name="ref" id="ref"></a>
+          <h2>References</h2>
+
+          <!-- List of references -->
+          <ul>
+            <li> Liu, Z. 1995, "Migration Velocity Analysis", Ph.D. Thesis, Colorado
+      School of Mines, CWP report #168.</li>
+          </ul>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Zhenyue Liu, 12/29/93,  Colorado School of Mines</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Input of dz/dv at the imaged depths in CIGs</label>
+        <file directory="no">
+          <property required="yes">
+            <keyword>dzfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Number of offsets</label>
+        <int min="1">
+          <property required="yes">
+            <keyword>noff=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of common image gathers</label>
+        <int min="1">
+          <property required="yes">
+            <keyword>ncip=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of first offsets used in velocity estimation</label>
+        <int>
+          <property required="no">
+            <keyword>moff=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

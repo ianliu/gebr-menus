@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>Triangulated Model</title>
+  <description>Make a triangulated sloth model</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Triangulated Model</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Triangulated Model</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Make a triangulated sloth model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Make a triangulated sloth (1/velocity^2) model.</p>
+
+          <!-- begin par --><!-- end par -->
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Jun 11, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Jun 11, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-06-09T17:29:53.429526Z</created>
+    <modified>2010-08-06T00:43:09.662647Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>Triangulated Model</title>
+    <binary>trimodel</binary>
+    <description>Make a triangulated sloth model</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>Triangulated Model</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">Triangulated Model</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Make a triangulated sloth model
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Make a triangulated sloth (1/velocity^2) model.</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+
+              
+            <!-- begin lst --><ul>
+              <li class="group"><span class="grouplabel">Boundary box</span>
+
+              <ul>
+              <li><span class="label">Minimum horizontal coordinate (x)</span></li>
+
+              <li><span class="label">Maximum horizontal coordinate (x)</span></li>
+
+              <li><span class="label">Minimum vertical coordinate (z)</span></li>
+
+              <li><span class="label">Maximum vertical coordinate (z)</span></li>
+
+              </ul></li>
+
+              <li class="group"><span class="grouplabel">Edge properties</span>
+
+              <ul>
+              <li><span class="label">X coordinates of an edge</span></li>
+
+              <li><span class="label">Z coordinates of an edge</span></li>
+
+              <li><span class="label">Sloth along an edge</span></li>
+
+              </ul></li>
+
+              <li><span class="label">Array of indices used to identify edges</span></li>
+
+              <li><span class="label">Specify which interface to shoot rays</span></li>
+
+              <li><span class="label">Does generate parameters</span></li>
+
+              <li><span class="label">Number of locations to shoot rays</span></li>
+
+              <li class="group"><span class="grouplabel">Region filling parameters</span>
+
+              <ul>
+              <li><span class="label">X, Z, x0, z0, s00, dsdx, dsdz to fill a region</span></li>
+
+              <li><span class="label">X, Z, and density to fill a region</span></li>
+
+              <li><span class="label">X, Z, and Q-factor to fill a region</span></li>
+
+              </ul></li>
+
+              <li><span class="label">Maximum angle (deg) between adjacent edge segments</span></li>
+
+            </ul>
+            <!-- end lst -->
+            
+          </div>
+          <!-- end par -->
+            
+          <a name="notes" id="notes"></a>
+          <h2>Notes</h2>
+
+          <p>More than set of <b>X coordinates of an edge</b>, <b>Z coordinates of an edge</b>, and <b>Sloth along an edge</b> parameters may be                
+        specified, but the numbers of these parameters must be equal.</p>       
+
+        <p>Within each set, vertices will be connected by fixed edges.</p>              
+
+        <p>Edge indices in the k array are used to identify edges               
+        specified by the x and z parameters.  The first k index                 
+        corresponds to the first set of x and z parameters, the                 
+        second k index corresponds to the second set, and so on.</p>            
+
+        <p>After all vertices and their corresponding sloth values have                 
+        been inserted into the model, the optional <b>X, Z, x0, z0, s00, dsdx, dsdz to fill a region</b> parameters             
+        are used to fill closed regions bounded by fixed edges.<br/>            
+        Let (x,z) denote any point inside a closed region.  Sloth inside        
+        this region is determined by:
+        <blockquote>s(x,z) = s00 + (x - x0)*dsdx + (z - z0)*dsdz</blockquote><br/>      
+        The (x,z) component of the sfill parameter is used to identify a        
+        closed region.</p>
+
+        <p>When you use parameter <b>Specify which interface to shoot rays</b> to specify interface, the number of interface might
+        not be the number of interface in the picture, for example, you build a one
+        interface model, this interface is very long, so in the shell, you use three
+        part of parameters in group <b>Edge properties</b> to make this interface, so when you use <b>Specify which interface to shoot rays</b> to
+        specify interface, this interface is just part of whole interface.<br/> 
+        If you want see the normal rays from entire interface, you need to make normal ray
+        picture few times, and merge them together.</p>
+
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <p>Author: Dave Hale, Colorado School of Mines, 02/12/91.</p>
+          <p>Modified: Andreas Rueger, Colorado School of Mines, 01/18/93,<br/>
+          Fill regions with attenuation Q-factors and density values.</p>
+        <p>Modified: Craig Artley, Colorado School of Mines, 03/27/94.</p>
+        <p>Modified: Boyi Ou, Colorado School of Mines, 4/14/95,<br/>
+     Make code to generate interface parameters for shooting rays 
+     from specified interface.</p>
+
+          <!-- begin cpy -->
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Boundary box</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Minimum horizontal coordinate (x)</label>
+                <float>
+                  <property required="no">
+                    <keyword>xmin=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum horizontal coordinate (x)</label>
+                <float>
+                  <property required="no">
+                    <keyword>xmax=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Minimum vertical coordinate (z)</label>
+                <float>
+                  <property required="no">
+                    <keyword>zmin=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Maximum vertical coordinate (z)</label>
+                <float>
+                  <property required="no">
+                    <keyword>zmax=</keyword>
+                    <value/>
+                    <default>1.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Edge properties</label>
+        <group instanciable="yes" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X coordinates of an edge</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>xedge=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z coordinates of an edge</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>zedge=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Sloth along an edge</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>sedge=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Array of indices used to identify edges</label>
+        <int>
+          <property required="no" separator=",">
+            <keyword>kedge=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Specify which interface to shoot rays</label>
+        <int>
+          <property required="no">
+            <keyword>normface=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Does generate parameters</label>
+        <flag>
+          <property required="no">
+            <keyword>normray=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Number of locations to shoot rays</label>
+        <int>
+          <property required="no">
+            <keyword>nrays=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Region filling parameters</label>
+        <group instanciable="yes" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>X, Z, x0, z0, s00, dsdx, dsdz to fill a region</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>sfill=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X, Z, and density to fill a region</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>densfill=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X, Z, and Q-factor to fill a region</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>qfill=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Maximum angle (deg) between adjacent edge segments</label>
+        <float>
+          <property required="no">
+            <keyword>maxangle=</keyword>
+            <value/>
+            <default>5.0</default>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

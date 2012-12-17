@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Phase Inv Decon</title>
+  <description>Phase Inversion Deconvolution</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Phase Inv Decon</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Phase Inv Decon</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Phase Inversion Deconvolution
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Phase Inversion Deconvolution.</p>
+
+          <!-- begin par --><!-- end par -->
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+
+          <!-- begin cpy -->
+          
+          <p>Set 06, 2010: written by Gabriel S. Sobral &lt;sobral@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+          
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr --><!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Set 06, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>Gabriel S. Sobral</author>
+  <email>sobral@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-06T20:13:36.644435Z</created>
+    <modified>2010-09-13T13:45:51.554411Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU Phase Inv Decon</title>
+    <binary>suphidecon</binary>
+    <description>Phase Inversion Deconvolution</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Phase Inv Decon</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Phase Inv Decon</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Phase Inversion Deconvolution
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Phase Inversion Deconvolution.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+        <ul>
+                <li class="group">
+                        <span class="grouplabel">Time range used for wavelet extraction</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Pre zero time</span><br />
+                                         Maximum phase component.</li>
+                                <li>
+                                        <span class="label">Post zero time</span><br />
+                                         Minimum phase component + multiples.</li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Pre-withening (assumed noise to prevent division by zero)</span></li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        The wavelet is separated from the reflectivity and noise based on their different 'smoothness' in the pseudo cepstrum domain.</p>
+<p>
+        The extracted wavelet also includes multiples.</p>
+<p>
+        The wavelet is reconstructed in frequency domain, end removed from the trace. (Method by Lichman and Northwood, 1996.)</p>
+<h2 id="header_3">
+        References</h2>
+<!-- List of references --><ul>
+        <li>
+                Lichman,and Northwood, 1996; Phase Inversion deconvolution for long and short period multiples attenuation, in SEG Deconvolution 2, Geophysics reprint Series No. 17 p. 701-718, originally presented at the 54th EAGE meeting, Paris, June 1992, revised March 1993, revision accepted September 1994.</li>
+</ul>
+<h2 id="header_4">
+        Credits</h2>
+<p>
+        Potash Corporation, Saskatechwan Balasz Nemeth<br />
+        given to CWP by Potash Corporation 2008.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        References</a></li><li><a href="#header_4">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Time range used for wavelet extraction</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Pre zero time</label>
+                <float>
+                  <property required="no">
+                    <keyword>tm=</keyword>
+                    <value/>
+                    <default>-0.1</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Post zero time</label>
+                <float>
+                  <property required="no">
+                    <keyword>tp=</keyword>
+                    <value/>
+                    <default>0.4</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>-0.1</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.4</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Pre-withening (assumed noise to prevent division by zero)</label>
+        <float>
+          <property required="no">
+            <keyword>pnoise=</keyword>
+            <value/>
+            <default>0.001</default>
+          </property>
+        </float>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

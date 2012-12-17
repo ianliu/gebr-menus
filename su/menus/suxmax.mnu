@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU X Max</title>
+  <description>Image graph of the maximum value on each trace</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <!-- begin ttl -->
+    <title>SU X Max</title>
+    <!-- end ttl -->
+    </head><body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+            <span class="flowtitle">SU X Max</span>
+            <!-- end tt2 -->
+
+            <div class="description">
+              <!-- begin des -->
+              Image graph of the maximum value on each trace
+              <!-- end des -->
+            </div>
+          </div>
+        </div>
+
+        <div class="category">
+          <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
+        </div>
+
+        <div class="main">
+          <div class="content"><h2 id="header_0">
+              Introduction</h2>
+            <p style="margin-bottom: 0cm">
+            X-windows graph of the maximum, minimum, or absolute maximum value on each trace of a SEG-Y (SU) data set.</p>
+            <!-- begin par --><!-- end par --><h2 id="header_1">
+              Credits</h2>
+            <p>
+            Mar 25, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;.</p>
+            <!-- end cpy --></div>
+
+          <div class="navigation"><h2>Index</h2>
+            <ul><li><a href="#header_0">
+                Introduction</a></li><li><a href="#header_1">
+                Credits</a></li></ul></div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+            <!-- begin ver -->Mar 25, 2010<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+
+
+</body></html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>Jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-03-22T14:03:46.617851Z</created>
+    <modified>2010-08-06T00:43:09.286028Z</modified>
+    <lastrun/>
+  </date>
+  <category>Graphics</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="no" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU X Max</title>
+    <binary>suxmax</binary>
+    <description>Image graph of the maximum value on each trace</description>
+    <help>
+      <![CDATA[<html ><head ><meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <!-- begin ttl -->
+    <title >SU X Max</title>
+    <!-- end ttl -->
+    </head><body >
+    <div  class="outer-container">
+      <div  class="inner-container">
+        <div  class="header">
+          <div  class="title">
+            <!-- begin tt2 -->
+            <span  class="flowtitle">SU X Max</span>
+            <!-- end tt2 -->
+
+            <div  class="description">
+              <!-- begin des -->
+              Image graph of the maximum value on each trace
+              <!-- end des -->
+            </div>
+          </div>
+        </div>
+
+        <div  class="category">
+          <!-- begin cat -->Graphics | Seismic Unix<!-- end cat -->
+        </div>
+
+        <div  class="main">
+          <div  class="content"><h2 id="header_0" >
+              Introduction</h2>
+            <p >
+            X-windows graph of the maximum, minimum, or absolute maximum value on each trace of a SEG-Y (SU) data set.</p>
+            <div class="parameters" >
+              <h2 id="header_1" >
+                Parameters</h2>
+              <ul >
+
+                <li> <span class="label">Value to be ploted</span><br  />
+                <ul>
+                  <li>Maximum</li>
+                  <li>Minimum</li>
+                  <li>Absolute</li>
+                </ul>
+                </li>   
+
+                <li >
+                <span class="label" >Number of traces</span></li>
+                <li >
+                <span class="label">Title of the plot</span></li>
+                <li class="group" >
+                <span class="grouplabel" >Axis 1 properties (fast dimension)</span><br  />
+                Usually, fast dimension is time or depth.
+                <ul >
+                  <li >
+                  <span class="label">Axis label</span></li>
+                  <li >
+                  <span class="label" >First sample</span><br  />
+                  The default value is set from keyword "First sample location for non-seismic data" 
+                  or from keyword "Delay recording times in ms", both values of header, or set as 0.0.</li>
+                  <li >
+                  <span class="label">Sampling interval</span><br  />
+                  The default value is set from keyword "Sample spacing for non-seismic data"
+                  or from keyword "Sampling interval in microseconds", both values of header.<br/>
+                  If these keywords are not set, the default number for seismic is 0.004 and for non seismics, the value is 1.0.</li>
+                  <li >
+                  <span class="label">Value at which axis begins</span></li>
+                  <li >
+                  <span class="label">Value at which axis ends</span></li>
+                  <li >
+                  <span class="label">Number of tics between consecutive numbered tics</span></li>
+                  <li >
+                  <span class="label" >Grid line style</span>
+                  <ul >
+                    <li >
+                    No grid lines</li>
+                    <li >
+                    Dotted grid lines</li>
+                    <li >
+                    Dashed grid lines</li>
+                    <li >
+                    Solid grid lines</li>
+                  </ul>
+                  </li>
+                </ul>
+                </li>
+                <li class="group" >
+                <span class="grouplabel" >Axis 2 properties (slow dimension)</span><br  />
+                <ul >
+                  <li >
+                  <span class="label" >Axis label</span></li>
+                  <li >
+                  <span class="label" >First sample</span><br  />
+                  The default value is set from keyword "First sample location for non-seismic data"
+                  or from keyword "Delay recording times in ms", both values of header, or set as 0.0.</li>
+                  <li >
+                  <span class="label">Sampling interval</span><br  />
+                  The default value is set from keyword "Sample spacing between traces" in header.<br  />
+                  If these keywords are not set, the value is 1.0.</li>
+                  <li >
+                  <span class="label">Value at which axis begins</span></li>
+                  <li >
+                  <span class="label">Value at which axis ends</span></li>
+                  <li >
+                  <span class="label" >Number of tics between consecutive numbered tics</span></li>
+                  <li >
+                  <span class="label">Grid line style</span>
+                  <ul >
+                    <li >
+                    No grid lines</li>
+                    <li >
+                    Dotted grid lines</li>
+                    <li >
+                    Dashed grid lines</li>
+                    <li >
+                    Solid grid lines</li>
+                  </ul>
+                  </li>
+                </ul>
+                </li>
+                <li class="group" >
+                <span class="grouplabel" >Appearance properties</span>
+                <ul >
+                  <li >
+                  <span class="label" >Window title</span></li>
+                  <li >
+                  <span class="label" >Window width (in pixels)</span></li>
+                  <li >
+                  <span class="label">Window height (in pixels)</span></li>
+                  <li >
+                  <span class="label">Swap axes position</span>
+                  <ul >
+                    <li >
+                    Normal (axis 1 horizontal, axis 2 vertical)</li>
+                    <li >
+                    Seismic (axis 1 vertical, axis 2 horizontal)</li>
+                  </ul>
+                  </li>
+                  <li >
+                  <span class="label">Axes labels font</span></li>
+                  <li >
+                  <span class="label">Axes color</span></li>
+                  <li >
+                  <span class="label">Plot title font</span></li>
+                  <li >
+                  <span class="label">Plot title color</span></li>
+                  <li >
+                  <span class="label">Grid color</span></li>
+                  <li >
+                  <span class="label">Line Widths (in pixels)</span></li>
+                  <li >
+                  <span class="label">Line Colors</span></li>
+                  <li >
+                  <span class="label">Marks used to represent plotted points</span></li>
+                  <li >
+                  <span class="label">Size of marks (in pixels)</span></li>
+                </ul>
+                </li>
+                <li >
+                <span class="label">Reverse sequence of plotting curves</span></li>
+
+                <li >
+                <span class="label">Echoes extra information</span><br  />
+                To print some useful information.</li>
+                <li >
+                <span class="label">Path prefix for temporary files</span></li>
+              </ul>
+            </div>
+            <h2 id="header_2" >
+              Notes</h2>
+            <p >
+            Note that for seismic time domais data, the "fast dimension" 
+            is time and the "slow dimension" is usually trace number or range.</p>
+
+            <p >
+            Also note that "foreign" data tapes may have something unexpected in the 
+            <b>Sampling interval in slow dimension</b>, 
+            <b>First sample in slow dimension</b> fields, 
+            use <b >SU SEG-Y Clean</b> to clear these if you can afford the processing time
+            or use the parameter <b>Sampling interval in slow dimension</b>
+            and the parameter <b>First sample in slow dimension</b> to override the header values if not.</p>
+
+            <p >
+            When the number of traces isn't known, we need to count the traces for <b>X Graph</b>.
+            You can make this value "known" either by providing 
+            <b>Sampling interval in slow dimension</b> or by having the 
+            "Number of traces" field set in the trace header. 
+            The parameter value takes precedence over the value in the trace header.</p>
+
+            <p >
+            When we do have to count the traces, we use a system temporary file 
+            because on many machines it is implemented as a memory area instead of a disk file.</p>
+
+            <h2  id="header_3">
+              Credits</h2>
+            <p >
+            CWP: John Stockwell, based on Jack Cohen's SU JACKet.</p>
+            <!-- begin cpy --><!-- end cpy --></div>
+
+          <div  class="navigation"><h2>Index</h2>
+            <ul><li><a href="#header_0">
+                Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+                Notes</a></li><li><a href="#header_3">
+                Credits</a></li></ul></div>
+
+          <div  class="clearer"></div>
+        </div>
+
+        <div  class="footer">
+          <span  class="left">G&ecirc;BR 0.9.16 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+            <!-- begin ver -->SU 42<!-- end ver --></span>
+
+          <div  class="clearer"></div>
+        </div>
+      </div>
+    </div>
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Value to be ploted</label>
+        <enum>
+          <property required="no">
+            <keyword>mode=</keyword>
+            <value/>
+            <default/>
+          </property>
+          <option>
+            <label>Maximum</label>
+            <value>max</value>
+          </option>
+          <option>
+            <label>Minimum</label>
+            <value>min</value>
+          </option>
+          <option>
+            <label>Absolute</label>
+            <value>abs</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>Number of traces</label>
+        <int>
+          <property required="no">
+            <keyword>n2=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Title of the plot</label>
+        <string>
+          <property required="no">
+            <keyword>title=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </string>
+      </parameter>
+      <parameter>
+        <label>Axis 1 properties (fast dimension)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis begins</label>
+                <float>
+                  <property required="no">
+                    <keyword>x1beg=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis ends</label>
+                <float>
+                  <property required="no">
+                    <keyword>x1end=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>n1Tic=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Grid line style</label>
+                <enum>
+                  <property required="no">
+                    <keyword>grid1=</keyword>
+                    <value/>
+                    <default>none</default>
+                  </property>
+                  <option>
+                    <label>No grid lines</label>
+                    <value>none</value>
+                  </option>
+                  <option>
+                    <label>Dotted grid lines</label>
+                    <value>dot</value>
+                  </option>
+                  <option>
+                    <label>Dashed grid lines</label>
+                    <value>dash</value>
+                  </option>
+                  <option>
+                    <label>Solid grid lines</label>
+                    <value>solid</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>none</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Axis 2 properties (slow dimension)</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Axis label</label>
+                <string>
+                  <property required="no">
+                    <keyword>label2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>d2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>First sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>f2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis begins</label>
+                <float>
+                  <property required="no">
+                    <keyword>x2beg=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Value at which axis ends</label>
+                <float>
+                  <property required="no">
+                    <keyword>x2end=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of tics between consecutive numbered tics</label>
+                <int>
+                  <property required="no">
+                    <keyword>n2Tic=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Grid line style</label>
+                <enum>
+                  <property required="no">
+                    <keyword>grid2=</keyword>
+                    <value/>
+                    <default>none</default>
+                  </property>
+                  <option>
+                    <label>No grid lines</label>
+                    <value>none</value>
+                  </option>
+                  <option>
+                    <label>Dotted grid lines</label>
+                    <value>dot</value>
+                  </option>
+                  <option>
+                    <label>Dashed grid lines</label>
+                    <value>dash</value>
+                  </option>
+                  <option>
+                    <label>Solid grid lines</label>
+                    <value>solid</value>
+                  </option>
+                </enum>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>none</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Appearance properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Window title</label>
+                <string>
+                  <property required="no">
+                    <keyword>windowtitle=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Window width (in pixels)</label>
+                <int>
+                  <property required="no">
+                    <keyword>width=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Window height (in pixels)</label>
+                <int>
+                  <property required="no">
+                    <keyword>height=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Swap axes position</label>
+                <enum>
+                  <property required="no">
+                    <keyword>style=</keyword>
+                    <value/>
+                    <default>seismic</default>
+                  </property>
+                  <option>
+                    <label>Normal</label>
+                    <value>normal</value>
+                  </option>
+                  <option>
+                    <label>Seismic</label>
+                    <value>seismic</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Axes labels font</label>
+                <string>
+                  <property required="no">
+                    <keyword>labelFont=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Axes color</label>
+                <string>
+                  <property required="no">
+                    <keyword>axesColor=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Plot title font</label>
+                <string>
+                  <property required="no">
+                    <keyword>titleFont=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Plot title color</label>
+                <string>
+                  <property required="no">
+                    <keyword>titleColor=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Grid color</label>
+                <string>
+                  <property required="no">
+                    <keyword>gridColor=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Line Widths (in pixels)</label>
+                <int>
+                  <property required="no" separator=",">
+                    <keyword>linewidth=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Line Colors</label>
+                <string>
+                  <property required="no">
+                    <keyword>linecolor=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </string>
+              </parameter>
+              <parameter>
+                <label>Indices of marks used to represent plotted points</label>
+                <enum>
+                  <property required="no" separator=",">
+                    <keyword>mark=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                  <option>
+                    <label>None</label>
+                    <value>0</value>
+                  </option>
+                  <option>
+                    <label>Asteristic</label>
+                    <value>1</value>
+                  </option>
+                  <option>
+                    <label>X-Cross</label>
+                    <value>2</value>
+                  </option>
+                  <option>
+                    <label>Open Triangle</label>
+                    <value>3</value>
+                  </option>
+                  <option>
+                    <label>Open Square</label>
+                    <value>4</value>
+                  </option>
+                  <option>
+                    <label>Open Circle</label>
+                    <value>5</value>
+                  </option>
+                  <option>
+                    <label>Solid Triangle</label>
+                    <value>6</value>
+                  </option>
+                  <option>
+                    <label>Solid Square</label>
+                    <value>7</value>
+                  </option>
+                  <option>
+                    <label>Solid Circle</label>
+                    <value>8</value>
+                  </option>
+                </enum>
+              </parameter>
+              <parameter>
+                <label>Size of marks (in pixels)</label>
+                <int>
+                  <property required="no" separator=",">
+                    <keyword>marksize=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>seismic</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Reverse sequence of plotting curves</label>
+        <flag>
+          <property required="no">
+            <keyword>reverse=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Path prefix for temporary files</label>
+        <file directory="yes" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>tmpdir=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

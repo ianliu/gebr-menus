@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Correlation All</title>
+  <description>Correlation with user-supplied filter in all traces</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Correlation All</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Correlation All</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Correlation with user-supplied filter in all traces
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+         Correlation with user-supplied filter in all traces.</p>
+<h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Mar 15, 2010: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Mar 15, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-03-15T14:36:59.793815Z</created>
+    <modified>2010-08-06T00:43:09.128072Z</modified>
+    <lastrun/>
+  </date>
+  <category>Filtering, Transforms and Attributes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 42">
+    <title>SU Correlation All</title>
+    <binary>suxcor panel=1</binary>
+    <description>Correlation with user-supplied filter in all traces</description>
+    <help>
+      <![CDATA[<html ><head ><meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title >SU Correlation All</title>
+  <!-- end ttl -->
+</head><body >
+  <div  class="outer-container">
+    <div  class="inner-container">
+      <div  class="header">
+        <div  class="title">
+          <!-- begin tt2 -->
+         <span  class="flowtitle">SU Correlation All</span>
+         <!-- end tt2 -->
+
+          <div  class="description">
+            <!-- begin des -->
+            Correlation with user-supplied filter in all traces
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div  class="category">
+        <!-- begin cat -->Filtering, Transforms and Attributes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div  class="main">
+        <div  class="content"><h2 id="header_0" >
+        Introduction</h2>
+<p >
+        Correlation with user-supplied filter in all traces</p>
+<!-- begin par --><div class="parameters" >
+        <h2 id="header_1" >
+                Parameters</h2>
+<!-- begin lst -->      <ul >
+                <li  class="group">
+                        <span class="grouplabel">Filter to use</span><br />
+                        Use one of the parameters
+                        <ul>
+                                <li class="req">
+                                        <span class="reqlabel">File containing SU traces to use as filter</span><br />
+                                         </li>
+                                <li class="req">
+                                        <span class="reqlabel">User-supplied correlation filter (ascii)</span></li>
+                        </ul>
+                </li>
+                <li >
+                        <span class="label">Output number of samples for correlating of vibroseis data</span></li>
+                <li >
+                        <span class="label">Supplied trace is</span>
+                        <ul>
+                                <li>
+                                        First element of correlation</li>
+                                <li>
+                                        Second element of correlation</li>
+                        </ul>
+                </li>
+                <li >
+                        <span class="label">First sample on the first trace of the window</span><br />
+                        The default value for this parameter is 0.<br />
+                         </li>
+                <li >
+                        <span class="label">First sample on the last trace of the window</span><br />
+                        The default value for this parameter is 0.<br />
+                         </li>
+                <li >
+                        <span class="label">Number of samples in the correlation window</span><br />
+                         </li>
+                <li >
+                        <span class="label">Number of traces on a gather</span><br />
+                        The default value for this parameter is 48.</li>
+        </ul>
+</div>
+<h2 id="header_2" >
+        Notes</h2>
+<p >
+        It is quietly assumed that the time sampling interval on the single trace and the output traces is the same as that on the traces in the input file.</p>
+<p >
+        This menu uses all traces of SU file contaning the filter, and <b >SU Correlation</b> uses only the first trace.</p>
+<!-- Panel = 1 --><p >
+        A window with linear slope can be defined by the following parameters:</p>
+<ul >
+        <li >
+                <span class="label"><b>First sample on the first trace of the window</b></span><br />
+                Is the first sample of the first trace in the gather</li>
+        <li >
+                <span class="label"><b>First sample on the last trace of the window</b></span><br />
+                Is the first sample of the last trace in the gather</li>
+        <li >
+                <span class="label"><b>Number of samples in the correlation window</b></span><br />
+                Is the length of the window</li>
+        <li >
+                <span class="label"><b>Number of traces in a gather</b></span><br />
+                Is the the number of traces in a gather</li>
+</ul>
+<p >
+        If the data consists of a number gathers which need to be correlated with the same number gathers in the SU file used as filter, <b >Number of traces on a gather</b> assures that the correlating window re-starts for each gather.</p>
+<p>
+        The default window is non-sloping and takes the entire trace into account.</p>
+<p>
+        This program accesses and modifies the following header keywords:</p>
+<ul>
+        <li>Number of samples.</li>
+</ul>
+
+<p>
+        <strong>CAVEATS:</strong><br />For this operation the number of traces in the SU file used as filter must be the same as the number of traces in the input.
+</p>
+
+<h2 id="header_3" >
+        Credits</h2>
+<p >
+        CWP: Jack K. Cohen, Michel Dietrich.<br  />
+        CWP: modified by Ttjan to include cross correlation of panels permitting spatially and temporally varying cross correlation.<br  />
+        UTK: modified by Rick Williams for vibroseis correlation option.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div  class="clearer"></div>
+      </div>
+
+      <div  class="footer">
+        <span  class="left">GêBR 0.9.16 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div  class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body></html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Filter to use</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="1" selection="1">
+              <parameter>
+                <label>File containing SU traces to use as filter</label>
+                <file directory="no" filter-name="SU file" filter-pattern="*.su *.SU">
+                  <property required="yes">
+                    <keyword>sufile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>User-supplied correlation filter (ascii)</label>
+                <float>
+                  <property required="yes">
+                    <keyword>filter=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="1" selection="1">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Output number of samples for correlating of vibroseis data</label>
+        <int>
+          <property required="no">
+            <keyword>vibroseis=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Supplied trace is</label>
+        <enum>
+          <property required="no">
+            <keyword>first=</keyword>
+            <value/>
+            <default>1</default>
+          </property>
+          <option>
+            <label>First element of correlation</label>
+            <value>1</value>
+          </option>
+          <option>
+            <label>Second element of correlation</label>
+            <value>0</value>
+          </option>
+        </enum>
+      </parameter>
+      <parameter>
+        <label>First sample on the first trace of the window</label>
+        <int>
+          <property required="no">
+            <keyword>ftwin=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>First sample on the last trace of the window</label>
+        <int>
+          <property required="no">
+            <keyword>ltwin=</keyword>
+            <value/>
+            <default>0</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of samples in the correlation window</label>
+        <int>
+          <property required="no">
+            <keyword>ntwin=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces on a gather</label>
+        <int>
+          <property required="no">
+            <keyword>ntrc=</keyword>
+            <value/>
+            <default>48</default>
+          </property>
+        </int>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

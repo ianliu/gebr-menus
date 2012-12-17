@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU LCT Header</title>
+  <description>Linear coordinate transformation of header words</description>
+  <help>
+    <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU LCT Header</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU LCT Header</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Linear coordinate transformation of header words
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Linear coordinate transformation of header words.</p>
+<!-- begin par --><!-- end par --><h2 id="header_1">
+        Credits</h2>
+<!-- begin cpy --><p>
+        Sep 21, 2010: written by Davi Clemente &lt;davi.clemente@gebrproject.com&gt;</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->Sep 21, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+  <author>Davi Clemente</author>
+  <email>davi.clemente@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2010-09-21T16:24:47.837845Z</created>
+    <modified>2010-09-21T17:49:39.463861Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" mpi="" version="SU 42">
+    <title>SU LCT Header</title>
+    <binary>sulcthw</binary>
+    <description>Linear coordinate transformation of header words</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU LCT Header</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU LCT Header</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+            <!-- begin des -->
+            Linear coordinate transformation of header words
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Seismic Unix | Simulation and Model Building<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Linear coordinate transformation of header words.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- begin lst -->      <ul>
+                <li class="group">
+                        <span class="grouplabel">Translation properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Translation of X</span></li>
+                                <li>
+                                        <span class="label">Translation of Y</span></li>
+                                <li>
+                                        <span class="label">Translation of Z</span></li>
+                        </ul>
+                </li>
+                <li class="group">
+                        <span class="grouplabel">Rotation properties</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Rotation around X (degrees)</span></li>
+                                <li>
+                                        <span class="label">Rotation around Y (degrees)</span></li>
+                                <li>
+                                        <span class="label">Rotation around Z (degrees)</span></li>
+                        </ul>
+                </li>
+        </ul>
+</div>
+<h2 id="header_2">
+        Notes</h2>
+<p>
+        Assuming:<br />
+        <strong>Translation of X</strong>, <strong>Translation of Y</strong>, <strong>Translation of Z</strong> = xt, yt, zt, respectively.<br />
+        <strong>Rotation around X</strong>, <strong>Rotation around Y</strong>, <strong>Rotation around Z</strong> = xr, yr, zr, respectively.</p>
+<p>
+        <u>Translation:</u><br />
+        x = x' + xt;<br />
+        y = y' + yt;<br />
+        z = z' + zt;</p>
+<div>
+        <u>Rotations:</u></div>
+<div>
+        <em>Around Z axis:</em></div>
+<div>
+        X = x*cos(zr) + y*sin(zr);</div>
+<div>
+        Y = y*cos(zr) - x*sin(zr);</div>
+<div>
+         </div>
+<div>
+        <em>Around Y axis:</em></div>
+<div>
+        Z = z*cos(yr) + x*sin(yr);</div>
+<div>
+        X = x*cos(yr) - z*sin(yr);</div>
+<div>
+         </div>
+<div>
+        <em>Around X axis:</em></div>
+<div>
+        Y = y*cos(xr) + z*sin(xr);</div>
+<div>
+        Z = Z*cos(xr) - y*sin(xr);</div>
+<div>
+         </div>
+<div>
+        The header words restored as double precision numbers using SEG-Y convention (with coordinate scalers scalco and scalel).</div>
+<div>
+        After transformation they are converted back to short and stored, no.</div>
+<div>
+         </div>
+<div>
+        Header words triplets that are transformed:</div>
+<ul>
+        <li>
+                X source coordinate, Y source coordinate, Source elevation from sea level ;</li>
+        <li>
+                X group coordinate, Y group coordinate, Receiver group elevation from sea level.</li>
+</ul>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+         Potash Corporation of Saskatchewan: Balasz Nemeth c. 2008.</p>
+<!-- begin cpy --><!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) |
+                <!-- begin ver -->SU 42<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0">
+      <parameter>
+        <label>Translation properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Translation of X</label>
+                <float>
+                  <property required="no">
+                    <keyword>xt=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Translation of Y</label>
+                <float>
+                  <property required="no">
+                    <keyword>yt=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Translation of Z</label>
+                <float>
+                  <property required="no">
+                    <keyword>zt=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Rotation properties</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Rotation around X (degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>xr=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Rotation around Y (degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>yr=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Rotation around Z (degrees)</label>
+                <float>
+                  <property required="no">
+                    <keyword>zr=</keyword>
+                    <value/>
+                    <default>0.0</default>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0.0</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

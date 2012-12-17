@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Tetra Ray</title>
+  <description>3-D tetrahedral wavefront construction raytracing</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Tetra Ray</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Tetra Ray</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            3-D tetrahedral wavefront construction raytracing
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Seismic Unix | Simulation and Model Building
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>3-D tetrahedral wavefront construction raytracing</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>written by GêBR core team &lt;gebr-devel@googlegroups.com&gt;</p>
+          
+        <p>Aug 11, 2009: modified by Luis A. D'Afonseca, UNICAMP -
+          luis.dafonseca@gmail.com</p>
+
+        <p>May 20, 2010: modified by Gabriel S. Sobral, UNICAMP -
+          sobral@gebrproject.com</p>
+          
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 11, 2009 </span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-09-27T15:00:00Z</created>
+    <modified>2010-08-06T00:43:08.446065Z</modified>
+    <lastrun/>
+  </date>
+  <category>Seismic Unix</category>
+  <category>Simulation and Model Building</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Tetra Ray</title>
+    <binary>sutetraray</binary>
+    <description>3-D tetrahedral wavefront construction raytracing</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Tetra Ray</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Tetra Ray</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            3-D tetrahedral wavefront construction raytracing
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Seismic Unix | Simulation and Model Building
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>3-D tetrahedral wavefront construction raytracing</p>
+
+          <!-- begin par -->
+          <div class="parameters">
+
+            <a name="par" id="par"></a>
+            <h2>Parameters</h2>
+              
+            <!-- begin lst -->
+            <ul>
+
+                <li class="group"><span class="grouplabel">Samples properties in 1st dimension</span>
+                <ul>
+
+              <li><span class="label">Number of x samples</span><br/></li>
+
+                <li><span class="label">First x sample</span><br/></li>
+
+              <li><span class="label">x sampling interval</span><br/></li>
+                
+                </ul></li>
+
+              <li class="group"><span class="grouplabel">Samples properties in 2nd dimension</span>
+                <ul>
+
+              <li><span class="label">Number of y samples</span><br/></li>
+
+                <li><span class="label">First y sample</span><br/></li>
+
+              <li><span class="label">y sampling interval</span><br/></li>
+                
+                </ul></li>
+
+              <li><span class="label">Downward shooting</span><br/>If disable, upward shooting</li>
+
+              <li><span class="label">Maximum takeoff angle for shooting aperture</span><br/></li>
+
+              <li><span class="label">Number of samples in takeoff angle</span><br/></li>
+
+              <li><span class="label">Number of samples in azimuth</span><br/></li>
+
+              <li><span class="label">Maximum number of triangles allowed</span><br/></li>
+
+              <li><span class="label">Maximum number of rays allowed</span><br/></li>
+
+              <li><span class="label">Maximum number of ray segments allowed</span><br/></li>
+
+              <li><span class="label">Maximum traveltime traced</span><br/></li>
+
+              <li><span class="label">Wavefront step size for raytracing</span><br/></li>
+
+              <li><span class="label">Maximum number of wavefronts</span><br/></li>
+
+              <li><span class="label">Maximum triangle length</span><br/></li>
+
+                <li class="group"><span class="grouplabel">Source properties in 1st dimension</span>
+
+                <ul>
+
+              <li><span class="label">First source in x</span><br/></li>
+
+              <li><span class="label">x increment in source</span><br/></li>
+
+              <li><span class="label">Number of sources in x</span><br/></li>
+
+                </ul></li>
+
+              <li class="group"><span class="grouplabel">Source properties in 2nd dimension</span>
+
+                <ul>
+
+              <li><span class="label">First source in y</span><br/></li>
+
+              <li><span class="label">y increment in source</span><br/></li>
+
+              <li><span class="label">Number of sources in y</span><br/></li>
+
+                </ul></li>
+
+              <li class="group"><span class="grouplabel">Source properties in 3rd dimension</span>
+
+                <ul>
+
+              <li><span class="label">First source in z</span><br/></li>
+
+              <li><span class="label">z increment in source</span><br/></li>
+
+              <li><span class="label">Number of sources in z</span><br/></li>
+
+                </ul></li>
+
+              <li><span class="label">Number of x-samples for SU Mig Kirchhoff 3D</span><br/></li>
+
+              <li><span class="label">Number of y-samples for SU Mig Kirchhoff 3D</span><br/></li>
+
+              <li><span class="label">Reflector sequence</span><br/></li>
+
+              <li><span class="label">Cosines and ray path file</span><br/></li>
+
+              <li><span class="label">Traveltime file</span><br/></li>
+
+                <li class="group"><span class="grouplabel">Files of output for Viewer 3D</span>
+
+                <ul>
+
+              <li><span class="label">Ray path file</span><br/></li>
+
+              <li><span class="label">Wavefront file</span><br/></li>
+
+                </ul></li>
+
+              <li><span class="label">First wavefront to dump</span><br/></li>
+
+              <li><span class="label">Number of wavefronts to dump</span><br/></li>
+
+              <li><span class="label">Job print</span><br/></li>
+
+                <li><span class="label">Echoes extra information</span><br/></li>
+
+            </ul>
+
+            
+            <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+            
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>CWP: Zhaobo Meng, 1996</p>
+          
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+            <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+            <!-- end mpr -->
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | SU 41 </span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Samples properties in 1st dimension</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of x samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nxgd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First x sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fxgd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dxgd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Samples properties in 2nd dimension</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Number of y samples</label>
+                <int>
+                  <property required="no">
+                    <keyword>nygd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>First y sample</label>
+                <float>
+                  <property required="no">
+                    <keyword>fygd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Y sampling interval</label>
+                <float>
+                  <property required="no">
+                    <keyword>dygd=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Downward shooting</label>
+        <flag>
+          <property required="no">
+            <keyword>shootupward=-1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Maximum takeoff angle for shooting aperture</label>
+        <float>
+          <property required="no">
+            <keyword>takeoff=</keyword>
+            <value/>
+            <default>30.0</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Number of samples in takeoff angle</label>
+        <int>
+          <property required="no">
+            <keyword>ntakeoff=</keyword>
+            <value/>
+            <default>5</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of samples in azimuth</label>
+        <int>
+          <property required="no">
+            <keyword>nazimuth=</keyword>
+            <value/>
+            <default>15</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum number of triangles allowed</label>
+        <int>
+          <property required="no">
+            <keyword>maxntris=</keyword>
+            <value/>
+            <default>1000</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum number of rays allowed</label>
+        <int>
+          <property required="no">
+            <keyword>maxnrays=</keyword>
+            <value/>
+            <default>600</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum number of ray segments allowed</label>
+        <int>
+          <property required="no">
+            <keyword>maxnsegs=</keyword>
+            <value/>
+            <default>100</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum traveltime traced</label>
+        <float>
+          <property required="no">
+            <keyword>tmax=</keyword>
+            <value/>
+            <default>10</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Wavefront step size for raytracing</label>
+        <float>
+          <property required="no">
+            <keyword>dtwf=</keyword>
+            <value/>
+            <default>0.05</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Maximum number of wavefronts</label>
+        <int>
+          <property required="no">
+            <keyword>ntwf=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Maximum triangle length</label>
+        <float>
+          <property required="no">
+            <keyword>edgemax=</keyword>
+            <value/>
+            <default>4</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Source properties in 1st dimension</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First source in x</label>
+                <float>
+                  <property required="no">
+                    <keyword>fsx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>X increment in source</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsx=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of source in x</label>
+                <int>
+                  <property required="no">
+                    <keyword>nsx=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Source properties in 2nd dimension</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First source in y</label>
+                <float>
+                  <property required="no">
+                    <keyword>fsy=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Y increment in source</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsy=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of source in y</label>
+                <int>
+                  <property required="no">
+                    <keyword>nsy=</keyword>
+                    <value/>
+                    <default>1</default>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>1</default>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Source properties in 3rd dimension</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>First source in z</label>
+                <float>
+                  <property required="no">
+                    <keyword>fsz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Z increment in source</label>
+                <float>
+                  <property required="no">
+                    <keyword>dsz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Number of source in z</label>
+                <int>
+                  <property required="no">
+                    <keyword>nsz=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Number of x-samples for SU Mig Kirchhoff 3D</label>
+        <int>
+          <property required="no">
+            <keyword>nxt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of y-samples for SU Mig Kirchhoff 3D</label>
+        <int>
+          <property required="no">
+            <keyword>nyt=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Reflector sequence</label>
+        <int>
+          <property required="no" separator=",">
+            <keyword>irefseq=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Cosines and ray path file</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>crfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Traveltime file</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>sttfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Files of output for Viewer 3D</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Ray path file</label>
+                <file directory="no">
+                  <property required="no">
+                    <keyword>rayfile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+              <parameter>
+                <label>Wavefront file</label>
+                <file directory="no">
+                  <property required="no">
+                    <keyword>wffile=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </file>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>First wavefront to dump</label>
+        <int>
+          <property required="no">
+            <keyword>ifwf2dump=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of wavefronts to dump</label>
+        <int>
+          <property required="no">
+            <keyword>nwf2dump=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Job print</label>
+        <file directory="no">
+          <property required="no">
+            <keyword>jpfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Echoes extra information</label>
+        <flag>
+          <property required="no">
+            <keyword>verbose=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

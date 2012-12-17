@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Plane</title>
+  <description>Create common offset data file with up to 3 planes</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Plane</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Plane</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Create common offset data file with up to 3 planes
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Simulation and Model Building | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Create common offset data file with up to 3 planes.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>GêBR core team</p>
+          <p>Aug 04, 2009: modified by Jorge Pizzolatto Filho, UNICAMP - jorge.pzt@gmail.com</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | Aug 04, 2009</span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+    
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-08-26T15:00:00Z</created>
+    <modified>2010-08-06T00:43:06.640062Z</modified>
+    <lastrun/>
+  </date>
+  <category>Simulation and Model Building</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="no" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU Plane</title>
+    <binary>suplane</binary>
+    <description>Create common offset data file with up to 3 planes</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <title>Su Plane</title>
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">Su Plane</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Create common offset data file with up to 3 planes
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Simulation and Model Building | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Create common offset data file with up to 3 planes.</p>
+<!-- begin par -->
+          <div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+<!-- List of optional parameters -->    <!-- begin lst -->
+            <ul>
+                <li>
+                        <span class="label">Number of planes</span></li>
+                <li>
+                        <span class="label">Number of time samples</span></li>
+                <li>
+                        <span class="label">Number of traces</span></li>
+                <li>
+                        <span class="label">No end-of-plane taper</span></li>
+                <li>
+                        <span class="label">Offset</span></li>
+                <li>
+                        <span class="label">Time sample interval in seconds</span></li>
+                <li>
+                        <span class="label">Plane #1</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Dip of plane</span></li>
+                                <li>
+                                        <span class="label">Horizontal extent of plane</span> (traces)</li>
+                                <li>
+                                        <span class="label">Time sample for center pivot</span></li>
+                                <li>
+                                        <span class="label">Trace for center pivot</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Plane #2</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Dip of plane</span></li>
+                                <li>
+                                        <span class="label">Horizontal extent of plane</span> ( traces )</li>
+                                <li>
+                                        <span class="label">Time sample for center pivot</span></li>
+                                <li>
+                                        <span class="label">Trace for center pivot</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Plane #3</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Dip of plane</span></li>
+                                <li>
+                                        <span class="label">Horizontal extent of plane</span> ( traces )</li>
+                                <li>
+                                        <span class="label">Time sample for center pivot</span></li>
+                                <li>
+                                        <span class="label">Trace for center pivot</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">Parameters set for 64x64 data set with separated dipping planes</span></li>
+        </ul>
+  <!-- end lst -->
+
+          </div>
+          <!-- end par -->
+<h2 id="header_2">
+        Notes</h2>
+<p>
+         </p>
+<p>
+        This program sets the following header keywords:</p>
+<ul>
+        <li>
+                Number of samples</li>
+        <li>
+                Sampling interval in microseconds</li>
+        <li>
+                Offset (signed distance from source to receiver group)</li>
+        <li>
+                Trace number sequence within line</li>
+</ul>
+<h2 id="header_3">
+        Credits</h2>
+<p>
+        CWP: Chris Liner</p>
+</div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0"><h2 id="header_0">
+        Introduction</h2></a></li><li><a href="#header_1"><h2 id="header_1">
+                Parameters</h2></a></li><li><a href="#header_2"><h2>
+        Notes</h2></a></li><li><a href="#header_3"><h2 id="header_2">
+        Credits</h2></a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Number of planes</label>
+        <range min="1" max="3" inc="1" digits="">
+          <property required="no">
+            <keyword>npl=</keyword>
+            <value/>
+            <default>3</default>
+          </property>
+        </range>
+      </parameter>
+      <parameter>
+        <label>Number of time samples</label>
+        <int min="1">
+          <property required="no">
+            <keyword>nt=</keyword>
+            <value/>
+            <default>64</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Number of traces</label>
+        <int min="1">
+          <property required="no">
+            <keyword>ntr=</keyword>
+            <value/>
+            <default>32</default>
+          </property>
+        </int>
+      </parameter>
+      <parameter>
+        <label>Taper planes to zero at the end</label>
+        <flag>
+          <property required="no">
+            <keyword>taper=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+      <parameter>
+        <label>Offset</label>
+        <float>
+          <property required="no">
+            <keyword>offset=</keyword>
+            <value/>
+            <default>400</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Time sample interval in seconds</label>
+        <float>
+          <property required="no">
+            <keyword>dt=</keyword>
+            <value/>
+            <default>0.004</default>
+          </property>
+        </float>
+      </parameter>
+      <parameter>
+        <label>Plane #1</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Dip of plane (ms/trace)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dip1=</keyword>
+                    <value/>
+                    <default>0</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal extent of plane (traces)</label>
+                <int>
+                  <property required="no">
+                    <keyword>len1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sample for center pivot</label>
+                <int>
+                  <property required="no">
+                    <keyword>ct1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Trace for center pivot</label>
+                <int>
+                  <property required="no">
+                    <keyword>cx1=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>0</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Plane #2</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Dip of plane (ms/trace)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dip2=</keyword>
+                    <value/>
+                    <default>4</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal extent of plane (traces)</label>
+                <int>
+                  <property required="no">
+                    <keyword>len2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sample for center pivot</label>
+                <int>
+                  <property required="no">
+                    <keyword>ct2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Trace for center pivot</label>
+                <int>
+                  <property required="no">
+                    <keyword>cx2=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>4</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Plane #3</label>
+        <group instanciable="no" expand="no">
+          <template-instance>
+            <parameters default-selection="0" selection="">
+              <parameter>
+                <label>Dip of plane (ms/trace)</label>
+                <float>
+                  <property required="no">
+                    <keyword>dip3=</keyword>
+                    <value/>
+                    <default>8</default>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Horizontal extent of plane (traces)</label>
+                <int>
+                  <property required="no">
+                    <keyword>len3=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Time sample for center pivot</label>
+                <int>
+                  <property required="no">
+                    <keyword>ct3=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+              <parameter>
+                <label>Trace for center pivot</label>
+                <int>
+                  <property required="no">
+                    <keyword>cx3=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </int>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0" selection="">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default>8</default>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>Use parameters set for 64x64 data set with separated dipping planes</label>
+        <flag>
+          <property required="no">
+            <keyword>liner=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

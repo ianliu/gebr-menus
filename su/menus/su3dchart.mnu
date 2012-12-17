@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU 3D Chart</title>
+  <description>Plot x-midpoints vs. y-midpoints for 3-D data</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content=
+    "text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <!-- begin ttl -->
+    <title>SU 3D Chart</title>
+    <!-- end ttl -->
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+            <span class="flowtitle">SU 3D Chart</span>
+            <!-- end tt2 -->
+
+            <div class="description">
+              <!-- begin des -->
+              Plot x-midpoints versus y-midpoints for 3D data
+              <!-- end des -->
+            </div>
+          </div>
+        </div>
+
+        <div class="category">
+          <!-- begin cat -->
+          Graphics | Seismic Unix
+          <!-- end cat -->
+        </div>
+
+        <div class="main">
+          <div class="content">
+
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
+
+            <p>Plot x-midpoints versus y-midpoints for 3D data.</p>
+
+
+
+            <a name="credits" id="credits"></a>
+            <h2>Credits</h2>
+
+            <p>Out 26, 2009: written by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+
+            <p>Abr 15, 2010: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+
+
+            <!-- begin cpy -->
+            <!-- end cpy -->
+
+          </div>
+
+          <div class="navigation">
+            <h2>Index</h2>
+
+            <ul>
+              <li><a href="#intro">Introduction</a></li>
+
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver --> Out 26, 2009<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+]]>
+</help>
+  <author>Jorge Pizzolatto Filho</author>
+  <email>jorge.pzt@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2009-10-26T17:01:47.124183Z</created>
+    <modified>2010-08-06T00:43:03.965804Z</modified>
+    <lastrun/>
+  </date>
+  <category>Graphics</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+    <title>SU 3D Chart</title>
+    <binary>su3dchart</binary>
+    <description>Plot x-midpoints vs. y-midpoints for 3-D data</description>
+    <help>
+      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content=
+    "text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+    <!-- begin ttl -->
+    <title>SU 3-D Chart</title>
+    <!-- end ttl -->
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <!-- begin tt2 -->
+            <span class="flowtitle">SU 3-D Chart</span>
+            <!-- end tt2 -->
+
+            <div class="description">
+              <!-- begin des -->
+              Plot x-midpoints vs. y-midpoints for 3-D data
+              <!-- end des -->
+            </div>
+          </div>
+        </div>
+
+        <div class="category">
+          <!-- begin cat -->
+          Graphics | Seismic Unix
+          <!-- end cat -->
+        </div>
+
+        <div class="main">
+          <div class="content">
+
+            <a name="intro" id="intro"></a>
+            <h2>Introduction</h2>
+
+            <p>Plot x-midpoints vs. y-midpoints for 3-D data.</p>
+
+            <!-- begin par -->
+            <div class="parameters">
+
+              <a name="par" id="par"></a>
+              <h2>Parameters</h2>
+
+              <!-- begin lst --><ul>
+                <li><span class="label">Name of parameter file</span><br/></li>
+
+                <li><span class="label">Convert seconds of arc to degrees</span><br/></li>
+
+              </ul>
+              <!-- end lst -->
+
+            </div>
+            <!-- end par -->
+
+
+            <a name="notes" id="notes"></a>
+            <h2>Notes</h2>
+
+            <p>The output is the (x, y) pairs of binary floats.</p>
+
+            <p>"X source coordinate", etc., are declared double because float has only 7
+            significant numbers, that's not enough, for example,    
+            when "Scale factor for source/receiver coordinates" equal a 100 and coordinates are in second of arc    
+            and located near 30 degree latitude and 59 degree longitude.</p>
+
+            <p>This program access the following header keywords:
+            <ul>
+              <li>X source coordinate,</li> <!-- sx  -->
+              <li>Y source coordinate,</li> <!-- sy -->
+              <li>X group coordinate,</li> <!-- gx -->
+              <li>Y group coordinate,</li> <!-- gy -->
+              <li>Coordinate units code,</li> <!-- counit -->
+              <li>Scale factor for source/receiver coordinates.</li> <!-- scalco -->
+            </ul>
+            </p>  
+
+
+            <a name="credits" id="credits"></a>
+            <h2>Credits</h2>
+
+            <p>CWP: Shuki Ronen and Toralf Foerster</p>
+
+            <!-- begin cpy -->
+            <!-- end cpy -->
+
+          </div>
+
+          <div class="navigation">
+            <h2>Index</h2>
+
+            <ul>
+              <li><a href="#intro">Introduction</a></li>
+
+              <!-- begin mpr -->
+              <li><a href="#par">Parameters</a></li>
+              <!-- end mpr -->
+
+              <li><a href="#notes">Notes</a></li>
+
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div>
+
+          <div class="clearer"></div>
+        </div>
+
+        <div class="footer">
+          <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+          <div class="clearer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Name of parameter file</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>outpar=</keyword>
+            <value/>
+            <default>null</default>
+          </property>
+        </file>
+      </parameter>
+      <parameter>
+        <label>Convert seconds of arc to degrees</label>
+        <flag>
+          <property required="no">
+            <keyword>degree=1</keyword>
+            <value>off</value>
+            <default>off</default>
+          </property>
+        </flag>
+      </parameter>
+    </parameters>
+  </program>
+</flow>

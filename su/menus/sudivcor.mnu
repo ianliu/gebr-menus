@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>SU Div Correction</title>
+  <description>Divergence correction</description>
+  <help>
+    <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Div Correction</title>
+  <!-- end ttl -->
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+          <span class="flowtitle">SU Div Correction</span>
+          <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Divergence correction
+           <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->
+        Gain, NMO, Stack and Standard Processes | Seismic Unix
+        <!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+
+          <a name="intro" id="intro"></a>
+          <h2>Introduction</h2>
+
+          <p>Divergence (spreading) correction.</p>
+
+          <a name="credits" id="credits"></a>
+          <h2>Credits</h2>
+          <!-- begin cpy -->
+
+          <p>Oct 10, 2007: written by Ricardo Biloti &lt;biloti@gebrproject.com&gt;</p>
+          <p>Jun 10, 2008: revised by Daniela Amazonas &lt;daniela.amazonas@gmail.com&gt;</p>
+          <p>Mar 18, 2009: updated by Ricardo Biloti &lt;biloti@gebrproject.com&gt;</p>
+          <p>Aug 10, 2009: modified by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <p>Jul 27, 2010: revised by Jorge Pizzolatto Filho &lt;jorge.pzt@gebrproject.com&gt;</p>
+          <!-- end cpy -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->Jul 27, 2010<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+]]>
+</help>
+  <author>GêBR core team</author>
+  <email>port@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0" selection=""/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2007-10-10T15:00:00Z</created>
+    <modified>2010-12-02T16:46:57.660932Z</modified>
+    <lastrun/>
+  </date>
+  <category>Gain, NMO, Stack and Standard Processes</category>
+  <category>Seismic Unix</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
+    <title>SU Div Correction</title>
+    <binary>sudivcor</binary>
+    <description>Divergence correction</description>
+    <help>
+      <![CDATA[<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+
+  <!-- begin ttl -->
+  <title>SU Div Correction</title>
+  <!-- end ttl -->
+</head><body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <!-- begin tt2 -->
+         <span class="flowtitle">SU Div Correction</span>
+         <!-- end tt2 -->
+
+          <div class="description">
+           <!-- begin des -->
+            Divergence correction
+            <!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Gain, NMO, Stack and Standard Processes | Seismic Unix<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content"><h2 id="header_0">
+        Introduction</h2>
+<p>
+        Divergence (spreading) correction.</p>
+<!-- begin par --><div class="parameters">
+        <h2 id="header_1">
+                Parameters</h2>
+        <ul>
+                <li class="group">
+                        <span class="grouplabel">Velocity model</span>
+                        <ul>
+                                <li>
+                                        <span class="label">Times corresponding to RMS velocities below</span></li>
+                                <li>
+                                        <span class="label">Interval velocities corresponding to times above</span></li>
+                        </ul>
+                </li>
+                <li>
+                        <span class="label">File containing velocities</span><br />
+                        A binary file containing the Vrms(t) velocities. If this parameter is set the previous parameters are iginored.</li>
+        </ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="header_2">
+        Notes</h2>
+<p>
+        The <b>Times corresponding to RMS velocities</b> and <b>Interval velocities corresponding to times above</b> arrays specify an RMS velocity function of time.<br />
+        Linear interpolation and constant extrapolation is used to determine interval velocities at times not specified.<br />
+        Values specified in parameter <b>Times corresponding to RMS velocities</b> must increase monotonically.</p>
+<p>
+        Alternatively, RMS velocities may be stored in a binary file containing one velocity for every time sample. If this file is specified, then the time and velocity arrays are ignored.</p>
+<p>
+        The time of the first sample is assumed to be constant, and is taken as the value of the first trace header field "Delay recording time in ms".</p>
+<h2 id="header_3">
+        Credits</h2>
+<!-- begin cpy --><p>
+        CWP: Jack K. Cohen, Francesca Fazarri</p>
+<!-- end cpy --></div>
+
+        <div class="navigation"><h2>Index</h2><ul><li><a href="#header_0">
+        Introduction</a></li><li><a href="#header_1">
+                Parameters</a></li><li><a href="#header_2">
+        Notes</a></li><li><a href="#header_3">
+        Credits</a></li></ul></div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">GêBR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>]]>
+</help>
+    <url>http://www.cwp.mines.edu/cwpcodes/</url>
+    <parameters default-selection="0" selection="">
+      <parameter>
+        <label>Velocity model</label>
+        <group instanciable="no" expand="yes">
+          <template-instance>
+            <parameters default-selection="0">
+              <parameter>
+                <label>Times corresponding to RMS velocities below</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>trms=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+              <parameter>
+                <label>Interval velocities corresponding to times above</label>
+                <float>
+                  <property required="no" separator=",">
+                    <keyword>vrms=</keyword>
+                    <value/>
+                    <default/>
+                  </property>
+                </float>
+              </parameter>
+            </parameters>
+          </template-instance>
+          <parameters default-selection="0">
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+            <parameter>
+              <label/>
+              <reference>
+                <property required="no">
+                  <keyword/>
+                  <value/>
+                  <default/>
+                </property>
+              </reference>
+            </parameter>
+          </parameters>
+        </group>
+      </parameter>
+      <parameter>
+        <label>File containing velocities</label>
+        <file directory="no" filter-name="" filter-pattern="">
+          <property required="no">
+            <keyword>vfile=</keyword>
+            <value/>
+            <default/>
+          </property>
+        </file>
+      </parameter>
+    </parameters>
+  </program>
+</flow>
