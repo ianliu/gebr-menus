@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 #   Copyright 2010-2012 Ricardo Biloti <biloti@gebproject.com>
 
@@ -17,7 +17,7 @@
 
 function usage ()
 {
-CWPROOT=/usr/local/stow/su-"$SU_VERSION"
+CWPROOT=$STOW_PATH/su-"$SU_VERSION"
 
 echo "SU install made easy (3rd ed) - A cortesy of GeBR Project
 Syntax: $0 [options]
@@ -31,6 +31,7 @@ Options:
        -o : Download path ($DOWNLOAD_PATH)
        -u : Uninstall SU ($UNINSTALL)
        -U : Keep previously installed SU ($KEEP_OLDER_SUS)
+       -T : Target path to install SU ($TARGET_PATH)
        -t : Text mode (do not use graphical client to ask
             for passwords)
 
@@ -62,6 +63,7 @@ function check_pkg {
     fi
 }
 
+
 # Default values
 #------------------------------------------------------------------------------#
 
@@ -72,11 +74,17 @@ DOWNLOAD_PATH="$HOME/Downloads"
 CWP_SRC_URL="ftp://ftp.cwp.mines.edu/pub/cwpcodes"
 UNINSTALL="FALSE"
 KEEP_OLDER_SUS="FALSE"
-TEXT_MODE="FALSE"
+TEXT_MODE="-A"
+if [ $EUID == 0 ]; then
+    TARGET_PATH="/usr/local"
+else
+    TARGET_PATH="$HOME/.local"
+fi
+STOW_PATH="$TARGET_PATH/stow"
 
 # Parsing command line parameters
 #------------------------------------------------------------------------------#
-while getopts "V:p:a:o:d:uUth" OPT; do
+while getopts "t:V:p:a:o:d:uUh" OPT; do
   case $OPT in
       "h") usage; exit 0               ;;
       "?") usage; exit 0               ;;
@@ -87,16 +95,16 @@ while getopts "V:p:a:o:d:uUth" OPT; do
       "d") CWP_SRC_URL="$OPTARG"       ;;
       "u") UNINSTALL="TRUE"            ;;
       "U") KEEP_OLDER_SUS="TRUE"       ;;
-      "t") TEXT_MODE="TRUE"            ;;
+      "r") TEXT_MODE=""                ;;
+      "t") TARGET_PATH="$OPTARG";STOW_PATH="$TARGET_PATH/stow";;
   esac
 done
 
-CWPROOT=/usr/local/stow/su-"$SU_VERSION"
-[ "$SHOW_CWPROOT" == 'TRUE' ] && echo $CWPROOT && exit
+CWPROOT=$STOW_PATH/su-"$SU_VERSION"
 
 # Try to become root before start
-if [ `id -u` != 0 ]; then
-    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo -A $0 $@ 2> /dev/null || echo "Please, try run $0 as root." && usage
+if [ $EUID != 0 ]; then
+    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo $TEXT_MODE $0 $@ 2> /dev/null || echo "Please, try run $0 as root." && usage
     exit
 fi
 
@@ -108,7 +116,7 @@ EOF
 
 # Uninstall SU and exits
 if [ "$UNINSTALL" == 'TRUE' ]; then
-    cd /usr/local/stow
+    cd $CWPROOT/..
     if [ -d su-$SU_VERSION ]; then
 	echo "Uninstalling SU $SU_VERSION"
 	stow -D su-$SU_VERSION
@@ -126,6 +134,7 @@ cd "$DOWNLOAD_PATH"
 echo "SU $SU_VERSION archive.............. Downloading it now to $DOWNLOAD_PATH"
 wget -c "$CWP_SRC_URL/$SU_ARCHIVE"
 
+function install_pkg {
 echo "Testing for required packages"
 
 PKGS_TO_INSTALL=""
@@ -152,11 +161,11 @@ if [ "$PKGS_TO_INSTALL"'x' != 'x' ]; then
     echo "Installing missing packages"
     apt-get -y install $PKGS_TO_INSTALL
 fi
+}
 
 if [ ! -d "$CWPROOT" ]; then 
-    mkdir -p "$CWPROOT"
+    mkdir -m 755 -p "$CWPROOT"
 fi
-chmod 755 "$CWPROOT" /usr/local/stow
 
 cd "$CWPROOT"
 echo "Extracting SU source files..."
@@ -229,7 +238,7 @@ done
 
 echo -e "\nCompilation done."
 
-cd /usr/local/stow
+cd $CWPROOT/..
 # Seach for installed older versions of SU
 OLDER_SUS=`find . -name su-\* | grep -v "$SU_VERSION" | sed 's/^\..//' `
 if [ `echo $OLDER_SUS | wc -l` -gt 1 ]; then
@@ -255,13 +264,20 @@ fi
 stow -D su-$SU_VERSION
 stow -v su-$SU_VERSION
 
-sed '/CWPROOT=/d' /etc/profile > /tmp/profile
+PROFILE="/etc/profile"
+BASHRC="/etc/bash.bashrc"
+if [ $EUID != 0 ]; then
+    PROFILE="$HOME/.profile"
+    BASHRC="$HOME/.bashrc"
+fi
+
+sed '/CWPROOT=/d' $PROFILE > /tmp/profile
 echo "export CWPROOT=$CWPROOT" >> /tmp/profile
-cp /tmp/profile /etc
+cp /tmp/profile $PROFILE
 
 echo "export CWPROOT=$CWPROOT" > /tmp/bash.bashrc
-sed '/CWPROOT=/d' /etc/bash.bashrc >> /tmp/bash.bashrc
-cp /tmp/bash.bashrc /etc
+sed '/CWPROOT=/d' $BASHRC >> /tmp/bash.bashrc
+cp /tmp/bash.bashrc $BASHRC
 
 echo "Installation done."
 echo -e "SU will be available next time you log in.\n"
