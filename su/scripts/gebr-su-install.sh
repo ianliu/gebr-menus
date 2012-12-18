@@ -15,12 +15,6 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# Try to become root before start
-if [ `id -u` != 0 ]; then
-    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo -A $0 $@ || echo "Please, try run $0 as root."
-    exit
-fi
-
 function usage ()
 {
 CWPROOT=/usr/local/stow/su-"$SU_VERSION"
@@ -98,6 +92,13 @@ while getopts "V:p:a:o:d:uUth" OPT; do
 done
 
 CWPROOT=/usr/local/stow/su-"$SU_VERSION"
+[ "$SHOW_CWPROOT" == 'TRUE' ] && echo $CWPROOT && exit
+
+# Try to become root before start
+if [ `id -u` != 0 ]; then
+    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo -A $0 $@ 2> /dev/null || echo "Please, try run $0 as root." && usage
+    exit
+fi
 
 cat <<EOF
 SU install made easy - A cortesy of the GeBR Project
