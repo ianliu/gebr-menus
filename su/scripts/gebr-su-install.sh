@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 #   Copyright 2010-2012 Ricardo Biloti <biloti@gebproject.com>
 
@@ -17,7 +17,7 @@
 
 function usage ()
 {
-CWPROOT=$STOW_PATH/su-"$SU_VERSION"
+CWPROOT="$STOW_PATH/su-$SU_VERSION"
 
 echo "SU install made easy (3rd ed) - A cortesy of GeBR Project
 Syntax: $0 [options]
@@ -32,6 +32,7 @@ Options:
        -u : Uninstall SU ($UNINSTALL)
        -U : Keep previously installed SU ($KEEP_OLDER_SUS)
        -T : Target path to install SU ($TARGET_PATH)
+       -F : Force reinstall ($REINSTALL)
        -t : Text mode (do not use graphical client to ask
             for passwords)
 
@@ -63,7 +64,6 @@ function check_pkg {
     fi
 }
 
-
 # Default values
 #------------------------------------------------------------------------------#
 
@@ -74,6 +74,7 @@ DOWNLOAD_PATH="$HOME/Downloads"
 CWP_SRC_URL="ftp://ftp.cwp.mines.edu/pub/cwpcodes"
 UNINSTALL="FALSE"
 KEEP_OLDER_SUS="FALSE"
+REINSTALL="FALSE"
 TEXT_MODE="-A"
 if [ $EUID == 0 ]; then
     TARGET_PATH="/usr/local"
@@ -84,7 +85,7 @@ STOW_PATH="$TARGET_PATH/stow"
 
 # Parsing command line parameters
 #------------------------------------------------------------------------------#
-while getopts "t:V:p:a:o:d:uUh" OPT; do
+while getopts "T:V:p:a:o:d:uUFth" OPT; do
   case $OPT in
       "h") usage; exit 0               ;;
       "?") usage; exit 0               ;;
@@ -95,18 +96,20 @@ while getopts "t:V:p:a:o:d:uUh" OPT; do
       "d") CWP_SRC_URL="$OPTARG"       ;;
       "u") UNINSTALL="TRUE"            ;;
       "U") KEEP_OLDER_SUS="TRUE"       ;;
-      "r") TEXT_MODE=""                ;;
-      "t") TARGET_PATH="$OPTARG";STOW_PATH="$TARGET_PATH/stow";;
+      "F") REINSTALL="TRUE"            ;;
+      "t") TEXT_MODE=""                ;;
+      "T") TARGET_PATH="$OPTARG";STOW_PATH="$TARGET_PATH/stow";;
   esac
 done
 
-CWPROOT=$STOW_PATH/su-"$SU_VERSION"
-
 # Try to become root before start
 if [ $EUID != 0 ]; then
-    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo $TEXT_MODE $0 $@ 2> /dev/null || echo "Please, try run $0 as root." && usage
+    SUDO_ASKPASS=${SUDO_ASKPASS:-"/usr/lib/openssh/gnome-ssh-askpass"} sudo $TEXT_MODE $0 $@ 2> /dev/null || echo "Please, try run $0 as root."
     exit
 fi
+
+CWPROOT="$STOW_PATH/su-$SU_VERSION"
+
 
 cat <<EOF
 SU install made easy - A cortesy of the GeBR Project
@@ -126,6 +129,27 @@ if [ "$UNINSTALL" == 'TRUE' ]; then
     exit 0;
 fi
 
+# Checks whether this intended version is already (partially) installed
+if [ -d "$CWPROOT" -a "$REINSTALL" == "FALSE" ]; then 
+    echo "
+It seems that SU $SU_VERSION is already installed or, at least,
+partially installed. This install attempt has been aborted now.
+
+To reinstall SU $SU_VERSION, overwriting such previous install,
+check the reinstall option of this script.
+
+See the help with \"$0 -h\"."
+    exit 0
+else
+    echo "
+It seems that SU $SU_VERSION is already installed or, at least,
+partially installed. Proceeding anyway, as requested."
+fi
+    
+if [ ! -d "$CWPROOT" ]; then 
+    mkdir -m 755 -p "$CWPROOT"
+fi
+
 if [ ! -d "$DOWNLOAD_PATH" ]; then
     mkdir -p "$DOWNLOAD_PATH"
 fi
@@ -134,7 +158,6 @@ cd "$DOWNLOAD_PATH"
 echo "SU $SU_VERSION archive.............. Downloading it now to $DOWNLOAD_PATH"
 wget -c "$CWP_SRC_URL/$SU_ARCHIVE"
 
-function install_pkg {
 echo "Testing for required packages"
 
 PKGS_TO_INSTALL=""
@@ -160,11 +183,6 @@ check_pkg libxmu-dev
 if [ "$PKGS_TO_INSTALL"'x' != 'x' ]; then
     echo "Installing missing packages"
     apt-get -y install $PKGS_TO_INSTALL
-fi
-}
-
-if [ ! -d "$CWPROOT" ]; then 
-    mkdir -m 755 -p "$CWPROOT"
 fi
 
 cd "$CWPROOT"
@@ -252,7 +270,7 @@ if [ `echo $OLDER_SUS | wc -l` -gt 1 ]; then
 	done
     else
 	echo Unless you remove older versions of SU from path,
-	echo they may conflict with the newer version your are trying
+	echo they may conflict with this newer version your are trying
 	echo to install.
 	echo -e "\nIt is safe to set -U\n"
 	echo This will only remove such older versions from path,
@@ -264,11 +282,12 @@ fi
 stow -D su-$SU_VERSION
 stow -v su-$SU_VERSION
 
-PROFILE="/etc/profile"
-BASHRC="/etc/bash.bashrc"
 if [ $EUID != 0 ]; then
     PROFILE="$HOME/.profile"
     BASHRC="$HOME/.bashrc"
+else 
+    PROFILE="/etc/profile"
+    BASHRC="/etc/bash.bashrc"
 fi
 
 sed '/CWPROOT=/d' $PROFILE > /tmp/profile
