@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#   Copyright 2010-2012 Ricardo Biloti <biloti@gebproject.com>
+#   Copyright 2010-2013 Ricardo Biloti <biloti@gebproject.com>
 
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -40,15 +40,16 @@ SU install path: $CWPROOT
 
 This scripts is designed to Ubuntu/Debian Linux systems.
 Debian users however should have administration privileges
-through sudo utility.
+through sudo utility. See the post
+http://sl.gebrproject.com/easy-su-install
 
-New version of this script will be released
-through Download area of GeBR Project site.
+The newest version of this script is on
+http://sl.gebrproject.com/gebr-su-install.sh
 
 Any problem with this script, please report to
 Ricardo Biloti <biloti@gebrproject.com>
 
-2009-2012 (c) Ricardo Biloti - GeBR Project
+2009-2013 (c) Ricardo Biloti - GeBR Project
 http://www.gebrproject.com/
 "
 }
