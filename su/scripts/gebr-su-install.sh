@@ -71,6 +71,7 @@ function check_pkg {
 SU_VERSION="43R3"
 SU_VERSION_PREFIX="43"
 SU_ARCHIVE="cwp_su_all_$SU_VERSION.tgz"
+SU_SHA256SUM="1d043f0a6366fcebba3707eaa15283aae1186bb383c6e7cebf11afcea4f3ac81"
 DOWNLOAD_PATH="$HOME/Downloads"
 CWP_SRC_URL="ftp://ftp.cwp.mines.edu/pub/cwpcodes"
 UNINSTALL="FALSE"
@@ -156,8 +157,20 @@ if [ ! -d "$DOWNLOAD_PATH" ]; then
 fi
 
 cd "$DOWNLOAD_PATH"
-echo "SU $SU_VERSION archive.............. Downloading it now to $DOWNLOAD_PATH"
-wget -c "$CWP_SRC_URL/$SU_ARCHIVE"
+if [ -e "$SU_ARCHIVE" ]; then 
+    SHA256SUM=`sha256sum "$SU_ARCHIVE"`
+    if [ $SHA256SUM -eq $SU_SHA256SUM ]; then
+	echo "SU $SU_VERSION archive.............. Found"
+    else
+	echo "SU $SU_VERSION archive.............. Corrupted"
+	rm "$SU_ARCHIVE"
+    fi
+fi
+
+if [ ! -e "$SU_ARCHIVE" ]; then 
+    echo "SU $SU_VERSION archive.............. Downloading it now to $DOWNLOAD_PATH"
+    wget "$CWP_SRC_URL/$SU_ARCHIVE"
+fi    
 
 echo "Testing for required packages"
 
