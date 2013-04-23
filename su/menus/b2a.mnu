@@ -89,10 +89,10 @@
   <dict>
     <parameters default-selection="0" selection=""/>
   </dict>
-  <parent></parent>
+  <parent/>
   <date>
     <created>2007-08-26T15:00:00Z</created>
-    <modified>2010-08-06T00:43:02.464298Z</modified>
+    <modified>2013-04-23T16:16:30.435304Z</modified>
     <lastrun/>
   </date>
   <category>Import/Export</category>
@@ -105,23 +105,21 @@
     </io>
     <lastrun/>
   </server>
-  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41">
+  <program stdin="yes" stdout="yes" stderr="yes" status="unconfigured" version="SU 41" mpi="">
     <title>BIN to ASCII</title>
     <binary>b2a</binary>
     <description>Convert binary floats to ASCII</description>
-    <help>
-      <![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content=
   "text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="gebr.css" />
-
-  <!-- begin ttl -->
-  <title>BIN to ASCII</title>
-  <!-- end ttl -->
+  <title>
+    <!-- begin ttl -->BIN to ASCII<!-- end ttl -->
+  </title>
 </head>
 
 <body>
@@ -129,73 +127,70 @@
     <div class="inner-container">
       <div class="header">
         <div class="title">
-          <!-- begin tt2 -->
-          <span class="flowtitle">BIN to ASCII</span>
-          <!-- end tt2 -->
-
+          <span class="flowtitle">
+            <!-- begin tt2 -->BIN to ASCII<!-- end tt2 -->
+          </span>
           <div class="description">
-           <!-- begin des -->
-            Convert binary floats to ASCII
-           <!-- end des -->
+            <!-- begin des -->Convert binary floats to ASCII<!-- end des -->
           </div>
         </div>
       </div>
 
       <div class="category">
-        <!-- begin cat -->
-       Import/Export | Seismic Unix
-        <!-- end cat -->
+        <!-- begin cat -->Import/Export | Seismic Unix<!-- end cat -->
       </div>
 
       <div class="main">
         <div class="content">
-
-          <a name="intro" id="intro"></a>
-          <h2>Introduction</h2>
-
-          <p>Convert binary floats to ASCII.</p>
-
-          <!-- begin par -->
-          <div class="parameters">
-
-            <a name="par" id="par"></a>
-            <h2>Optional parameters</h2>
-
-            <!-- List of optional parameters -->
-            <!-- begin lst -->
-            <ul>
-              <li><span class="label">Floats per line in output file</span>
-              <p>The defaul value is 2 floats per line.</p> </li>
-
-              <li><span class="label">Destination file</span>
-              <p>Name of the file where the output will be written.</p>
-              <p>Instead of a disk file name it is possible to choose 
-                 /dev/stdout or /dev/stderr to send output data to standard output 
-                 or standard error output.</p></li>
-            </ul>
-            <!-- end lst -->
-
-          </div>
-          <!-- end par -->
-
-          <a name="credits" id="credits"></a>
-          <h2>Credits</h2>
-          <!-- begin cpy -->
-
-          <p>CWP: Jack K. Cohen</p>
-          <!-- end cpy -->
+          <!-- begin cnt --><p>
+	<a id="intro" name="intro"></a></p>
+<h2>
+	Introduction</h2>
+<p>
+	Convert binary floats to ASCII.</p>
+<!-- begin par --><div class="parameters">
+	<a id="par" name="par"></a>
+	<h2>
+		Optional parameters</h2>
+<!-- List of optional parameters --><!-- begin lst -->	<ul>
+		<li>
+			<span class="label">Floats per line in output file</span>
+			<p>
+				The defaul value is 2 floats per line.</p>
+		</li>
+		<li>
+			<span class="label">Destination file</span>
+			<p>
+				Name of the file where the output will be written.</p>
+			<p>
+				Instead of a disk file name it is possible to choose /dev/stderr to send output data to standard error output.</p>
+		</li>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><p>
+	<a id="credits" name="credits"></a></p>
+<h2>
+	Credits</h2>
+<!-- begin cpy --><p>
+	CWP: Jack K. Cohen</p>
+<!-- end cpy --><!-- end cnt -->
         </div>
 
         <div class="navigation">
           <h2>Index</h2>
 
           <ul>
-
             <li><a href="#intro">Introduction</a></li>
 
-            <!-- begin mpr -->
+	    <!-- begin mpr -->
             <li><a href="#par">Parameters</a></li>
-            <!-- end mpr -->
+	    <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
 
             <li><a href="#credits">Credits</a></li>
           </ul>
@@ -205,7 +200,8 @@
       </div>
 
       <div class="footer">
-        <span class="left">G&ecirc;BR 0.9.17 (<!-- begin dtd -->0.3.5<!-- end dtd -->) | <!-- begin ver -->SU 41<!-- end ver --></span>
+        <span class="left">G&ecirc;BR 0.20.1 (<!-- begin dtd -->0.4.0<!-- end dtd -->) |
+		<!-- begin ver -->SU 41<!-- end ver --></span>
 
         <div class="clearer"></div>
       </div>
@@ -213,8 +209,7 @@
   </div>
 </body>
 </html>
-]]>
-</help>
+]]></help>
     <url>http://www.cwp.mines.edu/cwpcodes/</url>
     <parameters default-selection="0" selection="">
       <parameter>
@@ -229,11 +224,11 @@
       </parameter>
       <parameter>
         <label>Destination file</label>
-        <file directory="no">
+        <file directory="no" filter-name="" filter-pattern="">
           <property required="no">
             <keyword>outpar=</keyword>
             <value/>
-            <default>/dev/stdout</default>
+            <default>/dev/stderr</default>
           </property>
         </file>
       </parameter>
