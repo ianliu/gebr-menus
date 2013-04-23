@@ -40,6 +40,7 @@ gebrmenu_DATA = \
 		ftnstrip.mnu           \
 		ftnunstrip.mnu         \
 		gbbeam.mnu             \
+		gebrrange.mnu          \
 		grm.mnu                \
 		h2b.mnu                \
 		hti2stiff.mnu          \

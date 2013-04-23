@@ -14,4 +14,5 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-dist_bin_SCRIPTS = gebr-su-install.sh
+dist_bin_SCRIPTS = gebr-su-install.sh \
+		   gebrrange.sh
