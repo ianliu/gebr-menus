@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC "-//GEBR//DTD FLOW 0.4.0//EN" "http://gebr.googlecode.com/hg/libgebr/geoxml/data/flow-0.4.0.dtd">
+<flow version="0.4.0">
+  <title>GêBR Range Decode</title>
+  <description>Decode SU Range keywords</description>
+  <help>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;  &lt;meta http-equiv="content-type" content=  "text/html; charset=utf-8" /&gt;  &lt;link rel="stylesheet" type="text/css" href="gebr.css" /&gt;  &lt;title&gt;    &lt;!-- begin ttl --&gt;GêBR Range Decode&lt;!-- end ttl --&gt;  &lt;/title&gt;&lt;/head&gt;&lt;body&gt;  &lt;div class="outer-container"&gt;    &lt;div class="inner-container"&gt;      &lt;div class="header"&gt;        &lt;div class="title"&gt;          &lt;span class="flowtitle"&gt;            &lt;!-- begin tt2 --&gt;GêBR Range Decode&lt;!-- end tt2 --&gt;          &lt;/span&gt;          &lt;div class="description"&gt;            &lt;!-- begin des --&gt;Decode SU Range keywords&lt;!-- end des --&gt;          &lt;/div&gt;        &lt;/div&gt;      &lt;/div&gt;      &lt;div class="category"&gt;        &lt;!-- begin cat --&gt;Editing, Sorting and Manipulation | Seismic Unix | Utilities&lt;!-- end cat --&gt;      &lt;/div&gt;      &lt;div class="main"&gt;        &lt;div class="content"&gt;          &lt;!-- begin cnt --&gt;&lt;h2 id="intro"&gt;        Introduction&lt;/h2&gt;&lt;p&gt;        This menu brings a tool to decode header keywords to meaningful labels.&lt;/p&gt;&lt;!-- begin par --&gt;&lt;!-- end par --&gt;&lt;h2 id="details"&gt;        Credits&lt;/h2&gt;&lt;p&gt;        May 12, 2011: written by Ricardo Biloti &amp;lt;biloti@gebrproject.com&amp;gt;&lt;/p&gt;&lt;!-- end cpy --&gt;&lt;!-- end cnt --&gt;        &lt;/div&gt;        &lt;div class="navigation"&gt;          &lt;h2&gt;Index&lt;/h2&gt;          &lt;ul&gt;            &lt;li&gt;&lt;a href="#intro"&gt;Introduction&lt;/a&gt;&lt;/li&gt;	    &lt;!-- begin mpr --&gt;            &lt;li&gt;&lt;a href="#par"&gt;Parameters&lt;/a&gt;&lt;/li&gt;	    &lt;!-- end mpr --&gt;            &lt;li&gt;&lt;a href="#details"&gt;Description&lt;/a&gt;&lt;/li&gt;            &lt;li&gt;&lt;a href="#notes"&gt;Notes&lt;/a&gt;&lt;/li&gt;            &lt;li&gt;&lt;a href="#ref"&gt;References&lt;/a&gt;&lt;/li&gt;            &lt;li&gt;&lt;a href="#credits"&gt;Credits&lt;/a&gt;&lt;/li&gt;          &lt;/ul&gt;        &lt;/div&gt;        &lt;div class="clearer"&gt;&lt;/div&gt;      &lt;/div&gt;      &lt;div class="footer"&gt;        &lt;span class="left"&gt;G&amp;ecirc;BR 0.20.1 (&lt;!-- begin dtd --&gt;0.4.0&lt;!-- end dtd --&gt;) |		&lt;!-- begin ver --&gt;Apr 23, 2013&lt;!-- end ver --&gt;&lt;/span&gt;        &lt;div class="clearer"&gt;&lt;/div&gt;      &lt;/div&gt;    &lt;/div&gt;  &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</help>
+  <author>Ricardo Biloti</author>
+  <email>biloti@gebrproject.com</email>
+  <dict>
+    <parameters default-selection="0"/>
+  </dict>
+  <parent></parent>
+  <date>
+    <created>2011-05-12T14:39:36.128427Z</created>
+    <modified>2013-04-23T16:22:23.217752Z</modified>
+    <lastrun/>
+  </date>
+  <category>Editing, Sorting and Manipulation</category>
+  <category>Seismic Unix</category>
+  <category>Utilities</category>
+  <server group-type="group" group-name="">
+    <io>
+      <input/>
+      <output/>
+      <error/>
+    </io>
+    <lastrun/>
+  </server>
+  <program stdin="yes" stdout="yes" stderr="no" status="unconfigured" mpi="" version="May 12, 2011">
+    <title>GêBR Range Decode</title>
+    <binary>gebrrange.sh</binary>
+    <description>Decode SU Range keywords</description>
+    <help><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content=
+  "text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="gebr.css" />
+  <title>
+    <!-- begin ttl -->GêBR Range Decode<!-- end ttl -->
+  </title>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="header">
+        <div class="title">
+          <span class="flowtitle">
+            <!-- begin tt2 -->GêBR Range Decode<!-- end tt2 -->
+          </span>
+          <div class="description">
+            <!-- begin des -->Decode SU Range keywords<!-- end des -->
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <!-- begin cat -->Editing, Sorting and Manipulation | Seismic Unix | Utilities<!-- end cat -->
+      </div>
+
+      <div class="main">
+        <div class="content">
+          <!-- begin cnt --><h2 id="intro">
+	Introduction</h2>
+<p>
+	This program decodes the header keywords listed by SU Range to meangingful labels.</p>
+<h2>
+	Parameters</h2>
+<div>
+	<p>
+		This program has no parameters.</p>
+<!-- begin lst -->	<ul>
+	</ul>
+<!-- end lst --></div>
+<!-- end par --><h2 id="details">
+	Description</h2>
+<p>
+	SU Range displays minimum and maximum values for non-zero header entries, which are labeled by keywords, like dt, ns, traceid, etc. This program decodes these keywords to meaningful labels like &quot;Sampling interval in microseconds&quot;, &quot;Number of samples&quot;, etc.</p>
+<p>
+	To employ this program, it should be added after <strong>SU Range</strong>.</p>
+<h2>
+	Credits</h2>
+<p>
+	This program was written by Ricardo Biloti &lt;biloti@gebrproject.com&gt;.</p>
+<!-- begin cpy --><!-- end cpy --><!-- end cnt -->
+        </div>
+
+        <div class="navigation">
+          <h2>Index</h2>
+
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+
+	    <!-- begin mpr -->
+            <li><a href="#par">Parameters</a></li>
+	    <!-- end mpr -->
+
+            <li><a href="#details">Description</a></li>
+
+            <li><a href="#notes">Notes</a></li>
+
+            <li><a href="#ref">References</a></li>
+
+            <li><a href="#credits">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="clearer"></div>
+      </div>
+
+      <div class="footer">
+        <span class="left">G&ecirc;BR 0.20.1 (<!-- begin dtd -->0.4.0<!-- end dtd -->) |
+		<!-- begin ver -->May 12, 2011<!-- end ver --></span>
+
+        <div class="clearer"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+]]></help>
+    <url>http://www.ime.unicamp.br/~biloti</url>
+    <parameters default-selection="0"/>
+  </program>
+</flow>
