@@ -17,7 +17,7 @@
 AC_INIT(menus/suplane.mnu)
 
 PACKAGE=gebr-menus-su
-VERSION=0.7.2
+VERSION=0.7.3
 AC_SUBST(PACKAGE)
 AC_SUBST(VERSION)
 
