@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#   Copyright 2010-2013 Ricardo Biloti <biloti@gebproject.com>
+#   Copyright 2010-2014 Ricardo Biloti <biloti@gebproject.com>
 
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ http://sl.gebrproject.com/gebr-su-install.sh
 Any problem with this script, please report to
 Ricardo Biloti <biloti@gebrproject.com>
 
-2009-2013 (c) Ricardo Biloti - GeBR Project
+2009-2014 (c) Ricardo Biloti - GeBR Project
 http://www.gebrproject.com/
 "
 }
@@ -68,10 +68,10 @@ function check_pkg {
 # Default values
 #------------------------------------------------------------------------------#
 
-SU_VERSION="43R3"
+SU_VERSION="43R5"
 SU_VERSION_PREFIX="43"
 SU_ARCHIVE="cwp_su_all_$SU_VERSION.tgz"
-SU_SHA256SUM="1d043f0a6366fcebba3707eaa15283aae1186bb383c6e7cebf11afcea4f3ac81"
+SU_SHA256SUM="4577738dbcd525ced49e7c79176d4eb43a53150ecda038b6938abd478804118e"
 DOWNLOAD_PATH="$HOME/Downloads"
 CWP_SRC_URL="ftp://ftp.cwp.mines.edu/pub/cwpcodes"
 UNINSTALL="FALSE"
@@ -158,8 +158,8 @@ fi
 
 cd "$DOWNLOAD_PATH"
 if [ -e "$SU_ARCHIVE" ]; then 
-    SHA256SUM=`sha256sum "$SU_ARCHIVE"`
-    if [ $SHA256SUM -eq $SU_SHA256SUM ]; then
+    SHA256SUM=`sha256sum < "$SU_ARCHIVE" | sed s/[^0-9a-f].*$//`
+    if [ "$SHA256SUM" = "$SU_SHA256SUM" ]; then
 	echo "SU $SU_VERSION archive.............. Found"
     else
 	echo "SU $SU_VERSION archive.............. Corrupted"
@@ -257,10 +257,14 @@ fi
 if [ ! -e license.sh-original ]; then
    cp license.sh license.sh-original
 fi
+if [ ! -e mailhome.sh-original ]; then
+   cp mailhome.sh mailhome.sh-original
+fi
 cat chkroot.sh-original | sed 's/read RESP/RESP="y"/' > /tmp/chkroot.sh
+cat mailhome.sh-original | sed 's/read RESP/RESP="y"/' > /tmp/mailhome.sh
 cat license.sh-original | sed 's/read RESP/RESP="y"/;s/more/cat/' > /tmp/license.sh
-chmod 755 /tmp/chkroot.sh /tmp/license.sh
-mv /tmp/chkroot.sh /tmp/license.sh .
+chmod 755 /tmp/chkroot.sh /tmp/license.sh /tmp/mailhome.sh
+mv /tmp/chkroot.sh /tmp/license.sh /tmp/mailhome.sh .
 
 echo "Compiling SU package"
 
@@ -274,13 +278,13 @@ echo -e "\nCompilation done."
 cd $CWPROOT/..
 # Seach for installed older versions of SU
 OLDER_SUS=`find . -name su-\* | grep -v "$SU_VERSION" | sed 's/^\..//' `
-if [ `echo $OLDER_SUS | wc -l` -gt 1 ]; then
+if [ `echo $OLDER_SUS | wc -l` -gt 0 ]; then
     echo it seems that this versions of SU are installed:
     echo -e $OLDER_SUS "\n"
     if [ "$KEEP_OLDER_SUS" == 'FALSE' ]; then
 	echo "$OLDER_SUS" | while read oldsu; do
 	    echo -n "Removing $oldsu from system path (it will "
-	    echo not be purged from the system however\).
+	    echo not be purged however\).
 	    stow -D $oldsu
 	done
     else
