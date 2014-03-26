@@ -185,8 +185,9 @@ check_pkg gfortran
 echo -n "stow....................... "
 check_pkg stow
 
-echo -n "lesstif.................... "
-check_pkg lesstif2-dev
+# It seems lesstif is no longer on the main ubuntu repo
+#echo -n "lesstif.................... "
+#check_pkg lesstif2-dev
 
 echo -n "GLUT....................... "
 check_pkg freeglut3-dev
