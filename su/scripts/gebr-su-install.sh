@@ -78,11 +78,7 @@ UNINSTALL="FALSE"
 KEEP_OLDER_SUS="FALSE"
 REINSTALL="FALSE"
 TEXT_MODE="-A"
-if [ $EUID == 0 ]; then
-    TARGET_PATH="/usr/local"
-else
-    TARGET_PATH="$HOME/.local"
-fi
+TARGET_PATH="/usr/local"
 STOW_PATH="$TARGET_PATH/stow"
 
 # Parsing command line parameters
